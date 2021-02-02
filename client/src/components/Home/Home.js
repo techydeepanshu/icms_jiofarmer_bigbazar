@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             <div> 
-                {!this.props.isAuthenticated ? <a href = '/auth/login'><button >Click to Login</button></a>: <a href = '/api/logout'><button >Click to logout</button></a>}
+                {!this.props.isAuthenticated ? <a href = '/'><button >Click to Login</button></a>: <a href = '/api/logout'><button >Click to logout</button></a>}
             </div>
         )
     }

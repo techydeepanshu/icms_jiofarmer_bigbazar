@@ -18,37 +18,45 @@ export const authFetchUser = (data) => {
     }
 }
 
-// export const stripeToken  = (data) => {
+export const authenticate = () => {
+    return dispatch => {
+        // axios
+        //   .get("/auth/login")
+        //   .then((res) => {
+        //     console.log(res);
+            dispatch(auth("res"));
+        //   })
+        //   .catch((err) => console.log(err));
+    }
+}
+
+// export const inventoryData = () => {
 //     return {
-//         type : HANDLE_TOKEN,
-//         payload: data
+//         type: 
 //     }
 // }
 
-export const authenticate = () => {
-    return dispatch => {
-        axios.get('/auth/login')
-        .then(res => {
-            console.log(res)
-            dispatch(auth(res))
-        })
-        .catch(err => console.log(err))
-    }
-}
-
 export const fetchUser = () => {
     return dispatch => {
-        axios.get('/api/current_user')
-        .then(res => {
-            console.log("User Data:", res.data._id)
-            dispatch(authFetchUser(res.data))
-        })
+        axios
+          .get("/api/current_user")
+          // export const stripeToken  = (data) => {
+          //     return {
+          //         type : HANDLE_TOKEN,
+          //         payload: data
+          //     }
+          // }
+
+          .then((res) => {
+            console.log("User Data:", res.data._id);
+            dispatch(authFetchUser("res.data"));
+          });
     }
 }
 
-export const handleToken = (token) => {
+export const fetchInventoryData = (imagePath) => {
     return dispatch => {
-        axios.post('/api/stripes', token)
+        axios.post('/api/read-value', imagePath)
         .then(res => {
             console.log("successful!! HANDLE TOKEN  data is",res.data)
             dispatch(authFetchUser(res.data))

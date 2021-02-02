@@ -11,12 +11,12 @@ const NavigationItems = (props) => {
     }, [user])
     return (
         <ul className = {styles.NavigationItems}>
-            <NavigationItem link = '/'>
+            <NavigationItem link = '/' exact>
                 Home
             </NavigationItem>
             {props.isAuth ? 
-                <NavigationItem link = "/survey" >
-                    Survey
+                <NavigationItem link = "/invoice">
+                    Scan Invoice
                 </NavigationItem> 
             :null}
         </ul>

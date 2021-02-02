@@ -2,22 +2,23 @@ import * as actionTypes from '../action/actionAuth'
 
 const initialState = {
     // token: null,
-    userId: null,
+    userId: "null",
     // error: null,
     // loading: false
 }
 
 const reducerAuth = (state = initialState, action) => {
+    console.log("user id", action.userDetails)
     switch (action.type) {
         case actionTypes.AUTH:
             return {
                 ...state,
-                userId: action.userDetails
+                userId: "action.userDetails"
             }
         case actionTypes.FETCH_USER:
             return {
                 ...state,
-                userId: action.userDetails
+                userId: "action.userDetails"
             }
         default:
             return state
