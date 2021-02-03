@@ -1,0 +1,133 @@
+.main {
+    width: 90%;
+    margin: 20px auto;
+    /* border: 1px solid #eee; */
+    /* box-shadow: 0 2px 3px #ccc; */
+    text-align: left;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* position: absolute; */
+}
+
+.main label {
+    display: block;
+    margin: 10px auto;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.Filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Apply {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    /* flex: 1; */
+    padding: 18px;
+    padding-top: 35px;
+    background-color: '#ffffff';
+}
+
+
+.HeadStyle {
+    height: 50px;
+    align-content: "center";
+    background-color: '#ffe0f0';
+}
+
+.TableText {
+    margin: 10;
+}
+
+.records {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    width: 100%;
+    /* position: relative; */
+}
+
+.records td,
+.records th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* position: relative; */
+}
+
+/* .records tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
+
+.records tr:hover {
+    background-color: #ddd;
+}
+
+.records th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    position: relative;
+}
+.records input {
+    width: 60%;
+}
+.red {
+    background: red;
+}
+
+.Filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-block-end: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.image {
+    width: 50vw;
+    height: 50vh;
+}
+.button {
+    margin-top: 20px;
+    margin-bottom: auto;
+    background-color:skyblue;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 3px;
+  border: 1px solid black;
+  opacity: 1;
+  background-color: rosybrown;
+}
+.element {
+    position: relative;
+}
+.element:hover .tooltip {
+  display: block;
+  /* position: relative; */
+  /* max-width: 50%;
+  opacity: 1; */
+
+}
+.free{
+    background-color: tan;
+}
+/* .input {
+    width: 30%;
+} */

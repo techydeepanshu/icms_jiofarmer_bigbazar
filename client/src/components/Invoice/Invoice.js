@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Invoice.module.css'
-import {
-  Link,
-  Route,
-  Redirect,
-  BrowserRouter as Router,
-  Switch,
-} from "react-router-dom";
-import DisplayData from '../DisplayData';
+import { Route } from "react-router-dom";
+import DisplayData from '../DisplayData/DisplayData';
 
 const Invoice = (props) => {
     const dropdownOptions = ['Chetak', 'Laxmi', 'Sea Mark']
@@ -22,26 +16,21 @@ const Invoice = (props) => {
     const handleFileChange = e => {
         e.preventDefault();
         let reader = new FileReader();
-        let file = e.target.files[0];
-
+        let inputFile = e.target.files[0];
         reader.onloadend = () => {
-            setFile(file)
+            setFile(inputFile);
             setImagePreviewUrl(reader.result)
         };
-
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(inputFile);
     }
     const scanInvoice = () => {
         if (imagePreviewUrl) {
-            console.log("scanning IMage")
             setRedirect(true)
-            props.history.push(`${props.match.url}read-value`);
-
+            props.history.push(`${props.match.url}/read-value`);
         } else {
             alert("Select an image")
         }        
     }
-
     const displaySelectFile = () => {
       return (
         <div className={styles.main}>
@@ -81,9 +70,9 @@ const Invoice = (props) => {
     };
     if (redirect) {
         let path = props.match.path + "/read-value";
-        console.log("routing", props.match);
+        // console.log("routing", props.match);
         return (
-            <Route path={path} component={DisplayData} />
+            <Route path={path} component={() => <DisplayData file={file}/>} />
         )
     }
     return (

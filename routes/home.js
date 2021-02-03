@@ -1,10 +1,12 @@
 const express = require("express");
+const { readImage } = require("../controller/tesseract-ocr");
 const router = express.Router();
 
 
-router.get('/read-value', (req, res) =>{
-    // console.log("Request obj", req.body)
-    res.send("SomeRandomString")
+router.post('/api/read-value', async (req, res) =>{
+    // const data = await readImage("test")
+    console.log("Request obj", req.body)
+    res.send("data");
     res.redirect("/")
 })
 
