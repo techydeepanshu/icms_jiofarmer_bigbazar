@@ -4,10 +4,12 @@ const router = express.Router();
 
 
 router.post('/api/read-value', async (req, res) =>{
-    // const data = await readImage("test")
-    console.log("Request obj", req.body)
-    res.send("data");
-    res.redirect("/")
+    req.setTimeout(0) // no timeout
+    res.setTimeout(0)
+    console.log("Request obj", req.file.path)
+    const data = await readImage(`./${req.file.path}`);
+    res.send(data);
+    // res.redirect("/")
 })
 
 module.exports = router;
