@@ -48,17 +48,19 @@ const DisplayData = (props) => {
     "CONTINUED ON NEXT PAGE... (Total = $ 9,697.15)",
   ];
   let emptyColumnList = [];
-  const [tableData, setTableData] = useState(calculateTableFields(data))
+  const [tableData, setTableData] = useState(null)
   const [emptyColumn, setEmptyColumn] = useState([])
   const [readData, setReadData] = useState(null)
-
+  const [description, setDescription] = useState([])
   const tesseractService = new TesseractService();
+
   const renderTableHeader = () => {
     let header = [
       "Serial No.",
       "Qty Shipped",
       "ITEM NO",
       "DESCRPTION",
+      "Units(Per item)",
       "Unit Price",
       "Extended Price",
       "Mark up (%)",
@@ -68,7 +70,7 @@ const DisplayData = (props) => {
       return (
         <th key={index}>
           {key.toUpperCase()}
-          {key.includes("mark") ? (
+          {key.includes("Mark") ? (
             <input
               type="number"
               onChange={(e) => {
@@ -80,25 +82,17 @@ const DisplayData = (props) => {
       );
     });
   };
-  useEffect(async () => {
-      if (!readData) {
-          console.log("Fetching data")
-          const nodeResponse = await tesseractService.PostImage(
-            props.file
-          );
-          setReadData(nodeResponse)
-      }
-  })
+
   const renderTableData = () => {
     if (tableData) {
-        // console.log("TableData", tableData)
       let count = 0;
       let rows = tableData.map((element, index) => {
         let isEmpty =
           element[0] == "" ||
           element[1] == "" ||
           element[3] == "" ||
-          element[4] == "";
+          element[4] == "" ||
+          description[index]?.Description === undefined
         let isFree = element[0] != "" && element[4] == "0.00";
         count++;
         return (
@@ -130,7 +124,10 @@ const DisplayData = (props) => {
                 }}
               />
             </td>
-            <td>{element[2]}</td>
+            <td>
+              {description[index]?.Description}
+            </td>
+            <td>{description[index]?.Quantity}</td>
             <td>
               <input
                 value={element[3]}
@@ -181,22 +178,24 @@ const DisplayData = (props) => {
         </>
       );
     } 
-    return null;
+    return (
+      <h2>Fetching Data</h2>
+    );
   };
 
   const pushInventoryDetails = () => {
       console.log("Pushing inventory")
   }
 
-  const handleChange = (row, column, value) => {
+  const handleChange = async (row, column, value) => {
     let tempTableData = [...tableData];
     tempTableData[row][column] = value;
 
     if (
-      tempTableData[row][0] != "" &&
-      tempTableData[row][1] != "" &&
-      tempTableData[row][3] != "" &&
-      tempTableData[row][3] != ""
+      tempTableData[row][0] !== "" &&
+      tempTableData[row][1] !== "" &&
+      tempTableData[row][3] !== "" &&
+      tempTableData[row][3] !== ""
     ) {
       const index = emptyColumnList.indexOf(row);
       if (index > -1) {
@@ -211,6 +210,12 @@ const DisplayData = (props) => {
       sp = sp / tempTableData[row][7];
       tempTableData[row][6] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
+    if (column === 1 ) {
+      const item = await tesseractService.GetProductDetails(value)
+      let productDetails = [...description]
+      productDetails[row] = item
+      setDescription(productDetails)
+    }
     setTableData(tempTableData)
   };
 
@@ -221,6 +226,37 @@ const DisplayData = (props) => {
       handleChange(index, 5, value);
     }
   };
+
+  useEffect(() => {
+    const  postImage = async() => {
+        const res = await tesseractService.PostImage(props.file);
+        setTableData(calculateTableFields(res));
+    }
+
+    const getDescription = async () => {
+      console.log("Here tabledata", tableData);
+      const productDetails = await Promise.all(tableData.map(async (product) => {
+        try {
+          const item = await tesseractService.GetProductDetails(product[1])
+          // console.log("Gettting description for", product[1], item)
+          return item
+        } catch (error) {
+          console.log("error fetching descripton", error)
+          return null
+        }
+      }))
+      setDescription(productDetails);
+    }
+    if (!tableData) {
+      postImage()
+      // .then( res => getDescription())
+    } 
+    if(description.length === 0  && tableData) {
+      getDescription()
+    }
+  },[readData, description, tableData]);
+
+  console.log("Item fetched", tableData, description)
   return (
     <div>
       {renderTableData()}
