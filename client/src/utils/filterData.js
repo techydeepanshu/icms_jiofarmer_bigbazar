@@ -119,22 +119,23 @@ export const calculateTableFields = (data) => {
     unitPrice = unitPrice.join("").replaceAll(" ", "");
 
     /**extended price(5th col) */
-    let extendedPrice = [];
-    for (let i = checkedIndex; i < data.length; i++) {
-      extendedPrice.push(data[i]);
-      if (data[i] == ".") {
-        extendedPrice.push(data[i + 1]);
-        extendedPrice.push(data[i + 2]);
-        checkedIndex = i;
-        break;
-      }
-    }
-    extendedPrice = extendedPrice
-      .join("")
-      .replaceAll(" ", "")
-      .replaceAll(",", ".")
-      .replaceAll("%", "")
-      .replaceAll("..", ".");
+    // let extendedPrice = [];
+    // for (let i = checkedIndex; i < data.length; i++) {
+    //   extendedPrice.push(data[i]);
+    //   if (data[i] == ".") {
+    //     extendedPrice.push(data[i + 1]);
+    //     extendedPrice.push(data[i + 2]);
+    //     checkedIndex = i;
+    //     break;
+    //   }
+    // }
+    var extendedPrice = data.split(" ").splice(-1)[0]
+    // extendedPrice = extendedPrice
+    //   .join("")
+    //   .replaceAll(" ", "")
+    //   .replaceAll(",", ".")
+    //   .replaceAll("%", "")
+    //   .replaceAll("..", ".");
 
     if (unitPrice[unitPrice.length - 1] == ".") {
       console.log("enter if in unit price");

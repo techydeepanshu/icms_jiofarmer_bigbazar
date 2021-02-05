@@ -7,9 +7,12 @@ const jsonData = require("../model/chetak-products.json");
 router.post('/api/read-value', async (req, res) =>{
     req.setTimeout(0) // no timeout
     res.setTimeout(0)
-    // console.log("Request obj", req.file.path)
-    const data = await readImage(`./${req.file.path}`);
-    res.send(data);
+    console.log("Request obj", req.file.path)
+    readImage(`./${req.file.path}`)
+      .then(data => {
+        res.send(data);
+      })
+    console.log("Calling after sending data")
     // res.redirect("/")
 })
 
