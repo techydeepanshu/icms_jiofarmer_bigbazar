@@ -32,15 +32,15 @@ const Invoice = (props) => {
               console.log("res",res)
               // setTableData(calculateTableFields(res));
             };
-            postImage()
-              .then(data => {
+            // postImage()
+            //   .then(data => {
                 setRedirect(true)
                 props.history.push(`${props.match.url}/read-value`);
-              })
-              .catch(err => {
-                alert("Please try again.")
-                console.log("err",err)
-              })
+              // })
+              // .catch(err => {
+              //   alert("Please try again.")
+              //   console.log("err",err)
+              // })
             
         } else {
             alert("Select an image")

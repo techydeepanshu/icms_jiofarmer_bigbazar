@@ -49,7 +49,7 @@ const DisplayData = (props) => {
     "CONTINUED ON NEXT PAGE... (Total = $ 9,697.15)",
   ];
   let emptyColumnList = [];
-  const [tableData, setTableData] = useState(null)
+  const [tableData, setTableData] = useState(calculateTableFields(data))
   const [emptyColumn, setEmptyColumn] = useState([])
   const [readData, setReadData] = useState(null)
   const [description, setDescription] = useState([])
@@ -92,8 +92,8 @@ const DisplayData = (props) => {
           element[0] == "" ||
           element[1] == "" ||
           element[3] == "" ||
-          element[4] == "" ||
-          description[index]?.Description === undefined
+          element[4] == "" /* || */
+          // description[index]?.Description === undefined
         let isFree = element[0] != "" && element[4] == "0.00";
         count++;
         return (
@@ -126,9 +126,9 @@ const DisplayData = (props) => {
               />
             </td>
             <td>
-              {description[index]?.Description}
+              {description[index]?.Description ?? element[2]} 
             </td>
-            <td>{description[index]?.Quantity}</td>
+            <td>{description[index]?.Quantity ?? element[3]} </td>
             <td>
               <input
                 value={element[3]}
@@ -228,23 +228,23 @@ const DisplayData = (props) => {
     }
   };
 
-  useEffect(() => {
-    ws.onopen = () => {
-      // on connecting, do nothing but log it to the console
-      console.log("connected");
-    };
-    ws.onmessage = (evt) => {
-      // listen to data sent from the websocket server
-      if (evt.data) {
-        const message = JSON.parse(evt.data);
-        setTableData(calculateTableFields(message))
-        //  this.setState({ dataFromServer: message });
-        console.log(message);
-      } else {
-        console.log("No data received");
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   ws.onopen = () => {
+  //     // on connecting, do nothing but log it to the console
+  //     console.log("connected");
+  //   };
+  //   ws.onmessage = (evt) => {
+  //     // listen to data sent from the websocket server
+  //     if (evt.data) {
+  //       const message = JSON.parse(evt.data);
+  //       setTableData(calculateTableFields(message))
+  //       //  this.setState({ dataFromServer: message });
+  //       console.log(message);
+  //     } else {
+  //       console.log("No data received");
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     const getDescription = async () => {

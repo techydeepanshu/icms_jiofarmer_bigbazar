@@ -1,9 +1,9 @@
 export const calculateTableFields = (data) => {
   let itemArray = ["CAS", "Deep", "BAG", "PK", "TRY", "CAs"];
   let filteredData = data
-    .filter((line) => itemArray.some((item) => line.text.includes(item)))
-    .filter((line) => line.text.includes("("))
-    .map((line) => line.text.trim());
+    .filter((line) => itemArray.some((item) => line./* text. */includes(item)))
+    .filter((line) => line./* text. */includes("("))
+    .map((line) => line./* text. */trim());
 
   let regExp = /[&\/\\#,;?<>{}»«=§+$~%-'"“:]/g;
 
