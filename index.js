@@ -25,7 +25,7 @@ wss.on("connection", (ws) => {
   });
 
   //send immediatly a feedback to the incoming connection
-  ws.send(JSON.stringify("Hi there, I am a WebSocket server"));
+  // ws.send(JSON.stringify("Hi there, I am a WebSocket server"));
 });
 
 
@@ -45,9 +45,14 @@ app.post("/api/read-value", (req, res) => {
   res.send("Success");
   readImage(`./${req.file.path}`)
     .then(data => {
-      clients[0].send(
+      try {
+        clients[0].send(
         JSON.stringify(data)
       );
+      } catch (error) {
+        console.log("couldn't find any client", error)
+      }
+      
     })
   // res.redirect("/")
 });

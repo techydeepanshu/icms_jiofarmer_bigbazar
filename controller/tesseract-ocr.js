@@ -1,12 +1,12 @@
 const {createWorker} = require('tesseract.js')
 
-const worker = createWorker({
+const readImage = async (imagePath = null) => {
+    const worker = createWorker({
     langPath: '..',
     gzip:false,
     logger: m => console.log(m)
-})
+    })
 
-const readImage = async (imagePath = null) => {
     await worker.load();
     await worker.loadLanguage('courier');
     await worker.initialize('courier');

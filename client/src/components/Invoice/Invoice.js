@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Invoice.module.css'
 import { Route } from "react-router-dom";
 import DisplayData from '../DisplayData/DisplayData';
+import { TesseractService } from '../../services/TesseractService';
 
 
 const Invoice = (props) => {
@@ -36,8 +37,9 @@ const Invoice = (props) => {
     return (
       <div className={styles.main}>
         <div className={styles.Filter}>
-          <label>Select Invoice </label>
+          <label className="p-3">Select Invoice </label>
           <select
+           className="btn btn-secondary dropdown-toggle"
             value={selectedDropdown}
             onChange={handleDropdownChange}
           >
@@ -47,20 +49,7 @@ const Invoice = (props) => {
           </select>
 
         </div>
-
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-
-
+        
         <div className={styles.file_upload}>
           <div className={styles.Filter}>
             <input
