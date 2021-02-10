@@ -25,7 +25,7 @@ wss.on("connection", (ws) => {
   });
 
   //send immediatly a feedback to the incoming connection
-  ws.send(JSON.stringify("Hi there, I am a WebSocket server"));
+  // ws.send(JSON.stringify("Hi there, I am a WebSocket server"));
 });
 
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Invoice.module.css'
 import { Route } from "react-router-dom";
 import DisplayData from '../DisplayData/DisplayData';
+import { TesseractService } from '../../services/TesseractService';
 
 const Invoice = (props) => {
     const dropdownOptions = ['Chetak', 'Laxmi', 'Sea Mark']
@@ -9,6 +10,7 @@ const Invoice = (props) => {
     const [file, setFile] = useState(null)
     const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
     const [redirect, setRedirect] = useState(false)
+    const tesseractService = new TesseractService();
 
     const handleDropdownChange = (e) => {
         setSelectedDropdown(e.target.value)
@@ -25,8 +27,21 @@ const Invoice = (props) => {
     }
     const scanInvoice = () => {
         if (imagePreviewUrl) {
-            setRedirect(true)
-            props.history.push(`${props.match.url}/read-value`);
+            const postImage = async () => {
+              const res = await tesseractService.PostImage(file);
+              console.log("res",res)
+              // setTableData(calculateTableFields(res));
+            };
+            postImage()
+              .then(data => {
+                setRedirect(true)
+                props.history.push(`${props.match.url}/read-value`);
+              })
+              .catch(err => {
+                alert("Please try again.")
+                console.log("err",err)
+              })
+            
         } else {
             alert("Select an image")
         }        

@@ -5,6 +5,7 @@ import { calculateTableFields } from "../../utils/filterData";
 import styles from "./DisplayData.module.css";
 
 const DisplayData = (props) => {
+  const ws = new WebSocket("ws://localhost:5000");
   const data = [
     "2 0 * CAS TCEPZ Deep Ind EggplntNaanPiza90z (12) 23.46 0.00",
     "3 3 CAS ISMJT Deep Ind Smsa jlpnchse 36(5) 41.91 125.73",
@@ -228,11 +229,24 @@ const DisplayData = (props) => {
   };
 
   useEffect(() => {
-    const  postImage = async() => {
-        const res = await tesseractService.PostImage(props.file);
-        setTableData(calculateTableFields(res));
-    }
+    ws.onopen = () => {
+      // on connecting, do nothing but log it to the console
+      console.log("connected");
+    };
+    ws.onmessage = (evt) => {
+      // listen to data sent from the websocket server
+      if (evt.data) {
+        const message = JSON.parse(evt.data);
+        setTableData(calculateTableFields(message))
+        //  this.setState({ dataFromServer: message });
+        console.log(message);
+      } else {
+        console.log("No data received");
+      }
+    };
+  }, []);
 
+  useEffect(() => {
     const getDescription = async () => {
       console.log("Here tabledata", tableData);
       const productDetails = await Promise.all(tableData.map(async (product) => {
@@ -247,10 +261,10 @@ const DisplayData = (props) => {
       }))
       setDescription(productDetails);
     }
-    if (!tableData) {
-      postImage()
-      // .then( res => getDescription())
-    } 
+    // if (!tableData) {
+    //   postImage()
+    //   // .then( res => getDescription())
+    // } 
     if(description.length === 0  && tableData) {
       getDescription()
     }
