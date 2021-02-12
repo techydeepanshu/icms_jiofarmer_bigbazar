@@ -16,7 +16,7 @@ export class TesseractService {
     }
 
     async GetProductDetails(item) {
-        var res = await axios.get(`/api/product/`, { params: {'item':item} });
+        var res = await axios.get(`/api/product/`, { params: {'item':item.trim()} });
         return res.data.item
     }
 }
