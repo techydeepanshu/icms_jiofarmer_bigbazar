@@ -3,3 +3,6 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
+.main-container{
+height: calc(100vh - 56px);
+}

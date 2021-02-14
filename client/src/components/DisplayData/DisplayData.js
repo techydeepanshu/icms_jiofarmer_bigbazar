@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { TesseractService } from "../../services/TesseractService";
+import Button from "../../UI/Button";
 import { calculateTableFields } from "../../utils/filterData";
+
 import styles from "./DisplayData.module.css";
 
 const DisplayData = (props) => {
@@ -99,8 +101,8 @@ const DisplayData = (props) => {
         return (
           <tr
             key={index}
-            className={isEmpty ? styles.red : isFree ? styles.free : null}
-          >
+             className={isEmpty ? styles.red : isFree ? styles.free : null}
+>
             <td>{count}</td>
             <td className={isFree ? styles.element : null}>
               <input
@@ -162,21 +164,16 @@ const DisplayData = (props) => {
       });
 
       return (
-        <>
-          <table className={styles.records}>
+        <div className={styles.tablewrapper}>
+          <table className="table table-primary table-striped table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
             </tbody>
           </table>
-          <button
-            type="submit"
-            onClick={pushInventoryDetails}
-            className={styles.button}
-          >
-            Update Inventory
-          </button>
-        </>
+          <Button text="Update Inventory" color="btn btn-info"  type="submit"
+            onClick={pushInventoryDetails} />
+        </div>
       );
     } 
     return (
@@ -272,7 +269,7 @@ const DisplayData = (props) => {
 
   console.log("Item fetched", tableData, description)
   return (
-    <div>
+    <div className='container-fluid'>
       {renderTableData()}
     </div>
   );
