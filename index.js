@@ -3,6 +3,7 @@ const multer = require("multer");
 const http  = require('http')
 const WebSocketServer = require("ws").Server;
 const { readImage } = require("./controller/tesseract-ocr");
+const jsonData = require("./model/chetak-products.json");
 
 // const homeRoutes = require('./routes/home')
 
@@ -37,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(upload.single('file'));
 
 
-// app.use('/',homeRoutes)
+// 
 app.post("/api/read-value", (req, res) => {
   req.setTimeout(0); // no timeout
   res.setTimeout(0);
@@ -54,9 +55,11 @@ app.post("/api/read-value", (req, res) => {
       }
       
     })
-  // res.redirect("/")
 });
 
+app.get("/api/product", (req, res) => {
+  res.send({ item: jsonData[req.query["item"]] });
+});
 
 const PORT = process.env.PORT || 5000
 
