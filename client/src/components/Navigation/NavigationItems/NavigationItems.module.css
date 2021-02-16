@@ -6,6 +6,13 @@
     flex-flow: column;
     align-items: center;
     height: 100%;
+    
+}
+.logo{
+    background: #93c1e7 !important;
+    height: 55px;
+    margin-right: 5px;
+
 }
 
 @media (min-width: 500px) {

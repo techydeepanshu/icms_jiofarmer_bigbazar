@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { TesseractService } from "../../services/TesseractService";
+import Button from "../../UI/Button";
 import { calculateTableFields } from "../../utils/filterData";
+
 import styles from "./DisplayData.module.css";
 
 const DisplayData = (props) => {
@@ -49,7 +51,7 @@ const DisplayData = (props) => {
     "CONTINUED ON NEXT PAGE... (Total = $ 9,697.15)",
   ];
   let emptyColumnList = [];
-  const [tableData, setTableData] = useState(null)
+  const [tableData, setTableData] = useState(calculateTableFields(data))
   const [emptyColumn, setEmptyColumn] = useState([])
   const [readData, setReadData] = useState(null)
   const [description, setDescription] = useState([])
@@ -92,15 +94,15 @@ const DisplayData = (props) => {
           element[0] == "" ||
           element[1] == "" ||
           element[3] == "" ||
-          element[4] == "" ||
-          description[index]?.Description === undefined
+          element[4] == "" /* || */
+          // description[index]?.Description === undefined
         let isFree = element[0] != "" && element[4] == "0.00";
         count++;
         return (
           <tr
             key={index}
-            className={isEmpty ? styles.red : isFree ? styles.free : null}
-          >
+             className={isEmpty ? styles.red : isFree ? styles.free : null}
+>
             <td>{count}</td>
             <td className={isFree ? styles.element : null}>
               <input
@@ -126,9 +128,9 @@ const DisplayData = (props) => {
               />
             </td>
             <td>
-              {description[index]?.Description}
+              {description[index]?.Description ?? element[2]} 
             </td>
-            <td>{description[index]?.Quantity}</td>
+            <td>{description[index]?.Quantity ?? element[3]} </td>
             <td>
               <input
                 value={element[3]}
@@ -162,21 +164,16 @@ const DisplayData = (props) => {
       });
 
       return (
-        <>
-          <table className={styles.records}>
+        <div className={styles.tablewrapper}>
+          <table className="table table-primary table-striped table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
             </tbody>
           </table>
-          <button
-            type="submit"
-            onClick={pushInventoryDetails}
-            className={styles.button}
-          >
-            Update Inventory
-          </button>
-        </>
+          <Button text="Update Inventory" color="btn btn-info"  type="submit"
+            onClick={pushInventoryDetails} />
+        </div>
       );
     } 
     return (
@@ -228,23 +225,23 @@ const DisplayData = (props) => {
     }
   };
 
-  useEffect(() => {
-    ws.onopen = () => {
-      // on connecting, do nothing but log it to the console
-      console.log("connected");
-    };
-    ws.onmessage = (evt) => {
-      // listen to data sent from the websocket server
-      if (evt.data) {
-        const message = JSON.parse(evt.data);
-        setTableData(calculateTableFields(message))
-        //  this.setState({ dataFromServer: message });
-        console.log(message);
-      } else {
-        console.log("No data received");
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   ws.onopen = () => {
+  //     // on connecting, do nothing but log it to the console
+  //     console.log("connected");
+  //   };
+  //   ws.onmessage = (evt) => {
+  //     // listen to data sent from the websocket server
+  //     if (evt.data) {
+  //       const message = JSON.parse(evt.data);
+  //       setTableData(calculateTableFields(message))
+  //       //  this.setState({ dataFromServer: message });
+  //       console.log(message);
+  //     } else {
+  //       console.log("No data received");
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     const getDescription = async () => {
@@ -272,7 +269,7 @@ const DisplayData = (props) => {
 
   console.log("Item fetched", tableData, description)
   return (
-    <div>
+    <div className='container-fluid'>
       {renderTableData()}
     </div>
   );

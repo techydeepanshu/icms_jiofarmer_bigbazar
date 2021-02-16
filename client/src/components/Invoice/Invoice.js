@@ -35,28 +35,6 @@ const Invoice = (props) => {
     }
   }
   const onDrop = (acceptedFiles) => {
-    // if (Object.keys(rejected).length !== 0) {
-    //   const message = "Please submit valid file type";
-    //   this.setState({ warningMsg: message });
-    // } else {
-    //   this.props.addFile(accepted);
-    //   this.setState({ warningMsg: "" });
-    //   console.log(accepted[0].preview);
-    //   console.log(accepted)
-    //   var blobPromise = new Promise((resolve, reject) => {
-    //     const reader = new window.FileReader();
-    //     reader.readAsDataURL(accepted[0]);
-    //     reader.onloadend = () => {
-    //       const base64data = reader.result;
-    //       resolve(base64data);
-    //     };
-    //   });
-    //   blobPromise.then(value => {
-    //     console.log(value);
-    //   });
-    // }
-    console.log(acceptedFiles);
-    console.log(acceptedFiles[0].preview)
     const reader = new window.FileReader();
     reader.readAsDataURL(acceptedFiles[0]);
     reader.onloadend = () => {
@@ -68,10 +46,10 @@ const Invoice = (props) => {
   const displaySelectFile = () => {
     return (
       <div className={styles.main}>
-        <div className={styles.Filter}>
-          <label className="p-3">Select Invoice </label>
+        <div className="">
+          <label className="">Select Invoice </label>
           <select
-            className="btn btn-secondary dropdown-toggle"
+           className={styles.Dropdown}
             value={selectedDropdown}
             onChange={handleDropdownChange}
           >
@@ -161,3 +139,4 @@ const Invoice = (props) => {
 }
 
 export default Invoice
+
