@@ -55,7 +55,7 @@
  /* backgroud page design */
 .background {
 
-    background: url("C:\Users\RAHUL\Desktop\inventory-management\client\src\Images\Capture1.png");
+    background: url("../Images/Capture1.png");
     background-size: cover;
     /* padding-bottom: 30px; */
     background-position: center;

@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: space-around;
      position: absolute; 
-    background: url("C:\Users\RAHUL\Desktop\inventory-management\client\src\Images\Capture1.png");
+    background: url("../../Images/Capture1.png");
     background-size: cover;
     /* padding-bottom: 30px; */
     background-position: center;

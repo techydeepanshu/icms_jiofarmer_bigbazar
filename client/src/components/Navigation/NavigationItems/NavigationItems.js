@@ -12,17 +12,8 @@ const NavigationItems = (props) => {
     }, [user])
     return (
         <ul className={styles.NavigationItems}>
-            {/* <NavigationItem link='' exact> */}
-                <img className={styles.logo}  src={CwIcon} alt=""/>
-            {/* </NavigationItem> */}
-            {/* <NavigationItem link='/' exact>
-                Home
-            </NavigationItem> */}
-            {/* {props.isAuth ?
-                <NavigationItem link="/invoice">
-                    Scan Invoice
-                </NavigationItem>
-                : null} */}
+            <img className={styles.logo}  src={CwIcon} alt=""/>
+            {props.isAuth ? <NavigationItem link="/invoice">Scan Invoice</NavigationItem> : <NavigationItem link='/' exact>Home</NavigationItem>}
         </ul>
     )
 };
