@@ -131,3 +131,11 @@
 /* .input {
     width: 30%;
 } */
+
+.tablewrapper{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 15px;
+    
+}
