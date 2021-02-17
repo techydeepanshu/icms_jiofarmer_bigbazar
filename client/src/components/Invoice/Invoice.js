@@ -3,6 +3,8 @@ import styles from './Invoice.module.css'
 import { Route } from "react-router-dom";
 import DisplayData from '../DisplayData/DisplayData';
 import { TesseractService } from '../../services/TesseractService';
+import Dropzone from "react-dropzone";
+
 
 const Invoice = (props) => {
   const dropdownOptions = ['Chetak', 'Laxmi', 'Sea Mark']
@@ -32,11 +34,20 @@ const Invoice = (props) => {
       alert("Select an image")
     }
   }
+  const onDrop = (acceptedFiles) => {
+    const reader = new window.FileReader();
+    reader.readAsDataURL(acceptedFiles[0]);
+    reader.onloadend = () => {
+      const base64data = reader.result;
+      // console.log(base64data);
+      setImagePreviewUrl(base64data)
+    }
+  };
   const displaySelectFile = () => {
     return (
       <div className={styles.main}>
-        <div className={styles.Filter}>
-          <label className="p-3">Select Invoice </label>
+        <div className="">
+          <label className="">Select Invoice </label>
           <select
            className={styles.Dropdown}
             value={selectedDropdown}
@@ -48,7 +59,6 @@ const Invoice = (props) => {
           </select>
 
         </div>
-        
         <div className={styles.file_upload}>
           <div className={styles.Filter}>
             <input
@@ -60,44 +70,33 @@ const Invoice = (props) => {
               onChange={(e) => handleFileChange(e)}
             />
           </div>
-
-          <div className={styles.image_upload_wrap}>
-            <div className={styles.drag_text}>
-              {imagePreviewUrl ? (
-                <img
-                  src={imagePreviewUrl}
-                  className={styles.file_upload_image}
-                  // className="file-upload-image"
-                  alt="invoice"
-                />
-              ) : <h3>Drag and drop a file or select add Image</h3>}
-
-            </div>
-          </div>
         </div>
+        <Dropzone onDrop={acceptedFiles => onDrop(acceptedFiles)}>
+          {({ getRootProps, getInputProps }) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <div className={styles.image_upload_wrap}>
+                  <div className={styles.drag_text}>
+                    {imagePreviewUrl ? (
+                      <img
+                        src={imagePreviewUrl}
+                        className={styles.file_upload_image}
+                        //  className="file-upload-image"
+                        alt="invoice"
+                      />
+                    ) : <h3>Drag and drop a file or select add Image</h3>}
+                    <div className="content">
+                    </div>
 
+                  </div>
+                </div>
+              </div>
 
-        {/* <div className={styles.Filter}>
-          <label>Select Image </label>
-          <input
-            type="file"
-            accept="image/*"
-            name="image"
-            id="file"
-            onChange={(e) => handleFileChange(e)}
-          />
-        </div> */}
-        {/* {imagePreviewUrl ? (
-          <img
-            src={imagePreviewUrl}
-            className={styles.image}
-            alt="invoice"
-          />
-        ) : null} */} 
-        {/* <button onClick={scanInvoice} className={styles.button}>
-          Scan Invoice
-          </button> */}
-        <button type="button" onClick={scanInvoice} className={styles.button_scan}>  Scan Invoice</button>
+            </section>
+          )}
+        </Dropzone>
+        <button type="button" onClick={scanInvoice} className={styles.button}>  Scan Invoice</button>
       </div>
     );
   };
