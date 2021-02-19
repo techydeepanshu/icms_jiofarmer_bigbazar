@@ -1,0 +1,67 @@
+
+.custom-card{
+    width: 100%;
+    height: 435px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    -moz-box-shadow: 0 0 12px #ccc;
+    -webkit-box-shadow: 0 0 12px #ccc;
+    box-shadow: 0 0 12px #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 25px;
+}
+.company-title{
+    color: black;
+    font-size: 50px;
+    font-weight: 600;
+}
+.text {
+    margin: 20px;
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -.2px;
+    font-family: sohne-var,sohne-woff,Helvetica Neue,Arial,sans-serif;
+
+}
+.box{
+    margin-top: 30px;
+    padding: 2px;
+    cursor: pointer;
+    margin-right: 10px;
+    
+
+}
+.button{
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+    background-color:#4296d9;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    
+}
+.image_1{
+    height: 80px;
+    width: 100%;
+}
+
+.margin_top{
+    margin-top: 50px;
+}
+
+ /* backgroud page design */
+.background {
+
+    background: url("../Images/Capture1.png");
+    background-size: cover;
+    /* padding-bottom: 30px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 72px)
+    
+
+}
