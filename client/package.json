@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.3",
     "axios": "^0.21.1",
+    "firebase": "^8.2.6",
     "bootstrap": "^4.6.0",
     "dropzone": "^5.7.6",
     "http-proxy-middleware": "^1.0.6",
