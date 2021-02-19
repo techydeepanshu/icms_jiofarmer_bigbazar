@@ -13,7 +13,7 @@ const NavigationItems = (props) => {
     return (
         <ul className={styles.NavigationItems}>
             <img className={styles.logo}  src={CwIcon} alt=""/>
-            {props.isAuth ? <NavigationItem link="/invoice">Scan Invoice</NavigationItem> : <NavigationItem link='/' exact>Home</NavigationItem>}
+            {props.isAuth ? <NavigationItem link = "/logout">Logout</NavigationItem> :null}
         </ul>
     )
 };

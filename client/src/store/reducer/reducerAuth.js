@@ -1,24 +1,38 @@
-import * as actionTypes from '../action/actionAuth'
+import * as actionTypes from "../action/actionAuth";
 
 const initialState = {
-    // token: null,
-    userId: "null",
-    // error: null,
-    // loading: false
+    token: null,
+    userId: null,
+    error: null,
+    loading: false
 }
 
 const reducerAuth = (state = initialState, action) => {
-    console.log("user id", action.userDetails)
     switch (action.type) {
-        case actionTypes.AUTH:
+        case actionTypes.AUTH_SUCCESS:
             return {
                 ...state,
-                userId: "action.userDetails"
+                token: action.token,
+                userId: action.userId,
+                loading: false
             }
-        case actionTypes.FETCH_USER:
+        case actionTypes.AUTH_FAIL:
             return {
                 ...state,
-                userId: "action.userDetails"
+                error: action.error,
+                loading: false
+            }
+        case actionTypes.AUTH_START:
+            return {
+                ...state,
+                loading: true
+            }
+        case actionTypes.AUTH_LOGOUT:
+            return {
+                token: null,
+                userId: null,
+                error: null,
+                loading: false
             }
         default:
             return state

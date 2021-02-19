@@ -1,42 +1,59 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from "react";
 import Layout from './components/Layout/Layout';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import Invoice from './components/Invoice/Invoice';
-// import Home from './components/Home/Home';
-import LoginPage from './UI/LoginPage';
 import { connect } from 'react-redux';
-import { fetchUser } from './store/action/actionAuth';
+import Spinner from "./UI/Spinner/Spinner";
+import { checkAuthentication } from "./store/action/actionAuth";
+
+const Auth = React.lazy(() => import("./containers/Auth/Auth"));
+const Logout = React.lazy(() => import("./containers/Auth/Logout/Logout"));
+const Invoice = React.lazy(() => import("./components/Invoice/Invoice"))
 
 class App extends Component {
-
-  
-  
   componentDidMount() {
-    // this.props.fetchUser()
-    
+    this.props.checkAuthentication();
   }
-    render() {
-      return (
-        <BrowserRouter>
-          <Layout>
-            <Switch>
-              <Route path="/invoice" component={Invoice} />
-              <Route path="/" exact component={LoginPage} />
-              <Redirect to="/" />        
-            </Switch>
-          </Layout>
-        </BrowserRouter>
+  render() {
+    let routes = (
+      <Switch>
+        <Route path="/" exact component={Auth} />
+        <Redirect to="/" />
+      </Switch>
+    );
+    if (this.props.isAuthenticated) {
+      routes = (
+        <Switch>
+          <Route path="/invoice" component={Invoice} />
+          {/* <Route path="/auth" component={Auth} /> */}
+          {/* <Route path="/orders" component={Orders} /> */}
+          <Route path="/logout" component={Logout} />
+          <Redirect to="/invoice" />
+        </Switch>
       );
     }
-}
-// const mapStateToProps = state => {
-//   return {
-
-//   }
-// }
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchUser: () => dispatch(fetchUser())
+    return (
+      <Suspense fallback = {<Spinner />}>
+        <BrowserRouter>
+            <div>
+            <Layout>
+              {routes}
+            </Layout>
+            </div>
+        </BrowserRouter>  
+      </Suspense>
+    )
   }
 }
-export default connect(null, mapDispatchToProps)(App);
+
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !== null
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+       checkAuthentication: () => dispatch(checkAuthentication())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
