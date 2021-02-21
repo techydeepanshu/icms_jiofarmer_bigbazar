@@ -130,7 +130,7 @@
 }
 /* .input {
     width: 30%;
-} */
+ } */
 
 .tablewrapper{
     width: 100%;
@@ -138,4 +138,8 @@
     overflow-x: auto;
     padding: 15px;
     
+}
+
+.inputWidth{
+    width: 80px !important;
 }

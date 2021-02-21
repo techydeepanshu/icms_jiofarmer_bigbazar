@@ -75,6 +75,7 @@ const DisplayData = (props) => {
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <input
+            className={styles.inputWidth}
               type="number"
               onChange={(e) => {
                 setMarkup(e.target.value);
@@ -106,6 +107,7 @@ const DisplayData = (props) => {
             <td>{count}</td>
             <td className={isFree ? styles.element : null}>
               <input
+              className={styles.inputWidth}
                 value={element[0]}
                 type="number"
                 onChange={(e) => {
@@ -120,6 +122,7 @@ const DisplayData = (props) => {
             </td>
             <td>
               <input
+             className={styles.inputWidth}
                 value={element[1]}
                 type="text"
                 onChange={(e) => {
@@ -133,6 +136,7 @@ const DisplayData = (props) => {
             <td>{description[index]?.Quantity ?? element[3]} </td>
             <td>
               <input
+              className={styles.inputWidth}
                 value={element[3]}
                 type="number"
                 onChange={(e) => {
@@ -142,6 +146,7 @@ const DisplayData = (props) => {
             </td>
             <td>
               <input
+              className={styles.inputWidth}
                 value={element[4]}
                 type="number"
                 onChange={(e) => {
@@ -151,6 +156,7 @@ const DisplayData = (props) => {
             </td>
             <td>
               <input
+              className={styles.inputWidth}
                 value={element[5]}
                 type="number"
                 onChange={(e) => {
@@ -165,7 +171,7 @@ const DisplayData = (props) => {
 
       return (
         <div className={styles.tablewrapper}>
-          <table className="table table-primary table-striped table-responsive-sm">
+          <table className="table table-hover  table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
