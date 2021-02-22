@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { TesseractService } from "../../services/TesseractService";
 import Button from "../../UI/Button";
 import { calculateTableFields } from "../../utils/filterData";
+import UpdateInventory from "../Update/UpdateInventory";
 
 import styles from "./DisplayData.module.css";
 
 const DisplayData = (props) => {
-  const ws = new WebSocket("ws://localhost:5000");
   const data = [
     "2 0 * CAS TCEPZ Deep Ind EggplntNaanPiza90z (12) 23.46 0.00",
     "3 3 CAS ISMJT Deep Ind Smsa jlpnchse 36(5) 41.91 125.73",
@@ -51,24 +51,25 @@ const DisplayData = (props) => {
     "CONTINUED ON NEXT PAGE... (Total = $ 9,697.15)",
   ];
   let emptyColumnList = [];
-  const [tableData, setTableData] = useState(calculateTableFields(data))
-  const [emptyColumn, setEmptyColumn] = useState([])
-  const [readData, setReadData] = useState(null)
-  const [description, setDescription] = useState([])
+  const [tableData, setTableData] = useState(calculateTableFields(data));
+  const [emptyColumn, setEmptyColumn] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [pushToInventory, setPushToInventory] = useState(false);
+  const [inventoryData, setInventoryData] = useState([])
   const tesseractService = new TesseractService();
+  const header = [
+        "Serial No.",
+        "Qty Shipped",
+        "ITEM NO",
+        "DESCRPTION",
+        "Units(Per item)",
+        "Unit Price",
+        "Extended Price",
+        "Mark up (%)",
+        "Selling Price",
+  ];
 
   const renderTableHeader = () => {
-    let header = [
-      "Serial No.",
-      "Qty Shipped",
-      "ITEM NO",
-      "DESCRPTION",
-      "Units(Per item)",
-      "Unit Price",
-      "Extended Price",
-      "Mark up (%)",
-      "Selling Price",
-    ];
     return header.map((key, index) => {
       return (
         <th key={index}>
@@ -91,18 +92,31 @@ const DisplayData = (props) => {
       let count = 0;
       let rows = tableData.map((element, index) => {
         let isEmpty =
-          element[0] == "" ||
-          element[1] == "" ||
-          element[3] == "" ||
-          element[4] == "" /* || */
-          // description[index]?.Description === undefined
+          element[0] === "" ||
+          element[1] === "" ||
+          description[index] === undefined ||
+          isNaN(element[3]) ||
+          isNaN(element[4]);
+        if (isEmpty) {
+          let emptyColumn = [...emptyColumnList, index];
+          emptyColumnList = [...new Set(emptyColumn)];
+        }
+        if (!isNaN(element[3])) {
+          let cp = parseFloat(element[3]);
+          let markup = parseFloat(element[5]);
+          let sp = cp + (cp * markup) / 100;
+          sp = sp / description[index]?.Quantity;
+          element[6] = isNaN(sp)
+            ? (element[3] / description[index]?.Quantity).toFixed(2)
+            : sp.toFixed(2);
+        }
         let isFree = element[0] != "" && element[4] == "0.00";
         count++;
         return (
           <tr
             key={index}
-             className={isEmpty ? styles.red : isFree ? styles.free : null}
->
+            className={isEmpty ? styles.red : isFree ? styles.free : null}
+          >
             <td>{count}</td>
             <td className={isFree ? styles.element : null}>
               <input
@@ -127,10 +141,8 @@ const DisplayData = (props) => {
                 }}
               />
             </td>
-            <td>
-              {description[index]?.Description ?? element[2]} 
-            </td>
-            <td>{description[index]?.Quantity ?? element[3]} </td>
+            <td>{description[index]?.Description}</td>
+            <td>{description[index]?.Quantity} </td>
             <td>
               <input
                 value={element[3]}
@@ -158,48 +170,75 @@ const DisplayData = (props) => {
                 }}
               />
             </td>
-            <td>{element[6]}</td>
+            <td>
+              {element[6]}
+            </td>
           </tr>
         );
       });
 
       return (
         <div className={styles.tablewrapper}>
-          <table className="table table-primary table-striped table-responsive-sm">
+          <table className="table table-hover table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
             </tbody>
           </table>
-          <Button text="Update Inventory" color="btn btn-info"  type="submit"
-            onClick={pushInventoryDetails} />
+          <Button
+            text="Update Inventory"
+            color="btn btn-info"
+            type="submit"
+            onClick={pushInventoryDetails}
+          />
         </div>
       );
-    } 
-    return (
-      <h2>Fetching Data</h2>
-    );
+    }
+    return <h2>Fetching Data</h2>;
   };
 
   const pushInventoryDetails = () => {
-      console.log("Pushing inventory")
-  }
+    console.log("Pushing inventory");
+    if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
+      console.log("TableData", tableData)
+      let tempTable = []
+      tableData.forEach((element, index) => {
+        let rowData = []
+        rowData.push(index + 1)
+        rowData.push(element[0])
+        rowData.push(element[1])
+        rowData.push(description[index]?.Description)
+        rowData.push(description[index]?.Quantity);
+        rowData.push(element[3])
+        rowData.push(element[4])
+        rowData.push(element[5])
+        rowData.push(element[6])
+        tempTable.push(rowData)
+      });
+      console.log("TempTable", tempTable)
+      setInventoryData(tempTable)
+      setPushToInventory(true);
+    } else {
+      alert("Please fill all the values");
+    }
+  };
 
   const handleChange = async (row, column, value) => {
     let tempTableData = [...tableData];
     tempTableData[row][column] = value;
-
+    // console.log("Empty col list", emptyColumnList, emptyColumn);
     if (
       tempTableData[row][0] !== "" &&
       tempTableData[row][1] !== "" &&
-      tempTableData[row][3] !== "" &&
-      tempTableData[row][3] !== ""
+      tempTableData[row][2] !== "" &&
+      tempTableData[row][4] !== "" &&
+      tempTableData[row][5] !== ""
     ) {
       const index = emptyColumnList.indexOf(row);
       if (index > -1) {
         emptyColumnList.splice(index, 1);
       }
-      setEmptyColumn(emptyColumnList)
+      setEmptyColumn(emptyColumnList);
     }
     if (column === 5 || column === 3) {
       let cp = parseFloat(tempTableData[row][3]);
@@ -208,13 +247,21 @@ const DisplayData = (props) => {
       sp = sp / tempTableData[row][7];
       tempTableData[row][6] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
-    if (column === 1 ) {
-      const item = await tesseractService.GetProductDetails(value)
-      let productDetails = [...description]
-      productDetails[row] = item
-      setDescription(productDetails)
+    if (column === 1) {
+      const item = await tesseractService.GetProductDetails(value);
+      let productDetails = [...description];
+      productDetails[row] = item;
+      setDescription(productDetails);
     }
-    setTableData(tempTableData)
+    if (column === 3 || column === 0) {
+      const extendedPrice =
+        parseFloat(tempTableData[row][3]) * parseFloat(tempTableData[row][0]);
+      console.log("enter if", tempTableData[row][3], value, extendedPrice);
+      if (!isNaN(extendedPrice)) {
+        tempTableData[row][4] = extendedPrice.toFixed(2);
+      }
+    }
+    setTableData(tempTableData);
   };
 
   const setMarkup = (value) => {
@@ -225,7 +272,7 @@ const DisplayData = (props) => {
     }
   };
 
-  useEffect( async () => {
+  useEffect(async () => {
     // ws.onopen = () => {
     //   // on connecting, do nothing but log it to the console
     //   console.log("connected");
@@ -241,38 +288,40 @@ const DisplayData = (props) => {
     //     console.log("No data received");
     //   }
     // };
-    const ocrData = await tesseractService.GetOCRData(props.filename)
-    console.log('ocr recieved data', ocrData)
+    const ocrData = await tesseractService.GetOCRData(props.filename);
+    console.log("ocr recieved data", ocrData);
   }, []);
 
   useEffect(() => {
     const getDescription = async () => {
       // console.log("Here tabledata", tableData);
-      const productDetails = await Promise.all(tableData.map(async (product) => {
-        try {
-          const item = await tesseractService.GetProductDetails(product[1])
-          // console.log("Gettting description for", product[1], item)
-          return item
-        } catch (error) {
-          console.log("error fetching descripton", error)
-          return null
-        }
-      }))
+      const productDetails = await Promise.all(
+        tableData.map(async (product) => {
+          try {
+            const item = await tesseractService.GetProductDetails(product[1]);
+            // console.log("Gettting description for", product[1], item)
+            return item;
+          } catch (error) {
+            console.log("error fetching descripton", error);
+            return null;
+          }
+        })
+      );
       setDescription(productDetails);
+    };
+    if (description.length === 0 && tableData) {
+      getDescription();
     }
-    // if (!tableData) {
-    //   postImage()
-    //   // .then( res => getDescription())
-    // } 
-    if(description.length === 0  && tableData) {
-      getDescription()
-    }
-  },[readData, description, tableData]);
+  }, [description, tableData]);
 
   // console.log("Item fetched", tableData, description)
   return (
-    <div className='container-fluid'>
-      {renderTableData()}
+    <div className="container-fluid">
+      {pushToInventory ? (
+        <UpdateInventory newInventoryData={inventoryData} header={header}/>
+      ) : (
+        renderTableData()
+      )}
     </div>
   );
 };
@@ -284,8 +333,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(DisplayData);
-
-
 
 /**
 1: {1: "ORDER DT ", 2: "CUST ", 3: "NO. ", 4: "P.O. NO. ", 5: "SHIP VIA ", 6: "DATE SHIPPED ", 7: "TERMS "}

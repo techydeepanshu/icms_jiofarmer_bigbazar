@@ -157,19 +157,18 @@ export const calculateTableFields = (data) => {
     }
     if (isNaN(unitPrice)) {
       unitPrice = (parseFloat(extendedPrice)/parseInt(qty)).toFixed(2)
-    } else if (isNaN(extendedPrice)) {
+    } 
+    else if (isNaN(extendedPrice)) {
       extendedPrice = (parseFloat(unitPrice) * parseInt(qty)).toFixed(2)
     }
     
     return [
       qty,
       itemNo,
-      description,
+      "",
       unitPrice,
       extendedPrice,
       0,
-      (unitPrice / pieces).toFixed(2),
-      pieces,
     ];
   });
   return tableData.filter((data) => data !== null);

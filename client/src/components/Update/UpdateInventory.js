@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import firebase from "../../firebase";
+import Button from '../../UI/Button';
 
-const UpdateInventory = ({newInventoryData}) => {
-    console.log('calling preview')
+const UpdateInventory = ({newInventoryData, header}) => {
     const [inventory, setInventory] = useState([])
-
+    
+    
     const getInventoryData = () => {
         const ref = firebase.database().ref("/inventory");
         ref.on("value", (snapshot) => {
@@ -15,12 +16,54 @@ const UpdateInventory = ({newInventoryData}) => {
             }
         });
     }
-
+    const renderTableHeader = () => {
+      return header.map((key, index) => {
+        return (
+          <th key={index}>
+            {key.toUpperCase()}
+          </th>
+        );
+      });
+    };
+    const renderTableData = () => {
+        let rows = newInventoryData.map((element, index) => {
+          return (
+            <tr key={index}>
+              <td>{element[0]}</td>
+              <td>{element[1]}</td>
+              <td>{element[2]}</td>
+              <td>{element[3]}</td>
+              <td>{element[4]}</td>
+              <td>{element[5]}</td>
+              <td>{element[6]}</td>
+              <td>{element[7]}</td>
+              <td>{element[8]}</td>
+            </tr>
+          );
+        });
+        return (
+          <div >
+            <table className="table table-hover table-responsive-sm">
+              <tbody>
+                <tr>{renderTableHeader()}</tr>
+                {rows}
+              </tbody>
+            </table>
+            <Button
+              text="Confirm Submit"
+              color="btn btn-info"
+              type="submit"
+              onClick={pushInventoryDetails}
+            />
+          </div>
+        );
+    };
+    /**Incomplete push inventory function*/
     const pushInventoryDetails = async () => {
 
         let data = newInventoryData.map((element) => {
           return {
-            item: element[1],
+            item: element[2],
             qty: parseInt(element[0]),
             cp: element[3],
             markup: element[5],
@@ -91,10 +134,10 @@ const UpdateInventory = ({newInventoryData}) => {
         getInventoryData()
     }, [])
     return (
-        <div>
-            <h1>ji</h1>
-        </div>
-    )
+      <div>
+        {renderTableData()}
+      </div>
+    );
 }
 
 export default UpdateInventory
