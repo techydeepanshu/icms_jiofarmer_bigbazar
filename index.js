@@ -1,9 +1,15 @@
 const express = require('express')
 const multer = require("multer");
 const http  = require('http')
+const textractHelper = require("aws-textract-helper");
+const request = require("request");
+
+var storage = multer.memoryStorage();
+var upload = multer({ storage: storage });
 const WebSocketServer = require("ws").Server;
 const { readImage } = require("./controller/tesseract-ocr");
 const jsonData = require("./model/chetak-products.json");
+require("dotenv").config({ path: __dirname + "/.env" });
 
 // const homeRoutes = require('./routes/home')
 
@@ -15,7 +21,7 @@ const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 const clients = []
 
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
 wss.on("connection", (ws) => {
     clients.push(ws)
   //connection is up, let's add a simple simple event
@@ -40,25 +46,63 @@ app.use(upload.single('file'));
 
 // 
 app.post("/api/read-value", (req, res) => {
-  req.setTimeout(0); // no timeout
-  res.setTimeout(0);
-  console.log("Request obj", req.file.path);
-  res.send("Success");
-  readImage(`./${req.file.path}`)
-    .then(data => {
-      try {
-        clients[0].send(
-        JSON.stringify(data)
-      );
-      } catch (error) {
-        console.log("couldn't find any client", error)
-      }
-      
-    })
+  
+  let uid = req.headers["user-key"];
+  let ext = 'jpg'
+  let base64 = req.file.buffer.toString("base64");
+  let imageId = uid + Date.now().toString()
+  let options = {
+    method: "POST",
+    url: process.env.url + "/upload",
+    headers: { "x-api-key": process.env.API_SECRET },
+    body: { img: base64, fileExt: ext, imageID: imageId },
+    json: true,
+  };
+  function callback(error, response, body) {
+    if (error === null) {
+      console.log('body from req', body.body)
+      const result = {message: body.body, filename: imageId + '.' + ext}
+      res.send(result)
+    }
+    else {
+      res.json({ statusCode: 404 })
+      console.log('error upload', error)
+    };
+  }
+  request(options, callback);
 });
 
 app.get("/api/product", (req, res) => {
   res.send({ item: jsonData[req.query["item"]] });
+});
+
+app.post("/api/login", (req, res) => {
+  console.log("headers",req.headers)
+  res.send('success')
+});
+
+app.post("/api/ocr", function (req, res) {
+  const filename = req.body.data["filename"]
+  console.log('Calling ocr', filename)
+  res.send("ocr ")
+  let options = {
+    method: "POST",
+    url: process.env.url + "/ocr",
+    headers: { "x-api-key": process.env.API_SECRET },
+    body: filename,
+    json: true,
+  };
+  function callback(error, response, body) {
+    if (error !== null) res.json({ statusCode: 404 });
+    let dataFromTextract = body.body;
+    console.log('Data texttract', dataFromTextract)
+    const tables = textractHelper.createTables(dataFromTextract);
+    console.log()
+    let obj = { statusCode: 200, body: tables };
+    console.log('OBJ', obj)
+    res.json(obj);
+  }
+  // request(options, callback);
 });
 
 const PORT = process.env.PORT || 5000

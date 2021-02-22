@@ -1,9 +1,9 @@
-const { default: axios } = require("axios");
+import Axios from "./axios"
 
 export class LoginService  {
 
-    async authenticate(username, password) {
-        var res = await axios.post('/api/login', {username,password})
+    async authenticate(userId) {
+        var res = await Axios.post('/api/login', {data:userId})
         return res.data
     }
 }

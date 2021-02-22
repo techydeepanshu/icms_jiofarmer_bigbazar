@@ -1,5 +1,6 @@
-import axios from "axios"
+import axios from 'axios'
 import firebase from "../../firebase"
+import { LoginService } from "../../services/LoginService"
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS'
 export const AUTH_FAIL = 'AUTH_FAIL'
@@ -47,18 +48,19 @@ export const auth = (email, password ) => {
             password: password,
             returnSecureToken: true
         }
+        const loginService = new LoginService();
 
         // const url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmK-zcj0LVrrQKbAfflUa-Hi_kRT4-ZWM";
         dispatch(authStart())
         // axios.post(url, authData)
         // .then(response => {
         //     console.log(response.data)
-        //     const expirationDate = new Date(new Date().getTime + 3600 * 1000)
-        //     localStorage.setItem('token', response.data.idToken)
-        //     localStorage.setItem('expirationDate', expirationDate)
-        //     localStorage.setItem('userId', response.data.localId)
-        //     dispatch(authSuccess(response.data.idToken, response.data.localId))
-        //     dispatch(logout(response.data.expiresIn))
+            // const expirationDate = new Date(new Date().getTime + 3600 * 1000)
+            // localStorage.setItem('token', response.data.idToken)
+            // localStorage.setItem('expirationDate', expirationDate)
+            // localStorage.setItem('userId', response.data.localId)
+            // dispatch(authSuccess(response.data.idToken, response.data.localId))
+            // dispatch(logout(response.data.expiresIn))
         // })
         // .catch(err => {
         //     console.log(err.response.data.error.message)
@@ -66,16 +68,18 @@ export const auth = (email, password ) => {
         // })
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((response) => {
-              const token = response["user"]["za"];
-              const uid = response["user"]["uid"];
-              console.log(response);
-              // console.log(response.data);
-              const expirationDate = new Date(new Date().getTime + 3600 * 1000);
-              localStorage.setItem("token", token);
-              localStorage.setItem("expirationDate", expirationDate);
-              localStorage.setItem("userId", uid);
-              dispatch(authSuccess(token, uid));
-              dispatch(logout(3600));
+                const token = response["user"]["za"];
+                const uid = response["user"]["uid"];
+                console.log(response);
+                const expirationDate = new Date(new Date().getTime + 3600 * 1000);
+                localStorage.setItem("token", token);
+                localStorage.setItem("expirationDate", expirationDate);
+                localStorage.setItem("userId", uid);
+                dispatch(authSuccess(token, uid));
+                dispatch(logout(3600));
+                loginService.authenticate(uid)
+                    .then(res => console.log('auth from server',res))
+                    .catch(err => console.log('err on auth', err))
             })
             .catch((err) => {
                 console.log('err during login',err.message);

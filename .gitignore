@@ -2,3 +2,4 @@ node_modules
 /uploads
 b/a.txt
 b/serverside/.env
+.env

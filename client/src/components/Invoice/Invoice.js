@@ -12,6 +12,8 @@ const Invoice = (props) => {
   const [file, setFile] = useState(null)
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
   const [redirect, setRedirect] = useState(false)
+  const [filename, setFilename] = useState(null)
+  const tesseractService = new TesseractService();
 
   const handleDropdownChange = (e) => {
     setSelectedDropdown(e.target.value)
@@ -28,12 +30,24 @@ const Invoice = (props) => {
   }
   const scanInvoice = () => {
     if (imagePreviewUrl) {
-      setRedirect(true)
-      props.history.push(`${props.match.url}/read-value`);
+      const postImage = async () => {
+        const res = await tesseractService.PostImage(file);
+        setFilename(res.filename)
+        console.log("file and response on upload mage", res, file);
+      };
+      postImage()
+        .then((data) => {
+          setRedirect(true);
+          props.history.push(`${props.match.url}/read-value`);
+        })
+        .catch((err) => {
+          alert("Please try again.");
+          console.log("err", err);
+        });
     } else {
-      alert("Select an image")
+      alert("Select an image");
     }
-  }
+  };
   const onDrop = (acceptedFiles) => {
     const reader = new window.FileReader();
     reader.readAsDataURL(acceptedFiles[0]);
@@ -104,7 +118,7 @@ const Invoice = (props) => {
     let path = props.match.path + "/read-value";
     // console.log("routing", props.match);
     return (
-      <Route path={path} component={() => <DisplayData file={file} />} />
+      <Route path={path} component={() => <DisplayData filename={filename} />} />
     )
   }
   return (
