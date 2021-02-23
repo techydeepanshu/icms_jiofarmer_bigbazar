@@ -7,15 +7,23 @@ import Dropzone from "react-dropzone";
 
 
 const Invoice = (props) => {
-  const dropdownOptions = ['Chetak', 'Laxmi', 'Sea Mark']
-  const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0])
+  const dropdownOptions = [
+    { value: "Chetak", slug: "chetak" },
+    { value: "Laxmi", slug: "laxmi" },
+    { value: "Sea Mark", slug: "sea-mark" },
+    { value: "Vijay", slug: "vijay" },
+    { value: "Krishna Foods", slug: "krishna-foods" },
+    { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
+  ];
+  const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0].slug)
   const [file, setFile] = useState(null)
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
   const [redirect, setRedirect] = useState(false)
   const [filename, setFilename] = useState(null)
   const tesseractService = new TesseractService();
-
+  const path = props.match.url + `/${selectedDropdown}`
   const handleDropdownChange = (e) => {
+    console.log("Handle dropdown change", e.target.value)
     setSelectedDropdown(e.target.value)
   }
   const handleFileChange = e => {
@@ -38,7 +46,7 @@ const Invoice = (props) => {
       // postImage()
       //   .then((data) => {
           setRedirect(true);
-          props.history.push(`${props.match.url}/read-value`);
+          props.history.push(path);
         // })
         // .catch((err) => {
         //   alert("Please try again.");
@@ -64,11 +72,11 @@ const Invoice = (props) => {
           <label className="">Select Invoice </label>
           <select
            className={styles.Dropdown}
-            value={selectedDropdown}
+            value={selectedDropdown.value}
             onChange={handleDropdownChange}
           >
             {dropdownOptions.map((opt) => {
-              return <option key={opt}>{opt}</option>;
+              return <option key={opt.slug} value={opt.slug}>{opt.value}</option>;
             })}
           </select>
 
@@ -115,7 +123,7 @@ const Invoice = (props) => {
     );
   };
   if (redirect) {
-    let path = props.match.path + "/read-value";
+    // let path = props.match.path + "/read-value";
     // console.log("routing", props.match);
     return (
       <Route path={path} component={() => <DisplayData filename={filename} />} />
