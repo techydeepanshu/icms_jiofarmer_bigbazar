@@ -4,7 +4,7 @@ export class TesseractService {
     async PostImage(image) {
         const data = new FormData();
         data.append("file", image);
-        var res = await Axios.post(`/api/read-value`, data);
+        var res = await Axios.post(`/api/upload-image`, data);
         return res.data
     }
 

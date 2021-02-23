@@ -45,7 +45,7 @@ app.use(upload.single('file'));
 
 
 // 
-app.post("/api/read-value", (req, res) => {
+app.post("/api/upload-image", (req, res) => {
   
   let uid = req.headers["user-key"];
   let ext = 'jpg'
@@ -58,6 +58,7 @@ app.post("/api/read-value", (req, res) => {
     body: { img: base64, fileExt: ext, imageID: imageId },
     json: true,
   };
+  
   function callback(error, response, body) {
     if (error === null) {
       console.log('body from req', body.body)
@@ -65,7 +66,9 @@ app.post("/api/read-value", (req, res) => {
       res.send(result)
     }
     else {
-      res.json({ statusCode: 404 })
+      res.status(400).send({
+        message: "Couldn't upload image",
+      });
       console.log('error upload', error)
     };
   }

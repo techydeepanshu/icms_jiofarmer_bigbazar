@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import DisplayData from '../DisplayData/DisplayData';
 import { TesseractService } from '../../services/TesseractService';
 import Dropzone from "react-dropzone";
+import Spinner from '../../UI/Spinner/Spinner';
 
 
 const Invoice = (props) => {
@@ -20,10 +21,11 @@ const Invoice = (props) => {
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null)
   const [redirect, setRedirect] = useState(false)
   const [filename, setFilename] = useState(null)
+  const [loader, setLoader] = useState(false);
+
   const tesseractService = new TesseractService();
   const path = props.match.url + `/${selectedDropdown}`
   const handleDropdownChange = (e) => {
-    console.log("Handle dropdown change", e.target.value)
     setSelectedDropdown(e.target.value)
   }
   const handleFileChange = e => {
@@ -39,19 +41,21 @@ const Invoice = (props) => {
   const scanInvoice = () => {
     if (imagePreviewUrl) {
       const postImage = async () => {
+        setLoader(true)
         const res = await tesseractService.PostImage(file);
         setFilename(res.filename)
-        console.log("file and response on upload mage", res, file);
+        // console.log("file and response on upload mage", res, file);
       };
-      // postImage()
-      //   .then((data) => {
+      postImage()
+        .then((data) => {
           setRedirect(true);
           props.history.push(path);
-        // })
-        // .catch((err) => {
-        //   alert("Please try again.");
-        //   console.log("err", err);
-        // });
+        })
+        .catch((err) => {
+          alert("Please try again.");
+          console.log("err", err);
+        })
+        .finally(() => setLoader(false));
     } else {
       alert("Select an image");
     }
@@ -123,11 +127,12 @@ const Invoice = (props) => {
     );
   };
   if (redirect) {
-    // let path = props.match.path + "/read-value";
-    // console.log("routing", props.match);
     return (
       <Route path={path} component={() => <DisplayData filename={filename} />} />
     )
+  }
+  if (loader) {
+      return <Spinner />
   }
   return (
     <div>
