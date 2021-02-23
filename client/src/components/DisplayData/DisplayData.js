@@ -200,22 +200,12 @@ const DisplayData = (props) => {
   const pushInventoryDetails = () => {
     console.log("Pushing inventory");
     if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
-      console.log("TableData", tableData)
       let tempTable = []
       tableData.forEach((element, index) => {
-        let rowData = []
-        rowData.push(index + 1)
-        rowData.push(element[0])
-        rowData.push(element[1])
-        rowData.push(description[index]?.Description)
-        rowData.push(description[index]?.Quantity);
-        rowData.push(element[3])
-        rowData.push(element[4])
-        rowData.push(element[5])
-        rowData.push(element[6])
+        let rowData = {index: index + 1, qty: element[0], item: element[1], description: description[index]?.Description, pieces: description[index]?.Quantity, unitPrice: element[3], extendedPrice: element[4], markup: element[5], sp: element[6]}
+
         tempTable.push(rowData)
       });
-      console.log("TempTable", tempTable)
       setInventoryData(tempTable)
       setPushToInventory(true);
     } else {

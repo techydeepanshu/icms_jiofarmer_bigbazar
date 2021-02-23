@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { Redirect } from 'react-router';
 import firebase from "../../firebase";
 import Button from '../../UI/Button';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const UpdateInventory = ({newInventoryData, header}) => {
     const [inventory, setInventory] = useState([])
-    
-    
+    const [redirect, setRedirect] = useState(false)
+    const [loader, setLoader] = useState(true)
     const getInventoryData = () => {
-        const ref = firebase.database().ref("/inventory");
+        const ref = firebase.database().ref("/test");
         ref.on("value", (snapshot) => {
             console.log(snapshot.val());
             if (snapshot.val()) {
                 const data = Object.values(snapshot.val());
                 setInventory(data)
+                setLoader(false)
             }
         });
     }
@@ -29,15 +32,15 @@ const UpdateInventory = ({newInventoryData, header}) => {
         let rows = newInventoryData.map((element, index) => {
           return (
             <tr key={index}>
-              <td>{element[0]}</td>
-              <td>{element[1]}</td>
-              <td>{element[2]}</td>
-              <td>{element[3]}</td>
-              <td>{element[4]}</td>
-              <td>{element[5]}</td>
-              <td>{element[6]}</td>
-              <td>{element[7]}</td>
-              <td>{element[8]}</td>
+              <td>{element.index}</td>
+              <td>{element.qty}</td>
+              <td>{element.item}</td>
+              <td>{element.description}</td>
+              <td>{element.pieces}</td>
+              <td>{element.unitPrice}</td>
+              <td>{element.extendedPrice}</td>
+              <td>{element.markup}</td>
+              <td>{element.sp}</td>
             </tr>
           );
         });
@@ -60,14 +63,14 @@ const UpdateInventory = ({newInventoryData, header}) => {
     };
     /**Incomplete push inventory function*/
     const pushInventoryDetails = async () => {
-
+        setLoader(true)
         let data = newInventoryData.map((element) => {
           return {
-            item: element[2],
-            qty: parseInt(element[0]),
-            cp: element[3],
-            markup: element[5],
-            sp: element[6],
+            item: element.item,
+            qty: parseInt(element.qty),
+            cp: element.unitPrice,
+            markup: element.markup,
+            sp: element.sp,
           };
         });
 
@@ -104,11 +107,13 @@ const UpdateInventory = ({newInventoryData, header}) => {
         }
         data = data.filter((ele) => ele !== null);
         console.log("All Data", data);
-        const success = await updateData(data);
 
+        const success = await updateData(data)
+        setLoader(false)
         if (success) {
+          
           window.alert("Inventory updated successfully");
-
+          setRedirect(true)
         } else {
           window.alert("Inventory not updated");
         }
@@ -119,10 +124,10 @@ const UpdateInventory = ({newInventoryData, header}) => {
         try {
             await data.map((item) => {
                 firebase
-                    .database()
-                    .ref("/test")
-                    .child(`${item.item}`)
-                    .set(item);
+                  .database()
+                  .ref("/test")
+                  .child(`${item.item}`)
+                  .set(item);
                 });
             return true;
         } catch (error) {
@@ -131,8 +136,15 @@ const UpdateInventory = ({newInventoryData, header}) => {
     };
 
     useEffect(() => {
-        getInventoryData()
+      getInventoryData()
     }, [])
+
+    if (redirect) {
+      return  <Redirect to="/" />;
+    }
+    if (loader) {
+      return <Spinner />
+    }
     return (
       <div>
         {renderTableData()}
