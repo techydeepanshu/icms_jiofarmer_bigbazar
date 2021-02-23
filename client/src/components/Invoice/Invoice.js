@@ -42,8 +42,8 @@ const Invoice = (props) => {
     if (imagePreviewUrl) {
       const postImage = async () => {
         setLoader(true)
-        const res = await tesseractService.PostImage(file);
-        setFilename(res.filename)
+        // const res = await tesseractService.PostImage(file);
+        setFilename('res.filename')
         // console.log("file and response on upload mage", res, file);
       };
       postImage()
@@ -76,7 +76,7 @@ const Invoice = (props) => {
           <label className="">Select Invoice </label>
           <select
            className={styles.Dropdown}
-            value={selectedDropdown.value}
+            value={selectedDropdown}
             onChange={handleDropdownChange}
           >
             {dropdownOptions.map((opt) => {
@@ -128,8 +128,16 @@ const Invoice = (props) => {
   };
   if (redirect) {
     return (
-      <Route path={path} component={() => <DisplayData filename={filename} />} />
-    )
+      <Route
+        path={path}
+        component={() => (
+          <DisplayData
+            filename={filename}
+            selectedInvoice={selectedDropdown}
+          />
+        )}
+      />
+    );
   }
   if (loader) {
       return <Spinner />
