@@ -8,9 +8,11 @@ export class TesseractService {
         return res.data
     }
 
-    async GetProductDetails(item) {
-        var res = await Axios.get(`/api/product/`, { params: {'item':item.trim()} });
-        return res.data.item
+    async GetProductDetails(invoiceName) {
+        var res = await Axios.get(`/api/product/`, {
+          params: { invoiceName: invoiceName },
+        });
+        return res.data.invoiceData
     }
 
     async GetOCRData(filename) {

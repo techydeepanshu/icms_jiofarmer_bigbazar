@@ -1,0 +1,80 @@
+{
+  "Gur Rewari":{
+    "Item": "Gur Rewari",
+    "Description": "Gur Rewari 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "52"
+  },
+  "Sugar Rewari":{
+    "Item": "Sugar Rewari",
+    "Description": "Sugar rewari 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "52"
+  },
+  "Gur Gajj":{
+    "Item": "Gur Gajj",
+    "Description": "Dry Fruit Gur Gajjak  400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "70"
+  },
+  "Gurr Khasta Gajjak":{
+    "Item": "Gurr Khasta Gajjak",
+    "Description": "Gur Khasta Gajjak 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "70"
+  },
+  "Seasme ladoo":{
+    "Item": "Seasme ladoo",
+    "Description": "Seasme ladoo Bikaji, 240 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "50"
+  },
+  "Peanut Ladoo":{
+    "Item": "Peanut Ladoo",
+    "Description": "Peanut Ladoo Bikaji 240 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "50"
+  },
+  "Rajgeron ladoo":{
+    "Item": "Rajgeron ladoo",
+    "Description": "Rajgeron Ladoo Bikaji 150 gm, 20 / ctn",
+    "Quantity": "20",
+    "Price": "50"
+  },
+  "Pea ChiKi":{
+    "Item": "Pea ChiKi",
+    "Description": "Peanut Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "55"
+  },
+  "Se Chikki":{
+    "Item": "Se Chikki",
+    "Description": "Saesme Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "65"
+  },
+  "Ass Chiki":{
+    "Item": "Ass Chiki",
+    "Description": "Assorted Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "65"
+  },
+  "Gobhi Parantha 4 Pcs":{
+    "Item": "Gobhi Parantha 4 Pcs",
+    "Description": "Gobhi Parantha (4 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "21"
+  },
+  "Methi Parantha 6 Pcs":{
+    "Item": "Methi Parantha 6 Pcs",
+    "Description": "Methi Parantha (6 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "19.8"
+  },
+  "Home Style Parantha 6 Pcs":{
+    "Item": "Home Style Parantha 6 Pcs",
+    "Description": "Home Style Parantha (6 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "19.2"
+  }
+}

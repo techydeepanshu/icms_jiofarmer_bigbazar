@@ -398,12 +398,26 @@ export const chetak = (data2) => {
     const description = (row[4] + row[5]).trim();
     const unitPrice = row[6].trim();
     const extendedPrice = row[7].trim();
-
+    const pieces = 0
+    const markup = 0
     if (extendedPrice === "0.00" && qty === "0") {
       return null;
     }
-    return [qty, itemNo, description, unitPrice, extendedPrice, 0];
+    return { qty, itemNo, description, pieces, unitPrice, extendedPrice, markup}
   });
 
   return tableData.filter((data) => data !== null);
 };
+/**
+ * onChange={(event, newValue) => {
+                  // console.log("Selected Value", newValue)
+                  if (newValue) {
+                    // element[1] = newValue
+                    // // let itemDescription = [...itemNoDescription]
+                    // // itemDescription[index] = productDetails[newValue].Description
+                    // // setItemNoDescription(itemDescription);
+                    // // console.log("Old value", itemDescription,);
+                    // let tempTableData = [...tableData];
+                    handleChange(index, 1, newValue);
+                  }
+ */

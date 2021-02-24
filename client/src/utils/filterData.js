@@ -6,6 +6,6 @@ export const chooseFilter = (invoiceName, data) => {
     case "chetak":
         return chetak(data)
     default:
-      break;
+        return chetak(data);
   }
 }

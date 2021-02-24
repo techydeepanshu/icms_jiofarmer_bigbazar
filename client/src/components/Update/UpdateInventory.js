@@ -32,9 +32,9 @@ const UpdateInventory = ({newInventoryData, header}) => {
         let rows = newInventoryData.map((element, index) => {
           return (
             <tr key={index}>
-              <td>{element.index}</td>
+              <td>{index + 1}</td>
               <td>{element.qty}</td>
-              <td>{element.item}</td>
+              <td>{element.itemNo}</td>
               <td>{element.description}</td>
               <td>{element.pieces}</td>
               <td>{element.unitPrice}</td>
@@ -66,7 +66,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
         setLoader(true)
         let data = newInventoryData.map((element) => {
           return {
-            item: element.item,
+            item: element.itemNo,
             qty: parseInt(element.qty),
             cp: element.unitPrice,
             markup: element.markup,

@@ -7,8 +7,9 @@ const request = require("request");
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 const WebSocketServer = require("ws").Server;
-const { readImage } = require("./controller/tesseract-ocr");
-const jsonData = require("./model/chetak-products.json");
+const chetakData = require("./model/chetak-products.json");
+const krishnaFoodsData = require("./model/krishna-foods-products.json")
+
 require("dotenv").config({ path: __dirname + "/.env" });
 
 // const homeRoutes = require('./routes/home')
@@ -16,25 +17,6 @@ require("dotenv").config({ path: __dirname + "/.env" });
 const app = express()
 //initialize a simple http server
 const server = http.createServer(app);
-// console.log("server", server)
-//initialize the WebSocket server instance
-const wss = new WebSocketServer({ server });
-const clients = []
-
-// const upload = multer({ dest: "uploads/" });
-wss.on("connection", (ws) => {
-    clients.push(ws)
-  //connection is up, let's add a simple simple event
-  ws.on("message", (message) => {
-    //log the received message and send it back to the client
-    console.log("received: %s", message);
-    ws.send(`Hello, you sent -> ${message}`);
-  });
-
-  //send immediatly a feedback to the incoming connection
-  // ws.send(JSON.stringify("Hi there, I am a WebSocket server"));
-});
-
 
 // for parsing application/json
 app.use(express.json()); 
@@ -76,7 +58,16 @@ app.post("/api/upload-image", (req, res) => {
 });
 
 app.get("/api/product", (req, res) => {
-  res.send({ item: jsonData[req.query["item"]] });
+  switch (req.query["invoiceName"]) {
+    case "chetak":
+        res.send({ invoiceData: chetakData });
+      break;
+    case "krishna-foods":
+        res.send({ invoiceData: krishnaFoodsData });
+    default:
+      break;
+  }
+  // res.send({ item: jsonData[req.query["item"]] });
 });
 
 app.post("/api/login", (req, res) => {

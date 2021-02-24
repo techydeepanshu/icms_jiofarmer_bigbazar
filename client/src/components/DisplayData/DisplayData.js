@@ -4,17 +4,24 @@ import { TesseractService } from "../../services/TesseractService";
 import Button from "../../UI/Button";
 import { chooseFilter } from "../../utils/filterData";
 import UpdateInventory from "../Update/UpdateInventory";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import styles from "./DisplayData.module.css";
+import { useTheme } from "@material-ui/core";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
-  const [tableData, setTableData] = useState(chooseFilter(props.selectedInvoice, "data"));
+  const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);
-  const [description, setDescription] = useState([]);
+  const [productDetails, setProductDetails] = useState([]);
   const [pushToInventory, setPushToInventory] = useState(false);
   const [inventoryData, setInventoryData] = useState([])
+  const [itemNoDropdown, setItemNoDropdown] = useState([])
+  // const [itemNoDescription, setItemNoDescription] = useState([])
+  // const [itemNoPiece, setItemNoPiece] = useState([])
   const tesseractService = new TesseractService();
+  // let itemDescription = []
   const header = [
         "Serial No.",
         "Qty Shipped",
@@ -33,12 +40,14 @@ const DisplayData = (props) => {
         <th key={index}>
           {key.toUpperCase()}
           {key.includes("Mark") ? (
-            <input
-              type="number"
-              onChange={(e) => {
-                setMarkup(e.target.value);
-              }}
-            />
+            <TextField
+                type={"number"}
+                variant="outlined"
+                onChange={(e) => {
+                  setMarkup(e.target.value);
+                }}
+                style={{width: 100}}
+              />
           ) : null}
         </th>
       );
@@ -47,90 +56,89 @@ const DisplayData = (props) => {
 
   const renderTableData = () => {
     if (tableData) {
-      let count = 0;
+      // console.log("invoiceData", itemNoDropdown);
       let rows = tableData.map((element, index) => {
         let isEmpty =
-          element[0] === "" ||
-          element[1] === "" ||
-          description[index] === undefined ||
-          isNaN(element[3]) ||
-          isNaN(element[4]);
+          element.qty === "" ||
+          element.itemNo === "" ||
+          isNaN(element.unitPrice) ||
+          isNaN(element.extendedPrice);
         if (isEmpty) {
           let emptyColumn = [...emptyColumnList, index];
           emptyColumnList = [...new Set(emptyColumn)];
         }
-        if (!isNaN(element[3])) {
-          let cp = parseFloat(element[3]);
-          let markup = parseFloat(element[5]);
-          let sp = cp + (cp * markup) / 100;
-          sp = sp / description[index]?.Quantity;
-          element[6] = isNaN(sp)
-            ? (element[3] / description[index]?.Quantity).toFixed(2)
-            : sp.toFixed(2);
-        }
-        let isFree = element[0] != "" && element[4] == "0.00";
-        count++;
+        let isFree = element.qty != "" && element.extendedPrice === "0.00";
         return (
           <tr
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
           >
-            <td>{count}</td>
+            <td>{index + 1 }</td>
             <td className={isFree ? styles.element : null}>
-              <input
-                value={element[0]}
+              <TextField
                 type="number"
+                value={element.qty}
+                id="outlined-secondary"
+                variant="outlined"
                 onChange={(e) => {
-                  handleChange(index, 0, e.target.value);
+                  handleChange(index, "qty", e.target.value);
                 }}
+                style={{ width: 100 }}
               />
               <span className={styles.tooltip}>
-                The extended price for this is {element[4]} but quantity shipped
-                is {element[0]} is this a free item? Please eneter the unit
-                price manually.
+                The extended price for this is {element.extendedPrice} but
+                quantity shipped is {element.qty} is this a free item? Please
+                eneter the unit price manually.
               </span>
             </td>
             <td>
-              <input
-                value={element[1]}
-                type="text"
-                onChange={(e) => {
-                  handleChange(index, 1, e.target.value);
+              <Autocomplete
+                value={element.itemNo}
+                onChange={(event, newValue) => {
+                  if (newValue) {
+                    handleChange(index, "itemNo", newValue);
+                  }
                 }}
+                id="combo-box"
+                options={itemNoDropdown}
+                getOptionLabel={(option) => option}
+                style={{ width: 200 }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="outlined"
+                  />
+                )}
               />
             </td>
-            <td>{description[index]?.Description}</td>
-            <td>{description[index]?.Quantity} </td>
+            <td>{element.description}</td>
+            <td>{element.pieces}</td>
             <td>
-              <input
-                value={element[3]}
+              <TextField
                 type="number"
+                value={element.unitPrice}
+                id="outlined-secondary"
+                variant="outlined"
                 onChange={(e) => {
-                  handleChange(index, 3, e.target.value);
+                  handleChange(index, "unitPrice", e.target.value);
                 }}
+                style={{ width: 100 }}
               />
             </td>
+            <td>{element.extendedPrice}</td>
             <td>
-              <input
-                value={element[4]}
+              <TextField
                 type="number"
+                value={element.markup}
+                id="outlined-secondary"
+                variant="outlined"
                 onChange={(e) => {
-                  handleChange(index, 4, e.target.value);
+                  handleChange(index, "markup", e.target.value);
                 }}
+                style={{ width: 100 }}
               />
             </td>
-            <td>
-              <input
-                value={element[5]}
-                type="number"
-                onChange={(e) => {
-                  handleChange(index, 5, e.target.value);
-                }}
-              />
-            </td>
-            <td>
-              {element[6]}
-            </td>
+            <td>{element.sp}</td>
           </tr>
         );
       });
@@ -160,8 +168,7 @@ const DisplayData = (props) => {
     if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
       let tempTable = []
       tableData.forEach((element, index) => {
-        let rowData = {index: index + 1, qty: element[0], item: element[1], description: description[index]?.Description, pieces: description[index]?.Quantity, unitPrice: element[3], extendedPrice: element[4], markup: element[5], sp: element[6]}
-
+        let rowData = {index: index + 1, ...element}
         tempTable.push(rowData)
       });
       setInventoryData(tempTable)
@@ -171,16 +178,15 @@ const DisplayData = (props) => {
     }
   };
 
-  const handleChange = async (row, column, value) => {
+  const handleChange = async (row, key, value) => {
     let tempTableData = [...tableData];
-    tempTableData[row][column] = value;
+    tempTableData[row][key] = value;
+
     // console.log("Empty col list", emptyColumnList, emptyColumn);
     if (
-      tempTableData[row][0] !== "" &&
-      tempTableData[row][1] !== "" &&
-      tempTableData[row][2] !== "" &&
-      tempTableData[row][4] !== "" &&
-      tempTableData[row][5] !== ""
+      tempTableData[row]["qty"] !== "" &&
+      tempTableData[row]["itemNo"] !== "" &&
+      tempTableData[row]["unitPrice"] !== ""
     ) {
       const index = emptyColumnList.indexOf(row);
       if (index > -1) {
@@ -188,25 +194,27 @@ const DisplayData = (props) => {
       }
       setEmptyColumn(emptyColumnList);
     }
-    if (column === 5 || column === 3) {
-      let cp = parseFloat(tempTableData[row][3]);
-      let markup = parseFloat(tempTableData[row][5]);
+    if (key === "unitPrice" || key === "markup") {
+      let cp = parseFloat(tempTableData[row]["unitPrice"]);
+      let markup = parseFloat(tempTableData[row]["markup"]);
       let sp = cp + (cp * markup) / 100;
-      sp = sp / tempTableData[row][7];
-      tempTableData[row][6] = isNaN(sp) ? 0 : sp.toFixed(2);
+      sp = sp / tempTableData[row]["pieces"];
+      tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
-    if (column === 1) {
-      const item = await tesseractService.GetProductDetails(value);
-      let productDetails = [...description];
-      productDetails[row] = item;
-      setDescription(productDetails);
+    if (key === "itemNo") {
+      tempTableData[row]["description"] = productDetails[value].Description;
+      tempTableData[row]["pieces"] = productDetails[value].Quantity;
     }
-    if (column === 3 || column === 0) {
+    if (
+      (key === "qty" || key === "unitPrice") &&
+      tempTableData[row]["extendedPrice"] !== "0.00"
+    ) {
       const extendedPrice =
-        parseFloat(tempTableData[row][3]) * parseFloat(tempTableData[row][0]);
-      console.log("enter if", tempTableData[row][3], value, extendedPrice);
+        parseFloat(tempTableData[row]["qty"]) *
+        parseFloat(tempTableData[row]["unitPrice"]);
+      console.log("enter if", value, extendedPrice);
       if (!isNaN(extendedPrice)) {
-        tempTableData[row][4] = extendedPrice.toFixed(2);
+        tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
     }
     setTableData(tempTableData);
@@ -216,60 +224,53 @@ const DisplayData = (props) => {
     let tempTableData = [...tableData];
 
     for (let index = 0; index < tempTableData.length; index++) {
-      handleChange(index, 5, value);
+      handleChange(index, "markup" , value);
     }
   };
 
   useEffect(() => {
-    // ws.onopen = () => {
-    //   // on connecting, do nothing but log it to the console
-    //   console.log("connected");
-    // };
-    // ws.onmessage = (evt) => {
-    //   // listen to data sent from the websocket server
-    //   if (evt.data) {
-    //     const message = JSON.parse(evt.data);
-    //     setTableData(calculateTableFields(message))
-    //     //  this.setState({ dataFromServer: message });
-    //     console.log(message);
-    //   } else {
-    //     console.log("No data received");
-    //   }
-    // };
-    async function fetchData() {
+
+    async function fetchOCRData() {
       const ocrData = await tesseractService.GetOCRData(props.filename);
-      console.log("ocr recieved data", ocrData);
+      // console.log("ocr recieved data", ocrData);
+      return chooseFilter(props.selectedInvoice, "data");
+      // return ocrData
     }
-   fetchData();
+    async function invoiceData () {
+      const products = await tesseractService.GetProductDetails(props.selectedInvoice);
+      return products
+      // setItemNoDropdown(Object.keys(products))
+      // setProductDetails(products);
+    };
+    fetchOCRData()
+      .then(ocrData => {
+        invoiceData()
+          .then(products => {
+            let table = ocrData.map(row =>{
+              row.description = products[row.itemNo].Description ?? row.Description
+              row.pieces = products[row.itemNo].Quantity ?? row.pieces
+              let sp = 0
+              if (parseInt(row.pieces)) {
+                sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
+              }
+              return {...row, sp}
+            })
+            setTableData(table)
+            setItemNoDropdown(Object.keys(products));
+            setProductDetails(products);
+          })
+      })
+    // invoiceData();
   }, []);
 
   useEffect(() => {
-    const getDescription = async () => {
-      // console.log("Here tabledata", tableData);
-      const productDetails = await Promise.all(
-        tableData.map(async (product) => {
-          try {
-            const item = await tesseractService.GetProductDetails(product[1]);
-            // console.log("Gettting description for", product[1], item)
-            return item;
-          } catch (error) {
-            console.log("error fetching descripton", error);
-            return null;
-          }
-        })
-      );
-      setDescription(productDetails);
-    };
-    if (description.length === 0 && tableData) {
-      getDescription();
-    }
-  }, [description, tableData]);
-
-  console.log("Item fetched", tableData, description)
+    console.log("rerendered", tableData[0]);
+  }, [ tableData ])
+  // console.log("Item fetched", tableData, productDetails)
   return (
     <div className="container-fluid">
       {pushToInventory ? (
-        <UpdateInventory newInventoryData={inventoryData} header={header}/>
+        <UpdateInventory newInventoryData={tableData} header={header}/>
       ) : (
         renderTableData()
       )}
