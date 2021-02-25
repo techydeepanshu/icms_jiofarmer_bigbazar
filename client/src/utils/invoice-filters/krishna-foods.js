@@ -23,3 +23,41 @@ statusCode: 200
 __proto__: Object
 
  */
+export const krishnaFoods = (data) => {
+    let filteredData = data.filter((line) => line[6] !== "" && !isNaN(line[6]));
+        // .filter((line) => line./* text. */ includes("("))
+        // .map((line) => line./* text. */ trim());
+
+    let tableData = filteredData.map((row, index) => {
+        let qty = row[1].trim()
+        const itemNo = row[2].trim()
+        const description = row[3].trim()
+        const unitPrice = row[5].trim()
+        const extendedPrice = row[6].trim()
+        const pieces = 0;
+        const markup = 0;
+        if(isNaN(extendedPrice) || isNaN(unitPrice)){
+          return null
+        }
+        if (extendedPrice == "0.00" && qty == "0") {
+            return null;
+        }
+        if(isNaN(qty) || !qty) {
+          // itemNo = [qty, itemNo].join(" ")
+          qty = (parseFloat(extendedPrice)/ parseFloat(unitPrice)).toFixed(0)
+           
+        }
+        return {
+          qty,
+          itemNo,
+          description,
+          pieces,
+          unitPrice,
+          extendedPrice,
+          markup,
+        };
+    });
+    console.table(filteredData)
+    return tableData.filter((data) => data !== null);
+    
+};

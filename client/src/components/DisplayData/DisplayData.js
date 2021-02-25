@@ -62,6 +62,7 @@ const DisplayData = (props) => {
         let isEmpty =
           element.qty === "" ||
           element.itemNo === "" ||
+          !element.pieces ||
           isNaN(element.unitPrice) ||
           isNaN(element.extendedPrice);
         if (isEmpty) {
@@ -195,17 +196,21 @@ const DisplayData = (props) => {
       }
       setEmptyColumn(emptyColumnList);
     }
-    if (key === "unitPrice" || key === "markup") {
-      let cp = parseFloat(tempTableData[row]["unitPrice"]);
-      let markup = parseFloat(tempTableData[row]["markup"]);
-      let sp = cp + (cp * markup) / 100;
-      sp = sp / tempTableData[row]["pieces"];
-      tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
-    }
     if (key === "itemNo") {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
     }
+
+    if (key === "unitPrice" || key === "markup" || key === "itemNo") {
+      let cp = parseFloat(tempTableData[row]["unitPrice"]);
+      let markup = parseFloat(tempTableData[row]["markup"]);
+      let sp = cp + (cp * markup) / 100;
+      if (tempTableData[row]["pieces"]) {
+        sp = sp / tempTableData[row]["pieces"];
+      }
+      tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
+    }
+    
     if (
       (key === "qty" || key === "unitPrice") &&
       tempTableData[row]["extendedPrice"] !== "0.00"
@@ -250,8 +255,8 @@ const DisplayData = (props) => {
         invoiceData()
           .then(products => {
             let table = ocrData.map(row =>{
-              row.description = typeof(products[row.itemNo]) !== undefined ? products[row.itemNo].Description: row.Description
-              row.pieces = typeof(products[row.itemNo]) !== undefined ? products[row.itemNo].Quantity : row.pieces
+              row.description = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Description: row.description
+              row.pieces = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Quantity : row.pieces
               let sp = 0
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
