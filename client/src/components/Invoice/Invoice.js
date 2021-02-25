@@ -42,9 +42,9 @@ const Invoice = (props) => {
     if (imagePreviewUrl) {
       const postImage = async () => {
         setLoader(true)
-        // const res = await tesseractService.PostImage(file);
-        setFilename('res.filename')
-        // console.log("file and response on upload mage", res, file);
+        const res = await tesseractService.PostImage(file);
+        setFilename(res.filename)
+        console.log("file and response on upload mage", res, file);
       };
       postImage()
         .then((data) => {

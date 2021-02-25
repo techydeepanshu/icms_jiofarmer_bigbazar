@@ -78,7 +78,7 @@ app.post("/api/login", (req, res) => {
 app.post("/api/ocr", function (req, res) {
   const filename = req.body.data["filename"]
   console.log('Calling ocr', filename)
-  res.send("ocr ")
+  // res.send("ocr ")
   let options = {
     method: "POST",
     url: process.env.url + "/ocr",
@@ -89,14 +89,15 @@ app.post("/api/ocr", function (req, res) {
   function callback(error, response, body) {
     if (error !== null) res.json({ statusCode: 404 });
     let dataFromTextract = body.body;
-    console.log('Data texttract', dataFromTextract)
+    // console.log('Data texttract', dataFromTextract)
     const tables = textractHelper.createTables(dataFromTextract);
     console.log()
     let obj = { statusCode: 200, body: tables };
     console.log('OBJ', obj)
+    // console.table("table", tables[0], tables[1])
     res.json(obj);
   }
-  // request(options, callback);
+  request(options, callback);
 });
 
 const PORT = process.env.PORT || 5000

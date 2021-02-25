@@ -8,7 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import styles from "./DisplayData.module.css";
-import { useTheme } from "@material-ui/core";
+import Spinner from "../../UI/Spinner/Spinner";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
@@ -18,6 +18,7 @@ const DisplayData = (props) => {
   const [pushToInventory, setPushToInventory] = useState(false);
   const [inventoryData, setInventoryData] = useState([])
   const [itemNoDropdown, setItemNoDropdown] = useState([])
+  const [loader, setLoader] = useState(true);
   // const [itemNoDescription, setItemNoDescription] = useState([])
   // const [itemNoPiece, setItemNoPiece] = useState([])
   const tesseractService = new TesseractService();
@@ -231,9 +232,11 @@ const DisplayData = (props) => {
   useEffect(() => {
 
     async function fetchOCRData() {
+      setLoader(true)
       const ocrData = await tesseractService.GetOCRData(props.filename);
-      // console.log("ocr recieved data", ocrData);
-      return chooseFilter(props.selectedInvoice, "data");
+      console.log("ocr recieved data", ocrData);
+      setLoader(false);
+      return chooseFilter(props.selectedInvoice, Object.values(ocrData.body[0]));
       // return ocrData
     }
     async function invoiceData () {
@@ -247,8 +250,8 @@ const DisplayData = (props) => {
         invoiceData()
           .then(products => {
             let table = ocrData.map(row =>{
-              row.description = products[row.itemNo].Description ?? row.Description
-              row.pieces = products[row.itemNo].Quantity ?? row.pieces
+              row.description = typeof(products[row.itemNo]) !== undefined ? products[row.itemNo].Description: row.Description
+              row.pieces = typeof(products[row.itemNo]) !== undefined ? products[row.itemNo].Quantity : row.pieces
               let sp = 0
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
@@ -259,14 +262,19 @@ const DisplayData = (props) => {
             setItemNoDropdown(Object.keys(products));
             setProductDetails(products);
           })
+          .catch(err => console.log("err with ocr", err))
+          .then(() => setLoader(false))
       })
     // invoiceData();
   }, []);
 
   useEffect(() => {
-    console.log("rerendered", tableData[0]);
+    // console.log("rerendered", tableData[0]);
   }, [ tableData ])
   // console.log("Item fetched", tableData, productDetails)
+  if (loader) {
+    return <Spinner />;
+  }
   return (
     <div className="container-fluid">
       {pushToInventory ? (
