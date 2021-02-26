@@ -9,6 +9,7 @@ var upload = multer({ storage: storage });
 const WebSocketServer = require("ws").Server;
 const chetakData = require("./model/chetak-products.json");
 const krishnaFoodsData = require("./model/krishna-foods-products.json")
+const seamarkData = require("./model/seamark.json")
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
@@ -64,6 +65,8 @@ app.get("/api/product", (req, res) => {
       break;
     case "krishna-foods":
         res.send({ invoiceData: krishnaFoodsData });
+    case "sea-mark":
+        res.send({ invoiceData: seamarkData });
     default:
       break;
   }
