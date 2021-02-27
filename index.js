@@ -48,7 +48,7 @@ app.post("/api/upload-image", (req, res) => {
   
   function callback(error, response, body) {
     if (error === null) {
-      console.log('body from req', body.body)
+      // console.log('body from req', body.body)
       const result = {message: body.body, filename: imageId + '.' + ext}
       res.send(result)
     }
@@ -108,7 +108,7 @@ app.post("/api/ocr", function (req, res) {
     const tables = textractHelper.createTables(dataFromTextract);
     console.log()
     let obj = { statusCode: 200, body: tables };
-    console.log('OBJ', obj)
+    // console.log('OBJ', obj)
     // console.table("table", tables[0], tables[1])
     res.json(obj);
   }

@@ -332,7 +332,7 @@
   },
   "CAS DF13": {
     "Item": "CAS DF13",
-    "Description": "Deep Fro Onion Pakora 10oz Z(24)",
+    "Description": "Deep Fro Onion Pakora 10oz (24)",
     "Quantity": "24",
     "Price": "42.15"
   },
@@ -1020,8 +1020,8 @@
     "Quantity": "20",
     "Price": "42.2"
   },
-  "CAS 4 2UT": {
-    "Item": "CAS 4 2UT",
+  "CAS 42UT": {
+    "Item": "CAS 42UT",
     "Description": "Udupi Pi MangoCutPckl10.5oz (12)",
     "Quantity": "12",
     "Price": "13.28"
@@ -1343,5 +1343,354 @@
     "Description": "Mirch Ma Peanut Bhujia 12oz (15)",
     "Quantity": "15",
     "Price": "26.36"
+  },
+  "CAS AM20": {
+    "Item": "CAS AM20",
+    "Description": "Amul Chees Slice 7oz(30)",
+    "Quantity": "30",
+    "Price": "74.50"
+  },
+  "CAS BHT": {
+    "Item": "CAS BHT",
+    "Description": "Bhagwati HMStyle Thepla 90z(24)",
+    "Quantity": "24",
+    "Price": "30.14"
+  },
+  "CAS BMT": {
+    "Item": "CAS BMT",
+    "Description": "Bhagwati Muthia 12 oz. (24)",
+    "Quantity": "24",
+    "Price": "36.19"
+  },
+  "CAS S23": {
+    "Item": "CAS S23",
+    "Description": "Deep Milk-Maya Powdl4oz(10)",
+    "Quantity": "10",
+    "Price": "46.30"
+  },
+  "CAS BR11": {
+    "Item": "CAS BR11",
+    "Description": "Deep Bre Aloo Paratha 4 pc(24)",
+    "Quantity": "24",
+    "Price": "37.40"
+  },
+  "CAS BR34": {
+    "Item": "CAS BR34",
+    "Description": "Deep Bre Coriander Kulcha4p(18)",
+    "Quantity": "18",
+    "Price": "23.48"
+  },
+  "CAS BR38": {
+    "Item": "CAS BR38",
+    "Description": "Deep Bre F.P.GarlicNaanl2Pc(8)",
+    "Quantity": "8",
+    "Price": "34.16"
+  },
+  "CAS BR31": {
+    "Item": "CAS BR31",
+    "Description": "Deep Bre FmlyPk 20pcParatha(8)",
+    "Quantity": "8",
+    "Price": "43.35"
+  },
+  "CAS BR12": {
+    "Item": "CAS BR12",
+    "Description": "Deep Bre LachchaParathal20z(24)",
+    "Quantity": "24",
+    "Price": "34.74"
+  },
+  "CAS BR15": {
+    "Item": "CAS BR15",
+    "Description": "Deep Bre Methi Paratha 5 pc(24)",
+    "Quantity": "24",
+    "Price": "34.76"
+  },
+  "CAS BR33": {
+    "Item": "CAS BR33",
+    "Description": "Deep Bre Paneer Kulcha 4pc(18)",
+    "Quantity": "18",
+    "Price": "32.50"
+  },
+  "CAS BR21": {
+    "Item": "CAS BR21",
+    "Description": "Deep Bre Tandoori Roti 5pc(24)",
+    "Quantity": "24",
+    "Price": "42.37"
+  },
+  "CAS FC14": {
+    "Item": "CAS FC14",
+    "Description": "Deep Chu Mrd.Tmato.ChtylOoz(12)",
+    "Quantity": "12",
+    "Price": "21.67"
+  },
+  "CAS CSMJ": {
+    "Item": "CAS CSMJ",
+    "Description": "Deep Fro 24 Jlpno ChsSmsa(8)",
+    "Quantity": "8",
+    "Price": "47.24"
+  },
+  "CAS CSPZ": {
+    "Item": "CAS CSPZ",
+    "Description": "Deep Fro 24 Pizza Smsa(8)",
+    "Quantity": "8",
+    "Price": "47.24"
+  },
+  "CAS HDV": {
+    "Item": "CAS HDV",
+    "Description": "Deep Fro Dahi Vada 10pc(12)",
+    "Quantity": "12",
+    "Price": "21.07"
+  },
+  "CAS DDSC": {
+    "Item": "CAS DDSC",
+    "Description": "Deep Fro DelSamo.w/Chtny.24(12)",
+    "Quantity": "12",
+    "Price": "56.40"
+  },
+  "CAS 30HDV": {
+    "Item": "CAS 30HDV",
+    "Description": "Deep Fro FP Dahi Vada 30pcs(8)",
+    "Quantity": "8",
+    "Price": "36.13"
+  },
+  "CAS DIQ37": {
+    "Item": "CAS DIQ37",
+    "Description": "Deep IQF Bhindi Cut 24oz(12)",
+    "Quantity": "12",
+    "Price": "26.38"
+  },
+  "CAS DIQ16": {
+    "Item": "CAS DIQ16",
+    "Description": "Deep IQF Guvar Frozen 12oz(24)",
+    "Quantity": "24",
+    "Price": "33.18"
+  },
+  "CAS DIQ19": {
+    "Item": "CAS DIQ19",
+    "Description": "Deep IQF Methi Blocks 12oz(24)",
+    "Quantity": "24",
+    "Price": "39.78"
+  },
+  "CAS DIQ25": {
+    "Item": "CAS DIQ25",
+    "Description": "Deep IQF Ratalu 120z(24)",
+    "Quantity": "24",
+    "Price": "46.38"
+  },
+  "CAS DIQ47": {
+    "Item": "CAS DIQ47",
+    "Description": "Deep IQF Red Baby Onionl2oz(24)",
+    "Quantity": "24",
+    "Price": "30.42"
+  },
+  "CAS DIQ21": {
+    "Item": "CAS DIQ21",
+    "Description": "Deep IQF Sambhar Mix 12 oz(24)",
+    "Quantity": "24",
+    "Price": "30.18"
+  },
+  "CAS DIQ29": {
+    "Item": "CAS DIQ29",
+    "Description": "Deep IQF SurtiPapdiLilval2o(24)",
+    "Quantity": "24",
+    "Price": "37.62"
+  },
+  "CAS DIQ46": {
+    "Item": "CAS DIQ46",
+    "Description": "Deep IQF Tandaljo 12oz(24)",
+    "Quantity": "24",
+    "Price": "30.90"
+  },
+  "CAS DIQ38": {
+    "Item": "CAS DIQ38",
+    "Description": "Deep IQF Tindora 24oz(12)",
+    "Quantity": "12",
+    "Price": "28.02"
+  },
+  "CAS DIQ26": {
+    "Item": "CAS DIQ26",
+    "Description": "Deep IQF Tuver Lilva 24 Oz(12)",
+    "Quantity": "12",
+    "Price": "38.86"
+  },
+  "CAS DIQ61": {
+    "Item": "CAS DIQ61",
+    "Description": "Deep IQF Wtr Chestnut Singoda(24)",
+    "Quantity": "24",
+    "Price": "52.97"
+  },
+  "CAS 161": {
+    "Item": "CAS 161",
+    "Description": "Deep Sna Fafda 12.3oz(12)",
+    "Quantity": "12",
+    "Price": "44.01"
+  },
+  "CAS 155": {
+    "Item": "CAS 155",
+    "Description": "Deep Sna MasalaPapadi 8.80z(12)",
+    "Quantity": "12",
+    "Price": "43.99"
+  },
+  "CAS UMM": {
+    "Item": "CAS UMM",
+    "Description": "Deep Sou MysorMasalaDosa4pc(12)",
+    "Quantity": "12",
+    "Price": "22.55"
+  },
+  "CAS M15": {
+    "Item": "CAS M15",
+    "Description": "Maharani Parippuvada 10.6oz(12)",
+    "Quantity": "12",
+    "Price": "24.78"
+  },
+  "CAS AM69": {
+    "Item": "CAS AM69",
+    "Description": "Amul Masti BM 33.81floz(12)",
+    "Quantity": "12",
+    "Price": "21.86"
+  },
+  "CAS L43": {
+    "Item": "CAS L43",
+    "Description": "Bansi MahabalesChana14.1(24)",
+    "Quantity": "24",
+    "Price": "53.01"
+  },
+  "CAS G28": {
+    "Item": "CAS G28",
+    "Description": "Bansi Roasted Channa 7oz(20)",
+    "Quantity": "20",
+    "Price": "22.10"
+  },
+  "CAS G27": {
+    "Item": "CAS G27",
+    "Description": "Bansi RoastedChana14.1oz(20)",
+    "Quantity": "20",
+    "Price": "44.19"
+  },
+  "CAS G51": {
+    "Item": "CAS G51",
+    "Description": "Bansi Rst MslaChanal4oz(20)",
+    "Quantity": "20",
+    "Price": "38.78"
+  },
+  "CAS G52": {
+    "Item": "CAS G52",
+    "Description": "Bansi Rst.GulabiChana7oz(20)",
+    "Quantity": "20",
+    "Price": "22.08"
+  },
+  "CAS G46": {
+    "Item": "CAS G46",
+    "Description": "Bansi RstdSaltVatana 14oz(20)",
+    "Quantity": "20",
+    "Price": "44.18"
+  },
+  "CAS K38S": {
+    "Item": "CAS K38S",
+    "Description": "Britanni Bourbon 13.7oz(24)",
+    "Quantity": "24",
+    "Price": "34.78"
+  },
+  "CAS BN76L": {
+    "Item": "CAS BN76L",
+    "Description": "Britanni Bourbon 27.5(8)",
+    "Quantity": "8",
+    "Price": "23.54"
+  },
+  "CAS BN13": {
+    "Item": "CAS BN13",
+    "Description": "Britanni Digestive 7.900z(24)",
+    "Quantity": "24",
+    "Price": "24.12"
+  },
+  "CAS BN71L": {
+    "Item": "CAS BN71L",
+    "Description": "Britanni Fifty Fifty FP(8)",
+    "Quantity": "8",
+    "Price": "10.06"
+  },
+  "CAS R53S": {
+    "Item": "CAS R53S",
+    "Description": "Britanni GD PistaBadam2.6oz(48)",
+    "Quantity": "48",
+    "Price": "21.70"
+  },
+  "CAS K4OS": {
+    "Item": "CAS K4OS",
+    "Description": "Britanni Marie Gold 3.1oz(60)",
+    "Quantity": "60",
+    "Price": "16.92"
+  },
+  "CAS B137S": {
+    "Item": "CAS B137S",
+    "Description": "Britanni Oats Almond&Milk(48)",
+    "Quantity": "48",
+    "Price": "24.56"
+  },
+  "CAS B136S": {
+    "Item": "CAS B136S",
+    "Description": "Britanni Oats Chocol&Almond(48)",
+    "Quantity": "48",
+    "Price": "24.56"
+  },
+  "CAS B138S": {
+    "Item": "CAS B138S",
+    "Description": "Britanni Oats Orange 2.60z(48)",
+    "Quantity": "48",
+    "Price": "24.56"
+  },
+  "CAS BN64": {
+    "Item": "CAS BN64",
+    "Description": "Britanni TreatOrange4.230z(24)",
+    "Quantity": "24",
+    "Price": "10.86"
+  },
+  "CAS BN65": {
+    "Item": "CAS BN65",
+    "Description": "Britanni TreatPineapple4.23(24)",
+    "Quantity": "24",
+    "Price": "10.86"
+  },
+  "CAS BN18": {
+    "Item": "CAS BN18",
+    "Description": "Britanni Wafer Hazelnut 6.2(24)",
+    "Quantity": "24",
+    "Price": "30.81"
+  },
+  "CAS CBH": {
+    "Item": "CAS CBH",
+    "Description": "Chitale Bakarwadi 7oz(20)",
+    "Quantity": "20",
+    "Price": "35.69"
+  },
+  "CAS BS45": {
+    "Item": "CAS BS45",
+    "Description": "Deep SurtiJeeraBis14.1o(20)",
+    "Quantity": "20",
+    "Price": "44.18"
+  },
+  "CAS F35": {
+    "Item": "CAS F35",
+    "Description": "Deep Flo Besan 4lb(10)",
+    "Quantity": "10",
+    "Price": "40.00"
+  },
+  "CAS F28": {
+    "Item": "CAS F28",
+    "Description": "Deep Flo Maida 8lb(5)",
+    "Quantity": "5",
+    "Price": "22.95"
+  },
+  "CAS F33": {
+    "Item": "CAS F33",
+    "Description": "Deep Flo Moong Flour 2lb(20)",
+    "Quantity": "20",
+    "Price": "66.00"
+  },
+  "CAS F56": {
+    "Item": "CAS F56",
+    "Description": "Deep Flo Besan Flour 2 lbs(20)",
+    "Quantity": "20",
+    "Price": "43.40"
+
   }
 }

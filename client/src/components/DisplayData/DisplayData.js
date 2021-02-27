@@ -69,7 +69,7 @@ const DisplayData = (props) => {
           let emptyColumn = [...emptyColumnList, index];
           emptyColumnList = [...new Set(emptyColumn)];
         }
-        let isFree = element.qty != "" && element.extendedPrice === "0.00";
+        let isFree = element.qty != 0 && element.extendedPrice === "0.00";
         return (
           <tr
             key={index}
@@ -264,13 +264,13 @@ const DisplayData = (props) => {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
               }
               /**filter out the rows for which qty shipped & extendedPrice is zero */
-              if (!row.qty && ! row.extendedPrice) {
+              if (row.qty == "0" && row.extendedPrice === "0.00") {
                 return null
               }
               /**Calulate qty for which qty is not read/scanned by textract */
               if (!row.qty) {
                 row.qty = (
-                  parseFloat(extendedPrice) / parseFloat(unitPrice)
+                  parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
                 ).toFixed(0);
               }
               return {...row, sp}
