@@ -1,0 +1,104 @@
+{
+  "CABBAGE GREEN": {
+    "Item": "CABBAGE GREEN",
+    "Description": "CABBAGE GREEN",
+    "Quantity": "1",
+    "Price": "20"
+  },
+  "EGGPLANT FCY 18": {
+    "Item": "EGGPLANT FCY 18",
+    "Description": "EGGPLANT FCY 18",
+    "Quantity": "18",
+    "Price": "22"
+  },
+  "CUCUMBER SUPER": {
+    "Item": "CUCUMBER SUPER",
+    "Description": "CUCUMBER SUPER",
+    "Quantity": "1",
+    "Price": "42.95"
+  },
+  "SCALLION MED 48": {
+    "Item": "SCALLION MED 48",
+    "Description": "SCALLION MED 48",
+    "Quantity": "48",
+    "Price": "18.5"
+  },
+  "BROCCOLI RABE": {
+    "Item": "BROCCOLI RABE",
+    "Description": "BROCCOLI RABE",
+    "Quantity": "1",
+    "Price": "39"
+  },
+  "LEEK TEXAS 12": {
+    "Item": "LEEK TEXAS 12",
+    "Description": "LEEK TEXAS 12",
+    "Quantity": "12",
+    "Price": "28"
+  },
+  "MUSH CELLO 10X8oz": {
+    "Item": "MUSH CELLO 10X8oz",
+    "Description": "MUSH CELLO 10X8oz",
+    "Quantity": "8",
+    "Price": "11.5"
+  },
+  "BASIL": {
+    "Item": "BASIL",
+    "Description": "BASIL",
+    "Quantity": "1",
+    "Price": "27.5"
+  },
+  "HERB THYME BF KILO": {
+    "Item": "HERB THYME BF KILO",
+    "Description": "HERB THYME BF KILO",
+    "Quantity": "1",
+    "Price": "14"
+  },
+  "HERB ROSEMARY BF KILO": {
+    "Item": "HERB ROSEMARY BF KILO",
+    "Description": "HERB ROSEMARY BF KILO",
+    "Quantity": "1",
+    "Price": "14"
+  },
+  "PAPAYA BIG BOX 14CT": {
+    "Item": "PAPAYA BIG BOX 14CT",
+    "Description": "PAPAYA BIG BOX 14CT",
+    "Quantity": "14",
+    "Price": "23"
+  },
+  "COCONUT 40": {
+    "Item": "COCONUT 40",
+    "Description": "COCONUT 40",
+    "Quantity": "40",
+    "Price": "45"
+  },
+  "YAUTIA": {
+    "Item": "YAUTIA",
+    "Description": "YAUTIA",
+    "Quantity": "1",
+    "Price": "39.5"
+  },
+  "GUAVA": {
+    "Item": "GUAVA",
+    "Description": "GUAVA",
+    "Quantity": "1",
+    "Price": "26.95"
+  },
+  "GRAPE B SUMMER ROYAL SDLS BAG": {
+    "Item": "GRAPE B SUMMER ROYAL SDLS BAG",
+    "Description": "GRAPE B SUMMER ROYAL SDLS BAG",
+    "Quantity": "1",
+    "Price": "36"
+  },
+  "COCONUT/YOUNG WHITE": {
+    "Item": "COCONUT/YOUNG WHITE",
+    "Description": "COCONUT/YOUNG WHITE",
+    "Quantity": "1",
+    "Price": "22"
+  },
+  "ONION CAMBRAY 42CT": {
+    "Item": "ONION CAMBRAY 42CT",
+    "Description": "ONION CAMBRAY 42CT",
+    "Quantity": "42",
+    "Price": "22"
+  }
+}

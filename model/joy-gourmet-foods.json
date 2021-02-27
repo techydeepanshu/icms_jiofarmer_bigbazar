@@ -1,0 +1,122 @@
+{
+  "GHEE320Z":{
+    "Item": "GHEE320Z",
+    "Description": "MAKHAN GHEE 1X12X32OZ",
+    "Quantity": "12",
+    "Price": "120.00"
+  },
+  "CORRI CHU 8":{
+    "Item": "CORRI CHU 8",
+    "Description": "CORRIANDER CHUTNEY FRESH 1X12X8 OZ",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "MNTCHT8OZ":{
+    "Item": "MNTCHT8OZ",
+    "Description": "MINT CHUTNEY FRESH 1X12X8 OZ",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "TMANDCHTNY8":{
+    "Item": "TMANDCHTNY8",
+    "Description": "TAMARIND CHUTNEY 1X12X8 OZ",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "DATES&TAMERI":{
+    "Item": "DATES&TAMERI",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X8 OZ",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "DTS/TMRD160ZS":{
+    "Item": "DTS/TMRD160ZS",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X16 OZS",
+    "Quantity": "12",
+    "Price": "40.00"
+  },
+  "DTS/TMRND320ZS":{
+    "Item": "DTS/TMRND320ZS",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X32 OZS",
+    "Quantity": "12",
+    "Price": "72.00"
+  },
+  "TMRNDCNCRT14":{
+    "Item": "TMRNDCNCRT14",
+    "Description": "TAMARIND CONCENTRATE 1X12X14 OZS",
+    "Quantity": "12",
+    "Price": "36.00"
+  },
+  "GRCHLLY8OZ":{
+    "Item": "GRCHLLY8OZ",
+    "Description": "GREEN CHILLY CHCINEY 1XI2X8 OZ",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "ALMDOL16":{
+    "Item": "ALMDOL16",
+    "Description": "REFINED ALMOND OIL 1X12X16OZ",
+    "Quantity": "12",
+    "Price": "54.00"
+  },
+  "MMPDER":{
+    "Item": "MMPDER",
+    "Description": "MILK MAVA POWDER 1X12X12OZ",
+    "Quantity": "12",
+    "Price": "45.00"
+  },
+  "FRIED PANEER2 ":{
+    "Item": "FRIED PANEER2 ",
+    "Description": "JOY FRIED PANEER 1X10X2 LBS.(32 OZS.)",
+    "Quantity": "10",
+    "Price": "85.00"
+  },
+  "FRIEDPAN7OZ":{
+    "Item": "FRIEDPAN7OZ",
+    "Description": "FRIED PANEER (JOY)1XI2X7 OZ",
+    "Quantity": "12",
+    "Price": "37.50"
+  },
+  "MLASSI640ZS":{
+    "Item": "MLASSI640ZS",
+    "Description": "JOY MANG0(1/2 GAL) LASSI 1X9X64 FL OZS.",
+    "Quantity": "9",
+    "Price": "45.00"
+  },
+  "JYCMPNR8X2.25":{
+    "Item": "JYCMPNR8X2.25",
+    "Description": "JOY COMMERCIAL PANEER 8/2.25LB.",
+    "Quantity": "8",
+    "Price": "67.00"
+  },
+  "NING1/2":{
+    "Item": "NING1/2",
+    "Description": "MANGO ICECREAM 1/2 GALLON",
+    "Quantity": "1",
+    "Price": "5.00"
+  },
+  "MNGQT":{
+    "Item": "MNGQT",
+    "Description": "MANGO QUART ICECREAM",
+    "Quantity": "1",
+    "Price": "3.00"
+  },
+  "GRLGRMX260Z":{
+    "Item": "GRLGRMX260Z",
+    "Description": "MAHARAJA GARLIC/GINGER MIX 1X12X26OZ",
+    "Quantity": "12",
+    "Price": "42.00"
+  },
+  "GHEE160Z":{
+    "Item": "GHEE160Z",
+    "Description": "MAKHAN GHEE 1X12X16OZ",
+    "Quantity": "12",
+    "Price": "64.00"
+  },
+  "GHEE8OZ":{
+    "Item": "GHEE8OZ",
+    "Description": "MAKHAN GHEE 11XI2X8OZ (6Ib.)",
+    "Quantity": "12",
+    "Price": "42.00"
+  }
+}

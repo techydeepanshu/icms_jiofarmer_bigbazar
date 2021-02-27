@@ -10,6 +10,10 @@ const WebSocketServer = require("ws").Server;
 const chetakData = require("./model/chetak-products.json");
 const krishnaFoodsData = require("./model/krishna-foods-products.json")
 const seamarkData = require("./model/seamark.json")
+const advanceFoodsData = require("./model/advance-foods.json")
+const joyGourmetFoodsData = require("./model/joy-gourmet-foods.json")
+const bestFoodsData = require("./model/best-foods.json")
+const katzmanData = require("./model/katzman.json")
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
@@ -61,12 +65,20 @@ app.post("/api/upload-image", (req, res) => {
 app.get("/api/product", (req, res) => {
   switch (req.query["invoiceName"]) {
     case "chetak":
-        res.send({ invoiceData: chetakData });
+      res.send({ invoiceData: chetakData });
       break;
     case "krishna-foods":
-        res.send({ invoiceData: krishnaFoodsData });
+      res.send({ invoiceData: krishnaFoodsData });
     case "sea-mark":
-        res.send({ invoiceData: seamarkData });
+      res.send({ invoiceData: seamarkData });
+    case "advance-foods":
+      res.send({ invoiceData: advanceFoodsData });
+    case "joy-gourmet-foods":
+      res.send({ invoiceData: joyGourmetFoodsData });
+    case "best-foods":
+      res.send({ invoiceData: bestFoodsData });
+    case "katzman":
+      res.send({ invoiceData: katzmanData });
     default:
       break;
   }
