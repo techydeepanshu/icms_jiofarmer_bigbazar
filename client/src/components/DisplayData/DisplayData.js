@@ -242,7 +242,7 @@ const DisplayData = (props) => {
       console.log("ocr recieved data", ocrData);
       setLoader(false);
       /** apply filter for the specific invoice */
-      return chooseFilter(props.selectedInvoice, ocrData.body[0]);
+      return chooseFilter(props.selectedInvoice, ocrData.body);
       // return ocrData
     }
     async function invoiceData () {
@@ -257,8 +257,12 @@ const DisplayData = (props) => {
           .then(products => {
             /**post processing the table data after returning form filter */
             let table = ocrData.map(row =>{
-              row.description = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Description: row.description
-              row.pieces = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Quantity : row.pieces
+              /**For invoices which dont have item no, set description as item no */
+              if (row.itemNo === undefined) {
+                row.itemNo = row.description.trim()
+              }
+              row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
+              row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : row.pieces
               let sp = 0
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
