@@ -27,7 +27,7 @@ export const applyFilter=(arr,options)=>{
             x=x.trimEnd();
             str=str.trimStart();
             str=str.trimEnd();
-            obj[options.header[j]]=x;
+            obj[options.header[j]]=x.toUpperCase();
           }
           result.push(obj);
         }
@@ -51,7 +51,7 @@ const convertRowToString=(obj)=>{
   return str;
 }
 
-export const emptyColumnForChetak=(arr)=>{
+export const emptyColumn=(arr)=>{
   let data=[];
   for(let i=0;i<arr.length;i++){
     let obj={};

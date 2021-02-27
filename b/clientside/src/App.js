@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FileBase64 from 'react-file-base64';
 import axios from 'axios';
-import {applyFilter,emptyColumnForChetak} from './filter';
+import {applyFilter,emptyColumn} from './filter';
 import {optionData} from './optionData'
 class App extends Component{
   constructor(props){
@@ -41,8 +41,8 @@ class App extends Component{
     .then((res) => {if(res.data.statusCode===undefined||res.data.statusCode!==200)throw "error"; else result=res.data.body})
     .catch((err) => {status=false;alert("Some error occured try again");});
     if(!status)return;
-    console.log(result)
-    let resultNew=emptyColumnForChetak(result)
+    //console.log(result)
+    let resultNew=emptyColumn(result)
     //console.log(resultNew)
     let option=optionData[this.state.optionSelected];
     let arr=applyFilter(resultNew,option);
