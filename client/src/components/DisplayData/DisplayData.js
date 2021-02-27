@@ -235,13 +235,14 @@ const DisplayData = (props) => {
   };
 
   useEffect(() => {
-
+    /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
       setLoader(true)
       const ocrData = await tesseractService.GetOCRData(props.filename);
       console.log("ocr recieved data", ocrData);
       setLoader(false);
-      return chooseFilter(props.selectedInvoice, Object.values(ocrData.body[0]));
+      /** apply filter for the specific invoice */
+      return chooseFilter(props.selectedInvoice, ocrData.body[0]);
       // return ocrData
     }
     async function invoiceData () {
@@ -254,6 +255,7 @@ const DisplayData = (props) => {
       .then(ocrData => {
         invoiceData()
           .then(products => {
+            /**post processing the table data after returning form filter */
             let table = ocrData.map(row =>{
               row.description = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Description: row.description
               row.pieces = typeof(products[row.itemNo]) !== "undefined" ? products[row.itemNo].Quantity : row.pieces
@@ -261,9 +263,19 @@ const DisplayData = (props) => {
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
               }
+              /**filter out the rows for which qty shipped & extendedPrice is zero */
+              if (!row.qty && ! row.extendedPrice) {
+                return null
+              }
+              /**Calulate qty for which qty is not read/scanned by textract */
+              if (!row.qty) {
+                row.qty = (
+                  parseFloat(extendedPrice) / parseFloat(unitPrice)
+                ).toFixed(0);
+              }
               return {...row, sp}
             })
-            setTableData(table)
+            setTableData(table.filter((data) => data !== null));
             setItemNoDropdown(Object.keys(products));
             setProductDetails(products);
           })

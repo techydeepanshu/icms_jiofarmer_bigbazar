@@ -10,11 +10,12 @@ import Spinner from '../../UI/Spinner/Spinner';
 const Invoice = (props) => {
   const dropdownOptions = [
     { value: "Chetak", slug: "chetak" },
-    { value: "Laxmi", slug: "laxmi" },
-    { value: "Sea Mark", slug: "sea-mark" },
-    { value: "Vijay", slug: "vijay" },
-    { value: "Krishna Foods", slug: "krishna-foods" },
-    { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
+    // { value: "Laxmi", slug: "laxmi" },
+    // { value: "Sea Mark", slug: "sea-mark" },
+    // { value: "Vijay", slug: "vijay" },
+    // { value: "Krishna Foods", slug: "krishna-foods" },
+    // { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
+    { value: "Advance Foods", slug: "advance-foods" },
   ];
   const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0].slug)
   const [file, setFile] = useState(null)
@@ -44,7 +45,7 @@ const Invoice = (props) => {
         setLoader(true)
         const res = await tesseractService.PostImage(file);
         setFilename(res.filename)
-        console.log("file and response on upload mage", res, file);
+        // console.log("file and response on upload mage", res, file);
       };
       postImage()
         .then((data) => {
