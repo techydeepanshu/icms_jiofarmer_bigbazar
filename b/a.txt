@@ -1,0 +1,102 @@
+
+role- invoice 
+s3fullaccess
+lambdafullaccess
+textractfullaccess
+
+
+
+
+s3-uploadvervebot
+bucket policy
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1613751520968",
+    "Statement": [
+        {
+            "Sid": "Stmt1613751514294",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::230233895298:role/invoice"
+            },
+            "Action": [
+                "s3:DeleteObject",
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::uploadvervebot/*"
+        }
+    ]
+}
+note-principal is role
+
+
+
+
+lambda-ocr 
+role-invoice
+import json
+import boto3
+def lambda_handler(event, context):
+    textract = boto3.client('textract')
+    response = textract.analyze_document(
+        Document={
+            'S3Object': {
+                'Bucket': "uploadvervebot",
+                'Name': event
+            }
+        },
+        FeatureTypes=["TABLES"])
+    s3 = boto3.resource("s3")
+    obj = s3.Object("uploadvervebot", event)
+    obj.delete()
+    return {
+        'statusCode': 200,
+        #'body': JSON.stringify(result)
+        'body': response
+        
+    }
+
+
+lambda-upload 
+role-invoice
+const AWS = require('aws-sdk');
+var s3 = new AWS.S3();
+exports.handler = (event, context, callback) => {
+        let recieved_request =JSON.stringify(event.img);
+        let recieved_request_imageId =JSON.stringify(event.imageID);
+        let recieved_request_ext =JSON.stringify(event.fileExt);
+    
+        recieved_request=  recieved_request.slice(1, -1);
+        recieved_request_imageId=recieved_request_imageId.replace('"','').replace('"','');
+        recieved_request_ext=recieved_request_ext.replace('"','').replace('"','');
+        var filePath = recieved_request_imageId + "." + recieved_request_ext;
+        let buffer = Buffer.from(recieved_request.replace(/^data:image\/\w+;base64,/, ""),'base64'); 
+        var params = {
+                Key: filePath, 
+                Body: buffer,
+                ContentEncoding: 'base64',
+                ContentType: 'image/'+recieved_request_ext,
+                Bucket: "uploadvervebot"
+        };
+       s3.upload(params, function(err, data){
+       if(err) {
+           callback(err, null);
+       } else {
+         var res ={
+                "statusCode": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            };
+            res.body = "Uploaded";
+            callback(null, res);
+        }
+    });
+};
+
+
+
+api-gateway invoice
+
+
