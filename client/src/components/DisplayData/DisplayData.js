@@ -240,7 +240,7 @@ const DisplayData = (props) => {
       setLoader(true)
       const ocrData = await tesseractService.GetOCRData(props.filename);
       console.log("ocr recieved data", ocrData);
-      setLoader(false);
+      // setLoader(false);
       /** apply filter for the specific invoice */
       return chooseFilter(props.selectedInvoice, ocrData.body);
       // return ocrData
@@ -255,12 +255,23 @@ const DisplayData = (props) => {
       .then(ocrData => {
         invoiceData()
           .then(products => {
-            /**post processing the table data after returning form filter */
+            // /**post processing the table data after returning form filter */
+            function convertToUpperCase(obj) {
+              let newObj = {}
+              for ( let key in obj) {
+                // console.log("obj[key]", obj[key])
+                newObj[key.toUpperCase()] = obj[key]
+              }
+              return newObj
+            }
+            products = convertToUpperCase(products)
+            console.log("The products key", products)
             let table = ocrData.map(row =>{
               /**For invoices which dont have item no, set description as item no */
               if (row.itemNo === undefined) {
-                row.itemNo = row.description.trim()
+                row.itemNo = row.description.trim().toUpperCase()
               }
+              row.itemNo = row.itemNo.toString().toUpperCase();
               row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
               row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : row.pieces
               let sp = 0
@@ -279,12 +290,16 @@ const DisplayData = (props) => {
               }
               return {...row, sp}
             })
+            setLoader(false);
             setTableData(table.filter((data) => data !== null));
             setItemNoDropdown(Object.keys(products));
             setProductDetails(products);
           })
-          .catch(err => console.log("err with ocr", err))
-          .then(() => setLoader(false))
+          .catch(err => {
+            setLoader(false);
+            console.log("err with ocr", err)
+          })
+          // .then(() => setLoader(false))
       })
     // invoiceData();
   }, []);
