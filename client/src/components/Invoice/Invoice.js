@@ -11,10 +11,10 @@ const Invoice = (props) => {
   const dropdownOptions = [
     { value: "Chetak", slug: "chetak" },
     // { value: "Laxmi", slug: "laxmi" },
-    // { value: "Sea Mark", slug: "sea-mark" },
-    // { value: "Vijay", slug: "vijay" },
-    // { value: "Krishna Foods", slug: "krishna-foods" },
-    // { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
+    { value: "Sea Mark", slug: "sea-mark" },
+    { value: "Best Foods", slug: "best-foods" },
+    { value: "Krishna Foods", slug: "krishna-foods" },
+    { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
     { value: "Advance Foods", slug: "advance-foods" },
   ];
   const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0].slug)

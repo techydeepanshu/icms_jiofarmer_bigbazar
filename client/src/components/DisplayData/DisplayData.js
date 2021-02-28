@@ -273,7 +273,8 @@ const DisplayData = (props) => {
               }
               row.itemNo = row.itemNo.toString().toUpperCase();
               row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
-              row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : row.pieces
+              row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : 0
+              row.markup = 0
               let sp = 0
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)

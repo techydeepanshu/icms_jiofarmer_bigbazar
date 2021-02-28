@@ -5,21 +5,22 @@ import { optionData } from "./optionData";
 
 export const chooseFilter = (invoiceName, data) => {
   console.log("Invoice to be filtered", invoiceName)
+  const newData=emptyColumn(data)
   switch (invoiceName) {
     case "chetak":
-      let newData=emptyColumn(data);
+      // let ;
       return applyFilter(newData, optionData["chetak"]);
     case "krishna-foods":
-      return krishnaFoods(data);
+      return krishnaFoods(Object.values(data[0]));
     case "advance-foods":
       return applyFilter(data, optionData["advance-foods"])
     case "sea-mark":
       return applyFilter(data, optionData["sea-mark"])
     case "best-foods":
-      let newData=emptyColumn(data);
+      // let newData=emptyColumn(data);
       return applyFilter(newData, optionData["best-foods"]);
     case "joy-gourment-foods":
-      let newData=emptyColumn(data);
+      // let newData=emptyColumn(data);
       return applyFilter(newData, optionData["joy-gourment-foods"]);
     case "katzam-foods":
       return applyFilter(data, optionData["katzam-foods"])
