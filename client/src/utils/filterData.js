@@ -18,6 +18,11 @@ export const chooseFilter = (invoiceName, data) => {
     case "best-foods":
       let newData=emptyColumn(data);
       return applyFilter(newData, optionData["best-foods"]);
+    case "joy-gourment-foods":
+      let newData=emptyColumn(data);
+      return applyFilter(newData, optionData["joy-gourment-foods"]);
+    case "katzam-foods":
+      return applyFilter(data, optionData["katzam-foods"])
     default:
       return chetak(data);
   }

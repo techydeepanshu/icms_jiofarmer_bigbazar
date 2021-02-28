@@ -51,8 +51,8 @@ const convertRowToString=(obj)=>{
   return str;
 }
 const options={
-  regex:/^[0-9]+ .+ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-  header:["itemNo","description","unit","qty","unitPrice","extendedPrice"],
-  body:[1,[0,/ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1]
+  regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  header:["itemNo","description","unitPrice","extendedPrice"],
+  body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1]
 };
-console.log(applyFilter([{1:{1: "", 2: "1 * ", 3: "11111 * ", 4: "AM69 NO RETURN ", 5: "Amul ", 6: "ACCEPTED ", 7: "Masti BM 33. 81floz (12) * ASD", 8: "21.86 ", 9: "0.00 00.00"}}],options));
+console.log(applyFilter([{1:{1: "", 2: "00/00/00 ", 3: "11111 * 12", 4: "AM69 NO RETURN ", 5: "Amul ", 6: "ACCEPTED ", 7: "Masti BM 33. 81floz (12) * ASD", 8: "21.86 ", 9: "0.00"}}],options));

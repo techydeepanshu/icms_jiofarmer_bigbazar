@@ -20,10 +20,14 @@ export const optionData={
     body:[1,[0,/ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1]
   },
   "joy-gourment-foods":{
-
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1]
   },
   "katzam-foods":{
-
+    regex:/^[0-9]{2}\/[0-9]{2}\/[0-9]{2} [0-9]+ [0-9]+ .+ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["date","ticket","qty","description","origin","unitPrice","extendedPrice"],
+    body:[1,1,1,[0,/ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1]
   },
   "krishna-foods":{
 
