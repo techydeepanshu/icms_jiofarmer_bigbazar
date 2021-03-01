@@ -243,3 +243,12 @@
   
  
   
+
+  .previewStyle {
+    border: 2px solid rgb(88, 109, 230);
+    display: inline;
+    flex-direction: row;
+    width: 100px;
+    height: 100px;
+    /* justify-content: space-evenly; */
+  }
