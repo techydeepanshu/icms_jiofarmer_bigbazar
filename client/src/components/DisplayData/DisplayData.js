@@ -260,7 +260,7 @@ const DisplayData = (props) => {
       // setLoader(false);
       /** apply filter for the specific invoice */
       let newData = []
-      ocrData.forEach(data => newData.concat(...data))
+      ocrData.forEach(data => newData=[...newData,...data])
       return newData
     }
     async function invoiceData () {
