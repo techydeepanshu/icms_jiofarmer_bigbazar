@@ -32,11 +32,8 @@ const Invoice = (props) => {
     setSelectedDropdown(e.target.value);
   };
   const handleFileChange = async (files) => {
-    // e.preventDefault();
-
-    // let inputFile = files[0];
     files = Object.values(files);
-    // console.log("Multiple files select", files);
+
     if (files.length <= 9) {
       const inputFiles = [];
       const imagePreviewUrls = [];
@@ -59,17 +56,28 @@ const Invoice = (props) => {
     } else {
       alert("Select only upto 9 files")
     }
-    // console.log("Input files", inputFiles);
-    // console.log("Image urls", imagePreviewUrls);
-
   };
   const scanInvoice = () => {
-    if (imagePreviewUrl) {
+    if (file.length > 0) {
       const postImage = async () => {
         setLoader(true);
-        const res = await tesseractService.PostImage(file);
-        setFilename(res.filename);
+        // const res = await tesseractService.PostImage(file);
+        // setFilename(res.filename);
         // console.log("file and response on upload mage", res, file);
+        const filenames = await Promise.all(
+          file.map(async (inputFile) => {
+            try {
+              const res = await tesseractService.PostImage(inputFile);
+              // console.log("Gettting description for", inputFile, res)
+              return res.filename;
+            } catch (error) {
+              console.log("error fetching descripton", error);
+              // return null;
+              throw new Error("error")
+            }
+          })
+        );
+        setFilename(filenames);
       };
       postImage()
         .then((data) => {

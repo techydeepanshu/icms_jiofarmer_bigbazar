@@ -238,12 +238,30 @@ const DisplayData = (props) => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
       setLoader(true)
-      const ocrData = await tesseractService.GetOCRData(props.filename);
+      const ocrData = await Promise.all(
+        props.filename.map(async (file) => {
+          try {
+            const res = await tesseractService.GetOCRData(file);
+            // console.log("Gettting description for", inputFile, res)
+            // return res.body;
+            return chooseFilter(props.selectedInvoice, res.body);
+          } catch (error) {
+            console.log("error fetching descripton", error);
+            // return null;
+            throw new Error(error);
+          }
+        })
+      );
+      // const ocrData = await tesseractService.GetOCRData(props.filename);
       console.log("ocr recieved data", ocrData);
+      /**
+       * combine ocrdata into "newData" and return it
+       */
       // setLoader(false);
       /** apply filter for the specific invoice */
-      return chooseFilter(props.selectedInvoice, ocrData.body);
-      // return ocrData
+      let newData = []
+      ocrData.forEach(data => newData.concat(...data))
+      return newData
     }
     async function invoiceData () {
       const products = await tesseractService.GetProductDetails(props.selectedInvoice);
@@ -265,7 +283,7 @@ const DisplayData = (props) => {
               return newObj
             }
             products = convertToUpperCase(products)
-            console.log("The products key", products)
+            // console.log("The products key", products)
             let table = ocrData.map(row =>{
               /**For invoices which dont have item no, set description as item no */
               if (row.itemNo === undefined) {
