@@ -19,10 +19,7 @@ const DisplayData = (props) => {
   const [inventoryData, setInventoryData] = useState([])
   const [itemNoDropdown, setItemNoDropdown] = useState([])
   const [loader, setLoader] = useState(true);
-  // const [itemNoDescription, setItemNoDescription] = useState([])
-  // const [itemNoPiece, setItemNoPiece] = useState([])
   const tesseractService = new TesseractService();
-  // let itemDescription = []
   const header = [
         "Serial No.",
         "Qty Shipped",
@@ -166,7 +163,7 @@ const DisplayData = (props) => {
   };
 
   const pushInventoryDetails = () => {
-    console.log("Pushing inventory");
+    // console.log("Pushing inventory");
     if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
       let tempTable = []
       tableData.forEach((element, index) => {
@@ -218,7 +215,7 @@ const DisplayData = (props) => {
       const extendedPrice =
         parseFloat(tempTableData[row]["qty"]) *
         parseFloat(tempTableData[row]["unitPrice"]);
-      console.log("enter if", value, extendedPrice);
+      // console.log("enter if", value, extendedPrice);
       if (!isNaN(extendedPrice)) {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
@@ -246,14 +243,14 @@ const DisplayData = (props) => {
             // return res.body;
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
-            console.log("error fetching descripton", error);
+            // console.log("error fetching descripton", error);
             // return null;
             throw new Error(error);
           }
         })
       );
       // const ocrData = await tesseractService.GetOCRData(props.filename);
-      console.log("ocr recieved data", ocrData);
+      // console.log("ocr recieved data", ocrData);
       /**
        * combine ocrdata into "newData" and return it
        */
@@ -316,7 +313,7 @@ const DisplayData = (props) => {
           })
           .catch(err => {
             setLoader(false);
-            console.log("err with ocr", err)
+            // console.log("err with ocr", err)
           })
           // .then(() => setLoader(false))
       })

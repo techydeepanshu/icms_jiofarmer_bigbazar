@@ -4,7 +4,7 @@ import { krishnaFoods } from "./invoice-filters/krishna-foods";
 import { optionData } from "./optionData";
 
 export const chooseFilter = (invoiceName, data) => {
-  console.log("Invoice to be filtered", invoiceName)
+  // console.log("Invoice to be filtered", invoiceName)
   const newData=emptyColumn(data)
   switch (invoiceName) {
     case "chetak":

@@ -11,7 +11,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
     const getInventoryData = () => {
         const ref = firebase.database().ref("/test");
         ref.on("value", (snapshot) => {
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
             if (snapshot.val()) {
                 const data = Object.values(snapshot.val());
                 setInventory(data)
@@ -75,7 +75,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
         });
 
         data = [...data, ...inventory];
-        console.log("Before", data.length);
+        // console.log("Before", data.length);
 
         var duplicates = {};
         for (var i = 0; i < data.length; i++) {
@@ -95,7 +95,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
             let temp = 0;
             index.forEach((val) => {
               if (data[val]) {
-                console.log("data[val]", data[val]);
+                // console.log("data[val]", data[val]);
                 temp += data[val].qty;
                 if (temp - data[val].qty !== 0) {
                   data[val] = null;
@@ -106,7 +106,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
           });
         }
         data = data.filter((ele) => ele !== null);
-        console.log("All Data", data);
+        // console.log("All Data", data);
 
         const success = await updateData(data)
         setLoader(false)

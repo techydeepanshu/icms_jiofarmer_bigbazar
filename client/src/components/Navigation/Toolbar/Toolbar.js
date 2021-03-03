@@ -5,7 +5,7 @@ import NavigationItems from '../NavigationItems/NavigationItems'
 import styles from './Toolbar.module.css'
 class Toolbar extends Component {
     render() {
-        console.log("isAuthenticated", this.props.isAuthenticated)
+        // console.log("isAuthenticated", this.props.isAuthenticated)
         return (
             <header className = {styles.Toolbar}>
                 <nav className = {styles.DesktopOnly}>

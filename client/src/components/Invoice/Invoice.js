@@ -38,7 +38,6 @@ const Invoice = (props) => {
       const inputFiles = [];
       const imagePreviewUrls = [];
       files.forEach( (selectedFile) => {
-        console.log("loop")
         let reader = new FileReader();
         inputFiles.push(selectedFile);
         reader.onloadend = () => {
@@ -88,7 +87,7 @@ const Invoice = (props) => {
         .catch((err) => {
           setLoader(false);
           alert("Please try again.");
-          console.log("err", err);
+          // console.log("err", err);
         });
       // .finally(() => setLoader(false));
     } else {
@@ -166,8 +165,8 @@ const Invoice = (props) => {
     );
   };
   useEffect(() => {
-   console.log("useeffect Input files", file)
-   console.log("useeffect Preview url", imagePreviewUrl)
+  //  console.log("useeffect Input files", file)
+  //  console.log("useeffect Preview url", imagePreviewUrl)
   },[file, imagePreviewUrl])
   if (redirect) {
     return (

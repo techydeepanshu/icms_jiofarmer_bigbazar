@@ -70,7 +70,7 @@ export const auth = (email, password ) => {
             .then((response) => {
                 const token = response["user"]["za"];
                 const uid = response["user"]["uid"];
-                console.log(response);
+                // console.log(response);
                 const expirationDate = new Date(new Date().getTime + 3600 * 1000);
                 localStorage.setItem("token", token);
                 localStorage.setItem("expirationDate", expirationDate);
@@ -78,11 +78,11 @@ export const auth = (email, password ) => {
                 dispatch(authSuccess(token, uid));
                 dispatch(logout(3600));
                 loginService.authenticate(uid)
-                    .then(res => console.log('auth from server',res))
-                    .catch(err => console.log('err on auth', err))
+                    .then(res => {/* console.log('auth from server',res) */})
+                    .catch(err => {/* console.log('err on auth', err) */})
             })
             .catch((err) => {
-                console.log('err during login',err.message);
+                // console.log('err during login',err.message);
                 dispatch(authFail(err.message));
             })
     }
