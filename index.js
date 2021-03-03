@@ -110,6 +110,17 @@ app.post("/api/ocr", function (req, res) {
   request(options, callback);
 });
 
+if (process.env.NODE_ENV === "production") {
+  //It will serve the files from main.js
+  app.use(express.static("client/build"));
+
+  //Serves the index.html file if doesn't recognoizes the route
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
