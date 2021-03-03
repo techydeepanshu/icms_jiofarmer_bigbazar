@@ -15,8 +15,8 @@ const UpdateInventory = ({newInventoryData, header}) => {
             if (snapshot.val()) {
                 const data = Object.values(snapshot.val());
                 setInventory(data)
-                setLoader(false)
             }
+            setLoader(false)
         });
     }
     const renderTableHeader = () => {
@@ -67,7 +67,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
         let data = newInventoryData.map((element) => {
           return {
             item: element.itemNo,
-            qty: parseInt(element.qty),
+            qty: parseInt(element.qty) * parseInt(element.pieces),
             cp: element.unitPrice,
             markup: element.markup,
             sp: element.sp,
