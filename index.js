@@ -1,12 +1,15 @@
-const express = require('express')
+const express = require('express');
 const multer = require("multer");
-const http  = require('http')
 const textractHelper = require("aws-textract-helper");
 const request = require("request");
+require("dotenv").config({ path: __dirname + "/.env" });
 
+
+const app = express()
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
-const WebSocketServer = require("ws").Server;
+
+
 const chetakData = require("./model/chetak-products.json");
 const krishnaFoodsData = require("./model/krishna-foods-products.json")
 const seamarkData = require("./model/seamark.json")
@@ -15,13 +18,6 @@ const joyGourmetFoodsData = require("./model/joy-gourmet-foods.json")
 const bestFoodsData = require("./model/best-foods.json")
 const katzmanData = require("./model/katzman.json")
 
-require("dotenv").config({ path: __dirname + "/.env" });
-
-// const homeRoutes = require('./routes/home')
-
-const app = express()
-//initialize a simple http server
-const server = http.createServer(app);
 
 // for parsing application/json
 app.use(express.json()); 
@@ -31,7 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(upload.single('file'));
 
 
-// 
 app.post("/api/upload-image", (req, res) => {
   
   let uid = req.headers["user-key"];
@@ -117,6 +112,6 @@ app.post("/api/ocr", function (req, res) {
 
 const PORT = process.env.PORT || 5000
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("Server running on PORT", PORT);
 });
