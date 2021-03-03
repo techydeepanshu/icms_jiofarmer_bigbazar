@@ -81,13 +81,13 @@ app.get("/api/product", (req, res) => {
 });
 
 app.post("/api/login", (req, res) => {
-  console.log("headers",req.headers)
+ // console.log("headers",req.headers)
   res.send('success')
 });
 
 app.post("/api/ocr", function (req, res) {
   const filename = req.body.data["filename"]
-  console.log('Calling ocr', filename)
+  //console.log('Calling ocr', filename)
   // res.send("ocr ")
   let options = {
     method: "POST",
@@ -101,7 +101,7 @@ app.post("/api/ocr", function (req, res) {
     let dataFromTextract = body.body;
     // console.log('Data texttract', dataFromTextract)
     const tables = textractHelper.createTables(dataFromTextract);
-    console.log()
+   // console.log()
     let obj = { statusCode: 200, body: tables };
     // console.log('OBJ', obj)
     // console.table("table", tables[0], tables[1])
