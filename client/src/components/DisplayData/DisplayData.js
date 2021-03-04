@@ -9,6 +9,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import styles from "./DisplayData.module.css";
 import Spinner from "../../UI/Spinner/Spinner";
+import { chetak } from "../../utils/invoice-filters/chetak";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
@@ -32,6 +33,11 @@ const DisplayData = (props) => {
         "Selling Price",
   ];
 
+  const addRow = () => {
+    let tempTableData = [...tableData]
+    tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: 0.00, markup: 0, sp: 0})
+    setTableData(tempTableData)
+  };
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
@@ -148,6 +154,7 @@ const DisplayData = (props) => {
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
+              <tr onClick={addRow}>Add column</tr>
             </tbody>
           </table>
           <Button
@@ -234,6 +241,8 @@ const DisplayData = (props) => {
   useEffect(() => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
+      return chetak();
+
       setLoader(true)
       const ocrData = await Promise.all(
         props.filename.map(async (file) => {
