@@ -35,7 +35,7 @@ const DisplayData = (props) => {
 
   const addRow = () => {
     let tempTableData = [...tableData]
-    tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: 0.00, markup: 0, sp: 0})
+    tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: "", markup: 0, sp: 0})
     setTableData(tempTableData)
   };
   const renderTableHeader = () => {
@@ -214,10 +214,10 @@ const DisplayData = (props) => {
       }
       tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
-    
+    console.log(tempTableData[row]["extendedPrice"], typeof(tempTableData[row]["extendedPrice"]))
     if (
-      (key === "qty" || key === "unitPrice") &&
-      tempTableData[row]["extendedPrice"] !== "0.00"
+      (key === "qty" || key === "unitPrice")/*  &&
+      tempTableData[row]["extendedPrice"] !== "0.00" */
     ) {
       const extendedPrice =
         parseFloat(tempTableData[row]["qty"]) *
