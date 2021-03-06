@@ -1,7 +1,8 @@
 const { privateKEY, publicKEY } = require("./config");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
- sign: (payload, $Options) => {
+ sign: (payload) => {
   /*
    sOptions = {
     issuer: "Authorizaxtion/Resource/This server",
@@ -16,7 +17,7 @@ module.exports = {
   };
   return jwt.sign(payload, privateKEY, signOptions);
 },
-verify: (token, $Option) => {
+verifyToken: (token) => {
   /*
    vOption = {
     issuer: "Authorization/Resource/This server",
@@ -24,11 +25,12 @@ verify: (token, $Option) => {
     audience: "Client_Identity" // this should be provided by client
    }  
   */
+  token = token.replace(/^Bearer\s+/, "");
   const verifyOptions = {
-      issuer:  $Option.issuer,
-      subject:  $Option.subject,
-      audience:  $Option.audience,
-      expiresIn:  "30d",
+      // issuer:  $Option.issuer,
+      // subject:  $Option.subject,
+      // audience:  $Option.audience,
+      expiresIn:  "1h",
       algorithm:  ["RS256"]
   };
    try{
