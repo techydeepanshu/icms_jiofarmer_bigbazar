@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router';
 import firebase from "../../firebase";
+import { InventoryService } from '../../services/InventoryService';
 import Button from '../../UI/Button';
 import Spinner from '../../UI/Spinner/Spinner';
 
-const UpdateInventory = ({newInventoryData, header}) => {
+const UpdateInventory = (props, {header}) => {
+    const [newInventoryData, setNewInventoryData] = useState(props.newInventoryData);
     const [inventory, setInventory] = useState([])
     const [redirect, setRedirect] = useState(false)
     const [loader, setLoader] = useState(true)
+    const [wooComProducts, setWooComProducts] = useState([])
+    const inventoryService = new InventoryService()
     const getInventoryData = () => {
         const ref = firebase.database().ref("/test");
         ref.on("value", (snapshot) => {
@@ -16,7 +20,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
                 const data = Object.values(snapshot.val());
                 setInventory(data)
             }
-            setLoader(false)
+            
         });
     }
     const renderTableHeader = () => {
@@ -74,7 +78,7 @@ const UpdateInventory = ({newInventoryData, header}) => {
           };
         });
 
-        data = [...data, ...inventory];
+        // data = [...data, ...inventory];
         // console.log("Before", data.length);
 
         var duplicates = {};
@@ -108,19 +112,43 @@ const UpdateInventory = ({newInventoryData, header}) => {
         data = data.filter((ele) => ele !== null);
         // console.log("All Data", data);
 
-        const success = await updateData(data)
+        /**
+         * add the fileds of  data from the woocom & ocr 
+         */
+        let updatedWoocomProducts = data.map((product, index) => {
+          /**find index of the item in fetched woocom product list */
+          const wooIndex = wooComProducts.findIndex(item => product.itemNo === item.itemNo)
+          if (wooIndex !== -1) {
+            /**get the qty & other fileds of the woocom product */
+            let {id, stock_quantity} = wooComProducts[wooIndex]
+            stock_quantity += product.qty
+            const regular_price = product.sp
+            return {id, regular_price, stock_quantity, itemNo: product.itemNo}
+          }
+          return null
+        })
+
+        // const success = await pushToFirebase(data)
+        const wooComResponse = await pushToWoocom(updatedWoocomProducts)
+        console.log("woocomresponse", wooComResponse)
+        /**filter out the items not pushed on store */ 
+        const itemsNotPushed = newInventoryData.filter(
+          ({ itemNo: item1 }) => !wooComResponse.some(({ itemNo: item2 }) => item1 !== item2)
+        );
+        /**set the current table data to be the not pushed items */
+        setNewInventoryData(itemsNotPushed)
+        console.log("woo com", itemsNotPushed)
         setLoader(false)
-        if (success) {
-          
-          window.alert("Inventory updated successfully");
-          setRedirect(true)
-        } else {
-          window.alert("Inventory not updated");
-        }
+        // if (success) {
+        //   window.alert("Inventory updated successfully");
+        //   setRedirect(true)
+        // } else {
+        //   window.alert("Inventory not updated");
+        // }
       
     };
 
-    const updateData = async (data) => {
+    const pushToFirebase = async (data) => {
         try {
             await data.map((item) => {
                 firebase
@@ -135,10 +163,54 @@ const UpdateInventory = ({newInventoryData, header}) => {
         }
     };
 
+    const pushToWoocom = async (products) => {
+      setLoader(true)
+      const responses = await Promise.all(
+        products.map(async (product) => {
+          try {
+            const res = await inventoryService.UpdateProductDetails(product.id,{regular_price: product.regular_price, stock_quantity: product.stock_quantity} /* {regular_price, stock_quantity} = product */);
+            const {id, name, regular_price, price, sku, slug, stock_quantity, sale_price} = res[0]
+            return {id, name, regular_price, stock_quantity, itemNo: product.itemNo}
+          } catch (error) {
+            /**
+             * break the event loop if any product fails
+             */
+            console.log(error)
+            // throw new Error(error);
+            // break;
+            return null
+          }
+        })
+      );
+      setLoader(false)
+      return responses.filter(item => item !== null)
+    }
     useEffect(() => {
       getInventoryData()
+      async function getProducts() {
+        const items = await Promise.all(
+          newInventoryData.map(async (row) => {
+            try {
+              /**
+               * The args in getproductdetails will be the sku fetched from the json file
+               * const sku = jsonfile[row.itemNo]
+               */
+              const res = await inventoryService.GetProductDetails("CAS AM20");
+              const {id, name, regular_price, price, sku, slug, stock_quantity, sale_price} = res[0]
+              return {id, name, regular_price, price, sku, slug, stock_quantity, sale_price, itemNo: row.itemNo}
+            } catch (error) {
+              throw new Error(error);
+            }
+          })
+        );
+        setLoader(false)
+        setWooComProducts(items)
+      }
+      getProducts()
     }, [])
-
+    useEffect(() => {
+      console.log("Inventory data", newInventoryData)
+    }, [newInventoryData])
     if (redirect) {
       return  <Redirect to="/" />;
     }
