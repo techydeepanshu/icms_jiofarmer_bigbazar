@@ -1,0 +1,62 @@
+{
+  "SFF MP": {
+    "Item": "SFF MP",
+    "Description": "SFF MP 'SF' MALABAR PAROTTA 454GM*30",
+    "Quantity": "30",
+    "Price": "48.00"
+  },
+  "SFF MPF": {
+    "Item": "SFF MPF",
+    "Description": "SFF MPF 'SF' MALABAR PAROTTA FAM PACK 2LBS*10",
+    "Quantity": "10",
+    "Price": "31.50"
+  },
+  "SFF GC": {
+    "Item": "SFF GC",
+    "Description": "SFF GC 'SF' HAND GRATED COCONUT 454GM*44",
+    "Quantity": "44",
+    "Price": "85.80"
+  },
+  "SFF RP": {
+    "Item": "SFF RP",
+    "Description": "SFF RP 'SF' RESTAURANT PAROTTA 4LBS*10",
+    "Quantity": "10",
+    "Price": "59.50"
+  },
+  "SFF RPHC": {
+    "Item": "SFF RPHC",
+    "Description": "SFF RPHC 'SF' RESTAURANT PAROTTA HALF CKD 4LBS*10",
+    "Quantity": "10",
+    "Price": "59.50"
+  },
+  "SFF KAP": {
+    "Item": "SFF KAP",
+    "Description": "SFF KAP 'SF' KUMBILAPPAM 454GM*22",
+    "Quantity": "22",
+    "Price": "57.20"
+  },
+  "SFF VSRTF": {
+    "Item": "SFF VSRTF",
+    "Description": "SFF VSRTF 'SF' VEG SAMOSA (READY TO FRY) 700GM*12",
+    "Quantity": "12",
+    "Price": "66.00"
+  },
+  "SFF OSRTF": {
+    "Item": "SFF OSRTF",
+    "Description": "SFF OSRTF 'SF' ONION SAMOSA(READY TO FRY) 700GM*12",
+    "Quantity": "12",
+    "Price": "66.00"
+  },
+  "SFF TD2": {
+    "Item": "SFF TD2",
+    "Description": "SFF TD2 'SF' TAPIOCA DRUM 2LBS*20",
+    "Quantity": "20",
+    "Price": "29.00"
+  },
+  "SFF TD4": {
+    "Item": "SFF TD4",
+    "Description": "SFF TD4 'SF' TAPIOCA DRUM 4LBS*10",
+    "Quantity": "10",
+    "Price": "29.00"
+  }
+}

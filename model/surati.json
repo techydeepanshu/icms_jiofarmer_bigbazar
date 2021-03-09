@@ -1,0 +1,176 @@
+{
+  "S-Boondi 341Gx15": {
+    "Item": "S-Boondi 341Gx15",
+    "Description": "S-Boondi 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Chakri 250Gx15": {
+    "Item": "S-Chakri 250Gx15",
+    "Description": "S-Chakri 250Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Channa 341Gx15": {
+    "Item": "S-Channa 341Gx15",
+    "Description": "S-Channa 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Channadal 341Gx15": {
+    "Item": "S-Channadal 341Gx15",
+    "Description": "S-Channadal 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Masala Boondi 300Gx15": {
+    "Item": "S-Masala Boondi 300Gx15",
+    "Description": "S-Masala Boondi 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Exhot Punjabi Mix 300Gx15": {
+    "Item": "S-Exhot Punjabi Mix 300Gx15",
+    "Description": "S-Exhot Punjabi Mix 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Sev Fine 341Gx15": {
+    "Item": "S-Sev Fine 341Gx15",
+    "Description": "S-Sev Fine 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Sev Hot 300Gx15": {
+    "Item": "S-Sev Hot 300Gx15",
+    "Description": "S-Sev Hot 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Sev Regular 300Gx15": {
+    "Item": "S-Sev Regular 300Gx15",
+    "Description": "S-Sev Regular 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Watana 300Gx15": {
+    "Item": "S-Watana 300Gx15",
+    "Description": "S-Watana 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Alu Patta 200Gx15": {
+    "Item": "S-Alu Patta 200Gx15",
+    "Description": "S-Alu Patta 200Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-S-Khatta Meetha 300Gx15": {
+    "Item": "S-S-Khatta Meetha 300Gx15",
+    "Description": "S-S-Khatta Meetha 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Mini Bhakarwadi 300Gx15": {
+    "Item": "S-Mini Bhakarwadi 300Gx15",
+    "Description": "S-Mini Bhakarwadi 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Moongdal 341Gx15": {
+    "Item": "S-Moongdal 341Gx15",
+    "Description": "S-Moongdal 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Peanut Bhujiya 300Gx15": {
+    "Item": "S-Peanut Bhujiya 300Gx15",
+    "Description": "S-Peanut Bhujiya 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Plantain Chips 341Gx15": {
+    "Item": "S-Plantain Chips 341Gx15",
+    "Description": "S-Plantain Chips 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "S-Sabzi Pakoda 300Gx15": {
+    "Item": "S-Sabzi Pakoda 300Gx15",
+    "Description": "S-Sabzi Pakoda 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00"
+  },
+  "Sh-Bhavnagri Gathiya 600Gx10": {
+    "Item": "Sh-Bhavnagri Gathiya 600Gx10",
+    "Description": "Sh-Bhavnagri Gathiya 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00"
+  },
+  "Sh-Bhel Mix Spicy 600Gx10": {
+    "Item": "Sh-Bhel Mix Spicy 600Gx10",
+    "Description": "Sh-Bhel Mix Spicy 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00"
+  },
+  "Sh-Boondi 600Gx10": {
+    "Item": "Sh-Boondi 600Gx10",
+    "Description": "Sh-Boondi 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00"
+  },
+  "Sh-Sev Regular 600Gx10": {
+    "Item": "Sh-Sev Regular 600Gx10",
+    "Description": "Sh-Sev Regular 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00"
+  },
+  "S-Masala Bhungra 80Gx15": {
+    "Item": "S-Masala Bhungra 80Gx15",
+    "Description": "S-Masala Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00"
+  },
+  "S-Spicy Bhungra 80Gx15": {
+    "Item": "S-Spicy Bhungra 80Gx15",
+    "Description": "S-Spicy Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00"
+  },
+  "S-Plain Bhungra 80Gx15": {
+    "Item": "S-Plain Bhungra 80Gx15",
+    "Description": "S-Plain Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00"
+  },
+  "S-Cheddar Jalapeno Tubes 80Gx12": {
+    "Item": "S-Cheddar Jalapeno Tubes 80Gx12",
+    "Description": "S-Cheddar Jalapeno Tubes 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00"
+  },
+  "S-Spicy Chilli Crunch Tubes 80Gx12": {
+    "Item": "S-Spicy Chilli Crunch Tubes 80Gx12",
+    "Description": "S-Spicy Chilli Crunch Tubes 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00"
+  },
+  "S-Masala Munch Shells 80Gx12": {
+    "Item": "S-Masala Munch Shells 80Gx12",
+    "Description": "S-Masala Munch Shells 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00"
+  },
+  "S-Sriracha Splash Potato Chips 80Gx12": {
+    "Item": "S-Sriracha Splash Potato Chips 80Gx12",
+    "Description": "S-Sriracha Splash Potato Chips 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00"
+  },
+  "S-Thai Sweet Chili Chips 80Gx12": {
+    "Item": "S-Thai Sweet Chili Chips 80Gx12",
+    "Description": "S-Thai Sweet Chili Chips 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00"
+  }
+}

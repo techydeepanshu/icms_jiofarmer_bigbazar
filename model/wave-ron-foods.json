@@ -1,0 +1,62 @@
+{
+  "Sausage Meat Masala 100 g":{
+    "Item": "Sausage Meat Masala 100 g",
+    "Description": "Sausage Meat Masala 100 g",
+    "Quantity": "1",
+    "Price": "0.99"
+  },
+  "Chicken Curry Masala 200 g":{
+    "Item": "Chicken Curry Masala 200 g",
+    "Description": "Chicken Curry Masala 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Chicken Roast Paste 200 g":{
+    "Item": "Chicken Roast Paste 200 g",
+    "Description": "Chicken Roast Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Mutton Curry Paste 200 g":{
+    "Item": "Mutton Curry Paste 200 g",
+    "Description": "Mutton Curry Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Vindaloo Paste 200 g":{
+    "Item": "Vindaloo Paste 200 g",
+    "Description": "Vindaloo Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Chettinad Chicken Masala 200 g":{
+    "Item": "Chettinad Chicken Masala 200 g",
+    "Description": "Chettinad Chicken Masala 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Recheado Masala(Fish fry) 200 g":{
+    "Item": "Recheado Masala(Fish fry) 200 g",
+    "Description": "Recheado Masala(Fish fry) 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Sorpotel Paste 200 g":{
+    "Item": "Sorpotel Paste 200 g",
+    "Description": "Sorpotel Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Cafreal Masala (Chicken) Paste 200 g":{
+    "Item": "Cafreal Masala (Chicken) Paste 200 g",
+    "Description": "Cafreal Masala (Chicken) Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "Tendlim Pickle 200 g":{
+    "Item": "Tendlim Pickle 200 g",
+    "Description": "Tendlim Pickle 200 g",
+    "Quantity": "1",
+    "Price": "2.00"
+  }
+}

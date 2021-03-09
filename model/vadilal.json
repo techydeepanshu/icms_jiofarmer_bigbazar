@@ -1,0 +1,320 @@
+{
+  "8901777049662":{
+    "Item": "8901777049662",
+    "Description": "AMLA 312g*24",
+    "Quantity": "24",
+    "Price": "25.00"
+  },
+  "8901777077665":{
+    "Item": "8901777077665",
+    "Description": "AMLA SLICES 312g*24",
+    "Quantity": "24",
+    "Price": "33.30"
+  },
+  "8901777024669":{
+    "Item": "8901777024669",
+    "Description": "BHINDI CUTS  312g*24",
+    "Quantity": "24",
+    "Price": "28.00"
+  },
+  "8901777012666":{
+    "Item": "8901777012666",
+    "Description": "CARROT  312g*24",
+    "Quantity": "24",
+    "Price": "24.00"
+  },
+  "8901777019665":{
+    "Item": "8901777019665",
+    "Description": "DUDHI  312g*24",
+    "Quantity": "24",
+    "Price": "24.00"
+  },
+  "8901777024683":{
+    "Item": "8901777024683",
+    "Description": "BULK BHINDI CUTS 908g*12",
+    "Quantity": "12",
+    "Price": "36.00"
+  },
+  "8901777281161":{
+    "Item": "8901777281161",
+    "Description": "ALPHONSO MANGO PULP 1 Kg*10",
+    "Quantity": "10",
+    "Price": "40.00"
+  },
+  "8901777276167":{
+    "Item": "8901777276167",
+    "Description": "CHIKOO PULP 1 Kg*10",
+    "Quantity": "10",
+    "Price": "40.00"
+  },
+  "8901777217153":{
+    "Item": "8901777217153",
+    "Description": "CHIKOO SLICES 312g*12",
+    "Quantity": "12",
+    "Price": "21.00"
+  },
+  "8901777072660":{
+    "Item": "8901777072660",
+    "Description": "GRATED COCONUT 312g*24",
+    "Quantity": "24",
+    "Price": "36.00"
+  },
+  "8901777242667":{
+    "Item": "8901777242667",
+    "Description": "GREEN MANGO OFFCUTS  312g*12",
+    "Quantity": "12",
+    "Price": "16.00"
+  },
+  "8901777627662":{
+    "Item": "8901777627662",
+    "Description": "KESAR MANGO SLICES  312g*12",
+    "Quantity": "12",
+    "Price": "21.00"
+  },
+  "8901777411629":{
+    "Item": "8901777411629",
+    "Description": "BULK NAAN TANDOORI 80g*16*6",
+    "Quantity": "6",
+    "Price": "25.80"
+  },
+  "8901777412152":{
+    "Item": "8901777412152",
+    "Description": "GARLIC BUTTER FOOTLONGNAAN 125g*4*12",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "8901777411155":{
+    "Item": "8901777411155",
+    "Description": "TANDOORI FOOTLONG NAAN 125g*4*12",
+    "Quantity": "12",
+    "Price": "26.00"
+  },
+  "8901777501160":{
+    "Item": "8901777501160",
+    "Description": "MALAI PANEER CUBES 1 Kg*10",
+    "Quantity": "10",
+    "Price": "97.00"
+  },
+  "8901777511152":{
+    "Item": "8901777511152",
+    "Description": "ALPHONSO MANGO SHRIKHAND 454g*9",
+    "Quantity": "9",
+    "Price": "40.50"
+  },
+  "8901777770184":{
+    "Item": "8901777770184",
+    "Description": "ALPHONSO MANGO ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00"
+  },
+  "8901777768181":{
+    "Item": "8901777768181",
+    "Description": "BUTTERSCOTCH ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00"
+  },
+  "8901777766187":{
+    "Item": "8901777766187",
+    "Description": "VANILLA ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00"
+  },
+  "8901777962176":{
+    "Item": "8901777962176",
+    "Description": "ALPHONSO MANGO ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777768174":{
+    "Item": "8901777768174",
+    "Description": "BUTTERSCOTCH ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777965177":{
+    "Item": "8901777965177",
+    "Description": "CLASSIC MALAI KULFI  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777966174":{
+    "Item": "8901777966174",
+    "Description": "FALOODA KULFI 1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777762172":{
+    "Item": "8901777762172",
+    "Description": "FRUITS & NUTS ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777663172":{
+    "Item": "8901777663172",
+    "Description": "KAJU DRAKSH ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777967171":{
+    "Item": "8901777967171",
+    "Description": "KESAR PISTA KULFI 1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777771174":{
+    "Item": "8901777771174",
+    "Description": "MALAI KULFI ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777682173":{
+    "Item": "8901777682173",
+    "Description": "MEETHA PAAN ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777674147":{
+    "Item": "8901777674147",
+    "Description": "RAJBHOG KULFI  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00"
+  },
+  "8901777963173":{
+    "Item": "8901777963173",
+    "Description": "STRAWBERRY ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777772171":{
+    "Item": "8901777772171",
+    "Description": "TENDER COCONUT ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777766170":{
+    "Item": "8901777766170",
+    "Description": "VANILLA ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  },
+  "8901777584170":{
+    "Item": "8901777584170",
+    "Description": "SF ALPHONSO MANGO ICE CREAM 1 Lt*4 - SF",
+    "Quantity": "4",
+    "Price": "30.00"
+  },
+  "8901777962138":{
+    "Item": "8901777962138",
+    "Description": "ALPHONSO MANGO ICECREAM 500mL*8",
+    "Quantity": "8",
+    "Price": "24.00"
+  },
+  "8901777965139":{
+    "Item": "8901777965139",
+    "Description": "CLASSIC MALAI KULFI 500mL*8",
+    "Quantity": "8",
+    "Price": "28.00"
+  },
+  "8901777986974":{
+    "Item": "8901777986974",
+    "Description": "CHOCOLATE CASSATTA IC 120mL*20",
+    "Quantity": "20",
+    "Price": "50.00"
+  },
+  "8901777971970":{
+    "Item": "8901777971970",
+    "Description": "CLASSIC CASSATTA ICE CREAM 120mL*20",
+    "Quantity": "20",
+    "Price": "50.00"
+  },
+  "8901777886786":{
+    "Item": "8901777886786",
+    "Description": "CHOCOBAR -6 IN 1 PACK 70mI*6*8",
+    "Quantity": "8",
+    "Price": "36.50"
+  },
+  "8901777887783":{
+    "Item": "8901777887783",
+    "Description": "MANGO DOLLY - 6 IN 1 PACK 60mL*6*8",
+    "Quantity": "8",
+    "Price": "36.50"
+  },
+  "8901777583975":{
+    "Item": "8901777583975",
+    "Description": "ALPHONSO MANGO IC CONE 110mL*20",
+    "Quantity": "20",
+    "Price": "30.00"
+  },
+  "8901777983973":{
+    "Item": "8901777983973",
+    "Description": "BUTTERSCOTCH ICE CREAM CONE  110mL*20",
+    "Quantity": "20",
+    "Price": "30.00"
+  },
+  "8901777984970":{
+    "Item": "8901777984970",
+    "Description": "CHOCOLATE ICE CREAM CONE 110mL*20",
+    "Quantity": "20",
+    "Price": "30.00"
+  },
+  "8901777874035":{
+    "Item": "8901777874035",
+    "Description": "CYLINDRICAL KULFI - BADAM 80mL*30",
+    "Quantity": "30",
+    "Price": "42.00"
+  },
+  "8901777872031":{
+    "Item": "8901777872031",
+    "Description": "CYLINDRICAL KULFI - MALAI  80mL*30",
+    "Quantity": "30",
+    "Price": "42.00"
+  },
+  "8901777974032":{
+    "Item": "8901777974032",
+    "Description": "CYLINDRICAL KULFI - MANGO  80mL*30",
+    "Quantity": "30",
+    "Price": "42.00"
+  },
+  "8901023006821":{
+    "Item": "8901023006821",
+    "Description": "HENNA 9 HERBS 400GM*24",
+    "Quantity": "24",
+    "Price": "46.00"
+  },
+  "8906021120340":{
+    "Item": "8906021120340",
+    "Description": "BUTTERMILK KULAMBU POWDER  200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00"
+  },
+  "8906021126076":{
+    "Item": "8906021126076",
+    "Description": "CHUKKU MALLI KAPPI 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00"
+  },
+  "8906021128889":{
+    "Item": "8906021128889",
+    "Description": "GARAM MASALA 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00"
+  },
+  "8906021122559":{
+    "Item": "8906021122559",
+    "Description": "RASAM POWDER  200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00"
+  },
+  "8906021122634":{
+    "Item": "8906021122634",
+    "Description": "SAMBAR POWDER 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00"
+  },
+  "8901777968178":{
+    "Item": "8901777968178",
+    "Description": "TUTI FRUTI ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00"
+  }
+}

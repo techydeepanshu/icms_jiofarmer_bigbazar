@@ -1,0 +1,446 @@
+{
+  "Punjabi Wadi Jar 12*400GM":{
+    "Item": "Punjabi Wadi Jar 12*400GM",
+    "Description": "Punjabi Wadi Jar 12*400GM",
+    "Quantity": "12",
+    "Price": "41.09"
+  },
+  "Chana Dal 21b":{
+    "Item": "Chana Dal 21b",
+    "Description": "Chana Dal 21b",
+    "Quantity": "1",
+    "Price": "38.96"
+  },
+  "Chana Dal 41b":{
+    "Item": "Chana Dal 41b",
+    "Description": "Chana Dal 41b",
+    "Quantity": "1",
+    "Price": "36.24"
+  },
+  "Chana Dal 7Lb":{
+    "Item": "Chana Dal 7Lb",
+    "Description": "Chana Dal 7Lb",
+    "Quantity": "1",
+    "Price": "31.4356"
+  },
+  "KABULI CHANA 2Lb":{
+    "Item": "KABULI CHANA 2Lb",
+    "Description": "KABULI CHANA 2Lb",
+    "Quantity": "1",
+    "Price": "46.96"
+  },
+  "KABULI CHANA 7Lb":{
+    "Item": "KABULI CHANA 7Lb",
+    "Description": "KABULI CHANA 7Lb",
+    "Quantity": "1",
+    "Price": "38.187"
+  },
+  "Chana KALA 2Lb":{
+    "Item": "Chana KALA 2Lb",
+    "Description": "Chana KALA 2Lb",
+    "Quantity": "1",
+    "Price": "39.36"
+  },
+  "Chana KALA 4Lb":{
+    "Item": "Chana KALA 4Lb",
+    "Description": "Chana KALA 4Lb",
+    "Quantity": "1",
+    "Price": "35.76"
+  },
+  "Chana KALA 7Lb":{
+    "Item": "Chana KALA 7Lb",
+    "Description": "Chana KALA 7Lb",
+    "Quantity": "1",
+    "Price": "30.286"
+  },
+  "Red Kidney Light 2Lb":{
+    "Item": "Red Kidney Light 2Lb",
+    "Description": "Red Kidney Light 2Lb",
+    "Quantity": "1",
+    "Price": "45.56"
+  },
+  "MASOOR DAL 2Lb":{
+    "Item": "MASOOR DAL 2Lb",
+    "Description": "MASOOR DAL 2Lb",
+    "Quantity": "1",
+    "Price": "35.16"
+  },
+  "MASOOR DAL 4Lb":{
+    "Item": "MASOOR DAL 4Lb",
+    "Description": "MASOOR DAL 4Lb",
+    "Quantity": "1",
+    "Price": "32.44"
+  },
+  "MASOOR DAL 7Lb":{
+    "Item": "MASOOR DAL 7Lb",
+    "Description": "MASOOR DAL 7Lb",
+    "Quantity": "1",
+    "Price": "28.086"
+  },
+  "Masoor Gota[Malka] 7Lb":{
+    "Item": "Masoor Gota[Malka] 7Lb",
+    "Description": "Masoor Gota[Malka] 7Lb",
+    "Quantity": "1",
+    "Price": "32.5626"
+  },
+  "masoor whole (Matki) 4Lb":{
+    "Item": "masoor whole (Matki) 4Lb",
+    "Description": "masoor whole (Matki) 4Lb",
+    "Quantity": "1",
+    "Price": "37.88"
+  },
+  "MOONG CHILKA 7Lb":{
+    "Item": "MOONG CHILKA 7Lb",
+    "Description": "MOONG CHILKA 7Lb",
+    "Quantity": "1",
+    "Price": "33.1366"
+  },
+  "Moong Dal 7Lb":{
+    "Item": "Moong Dal 7Lb",
+    "Description": "Moong Dal 7Lb",
+    "Quantity": "1",
+    "Price": "34.2846"
+  },
+  "MOONG WHOLE 2Lb":{
+    "Item": "MOONG WHOLE 2Lb",
+    "Description": "MOONG WHOLE 2Lb",
+    "Quantity": "1",
+    "Price": "42.16"
+  },
+  "MOONG WHOLE 7Lb":{
+    "Item": "MOONG WHOLE 7Lb",
+    "Description": "MOONG WHOLE 7Lb",
+    "Quantity": "1",
+    "Price": "32.587"
+  },
+  "Urad Whole 7Lb":{
+    "Item": "Urad Whole 7Lb",
+    "Description": "Urad Whole 7Lb",
+    "Quantity": "1",
+    "Price": "38.236"
+  },
+  "BROWN SUGAR 4Lb":{
+    "Item": "BROWN SUGAR 4Lb",
+    "Description": "BROWN SUGAR 4Lb",
+    "Quantity": "1",
+    "Price": "38.00"
+  },
+  "AJWAIN SEED 100 GM Bag":{
+    "Item": "AJWAIN SEED 100 GM Bag",
+    "Description": "AJWAIN SEED 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.10"
+  },
+  "AJWAIN SEED 200 GM Bag":{
+    "Item": "AJWAIN SEED 200 GM Bag",
+    "Description": "AJWAIN SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50"
+  },
+  "AJWAIN SEED 400 GM Bag":{
+    "Item": "AJWAIN SEED 400 GM Bag",
+    "Description": "AJWAIN SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30"
+  },
+  "AJWAIN SEED 800 GM Bag":{
+    "Item": "AJWAIN SEED 800 GM Bag",
+    "Description": "AJWAIN SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "3.90"
+  },
+  "Amchur PWD 100 GM":{
+    "Item": "Amchur PWD 100 GM",
+    "Description": "Amchur PWD 100 GM",
+    "Quantity": "1",
+    "Price": "1.20"
+  },
+  "BAY LEAVE 100 GM Bag":{
+    "Item": "BAY LEAVE 100 GM Bag",
+    "Description": "BAY LEAVE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40"
+  },
+  "BLACK MUSTURD SEED 200 GM Bag":{
+    "Item": "BLACK MUSTURD SEED 200 GM Bag",
+    "Description": "BLACK MUSTURD SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.30"
+  },
+  "BLACK PEPPER POWDER 400 GM Bag":{
+    "Item": "BLACK PEPPER POWDER 400 GM Bag",
+    "Description": "BLACK PEPPER POWDER 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10"
+  },
+  "BLACK PEPPER WHOLE 100 GM Bag":{
+    "Item": "BLACK PEPPER WHOLE 100 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.49"
+  },
+  "BLACK PEPPER WHOLE 200 GM Bag":{
+    "Item": "BLACK PEPPER WHOLE 200 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.39"
+  },
+  "BLACK PEPPER WHOLE 400 GM Bag":{
+    "Item": "BLACK PEPPER WHOLE 400 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10"
+  },
+  "BLACK SALT 200 GM Bag":{
+    "Item": "BLACK SALT 200 GM Bag",
+    "Description": "BLACK SALT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.30"
+  },
+  "CHARGUND 200GM":{
+    "Item": "CHARGUND 200GM",
+    "Description": "CHARGUND 200GM",
+    "Quantity": "1",
+    "Price": "2.70"
+  },
+  "CINNAMON FLAT 200 GM Bag":{
+    "Item": "CINNAMON FLAT 200 GM Bag",
+    "Description": "CINNAMON FLAT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.00"
+  },
+  "CINNAMON STICK Roll 8CM 200 GM Bag":{
+    "Item": "CINNAMON STICK Roll 8CM 200 GM Bag",
+    "Description": "CINNAMON STICK Roll 8CM 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.40"
+  },
+  "CINNAMON STICK Roll 8CM 400 GM Bag":{
+    "Item": "CINNAMON STICK Roll 8CM 400 GM Bag",
+    "Description": "CINNAMON STICK Roll 8CM 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10"
+  },
+  "CLOVE WHOLE 200 GM Bag":{
+    "Item": "CLOVE WHOLE 200 GM Bag",
+    "Description": "CLOVE WHOLE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "3.90"
+  },
+  "CORIANDER SEED 200 GM Bag":{
+    "Item": "CORIANDER SEED 200 GM Bag",
+    "Description": "CORIANDER SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40"
+  },
+  "CORIANDER SEED 400 GM Bag":{
+    "Item": "CORIANDER SEED 400 GM Bag",
+    "Description": "CORIANDER SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30"
+  },
+  "CUMIN POWDER 200 GM Bag":{
+    "Item": "CUMIN POWDER 200 GM Bag",
+    "Description": "CUMIN POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50"
+  },
+  "CUMIN POWDER 400 GM Bag":{
+    "Item": "CUMIN POWDER 400 GM Bag",
+    "Description": "CUMIN POWDER 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30"
+  },
+  "Cumin SEED 400 GM Bag":{
+    "Item": "Cumin SEED 400 GM Bag",
+    "Description": "Cumin SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.80"
+  },
+  "Cumin SEED 800 GM Bag":{
+    "Item": "Cumin SEED 800 GM Bag",
+    "Description": "Cumin SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "5.00"
+  },
+  "DRY MINT 100 GM Bag":{
+    "Item": "DRY MINT 100 GM Bag",
+    "Description": "DRY MINT 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40"
+  },
+  "FENNEL SEED 200 GM Bag":{
+    "Item": "FENNEL SEED 200 GM Bag",
+    "Description": "FENNEL SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50"
+  },
+  "FENNEL SEED 400 GM Bag":{
+    "Item": "FENNEL SEED 400 GM Bag",
+    "Description": "FENNEL SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "FENNEL SEED 800 GM Bag":{
+    "Item": "FENNEL SEED 800 GM Bag",
+    "Description": "FENNEL SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "4.00"
+  },
+  "FENNEL SEED 5LB":{
+    "Item": "FENNEL SEED 5LB",
+    "Description": "FENNEL SEED 5LB",
+    "Quantity": "1",
+    "Price": "9.75"
+  },
+  "FENUGREEK (Methi) SEED 200 GM Bag":{
+    "Item": "FENUGREEK (Methi) SEED 200 GM Bag",
+    "Description": "FENUGREEK (Methi) SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.10"
+  },
+  "Flex PWD 400 GM":{
+    "Item": "Flex PWD 400 GM",
+    "Description": "Flex PWD 400 GM",
+    "Quantity": "1",
+    "Price": "2.30"
+  },
+  "Flex Seed 400 GM":{
+    "Item": "Flex Seed 400 GM",
+    "Description": "Flex Seed 400 GM",
+    "Quantity": "1",
+    "Price": "2.30"
+  },
+  "KALONJI (BLACK CIM1N) SEED 400 GM Bag":{
+    "Item": "KALONJI (BLACK CIM1N) SEED 400 GM Bag",
+    "Description": "KALONJI (BLACK CIM1N) SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "3.30"
+  },
+  "NUTMEG WHOLE 100 GM Bag":{
+    "Item": "NUTMEG WHOLE 100 GM Bag",
+    "Description": "NUTMEG WHOLE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "2.61"
+  },
+  "PAPRIKA POWDER 200 GM Bag":{
+    "Item": "PAPRIKA POWDER 200 GM Bag",
+    "Description": "PAPRIKA POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.80"
+  },
+  "KASHMIRI CHILLI 400GM":{
+    "Item": "KASHMIRI CHILLI 400GM",
+    "Description": "KASHMIRI CHILLI 400GM",
+    "Quantity": "1",
+    "Price": "3.20"
+  },
+  "RED CHILLI WHOLE HOT 200 GM Bag":{
+    "Item": "RED CHILLI WHOLE HOT 200 GM Bag",
+    "Description": "RED CHILLI WHOLE HOT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.50"
+  },
+  "SESAME SEED WHITE 200 GM Bag":{
+    "Item": "SESAME SEED WHITE 200 GM Bag",
+    "Description": "SESAME SEED WHITE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.70"
+  },
+  "SESAME SEED WHITE 400 GM Bag":{
+    "Item": "SESAME SEED WHITE 400 GM Bag",
+    "Description": "SESAME SEED WHITE 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.70"
+  },
+  "TURMERIC 5LB":{
+    "Item": "TURMERIC 5LB",
+    "Description": "TURMERIC 5LB",
+    "Quantity": "1",
+    "Price": "8.00"
+  },
+  "CURRY POWDER 200 GM Bag":{
+    "Item": "CURRY POWDER 200 GM Bag",
+    "Description": "CURRY POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.60"
+  },
+  "Shudh Kasoori Methi lkg*6":{
+    "Item": "Shudh Kasoori Methi lkg*6",
+    "Description": "Shudh Kasoori Methi lkg*6",
+    "Quantity": "6",
+    "Price": "66.00"
+  },
+  "Pachranga Amla Pickle 12*800GM":{
+    "Item": "Pachranga Amla Pickle 12*800GM",
+    "Description": "Pachranga Amla Pickle 12*800GM",
+    "Quantity": "12",
+    "Price": "34.89"
+  },
+  "Lahori Mix 400GM x 12":{
+    "Item": "Lahori Mix 400GM x 12",
+    "Description": "Lahori Mix 400GM x 12",
+    "Quantity": "12",
+    "Price": "31.44"
+  },
+  "SHUDH Thread Mishri Pet Jar 400 GM X 12":{
+    "Item": "SHUDH Thread Mishri Pet Jar 400 GM X 12",
+    "Description": "SHUDH Thread Mishri Pet Jar 400 GM X 12",
+    "Quantity": "12",
+    "Price": "36.00"
+  },
+  "Peanut Gaz7ak 400G X 24":{
+    "Item": "Peanut Gaz7ak 400G X 24",
+    "Description": "Peanut Gaz7ak 400G X 24",
+    "Quantity": "24",
+    "Price": "55.20"
+  },
+  "Peanut Gazzak 400G Tray X 20":{
+    "Item": "Peanut Gazzak 400G Tray X 20",
+    "Description": "Peanut Gazzak 400G Tray X 20",
+    "Quantity": "20",
+    "Price": "50.00"
+  },
+  "Peanut Gazzak 200G x 40":{
+    "Item": "Peanut Gazzak 200G x 40",
+    "Description": "Peanut Gazzak 200G x 40",
+    "Quantity": "40",
+    "Price": "65.00"
+  },
+  "Rewri 400 GM X 24":{
+    "Item": "Rewri 400 GM X 24",
+    "Description": "Rewri 400 GM X 24",
+    "Quantity": "24",
+    "Price": "48.00"
+  },
+  "Shudh Rusk 600G*12":{
+    "Item": "Shudh Rusk 600G*12",
+    "Description": "Shudh Rusk 600G*12",
+    "Quantity": "12",
+    "Price": "27.00"
+  },
+  "SHUDH Suji Rusk Cardamom 600G*12":{
+    "Item": "SHUDH Suji Rusk Cardamom 600G*12",
+    "Description": "SHUDH Suji Rusk Cardamom 600G*12",
+    "Quantity": "12",
+    "Price": "27.00"
+  },
+  "SHUDH Suji Rusk (Fennel) 600G*I2":{
+    "Item": "SHUDH Suji Rusk (Fennel) 600G*I2",
+    "Description": "SHUDH Suji Rusk (Fennel) 600G*I2",
+    "Quantity": "12",
+    "Price": "27.00"
+  },
+  "BROWN & POLSON CUSTARD POWDER VANILLA 500GM":{
+    "Item": "BROWN & POLSON CUSTARD POWDER VANILLA 500GM",
+    "Description": "BROWN & POLSON CUSTARD POWDER VANILLA 500GM",
+    "Quantity": "1",
+    "Price": "2.625"
+  },
+  "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM":{
+    "Item": "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM",
+    "Description": "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM",
+    "Quantity": "12",
+    "Price": "27.00"
+  }
+}
