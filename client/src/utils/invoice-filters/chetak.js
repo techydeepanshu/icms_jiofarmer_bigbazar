@@ -388,7 +388,7 @@ const data = [
   },
 ];
 
-export const chetak = (data) => {
+export const chetak = () => {
  
   let filteredData = data.map((line) => Object.values(line).join("").trim());
 

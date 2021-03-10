@@ -9,6 +9,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import styles from "./DisplayData.module.css";
 import Spinner from "../../UI/Spinner/Spinner";
+import { chetak } from "../../utils/invoice-filters/chetak";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
@@ -32,6 +33,16 @@ const DisplayData = (props) => {
         "Selling Price",
   ];
 
+  const addRow = () => {
+    let tempTableData = [...tableData]
+    tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: "", markup: 0, sp: 0})
+    setTableData(tempTableData)
+  };
+  const deleteRow = (index) => {
+    let tempTableData = [...tableData]
+    tempTableData.splice(index, 1)
+    setTableData(tempTableData)
+  }
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
@@ -72,7 +83,7 @@ const DisplayData = (props) => {
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
           >
-            <td>{index + 1 }</td>
+            <td>{index + 1}</td>
             <td className={isFree ? styles.element : null}>
               <TextField
                 type="number"
@@ -103,10 +114,7 @@ const DisplayData = (props) => {
                 getOptionLabel={(option) => option}
                 style={{ width: 200 }}
                 renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="outlined"
-                  />
+                  <TextField {...params} variant="outlined" />
                 )}
               />
             </td>
@@ -138,6 +146,14 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.sp}</td>
+            <td>
+              <Button
+                text="Delete"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => deleteRow(index)}
+              />
+            </td>
           </tr>
         );
       });
@@ -148,6 +164,15 @@ const DisplayData = (props) => {
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
+              <tr>
+                <td>
+                  <Button
+                    text="Add cell"
+                    color="btn btn-info"
+                    onClick={addRow}
+                  />
+                </td>
+              </tr>
             </tbody>
           </table>
           <Button
@@ -196,6 +221,7 @@ const DisplayData = (props) => {
     if (key === "itemNo") {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
+      tempTableData[row]["sku"] = productDetails[value].sku;
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
@@ -207,10 +233,10 @@ const DisplayData = (props) => {
       }
       tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
-    
+
     if (
-      (key === "qty" || key === "unitPrice") &&
-      tempTableData[row]["extendedPrice"] !== "0.00"
+      (key === "qty" || key === "unitPrice")/*  &&
+      tempTableData[row]["extendedPrice"] !== "0.00" */
     ) {
       const extendedPrice =
         parseFloat(tempTableData[row]["qty"]) *
@@ -234,6 +260,8 @@ const DisplayData = (props) => {
   useEffect(() => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
+      // return chetak();
+
       setLoader(true)
       const ocrData = await Promise.all(
         props.filename.map(async (file) => {
@@ -289,6 +317,7 @@ const DisplayData = (props) => {
               row.itemNo = row.itemNo.toString().toUpperCase();
               row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
               row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : 0
+              row.sku = products[row.itemNo] !== undefined ? products[row.itemNo].sku : ""
               row.markup = 0
               let sp = 0
               if (parseInt(row.pieces)) {
@@ -317,7 +346,6 @@ const DisplayData = (props) => {
           })
           // .then(() => setLoader(false))
       })
-    // invoiceData();
   }, []);
 
   useEffect(() => {
