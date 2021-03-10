@@ -38,6 +38,11 @@ const DisplayData = (props) => {
     tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: "", markup: 0, sp: 0})
     setTableData(tempTableData)
   };
+  const deleteRow = (index) => {
+    let tempTableData = [...tableData]
+    tempTableData.splice(index, 1)
+    setTableData(tempTableData)
+  }
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
@@ -78,7 +83,7 @@ const DisplayData = (props) => {
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
           >
-            <td>{index + 1 }</td>
+            <td>{index + 1}</td>
             <td className={isFree ? styles.element : null}>
               <TextField
                 type="number"
@@ -109,10 +114,7 @@ const DisplayData = (props) => {
                 getOptionLabel={(option) => option}
                 style={{ width: 200 }}
                 renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="outlined"
-                  />
+                  <TextField {...params} variant="outlined" />
                 )}
               />
             </td>
@@ -144,6 +146,14 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.sp}</td>
+            <td>
+              <Button
+                text="Delete"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => deleteRow(index)}
+              />
+            </td>
           </tr>
         );
       });
@@ -154,7 +164,15 @@ const DisplayData = (props) => {
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
-              <tr onClick={addRow}>Add column</tr>
+              <tr>
+                <td>
+                  <Button
+                    text="Add cell"
+                    color="btn btn-info"
+                    onClick={addRow}
+                  />
+                </td>
+              </tr>
             </tbody>
           </table>
           <Button
