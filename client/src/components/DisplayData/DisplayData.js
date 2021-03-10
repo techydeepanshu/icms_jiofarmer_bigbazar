@@ -233,7 +233,7 @@ const DisplayData = (props) => {
       }
       tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
     }
-    console.log(tempTableData[row]["extendedPrice"], typeof(tempTableData[row]["extendedPrice"]))
+
     if (
       (key === "qty" || key === "unitPrice")/*  &&
       tempTableData[row]["extendedPrice"] !== "0.00" */
@@ -260,7 +260,7 @@ const DisplayData = (props) => {
   useEffect(() => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
-      return chetak();
+      // return chetak();
 
       setLoader(true)
       const ocrData = await Promise.all(
@@ -346,7 +346,6 @@ const DisplayData = (props) => {
           })
           // .then(() => setLoader(false))
       })
-    // invoiceData();
   }, []);
 
   useEffect(() => {
