@@ -3,6 +3,7 @@ import { WordpressAxios } from "./axios";
 export class InventoryService {
     async GetProductDetails(productSKU) {
         const response = await WordpressAxios.get(`/products/`,{ params: {sku: productSKU}})
+        // console.log("fetched.data on woocommerce", response.data);
         return response.data
     }
 

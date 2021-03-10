@@ -134,7 +134,7 @@ const UpdateInventory = (props) => {
 
         /**filter out the items not pushed on store */ 
         const itemsNotPushed = newInventoryData.filter(
-          ({ itemNo: item1 }) => !wooComResponse.some(({ itemNo: item2 }) => item1 !== item2)
+          ({ item: item1 }) => !wooComResponse.some(({ itemNo: item2 }) => item1 !== item2)
         );
         /**set the current table data to be the not pushed items */
         setNewInventoryData(itemsNotPushed)
