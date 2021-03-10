@@ -203,6 +203,7 @@ const DisplayData = (props) => {
     if (key === "itemNo") {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
+      tempTableData[row]["sku"] = productDetails[value].sku;
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
@@ -298,6 +299,7 @@ const DisplayData = (props) => {
               row.itemNo = row.itemNo.toString().toUpperCase();
               row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
               row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : 0
+              row.sku = products[row.itemNo] !== undefined ? products[row.itemNo].sku : ""
               row.markup = 0
               let sp = 0
               if (parseInt(row.pieces)) {

@@ -5,7 +5,8 @@ import { InventoryService } from '../../services/InventoryService';
 import Button from '../../UI/Button';
 import Spinner from '../../UI/Spinner/Spinner';
 
-const UpdateInventory = (props, {header}) => {
+const UpdateInventory = (props) => {
+    const header = props.header
     const [newInventoryData, setNewInventoryData] = useState(props.newInventoryData);
     const [inventory, setInventory] = useState([])
     const [redirect, setRedirect] = useState(false)
@@ -117,34 +118,34 @@ const UpdateInventory = (props, {header}) => {
          */
         let updatedWoocomProducts = data.map((product, index) => {
           /**find index of the item in fetched woocom product list */
-          const wooIndex = wooComProducts.findIndex(item => product.itemNo === item.itemNo)
+          const wooIndex = wooComProducts.findIndex(wooProduct => product.item === wooProduct.itemNo)
           if (wooIndex !== -1) {
             /**get the qty & other fileds of the woocom product */
             let {id, stock_quantity} = wooComProducts[wooIndex]
             stock_quantity += product.qty
             const regular_price = product.sp
-            return {id, regular_price, stock_quantity, itemNo: product.itemNo}
+            return {id, regular_price, stock_quantity, itemNo: product.item}
           }
           return null
         })
 
         // const success = await pushToFirebase(data)
         const wooComResponse = await pushToWoocom(updatedWoocomProducts)
-        console.log("woocomresponse", wooComResponse)
+
         /**filter out the items not pushed on store */ 
         const itemsNotPushed = newInventoryData.filter(
           ({ itemNo: item1 }) => !wooComResponse.some(({ itemNo: item2 }) => item1 !== item2)
         );
         /**set the current table data to be the not pushed items */
         setNewInventoryData(itemsNotPushed)
-        console.log("woo com", itemsNotPushed)
+        // console.log("woo com", itemsNotPushed)
         setLoader(false)
-        // if (success) {
-        //   window.alert("Inventory updated successfully");
-        //   setRedirect(true)
-        // } else {
-        //   window.alert("Inventory not updated");
-        // }
+        if (itemsNotPushed.length === 0) {
+          window.alert("Inventory updated successfully");
+          setRedirect(true)
+        } else {
+          window.alert("Inventory not updated");
+        }
       
     };
 
@@ -169,15 +170,14 @@ const UpdateInventory = (props, {header}) => {
         products.map(async (product) => {
           try {
             const res = await inventoryService.UpdateProductDetails(product.id,{regular_price: product.regular_price, stock_quantity: product.stock_quantity} /* {regular_price, stock_quantity} = product */);
-            const {id, name, regular_price, price, sku, slug, stock_quantity, sale_price} = res[0]
+            const {id, name, regular_price, price, sku, slug, stock_quantity, sale_price} = res
             return {id, name, regular_price, stock_quantity, itemNo: product.itemNo}
           } catch (error) {
             /**
              * break the event loop if any product fails
              */
             console.log(error)
-            // throw new Error(error);
-            // break;
+             alert("Couldn't update product on website.");
             return null
           }
         })
@@ -195,11 +195,13 @@ const UpdateInventory = (props, {header}) => {
                * The args in getproductdetails will be the sku fetched from the json file
                * const sku = jsonfile[row.itemNo]
                */
-              const res = await inventoryService.GetProductDetails("CAS AM20");
+              const res = await inventoryService.GetProductDetails(row.sku);
               const {id, name, regular_price, price, sku, slug, stock_quantity, sale_price} = res[0]
               return {id, name, regular_price, price, sku, slug, stock_quantity, sale_price, itemNo: row.itemNo}
             } catch (error) {
-              throw new Error(error);
+              // throw new Error(error);
+              alert("Couldn't fetch product from woodpress.")
+              return null
             }
           })
         );
@@ -209,8 +211,8 @@ const UpdateInventory = (props, {header}) => {
       getProducts()
     }, [])
     useEffect(() => {
-      console.log("Inventory data", newInventoryData)
-    }, [newInventoryData])
+      // console.log("Inventory data", newInventoryData)
+    }, [newInventoryData, setLoader])
     if (redirect) {
       return  <Redirect to="/" />;
     }
