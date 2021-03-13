@@ -16,7 +16,9 @@ const seamarkData = require("./model/seamark.json")
 const advanceFoodsData = require("./model/advance-foods.json")
 const joyGourmetFoodsData = require("./model/joy-gourmet-foods.json")
 const bestFoodsData = require("./model/best-foods.json")
-const katzmanData = require("./model/katzman.json")
+const katzmanData = require("./model/katzman.json");
+const { sign } = require('./authenticate');
+const { validateLogin } = require('./middlewares/requireLogin');
 
 
 // for parsing application/json
@@ -27,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(upload.single('file'));
 
 
-app.post("/api/upload-image", (req, res) => {
+app.post("/api/upload-image", validateLogin, (req, res) => {
   
   let uid = req.headers["user-key"];
   let ext = 'jpg'
@@ -57,7 +59,7 @@ app.post("/api/upload-image", (req, res) => {
   request(options, callback);
 });
 
-app.get("/api/product", (req, res) => {
+app.get("/api/product", validateLogin,  (req, res) => {
   switch (req.query["invoiceName"]) {
     case "chetak":
       res.send({ invoiceData: chetakData });
@@ -81,11 +83,20 @@ app.get("/api/product", (req, res) => {
 });
 
 app.post("/api/login", (req, res) => {
- // console.log("headers",req.headers)
-  res.send('success')
+  try {
+    const {userId, email} = req.body.data
+    const signedToken = sign({userId, email})
+    // console.log("gen token",signedToken)
+    res.send({token: signedToken})
+  } catch (error) {
+    res.status(400).send({
+      error: "Couldn't generate token",
+    });
+  }
+  
 });
 
-app.post("/api/ocr", function (req, res) {
+app.post("/api/ocr", validateLogin, function (req, res) {
   const filename = req.body.data["filename"]
   //console.log('Calling ocr', filename)
   // res.send("ocr ")

@@ -68,18 +68,21 @@ export const auth = (email, password ) => {
         // })
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((response) => {
-                const token = response["user"]["za"];
-                const uid = response["user"]["uid"];
+                // const token = response["user"]["za"];
+                const userId = response["user"]["uid"];
                 // console.log(response);
-                const expirationDate = new Date(new Date().getTime + 3600 * 1000);
-                localStorage.setItem("token", token);
-                localStorage.setItem("expirationDate", expirationDate);
-                localStorage.setItem("userId", uid);
-                dispatch(authSuccess(token, uid));
-                dispatch(logout(3600));
-                loginService.authenticate(uid)
-                    .then(res => {/* console.log('auth from server',res) */})
-                    .catch(err => {/* console.log('err on auth', err) */})
+                loginService.authenticate({userId, email})
+                    .then(res => {
+                        const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
+                        localStorage.setItem("token", res.token);
+                        localStorage.setItem("expirationDate", expirationDate);
+                        localStorage.setItem("userId", userId);
+                        dispatch(authSuccess(res.token, userId));
+                        dispatch(logout(3600));
+                    })
+                    .catch(err => {
+                        dispatch(authFail(err.error));
+                    })
             })
             .catch((err) => {
                 // console.log('err during login',err.message);
@@ -101,6 +104,7 @@ export const checkAuthentication = () => {
             }
             else {
                 dispatch(authSuccess(token, localStorage.getItem('userId')))
+                /**write here for automatic logout */
                 // dispatch(logout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
             } 
         }
