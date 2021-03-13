@@ -98,6 +98,9 @@ export const checkAuthentication = () => {
             dispatch(authLogout())
         }
         else {
+            /**
+             * get all data stored in browser- Object.entries(localStorage)
+             */
             const expirationDate  = new Date(localStorage.getItem('expirationDate'))
             if(expirationDate < new Date()) {
                 dispatch(authLogout())
@@ -105,7 +108,7 @@ export const checkAuthentication = () => {
             else {
                 dispatch(authSuccess(token, localStorage.getItem('userId')))
                 /**write here for automatic logout */
-                // dispatch(logout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
+                dispatch(logout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
             } 
         }
     }
