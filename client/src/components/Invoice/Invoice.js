@@ -5,20 +5,12 @@ import DisplayData from "../DisplayData/DisplayData";
 import { TesseractService } from "../../services/TesseractService";
 import Dropzone from "react-dropzone";
 import Spinner from "../../UI/Spinner/Spinner";
+import { dropdownOptions } from "../../utils/invoiceList";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { TextField } from "@material-ui/core";
 
 const Invoice = (props) => {
-  const dropdownOptions = [
-    { value: "Chetak", slug: "chetak" },
-    // { value: "Laxmi", slug: "laxmi" },
-    { value: "Sea Mark", slug: "sea-mark" },
-    { value: "Best Foods", slug: "best-foods" },
-    { value: "Krishna Foods", slug: "krishna-foods" },
-    { value: "Joy Gourmet Foods", slug: "joy-gourmet-foods" },
-    { value: "Advance Foods", slug: "advance-foods" },
-  ];
-  const [selectedDropdown, setSelectedDropdown] = useState(
-    dropdownOptions[0].slug
-  );
+  const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0]);
   // const [file, setFile] = useState(null);
   const [file, setFile] = useState([]);
   const [imagePreviewUrl, setImagePreviewUrl] = useState([]);
@@ -27,17 +19,15 @@ const Invoice = (props) => {
   const [loader, setLoader] = useState(false);
 
   const tesseractService = new TesseractService();
-  const path = props.match.url + `/${selectedDropdown}`;
-  const handleDropdownChange = (e) => {
-    setSelectedDropdown(e.target.value);
-  };
+  const path = props.match.url + `/${selectedDropdown.slug}`;
+
   const handleFileChange = async (files) => {
     files = Object.values(files);
 
     if (files.length <= 9) {
       const inputFiles = [];
       const imagePreviewUrls = [];
-      files.forEach( (selectedFile) => {
+      files.forEach((selectedFile) => {
         let reader = new FileReader();
         inputFiles.push(selectedFile);
         reader.onloadend = () => {
@@ -51,9 +41,8 @@ const Invoice = (props) => {
         setFile(inputFiles);
         setImagePreviewUrl(imagePreviewUrls);
       }, 1000);
-      
     } else {
-      alert("Select only upto 9 files")
+      alert("Select only upto 9 files");
     }
   };
   const scanInvoice = () => {
@@ -72,7 +61,7 @@ const Invoice = (props) => {
             } catch (error) {
               console.log("error fetching descripton", error);
               // return null;
-              throw new Error("error")
+              throw new Error("error");
             }
           })
         );
@@ -95,26 +84,26 @@ const Invoice = (props) => {
     }
   };
 
-
   const displaySelectFile = () => {
     return (
       <div className={styles.main}>
-        <div className="">
-          <label className="">Select Invoice </label>
-          <select
-            className={styles.Dropdown}
-            value={selectedDropdown}
-            onChange={handleDropdownChange}
-          >
-            {dropdownOptions.map((opt) => {
-              return (
-                <option key={opt.slug} value={opt.slug}>
-                  {opt.value}
-                </option>
-              );
-            })}
-          </select>
-        </div>
+        <Autocomplete
+          value={selectedDropdown}
+          onChange={(event, newValue) => {
+            // console.log("new value", newValue)
+            if (newValue) {
+              setSelectedDropdown(newValue);
+            }
+          }}
+          id="combo-box"
+          options={dropdownOptions}
+          getOptionLabel={(option) => option.value}
+          style={{ width: 300 }}
+          autoHighlight
+          renderInput={(params) => (
+            <TextField {...params} label="Select invoice" variant="outlined" />
+          )}
+        />
         <div className={styles.file_upload}>
           <div className={styles.Filter}>
             <input
@@ -165,15 +154,18 @@ const Invoice = (props) => {
     );
   };
   useEffect(() => {
-  //  console.log("useeffect Input files", file)
-  //  console.log("useeffect Preview url", imagePreviewUrl)
-  },[file, imagePreviewUrl])
+    //  console.log("useeffect Input files", file)
+    //  console.log("useeffect Preview url", imagePreviewUrl)
+  }, [file, imagePreviewUrl]);
   if (redirect) {
     return (
       <Route
         path={path}
         component={() => (
-          <DisplayData filename={filename} selectedInvoice={selectedDropdown} />
+          <DisplayData
+            filename={filename}
+            selectedInvoice={selectedDropdown.slug}
+          />
         )}
       />
     );
