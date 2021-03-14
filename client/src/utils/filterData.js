@@ -8,7 +8,6 @@ export const chooseFilter = (invoiceName, data) => {
   const newData=emptyColumn(data)
   switch (invoiceName) {
     case "chetak":
-      // let ;
       return applyFilter(newData, optionData["chetak"]);
     case "krishna-foods":
       return krishnaFoods(Object.values(data[0]));
@@ -17,13 +16,43 @@ export const chooseFilter = (invoiceName, data) => {
     case "sea-mark":
       return applyFilter(data, optionData["sea-mark"])
     case "best-foods":
-      // let newData=emptyColumn(data);
       return applyFilter(newData, optionData["best-foods"]);
     case "joy-gourment-foods":
-      // let newData=emptyColumn(data);
       return applyFilter(newData, optionData["joy-gourment-foods"]);
     case "katzam-foods":
-      return applyFilter(data, optionData["katzam-foods"])
+      return applyFilter(data, optionData["katzam-foods"]);
+    case "baroody":
+      return applyFilter(newData, optionData["baroody"]);
+    case "east-end":
+      return applyFilter(data, optionData["east-end"]);
+    case "indian-spice-trading":
+      return applyFilter(newData, optionData["indian-spice-trading"]);
+    case "grocer-mill":
+      return applyFilter(newData, optionData["grocer-mill"]);
+    case "meenaxi-enterprise":
+      return applyFilter(newData, optionData["meenaxi-enterprise"]);
+    case "rajbhog-food":
+      return applyFilter(data, optionData["rajbhog-food"]);
+    case "moda-food":
+      return applyFilter(data, optionData["moda-food"]);
+    case "us-gourmet-food":
+      return applyFilter(data, optionData["us-gourmet-food"]);
+    case "delight-food":
+      return applyFilter(newData, optionData["delight-food"]);
+    case "jalaram-produce":
+      return applyFilter(data, optionData["jalaram-produce"]);
+    case "vijay-food":
+      return applyFilter(data, optionData["vijay-food"]);
+    case "radhey-food":
+      return applyFilter(data, optionData["radhey-food"]);
+    case "vintage-food":
+      return applyFilter(data, optionData["vintage-food"]);
+    case "delight-distribution":
+      return applyFilter(data, optionData["delight-distribution"]);
+    case "dsa-snacks":
+      return applyFilter(data, optionData["dsa-snacks"]);
+    case "dawn-food":
+      return applyFilter(data, optionData["dawn-food"]);
     default:
       return chetak(data);
   }

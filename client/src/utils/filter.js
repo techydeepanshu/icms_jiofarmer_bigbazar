@@ -5,7 +5,7 @@ export const applyFilter=(arr,options)=>{
     for(var prop in data){
       if (Object.prototype.hasOwnProperty.call(data,prop)){
         let str=convertRowToString(data[prop]);
-        str=str.replace(/[`~!@#\$%^&=:;'<>?,\*]/gi, '');
+        str=str.replace(options.notAllowed, '');
         str=str.replace(/ +(?= )/g,'');
         str=str.trimStart();
         str=str.trimEnd();
@@ -36,7 +36,6 @@ export const applyFilter=(arr,options)=>{
   }
   return result;
 }
-
 const convertRowToString=(obj)=>{
   let str="";
   for (var prop in obj) {
@@ -50,7 +49,6 @@ const convertRowToString=(obj)=>{
   str=str.trimEnd();
   return str;
 }
-
 export const emptyColumn=(arr)=>{
   let data=[];
   for(let i=0;i<arr.length;i++){
