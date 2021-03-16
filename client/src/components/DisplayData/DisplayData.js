@@ -29,8 +29,9 @@ const DisplayData = (props) => {
         "Units(Per item)",
         "Unit Price",
         "Extended Price",
-        "Mark up (%)",
+        "Cost Price",
         "Selling Price",
+        "Mark up (%)",
   ];
 
   const addRow = () => {
@@ -133,6 +134,8 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.extendedPrice}</td>
+            <td>{element.cp}</td>
+            <td>{element.sp}</td>
             <td>
               <TextField
                 type="number"
@@ -145,7 +148,6 @@ const DisplayData = (props) => {
                 style={{ width: 100 }}
               />
             </td>
-            <td>{element.sp}</td>
             <td>
               <Button
                 text="Delete"
@@ -235,11 +237,15 @@ const DisplayData = (props) => {
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
       let cp = parseFloat(tempTableData[row]["unitPrice"]);
       let markup = parseFloat(tempTableData[row]["markup"]);
+      let cost =
+        parseFloat(tempTableData[row]["unitPrice"]) /
+        tempTableData[row]["pieces"];
       let sp = cp + (cp * markup) / 100;
       if (tempTableData[row]["pieces"]) {
         sp = sp / tempTableData[row]["pieces"];
       }
       tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
+      tempTableData[row]["cp"] = isNaN(cost)? 0 : cost.toFixed(2)
     }
 
     if (
@@ -328,8 +334,10 @@ const DisplayData = (props) => {
               row.sku = products[row.itemNo] !== undefined ? products[row.itemNo].sku : ""
               row.markup = 0
               let sp = 0
+              let cp = 0
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
+                cp = sp
               }
               /**filter out the rows for which qty shipped & extendedPrice is zero */
               if (row.qty == "0" && row.extendedPrice === "0.00") {
@@ -341,7 +349,7 @@ const DisplayData = (props) => {
                   parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
                 ).toFixed(0);
               }
-              return {...row, sp}
+              return {...row, sp, cp}
             })
             setLoader(false);
             setTableData(table.filter((data) => data !== null));

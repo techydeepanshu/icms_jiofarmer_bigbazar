@@ -44,8 +44,9 @@ const UpdateInventory = (props) => {
               <td>{element.pieces}</td>
               <td>{element.unitPrice}</td>
               <td>{element.extendedPrice}</td>
-              <td>{element.markup}</td>
+              <td>{element.cp}</td>
               <td>{element.sp}</td>
+              <td>{element.markup}</td>
             </tr>
           );
         });
@@ -178,6 +179,7 @@ const UpdateInventory = (props) => {
              */
             console.log(error)
              alert("Couldn't update product on website.");
+              console.log("Couldn't update product ", product.itemNo);
             return null
           }
         })
@@ -200,7 +202,8 @@ const UpdateInventory = (props) => {
               return {id, name, regular_price, price, sku, slug, stock_quantity, sale_price, itemNo: row.itemNo}
             } catch (error) {
               // throw new Error(error);
-              alert("Couldn't fetch product from woodpress.")
+              alert("Couldn't fetch product ", row.itemNo);
+              console.log("Couldn't fetch product from woodpress.", row.itemNo);
               return null
             }
           })
