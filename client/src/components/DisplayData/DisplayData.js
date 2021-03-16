@@ -175,12 +175,20 @@ const DisplayData = (props) => {
               </tr>
             </tbody>
           </table>
-          <Button
-            text="Update Inventory"
-            color="btn btn-info"
-            type="submit"
-            onClick={pushInventoryDetails}
-          />
+          <div className={styles.divRow}>
+            <Button
+              text="Update Inventory"
+              color="btn btn-info"
+              type="submit"
+              onClick={pushInventoryDetails}
+            />
+            <Button
+              text="Re upload"
+              color="btn btn-info"
+              type="submit"
+              onClick={() =>window.location.reload()}
+            />
+          </div>
         </div>
       );
     }
