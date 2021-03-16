@@ -40,9 +40,11 @@ const DisplayData = (props) => {
     setTableData(tempTableData)
   };
   const deleteRow = (index) => {
-    let tempTableData = [...tableData]
-    tempTableData.splice(index, 1)
-    setTableData(tempTableData)
+    if (window.confirm("Delete the item?")) {
+      let tempTableData = [...tableData]
+      tempTableData.splice(index, 1)
+      setTableData(tempTableData)
+    }
   }
   const renderTableHeader = () => {
     return header.map((key, index) => {
