@@ -530,7 +530,7 @@
     "Description": "Deep IQF Peas & Carrot 2lb (12)",
     "Quantity": "12",
     "Price": "27.74",
-    "sku": "Deep-IQF-Peas-&-Carrot-21b-(12)"
+    "sku": "Deep-IQF-Peas-Carrot-21b-(12)"
   },
   "CAS DIQ24": {
     "Item": "CAS DIQ24",
@@ -1895,14 +1895,14 @@
     "Description": "Britanni Oats Almond&Milk(48)",
     "Quantity": "48",
     "Price": "24.56",
-    "sku": "Britanni-Oats-Almond&amp;Milk(48)"
+    "sku": "Britanni-Oats-Almondamp;Milk(48)"
   },
   "CAS B136S": {
     "Item": "CAS B136S",
     "Description": "Britanni Oats Chocol&Almond(48)",
     "Quantity": "48",
     "Price": "24.56",
-    "sku": "Britanni-Oats-Chocol&amp;Almond(48)"
+    "sku": "Britanni-Oats-Chocolamp;Almond(48)"
   },
   "CAS B138S": {
     "Item": "CAS B138S",
