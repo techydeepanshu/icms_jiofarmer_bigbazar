@@ -51,19 +51,29 @@ const UpdateInventory = (props) => {
           );
         });
         return (
-          <div >
+          <div>
             <table className="table table-hover table-responsive-sm">
               <tbody>
                 <tr>{renderTableHeader()}</tr>
                 {rows}
               </tbody>
             </table>
-            <Button
-              text="Confirm Submit"
-              color="btn btn-info"
-              type="submit"
-              onClick={pushInventoryDetails}
-            />
+            <div className="d-flex justify-content-start">
+              <Button
+                text="Back"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => props.goBack(false)}
+              />
+            </div>
+            <div className="d-flex justify-content-center">
+              <Button
+                text="Submit"
+                color="btn btn-info"
+                type="submit"
+                onClick={pushInventoryDetails}
+              />
+            </div>
           </div>
         );
     };

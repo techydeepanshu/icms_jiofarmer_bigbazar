@@ -376,7 +376,7 @@ const DisplayData = (props) => {
   return (
     <div className="container-fluid">
       {pushToInventory ? (
-        <UpdateInventory newInventoryData={tableData} header={header}/>
+        <UpdateInventory newInventoryData={tableData} header={header} goBack={setPushToInventory}/>
       ) : (
         renderTableData()
       )}
