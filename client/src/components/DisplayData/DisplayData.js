@@ -89,6 +89,7 @@ const DisplayData = (props) => {
           <tr
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
+            style={element.show?{opacity:"1"}:{opacity:"0.4"}}
           >
             <td>{index + 1}</td>
             <td className={isFree ? styles.element : null}>
