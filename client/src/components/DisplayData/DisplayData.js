@@ -40,11 +40,15 @@ const DisplayData = (props) => {
     setTableData(tempTableData)
   };
   const deleteRow = (index) => {
-    if (window.confirm("Delete the item?")) {
-      let tempTableData = [...tableData]
-      tempTableData.splice(index, 1)
-      setTableData(tempTableData)
+    let tempTableData = [...tableData]
+    if (tableData[index]['show']) {
+      if (window.confirm("Delete the item?")) {
+        tempTableData[index]["show"] = false
+      }
+    } else {
+        tempTableData[index]["show"] = true;
     }
+    setTableData(tempTableData)
   }
   const renderTableHeader = () => {
     return header.map((key, index) => {
@@ -152,7 +156,7 @@ const DisplayData = (props) => {
             </td>
             <td>
               <Button
-                text="Delete"
+                text={element.show ? "Delete": 'Undo'}
                 color="btn btn-info"
                 type="submit"
                 onClick={() => deleteRow(index)}
@@ -206,8 +210,10 @@ const DisplayData = (props) => {
       tableData.forEach((element, index) => {
         let rowData = {index: index + 1, ...element}
         tempTable.push(rowData)
-      });
-      setInventoryData(tempTable)
+      })
+      let filterData = tempTable.filter(ele => ele.show === true)
+      console.log('filterData', filterData)
+      setInventoryData(filterData)
       setPushToInventory(true);
     } else {
       alert("Please fill all the values");
@@ -335,6 +341,7 @@ const DisplayData = (props) => {
               row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : 0
               row.sku = products[row.itemNo] !== undefined ? products[row.itemNo].sku : ""
               row.markup = 0
+              row.show = true
               let sp = 0
               let cp = 0
               if (parseInt(row.pieces)) {
@@ -376,7 +383,7 @@ const DisplayData = (props) => {
   return (
     <div className="container-fluid">
       {pushToInventory ? (
-        <UpdateInventory newInventoryData={tableData} header={header} goBack={setPushToInventory}/>
+        <UpdateInventory newInventoryData={inventoryData} header={header} goBack={setPushToInventory}/>
       ) : (
         renderTableData()
       )}
