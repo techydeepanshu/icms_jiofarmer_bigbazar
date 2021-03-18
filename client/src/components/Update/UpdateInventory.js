@@ -51,7 +51,7 @@ const UpdateInventory = (props) => {
           );
         });
         return (
-          <div>
+          <div style={{marginTop:"70px"}}>
             <table className="table table-hover table-responsive-sm">
               <tbody>
                 <tr>{renderTableHeader()}</tr>
