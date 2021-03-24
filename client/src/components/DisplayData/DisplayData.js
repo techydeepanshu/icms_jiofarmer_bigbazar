@@ -23,6 +23,7 @@ const DisplayData = (props) => {
   const tesseractService = new TesseractService();
   const header = [
         "Serial No.",
+        "Barcode",
         "Qty Shipped",
         "ITEM NO",
         "DESCRPTION",
@@ -89,9 +90,21 @@ const DisplayData = (props) => {
           <tr
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
-            style={element.show?{opacity:"1"}:{opacity:"0.4"}}
+            style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
           >
             <td>{index + 1}</td>
+            <td>
+              <TextField
+                type="number"
+                value={element.barcode}
+                id="outlined-secondary"
+                variant="outlined"
+                onChange={(e) => {
+                  handleChange(index, "barcode", e.target.value);
+                }}
+                style={{ width: 100 }}
+              />
+            </td>
             <td className={isFree ? styles.element : null}>
               <TextField
                 type="number"
@@ -157,7 +170,7 @@ const DisplayData = (props) => {
             </td>
             <td>
               <Button
-                text={element.show ? "Delete": 'Undo'}
+                text={element.show ? "Delete" : "Undo"}
                 color="btn btn-info"
                 type="submit"
                 onClick={() => deleteRow(index)}
@@ -269,6 +282,9 @@ const DisplayData = (props) => {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
     }
+    if (key === 'barcode') {
+      tempTableData[row]["barcode"] = value
+    }
     setTableData(tempTableData);
   };
 
@@ -345,6 +361,7 @@ const DisplayData = (props) => {
               row.show = true
               let sp = 0
               let cp = 0
+              const barcode = ''
               if (parseInt(row.pieces)) {
                 sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
                 cp = sp
@@ -359,7 +376,7 @@ const DisplayData = (props) => {
                   parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
                 ).toFixed(0);
               }
-              return {...row, sp, cp}
+              return {...row, sp, cp, barcode}
             })
             setLoader(false);
             setTableData(table.filter((data) => data !== null));
