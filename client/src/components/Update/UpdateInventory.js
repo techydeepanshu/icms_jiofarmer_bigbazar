@@ -37,8 +37,21 @@ const UpdateInventory = (props) => {
       let isNotFound =
         notFoundProducts.filter((val) => val.itemNo === element.itemNo).length >
         0;
+      let isAddedToQueue =
+        notFoundProducts.filter(
+          (val) => val.itemNo === element.itemNo && val.isQueued
+        ).length > 0;
       return (
-        <tr key={index} style={isNotFound ? { background: "red" } : null}>
+        <tr
+          key={index}
+          style={
+            isAddedToQueue
+              ? { background: "green" }
+              : isNotFound
+              ? { background: "red" }
+              : null
+          }
+        >
           <td>{index + 1}</td>
           <td>{element.barcode}</td>
           <td>{element.qty}</td>
@@ -51,7 +64,7 @@ const UpdateInventory = (props) => {
           <td>{element.sp}</td>
           <td>{element.markup}</td>
           <td>
-            {isNotFound && (
+            {isNotFound && !isAddedToQueue && (
               <Button
                 text={"Add to queue"}
                 color="btn btn-info"
@@ -133,25 +146,26 @@ const UpdateInventory = (props) => {
       });
     }
     data = data.filter((ele) => ele !== null);
-    // console.log("All Data", data);
-
+  
     /**
      * add the fileds of  data from the woocom & ocr
      */
-    let updatedWoocomProducts = data.map((product, index) => {
-      /**find index of the item in fetched woocom product list */
-      const wooIndex = wooComProducts.findIndex(
-        (wooProduct) => product.item === wooProduct.itemNo
-      );
-      if (wooIndex !== -1) {
-        /**get the qty & other fileds of the woocom product */
-        let { id, stock_quantity } = wooComProducts[wooIndex];
-        stock_quantity += product.qty;
-        const regular_price = product.sp;
-        return { id, regular_price, stock_quantity, itemNo: product.item };
-      }
-      return null;
-    });
+    let updatedWoocomProducts = data
+      .map((product, index) => {
+        /**find index of the item in fetched woocom product list */
+        const wooIndex = wooComProducts.findIndex(
+          (wooProduct) => product.item === wooProduct.itemNo
+        );
+        if (wooIndex !== -1) {
+          /**get the qty & other fileds of the woocom product */
+          let { id, stock_quantity } = wooComProducts[wooIndex];
+          stock_quantity += product.qty;
+          const regular_price = product.sp;
+          return { id, regular_price, stock_quantity, itemNo: product.item };
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
 
     // const success = await pushToFirebase(data)
     const wooComResponse = await pushToWoocom(updatedWoocomProducts);
@@ -175,11 +189,12 @@ const UpdateInventory = (props) => {
 
   const pushToFirebase = async (item) => {
     try {
-      // await data.map((item) => {
       firebase.database().ref("/queue").child(`${item.itemNo}`).set(item);
-      // });
-      let temp = notFoundProducts;
-      setNotFoundProducts(temp.filter(product => product.itemNo !== item.itemNo))
+      let temp = [...notFoundProducts]
+      let index = temp.findIndex((product) => product.itemNo === item.itemNo);
+      temp[index]["isQueued"] = true;
+      
+      setNotFoundProducts(temp);
       return true;
     } catch (error) {
       console.log(error);
@@ -222,7 +237,7 @@ const UpdateInventory = (props) => {
            */
           console.log(error);
           alert("Couldn't update product on website.");
-          console.log("Couldn't update product ", product.itemNo);
+          // console.log("Couldn't update product ", product.itemNo);
           return null;
         }
       })
@@ -263,26 +278,19 @@ const UpdateInventory = (props) => {
               itemNo: row.itemNo,
             };
           } catch (error) {
-            // throw new Error(error);
-            // alert("Couldn't fetch product ", row.itemNo);
-            // let temp = [...notFoundProducts]
-            // console.log(temp,"temp")
             tempNotFoundProducts.push(row);
-
             console.log("Couldn't fetch product from woodpress.", row.itemNo);
             return null;
           }
         })
       );
       setLoader(false);
-      setWooComProducts(items);
+      setWooComProducts(items.filter(ele => ele !== null));
       setNotFoundProducts(tempNotFoundProducts);
     }
     getProducts();
   }, []);
-  useEffect(() => {
-    // console.log("Inventory data", newInventoryData)
-  }, [newInventoryData, setLoader, notFoundProducts]);
+  useEffect(() => {}, [newInventoryData, setLoader, notFoundProducts]);
   if (redirect) {
     return <Redirect to="/" />;
   }
