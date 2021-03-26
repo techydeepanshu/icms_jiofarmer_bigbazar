@@ -7,7 +7,8 @@ import { checkAuthentication } from "./store/action/actionAuth";
 
 const Auth = React.lazy(() => import("./containers/Auth/Auth"));
 const Logout = React.lazy(() => import("./containers/Auth/Logout/Logout"));
-const Invoice = React.lazy(() => import("./components/Invoice/Invoice"))
+const Invoice = React.lazy(() => import("./components/Invoice/Invoice"));
+const Queue =React.lazy(()=>import("./components/Queue/Queue"));
 
 class App extends Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class App extends Component {
           {/* <Route path="/auth" component={Auth} /> */}
           {/* <Route path="/orders" component={Orders} /> */}
           <Route path="/logout" component={Logout} />
+          <Route path="/queue" component={Queue}/>
           <Redirect to="/invoice" />
         </Switch>
       );
