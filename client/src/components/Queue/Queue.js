@@ -1,13 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React,{useEffect,useState} from 'react';
+import {Link} from 'react-router-dom';
+import {InventoryService} from "../../services/InventoryService"
+import {CModal,CModalBody,CModalHeader,CModalFooter,CButton,CContainer,CCol,CRow,CFormGroup,CLabel,CInput,CDropdown,CDropdownToggle,CDropdownMenu,CDropdownItem} from '@coreui/react';
 import firebase from "../../firebase";
-import Spinner from "../../UI/Spinner/Spinner";
-const Queue = () => {
-  const [queue, setQueue] = useState([]);
-  const [loader, setLoader] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-  const [content, setContent] = useState(null);
-  const [header, setHeader] = useState([]);
+const Queue=()=>{
+  const inventoryService = new InventoryService();
+  const [queue,setQueue]=useState([]);
+  const [categoryArray,setCategoryArray]=useState([]);
+  const [showModal,setShowModal]=useState(false);
+  const [content,setContent]=useState(null);
+  const [header,setHeader]=useState([]);
+  const [state,setState]=useState({name:"",type:"",regular_price:"",description:"",short_description:"",categories:[],images:[]});
+  const handleChange=(event,val)=>{
+    let newState=Object.assign({},state);
+    if(event.target.name!=="categories"&&event.target.name!=="images")
+      newState[event.target.name]=event.target.value;
+    else{
+      let o=null;
+      if(event.target.name==="categories"){
+        o={id:val};
+        newState[event.target.name]=[o];
+      }
+      else{
+        o={src:val};
+        newState[event.target.name].push(o);
+      }
+    }
+    setState(newState);
+  }
+  const toggleModal=()=>{
+    setShowModal(!showModal)
+  }
   useEffect(() => {
     const ref = firebase.database().ref("/queue");
     ref.on("value", (snapshot) => {
@@ -17,8 +40,15 @@ const Queue = () => {
         setLoader(false)
       }
     });
-  }, []);
-  const setContentExtra = (o) => {
+    let c=[];
+    inventoryService.getAllProducts()
+    .then(res=>{
+      c=res.map(d=>d.categories[0].id)
+      setCategoryArray([...new Set(c)])
+    })
+    .catch(err=>console.log(err));
+  },[])
+  const setContentExtra=(o)=>{
     setContent(o);
     let header = [];
     for (var prop in o) {
@@ -27,12 +57,17 @@ const Queue = () => {
       }
     }
     setHeader(header);
-  };
-   if (loader) {
-     return <Spinner />;
-   }
-  return (
-    <div style={{ marginTop: "90px" }}>
+    let newState={name:o.description,type:"simple",regular_price:o.cp,description:o.description,short_description:o.description,categories:[],images:[]};
+    setState(newState);
+  }
+  const addProduct=()=>{
+    setShowModal(!showModal)
+    inventoryService.createProduct(state)
+    .then(res=>alert("Successfully created a product"))
+    .catch(err=>alert("Some error occuured in creating product"))
+  }
+  return(
+    <div style={{marginTop:"90px"}}>
       <div className="row">
         {queue.map((q, i) => (
           <div className="col-md-4" key={q.sku} style={{ padding: "10px" }}>
@@ -59,36 +94,91 @@ const Queue = () => {
           </div>
         ))}
       </div>
-      {showModal ? (
-        <table
-          className="table table-bordered table-sm"
-          style={{ marginTop: "40px" }}
-        >
-          <thead className="thead-dark">
-            <tr>
-              {header.map((o, i) => (
-                <th key={i} scope="col">
-                  {o}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {header.map((o, i) => (
-                <td key={i}>{content[o].toString()}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      ) : null}
-      <div className="row" style={{ marginTop: "40px" }}>
-        <div className="col-md-2">
-          <Link className="btn btn-lg btn-info" to="/invoice">
-            Back
-          </Link>
-        </div>
-      </div>
+      <CModal show={showModal} onClose={toggleModal}>
+        <CModalHeader closeButton>Add Product</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="12">
+                <CFormGroup>
+                  <CLabel htmlFor="name">Name</CLabel>
+                  <CInput
+                    type="text"
+                    name="name"
+                    value={state.name}
+                    onChange={(event)=>handleChange(event,"")}
+                  />
+                </CFormGroup>
+                <CRow>
+                  <CCol sm="6">
+                    <CFormGroup>
+                      <CLabel htmlFor="type">Type</CLabel>
+                      <CInput
+                        type="text"
+                        name="type"
+                        value={state.type}
+                        onChange={(event)=>handleChange(event,"")}
+                      />
+                    </CFormGroup>
+                  </CCol>
+                  <CCol sm="6">
+                    <CFormGroup>
+                      <CLabel htmlFor="regular_price">Regular Price</CLabel>
+                      <CInput
+                        type="text"
+                        name="regular_price"
+                        value={state.regular_price}
+                        onChange={(event)=>handleChange(event,"")}
+                      />
+                    </CFormGroup>
+                  </CCol>
+                </CRow>
+                <CFormGroup>
+                  <CLabel htmlFor="description">Description</CLabel>
+                  <CInput
+                    type="text"
+                    name="description"
+                    value={state.description}
+                    onChange={(event)=>handleChange(event,"")}
+                  />
+                </CFormGroup>
+                <CFormGroup>
+                  <CLabel htmlFor="short_description">Short Description</CLabel>
+                  <CInput
+                    type="text"
+                    name="short_description"
+                    value={state.short_description}
+                    onChange={(event)=>handleChange(event,"")}
+                  />
+                </CFormGroup>
+                <CRow>
+                  <CCol sm="3">
+                    <CFormGroup>
+                      <CLabel htmlFor="categories">Category</CLabel>
+                      <CDropdown name="categories" className="mt-2">
+                        <CDropdownToggle caret>{state.categories.length===0?"Select a Category":state.categories[0].id}</CDropdownToggle>
+                        <CDropdownMenu>
+                          {categoryArray.map((e,i)=>(
+                            <CDropdownItem key={i} name="categories" onClick={(event)=>handleChange(event,e)}>{e}</CDropdownItem>
+                          ))}
+                        </CDropdownMenu>
+                      </CDropdown>
+                    </CFormGroup>
+                  </CCol>
+                  <CCol sm="9">
+                    
+                  </CCol>
+                </CRow>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={()=>addProduct()}>Add</CButton>{' '}
+          <CButton color="secondary" onClick={toggleModal}>Cancel</CButton>
+        </CModalFooter>
+      </CModal>
+      <div className="row" style={{marginTop:"40px"}}><div className="col-md-2"><Link className="btn btn-lg btn-info" to="/invoice">Back</Link></div></div>
     </div>
   );
 };

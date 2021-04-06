@@ -1,3 +1,7 @@
 node_modules
 /uploads
 .env
+/upload
+script.py
+Maharaja_Hicksville.csv
+Maharaja_Queens.csv
