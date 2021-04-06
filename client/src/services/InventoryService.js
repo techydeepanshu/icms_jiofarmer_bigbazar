@@ -13,6 +13,14 @@ export class InventoryService {
         // console.log("response.data on woocommerce", res.data)
         return res.data
     }
+    async getAllProducts(){
+        const res=await WordpressAxios.get("products");
+        return res.data;
+    }
+    async createProduct(data){
+        const res=await WordpressAxios.post("products",data);
+        return res.data;
+    }
 }
 /*********
  * product sku list
