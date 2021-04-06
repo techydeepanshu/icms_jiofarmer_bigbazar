@@ -2,8 +2,9 @@ const express = require('express');
 const multer = require("multer");
 const textractHelper = require("aws-textract-helper");
 const request = require("request");
+const spawn=require('child_process').spawnSync;
 require("dotenv").config({ path: __dirname + "/.env" });
-
+const dirName=__dirname;
 
 const app = express()
 var storage = multer.memoryStorage();
@@ -80,6 +81,13 @@ app.get("/api/product", validateLogin,  (req, res) => {
       break;
   }
   // res.send({ item: jsonData[req.query["item"]] });
+});
+
+app.get("/api/fuzzwuzz",validateLogin,(req,res)=>{
+  const newProcess=spawn('python',['./script.py',req.query["name"],req.query["count"],dirName]);
+  let result=newProcess.stdout.toString().trim();
+  result=result.split("$$$")
+  res.json({result:result})
 });
 
 app.post("/api/login", (req, res) => {
