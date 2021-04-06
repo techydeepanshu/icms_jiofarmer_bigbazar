@@ -3,9 +3,11 @@ import {Link} from 'react-router-dom';
 import {InventoryService} from "../../services/InventoryService"
 import {CModal,CModalBody,CModalHeader,CModalFooter,CButton,CContainer,CCol,CRow,CFormGroup,CLabel,CInput,CDropdown,CDropdownToggle,CDropdownMenu,CDropdownItem} from '@coreui/react';
 import firebase from "../../firebase";
+import Spinner from '../../UI/Spinner/Spinner';
 const Queue=()=>{
   const inventoryService = new InventoryService();
   const [queue,setQueue]=useState([]);
+  const [loader, setLoader] = useState(true);
   const [categoryArray,setCategoryArray]=useState([]);
   const [showModal,setShowModal]=useState(false);
   const [content,setContent]=useState(null);
@@ -66,6 +68,11 @@ const Queue=()=>{
     .then(res=>alert("Successfully created a product"))
     .catch(err=>alert("Some error occuured in creating product"))
   }
+
+  if (loader) {
+    return <Spinner />;
+  }
+  
   return(
     <div style={{marginTop:"90px"}}>
       <div className="row">
