@@ -105,7 +105,7 @@ const Queue = () => {
   const deleteAddedProducts = (item) => {
     try {
       firebase.database().ref("/queue").child(`${item}`).remove();
-      let temp = [...notFoundProducts];
+      let temp = [...queue];
       setQueue(temp.filter((product) => product !== item));
       return true;
     } catch (error) {
