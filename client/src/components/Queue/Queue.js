@@ -20,6 +20,8 @@ import {
 } from "@coreui/react";
 import firebase from "../../firebase";
 import Spinner from "../../UI/Spinner/Spinner";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { TextField } from "@material-ui/core";
 const Queue = () => {
   const inventoryService = new InventoryService();
   const [queue, setQueue] = useState([]);
@@ -153,11 +155,20 @@ const Queue = () => {
               <CCol sm="12">
                 <CFormGroup>
                   <CLabel htmlFor="name">Name</CLabel>
-                  <CInput
-                    type="text"
-                    name="name"
+                  <Autocomplete
                     value={state.name}
-                    onChange={(event) => handleChange(event, "")}
+                    onChange={(event, newValue) => {
+                      if (newValue) {
+                        handleChange(event, "");
+                      }
+                    }}
+                    id="combo-box"
+                    options={["itemNoDropdown", "value"]}
+                    getOptionLabel={(option) => option}
+                    style={{ paddingTop: 4 }}
+                    renderInput={(params) => (
+                      <TextField {...params} variant="outlined" size="small" />
+                    )}
                   />
                 </CFormGroup>
                 <CRow>
