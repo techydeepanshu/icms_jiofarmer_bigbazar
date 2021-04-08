@@ -84,10 +84,33 @@ app.get("/api/product", validateLogin,  (req, res) => {
 });
 
 app.get("/api/fuzzwuzz",validateLogin,(req,res)=>{
-  const newProcess=spawn('python',['./script.py',req.query["name"],req.query["count"],dirName]);
+  const newProcess=spawn('python',['./script.py',req.query["name"],10,dirName]);
   let result=newProcess.stdout.toString().trim();
   result=result.split("$$$")
-  res.json({result:result})
+  let data=[];
+  for(let i=0;i<result.length;i++){
+    let s=result[i].split("@@@");
+    let obj={
+      sku:s[0]==="nan"?null:s[0],
+      upc:s[1]==="nan"?null:s[1],
+      altupc1:s[2]==="nan"?null:s[2],
+      altupc2:s[3]==="nan"?null:s[3],
+      itemName:s[4]==="nan"?null:s[4],
+      vintage:s[5]==="nan"?null:s[5],
+      totalQty:s[6]==="nan"?null:s[6],
+      cost:s[7]==="nan"?null:s[7],
+      pricea:s[8]==="nan"?null:s[8],
+      priceb:s[9]==="nan"?null:s[9],
+      pricec:s[10]==="nan"?null:s[10],
+      department:s[11]==="nan"?null:s[11],
+      salePrice:s[12]==="nan"?null:s[12],
+      size:s[13]==="nan"?null:s[13],
+      pack:s[14]==="nan"?null:s[14],
+      price:s[15]==="nan"?null:s[15]
+    }
+    data.push(obj);
+  }
+  res.json({result:data})
 });
 
 app.post("/api/login", (req, res) => {

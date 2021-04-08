@@ -23,7 +23,7 @@ import firebase from "../../firebase";
 import Spinner from "../../UI/Spinner/Spinner";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
-const Queue = () => {
+const Pos = () => {
   const inventoryService = new InventoryService();
   const api=new Api();
   const [queue, setQueue] = useState([]);
@@ -269,4 +269,4 @@ const Queue = () => {
     </div>
   );
 };
-export default Queue;
+export default Pos;
