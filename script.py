@@ -7,7 +7,7 @@ from nltk.stem.porter import PorterStemmer
 item=sys.argv[1]
 total=int(sys.argv[2])
 dirName=sys.argv[3]
-dataset=pd.read_csv(dirName+'/csv/Hicksville.csv',delimiter=',')
+dataset=pd.read_csv(dirName,delimiter=',')
 z=dataset.iloc[:,1].values
 y=dataset.iloc[:,2].values
 ps=PorterStemmer()

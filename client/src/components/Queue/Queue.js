@@ -99,7 +99,7 @@ const Queue = () => {
     };
     setState(newState);
     api
-    .GetFuzz(o.description)
+    .GetFuzz(o.description,"queue")
     .then((res) => setFuzzSuggestion(res.result))
     .catch((err) => console.log(err));
   };
@@ -170,7 +170,7 @@ const Queue = () => {
                       }
                     }}
                     id="combo-box"
-                    options={fuzzSuggestion.map(e=>e.itemName)}
+                    options={fuzzSuggestion.map(e=>e.name)}
                     getOptionLabel={(option) => option}
                     style={{ paddingTop: 4 }}
                     renderInput={(params) => (

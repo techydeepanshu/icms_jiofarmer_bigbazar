@@ -84,18 +84,20 @@ app.get("/api/product", validateLogin,  (req, res) => {
 });
 
 app.get("/api/fuzzwuzz",validateLogin,(req,res)=>{
-  const newProcess=spawn('python',['./script.py',req.query["name"],10,dirName]);
+  const type=req.query["type"];
+  const dirname=type==="queue"?"/csv/Hicksville.csv":"/csv/Export.csv";
+  const newProcess=spawn('python',['./script.py',req.query["name"],10,dirName+dirname]);
   let result=newProcess.stdout.toString().trim();
   result=result.split("$$$")
   let data=[];
   for(let i=0;i<result.length;i++){
     let s=result[i].split("@@@");
-    let obj={
+    let obj=type==="queue"?{
       sku:s[0]==="nan"?null:s[0],
       upc:s[1]==="nan"?null:s[1],
       altupc1:s[2]==="nan"?null:s[2],
       altupc2:s[3]==="nan"?null:s[3],
-      itemName:s[4]==="nan"?null:s[4],
+      name:s[4]==="nan"?null:s[4],
       vintage:s[5]==="nan"?null:s[5],
       totalQty:s[6]==="nan"?null:s[6],
       cost:s[7]==="nan"?null:s[7],
@@ -107,7 +109,7 @@ app.get("/api/fuzzwuzz",validateLogin,(req,res)=>{
       size:s[13]==="nan"?null:s[13],
       pack:s[14]==="nan"?null:s[14],
       price:s[15]==="nan"?null:s[15]
-    }
+    }:{name:s[3]==="nan"?null:s[3]}
     data.push(obj);
   }
   res.json({result:data})
