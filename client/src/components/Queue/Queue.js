@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { InventoryService } from "../../services/InventoryService";
-import {Api} from "../../services/Api"
+import { Api } from "../../services/Api";
 import {
   CModal,
   CModalBody,
@@ -25,14 +25,15 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
 const Queue = () => {
   const inventoryService = new InventoryService();
-  const api=new Api();
+  const api = new Api();
   const [queue, setQueue] = useState([]);
   const [loader, setLoader] = useState(true);
   const [categoryArray, setCategoryArray] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState(null);
   const [header, setHeader] = useState([]);
-  const [fuzzSuggestion,setFuzzSuggestion]=useState([]);
+  const [fuzzSuggestion, setFuzzSuggestion] = useState([]);
+  const [modalLabel, setModalLabel] = useState("");
   const [state, setState] = useState({
     name: "",
     type: "",
@@ -41,9 +42,10 @@ const Queue = () => {
     short_description: "",
     categories: [],
     images: [],
+    label: "",
   });
   const handleChange = (event, val) => {
-    let newState = Object.assign({}, state);
+    let newState = { ...state };
     if (event.target.name !== "categories" && event.target.name !== "images")
       newState[event.target.name] = event.target.value;
     else {
@@ -96,12 +98,20 @@ const Queue = () => {
       short_description: o.description,
       categories: [],
       images: [],
+      label: o.description,
     };
     setState(newState);
     api
-    .GetFuzz(o.description,"queue")
-    .then((res) => setFuzzSuggestion(res.result))
-    .catch((err) => console.log(err));
+      .GetFuzz(o.description, "queue")
+      .then((res) => {
+        const filter = res.result.map((element) => {
+          let obj = { ...element };
+          obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          return obj;
+        });
+        setFuzzSuggestion(filter);
+      })
+      .catch((err) => console.log(err));
   };
   const addProduct = () => {
     setShowModal(!showModal);
@@ -143,6 +153,7 @@ const Queue = () => {
                     className="btn btn-sm btn-primary"
                     onClick={() => {
                       setShowModal(true);
+                      setModalLabel(q.description);
                       setContentExtra(q);
                     }}
                   >
@@ -155,7 +166,7 @@ const Queue = () => {
         ))}
       </div>
       <CModal show={showModal} onClose={toggleModal}>
-        <CModalHeader closeButton>Add Product</CModalHeader>
+        <CModalHeader closeButton>{modalLabel}</CModalHeader>
         <CModalBody>
           <CContainer fluid>
             <CRow>
@@ -163,15 +174,22 @@ const Queue = () => {
                 <CFormGroup>
                   <CLabel htmlFor="name">Name</CLabel>
                   <Autocomplete
-                    value={state.name}
+                    value={state}
                     onChange={(event, newValue) => {
                       if (newValue) {
-                        handleChange(event, "");
+                        let newState = { ...state };
+                        console.log(newValue);
+                        newState.name = newValue.name;
+                        newState.short_description = newValue.name;
+                        newState.description = newValue.name;
+                        newState.regular_price = newValue.price;
+                        newState.label = newValue.name;
+                        setState(newState);
                       }
                     }}
                     id="combo-box"
-                    options={fuzzSuggestion.map(e=>e.name)}
-                    getOptionLabel={(option) => option}
+                    options={fuzzSuggestion}
+                    getOptionLabel={(option) => option.label ?? option.name}
                     style={{ paddingTop: 4 }}
                     renderInput={(params) => (
                       <TextField {...params} variant="outlined" size="small" />
