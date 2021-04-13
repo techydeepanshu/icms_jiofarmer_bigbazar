@@ -10,6 +10,7 @@ const Logout = React.lazy(() => import("./containers/Auth/Logout/Logout"));
 const Invoice = React.lazy(() => import("./components/Invoice/Invoice"));
 const Queue =React.lazy(()=>import("./components/Queue/Queue"));
 const Pos=React.lazy(()=>import("./components/Pos/Pos"));
+const Inventory=React.lazy(()=>import("./components/Inventory/Inventory"));
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/logout" component={Logout} />
           <Route path="/queue" component={Queue}/>
           <Route path="/pos" component={Pos}/>
+          <Route path="/inventory" component={Inventory}/>
           <Redirect to="/invoice" />
         </Switch>
       );

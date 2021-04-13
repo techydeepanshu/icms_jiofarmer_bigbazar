@@ -18,6 +18,7 @@ const NavigationItems = (props) => {
                     <NavigationItem link = "/logout">Logout</NavigationItem>
                     <NavigationItem  link="/queue">Show Queue</NavigationItem>
                     <NavigationItem  link="/pos">Show Pos</NavigationItem>
+                    <NavigationItem  link="/inventory">Inventory</NavigationItem>
                 </>
             :null}
         </ul>
