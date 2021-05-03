@@ -113,11 +113,9 @@ const UpdateInventory = (props) => {
         cp: element.unitPrice,
         markup: element.markup,
         sp: element.sp,
+        description: element.description,
       };
     });
-
-    // data = [...data, ...inventory];
-    // console.log("Before", data.length);
 
     var duplicates = {};
     for (var i = 0; i < data.length; i++) {
@@ -127,9 +125,8 @@ const UpdateInventory = (props) => {
         duplicates[data[i].item] = [i];
       }
     }
-    // console.log("duplicates", duplicates)
+
     let tempData = Object.values(duplicates).filter((ele) => ele.length > 1);
-    // let indices = tempData.map(ele => ...ele)
     if (tempData.length > 0) {
       tempData.forEach((index) => {
         let temp = 0;
@@ -146,7 +143,7 @@ const UpdateInventory = (props) => {
       });
     }
     data = data.filter((ele) => ele !== null);
-  
+
     /**
      * add the fileds of  data from the woocom & ocr
      */
@@ -167,9 +164,8 @@ const UpdateInventory = (props) => {
       })
       .filter((item) => item !== null);
 
-    // const success = await pushToFirebase(data)
     const wooComResponse = await pushToWoocom(updatedWoocomProducts);
-
+    const posResponse = await pushToPOS(data);
     /**filter out the items not pushed on store */
     const itemsNotPushed = newInventoryData.filter(
       ({ item: item1 }) =>
@@ -177,7 +173,7 @@ const UpdateInventory = (props) => {
     );
     /**set the current table data to be the not pushed items */
     setNewInventoryData(itemsNotPushed);
-    // console.log("woo com", itemsNotPushed)
+    console.log("woo com", itemsNotPushed)
     setLoader(false);
     if (itemsNotPushed.length === 0) {
       window.alert("Inventory updated successfully");
@@ -190,10 +186,10 @@ const UpdateInventory = (props) => {
   const pushToFirebase = async (item) => {
     try {
       firebase.database().ref("/queue").child(`${item.itemNo}`).set(item);
-      let temp = [...notFoundProducts]
+      let temp = [...notFoundProducts];
       let index = temp.findIndex((product) => product.itemNo === item.itemNo);
       temp[index]["isQueued"] = true;
-      
+
       setNotFoundProducts(temp);
       return true;
     } catch (error) {
@@ -232,12 +228,49 @@ const UpdateInventory = (props) => {
             itemNo: product.itemNo,
           };
         } catch (error) {
-          /**
-           * break the event loop if any product fails
-           */
           console.log(error);
           alert("Couldn't update product on website.");
-          // console.log("Couldn't update product ", product.itemNo);
+          return null;
+        }
+      })
+    );
+    setLoader(false);
+    return responses.filter((item) => item !== null);
+  };
+
+  const pushToPOS = async (products) => {
+    setLoader(true);
+    const responses = await Promise.all(
+      products.map(async (product) => {
+        try {
+          const res = await inventoryService.UpdatePOSProducts(
+            JSON.stringify({
+              UPC: "0123456",
+              ITEMNAME: product.description,
+              DESCRIPTION: product.description,
+              PRICE: product.sp,
+              COST: product.cp,
+              QTY: product.qty,
+              SIZE: "70 gm",
+              PACK: "Single",
+              REPLACEQTY: 1,
+              DEPARTMENT: "GROSARY",
+              CATEGORY: "SNACKS",
+              SUBCATEGORY: "NOODLE",
+              ISFOODSTAMP: 1,
+              ISWEIGHTED: 0,
+              ISTAXABLE: 1,
+              VENDORNAME: "Test Grosary",
+              VENDORCODE: "T12456",
+              VENDORCOST: "0.70",
+              ISNEWITEM: 1,
+            })
+          );
+          console.log("res from POS", res);
+          return true;
+        } catch (error) {
+          console.log(error);
+          // alert("Couldn't update product on website.");
           return null;
         }
       })
@@ -285,7 +318,7 @@ const UpdateInventory = (props) => {
         })
       );
       setLoader(false);
-      setWooComProducts(items.filter(ele => ele !== null));
+      setWooComProducts(items.filter((ele) => ele !== null));
       setNotFoundProducts(tempNotFoundProducts);
     }
     getProducts();

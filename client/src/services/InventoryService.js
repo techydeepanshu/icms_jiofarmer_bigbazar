@@ -1,41 +1,28 @@
-import { WordpressAxios } from "./axios";
+import { POSAxios, WordpressAxios } from "./axios";
+import Axios from "./axios";
 
 export class InventoryService {
-    async GetProductDetails(productSKU) {
-        const response = await WordpressAxios.get(`/products/`,{ params: {sku: productSKU}})
-        // console.log("fetched.data on woocommerce", response.data);
-        return response.data
-    }
+  async GetProductDetails(productSKU) {
+    const response = await WordpressAxios.get(`/products/`, {
+      params: { sku: productSKU },
+    });
+    return response.data;
+  }
 
-    async UpdateProductDetails(productId, data) {
-        // console.log("Data for updating on woo commerce", productId, data)
-        const res = await WordpressAxios.put(`/products/${productId}`, data);
-        // console.log("response.data on woocommerce", res.data)
-        return res.data
-    }
-    async getAllProducts(){
-        const res=await WordpressAxios.get("products");
-        return res.data;
-    }
-    async createProduct(data){
-        const res=await WordpressAxios.post("products",data);
-        return res.data;
-    }
+  async UpdateProductDetails(productId, data) {
+    const res = await WordpressAxios.put(`/products/${productId}`, data);
+    return res.data;
+  }
+  async getAllProducts() {
+    const res = await WordpressAxios.get("products");
+    return res.data;
+  }
+  async createProduct(data) {
+    const res = await WordpressAxios.post("products", data);
+    return res.data;
+  }
+  async UpdatePOSProducts(data) {
+    const res = await POSAxios.post("/Product/ManageItem", data);
+    return res.data;
+  }
 }
-/*********
- * product sku list
- * 
- * 
- */
-// {
-//     /**chetak itemcode for cheese */
-//     "CAS M20": {
-//         sku: 123,
-//         product: "Cheese"
-//     },
-//     /**best foods item code */
-//     "45256": {
-//         sku: 123,
-//         product: "Cheese"
-//     }
-// }
