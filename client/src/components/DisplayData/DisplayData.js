@@ -10,6 +10,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import styles from "./DisplayData.module.css";
 import Spinner from "../../UI/Spinner/Spinner";
 import { chetak } from "../../utils/invoice-filters/chetak";
+import { CModal, CModalHeader } from "@coreui/react";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
@@ -93,7 +94,7 @@ const DisplayData = (props) => {
             style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
           >
             <td>{index + 1}</td>
-            <td>
+            <td className={styles.element}>
               <TextField
                 type="number"
                 value={element.barcode}
@@ -104,8 +105,9 @@ const DisplayData = (props) => {
                 }}
                 style={{ width: 100 }}
               />
+              {/**add modal here */}
             </td>
-            <td className={isFree ? styles.element : null}>
+            <td className={styles.element}>
               <TextField
                 type="number"
                 value={element.qty}
