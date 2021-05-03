@@ -1,0 +1,426 @@
+{
+  "8901777049662": {
+    "Item": "8901777049662",
+    "Description": "AMLA 312g*24",
+    "Quantity": "24",
+    "Price": "25.00",
+    "POS": "NEW GODREJ SHIKAKAI AMLA PLUS",
+    "Barcode": "8901023005398"
+  },
+  "8901777077665": {
+    "Item": "8901777077665",
+    "Description": "AMLA SLICES 312g*24",
+    "Quantity": "24",
+    "Price": "33.30",
+    "POS": "VADILAL AMLA SLICES",
+    "Barcode": "8901777077665"
+  },
+  "8901777024669": {
+    "Item": "8901777024669",
+    "Description": "BHINDI CUTS  312g*24",
+    "Quantity": "24",
+    "Price": "28.00",
+    "POS": "DEEP BHINDI CUT",
+    "Barcode": "011433117562"
+  },
+  "8901777012666": {
+    "Item": "8901777012666",
+    "Description": "CARROT  312g*24",
+    "Quantity": "24",
+    "Price": "24.00",
+    "POS": "GOANA CARROT PICKLE",
+    "Barcode": "8904000000324"
+  },
+  "8901777019665": {
+    "Item": "8901777019665",
+    "Description": "DUDHI  312g*24",
+    "Quantity": "24",
+    "Price": "24.00",
+    "POS": "VADILAL DUDHI D. B. GOURD",
+    "Barcode": "8901777019665"
+  },
+  "8901777024683": {
+    "Item": "8901777024683",
+    "Description": "BULK BHINDI CUTS 908g*12",
+    "Quantity": "12",
+    "Price": "36.00",
+    "POS": "ANAND FRYUMS BHINDI CUT COLOUR",
+    "Barcode": "0878776007772"
+  },
+  "8901777281161": {
+    "Item": "8901777281161",
+    "Description": "ALPHONSO MANGO PULP 1 Kg*10",
+    "Quantity": "10",
+    "Price": "40.00",
+    "POS": "RATNA ALPHONSO MANGO PULP",
+    "Barcode": "890150005051"
+  },
+  "8901777276167": {
+    "Item": "8901777276167",
+    "Description": "CHIKOO PULP 1 Kg*10",
+    "Quantity": "10",
+    "Price": "40.00",
+    "POS": "SWAD CHIKOO PULP",
+    "Barcode": "051179251403"
+  },
+  "8901777217153": {
+    "Item": "8901777217153",
+    "Description": "CHIKOO SLICES 312g*12",
+    "Quantity": "12",
+    "Price": "21.00",
+    "POS": "VADILAL CHIKOO SLICES",
+    "Barcode": "8901777217665"
+  },
+  "8901777072660": {
+    "Item": "8901777072660",
+    "Description": "GRATED COCONUT 312g*24",
+    "Quantity": "24",
+    "Price": "36.00",
+    "POS": "BALAJI GRATED COCONUT",
+    "Barcode": "870400000739"
+  },
+  "8901777242667": {
+    "Item": "8901777242667",
+    "Description": "GREEN MANGO OFFCUTS  312g*12",
+    "Quantity": "12",
+    "Price": "16.00",
+    "POS": "GREEN MANGO",
+    "Barcode": "2028"
+  },
+  "8901777627662": {
+    "Item": "8901777627662",
+    "Description": "KESAR MANGO SLICES  312g*12",
+    "Quantity": "12",
+    "Price": "21.00",
+    "POS": "MANGO BAR",
+    "Barcode": "5117923963"
+  },
+  "8901777411629": {
+    "Item": "8901777411629",
+    "Description": "BULK NAAN TANDOORI 80g*16*6",
+    "Quantity": "6",
+    "Price": "25.80",
+    "POS": "TANDOORI NAAN",
+    "Barcode": "051179996700"
+  },
+  "8901777412152": {
+    "Item": "8901777412152",
+    "Description": "GARLIC BUTTER FOOTLONGNAAN 125g*4*12",
+    "Quantity": "12",
+    "Price": "26.00",
+    "POS": "PARLE   G",
+    "Barcode": "8901719101038"
+  },
+  "8901777411155": {
+    "Item": "8901777411155",
+    "Description": "TANDOORI FOOTLONG NAAN 125g*4*12",
+    "Quantity": "12",
+    "Price": "26.00",
+    "POS": "TANDOORI NAAN",
+    "Barcode": "051179996700"
+  },
+  "8901777501160": {
+    "Item": "8901777501160",
+    "Description": "MALAI PANEER CUBES 1 Kg*10",
+    "Quantity": "10",
+    "Price": "97.00",
+    "POS": "PALAK PANEER",
+    "Barcode": "8906019080427"
+  },
+  "8901777511152": {
+    "Item": "8901777511152",
+    "Description": "ALPHONSO MANGO SHRIKHAND 454g*9",
+    "Quantity": "9",
+    "Price": "40.50",
+    "POS": "JOY MANGO SHRIKHAND",
+    "Barcode": "680617606613"
+  },
+  "8901777770184": {
+    "Item": "8901777770184",
+    "Description": "ALPHONSO MANGO ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00",
+    "POS": "JOY MANGO ICE CREAM",
+    "Barcode": "680617400037"
+  },
+  "8901777768181": {
+    "Item": "8901777768181",
+    "Description": "BUTTERSCOTCH ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00",
+    "POS": "BUTTER SCOTCH",
+    "Barcode": "8680122403914"
+  },
+  "8901777766187": {
+    "Item": "8901777766187",
+    "Description": "VANILLA ICE CREAM 2 Lt*3",
+    "Quantity": "3",
+    "Price": "30.00",
+    "POS": "BREYERS VANILLA CHOCOLATE ICE CREAM",
+    "Barcode": "077567254252"
+  },
+  "8901777962176": {
+    "Item": "8901777962176",
+    "Description": "ALPHONSO MANGO ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "JOY MANGO ICE CREAM",
+    "Barcode": "680617400037"
+  },
+  "8901777768174": {
+    "Item": "8901777768174",
+    "Description": "BUTTERSCOTCH ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "BUTTER SCOTCH",
+    "Barcode": "8680122403914"
+  },
+  "8901777965177": {
+    "Item": "8901777965177",
+    "Description": "CLASSIC MALAI KULFI  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "VADILAL CLASSIC MALAI KULFI",
+    "Barcode": "8901777965184"
+  },
+  "8901777966174": {
+    "Item": "8901777966174",
+    "Description": "FALOODA KULFI 1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "REENAS FALOODA KULFI",
+    "Barcode": "011433115490"
+  },
+  "8901777762172": {
+    "Item": "8901777762172",
+    "Description": "FRUITS & NUTS ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "VADILAL TUTI FRUITI ICE CREAM",
+    "Barcode": "8901777968130"
+  },
+  "8901777663172": {
+    "Item": "8901777663172",
+    "Description": "KAJU DRAKSH ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "REENAS KAJU DRAKSH ICE CREAM",
+    "Barcode": "011433042130"
+  },
+  "8901777967171": {
+    "Item": "8901777967171",
+    "Description": "KESAR PISTA KULFI 1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "MTR KULFI KESAR PISTA",
+    "Barcode": "840965002950"
+  },
+  "8901777771174": {
+    "Item": "8901777771174",
+    "Description": "MALAI KULFI ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "JOY MALAI KULFI ICE CREAM",
+    "Barcode": "680617400228"
+  },
+  "8901777682173": {
+    "Item": "8901777682173",
+    "Description": "MEETHA PAAN ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "JOY ICE CREAM",
+    "Barcode": "24753"
+  },
+  "8901777674147": {
+    "Item": "8901777674147",
+    "Description": "RAJBHOG KULFI  1 Lt*4",
+    "Quantity": "4",
+    "Price": "26.00",
+    "POS": "RAJBHOG FOODS CHOCOLATE KULFI",
+    "Barcode": "735426227051"
+  },
+  "8901777963173": {
+    "Item": "8901777963173",
+    "Description": "STRAWBERRY ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "VADILAL STRAWBERRY  ICE CREAM",
+    "Barcode": "8901777963173"
+  },
+  "8901777772171": {
+    "Item": "8901777772171",
+    "Description": "TENDER COCONUT ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "CREAMED COCONUT",
+    "Barcode": "692991710268"
+  },
+  "8901777766170": {
+    "Item": "8901777766170",
+    "Description": "VANILLA ICE CREAM  1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "BREYERS VANILLA CHOCOLATE ICE CREAM",
+    "Barcode": "077567254252"
+  },
+  "8901777584170": {
+    "Item": "8901777584170",
+    "Description": "SF ALPHONSO MANGO ICE CREAM 1 Lt*4 - SF",
+    "Quantity": "4",
+    "Price": "30.00",
+    "POS": "JOY MANGO ICE CREAM",
+    "Barcode": "680617400037"
+  },
+  "8901777962138": {
+    "Item": "8901777962138",
+    "Description": "ALPHONSO MANGO ICECREAM 500mL*8",
+    "Quantity": "8",
+    "Price": "24.00",
+    "POS": "VADILAL ALPHONSO MANGO ICECREAM",
+    "Barcode": "8901777770139"
+  },
+  "8901777965139": {
+    "Item": "8901777965139",
+    "Description": "CLASSIC MALAI KULFI 500mL*8",
+    "Quantity": "8",
+    "Price": "28.00",
+    "POS": "VADILAL CLASSIC MALAI KULFI",
+    "Barcode": "8901777965184"
+  },
+  "8901777986974": {
+    "Item": "8901777986974",
+    "Description": "CHOCOLATE CASSATTA IC 120mL*20",
+    "Quantity": "20",
+    "Price": "50.00",
+    "POS": "VADILAL CHOCOLATE CASSATTA ICE CREA",
+    "Barcode": "8901777986974"
+  },
+  "8901777971970": {
+    "Item": "8901777971970",
+    "Description": "CLASSIC CASSATTA ICE CREAM 120mL*20",
+    "Quantity": "20",
+    "Price": "50.00",
+    "POS": "JOY ICE CREAM",
+    "Barcode": "24753"
+  },
+  "8901777886786": {
+    "Item": "8901777886786",
+    "Description": "CHOCOBAR -6 IN 1 PACK 70mI*6*8",
+    "Quantity": "8",
+    "Price": "36.50",
+    "POS": "RIN BAR",
+    "Barcode": "8901030602658"
+  },
+  "8901777887783": {
+    "Item": "8901777887783",
+    "Description": "MANGO DOLLY - 6 IN 1 PACK 60mL*6*8",
+    "Quantity": "8",
+    "Price": "36.50",
+    "POS": "MTR MANGO PICKLE",
+    "Barcode": "840965010023"
+  },
+  "8901777583975": {
+    "Item": "8901777583975",
+    "Description": "ALPHONSO MANGO IC CONE 110mL*20",
+    "Quantity": "20",
+    "Price": "30.00",
+    "POS": "VADILAL ALPHONSO MANGO CONE",
+    "Barcode": "8901777583975"
+  },
+  "8901777983973": {
+    "Item": "8901777983973",
+    "Description": "BUTTERSCOTCH ICE CREAM CONE  110mL*20",
+    "Quantity": "20",
+    "Price": "30.00",
+    "POS": "BUTTER SCOTCH",
+    "Barcode": "8680122403914"
+  },
+  "8901777984970": {
+    "Item": "8901777984970",
+    "Description": "CHOCOLATE ICE CREAM CONE 110mL*20",
+    "Quantity": "20",
+    "Price": "30.00",
+    "POS": "RA ONE",
+    "Barcode": "10019"
+  },
+  "8901777874035": {
+    "Item": "8901777874035",
+    "Description": "CYLINDRICAL KULFI - BADAM 80mL*30",
+    "Quantity": "30",
+    "Price": "42.00",
+    "POS": "KULFI KING MALAI KULFI",
+    "Barcode": "8901777979037"
+  },
+  "8901777872031": {
+    "Item": "8901777872031",
+    "Description": "CYLINDRICAL KULFI - MALAI  80mL*30",
+    "Quantity": "30",
+    "Price": "42.00",
+    "POS": "KULFI KING MALAI KULFI",
+    "Barcode": "8901777979037"
+  },
+  "8901777974032": {
+    "Item": "8901777974032",
+    "Description": "CYLINDRICAL KULFI - MANGO  80mL*30",
+    "Quantity": "30",
+    "Price": "42.00",
+    "POS": "KULFI KING MANGO KULFI",
+    "Barcode": "8901777978030"
+  },
+  "8901023006821": {
+    "Item": "8901023006821",
+    "Description": "HENNA 9 HERBS 400GM*24",
+    "Quantity": "24",
+    "Price": "46.00",
+    "POS": "PRIDE HENNA CREAM HERBAL OIL",
+    "Barcode": "8906046142686"
+  },
+  "8906021120340": {
+    "Item": "8906021120340",
+    "Description": "BUTTERMILK KULAMBU POWDER  200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00",
+    "POS": "AMLA POWDER",
+    "Barcode": "4547682311292"
+  },
+  "8906021126076": {
+    "Item": "8906021126076",
+    "Description": "CHUKKU MALLI KAPPI 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00",
+    "POS": "CHUKKU MALLI KAPPI",
+    "Barcode": "8904209301482"
+  },
+  "8906021128889": {
+    "Item": "8906021128889",
+    "Description": "GARAM MASALA 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00",
+    "POS": "GARAM MASALA  90LB",
+    "Barcode": "213000"
+  },
+  "8906021122559": {
+    "Item": "8906021122559",
+    "Description": "RASAM POWDER  200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00",
+    "POS": "777 RASAM POWDER",
+    "Barcode": "897231001452"
+  },
+  "8906021122634": {
+    "Item": "8906021122634",
+    "Description": "SAMBAR POWDER 200 GMS * 20",
+    "Quantity": "20",
+    "Price": "39.00",
+    "POS": "777 SAMBAR POWDER",
+    "Barcode": "897231000912"
+  },
+  "8901777968178": {
+    "Item": "8901777968178",
+    "Description": "TUTI FRUTI ICE CREAM 1 Lt*4",
+    "Quantity": "4",
+    "Price": "24.00",
+    "POS": "VADILAL TUTI FRUTI ICE CREAM",
+    "Barcode": "8901777692189"
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "ReS Chum Chum 1lb x 12": {
+    "Item": "ReS Chum Chum 1lb x 12",
+    "Description": "ReS Chum Chum 1lb x 12",
+    "Quantity": "12",
+    "Price": "60.00",
+    "POS": "4 C CRUMBS GLUTEN FREE SEASONED",
+    "Barcode": "041387532050"
+  },
+  "ReS Lacha Rabri 1lb x 12": {
+    "Item": "ReS Lacha Rabri 1lb x 12",
+    "Description": "ReS Lacha Rabri 1lb x 12",
+    "Quantity": "12",
+    "Price": "60.00",
+    "POS": "REHMAT E SHEREEN LACHHA RABRI",
+    "Barcode": "8964000883792"
+  },
+  "ReS Carrot/Gajar Halwa 1lb x 12": {
+    "Item": "ReS Carrot/Gajar Halwa 1lb x 12",
+    "Description": "ReS Carrot/Gajar Halwa 1lb x 12",
+    "Quantity": "12",
+    "Price": "60.00",
+    "POS": "GAJAR HALWA",
+    "Barcode": "797677719303"
+  },
+  "ReS Burfee 1lb x 12": {
+    "Item": "ReS Burfee 1lb x 12",
+    "Description": "ReS Burfee 1lb x 12",
+    "Quantity": "12",
+    "Price": "60.00",
+    "POS": "REHMAT E SHEREEN BURFEE",
+    "Barcode": "8964000883600"
+  },
+  "ReS Habshi Halwa 1lb x 12": {
+    "Item": "ReS Habshi Halwa 1lb x 12",
+    "Description": "ReS Habshi Halwa 1lb x 12",
+    "Quantity": "12",
+    "Price": "60.00",
+    "POS": "HABSHI HALWA",
+    "Barcode": "8964000824795"
+  },
+  "Natl Garlic-Ginger Paste 750gx12": {
+    "Item": "Natl Garlic-Ginger Paste 750gx12",
+    "Description": "Natl Garlic-Ginger Paste 750gx12",
+    "Quantity": "12",
+    "Price": "39.00",
+    "POS": "FAZLANI GARLIC N GINGER  PASTE",
+    "Barcode": "810609022019"
+  },
+  "Natl Garlic Paste 750gx12": {
+    "Item": "Natl Garlic Paste 750gx12",
+    "Description": "Natl Garlic Paste 750gx12",
+    "Quantity": "12",
+    "Price": "39.00",
+    "POS": "NATIONAL GARLIC PASTE",
+    "Barcode": "620514011684"
+  },
+  "Natl Ginger Paste 750g x 12": {
+    "Item": "Natl Ginger Paste 750g x 12",
+    "Description": "Natl Ginger Paste 750g x 12",
+    "Quantity": "12",
+    "Price": "1.25",
+    "POS": "NATIONAL GINGER PASTE",
+    "Barcode": "620514011677"
+  },
+  "Natl DP Bombay Biryani Masala 140g": {
+    "Item": "Natl DP Bombay Biryani Masala 140g",
+    "Description": "Natl DP Bombay Biryani Masala 140g",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "BOMBAY BIRYANI",
+    "Barcode": "620514009674"
+  },
+  "Natl Chicken Biryani Masala 459 SP": {
+    "Item": "Natl Chicken Biryani Masala 459 SP",
+    "Description": "Natl Chicken Biryani Masala 459 SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "CHICKEN MASALA",
+    "Barcode": "8901786161003"
+  },
+  "Natl Butter Chicken Masala 50g SP": {
+    "Item": "Natl Butter Chicken Masala 50g SP",
+    "Description": "Natl Butter Chicken Masala 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "NAVYA BUTTER CHICKEN MASALA",
+    "Barcode": "8901304225514"
+  },
+  "Natl Karahl Gosht Masala 50g SP": {
+    "Item": "Natl Karahl Gosht Masala 50g SP",
+    "Description": "Natl Karahl Gosht Masala 50g SP",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "DAL MASALA",
+    "Barcode": "890023008318"
+  },
+  "Natl Chat Masala 100g": {
+    "Item": "Natl Chat Masala 100g",
+    "Description": "Natl Chat Masala 100g",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "CHAT PATS MASALA BOONDI",
+    "Barcode": "7232462914684"
+  },
+  "Natl Tandoori Masala 50g SP": {
+    "Item": "Natl Tandoori Masala 50g SP",
+    "Description": "Natl Tandoori Masala 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004"
+  },
+  "Natl Pula� Masala 70g SP": {
+    "Item": "Natl Pula� Masala 70g SP",
+    "Description": "Natl Pula� Masala 70g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004"
+  },
+  "Natl Achar Goasht Masala 50g SP": {
+    "Item": "Natl Achar Goasht Masala 50g SP",
+    "Description": "Natl Achar Goasht Masala 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "ACHARI GOSHT MASALA",
+    "Barcode": "6291103750457"
+  },
+  "Natl Masalaydar B. Biryani Masala 50g SP": {
+    "Item": "Natl Masalaydar B. Biryani Masala 50g SP",
+    "Description": "Natl Masalaydar B. Biryani Masala 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "DAL MASALA",
+    "Barcode": "890023008318"
+  },
+  "Natl Paiak Gosht 45g SP": {
+    "Item": "Natl Paiak Gosht 45g SP",
+    "Description": "Natl Paiak Gosht 45g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "NATIONAL PALAK GOSHT",
+    "Barcode": "620514008400"
+  },
+  "Natl Palak Pan eer 50g SP": {
+    "Item": "Natl Palak Pan eer 50g SP",
+    "Description": "Natl Palak Pan eer 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "PALMAS PEAS",
+    "Barcode": "640976108524"
+  },
+  "Natl Beef Biryani 50g SP": {
+    "Item": "Natl Beef Biryani 50g SP",
+    "Description": "Natl Beef Biryani 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "NATIONAL BEEF BIRYANI",
+    "Barcode": "620514015170"
+  },
+  "Natl Sabzi Bhujia Masala 100g SP": {
+    "Item": "Natl Sabzi Bhujia Masala 100g SP",
+    "Description": "Natl Sabzi Bhujia Masala 100g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004"
+  },
+  "Natl Lahori Fish Masala 100g SP": {
+    "Item": "Natl Lahori Fish Masala 100g SP",
+    "Description": "Natl Lahori Fish Masala 100g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "NATIONAL LAHORI FISH MASALA",
+    "Barcode": "620514012599"
+  },
+  "Natl Kona Masala 50g SP": {
+    "Item": "Natl Kona Masala 50g SP",
+    "Description": "Natl Kona Masala 50g SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004"
+  },
+  "Natl Chap!! Kabab Masaia 1009 SP": {
+    "Item": "Natl Chap!! Kabab Masaia 1009 SP",
+    "Description": "Natl Chap!! Kabab Masaia 1009 SP",
+    "Quantity": "1",
+    "Price": "0.9167",
+    "POS": "NATIONAL CHAPLI KABAB SPICE MIX",
+    "Barcode": "620514009285"
+  },
+  "Natl Meat Masala 100g": {
+    "Item": "Natl Meat Masala 100g",
+    "Description": "Natl Meat Masala 100g",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004"
+  },
+  "Natl Vanilla Custard Pow 300g": {
+    "Item": "Natl Vanilla Custard Pow 300g",
+    "Description": "Natl Vanilla Custard Pow 300g",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "AHMED VANILLA CUSTARD POWDER",
+    "Barcode": "0054529013416"
+  },
+  "Natl Banana Custard Pow. 3009": {
+    "Item": "Natl Banana Custard Pow. 3009",
+    "Description": "Natl Banana Custard Pow. 3009",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "BANANA CUSTARD",
+    "Barcode": "8961014015935"
+  },
+  "Natl Kheer Mix 155g": {
+    "Item": "Natl Kheer Mix 155g",
+    "Description": "Natl Kheer Mix 155g",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "NATIONAL GAJAR KHEER MIX",
+    "Barcode": "620514008714"
+  },
+  "Natl Kheer Mix Pista 155g": {
+    "Item": "Natl Kheer Mix Pista 155g",
+    "Description": "Natl Kheer Mix Pista 155g",
+    "Quantity": "1",
+    "Price": "1.25",
+    "POS": "MIX NUTS",
+    "Barcode": "10090"
+  },
+  "Natl Crystal Jelly 90g X 12 strawberry": {
+    "Item": "Natl Crystal Jelly 90g X 12 strawberry",
+    "Description": "Natl Crystal Jelly 90g X 12 strawberry",
+    "Quantity": "12",
+    "Price": "8.00",
+    "POS": "NATIONAL STRAWBERRY CRYSTAL JELLY",
+    "Barcode": "620514002606"
+  },
+  "Tetley Tea Bags Elachi 72x12": {
+    "Item": "Tetley Tea Bags Elachi 72x12",
+    "Description": "Tetley Tea Bags Elachi 72x12",
+    "Quantity": "12",
+    "Price": "42.00",
+    "POS": "TETLEY ELAICHI TEA BAGS",
+    "Barcode": "011156000134"
+  },
+  "Tetley Tea Bags GreenTea 72x12": {
+    "Item": "Tetley Tea Bags GreenTea 72x12",
+    "Description": "Tetley Tea Bags GreenTea 72x12",
+    "Quantity": "12",
+    "Price": "42.00",
+    "POS": "GREEN TEA",
+    "Barcode": "799745281774"
+  },
+  "Tetley Tea Bags Green+Honey72 x 12": {
+    "Item": "Tetley Tea Bags Green+Honey72 x 12",
+    "Description": "Tetley Tea Bags Green+Honey72 x 12",
+    "Quantity": "12",
+    "Price": "42.00",
+    "POS": "TETLEY GREEN TEA HONEY 72 TB",
+    "Barcode": "011156000301"
+  },
+  "Tetley Tea Bags Ginger 72x12": {
+    "Item": "Tetley Tea Bags Ginger 72x12",
+    "Description": "Tetley Tea Bags Ginger 72x12",
+    "Quantity": "12",
+    "Price": "42.00",
+    "POS": "GINGER TEA",
+    "Barcode": "6920524131582"
+  },
+  "Tetley Tea Bags Masala 72x12": {
+    "Item": "Tetley Tea Bags Masala 72x12",
+    "Description": "Tetley Tea Bags Masala 72x12",
+    "Quantity": "12",
+    "Price": "42.00",
+    "POS": "TEA MASALA",
+    "Barcode": "8901786021000"
+  },
+  "Tetley Tea Round Bags 3gx80x24": {
+    "Item": "Tetley Tea Round Bags 3gx80x24",
+    "Description": "Tetley Tea Round Bags 3gx80x24",
+    "Quantity": "24",
+    "Price": "82.00",
+    "POS": "TETLEY STRONG TEA",
+    "Barcode": "8886950182056"
+  },
+  "Vital Tea Bags 3gx100+25 x 20 PP2.99 PROMO": {
+    "Item": "Vital Tea Bags 3gx100+25 x 20 PP$2.99 PROMO",
+    "Description": "Vital Tea Bags 3gx100+25 x 20 PP$2.99 PROMO",
+    "Quantity": "20",
+    "Price": "45.00",
+    "POS": "VITAL TEA",
+    "Barcode": "8964000008027"
+  },
+  "AS Chicken Breaded Nuggets1.3lbx12": {
+    "Item": "AS Chicken Breaded Nuggets1.3lbx12",
+    "Description": "AS Chicken Breaded Nuggets1.3lbx12",
+    "Quantity": "12",
+    "Price": "75.00",
+    "POS": "CHICKEN BREAST",
+    "Barcode": "200167"
+  },
+  "AS Chicken Hot Dogs 12.6ozx12": {
+    "Item": "AS Chicken Hot Dogs 12.6ozx12",
+    "Description": "AS Chicken Hot Dogs 12.6ozx12",
+    "Quantity": "12",
+    "Price": "48.00",
+    "POS": "A1 CHIPS",
+    "Barcode": "8904123527029"
+  },
+  "AS Hotlinks Chicken 12oz x 12": {
+    "Item": "AS Hotlinks Chicken 12oz x 12",
+    "Description": "AS Hotlinks Chicken 12oz x 12",
+    "Quantity": "12",
+    "Price": "48.00",
+    "POS": "A1 CHIPS",
+    "Barcode": "8904123527029"
+  },
+  "AS Beef Meatballs (Kofta) 1lb x 12": {
+    "Item": "AS Beef Meatballs (Kofta) 1lb x 12",
+    "Description": "AS Beef Meatballs (Kofta) 1lb x 12",
+    "Quantity": "12",
+    "Price": "88.20",
+    "POS": "BEEF BOTI",
+    "Barcode": "200194000000"
+  },
+  "CK Ch. Seeikh Kabab FamilyPack x12 10.99": {
+    "Item": "CK Ch. Seeikh Kabab FamilyPack x12 10.99",
+    "Description": "CK Ch. Seeikh Kabab FamilyPack x12 $10.99",
+    "Quantity": "12",
+    "Price": "108.00",
+    "POS": "SHAN SEEKH KABAB",
+    "Barcode": "788821035141"
+  },
+  "CK Gyro Beef Sliced 1.5lb x 12": {
+    "Item": "CK Gyro Beef Sliced 1.5lb x 12",
+    "Description": "CK Gyro Beef Sliced 1.5lb x 12",
+    "Quantity": "12",
+    "Price": "78.00",
+    "POS": "OPAA BEEF GYROS SLICES",
+    "Barcode": "075365001351"
+  },
+  "K&Ns Ch Kolta (10-12 Meatballs) 11 oz x 12": {
+    "Item": "K&Ns Ch Kolta (10-12 Meatballs) 11 oz x 12",
+    "Description": "K&Ns Ch Kolta (10-12 Meatballs) 11 oz x 12",
+    "Quantity": "12",
+    "Price": "66.00",
+    "POS": "MARBAL CHAKLA",
+    "Barcode": "3859"
+  },
+  "K&Ns Shami Kabab FAMILY 20.9ozx8": {
+    "Item": "K&Ns Shami Kabab FAMILY 20.9ozx8",
+    "Description": "K&Ns Shami Kabab FAMILY 20.9ozx8",
+    "Quantity": "8",
+    "Price": "75.00",
+    "POS": "K NS CHAPLI KABAB",
+    "Barcode": "856515005067"
+  },
+  "K&Ns Chicken Nuggets FAMILY 20.5ozx8": {
+    "Item": "K&Ns Chicken Nuggets FAMILY 20.5ozx8",
+    "Description": "K&Ns Chicken Nuggets FAMILY 20.5ozx8",
+    "Quantity": "8",
+    "Price": "75.00",
+    "POS": "K N S NUGGETS",
+    "Barcode": "856515005005"
+  },
+  "K&Ns FUN Ch Nuggets Family 20.4oz x 8": {
+    "Item": "K&Ns FUN Ch Nuggets Family 20.4oz x 8",
+    "Description": "K&Ns FUN Ch Nuggets Family 20.4oz x 8",
+    "Quantity": "8",
+    "Price": "75.00",
+    "POS": "K N S NUGGETS",
+    "Barcode": "856515005005"
+  },
+  "Taza Tandoori Naan Jumbo 8pcs x12": {
+    "Item": "Taza Tandoori Naan Jumbo 8pcs x12",
+    "Description": "Taza Tandoori Naan Jumbo 8pcs x12",
+    "Quantity": "12",
+    "Price": "36.00",
+    "POS": "TANDOORI NAAN 5 PC",
+    "Barcode": "894559000389"
+  },
+  "Taza Aloo Paratha 4pcs x 18": {
+    "Item": "Taza Aloo Paratha 4pcs x 18",
+    "Description": "Taza Aloo Paratha 4pcs x 18",
+    "Quantity": "18",
+    "Price": "27.00",
+    "POS": "ALU PARATHA",
+    "Barcode": "3327"
+  },
+  "Taza Plain Paratha Jumbo 20pcx6": {
+    "Item": "Taza Plain Paratha Jumbo 20pcx6",
+    "Description": "Taza Plain Paratha Jumbo 20pcx6",
+    "Quantity": "6",
+    "Price": "18.00",
+    "POS": "PLAIN PARATHA6 PC",
+    "Barcode": "3329"
+  },
+  "Taza Kulcha Naan 5pcs x 18": {
+    "Item": "Taza Kulcha Naan 5pcs x 18",
+    "Description": "Taza Kulcha Naan 5pcs x 18",
+    "Quantity": "18",
+    "Price": "32.00",
+    "POS": "TAZA KULCHA",
+    "Barcode": "896546000167"
+  }
+}

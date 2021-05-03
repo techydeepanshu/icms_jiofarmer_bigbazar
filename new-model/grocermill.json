@@ -1,0 +1,130 @@
+{
+  "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17": {
+    "Item": "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17",
+    "Description": "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17",
+    "Quantity": "17",
+    "Price": "25.02",
+    "POS": "KERALA MIXTURE",
+    "Barcode": "627843331124"
+  },
+  "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18": {
+    "Item": "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18",
+    "Description": "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18",
+    "Quantity": "18",
+    "Price": "25.02",
+    "POS": "BAKEMILL HOT MIXTURE",
+    "Barcode": "086114801665"
+  },
+  "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18": {
+    "Item": "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18",
+    "Description": "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18",
+    "Quantity": "18",
+    "Price": "25.02",
+    "POS": "BAKEMILL EXTRA HOT MIXTURE",
+    "Barcode": "086114801672"
+  },
+  "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18": {
+    "Item": "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18",
+    "Description": "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18",
+    "Quantity": "18",
+    "Price": "25.02",
+    "POS": "BAKEMILL GARLIC MIXTURE",
+    "Barcode": "086114801689"
+  },
+  "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18": {
+    "Item": "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18",
+    "Description": "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18",
+    "Quantity": "18",
+    "Price": "25.02",
+    "POS": "TOMATO SAUCE",
+    "Barcode": "050700095479"
+  },
+  "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18": {
+    "Item": "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18",
+    "Description": "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18",
+    "Quantity": "18",
+    "Price": "25.02",
+    "POS": "BANANA CHIPS",
+    "Barcode": "723246199702"
+  },
+  "BON BAFATH POWDER 165 GM X 24": {
+    "Item": "BON BAFATH POWDER 165 GM X 24",
+    "Description": "BON BAFATH POWDER 165 GM X 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "RIN POWDER",
+    "Barcode": "8901030642722"
+  },
+  "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24": {
+    "Item": "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24",
+    "Description": "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "CHICKEN MIX",
+    "Barcode": "8961014002522"
+  },
+  "BON CHICKEN RED MASALA 165 GMX 24": {
+    "Item": "BON CHICKEN RED MASALA 165 GMX 24",
+    "Description": "BON CHICKEN RED MASALA 165 GMX 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "CHICKEN MIX",
+    "Barcode": "8961014002522"
+  },
+  "BON PICKLE POWDER 150 GM X 24": {
+    "Item": "BON PICKLE POWDER 150 GM X 24",
+    "Description": "BON PICKLE POWDER 150 GM X 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "LG POWDRE",
+    "Barcode": "740222000159"
+  },
+  "BON CHICKEN GHEE ROAST MASALA 130GM X 24": {
+    "Item": "BON CHICKEN GHEE ROAST MASALA 130GM X 24",
+    "Description": "BON CHICKEN GHEE ROAST MASALA 130GM X 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "CHICKEN LEG",
+    "Barcode": "200157"
+  },
+  "KERAMILL HOT LIME PICKLE 300 GM X 12": {
+    "Item": "KERAMILL HOT LIME PICKLE 300 GM X 12",
+    "Description": "KERAMILL HOT LIME PICKLE 300 GM X 12",
+    "Quantity": "12",
+    "Price": "15.48",
+    "POS": "777 LIME PICKLE",
+    "Barcode": "897231000141"
+  },
+  "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12": {
+    "Item": "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12",
+    "Description": "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12",
+    "Quantity": "12",
+    "Price": "15.48",
+    "POS": "LAXMI MANGO PICLE",
+    "Barcode": "723246009483"
+  },
+  "KERAMILL GARLIC PICKLE 300 GM X 12": {
+    "Item": "KERAMILL GARLIC PICKLE 300 GM X 12",
+    "Description": "KERAMILL GARLIC PICKLE 300 GM X 12",
+    "Quantity": "12",
+    "Price": "15.60",
+    "POS": "777 AMLA PICKLE",
+    "Barcode": "897231000271"
+  },
+  "KERAMILL CHUKKU KAPPI 240GM X 48": {
+    "Item": "KERAMILL CHUKKU KAPPI 240GM X 48",
+    "Description": "KERAMILL CHUKKU KAPPI 240GM X 48",
+    "Quantity": "48",
+    "Price": "64.80",
+    "POS": "NIRAPARA CHUKKU KAPPI 150 G",
+    "Barcode": "8904010680400"
+  },
+  "BON BUTTER CHICKEN MASALA 165GM X 24": {
+    "Item": "BON BUTTER CHICKEN MASALA 165GM X 24",
+    "Description": "BON BUTTER CHICKEN MASALA 165GM X 24",
+    "Quantity": "24",
+    "Price": "42.00",
+    "POS": "BON BUTTER CHICKEN",
+    "Barcode": "8906024030103"
+  }
+}

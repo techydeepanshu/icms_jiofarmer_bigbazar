@@ -1,0 +1,1010 @@
+{
+  "3402": {
+    "Item": "3402",
+    "Description": "Tapal Danedar 900gm x 12 Pouch",
+    "Quantity": "12",
+    "Price": "440",
+    "POS": "TAPAL DANEDAR BLACK TEA 900 GM",
+    "Barcode": "815096003107"
+  },
+  "3405": {
+    "Item": "3405",
+    "Description": "Tapal Danedar T Bags 200gm x20",
+    "Quantity": "20",
+    "Price": "310",
+    "POS": "TAPAL DANEDAR BLACK TEA 900 GM",
+    "Barcode": "815096003107"
+  },
+  "3691": {
+    "Item": "3691",
+    "Description": "Shezan Mango Juice 250m1x 36",
+    "Quantity": "36",
+    "Price": "11.5",
+    "POS": "SHEZAN MANGO JUICE",
+    "Barcode": "1028"
+  },
+  "9305": {
+    "Item": "9305",
+    "Description": "Horlicks 1 kg x 12",
+    "Quantity": "12",
+    "Price": "84.0000",
+    "POS": "HORLICKS U K",
+    "Barcode": "5000347028267"
+  },
+  "013021": {
+    "Item": "013021",
+    "Description": "KH Basmati Silver 10 lb x 4 (Xtra Fine)",
+    "Quantity": "4",
+    "Price": "37",
+    "POS": "21 BASMATI RICE",
+    "Barcode": "812392020029"
+  },
+  "002321": {
+    "Item": "002321",
+    "Description": "Deer Organic Brown Bas.8 lb x5",
+    "Quantity": "5",
+    "Price": "50",
+    "POS": "BROWN PEAR",
+    "Barcode": "6932284666082"
+  },
+  "004001": {
+    "Item": "004001",
+    "Description": "Zebra Basmati Rice 10 lb x 4",
+    "Quantity": "4",
+    "Price": "48",
+    "POS": "LIOR BASMATI RICE",
+    "Barcode": "079471149808"
+  },
+  "004002": {
+    "Item": "004002",
+    "Description": "Zebra Basmati Rice 40 lb",
+    "Quantity": "1",
+    "Price": "46",
+    "POS": "ZEBRA BASMATI RICE",
+    "Barcode": "710748000148"
+  },
+  "083509": {
+    "Item": "083509",
+    "Description": "Deer Moong Split 55 lb",
+    "Quantity": "1",
+    "Price": "49.5",
+    "POS": "MOONG SPLIT",
+    "Barcode": "705900"
+  },
+  "083506": {
+    "Item": "083506",
+    "Description": "Deer Kala Chana 55 lb",
+    "Quantity": "1",
+    "Price": "33",
+    "POS": "DEER KALA CHANA",
+    "Barcode": "714760830141"
+  },
+  "083512": {
+    "Item": "083512",
+    "Description": "Deer Masoor Whole 55 lb",
+    "Quantity": "1",
+    "Price": "33",
+    "POS": "MASOOR WHOLE",
+    "Barcode": "793585018057"
+  },
+  "001012": {
+    "Item": "001012",
+    "Description": "Shan Chicken Masala",
+    "Quantity": "1",
+    "Price": "12.1008",
+    "POS": "CHICKEN MASALA",
+    "Barcode": "8901786161003"
+  },
+  "001046": {
+    "Item": "001046",
+    "Description": "Shan Pullao Biryani",
+    "Quantity": "1",
+    "Price": "12.1",
+    "POS": "SHAN BIRYANI MASALA",
+    "Barcode": "788821009609"
+  },
+  "001047": {
+    "Item": "001047",
+    "Description": "Shan Punjabi Pulao",
+    "Quantity": "1",
+    "Price": "12.1008",
+    "POS": "SHAN PUNJABI YAKHNI PULAO MIX",
+    "Barcode": "0788821038029"
+  },
+  "001053": {
+    "Item": "001053",
+    "Description": "Shan Sindhi Biryani",
+    "Quantity": "1",
+    "Price": "12.1008",
+    "POS": "SHAN SINDHI BIRYANI",
+    "Barcode": "788821019141"
+  },
+  "001033": {
+    "Item": "001033",
+    "Description": "Shan Lahori Churga",
+    "Quantity": "1",
+    "Price": "12.1",
+    "POS": "SHAN LAHORI CHURGA",
+    "Barcode": "788821037183"
+  },
+  "001058": {
+    "Item": "001058",
+    "Description": "Shan Vegetable Masala",
+    "Quantity": "1",
+    "Price": "12.1008",
+    "POS": "SHAN VEG CURRY MASALA",
+    "Barcode": "788821073037"
+  },
+  "001056": {
+    "Item": "001056",
+    "Description": "Shan Tikka Seekh Kabab",
+    "Quantity": "1",
+    "Price": "12.1",
+    "POS": "SHAN SEEKH KABAB",
+    "Barcode": "788821035141"
+  },
+  "001054": {
+    "Item": "001054",
+    "Description": "Shan Stew Masala",
+    "Quantity": "1",
+    "Price": "12.1",
+    "POS": "SHAN STEW MASALA",
+    "Barcode": "788821118141"
+  },
+  "001028": {
+    "Item": "001028",
+    "Description": "Shan Keema Masala",
+    "Quantity": "1",
+    "Price": "72.6",
+    "POS": "SHAN KORMA MASALA",
+    "Barcode": "788821004406"
+  },
+  "001051": {
+    "Item": "001051",
+    "Description": "Shan Shahi Haleem Mix (Quick)",
+    "Quantity": "1",
+    "Price": "216",
+    "POS": "SHAN MIXED PICKLE",
+    "Barcode": "788821010025"
+  },
+  "001041": {
+    "Item": "001041",
+    "Description": "Shan Pakora Mix 150 gm",
+    "Quantity": "1",
+    "Price": "49.4",
+    "POS": "SHAN KORMA",
+    "Barcode": "0788821003140"
+  },
+  "005809": {
+    "Item": "005809",
+    "Description": "Deer Chilly Powder X Hot 5 lb",
+    "Quantity": "1",
+    "Price": "40",
+    "POS": "DEER CHILLI WHOLE",
+    "Barcode": "714760027299"
+  },
+  "005820": {
+    "Item": "005820",
+    "Description": "Deer Chilly Powder 5 lb",
+    "Quantity": "1",
+    "Price": "63",
+    "POS": "DEER CHILLY POWDER MILD",
+    "Barcode": "714760811263"
+  },
+  "005812": {
+    "Item": "005812",
+    "Description": "Deer Cumin Seed 5 lb",
+    "Quantity": "1",
+    "Price": "71.25",
+    "POS": "DEER BLACK CUMIN SEEDS",
+    "Barcode": "714760810303"
+  },
+  "032007": {
+    "Item": "032007",
+    "Description": "Shan Tandoori Masala 500 gm x 6 (Jar)",
+    "Quantity": "6",
+    "Price": "96",
+    "POS": "SHAN TANDOORI MASALA",
+    "Barcode": "788821030016"
+  },
+  "032352": {
+    "Item": "032352",
+    "Description": "Shan Falooda Rabri 100 gm",
+    "Quantity": "1",
+    "Price": "14.4",
+    "POS": "SHANA ARVI",
+    "Barcode": "5030039006013"
+  },
+  "042252": {
+    "Item": "042252",
+    "Description": "HR Pani Puri 360 gm x 12 (Kit)",
+    "Quantity": "12",
+    "Price": "180",
+    "POS": "PANI PURI",
+    "Barcode": "068656002052"
+  },
+  "002059": {
+    "Item": "002059",
+    "Description": "Deer Fried Onion 300g x 12 Jar",
+    "Quantity": "12",
+    "Price": "24",
+    "POS": "DEER FIGS",
+    "Barcode": "714760029460"
+  },
+  "010859": {
+    "Item": "010859",
+    "Description": "Taj Mahal Tea 500 gm\"24",
+    "Quantity": "24",
+    "Price": "192",
+    "POS": "TAJ MAHAL",
+    "Barcode": "077741080010777"
+  },
+  "003421": {
+    "Item": "003421",
+    "Description": "Tapal Danedar RTB*220*6",
+    "Quantity": "6",
+    "Price": "96",
+    "POS": "TAPAL DANEDAR RTB 80 TB  003420",
+    "Barcode": "815096000212"
+  },
+  "084042": {
+    "Item": "084042",
+    "Description": "Sun Dry Apricot 14 oz x 20",
+    "Quantity": "20",
+    "Price": "85",
+    "POS": "DRIED APRICOTS",
+    "Barcode": "603608090895"
+  },
+  "084098": {
+    "Item": "084098",
+    "Description": "Sun Raw Peanut 56 oz * 10",
+    "Quantity": "10",
+    "Price": "38",
+    "POS": "RAW PEANUTS",
+    "Barcode": "1018"
+  },
+  "003418": {
+    "Item": "003418",
+    "Description": "Tapal Green T Apple Cin. 45gm*20",
+    "Quantity": "20",
+    "Price": "25",
+    "POS": "GREEN TEA 100 T.B",
+    "Barcode": "054881004787"
+  },
+  "005269": {
+    "Item": "005269",
+    "Description": "Nestle Mango Royal 1 Itr*12",
+    "Quantity": "12",
+    "Price": "18",
+    "POS": "NESTLE AERO",
+    "Barcode": "7613035052024"
+  },
+  "005262": {
+    "Item": "005262",
+    "Description": "Nestle Mango Chausa 1 Itr*12",
+    "Quantity": "12",
+    "Price": "18",
+    "POS": "NESTLE AERO",
+    "Barcode": "7613035052024"
+  },
+  "005202": {
+    "Item": "005202",
+    "Description": "Preema Mango Drink 2 It x 6",
+    "Quantity": "6",
+    "Price": "14",
+    "POS": "PREEMAS MANGO",
+    "Barcode": "8964000608098"
+  },
+  "005204": {
+    "Item": "005204",
+    "Description": "Preema Guava Drink 2 IV x 6",
+    "Quantity": "6",
+    "Price": "14",
+    "POS": "GUAVA DRINK",
+    "Barcode": "838927500606"
+  },
+  "091001": {
+    "Item": "091001",
+    "Description": "Deer 360 Cup Dates 24oz *12 Organic",
+    "Quantity": "12",
+    "Price": "39",
+    "POS": "DEER DRY DATES",
+    "Barcode": "714760029231"
+  },
+  "005277": {
+    "Item": "005277",
+    "Description": "Nestle Cream 200 ml x 24",
+    "Quantity": "24",
+    "Price": "27",
+    "POS": "NESTLE MILO",
+    "Barcode": "8888082117722"
+  },
+  "002407": {
+    "Item": "002407",
+    "Description": "Mera Besan 4 lb x 8",
+    "Quantity": "8",
+    "Price": "26",
+    "POS": "LIMA BEANS 3LBS",
+    "Barcode": "051179103559"
+  },
+  "001286": {
+    "Item": "001286",
+    "Description": "Shan Gar & Gin Paste 700gm *6",
+    "Quantity": "6",
+    "Price": "21.5",
+    "POS": "SHAN GINGER PASTE   001282",
+    "Barcode": "788821001160"
+  },
+  "001285": {
+    "Item": "001285",
+    "Description": "Shan Ginger Paste 700 gm * 6",
+    "Quantity": "6",
+    "Price": "21.5",
+    "POS": "SHAHZADA GARLIC N GINGER PASTE",
+    "Barcode": "8964001754077"
+  },
+  "001284": {
+    "Item": "001284",
+    "Description": "Shan Garlic Paste 700 gm*6",
+    "Quantity": "6",
+    "Price": "21.5",
+    "POS": "SHUDH GARLIC PASTE",
+    "Barcode": "793585020869"
+  },
+  "085001": {
+    "Item": "085001",
+    "Description": "Pakola Ice Cream Soda 250m1*24",
+    "Quantity": "24",
+    "Price": "12",
+    "POS": "PAKOLA ICE CREAM SODA",
+    "Barcode": "899916000811"
+  },
+  "006063": {
+    "Item": "006063",
+    "Description": "Thums Up (Can) 330m1x 24",
+    "Quantity": "24",
+    "Price": "15.0000",
+    "POS": "THUMS UP",
+    "Barcode": "8901764042706"
+  },
+  "060049": {
+    "Item": "060049",
+    "Description": "D Mustard Oil 1 IV * 12",
+    "Quantity": "12",
+    "Price": "44.0000",
+    "POS": "MUSTARD OIL",
+    "Barcode": "8902089010050"
+  },
+  "010702": {
+    "Item": "010702",
+    "Description": "KTC Almond Oil 300 ml x 12",
+    "Quantity": "12",
+    "Price": "45.0000",
+    "POS": "KTC ALMOND OIL",
+    "Barcode": "5013635482504"
+  },
+  "008353": {
+    "Item": "008353",
+    "Description": "Tea Powder 900 gm x 12",
+    "Quantity": "12",
+    "Price": "98.0000",
+    "POS": "TEMPLE OF HEAVEN GUN POWDER TEA",
+    "Barcode": "6931708306030"
+  },
+  "008355": {
+    "Item": "008355",
+    "Description": "Tea Powder 1.9 kg x 9",
+    "Quantity": "9",
+    "Price": "150.0000",
+    "POS": "LG POWDRE",
+    "Barcode": "740222000159"
+  },
+  "009083": {
+    "Item": "009083",
+    "Description": "Eno Fruit Salt 100 gm",
+    "Quantity": "1",
+    "Price": "2.0000",
+    "POS": "ENO FRUIT SALT",
+    "Barcode": "9200475371129"
+  },
+  "001283": {
+    "Item": "001283",
+    "Description": "Shan Gar & Gin Paste 310gm x12",
+    "Quantity": "12",
+    "Price": "21.5000",
+    "POS": "SHAN GINGER PASTE   001282",
+    "Barcode": "788821001160"
+  },
+  "001181": {
+    "Item": "001181",
+    "Description": "Shan Pickle Mix 1 kg x 6",
+    "Quantity": "6",
+    "Price": "16.1000",
+    "POS": "SHAN MIXED PICKLE",
+    "Barcode": "788821010025"
+  },
+  "001182": {
+    "Item": "001182",
+    "Description": "Shan Pickle Mango 1 kg x 6",
+    "Quantity": "6",
+    "Price": "16.1000",
+    "POS": "SHAN MANGO PICKLE",
+    "Barcode": "788821022028"
+  },
+  "008786": {
+    "Item": "008786",
+    "Description": "Shan Pickle Mango Special 1 kg x 6",
+    "Quantity": "6",
+    "Price": "18.0000",
+    "POS": "SHAN MANGO PICKLE",
+    "Barcode": "788821022028"
+  },
+  "001184": {
+    "Item": "001184",
+    "Description": "Shan Pickle Chilly 1 kg x 6",
+    "Quantity": "6",
+    "Price": "16.1000",
+    "POS": "K PRA CHILLI PICKLE",
+    "Barcode": "8904041502290"
+  },
+  "0011001": {
+    "Item": "0011001",
+    "Description": "Empire Basmati Rice 10 lb x 4",
+    "Quantity": "4",
+    "Price": "48.0000",
+    "POS": "SHRILAL MAHAL EMPIRE BASMATI RICE",
+    "Barcode": "8901943000152"
+  },
+  "042972": {
+    "Item": "042972",
+    "Description": "HR Dal Tadka (Frzn) 283g*12",
+    "Quantity": "12",
+    "Price": "21.0000",
+    "POS": "FAZLANI DAL TADKA",
+    "Barcode": "810609021265"
+  },
+  "043107": {
+    "Item": "043107",
+    "Description": "HR Paneer Aloo Tikki (Frz) 580g*12",
+    "Quantity": "12",
+    "Price": "58.0000",
+    "POS": "HALDIRAMS PANEER ALOO TIKKI",
+    "Barcode": "8904063205025"
+  },
+  "043105": {
+    "Item": "043105",
+    "Description": "HR Mutter Kachori (Frz)420g*20",
+    "Quantity": "20",
+    "Price": "58.0000",
+    "POS": "HALDIRAMS MUTTER KACHORI",
+    "Barcode": "8904063281777"
+  },
+  "043014": {
+    "Item": "043014",
+    "Description": "HR Vege Jhalfrezi FZN283gm*12",
+    "Quantity": "12",
+    "Price": "24.0000",
+    "POS": "VEGETABLE JHALFREZI",
+    "Barcode": "8904063211378"
+  },
+  "042974": {
+    "Item": "042974",
+    "Description": "HR Punjabi Choley (Frzn) 283gm x 12",
+    "Quantity": "12",
+    "Price": "24.0000",
+    "POS": "PUNJABI GUR",
+    "Barcode": "963600"
+  },
+  "042976": {
+    "Item": "042976",
+    "Description": "HR Dal Makhani (Frzn) 283g x12",
+    "Quantity": "12",
+    "Price": "26.0000",
+    "POS": "BRARS MAKHANI",
+    "Barcode": "182757000554"
+  },
+  "042986": {
+    "Item": "042986",
+    "Description": "HR Palak Paneer (Frzn) 283 gm x 12",
+    "Quantity": "12",
+    "Price": "31.8000",
+    "POS": "PALAK PANEER",
+    "Barcode": "8906019080427"
+  },
+  "043221": {
+    "Item": "043221",
+    "Description": "HR Onion Bhaji (Frzn) 283gm*12",
+    "Quantity": "12",
+    "Price": "24.0000",
+    "POS": "FRIED ONION",
+    "Barcode": "966680"
+  },
+  "043106": {
+    "Item": "043106",
+    "Description": "HR Dal Kachoori (Frz) 420g*20",
+    "Quantity": "20",
+    "Price": "58.0000",
+    "POS": "SGB DRY KACHORI",
+    "Barcode": "8906074200068"
+  },
+  "025521": {
+    "Item": "025521",
+    "Description": "Ash Samosa Punjabi 40gm x45 x6",
+    "Quantity": "6",
+    "Price": "56.7000",
+    "POS": "PUNJABI SAMOSA",
+    "Barcode": "5027891331827"
+  },
+  "043455": {
+    "Item": "043455",
+    "Description": "HR Samosa Cocktail VP (Frzn)1.4kg*8",
+    "Quantity": "8",
+    "Price": "56.0000",
+    "POS": "FRUIT COCKTAIL",
+    "Barcode": "024000010920"
+  },
+  "043114": {
+    "Item": "043114",
+    "Description": "HR Samosa Cocktail(Frz)650g*12",
+    "Quantity": "12",
+    "Price": "52.8000",
+    "POS": "FRUIT COCKTAIL",
+    "Barcode": "024000010920"
+  },
+  "042785": {
+    "Item": "042785",
+    "Description": "HR Paratha Mix Veg 1.6 kg*8",
+    "Quantity": "8",
+    "Price": "54.0000",
+    "POS": "VEGIS PARATHA",
+    "Barcode": "043013100305"
+  },
+  "043352": {
+    "Item": "043352",
+    "Description": "HR Naan Tandoori VP 1.2 kg x 8",
+    "Quantity": "8",
+    "Price": "30.0000",
+    "POS": "TANDOORI NAAN",
+    "Barcode": "051179996700"
+  },
+  "042751": {
+    "Item": "042751",
+    "Description": "HR Phulka Roti (Frzn) 360g x24",
+    "Quantity": "24",
+    "Price": "25.2000",
+    "POS": "VADILAL PHULKA ROTI",
+    "Barcode": "8901777164075"
+  },
+  "043354": {
+    "Item": "043354",
+    "Description": "HR Phulka Roti VP 900 gm x 8",
+    "Quantity": "8",
+    "Price": "25.2000",
+    "POS": "VADILAL PHULKA ROTI",
+    "Barcode": "8901777164075"
+  },
+  "042781": {
+    "Item": "042781",
+    "Description": "HR Paratha HomeStyle (Frzn)1.2 kg x 8",
+    "Quantity": "8",
+    "Price": "29.0000",
+    "POS": "PARLE   G",
+    "Barcode": "8901719101038"
+  },
+  "042758": {
+    "Item": "042758",
+    "Description": "HR Paratha HomeStyle (Frzn)360gm x 24",
+    "Quantity": "24",
+    "Price": "31.2000",
+    "POS": "HOMESTYLE PARATHA",
+    "Barcode": "850001846080"
+  },
+  "042763": {
+    "Item": "042763",
+    "Description": "HR Paratha Methi (Frzn) 300gm x 24",
+    "Quantity": "24",
+    "Price": "34.8000",
+    "POS": "METHI PARATHA",
+    "Barcode": "3328"
+  },
+  "043356": {
+    "Item": "043356",
+    "Description": "HR Paratha Paneer Onion V/P *8",
+    "Quantity": "8",
+    "Price": "57.5000",
+    "POS": "PANEER PARATHA",
+    "Barcode": "8904063281142"
+  },
+  "042766": {
+    "Item": "042766",
+    "Description": "HR Paratha Paneer Onion (Frzn) 400gm x 20",
+    "Quantity": "20",
+    "Price": "40.0000",
+    "POS": "PANEER ONION PARATHA",
+    "Barcode": "8904063256874"
+  },
+  "042761": {
+    "Item": "042761",
+    "Description": "HR Paratha Pudina (Frzn) 360gm x 24",
+    "Quantity": "24",
+    "Price": "33.4500",
+    "POS": "PLAIN PARATHA",
+    "Barcode": "9556587988107"
+  },
+  "042878": {
+    "Item": "042878",
+    "Description": "HR Kulcha Paneer 320gm (24)",
+    "Quantity": "24",
+    "Price": "63.6000",
+    "POS": "PANEER KULCHA",
+    "Barcode": "8904063253545"
+  },
+  "042877": {
+    "Item": "042877",
+    "Description": "HR Kulcha Amritsari (Frzn) 320gm x 20",
+    "Quantity": "20",
+    "Price": "63.6000",
+    "POS": "KULCHA 4 PC",
+    "Barcode": "09680805"
+  },
+  "042787": {
+    "Item": "042787",
+    "Description": "HR Naan Gluten Free 320 gm *30",
+    "Quantity": "30",
+    "Price": "37.5000",
+    "POS": "MEERA CORN FLOUR (GLUTEN FREE)",
+    "Barcode": "876839004386"
+  },
+  "042756": {
+    "Item": "042756",
+    "Description": "HR Paratha Aloo Achari (Frzn) 400gm*20",
+    "Quantity": "20",
+    "Price": "30.0000",
+    "POS": "METHI PARATHA",
+    "Barcode": "3328"
+  },
+  "042759": {
+    "Item": "042759",
+    "Description": "HR Paratha Ajwain(Frzn)360g\"24",
+    "Quantity": "24",
+    "Price": "31.2000",
+    "POS": "GUR PARA",
+    "Barcode": "609224600814"
+  },
+  "042783": {
+    "Item": "042783",
+    "Description": "HR Naan W/VVheat 320 gm *24",
+    "Quantity": "24",
+    "Price": "30.0000",
+    "POS": "WHOLE WHEAT NAAN",
+    "Barcode": "011433150873"
+  },
+  "023010": {
+    "Item": "023010",
+    "Description": "Shahnawaz Chicken Seekh FP x12",
+    "Quantity": "12",
+    "Price": "102.0000",
+    "POS": "SHAHNAWAZ CHICKEN SEEKH KABAB",
+    "Barcode": "893101001010"
+  },
+  "023014": {
+    "Item": "023014",
+    "Description": "Shahnawaz Mutton Seekh Kabab (10oz) x 12",
+    "Quantity": "12",
+    "Price": "78.0000",
+    "POS": "SHAHNAWAZ MUTTON SEEK KABAB",
+    "Barcode": "658294268301"
+  },
+  "043854": {
+    "Item": "043854",
+    "Description": "HR Ragi Dosa 397 gm\"12",
+    "Quantity": "12",
+    "Price": "24.0000",
+    "POS": "MTR RAGI DOSA",
+    "Barcode": "840965000260"
+  },
+  "043219": {
+    "Item": "043219",
+    "Description": "HR Gulab Jamun (Frzn) 1kg *10",
+    "Quantity": "10",
+    "Price": "60.0000",
+    "POS": "GITS GULAB JAMUN",
+    "Barcode": "8901155101111"
+  },
+  "043231": {
+    "Item": "043231",
+    "Description": "HR Gajar Halwa 283 gm *12",
+    "Quantity": "12",
+    "Price": "30.0000",
+    "POS": "GIFTS GAJAR HALWA",
+    "Barcode": "675861573101"
+  },
+  "043203": {
+    "Item": "043203",
+    "Description": "HR Moti Choor Ladoo (Frzn) 340 gm x 12",
+    "Quantity": "12",
+    "Price": "37.2000",
+    "POS": "MOTI CHOOR LADOO",
+    "Barcode": "032022798047"
+  },
+  "032901": {
+    "Item": "032901",
+    "Description": "Shoop Nood. Chatpatta 60gm*72",
+    "Quantity": "72",
+    "Price": "21.0000",
+    "POS": "CHAT PATS",
+    "Barcode": "7232462912390"
+  },
+  "032902": {
+    "Item": "032902",
+    "Description": "Shoop Nood. Chicken 60gm*72",
+    "Quantity": "72",
+    "Price": "21.0000",
+    "POS": "BOWL NOODLE SOUP CHICKEN",
+    "Barcode": "031146262571"
+  },
+  "032903": {
+    "Item": "032903",
+    "Description": "Shoop Nood. Masala 60gm*72",
+    "Quantity": "72",
+    "Price": "21.0000",
+    "POS": "SHOOP MASALA NOODLES",
+    "Barcode": "788821013828"
+  },
+  "042122": {
+    "Item": "042122",
+    "Description": "HR Cornflakes Mixture 400 gm",
+    "Quantity": "1",
+    "Price": "2.6500",
+    "POS": "ANAND CORNFLAKES MIXTURE",
+    "Barcode": "878776005266"
+  },
+  "042125": {
+    "Item": "042125",
+    "Description": "HR Panchrattan Mixture 400 gm",
+    "Quantity": "1",
+    "Price": "3.1500",
+    "POS": "HALDIRAMS PANCHRATTAN MIXTURE",
+    "Barcode": "8904063230058"
+  },
+  "042124": {
+    "Item": "042124",
+    "Description": "HR Cashew Mixture 400 gm",
+    "Quantity": "1",
+    "Price": "2.6500",
+    "POS": "MADRAS MIXTURE",
+    "Barcode": "890023006024"
+  },
+  "042123": {
+    "Item": "042123",
+    "Description": "HR Kashmiri Mixture 400 gm",
+    "Quantity": "1",
+    "Price": "2.6500",
+    "POS": "KASHMIRI MIXTURE",
+    "Barcode": "8904063200174"
+  },
+  "042109": {
+    "Item": "042109",
+    "Description": "HR Bhujia 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "G N SWEETS BADANA BHUJIA",
+    "Barcode": "9781234567774"
+  },
+  "042108": {
+    "Item": "042108",
+    "Description": "HR Aloo Bhujia 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "ALOO BHUJIA",
+    "Barcode": "8901414000056"
+  },
+  "042105": {
+    "Item": "042105",
+    "Description": "HR Khatta Meetha 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "KHATTA MEETHA",
+    "Barcode": "8904063230140"
+  },
+  "042113": {
+    "Item": "042113",
+    "Description": "HR Nimbu Masala 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "HALDIRAMS NIMBU MASALA",
+    "Barcode": "8904063253613"
+  },
+  "042106": {
+    "Item": "042106",
+    "Description": "HR Bhelpuri 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "BHEL PURI",
+    "Barcode": "8904063257550"
+  },
+  "042119": {
+    "Item": "042119",
+    "Description": "HR All In One 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "NEEM  5 IN 1",
+    "Barcode": "718600652153"
+  },
+  "042118": {
+    "Item": "042118",
+    "Description": "HR Nut Cracker 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "MR NUT",
+    "Barcode": "603608914009"
+  },
+  "042101": {
+    "Item": "042101",
+    "Description": "HR Boondi Masala 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "CHAT PATS MASALA BOONDI",
+    "Barcode": "7232462914684"
+  },
+  "042034": {
+    "Item": "042034",
+    "Description": "HR Chilli Chatak Lachha 200 gm (10)",
+    "Quantity": "10",
+    "Price": "9.5000",
+    "POS": "HALDIRAMS CHILLI CHATAK LACHHA",
+    "Barcode": "871265502314"
+  },
+  "042103": {
+    "Item": "042103",
+    "Description": "HR Bombay Mixture 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "MARIAS BOMBAY MIXTURE",
+    "Barcode": "8906026164578"
+  },
+  "042116": {
+    "Item": "042116",
+    "Description": "HR Mathri 400 gm",
+    "Quantity": "1",
+    "Price": "1.9000",
+    "POS": "KAMLESH MATHRI PURI",
+    "Barcode": "8904149302716"
+  },
+  "042128": {
+    "Item": "042128",
+    "Description": "HR Khatta Meetha Mixture 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "KHATTA MEETHA",
+    "Barcode": "8904063230140"
+  },
+  "042132": {
+    "Item": "042132",
+    "Description": "HR Bhujia Plain 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "BIKAJI PLAIN BHUJIA",
+    "Barcode": "8906005509246"
+  },
+  "042131": {
+    "Item": "042131",
+    "Description": "HR Bhujia 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "GURU NANAK BHUJIA",
+    "Barcode": "9781234567743"
+  },
+  "042135": {
+    "Item": "042135",
+    "Description": "HR Kashmiri Mixture 1 kg",
+    "Quantity": "1",
+    "Price": "6.2500",
+    "POS": "KCB KASHMIR MIX",
+    "Barcode": "812042001781"
+  },
+  "042133": {
+    "Item": "042133",
+    "Description": "HR Nut Cracker 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "RITZ CRACKERS",
+    "Barcode": "044000031190"
+  },
+  "042129": {
+    "Item": "042129",
+    "Description": "HR Bhelpuri 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "BHEL PURI",
+    "Barcode": "8904063257550"
+  },
+  "042130": {
+    "Item": "042130",
+    "Description": "HR Aloo Bhujia 1 kg",
+    "Quantity": "1",
+    "Price": "4.5000",
+    "POS": "ALOO BHUJIA",
+    "Barcode": "8901414000056"
+  },
+  "042310": {
+    "Item": "042310",
+    "Description": "HR Soan Papdi 250 gm x 40",
+    "Quantity": "40",
+    "Price": "80.0000",
+    "POS": "SOAN PAPDI",
+    "Barcode": "8904063205001"
+  },
+  "042320": {
+    "Item": "042320",
+    "Description": "HR Patisha 500 gm x 20",
+    "Quantity": "20",
+    "Price": "80.0000",
+    "POS": "MUKKIS PATISA",
+    "Barcode": "8687080000490"
+  },
+  "042445": {
+    "Item": "042445",
+    "Description": "HR Khari Methi 200 gm x 24",
+    "Quantity": "24",
+    "Price": "24.0000",
+    "POS": "METHI KHARI",
+    "Barcode": "011433156387"
+  },
+  "042443": {
+    "Item": "042443",
+    "Description": "HR Khari Masala 200 gm x 24",
+    "Quantity": "24",
+    "Price": "24.0000",
+    "POS": "MASALA KHARI",
+    "Barcode": "011433156042"
+  },
+  "034009": {
+    "Item": "034009",
+    "Description": "EBM Chocolicious *24",
+    "Quantity": "24",
+    "Price": "12.0000",
+    "POS": "CADBURY CHOCOLICIOUS BISCUITS",
+    "Barcode": "7622210834867"
+  },
+  "034012": {
+    "Item": "034012",
+    "Description": "EBM Khatai *24",
+    "Quantity": "24",
+    "Price": "12.0000",
+    "POS": "EBM NAN KHATAI",
+    "Barcode": "8964000685181"
+  },
+  "034001": {
+    "Item": "034001",
+    "Description": "EBM Sooper *24",
+    "Quantity": "24",
+    "Price": "12.0000",
+    "POS": "EBM SOOPER COOKIES",
+    "Barcode": "8964000683569"
+  },
+  "034008": {
+    "Item": "034008",
+    "Description": "EBM Saltish *24",
+    "Quantity": "24",
+    "Price": "12.0000",
+    "POS": "EBM SALTISH COOKIES",
+    "Barcode": "667064000089"
+  },
+  "034023": {
+    "Item": "034023",
+    "Description": "EBM Sooper H/Roll *24",
+    "Quantity": "24",
+    "Price": "36.0000",
+    "POS": "SOOPER CHOCOLATE",
+    "Barcode": "8964002527687"
+  },
+  "034024": {
+    "Item": "034024",
+    "Description": "EBM Clik H/Roll *24",
+    "Quantity": "24",
+    "Price": "36.0000",
+    "POS": "AL SAFA CHI KEBAB ROLL",
+    "Barcode": "624967906009"
+  }
+}
