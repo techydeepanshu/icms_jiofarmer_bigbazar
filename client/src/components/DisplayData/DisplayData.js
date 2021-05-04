@@ -6,12 +6,13 @@ import { chooseFilter } from "../../utils/filterData";
 import UpdateInventory from "../Update/UpdateInventory";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import {CModal,CModalBody,CModalHeader,CContainer,CRow,CCol} from "@coreui/react";
 
 import styles from "./DisplayData.module.css";
 import Spinner from "../../UI/Spinner/Spinner";
 import { chetak } from "../../utils/invoice-filters/chetak";
-import { CModal, CModalHeader } from "@coreui/react";
+import firebase from "../../firebase";
+import IconButton from "@material-ui/core/IconButton";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const DisplayData = (props) => {
   let emptyColumnList = [];
@@ -19,40 +20,49 @@ const DisplayData = (props) => {
   const [emptyColumn, setEmptyColumn] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
   const [pushToInventory, setPushToInventory] = useState(false);
-  const [inventoryData, setInventoryData] = useState([])
-  const [itemNoDropdown, setItemNoDropdown] = useState([])
+  const [inventoryData, setInventoryData] = useState([]);
+  const [itemNoDropdown, setItemNoDropdown] = useState([]);
   const [loader, setLoader] = useState(true);
   const tesseractService = new TesseractService();
   const header = [
-        "Serial No.",
-        "Barcode",
-        "Qty Shipped",
-        "ITEM NO",
-        "DESCRPTION",
-        "Units(Per item)",
-        "Unit Price",
-        "Extended Price",
-        "Cost Price",
-        "Selling Price",
-        "Mark up (%)",
+    "Serial No.",
+    "Barcode",
+    "Qty Shipped",
+    "ITEM NO",
+    "DESCRPTION",
+    "Units(Per item)",
+    "Unit Price",
+    "Extended Price",
+    "Cost Price",
+    "Selling Price",
+    "Mark up (%)",
   ];
 
   const addRow = () => {
-    let tempTableData = [...tableData]
-    tempTableData.push({qty: 0, itemNo: "", description: "", pieces: 0, unitPrice: 0.00, extendedPrice: "", markup: 0, sp: 0})
-    setTableData(tempTableData)
+    let tempTableData = [...tableData];
+    tempTableData.push({
+      qty: 0,
+      itemNo: "",
+      description: "",
+      pieces: 0,
+      unitPrice: 0.0,
+      extendedPrice: "",
+      markup: 0,
+      sp: 0,
+    });
+    setTableData(tempTableData);
   };
   const deleteRow = (index) => {
-    let tempTableData = [...tableData]
-    if (tableData[index]['show']) {
+    let tempTableData = [...tableData];
+    if (tableData[index]["show"]) {
       if (window.confirm("Delete the item?")) {
-        tempTableData[index]["show"] = false
+        tempTableData[index]["show"] = false;
       }
     } else {
-        tempTableData[index]["show"] = true;
+      tempTableData[index]["show"] = true;
     }
-    setTableData(tempTableData)
-  }
+    setTableData(tempTableData);
+  };
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
@@ -60,13 +70,13 @@ const DisplayData = (props) => {
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <TextField
-                type={"number"}
-                variant="outlined"
-                onChange={(e) => {
-                  setMarkup(e.target.value);
-                }}
-                style={{width: 100}}
-              />
+              type={"number"}
+              variant="outlined"
+              onChange={(e) => {
+                setMarkup(e.target.value);
+              }}
+              style={{ width: 100 }}
+            />
           ) : null}
         </th>
       );
@@ -104,23 +114,21 @@ const DisplayData = (props) => {
                 onChange={(e) => {
                   handleChange(index, "barcode", e.target.value);
                 }}
-                style={{ width: 100 }}
+                style={{ width: 150 }}
               />
-              <CModal show={false} onClose={()=>alert("bla")}>
-                <CModalHeader closeButton>Header</CModalHeader>
-                <CModalBody>
-                  <CContainer fluid>
-                    <CRow>
-                      <CCol>
-                        <h3>bla</h3>
-                        <h3>sla</h3>
-                      </CCol>
-                    </CRow>
-                  </CContainer>
-                </CModalBody>
-              </CModal>
+              <IconButton
+                color="primary"
+                aria-label="add to review"
+                onClick={() => addForReview(element)}
+              >
+                <AddShoppingCartIcon />
+              </IconButton>
+              <div className={styles.tooltip}>
+                <p>POS Product- {element.posName}</p>
+                <p>UPC- {element.barcode}</p>
+              </div>
             </td>
-            <td className={styles.element}>
+            <td>
               <TextField
                 type="number"
                 value={element.qty}
@@ -131,11 +139,11 @@ const DisplayData = (props) => {
                 }}
                 style={{ width: 100 }}
               />
-              <span className={styles.tooltip}>
+              {/* <span className={styles.tooltip}>
                 The extended price for this is {element.extendedPrice} but
                 quantity shipped is {element.qty} is this a free item? Please
                 eneter the unit price manually.
-              </span>
+              </span> */}
             </td>
             <td>
               <Autocomplete
@@ -223,7 +231,7 @@ const DisplayData = (props) => {
               text="Re upload"
               color="btn btn-info"
               type="submit"
-              onClick={() =>window.location.reload()}
+              onClick={() => window.location.reload()}
             />
           </div>
         </div>
@@ -235,17 +243,33 @@ const DisplayData = (props) => {
   const pushInventoryDetails = () => {
     // console.log("Pushing inventory");
     if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
-      let tempTable = []
+      let tempTable = [];
       tableData.forEach((element, index) => {
-        let rowData = {index: index + 1, ...element}
-        tempTable.push(rowData)
-      })
-      let filterData = tempTable.filter(ele => ele.show === true)
-      console.log('filterData', filterData)
-      setInventoryData(filterData)
+        let rowData = { index: index + 1, ...element };
+        tempTable.push(rowData);
+      });
+      let filterData = tempTable.filter((ele) => ele.show === true);
+      console.log("filterData", filterData);
+      setInventoryData(filterData);
       setPushToInventory(true);
     } else {
       alert("Please fill all the values");
+    }
+  };
+
+  const addForReview = async (item) => {
+    const data = {
+      barcode: item.barcode,
+      posName: item.posName,
+      itemNo: item.itemNo,
+      description: item.description,
+    };
+    try {
+      firebase.database().ref("/review").child(`${item.itemNo}`).set(data);
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
     }
   };
 
@@ -253,7 +277,6 @@ const DisplayData = (props) => {
     let tempTableData = [...tableData];
     tempTableData[row][key] = value;
 
-    // console.log("Empty col list", emptyColumnList, emptyColumn);
     if (
       tempTableData[row]["qty"] !== "" &&
       tempTableData[row]["itemNo"] !== "" &&
@@ -282,23 +305,19 @@ const DisplayData = (props) => {
         sp = sp / tempTableData[row]["pieces"];
       }
       tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
-      tempTableData[row]["cp"] = isNaN(cost)? 0 : cost.toFixed(2)
+      tempTableData[row]["cp"] = isNaN(cost) ? 0 : cost.toFixed(2);
     }
 
-    if (
-      (key === "qty" || key === "unitPrice")/*  &&
-      tempTableData[row]["extendedPrice"] !== "0.00" */
-    ) {
+    if (key === "qty" || key === "unitPrice") {
       const extendedPrice =
         parseFloat(tempTableData[row]["qty"]) *
         parseFloat(tempTableData[row]["unitPrice"]);
-      // console.log("enter if", value, extendedPrice);
       if (!isNaN(extendedPrice)) {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
     }
-    if (key === 'barcode') {
-      tempTableData[row]["barcode"] = value
+    if (key === "barcode") {
+      tempTableData[row]["barcode"] = value;
     }
     setTableData(tempTableData);
   };
@@ -307,16 +326,16 @@ const DisplayData = (props) => {
     let tempTableData = [...tableData];
 
     for (let index = 0; index < tempTableData.length; index++) {
-      handleChange(index, "markup" , value);
+      handleChange(index, "markup", value);
     }
   };
 
   useEffect(() => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
-      // return chetak();
+      return chetak();
 
-      setLoader(true)
+      setLoader(true);
       const ocrData = await Promise.all(
         props.filename.map(async (file) => {
           try {
@@ -338,85 +357,108 @@ const DisplayData = (props) => {
        */
       // setLoader(false);
       /** apply filter for the specific invoice */
-      let newData = []
-      ocrData.forEach(data => newData=[...newData,...data])
-      return newData
+      let newData = [];
+      ocrData.forEach((data) => (newData = [...newData, ...data]));
+      return newData;
     }
-    async function invoiceData () {
-      const products = await tesseractService.GetProductDetails(props.selectedInvoice);
-      return products
+    async function invoiceData() {
+      const products = await tesseractService.GetProductDetails(
+        props.selectedInvoice
+      );
+      return products;
       // setItemNoDropdown(Object.keys(products))
       // setProductDetails(products);
-    };
-    fetchOCRData()
-      .then(ocrData => {
-        invoiceData()
-          .then(products => {
-            // /**post processing the table data after returning form filter */
-            function convertToUpperCase(obj) {
-              let newObj = {}
-              for ( let key in obj) {
-                // console.log("obj[key]", obj[key])
-                newObj[key.toUpperCase()] = obj[key]
-              }
-              return newObj
+    }
+    fetchOCRData().then((ocrData) => {
+      invoiceData()
+        .then((products) => {
+          /**post processing the table data after returning from filter */
+          function convertToUpperCase(obj) {
+            let newObj = {};
+            for (let key in obj) {
+              newObj[key.toUpperCase()] = obj[key];
             }
-            products = convertToUpperCase(products)
-            // console.log("The products key", products)
-            let table = ocrData.map(row =>{
-              /**For invoices which dont have item no, set description as item no */
-              if (row.itemNo === undefined) {
-                row.itemNo = row.description.trim().toUpperCase()
-              }
-              row.itemNo = row.itemNo.toString().toUpperCase();
-              row.description = products[row.itemNo] !== undefined ? products[row.itemNo].Description: row.description
-              row.pieces = products[row.itemNo] !== undefined ? products[row.itemNo].Quantity : 0
-              row.sku = products[row.itemNo] !== undefined ? products[row.itemNo].sku : ""
-              row.markup = 0
-              row.show = true
-              let sp = 0
-              let cp = 0
-              const barcode = ''
-              if (parseInt(row.pieces)) {
-                sp = (parseFloat(row.unitPrice)/parseInt(row.pieces)).toFixed(2)
-                cp = sp
-              }
-              /**filter out the rows for which qty shipped & extendedPrice is zero */
-              if (row.qty == "0" && row.extendedPrice === "0.00") {
-                return null
-              }
-              /**Calulate qty for which qty is not read/scanned by textract */
-              if (!row.qty) {
-                row.qty = (
-                  parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
-                ).toFixed(0);
-              }
-              return {...row, sp, cp, barcode}
-            })
-            setLoader(false);
-            setTableData(table.filter((data) => data !== null));
-            setItemNoDropdown(Object.keys(products));
-            setProductDetails(products);
-          })
-          .catch(err => {
-            setLoader(false);
-            // console.log("err with ocr", err)
-          })
-          // .then(() => setLoader(false))
-      })
+            return newObj;
+          }
+          products = convertToUpperCase(products);
+
+          let table = ocrData.map((row) => {
+            /**For invoices which dont have item no, set description as item no */
+            if (row.itemNo === undefined) {
+              row.itemNo = row.description.trim().toUpperCase();
+            }
+            row.itemNo = row.itemNo.toString().toUpperCase();
+            row.description =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Description
+                : row.description;
+            row.pieces =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Quantity
+                : 0;
+            row.sku =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].sku
+                : "";
+            row.barcode =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Barcode
+                : "";
+            row.posName =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].POS
+                : "";
+            row.markup = 0;
+            row.show = true;
+            let sp = 0;
+            let cp = 0;
+            // const barcode = products.Barcode
+            if (parseInt(row.pieces)) {
+              sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+                2
+              );
+              cp = sp;
+            }
+            /**filter out the rows for which qty shipped & extendedPrice is zero */
+            if (row.qty == "0" && row.extendedPrice === "0.00") {
+              return null;
+            }
+            /**Calulate qty for which qty is not read/scanned by textract */
+            if (!row.qty) {
+              row.qty = (
+                parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+              ).toFixed(0);
+            }
+            return { ...row, sp, cp };
+          });
+          setLoader(false);
+          setTableData(table.filter((data) => data !== null));
+          setItemNoDropdown(Object.keys(products));
+          setProductDetails(products);
+        })
+        .catch((err) => {
+          setLoader(false);
+          // console.log("err with ocr", err)
+        });
+      // .then(() => setLoader(false))
+    });
   }, []);
 
   useEffect(() => {
     // console.log("rerendered", tableData[0]);
-  }, [ tableData ])
-  // console.log("Item fetched", tableData, productDetails)
+  }, [tableData]);
+
   if (loader) {
     return <Spinner />;
   }
   return (
     <div className="container-fluid">
       {pushToInventory ? (
-        <UpdateInventory newInventoryData={inventoryData} header={header} goBack={setPushToInventory}/>
+        <UpdateInventory
+          newInventoryData={inventoryData}
+          header={header}
+          goBack={setPushToInventory}
+        />
       ) : (
         renderTableData()
       )}
