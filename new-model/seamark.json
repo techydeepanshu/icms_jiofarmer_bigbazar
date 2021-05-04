@@ -1,0 +1,74 @@
+{
+  "10010163": {
+    "Item": "10010163",
+    "Description": "ROHU CLEAN BLOCK 18X500G",
+    "Quantity": "18",
+    "Price": "3.5",
+    "POS": "BLACK CHANA",
+    "Barcode": "0700300"
+  },
+  "10010234": {
+    "Item": "10010234",
+    "Description": "KOI (Climbing Perch) BLOCK 18X500G",
+    "Quantity": "18",
+    "Price": "3.5",
+    "POS": "K C B",
+    "Barcode": "812042002702"
+  },
+  "20010210": {
+    "Item": "20010210",
+    "Description": "KESKI (Sprat) BLOCK  36X250G",
+    "Quantity": "36",
+    "Price": "1.25",
+    "POS": "HAOR SPRAT KESKI",
+    "Barcode": "7182178143307"
+  },
+  "50260088": {
+    "Item": "50260088",
+    "Description": "POMFRET GOLDEN WHL 500/700 GMS 20 LBS",
+    "Quantity": "1",
+    "Price": "3.5",
+    "POS": "WHITE POMPFRET",
+    "Barcode": "1658"
+  },
+  "60810037": {
+    "Item": "60810037",
+    "Description": "TELAPIA FILLET 10 LBS",
+    "Quantity": "1",
+    "Price": "3.1",
+    "POS": "B TEX",
+    "Barcode": "1423"
+  },
+  "190010020": {
+    "Item": "190010020",
+    "Description": "SAMOSA VEGETABLE (25Pcs) 20X500G",
+    "Quantity": "20",
+    "Price": "2.5",
+    "POS": "IBCO VEGETABLE SAMOSA FP 25 PCS",
+    "Barcode": "5027891337058"
+  },
+  "190010046": {
+    "Item": "190010046",
+    "Description": "PARATHA PLAIN (FAMILY PACK) 12X1600G",
+    "Quantity": "12",
+    "Price": "4",
+    "POS": "PLAIN PARATHA",
+    "Barcode": "9556587988107"
+  },
+  "190010079": {
+    "Item": "190010079",
+    "Description": "SAMOSA VEGETABLE FAMILY PACK 16X900G",
+    "Quantity": "16",
+    "Price": "5.25",
+    "POS": "IBCO VEGETABLE SAMOSA",
+    "Barcode": "5027891332534"
+  },
+  "190010098": {
+    "Item": "190010098",
+    "Description": "SPRING ROLL VEGETABLE F/ PK 16X900G",
+    "Quantity": "16",
+    "Price": "4.5",
+    "POS": "DEEP VEGETABLE SPRING ROLLS",
+    "Barcode": "011433031509"
+  }
+}

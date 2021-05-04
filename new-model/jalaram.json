@@ -1,0 +1,130 @@
+{
+  "BANANA STEM": {
+    "Item": "BANANA STEM",
+    "Description": "BANANA STEM",
+    "Quantity": "1",
+    "Price": "0.53333",
+    "POS": "BANANA STEM",
+    "Barcode": "5529"
+  },
+  "BREAD FRUIT": {
+    "Item": "BREAD FRUIT",
+    "Description": "BREAD FRUIT",
+    "Quantity": "1",
+    "Price": "1.00",
+    "POS": "BREAD FRUIT",
+    "Barcode": "4777"
+  },
+  "CHAYOTE": {
+    "Item": "CHAYOTE",
+    "Description": "CHAYOTE",
+    "Quantity": "1",
+    "Price": "0.60",
+    "POS": "YO CRUNCH",
+    "Barcode": "046675013129"
+  },
+  "CHINESE OKRA (TURIA) (IMPORT)": {
+    "Item": "CHINESE OKRA (TURIA) (IMPORT)",
+    "Description": "CHINESE OKRA (TURIA) (IMPORT)",
+    "Quantity": "1",
+    "Price": "1.0333",
+    "POS": "CHINESE POTATO",
+    "Barcode": "8904051310786"
+  },
+  "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)": {
+    "Item": "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)",
+    "Description": "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)",
+    "Quantity": "12",
+    "Price": "26.00",
+    "POS": "TOORDAL INDIA2LB",
+    "Barcode": "200254"
+  },
+  "GANGURA LEAVES (FL)": {
+    "Item": "GANGURA LEAVES (FL)",
+    "Description": "GANGURA LEAVES (FL)",
+    "Quantity": "1",
+    "Price": "2.10",
+    "POS": "GONGURA LEAVES",
+    "Barcode": "3696"
+  },
+  "GREEN MANGO (IMPORT)": {
+    "Item": "GREEN MANGO (IMPORT)",
+    "Description": "GREEN MANGO (IMPORT)",
+    "Quantity": "1",
+    "Price": "2.82",
+    "POS": "S KPOOR MANGO GREEN CHILLI",
+    "Barcode": "8904117600387"
+  },
+  "GREEN VATANA": {
+    "Item": "GREEN VATANA",
+    "Description": "GREEN VATANA",
+    "Quantity": "1",
+    "Price": "1.45",
+    "POS": "GREEN PEAS",
+    "Barcode": "011433131650"
+  },
+  "GUWAR BEANS (DOM.": {
+    "Item": "GUWAR BEANS (DOM.",
+    "Description": "GUWAR BEANS (DOM.",
+    "Quantity": "1",
+    "Price": "1.40",
+    "POS": "DOG AN",
+    "Barcode": "8699432209567"
+  },
+  "LONG SQUASH (DUDHI) (IMPORT)": {
+    "Item": "LONG SQUASH (DUDHI) (IMPORT)",
+    "Description": "LONG SQUASH (DUDHI) (IMPORT)",
+    "Quantity": "1",
+    "Price": "0.575",
+    "POS": "MAPRO ORANGE SQUASH",
+    "Barcode": "8901044570554"
+  },
+  "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)": {
+    "Item": "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)",
+    "Description": "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)",
+    "Quantity": "12",
+    "Price": "19.00",
+    "POS": "CAN OPENER",
+    "Barcode": "10029"
+  },
+  "PARVAL (IMPORT)": {
+    "Item": "PARVAL (IMPORT)",
+    "Description": "PARVAL (IMPORT)",
+    "Quantity": "1",
+    "Price": "1.32",
+    "POS": "GUR PARA",
+    "Barcode": "609224600814"
+  },
+  "THAI CHILLI (GREEN)": {
+    "Item": "THAI CHILLI (GREEN)",
+    "Description": "THAI CHILLI (GREEN)",
+    "Quantity": "1",
+    "Price": "0.96667",
+    "POS": "VADILAL HARI MIRCH GREEN CHILLI",
+    "Barcode": "8901777033661"
+  },
+  "TINDORA": {
+    "Item": "TINDORA",
+    "Description": "TINDORA",
+    "Quantity": "1",
+    "Price": "1.36667",
+    "POS": "DAILY DELIGHT TINDORA",
+    "Barcode": "664648720364"
+  },
+  "TURMERIC (YELLOW) (BIG)": {
+    "Item": "TURMERIC (YELLOW) (BIG)",
+    "Description": "TURMERIC (YELLOW) (BIG)",
+    "Quantity": "1",
+    "Price": "3.76667",
+    "POS": "YELLOW TURMERIC",
+    "Barcode": "2082"
+  },
+  "WINTER MELON": {
+    "Item": "WINTER MELON",
+    "Description": "WINTER MELON",
+    "Quantity": "1",
+    "Price": "16.00",
+    "POS": "BABY WATER MELON",
+    "Barcode": "1067"
+  }
+}

@@ -6,6 +6,7 @@ import { chooseFilter } from "../../utils/filterData";
 import UpdateInventory from "../Update/UpdateInventory";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import {CModal,CModalBody,CModalHeader,CContainer,CRow,CCol} from "@coreui/react";
 
 import styles from "./DisplayData.module.css";
 import Spinner from "../../UI/Spinner/Spinner";
@@ -105,7 +106,19 @@ const DisplayData = (props) => {
                 }}
                 style={{ width: 100 }}
               />
-              {/**add modal here */}
+              <CModal show={false} onClose={()=>alert("bla")}>
+                <CModalHeader closeButton>Header</CModalHeader>
+                <CModalBody>
+                  <CContainer fluid>
+                    <CRow>
+                      <CCol>
+                        <h3>bla</h3>
+                        <h3>sla</h3>
+                      </CCol>
+                    </CRow>
+                  </CContainer>
+                </CModalBody>
+              </CModal>
             </td>
             <td className={styles.element}>
               <TextField
