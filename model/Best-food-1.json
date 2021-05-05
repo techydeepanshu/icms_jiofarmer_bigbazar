@@ -1,0 +1,1122 @@
+{
+  "4001":{
+    "Item": 4001,
+    "Description": "ZEBRA BASMATI RICE 10 LB X 4",
+    "qty": 50,
+    "Price": 48,
+    "sku": "ZEBRA-BASMATI-RICE-10-LB-X-4",
+    "category": "Best-food"
+  },
+  "5101":{
+    "Item": 5101,
+    "Description": "PREEMA BASMATI RICE 10 LBS X 4",
+    "qty": 50,
+    "Price": 38,
+    "sku": "PREEMA-BASMATI-RICE-10-LBS-X-4",
+    "category": "Best-food"
+  },
+  "11001":{
+    "Item": 11001,
+    "Description": "EMPIRE BASMATI RICE 10 LB X 4",
+    "qty": 50,
+    "Price": 48,
+    "sku": "EMPIRE-BASMATI-RICE-10-LB-X-4",
+    "category": "Best-food"
+  },
+  "11003":{
+    "Item": 11003,
+    "Description": "EMPIRE BASMATI RICE 40 LBS",
+    "qty": 50,
+    "Price": 42,
+    "sku": "EMPIRE-BASMATI-RICE-40-LBS",
+    "category": "Best-food"
+  },
+  "13005":{
+    "Item": 13005,
+    "Description": "KH BASMATI PLATINUM 10LB4 JAR (XTRA FLAVOR)",
+    "qty": 50,
+    "Price": 46,
+    "sku": "KH-BASMATI-PLATINUM-10LB4-JAR-(XTRA-FLAVOR)",
+    "category": "Best-food"
+  },
+  "13029":{
+    "Item": 13029,
+    "Description": "KH BROWN RICE 2.2 LB X 4 JAR",
+    "qty": 50,
+    "Price": 13,
+    "sku": "KH-BROWN-RICE-2.2-LB-X-4-JAR",
+    "category": "Best-food"
+  },
+  "11005":{
+    "Item": 11005,
+    "Description": "EMPIRE FITNESS BROWN RICE (JAR) 1KG4",
+    "qty": 50,
+    "Price": 12,
+    "sku": "EMPIRE-FITNESS-BROWN-RICE-(JAR)-1KG4",
+    "category": "Best-food"
+  },
+  "1185":{
+    "Item": 1185,
+    "Description": "SHAN PICKLE GARLIC 1 KG X 6",
+    "qty": 50,
+    "Price": 24,
+    "sku": "SHAN-PICKLE-GARLIC-1-KG-X-6",
+    "category": "Best-food"
+  },
+  "1200":{
+    "Item": 1200,
+    "Description": "SHAN PICKLE CHINES CHILLY 1 KG X6",
+    "qty": 50,
+    "Price": 16.1,
+    "sku": "SHAN-PICKLE-CHINES-CHILLY-1-KG-X6",
+    "category": "Best-food"
+  },
+  "1181":{
+    "Item": 1181,
+    "Description": "SHAN PICKLE MIX 1 KG X 6",
+    "qty": 50,
+    "Price": 16.1,
+    "sku": "SHAN-PICKLE-MIX-1-KG-X-6",
+    "category": "Best-food"
+  },
+  "1182":{
+    "Item": 1182,
+    "Description": "SHAN PICKLE MANGO 1 KG X 6",
+    "qty": 50,
+    "Price": 16.1,
+    "sku": "SHAN-PICKLE-MANGO-1-KG-X-6",
+    "category": "Best-food"
+  },
+  "1186":{
+    "Item": 1186,
+    "Description": "SHAN PICKLE MIX (HYD) 1 KG X 6",
+    "qty": 50,
+    "Price": 16.1,
+    "sku": "SHAN-PICKLE-MIX-(HYD)-1-KG-X-6",
+    "category": "Best-food"
+  },
+  "1184":{
+    "Item": 1184,
+    "Description": "SHAN PICKLE CHILLY 1 KG X 6",
+    "qty": 50,
+    "Price": 16.1,
+    "sku": "SHAN-PICKLE-CHILLY-1-KG-X-6",
+    "category": "Best-food"
+  },
+  "8357":{
+    "Item": 8357,
+    "Description": "DALDA GHEE 1 KG X 12",
+    "qty": 50,
+    "Price": 54,
+    "sku": "DALDA-GHEE-1-KG-X-12",
+    "category": "Best-food"
+  },
+  "42307":{
+    "Item": 42307,
+    "Description": "HR RASMALAI 1 KG X 12 CAN",
+    "qty": 50,
+    "Price": 45,
+    "sku": "HR-RASMALAI-1-KG-X-12-CAN",
+    "category": "Best-food"
+  },
+  "42302":{
+    "Item": 42302,
+    "Description": "HR KALAM PETHA 1 KG X 12 (CAN)",
+    "qty": 50,
+    "Price": 45,
+    "sku": "HR-KALAM-PETHA-1-KG-X-12-(CAN)",
+    "category": "Best-food"
+  },
+  "41680":{
+    "Item": 41680,
+    "Description": "DIPITT BUFFALO SAUCE 300 GM12",
+    "qty": 50,
+    "Price": 21,
+    "sku": "DIPITT-BUFFALO-SAUCE-300-GM12",
+    "category": "Best-food"
+  },
+  "41651":{
+    "Item": 41651,
+    "Description": "PERI PERI SAUCE LEMONHERB 9.8OZ12",
+    "qty": 50,
+    "Price": 51,
+    "sku": "PERI-PERI-SAUCE-LEMONHERB-9.8OZ12",
+    "category": "Best-food"
+  },
+  "10817":{
+    "Item": 10817,
+    "Description": "MAGGI SAUCE HOT SWEET 1KG12",
+    "qty": 50,
+    "Price": 40,
+    "sku": "MAGGI-SAUCE-HOT-SWEET-1KG12",
+    "category": "Best-food"
+  },
+  "9002":{
+    "Item": 9002,
+    "Description": "BAMBINO VERMACELI RST.450GM52",
+    "qty": 50,
+    "Price": 52,
+    "sku": "BAMBINO-VERMACELI-RST.450GM52",
+    "category": "Best-food"
+  },
+  "10831":{
+    "Item": 10831,
+    "Description": "CHINGS DARK SOYA SAU 210ML24",
+    "qty": 50,
+    "Price": 24,
+    "sku": "CHINGS-DARK-SOYA-SAU-210ML24",
+    "category": "Best-food"
+  },
+  "8353":{
+    "Item": 8353,
+    "Description": "TEA POWDER 900 GM X 12",
+    "qty": 50,
+    "Price": 98,
+    "sku": "TEA-POWDER-900-GM-X-12",
+    "category": "Best-food"
+  },
+  "1236":{
+    "Item": 1236,
+    "Description": "SHAN HIMALAYAN SALT 400GM X 12",
+    "qty": 50,
+    "Price": 18,
+    "sku": "SHAN-HIMALAYAN-SALT-400GM-X-12",
+    "category": "Best-food"
+  },
+  "1247":{
+    "Item": 1247,
+    "Description": "SHAN HIMALYAN SALT 800 GM X18",
+    "qty": 50,
+    "Price": 45,
+    "sku": "SHAN-HIMALYAN-SALT-800-GM-X18",
+    "category": "Best-food"
+  },
+  "3193":{
+    "Item": 3193,
+    "Description": "KNORR NOODLES CHICK. 65 GM X72",
+    "qty": 50,
+    "Price": 28,
+    "sku": "KNORR-NOODLES-CHICK.-65-GM-X72",
+    "category": "Best-food"
+  },
+  "60049":{
+    "Item": 60049,
+    "Description": "D MUSTARD OIL 1 ITR 12",
+    "qty": 50,
+    "Price": 48,
+    "sku": "D-MUSTARD-OIL-1-ITR-12",
+    "category": "Best-food"
+  },
+  "60048":{
+    "Item": 60048,
+    "Description": "D MUSTARD OIL 500 ML 24",
+    "qty": 50,
+    "Price": 54,
+    "sku": "D-MUSTARD-OIL-500-ML-24",
+    "category": "Best-food"
+  },
+  "10707":{
+    "Item": 10707,
+    "Description": "KTC MUSTARD OIL 250 ML X 12",
+    "qty": 50,
+    "Price": 20,
+    "sku": "KTC-MUSTARD-OIL-250-ML-X-12",
+    "category": "Best-food"
+  },
+  "10797":{
+    "Item": 10797,
+    "Description": "NIHARTI CASTOR OIL 250 ML X 12",
+    "qty": 50,
+    "Price": 36,
+    "sku": "NIHARTI-CASTOR-OIL-250-ML-X-12",
+    "category": "Best-food"
+  },
+  "42761":{
+    "Item": 42761,
+    "Description": "HR PARATHA PUDINA (FRZN) 360GM X 24",
+    "qty": 50,
+    "Price": 33.45,
+    "sku": "HR-PARATHA-PUDINA-(FRZN)-360GM-X-24",
+    "category": "Best-food"
+  },
+  "42763":{
+    "Item": 42763,
+    "Description": "HR PARATHA METHI (FRZN) 360GM",
+    "qty": 50,
+    "Price": 34.8,
+    "sku": "HR-PARATHA-METHI-(FRZN)-360GM",
+    "category": "Best-food"
+  },
+  "42781":{
+    "Item": 42781,
+    "Description": "HR PARATHA HOMESTYLE (FRZN)1.2 KG X 8",
+    "qty": 50,
+    "Price": 29,
+    "sku": "HR-PARATHA-HOMESTYLE-(FRZN)1.2-KG-X-8",
+    "category": "Best-food"
+  },
+  "43354":{
+    "Item": 43354,
+    "Description": "HR PHULKA ROTI VP 900 GM X 8",
+    "qty": 50,
+    "Price": 25.2,
+    "sku": "HR-PHULKA-ROTI-VP-900-GM-X-8",
+    "category": "Best-food"
+  },
+  "42766":{
+    "Item": 42766,
+    "Description": "HR PARATHA PANEER ONION (FRZN) 400GM X 20",
+    "qty": 50,
+    "Price": 40,
+    "sku": "HR-PARATHA-PANEER-ONION-(FRZN)-400GM-X-20",
+    "category": "Best-food"
+  },
+  "42755":{
+    "Item": 42755,
+    "Description": "HR NAAN GARLIC TANDOORI (FRZN) 400G X20",
+    "qty": 50,
+    "Price": 35,
+    "sku": "HR-NAAN-GARLIC-TANDOORI-(FRZN)-400G-X20",
+    "category": "Best-food"
+  },
+  "23009":{
+    "Item": 23009,
+    "Description": "SHAHNAWAZ BIHARI KABAB X 12",
+    "qty": 50,
+    "Price": 69,
+    "sku": "SHAHNAWAZ-BIHARI-KABAB-X-12",
+    "category": "Best-food"
+  },
+  "23014":{
+    "Item": 23014,
+    "Description": "SHAHNAWAZ MUTTON SEEKH KABAB (10OZ) X 12",
+    "qty": 50,
+    "Price": 78,
+    "sku": "SHAHNAWAZ-MUTTON-SEEKH-KABAB-(10OZ)-X-12",
+    "category": "Best-food"
+  },
+  "23004":{
+    "Item": 23004,
+    "Description": "SHAHNAWAZ CH. SHAMI KABAB 10OZ X 12",
+    "qty": 50,
+    "Price": 66,
+    "sku": "SHAHNAWAZ-CH.-SHAMI-KABAB-10OZ-X-12",
+    "category": "Best-food"
+  },
+  "23006":{
+    "Item": 23006,
+    "Description": "SHAHNAWAZ CHICKEN BIRYANI 283.5GM",
+    "qty": 50,
+    "Price": 63,
+    "sku": "SHAHNAWAZ-CHICKEN-BIRYANI-283.5GM",
+    "category": "Best-food"
+  },
+  "42983":{
+    "Item": 42983,
+    "Description": "HR MALAI KOFTA (FRZN) 283G X12",
+    "qty": 50,
+    "Price": 31.8,
+    "sku": "HR-MALAI-KOFTA-(FRZN)-283G-X12",
+    "category": "Best-food"
+  },
+  "43132":{
+    "Item": 43132,
+    "Description": "HR VADA DAHI 365GM 20",
+    "qty": 50,
+    "Price": 40,
+    "sku": "HR-VADA-DAHI-365GM-20",
+    "category": "Best-food"
+  },
+  "43107":{
+    "Item": 43107,
+    "Description": "HR PANEER ALOO TIKKI (FRZ) 580G12",
+    "qty": 50,
+    "Price": 58,
+    "sku": "HR-PANEER-ALOO-TIKKI-(FRZ)-580G12",
+    "category": "Best-food"
+  },
+  "42975":{
+    "Item": 42975,
+    "Description": "HR HYDRABAD BIRYANI (FRZN) 250 GM X 12",
+    "qty": 50,
+    "Price": 22.8,
+    "sku": "HR-HYDRABAD-BIRYANI-(FRZN)-250-GM-X-12",
+    "category": "Best-food"
+  },
+  "43856":{
+    "Item": 43856,
+    "Description": "HR SAMBAR (FRZ) 283GM 12",
+    "qty": 50,
+    "Price": 16.8,
+    "sku": "HR-SAMBAR-(FRZ)-283GM-12",
+    "category": "Best-food"
+  },
+  "43103":{
+    "Item": 43103,
+    "Description": "HR ALOO TIKKI (FRZN) 420GM X20",
+    "qty": 50,
+    "Price": 53.9,
+    "sku": "HR-ALOO-TIKKI-(FRZN)-420GM-X20",
+    "category": "Best-food"
+  },
+  "25521":{
+    "Item": 25521,
+    "Description": "ASH SAMOSA PUNJABI 40GM X45 X6",
+    "qty": 50,
+    "Price": 56.7,
+    "sku": "ASH-SAMOSA-PUNJABI-40GM-X45-X6",
+    "category": "Best-food"
+  },
+  "43231":{
+    "Item": 43231,
+    "Description": "HR GAJAR HALWA 283 GM 12",
+    "qty": 50,
+    "Price": 30,
+    "sku": "HR-GAJAR-HALWA-283-GM-12",
+    "category": "Best-food"
+  },
+  "1015":{
+    "Item": 1015,
+    "Description": "SHAN DAHI BARA MIX",
+    "qty": 50,
+    "Price": 12.3504,
+    "sku": "SHAN-DAHI-BARA-MIX",
+    "category": "Best-food"
+  },
+  "3430":{
+    "Item": 3430,
+    "Description": "TAPAL DANEDAR TEA 450GM15 JAR",
+    "qty": 50,
+    "Price": 62.25,
+    "sku": "TAPAL-DANEDAR-TEA-450GM15-JAR",
+    "category": "Best-food"
+  },
+  "3420":{
+    "Item": 3420,
+    "Description": "TAPAL DANEDAR RTB 8012",
+    "qty": 50,
+    "Price": 39,
+    "sku": "TAPAL-DANEDAR-RTB-8012",
+    "category": "Best-food"
+  },
+  "10784":{
+    "Item": 10784,
+    "Description": "PG TIPS TEA 4 X 240 S",
+    "qty": 50,
+    "Price": 36,
+    "sku": "PG-TIPS-TEA-4-X-240-S",
+    "category": "Best-food"
+  },
+  "84071":{
+    "Item": 84071,
+    "Description": "SUN MUNAQGA 7 OZ 20",
+    "qty": 50,
+    "Price": 60,
+    "sku": "SUN-MUNAQGA-7-OZ-20",
+    "category": "Best-food"
+  },
+  "84072":{
+    "Item": 84072,
+    "Description": "SUN MUNAQGA 14 OZ 20",
+    "qty": 50,
+    "Price": 110,
+    "sku": "SUN-MUNAQGA-14-OZ-20",
+    "category": "Best-food"
+  },
+  "84006":{
+    "Item": 84006,
+    "Description": "SUN ALUBUKHARA 7 OZ X 20(CONTAINS SULPHITE)",
+    "qty": 50,
+    "Price": 60,
+    "sku": "SUN-ALUBUKHARA-7-OZ-X-20(CONTAINS-SULPHITE)",
+    "category": "Best-food"
+  },
+  "8140":{
+    "Item": 8140,
+    "Description": "DRY DATES LB GOLD",
+    "qty": 50,
+    "Price": 2,
+    "sku": "DRY-DATES-LB-GOLD",
+    "category": "Best-food"
+  },
+  "1":{
+    "Item": 1,
+    "Description": "BAG 084042 SUN DRY APRICOT 14 OZ X 20",
+    "qty": 50,
+    "Price": 125,
+    "sku": "BAG-084042-SUN-DRY-APRICOT-14-OZ-X-20",
+    "category": "Best-food"
+  },
+  "84041":{
+    "Item": 84041,
+    "Description": "SUN DRY APRICOT 7 OZ X 20",
+    "qty": 50,
+    "Price": 65,
+    "sku": "SUN-DRY-APRICOT-7-OZ-X-20",
+    "category": "Best-food"
+  },
+  "84050":{
+    "Item": 84050,
+    "Description": "SUN ANJEER (FIGS) 14 OZ 20",
+    "qty": 50,
+    "Price": 160,
+    "sku": "SUN-ANJEER-(FIGS)-14-OZ-20",
+    "category": "Best-food"
+  },
+  "84049":{
+    "Item": 84049,
+    "Description": "SUN ANJEER (FIGS) 7 OZ X 20",
+    "qty": 50,
+    "Price": 84,
+    "sku": "SUN-ANJEER-(FIGS)-7-OZ-X-20",
+    "category": "Best-food"
+  },
+  "3404":{
+    "Item": 3404,
+    "Description": "TAPAL FAMILY MIX 900GM 12",
+    "qty": 50,
+    "Price": 90,
+    "sku": "TAPAL-FAMILY-MIX-900GM-12",
+    "category": "Best-food"
+  },
+  "2878":{
+    "Item": 2878,
+    "Description": "DEER DALIYA SPLIT 14 OZ X 20",
+    "qty": 50,
+    "Price": 35,
+    "sku": "DEER DALIYA SPLIT 14 OZ X 20",
+    "category": "Best-food"
+  },
+  "2877":{
+    "Item": 2877,
+    "Description": "DEER DALIYA SPLIT 7 OZ X 20",
+    "qty": 50,
+    "Price": 25,
+    "sku": "DEER DALIYA SPLIT 7 OZ X 20",
+    "category": "Best-food"
+  },
+  "3962":{
+    "Item": 3962,
+    "Description": "DEER DALIYA SPLIT 4LBS X10",
+    "qty": 50,
+    "Price": 45,
+    "sku": "DEER DALIYA SPLIT 4LBS X10",
+    "category": "Best-food"
+  },
+  "5202":{
+    "Item": 5202,
+    "Description": "PREEMA MANGO DRINK 2 ITR X 6",
+    "qty": 50,
+    "Price": 14,
+    "sku": "PREEMA MANGO DRINK 2 ITR X 6",
+    "category": "Best-food"
+  },
+  "5205":{
+    "Item": 5205,
+    "Description": "PREEMA LYCHEE DRINK 2 ITR X 6",
+    "qty": 50,
+    "Price": 14,
+    "sku": "PREEMA LYCHEE DRINK 2 ITR X 6",
+    "category": "Best-food"
+  },
+  "5204":{
+    "Item": 5204,
+    "Description": "PREEMA GUAVA DRINK 2 ITR X 6",
+    "qty": 50,
+    "Price": 14,
+    "sku": "PREEMA GUAVA DRINK 2 ITR X 6",
+    "category": "Best-food"
+  },
+  "2206":{
+    "Item": 2206,
+    "Description": "DEER MANGO DRINK 1.5 LTR X 6",
+    "qty": 50,
+    "Price": 9.5,
+    "sku": "DEER MANGO DRINK 1.5 LTR X 6",
+    "category": "Best-food"
+  },
+  "5262":{
+    "Item": 5262,
+    "Description": "NESTLE MANGO CHAUSA 1 ITR12",
+    "qty": 50,
+    "Price": 18,
+    "sku": "NESTLE MANGO CHAUSA 1 ITR12",
+    "category": "Best-food"
+  },
+  "5263":{
+    "Item": 5263,
+    "Description": "NESTLE GUAVA 1 ITR12",
+    "qty": 50,
+    "Price": 18,
+    "sku": "NESTLE GUAVA 1 ITR12",
+    "category": "Best-food"
+  },
+  "5267":{
+    "Item": 5267,
+    "Description": "NESTLE KINNOW 1 ITR12",
+    "qty": 50,
+    "Price": 18,
+    "sku": "NESTLE KINNOW 1 ITR12",
+    "category": "Best-food"
+  },
+  "91001":{
+    "Item": 91001,
+    "Description": "DEER 360 CUP DATES 24OZ 12 ORGANIC",
+    "qty": 50,
+    "Price": 39,
+    "sku": "DEER 360 CUP DATES 24OZ 12 ORGANIC",
+    "category": "Best-food"
+  },
+  "3691":{
+    "Item": 3691,
+    "Description": "SHEZAN MANGO JUICE 250ML X 36",
+    "qty": 50,
+    "Price": 11.5,
+    "sku": "SHEZAN MANGO JUICE 250ML X 36",
+    "category": "Best-food"
+  },
+  "2201":{
+    "Item": 2201,
+    "Description": "DEER MANGO BOTTLE 250 ML X 24",
+    "qty": 50,
+    "Price": 7.5,
+    "sku": "DEER MANGO BOTTLE 250 ML X 24",
+    "category": "Best-food"
+  },
+  "6045":{
+    "Item": 6045,
+    "Description": "DEER FALOODA MANGO 290 ML",
+    "qty": 50,
+    "Price": 20,
+    "sku": "DEER FALOODA MANGO 290 ML",
+    "category": "Best-food"
+  },
+  "6041":{
+    "Item": 6041,
+    "Description": "DEER FALOODA ROSE 290 ML",
+    "qty": 50,
+    "Price": 20,
+    "sku": "DEER FALOODA ROSE 290 ML",
+    "category": "Best-food"
+  },
+  "6042":{
+    "Item": 6042,
+    "Description": "DEER FALOODA STRAWBERRY 290 ML",
+    "qty": 50,
+    "Price": 20,
+    "sku": "DEER-FALOODA-STRAWBERRY-290-ML",
+    "category": "Best-food"
+  },
+  "6043":{
+    "Item": 6043,
+    "Description": "DEER FALOODA BANANA 290 ML",
+    "qty": 50,
+    "Price": 20,
+    "sku": "DEER-FALOODA-BANANA-290-ML",
+    "category": "Best-food"
+  },
+  "6009":{
+    "Item": 6009,
+    "Description": "DEER BASIL PINEAPPLE DRINK 290ML X24",
+    "qty": 50,
+    "Price": 12,
+    "sku": "DEER-BASIL-PINEAPPLE-DRINK-290ML-X24",
+    "category": "Best-food"
+  },
+  "33072":{
+    "Item": 33072,
+    "Description": "AL MADINA DATES 2LBX12",
+    "qty": 50,
+    "Price": 90,
+    "sku": "AL-MADINA-DATES-2LBX12",
+    "category": "Best-food"
+  },
+  "1285":{
+    "Item": 1285,
+    "Description": "SHAN GINGER PASTE 700 GM 6",
+    "qty": 50,
+    "Price": 21.5,
+    "sku": "SHAN-GINGER-PASTE-700-GM-6",
+    "category": "Best-food"
+  },
+  "1284":{
+    "Item": 1284,
+    "Description": "SHAN GARLIC PASTE 700 GM6",
+    "qty": 50,
+    "Price": 21.5,
+    "sku": "SHAN-GARLIC-PASTE-700-GM6",
+    "category": "Best-food"
+  },
+  "1286":{
+    "Item": 1286,
+    "Description": "SHAN GAR GIN PASTE 700GM 6",
+    "qty": 50,
+    "Price": 21.5,
+    "sku": "SHAN-GAR-GIN-PASTE-700GM-6",
+    "category": "Best-food"
+  },
+  "85001":{
+    "Item": 85001,
+    "Description": "PAKOLA ICE CREAM SODA 250ML24",
+    "qty": 50,
+    "Price": 12,
+    "sku": "PAKOLA-ICE-CREAM-SODA-250ML24",
+    "category": "Best-food"
+  },
+  "81033":{
+    "Item": 81033,
+    "Description": "DEER BAY LEAVIES 3.5 OZ X 20",
+    "qty": 50,
+    "Price": 22,
+    "sku": "DEER-BAY-LEAVIES-3.5-OZ-X-20",
+    "category": "Best-food"
+  },
+  "9573":{
+    "Item": 9573,
+    "Description": "NUTRELA SOYA CHUNK 7 OZ X 50",
+    "qty": 50,
+    "Price": 38,
+    "sku": "NUTRELA-SOYA-CHUNK-7-OZ-X-50",
+    "category": "Best-food"
+  },
+  "1055":{
+    "Item": 1055,
+    "Description": "SHAN TANDOORI MASALA",
+    "qty": 50,
+    "Price": 12.1008,
+    "sku": "SHAN-TANDOORI-MASALA",
+    "category": "Best-food"
+  },
+  "1046":{
+    "Item": 1046,
+    "Description": "SHAN PULLAO BIRYANI",
+    "qty": 50,
+    "Price": 12.1008,
+    "sku": "SHAN-PULLAO-BIRYANI",
+    "category": "Best-food"
+  },
+  "1053":{
+    "Item": 1053,
+    "Description": "SHAN SINDHI BIRYANI",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-SINDHI-BIRYANI",
+    "category": "Best-food"
+  },
+  "1025":{
+    "Item": 1025,
+    "Description": "SHAN KARACHI BEEF BIRYANI",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-KARACHI-BEEF-BIRYANI",
+    "category": "Best-food"
+  },
+  "1013":{
+    "Item": 1013,
+    "Description": "SHAN CHICKEN TIKKA",
+    "qty": 50,
+    "Price": 12.1008,
+    "sku": "SHAN-CHICKEN-TIKKA",
+    "category": "Best-food"
+  },
+  "1006":{
+    "Item": 1006,
+    "Description": "SHAN BOMBAY BIRYANI",
+    "qty": 50,
+    "Price": 12.1008,
+    "sku": "SHAN-BOMBAY-BIRYANI",
+    "category": "Best-food"
+  },
+  "1039":{
+    "Item": 1039,
+    "Description": "SHAN NIHARI MASALA",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-NIHARI-MASALA",
+    "category": "Best-food"
+  },
+  "1057":{
+    "Item": 1057,
+    "Description": "SHAN TIKA BOTI MASALA",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-TIKA-BOTI-MASALA",
+    "category": "Best-food"
+  },
+  "1038":{
+    "Item": 1038,
+    "Description": "SHAN MALAY CHICKEN BIRYANI",
+    "qty": 50,
+    "Price": 12.1008,
+    "sku": "SHAN-MALAY-CHICKEN-BIRYANI",
+    "category": "Best-food"
+  },
+  "1305":{
+    "Item": 1305,
+    "Description": "SHAN CHINESE EGG FRIED RICE",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-CHINESE-EGG-FRIED-RICE",
+    "category": "Best-food"
+  },
+  "1026":{
+    "Item": 1026,
+    "Description": "SHAN FRY GOSHT",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-FRY-GOSHT",
+    "category": "Best-food"
+  },
+  "1411":{
+    "Item": 1411,
+    "Description": "SHAN ARABIC MANDHI SPICE 50 GM",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-ARABIC-MANDHI-SPICE-50-GM",
+    "category": "Best-food"
+  },
+  "1405":{
+    "Item": 1405,
+    "Description": "SHAN ARABIC SHAWERMA 40 GM",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-ARABIC-SHAWERMA-40-GM",
+    "category": "Best-food"
+  },
+  "1304":{
+    "Item": 1304,
+    "Description": "SHAN CHINESE CHOWMEIN",
+    "qty": 50,
+    "Price": 12.1,
+    "sku": "SHAN-CHINESE-CHOWMEIN",
+    "category": "Best-food"
+  },
+  "1210":{
+    "Item": 1210,
+    "Description": "SHAN GARAM MASALA 7 OZ",
+    "qty": 50,
+    "Price": 51,
+    "sku": "SHAN-GARAM-MASALA-7-OZ",
+    "category": "Best-food"
+  },
+  "1291":{
+    "Item": 1291,
+    "Description": "SHAN CUMIN SEED 14 OZ",
+    "qty": 50,
+    "Price": 39,
+    "sku": "SHAN-CUMIN-SEED-14-OZ",
+    "category": "Best-food"
+  },
+  "1202":{
+    "Item": 1202,
+    "Description": "SHAN CHILLY POWDER 14 OZ",
+    "qty": 50,
+    "Price": 30,
+    "sku": "SHAN-CHILLY-POWDER-14-OZ",
+    "category": "Best-food"
+  },
+  "32352":{
+    "Item": 32352,
+    "Description": "SHAN FALOODA RABRI 100 GM",
+    "qty": 50,
+    "Price": 14.4,
+    "sku": "SHAN-FALOODA-RABRI-100-GM",
+    "category": "Best-food"
+  },
+  "32205":{
+    "Item": 32205,
+    "Description": "SHAN CUSTARD VANILLA 200 GM",
+    "qty": 50,
+    "Price": 14.4,
+    "sku": "SHAN-CUSTARD-VANILLA-200-GM",
+    "category": "Best-food"
+  },
+  "32207":{
+    "Item": 32207,
+    "Description": "SHAN CUSTARD MANGO 200 GM",
+    "qty": 50,
+    "Price": 14.4,
+    "sku": "SHAN-CUSTARD-MANGO-200-GM",
+    "category": "Best-food"
+  },
+  "1255":{
+    "Item": 1255,
+    "Description": "SHAN SHEER KHURMA",
+    "qty": 50,
+    "Price": 10.8,
+    "sku": "SHAN-SHEER-KHURMA",
+    "category": "Best-food"
+  },
+  "1252":{
+    "Item": 1252,
+    "Description": "SHAN KHEER MIX PISTACHIO",
+    "qty": 50,
+    "Price": 10.8,
+    "sku": "SHAN-KHEER-MIX-PISTACHIO",
+    "category": "Best-food"
+  },
+  "32004":{
+    "Item": 32004,
+    "Description": "SHAN BOMBAY BIRY 600GM 6 (JAR)",
+    "qty": 50,
+    "Price": 48,
+    "sku": "SHAN-BOMBAY-BIRY-600GM-6-(JAR)",
+    "category": "Best-food"
+  },
+  "32003":{
+    "Item": 32003,
+    "Description": "SHAN BIRYANI MAS.600GM6 (JAR)",
+    "qty": 50,
+    "Price": 48,
+    "sku": "SHAN-BIRYANI-MAS.600GM6-(JAR)",
+    "category": "Best-food"
+  },
+  "2059":{
+    "Item": 2059,
+    "Description": "DEER FRIED ONION 300G X 12 JAR",
+    "qty": 50,
+    "Price": 24,
+    "sku": "DEER-FRIED-ONION-300G-X-12-JAR",
+    "category": "Best-food"
+  },
+  "81066":{
+    "Item": 81066,
+    "Description": "DEER CORIANDER PWDR. 14 OZ X 20",
+    "qty": 50,
+    "Price": 36,
+    "sku": "DEER-CORIANDER-PWDR.-14-OZ-X-20",
+    "category": "Best-food"
+  },
+  "81074":{
+    "Item": 81074,
+    "Description": "DEER CHILLY POWDER 14 OZ X 20",
+    "qty": 50,
+    "Price": 40,
+    "sku": "DEER-CHILLY-POWDER-14-OZ-X-20",
+    "category": "Best-food"
+  },
+  "81286":{
+    "Item": 81286,
+    "Description": "DEER NUTMEG POWDER 3.5 OZ X 20",
+    "qty": 50,
+    "Price": 42,
+    "sku": "DEER-NUTMEG-POWDER-3.5-OZ-X-20",
+    "category": "Best-food"
+  },
+  "81274":{
+    "Item": 81274,
+    "Description": "DEER MACE WHOLE 3.5 OZ X 20",
+    "qty": 50,
+    "Price": 76,
+    "sku": "DEER-MACE-WHOLE-3.5-OZ-X-20",
+    "category": "Best-food"
+  },
+  "81353":{
+    "Item": 81353,
+    "Description": "DEER WHITE PEPPER PWD 3.5OZ20",
+    "qty": 50,
+    "Price": 25,
+    "sku": "DEER-WHITE-PEPPER-PWD-3.5OZ20",
+    "category": "Best-food"
+  },
+  "83508":{
+    "Item": 83508,
+    "Description": "DEER MOONG DALL 55 LB",
+    "qty": 50,
+    "Price": 55,
+    "sku": "DEER-MOONG-DALL-55-LB",
+    "category": "Best-food"
+  },
+  "83509":{
+    "Item": 83509,
+    "Description": "DEER MOONG SPLIT 55 LB",
+    "qty": 50,
+    "Price": 52.25,
+    "sku": "DEER-MOONG-SPLIT-55-LB",
+    "category": "Best-food"
+  },
+  "83502":{
+    "Item": 83502,
+    "Description": "DEER CHANA DALL 55 LB",
+    "qty": 50,
+    "Price": 41.25,
+    "sku": "DEER-CHANA-DALL-55-LB",
+    "category": "Best-food"
+  },
+  "43804":{
+    "Item": 43804,
+    "Description": "HR IDLI (FRZN) 283 GM X 12",
+    "qty": 50,
+    "Price": 17.4,
+    "sku": "HR-IDLI-(FRZN)-283-GM-X-12",
+    "category": "Best-food"
+  },
+  "43101":{
+    "Item": 43101,
+    "Description": "HR KHAMAN DHOKLA (FRZN) 320 GM X 12",
+    "qty": 50,
+    "Price": 30,
+    "sku": "HR-KHAMAN-DHOKLA-(FRZN)-320-GM-X-12",
+    "category": "Best-food"
+  },
+  "42609":{
+    "Item": 42609,
+    "Description": "HR RTE PAO BHAJI X 10",
+    "qty": 50,
+    "Price": 15,
+    "sku": "HR-RTE-PAO-BHAJI-X-10",
+    "category": "Best-food"
+  },
+  "8389":{
+    "Item": 8389,
+    "Description": "LIQUID SOAP 1 LTR X 12 (PAK)",
+    "qty": 50,
+    "Price": 114,
+    "sku": "LIQUID-SOAP-1-LTR-X-12-(PAK)",
+    "category": "Best-food"
+  },
+  "60151":{
+    "Item": 60151,
+    "Description": "VTK HENNA BURGUNDY 10GM 6",
+    "qty": 50,
+    "Price": 14.52,
+    "sku": "VTK-HENNA-BURGUNDY-10GM-6",
+    "category": "Best-food"
+  },
+  "60148":{
+    "Item": 60148,
+    "Description": "VTK HENNA RICH BLACK 10GM 6",
+    "qty": 50,
+    "Price": 14.52,
+    "sku": "VTK-HENNA-RICH-BLACK-10GM-6",
+    "category": "Best-food"
+  },
+  "60149":{
+    "Item": 60149,
+    "Description": "VTK HENNA NAT BROWN 100GM6",
+    "qty": 50,
+    "Price": 14.52,
+    "sku": "VTK-HENNA-NAT-BROWN-100GM6",
+    "category": "Best-food"
+  },
+  "8523":{
+    "Item": 8523,
+    "Description": "SAC ESSENCE VANILLA 25 ML",
+    "qty": 50,
+    "Price": 7,
+    "sku": "SAC-ESSENCE-VANILLA-25-ML",
+    "category": "Best-food"
+  },
+  "8521":{
+    "Item": 8521,
+    "Description": "SAC ESSENCE KEWDA 25 ML X 12",
+    "qty": 50,
+    "Price": 7,
+    "sku": "SAC-ESSENCE-KEWDA-25-ML-X-12",
+    "category": "Best-food"
+  },
+  "8520":{
+    "Item": 8520,
+    "Description": "SAC ESSENCE BIRYANI 25 ML",
+    "qty": 50,
+    "Price": 7,
+    "sku": "SAC-ESSENCE-BIRYANI-25-ML",
+    "category": "Best-food"
+  },
+  "10754":{
+    "Item": 10754,
+    "Description": "PREEMA FOOD COLOR YELLOW X 12",
+    "qty": 50,
+    "Price": 15,
+    "sku": "PREEMA-FOOD-COLOR-YELLOW-X-12",
+    "category": "Best-food"
+  },
+  "25053":{
+    "Item": 25053,
+    "Description": "ASH CAN SARSON SAAG 450 GMX 12",
+    "qty": 50,
+    "Price": 15,
+    "sku": "ASH-CAN-SARSON-SAAG-450-GMX-12",
+    "category": "Best-food"
+  },
+  "42109":{
+    "Item": 42109,
+    "Description": "HR BHUJIA 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-BHUJIA-400-GM",
+    "category": "Best-food"
+  },
+  "42108":{
+    "Item": 42108,
+    "Description": "HR ALOO BHUJIA 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-ALOO-BHUJIA-400-GM",
+    "category": "Best-food"
+  },
+  "42121":{
+    "Item": 42121,
+    "Description": "HR MOONG DAL MASALA 400 GM",
+    "qty": 50,
+    "Price": 2.1,
+    "sku": "HR-MOONG-DAL-MASALA-400-GM",
+    "category": "Best-food"
+  },
+  "42107":{
+    "Item": 42107,
+    "Description": "HR DAL BIJI 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-DAL-BIJI-400-GM",
+    "category": "Best-food"
+  },
+  "42099":{
+    "Item": 42099,
+    "Description": "HR RATLAMI MIXTURE 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-RATLAMI-MIXTURE-400-GM",
+    "category": "Best-food"
+  },
+  "42105":{
+    "Item": 42105,
+    "Description": "HR KHATTA MEETHA 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-KHATTA-MEETHA-400-GM",
+    "category": "Best-food"
+  },
+  "42101":{
+    "Item": 42101,
+    "Description": "HR BOONDI MASALA 400 GM",
+    "qty": 50,
+    "Price": 1.9,
+    "sku": "HR-BOONDI-MASALA-400-GM",
+    "category": "Best-food"
+  },
+  "42102":{
+    "Item": 42102,
+    "Description": "HR BOONDI PLAIN 400 GM",
+    "qty": 24,
+    "Price": 1.9,
+    "sku": "HR-BOONDI-PLAIN-400-GM",
+    "category": "Best-food"
+  },
+  "42131":{
+    "Item": 42131,
+    "Description": "HR BHUJIA 1 KG",
+    "qty": 50,
+    "Price": 4.5,
+    "sku": "HR-BHUJIA-1-KG",
+    "category": "Best-food"
+  },
+  "42133":{
+    "Item": 42133,
+    "Description": "HR NUT CRACKER 1 KG",
+    "qty": 50,
+    "Price": 4.5,
+    "sku": "HR-NUT-CRACKER-1-KG",
+    "category": "Best-food"
+  }
+}

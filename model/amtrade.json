@@ -1,0 +1,298 @@
+{
+  "MRT007": {
+    "Quantity": 20,
+    "Item": "MRT007",
+    "Price": 30,
+    "Description": "MTR-RTE-DAL-MAKHANI-20X300G",
+    "sku": "MTR-RTE-DAL-MAKHANI-20X300G",
+    "category": "amtrade"
+  },
+  "MRT016": {
+    "Quantity": 20,
+    "Item": "MRT016",
+    "Price": 30,
+    "Description": "MTR-RTE-PAV-BHAJI-20X300G",
+    "sku": "MTR-RTE-PAV-BHAJI-20X300G",
+    "category": "amtrade"
+  },
+  "MRT020": {
+    "Quantity": 20,
+    "Item": "MRT020",
+    "Price": 30,
+    "Description": "MTR-RTE-SHAHI-PANEER-20X300G",
+    "sku": "MTR-RTE-SHAHI-PANEER-20X300G",
+    "category": "amtrade"
+  },
+  "MRC003": {
+    "Quantity": 20,
+    "Item": "MRC003",
+    "Price": 30,
+    "Description": "MTR-RICE-ITEMS-LEMON-RICE-20X300G",
+    "sku": "MTR-RICE-ITEMS-LEMON-RICE-20X300G",
+    "category": "amtrade"
+  },
+  "MTY001": {
+    "Quantity": 10,
+    "Item": "MTY001",
+    "Price": 21.75,
+    "Description": "MTR-RTE-TRAY-CHANA-MASALA-BASMATI-RICE-10X375G",
+    "sku": "MTR-RTE-TRAY-CHANA-MASALA-BASMATI-RICE-10X375G",
+    "category": "amtrade"
+  },
+  "MTY002": {
+    "Quantity": 10,
+    "Item": "MTY002",
+    "Price": 27.19,
+    "Description": "MTR-RTE-TRAY-PANEER-BUTTER-MASALA-VEG-PULAO-10X375G",
+    "sku": "MTR-RTE-TRAY-PANEER-BUTTER-MASALA-VEG-PULAO-10X375G",
+    "category": "amtrade"
+  },
+  "MTY003": {
+    "Quantity": 10,
+    "Item": "MTY003",
+    "Price": 21.75,
+    "Description": "MTR-RTE-TRAY-DAL-MAKHANI-BASMATI-RICE-10X375G",
+    "sku": "MTR-RTE-TRAY-DAL-MAKHANI-BASMATI-RICE-10X375G",
+    "category": "amtrade"
+  },
+  "MTY004": {
+    "Quantity": 10,
+    "Item": "MTY004",
+    "Price": 27.19,
+    "Description": "MTR-RTE-TRAY-MUTTER-PANEER-VEG-PULAO-10X375G",
+    "sku": "MTR-RTE-TRAY-MUTTER-PANEER-VEG-PULAO-10X375G",
+    "category": "amtrade"
+  },
+  "MTY005": {
+    "Quantity": 10,
+    "Item": "MTY005",
+    "Price": 21.75,
+    "Description": "MTR-RTE-TRAY-RAJMA-MASALA-BASMATI-RICE-10X375G",
+    "sku": "MTR-RTE-TRAY-RAJMA-MASALA-BASMATI-RICE-10X375G",
+    "category": "amtrade"
+  },
+  "MTY006": {
+    "Quantity": 10,
+    "Item": "MTY006",
+    "Price": 21.75,
+    "Description": "MTR-RTE-TRAY-DAL-FRY-BASMATI-RICE-10X375G",
+    "sku": "MTR-RTE-TRAY-DAL-FRY-BASMATI-RICE-10X375G",
+    "category": "amtrade"
+  },
+  "MPW002": {
+    "Quantity": 36,
+    "Item": "MPW002",
+    "Price": 48,
+    "Description": "MTR-POWDER-LEMON-RICE-POWDER-36X100G",
+    "sku": "MTR-POWDER-LEMON-RICE-POWDER-36X100G",
+    "category": "amtrade"
+  },
+  "MPW006": {
+    "Quantity": 24,
+    "Item": "MPW006",
+    "Price": 48,
+    "Description": "MTR-POWDER-PULIOGARE-POWDER-24X200G",
+    "sku": "MTR-POWDER-PULIOGARE-POWDER-24X200G",
+    "category": "amtrade"
+  },
+  "MPW010": {
+    "Quantity": 30,
+    "Item": "MPW010",
+    "Price": 46.2,
+    "Description": "MTR-POWDER-SPICED-CHUTNEY-POWDER-30X200G",
+    "sku": "MTR-POWDER-SPICED-CHUTNEY-POWDER-30X200G",
+    "category": "amtrade"
+  },
+  "MPW009": {
+    "Quantity": 24,
+    "Item": "MPW009",
+    "Price": 110,
+    "Description": "MTR-POWDER-SAMBAR-POWDER-24X500G",
+    "sku": "MTR-POWDER-SAMBAR-POWDER-24X500G",
+    "category": "amtrade"
+  },
+  "MPS003": {
+    "Quantity": 30,
+    "Item": "MPS003",
+    "Price": 45,
+    "Description": "MTR-PASTE-SAMBAR-PASTE-30X200G",
+    "sku": "MTR-PASTE-SAMBAR-PASTE-30X200G",
+    "category": "amtrade"
+  },
+  "MMA006": {
+    "Quantity": 36,
+    "Item": "MMA006",
+    "Price": 64.8,
+    "Description": "MTR-MASALA-PULAO-BIRYANI-MASALA-36X100G",
+    "sku": "MTR-MASALA-PULAO-BIRYANI-MASALA-36X100G",
+    "category": "amtrade"
+  },
+  "MPW001": {
+    "Quantity": 40,
+    "Item": "MPW001",
+    "Price": 70,
+    "Description": "MTR-MASALA-HING-40X100G",
+    "sku": "MTR-MASALA-HING-40X100G",
+    "category": "amtrade"
+  },
+  "MMA003": {
+    "Quantity": 36,
+    "Item": "MMA003",
+    "Price": 51.6,
+    "Description": "MTR-MASALA-CHAT-MASALA-36X100G",
+    "sku": "MTR-MASALA-CHAT-MASALA-36X100G",
+    "category": "amtrade"
+  },
+  "MPW014": {
+    "Quantity": 24,
+    "Item": "MPW014",
+    "Price": 50,
+    "Description": "MTR-MASALA-MASALA-KARAM-POWDER-24X200G",
+    "sku": "MTR-MASALA-MASALA-KARAM-POWDER-24X200G",
+    "category": "amtrade"
+  },
+  "MIM010": {
+    "Quantity": 30,
+    "Item": "MIM010",
+    "Price": 33,
+    "Description": "MTR-INST-MIX-NORMAL-DHOKLA-30X200G",
+    "sku": "MTR-INST-MIX-NORMAL-DHOKLA-30X200G",
+    "category": "amtrade"
+  },
+  "MIM020": {
+    "Quantity": 30,
+    "Item": "MIM020",
+    "Price": 33,
+    "Description": "MTR-INST-MIX-UPMA-30X200G",
+    "sku": "MTR-INST-MIX-UPMA-30X200G",
+    "category": "amtrade"
+  },
+  "MIM007": {
+    "Quantity": 24,
+    "Item": "MIM007",
+    "Price": 44,
+    "Description": "MTR-INST-MIX-MASALA-IDLI-24X500G",
+    "sku": "MTR-INST-MIX-MASALA-IDLI-24X500G",
+    "category": "amtrade"
+  },
+  "MIM005": {
+    "Quantity": 18,
+    "Item": "MIM005",
+    "Price": 51,
+    "Description": "MTR-INST-MIX-GULAB-JAMUN-18X500G",
+    "sku": "MTR-INST-MIX-GULAB-JAMUN-18X500G",
+    "category": "amtrade"
+  },
+  "MIM016": {
+    "Quantity": 24,
+    "Item": "MIM016",
+    "Price": 44,
+    "Description": "MTR INST MIX RAVA DOSA 24X500G",
+    "sku": "MTR-INST-MIX-RAVA-DOSA-24X500G",
+    "category": "amtrade"
+  },
+  "MVI001": {
+    "Quantity": 16,
+    "Item": "MVI001",
+    "Price": 36,
+    "Description": "MTR VERMICELLI VERMICELLI 16X950G",
+    "sku": "MTR-VERMICELLI-VERMICELLI-16X950G",
+    "category": "amtrade"
+  },
+  "MV1002": {
+    "Quantity": 16,
+    "Item": "MV1002",
+    "Price": 42,
+    "Description": "MTR VERMICELLI VERMICELLI ROASTED 16X900G",
+    "sku": "MTR-VERMICELLI-VERMICELLI-ROASTED-16X900G",
+    "category": "amtrade"
+  },
+  "MDT001": {
+    "Quantity": 48,
+    "Item": "MDT001",
+    "Price": 51,
+    "Description": "MTR DRINK TIN BADAM DRINK IN TIN (EXP 1221) 48X180ML",
+    "sku": "MTR-DRINK-TIN-BADAM-DRINK-IN-TIN-(EXP-1221)-48X180ML",
+    "category": "amtrade"
+  },
+  "MDT002": {
+    "Quantity": 48,
+    "Item": "MDT002",
+    "Price": 51,
+    "Description": "MTR DRINK TIN CARDAMOM DRINK IN TIN (EXP 122) 48X180ML",
+    "sku": "MTR-DRINK-TIN-CARDAMOM-DRINK-IN-TIN-(EXP-122)-48X180ML",
+    "category": "amtrade"
+  },
+  "JATC02": {
+    "Quantity": 355,
+    "Item": "JATC02",
+    "Price": 38,
+    "Description": "JEWEL OF ASIA VEGAN THAI RED CURRY SIMMER SAUCE 355ML X 12",
+    "sku": "JEWEL-OF-ASIA-VEGAN-THAI-RED-CURRY-SIMMER-SAUCE-355ML-X-12",
+    "category": "amtrade"
+  },
+  "JATC05": {
+    "Quantity": 355,
+    "Item": "JATC05",
+    "Price": 38,
+    "Description": "JEWEL OF ASIA VEGAN THAI PANANG CURRY SIMMER SAUCE 355ML X 12",
+    "sku": "JEWEL-OF-ASIA-VEGAN-THAI-PANANG-CURRY-SIMMER-SAUCE-355ML-X-12",
+    "category": "amtrade"
+  },
+  "INPK06": {
+    "Quantity": 3,
+    "Item": "INPK06",
+    "Price": 48.6,
+    "Description": "INDIAS NATURE LOW SODIUM MILD LIME PICKLE IN OLIVE OIL 3X6X500G",
+    "sku": "INDIAS-NATURE-LOW-SODIUM-MILD-LIME-PICKLE-IN-OLIVE-OIL-3X6X500G",
+    "category": "amtrade"
+  },
+  "INPK10": {
+    "Quantity": 3,
+    "Item": "INPK10",
+    "Price": 48.6,
+    "Description": "INDIAS NATURE LOW SODIUM MANGO METHIA PICKLE IN OLIVE OII 3X6X500G",
+    "sku": "INDIAS-NATURE-LOW-SODIUM-MANGO-METHIA-PICKLE-IN-OLIVE-OII-3X6X500G",
+    "category": "amtrade"
+  },
+  "RUP002": {
+    "Quantity": 24,
+    "Item": "RUP002",
+    "Price": 30.55,
+    "Description": "RUCHI MANGO AVAKKAI PICKLE 24X300G",
+    "sku": "RUCHI-MANGO-AVAKKAI-PICKLE-24X300G",
+    "category": "amtrade"
+  },
+  "INTS01": {
+    "Quantity": 50,
+    "Item": "INTS01",
+    "Price": 48,
+    "Description": "INDIAS NATURE TAMARIND SLAB 50X200G",
+    "sku": "INDIAS-NATURE-TAMARIND-SLAB-50X200G",
+    "category": "amtrade"
+  },
+  "INTS02": {
+    "Quantity": 20,
+    "Item": "INTS02",
+    "Price": 48,
+    "Description": "INDIAS NATURE TAMARIND SLAB 20X500G",
+    "sku": "INDIAS-NATURE-TAMARIND-SLAB-20X500G",
+    "category": "amtrade"
+  },
+  "INTS03": {
+    "Quantity": 10,
+    "Item": "INTS03",
+    "Price": 48,
+    "Description": "INDIAS NATURE TAMARIND SLAB 10X1KG",
+    "sku": "INDIAS-NATURE-TAMARIND-SLAB-10X1KG",
+    "category": "amtrade"
+  },
+  "GOM003": {
+    "Quantity": 12,
+    "Item": "GOM003",
+    "Price": 27,
+    "Description": "GOURMET MAGIC SUN FLOWER OIL 12X1LTR",
+    "sku": "GOURMET-MAGIC-SUN-FLOWER-OIL-12X1LTR",
+    "category": "amtrade"
+  }
+}

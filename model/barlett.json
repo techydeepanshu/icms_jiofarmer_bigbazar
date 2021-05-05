@@ -1,0 +1,82 @@
+{
+  "18006": {
+    "Item": 18006,
+    "Description": "FARMLND MILK GALLON (4)",
+    "Quantity": 4,
+    "Price": 264.06,
+    "sku": "FARMLND-MILK-GALLON-(4)",
+    "category": "bartlett2"
+  },
+  "18017": {
+    "Item": 18017,
+    "Description": "FARMLND 2% GALLON (4)",
+    "Quantity": 4,
+    "Price": 66.13,
+    "sku": "FARMLND-2%-GALLON-(4)",
+    "category": "bartlett2"
+  },
+  "18019": {
+    "Item": 18019,
+    "Description": "FARMLND SKIM HG (9)",
+    "Quantity": 9,
+    "Price": 16.19,
+    "sku": "FARMLND-SKIM-HG-(9)",
+    "category": "bartlett2"
+  },
+  "111102": {
+    "Item": 111102,
+    "Description": "FARMLAND HVY CRM QT 36%",
+    "Quantity": 1,
+    "Price": 60.91,
+    "sku": "FARMLAND-HVY-CRM-QT-36%",
+    "category": "bartlett2"
+  },
+  "111602": {
+    "Item": 111602,
+    "Description": "FARMLAND HVY CRM PT 36%",
+    "Quantity": 1,
+    "Price": 31.11,
+    "sku": "FARMLAND-HVY-CRM-PT-36%",
+    "category": "bartlett2"
+  },
+  "141102": {
+    "Item": 141102,
+    "Description": "FML HALF & HALF QT (12)",
+    "Quantity": 12,
+    "Price": 17.56,
+    "sku": "FML-HALF-&-HALF-QT-(12)",
+    "category": "bartlett2"
+  },
+  "1700": {
+    "Item": 1700,
+    "Description": "FARMLAND ORGANIC HVD HG",
+    "Quantity": 1,
+    "Price": 21.16,
+    "sku": "FARMLAND-ORGANIC-HVD-HG",
+    "category": "bartlett2"
+  },
+  "700": {
+    "Item": 700,
+    "Description": "DAHI WHOLE 2LB MILK YOG",
+    "Quantity": 1,
+    "Price": 18.75,
+    "sku": "DAHI-WHOLE-2LB-MILK-YOG",
+    "category": "bartlett2"
+  },
+  "702": {
+    "Item": 702,
+    "Description": "DAHI WHOLE 5LB MILK YOG",
+    "Quantity": 1,
+    "Price": 75.27,
+    "sku": "DAHI-WHOLE-5LB-MILK-YOG",
+    "category": "bartlett2"
+  },
+  "88888": {
+    "Item": 88888,
+    "Description": "FUEL SURCHARGE",
+    "Quantity": 1,
+    "Price": 0,
+    "sku": "FUEL-SURCHARGE",
+    "category": "bartlett2"
+  }
+}

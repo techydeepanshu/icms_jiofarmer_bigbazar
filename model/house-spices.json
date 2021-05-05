@@ -1,0 +1,554 @@
+{
+  "1AM7":{
+    "Quantity": 20,
+    "Item": "1AM7",
+    "Description": "LAXMI AMCHUR POWDER 20X200 GM",
+    "Price": 29,
+    "sku": "LAXMI-AMCHUR-POWDER-20X200-GM",
+    "category": "House-spices"
+  },
+  "1CHK4":{
+    "Quantity": 20,
+    "Item": "1CHK4",
+    "Description": "LAXMI KASHMIRI CHILI POWDER 20X400 GM",
+    "Price": 60,
+    "sku": "LAXMI-KASHMIRI-CHILI-POWDER-20X400-GM",
+    "category": "House-spices"
+  },
+  "1CHX6":{
+    "Quantity": 20,
+    "Item": "1CHX6",
+    "Description": "LAXMI EXTRA HOT CHILI POWDER 20X400 GM",
+    "Price": 47,
+    "sku": "LAXMI-EXTRA-HOT-CHILI-POWDER-20X400-GM",
+    "category": "House-spices"
+  },
+  "1NP5":{
+    "Quantity": 20,
+    "Item": "1NP5",
+    "Description": "LAXMI NUTMEG POWDER 20X100 GM",
+    "Price": 54,
+    "sku": "LAXMI-NUTMEG-POWDER-20X100-GM",
+    "category": "House-spices"
+  },
+  "1TM2":{
+    "Quantity": 20,
+    "Item": "1TM2",
+    "Description": "LAXMI TEA MASALA 20X100 GM",
+    "Price": 40,
+    "sku": "LAXMI-TEA-MASALA-20X100-GM",
+    "category": "House-spices"
+  },
+  "4BA4":{
+    "Quantity": 4,
+    "Item": "4BA4",
+    "Description": "LAXMI AGED BASMATI RICE 4X10 LB",
+    "Price": 28,
+    "sku": "LAXMI-AGED-BASMATI-RICE-4X10-LB",
+    "category": "House-spices"
+  },
+  "4BD4":{
+    "Quantity": 4,
+    "Item": "4BD4",
+    "Description": "LAXMI DIABETIC BASMATI RICE 4X10 LB",
+    "Price": 37,
+    "sku": "LAXMI-DIABETIC-BASMATI-RICE-4X10-LB",
+    "category": "House-spices"
+  },
+  "4BSP4":{
+    "Quantity": 4,
+    "Item": "4BSP4",
+    "Description": "LAXMI SELLA PARBOILED BASMATI RICE 4X10 LB",
+    "Price": 29.5,
+    "sku": "LAXMI-SELLA-PARBOILED-BASMATI-RICE-4X10-LB",
+    "category": "House-spices"
+  },
+  "4PR26":{
+    "Quantity": 2,
+    "Item": "4PR26",
+    "Description": "LAXMI PONNI RAW RICE 2X20 LB",
+    "Price": 26,
+    "sku": "LAXMI-PONNI-RAW-RICE-2X20-LB",
+    "category": "House-spices"
+  },
+  "5AL6":{
+    "Quantity": 10,
+    "Item": "5AL6",
+    "Description": "LAXMI ALL PURPOSE FLOUR 10X4 LB",
+    "Price": 22,
+    "sku": "LAXMI-ALL-PURPOSE-FLOUR-10X4-LB",
+    "category": "House-spices"
+  },
+  "5BE6":{
+    "Quantity": 10,
+    "Item": "5BE6",
+    "Description": "LAXMI FRESHLY MILLED BESAN 10X4 LB",
+    "Price": 35,
+    "sku": "LAXMI-FRESHLY-MILLED-BESAN-10X4-LB",
+    "category": "House-spices"
+  },
+  "5CHS1":{
+    "Quantity": 2,
+    "Item": "5CHS1",
+    "Description": "LAXMI SHARBATI CHAPATI FLOUR 2X20 LB",
+    "Price": 16.5,
+    "sku": "LAXMI-SHARBATI-CHAPATI-FLOUR-2X20-LB",
+    "category": "House-spices"
+  },
+  "5RI6":{
+    "Quantity": 10,
+    "Item": "5RI6",
+    "Description": "LAXMI RICE FLOUR 10X4 LB",
+    "Price": 22,
+    "sku": "LAXMI-RICE-FLOUR-10X4-LB",
+    "category": "House-spices"
+  },
+  "5S06":{
+    "Quantity": 10,
+    "Item": "5S06",
+    "Description": "LAXMI SOOJI COARSE 10X4 LB",
+    "Price": 23,
+    "sku": "LAXMI-SOOJI-COARSE-10X4-LB",
+    "category": "House-spices"
+  },
+  "5S07":{
+    "Quantity": 20,
+    "Item": "5S07",
+    "Description": "LAXMI SOOJI COARSE 20X2 LB",
+    "Price": 26,
+    "sku": "LAXMI-SOOJI-COARSE-20X2-LB",
+    "category": "House-spices"
+  },
+  "6M5":{
+    "Quantity": 5,
+    "Item": "6M5",
+    "Description": "LAXMI MOONG DAL 5X8 LB",
+    "Price": 38,
+    "sku": "LAXMI-MOONG-DAL-5X8-LB",
+    "category": "House-spices"
+  },
+  "6MR7":{
+    "Quantity": 20,
+    "Item": "6MR7",
+    "Description": "LAXMI MASOOR DAL 20X2 LB",
+    "Price": 30,
+    "sku": "LAXMI-MASOOR-DAL-20X2-LB",
+    "category": "House-spices"
+  },
+  "6TP5":{
+    "Quantity": 5,
+    "Item": "6TP5",
+    "Description": "LAXMI VSD MADHI TOOR DAL PLAIN 5X8 LB",
+    "Price": 39,
+    "sku": "LAXMI-VSD-MADHI-TOOR-DAL-PLAIN-5X8-LB",
+    "category": "House-spices"
+  },
+  "6U7":{
+    "Quantity": 20,
+    "Item": "6U7",
+    "Description": "LAXMI URAD DAL 20X2 LB",
+    "Price": 40,
+    "sku": "LAXMI-URAD-DAL-20X2-LB",
+    "category": "House-spices"
+  },
+  "6Y6":{
+    "Quantity": 10,
+    "Item": "6Y6",
+    "Description": "LAXMI YELLOW SPLIT PEAS 10X4 LB",
+    "Price": 23,
+    "sku": "LAXMI-YELLOW-SPLIT-PEAS-10X4-LB",
+    "category": "House-spices"
+  },
+  "7M6":{
+    "Quantity": 10,
+    "Item": "7M6",
+    "Description": "LAXMI WHOLE MOONG SMALL 10X4 LB",
+    "Price": 40,
+    "sku": "LAXMI-WHOLE-MOONG-SMALL-10X4-LB",
+    "category": "House-spices"
+  },
+  "7R6":{
+    "Quantity": 10,
+    "Item": "7R6",
+    "Description": "LAXMI RED CHORI 10X4LB",
+    "Price": 50,
+    "sku": "LAXMI-RED-CHORI-10X4LB",
+    "category": "House-spices"
+  },
+  "7RD6":{
+    "Quantity": 10,
+    "Item": "7RD6",
+    "Description": "LAXMI RED KIDNEY BEANS DARK 10X4 LB",
+    "Price": 38,
+    "sku": "LAXMI-RED-KIDNEY-BEANS-DARK-10X4-LB",
+    "category": "House-spices"
+  },
+  "7UG5":{
+    "Quantity": 5,
+    "Item": "7UG5",
+    "Description": "LAXMI URAD GOTA 5X8 LB",
+    "Price": 41,
+    "sku": "LAXMI-URAD-GOTA-5X8-LB",
+    "category": "House-spices"
+  },
+  "7UG6":{
+    "Quantity": 10,
+    "Item": "7UG6",
+    "Description": "LAXMI URAD GOTA 10X4 LB",
+    "Price": 42,
+    "sku": "LAXMI-URAD-GOTA-10X4-LB",
+    "category": "House-spices"
+  },
+  "7W6":{
+    "Quantity": 10,
+    "Item": "7W6",
+    "Description": "LAXMI YELLOW VATANA 10X4 LB",
+    "Price": 24,
+    "sku": "LAXMI-YELLOW-VATANA-10X4-LB",
+    "category": "House-spices"
+  },
+  "8P5":{
+    "Quantity": 12,
+    "Item": "8P5",
+    "Description": "LAXMI PANIPOORI CONC. 12 X 9 OZ",
+    "Price": 25,
+    "sku": "LAXMI-PANIPOORI-CONC.-12-X-9-OZ",
+    "category": "House-spices"
+  },
+  "9COF6":{
+    "Quantity": 20,
+    "Item": "9COF6",
+    "Description": "LAXMI COCONUT FLAKES 20X400 GM",
+    "Price": 46,
+    "sku": "LAXMI-COCONUT-FLAKES-20X400-GM",
+    "category": "House-spices"
+  },
+  "9COFN":{
+    "Quantity": 20,
+    "Item": "9COFN",
+    "Description": "LAXMI COCONUT PWD FINE 20X400 GM",
+    "Price": 46,
+    "sku": "LAXMI-COCONUT-PWD-FINE-20X400-GM",
+    "category": "House-spices"
+  },
+  "9COP6":{
+    "Quantity": 20,
+    "Item": "9COP6",
+    "Description": "LAXMI COCONUT PWD 20X400 GM",
+    "Price": 43,
+    "sku": "LAXMI-COCONUT-PWD-20X400-GM",
+    "category": "House-spices"
+  },
+  "9P31":{
+    "Quantity": 10,
+    "Item": "9P31",
+    "Description": "LAXMI PEANUT 10X3.5 LB",
+    "Price": 46,
+    "sku": "LAXMI-PEANUT-10X3.5-LB",
+    "category": "House-spices"
+  },
+  "9PJ3":{
+    "Quantity": 10,
+    "Item": "9PJ3",
+    "Description": "LAXMI JUMBO PEANUTS 10X4 LB",
+    "Price": 53,
+    "sku": "LAXMI-JUMBO-PEANUTS-10X4-LB",
+    "category": "House-spices"
+  },
+  "AA":{
+    "Quantity": 2,
+    "Item": "AA",
+    "Description": "AASHIRVAAD ATTA 2X20 LB EXPORT PACK",
+    "Price": 13.75,
+    "sku": "AASHIRVAAD-ATTA-2X20-LB-EXPORT-PACK",
+    "category": "House-spices"
+  },
+  "AAO":{
+    "Quantity": 2,
+    "Item": "AAO",
+    "Description": "AASHIRVAAD WHOLE WHEAT MULTIGRAIN FLOUR 2X20LB",
+    "Price": 27,
+    "sku": "AASHIRVAAD-WHOLE-WHEAT-MULTIGRAIN-FLOUR-2X20LB",
+    "category": "House-spices"
+  },
+  "AAOR":{
+    "Quantity": 4,
+    "Item": "AAOR",
+    "Description": "AASHIRVAAD ATTA 4X10LB EXPORT PACK",
+    "Price": 17,
+    "sku": "AASHIRVAAD-ATTA-4X10LB-EXPORT-PACK",
+    "category": "House-spices"
+  },
+  "AAOS2":{
+    "Quantity": 2,
+    "Item": "AAOS2",
+    "Description": "AASHIRVAAD ATTA SHARBATI SELECT 2X20 LB EXP PACK",
+    "Price": 21,
+    "sku": "AASHIRVAAD-ATTA-SHARBATI-SELECT-2X20-LB-EXP-PACK",
+    "category": "House-spices"
+  },
+  "AAOW":{
+    "Quantity": 4,
+    "Item": "AAOW",
+    "Description": "AASHIRWAD WHOLE WHEAT MULTIGRAIN FLOUR 4X10 LB",
+    "Price": 29,
+    "sku": "AASHIRWAD-WHOLE-WHEAT-MULTIGRAIN-FLOUR-4X10-LB",
+    "category": "House-spices"
+  },
+  "AFI1":{
+    "Quantity": 6,
+    "Item": "AFI1",
+    "Description": "AMMAS KIT IDLI 6X24X43 GM",
+    "Price": 30,
+    "sku": "AMMAS-KIT-IDLI-6X24X43-GM",
+    "category": "House-spices"
+  },
+  "AFM2":{
+    "Quantity": 6,
+    "Item": "AFM2",
+    "Description": "AMMAS KIT MEDUVADA VALUE PACK 6X24X33 GM",
+    "Price": 30,
+    "sku": "AMMAS-KIT-MEDUVADA-VALUE-PACK-6X24X33-GM",
+    "category": "House-spices"
+  },
+  "GGFP2":{
+    "Quantity": 6,
+    "Item": "GGFP2",
+    "Description": "G.G. PATRA SLICE VALUE PACK 6X908GM",
+    "Price": 37.01,
+    "sku": "G.G.-PATRA-SLICE-VALUE-PACK-6X908GM",
+    "category": "House-spices"
+  },
+  "GID24":{
+    "Quantity": 30,
+    "Item": "GID24",
+    "Description": "GITS DAHI VADA MIX 30X500GM",
+    "Price": 63,
+    "sku": "GITS-DAHI-VADA-MIX-30X500GM",
+    "category": "House-spices"
+  },
+  "GID6":{
+    "Quantity": 60,
+    "Item": "GID6",
+    "Description": "GITS DOSAI 60X200 GM MC",
+    "Price": 40.5,
+    "sku": "GITS-DOSAI-60X200-GM-MC",
+    "category": "House-spices"
+  },
+  "JAFBO":{
+    "Quantity": 20,
+    "Item": "JAFBO",
+    "Description": "JALPUR BAJRI FLOUR 20X2 LB",
+    "Price": 32,
+    "sku": "JALPUR-BAJRI-FLOUR-20X2-LB",
+    "category": "House-spices"
+  },
+  "KWCO":{
+    "Quantity": 24,
+    "Item": "KWCO",
+    "Description": "KAWAN CH.GA. PARATHA 24X400GM NO RETURNS",
+    "Price": 39,
+    "sku": "KAWAN-CH.GA.-PARATHA-24X400GM-NO-RETURNS",
+    "category": "House-spices"
+  },
+  "KWS00":{
+    "Quantity": 40,
+    "Item": "KWS00",
+    "Description": "KAWAN SP RL PASTRY 8 40X300GM NO RETURNS",
+    "Price": 46,
+    "sku": "KAWAN-SP-RL-PASTRY-8-40X300GM-NO-RETURNS",
+    "category": "House-spices"
+  },
+  "LCP4":{
+    "Quantity": 10,
+    "Item": "LCP4",
+    "Description": "LAXMI THICK POHA 10X2 LB",
+    "Price": 18,
+    "sku": "LAXMI-THICK-POHA-10X2-LB",
+    "category": "House-spices"
+  },
+  "LCSS4":{
+    "Quantity": 18,
+    "Item": "LCSS4",
+    "Description": "LAXMI SAGO SABUDANA 18X2 LB",
+    "Price": 44.26,
+    "sku": "LAXMI-SAGO-SABUDANA-18X2-LB",
+    "category": "House-spices"
+  },
+  "LFSR1":{
+    "Quantity": 6,
+    "Item": "LFSR1",
+    "Description": "LAXMI CATERING SPRING ROLL 6X25 PC",
+    "Price": 38.98,
+    "sku": "LAXMI-CATERING-SPRING-ROLL-6X25-PC",
+    "category": "House-spices"
+  },
+  "LOCA5":{
+    "Quantity": 12,
+    "Item": "LOCA5",
+    "Description": "LAXMI CASTOR OIL 12X34 OZ 1 LTR",
+    "Price": 60,
+    "sku": "LAXMI-CASTOR-OIL-12X34-OZ-1-LTR",
+    "category": "House-spices"
+  },
+  "LOCA61":{
+    "Quantity": 12,
+    "Item": "LOCA61",
+    "Description": "LAXMI CASTOR OIL 12X17 OZ 500 ML",
+    "Price": 42,
+    "sku": "LAXMI-CASTOR-OIL-12X17-OZ-500-ML",
+    "category": "House-spices"
+  },
+  "LOCA7":{
+    "Quantity": 12,
+    "Item": "LOCA7",
+    "Description": "LAXMI CASTOR OIL 12X8 OZ 236 ML",
+    "Price": 24,
+    "sku": "LAXMI-CASTOR-OIL-12X8-OZ-236-ML",
+    "category": "House-spices"
+  },
+  "LPAF5":{
+    "Quantity": 10,
+    "Item": "LPAF5",
+    "Description": "LAXMI FRYEM OKRA 10X400 GM",
+    "Price": 17.01,
+    "sku": "LAXMI-FRYEM-OKRA-10X400-GM",
+    "category": "House-spices"
+  },
+  "LPAM":{
+    "Quantity": 10,
+    "Item": "LPAM",
+    "Description": "LAXMI YELLOW MADRAS PAPUDAM 80X200GM",
+    "Price": 85,
+    "sku": "LAXMI-YELLOW-MADRAS-PAPUDAM-80X200GM",
+    "category": "House-spices"
+  },
+  "LPSG4":{
+    "Quantity": 12,
+    "Item": "LPSG4",
+    "Description": "LAXMI GINGER GARLIC PASTE 12X24 OZ",
+    "Price": 40,
+    "sku": "LAXMI-GINGER-GARLIC-PASTE-12X24-OZ",
+    "category": "House-spices"
+  },
+  "MDA3":{
+    "Quantity": 60,
+    "Item": "MDA3",
+    "Description": "MDH AMCHOOR POWDER 60X100 GM MC",
+    "Price": 73.5,
+    "sku": "MDH-AMCHOOR-POWDER-60X100-GM-MC",
+    "category": "House-spices"
+  },
+  "MGST2":{
+    "Quantity": 12,
+    "Item": "MGST2",
+    "Description": "MAGGI TOMATO KETCHUP 12X500 GM EXPORT PACK",
+    "Price": 27,
+    "sku": "MAGGI-TOMATO-KETCHUP-12X500-GM-EXPORT-PACK",
+    "category": "House-spices"
+  },
+  "MZCWT":{
+    "Quantity": 12,
+    "Item": "MZCWT",
+    "Description": "MAAZA PREMIUM COCONUT WATER TETRA 12 X 1 LTR",
+    "Price": 21,
+    "sku": "MAAZA-PREMIUM-COCONUT-WATER-TETRA-12-X-1-LTR",
+    "category": "House-spices"
+  },
+  "MZCWT1":{
+    "Quantity": 12,
+    "Item": "MZCWT1",
+    "Description": "MAAZA PREMIUM COCONUT WATER TETRA 12 X 330 ML",
+    "Price": 13,
+    "sku": "MAAZA-PREMIUM-COCONUT-WATER-TETRA-12-X-330-ML",
+    "category": "House-spices"
+  },
+  "MZMG2":{
+    "Quantity": 6,
+    "Item": "MZMG2",
+    "Description": "MAAZA MANGOBTL 6X1 LT",
+    "Price": 10.75,
+    "sku": "MAAZA-MANGOBTL-6X1-LT",
+    "category": "House-spices"
+  },
+  "MZMG5":{
+    "Quantity": 12,
+    "Item": "MZMG5",
+    "Description": "MAAZA MANGO GL BTL 12X330 ML",
+    "Price": 8.75,
+    "sku": "MAAZA-MANGO-GL-BTL-12X330-ML",
+    "category": "House-spices"
+  },
+  "PAKG2":{
+    "Quantity": 48,
+    "Item": "PAKG2",
+    "Description": "PARLE KREAMS GOLD ORANGE 48X66.72 GM",
+    "Price": 12,
+    "sku": "PARLE-KREAMS-GOLD-ORANGE-48X66.72-GM",
+    "category": "House-spices"
+  },
+  "PAKG4":{
+    "Quantity": 48,
+    "Item": "PAKG4",
+    "Description": "PARLE KREAMS GOLD PINEAPPLE 48 PKTS X 66.72 GM",
+    "Price": 12,
+    "sku": "PARLE-KREAMS-GOLD-PINEAPPLE-48-PKTS-X-66.72-GM",
+    "category": "House-spices"
+  },
+  "PAM1":{
+    "Quantity": 64,
+    "Item": "PAM1",
+    "Description": "PARLE MONACO 8X379.8 GM 8X6X63.3 GM",
+    "Price": 16,
+    "sku": "PARLE-MONACO-8X379.8-GM-8X6X63.3-GM",
+    "category": "House-spices"
+  },
+  "PK8":{
+    "Quantity": 65,
+    "Item": "PK8",
+    "Description": "PATAK MIXED PKL 6X9 OZ",
+    "Price": 20.5,
+    "sku": "PATAK-MIXED-PKL-6X9-OZ",
+    "category": "House-spices"
+  },
+  "PKPC1":{
+    "Quantity": 66,
+    "Item": "PKPC1",
+    "Description": "PATAK CURRY PASTE X-HOT 6X10 OZ",
+    "Price": 18,
+    "sku": "PATAK-CURRY-PASTE-X-HOT-6X10-OZ",
+    "category": "House-spices"
+  },
+  "PKPT2":{
+    "Quantity": 67,
+    "Item": "PKPT2",
+    "Description": "PATAK TIKKA MASALA MARINADE PASTE 6 X10 OZ",
+    "Price": 18,
+    "sku": "PATAK-TIKKA-MASALA-MARINADE-PASTE-6-X10-OZ",
+    "category": "House-spices"
+  },
+  "PKSB1":{
+    "Quantity": 68,
+    "Item": "PKSB1",
+    "Description": "PATAK BUTTER CHICKEN SAUCE 6X15 OZ",
+    "Price": 20,
+    "sku": "PATAK-BUTTER-CHICKEN-SAUCE-6X15-OZ",
+    "category": "House-spices"
+  },
+  "RPM1":{
+    "Quantity": 69,
+    "Item": "RPM1",
+    "Description": "ROYAL MAHOUT PANEER 12X12 OZ",
+    "Price": 42,
+    "sku": "ROYAL-MAHOUT-PANEER-12X12-OZ",
+    "category": "House-spices"
+  },
+  "TJT21":{
+    "Quantity": 70,
+    "Item": "TJT21",
+    "Description": "TAJ MAHAL TEA BAGS 24X100X1.9GN",
+    "Price": 66,
+    "sku": "TAJ-MAHAL-TEA-BAGS-24X100X1.9GN",
+    "category": "House-spices"
+  }
+}

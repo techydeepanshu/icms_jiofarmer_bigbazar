@@ -1,98 +1,130 @@
 {
-  "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17":{
+  "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17": {
     "Item": "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17",
     "Description": "BAKEMILL KERALA MIXTURE (POUCH) 300 GM X 17",
     "Quantity": "17",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-KERALA-MIXTURE-POUCH-300-GM-X-17",
+    "category": "GM-grocermill"
   },
-  "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18":{
+  "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18",
     "Description": "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18",
     "Quantity": "18",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-HOT-MIXTURE-POUCH-300GM-X-18",
+    "category": "GM-grocermill"
   },
-  "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18":{
+  "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18",
     "Description": "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18",
     "Quantity": "18",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-EXTRA-HOT-MIXTURE-POUCH-300-GM-X-18",
+    "category": "GM-grocermill"
   },
-  "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18":{
+  "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18",
     "Description": "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18",
     "Quantity": "18",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-GARLIC-MIXTURE-POUCH-300-GM-X-18",
+    "category": "GM-grocermill"
   },
-  "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18":{
+  "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18": {
     "Item": "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18",
     "Description": "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18",
     "Quantity": "18",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-TOMATO-CHILLI-MIXTUREPOUCH-300GM-X-18",
+    "category": "GM-grocermill"
   },
-  "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18":{
+  "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18": {
     "Item": "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18",
     "Description": "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18",
     "Quantity": "18",
-    "Price": "25.02"
+    "Price": "25.02",
+    "sku": "BAKEMILL-BANANA-CHIPS-POUCH-200-GM-X-18",
+    "category": "GM-grocermill"
   },
-  "BON BAFATH POWDER 165 GM X 24":{
+  "BON BAFATH POWDER 165 GM X 24": {
     "Item": "BON BAFATH POWDER 165 GM X 24",
     "Description": "BON BAFATH POWDER 165 GM X 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-BAFATH-POWDER-165-GM-X-24",
+    "category": "GM-grocermill"
   },
-  "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24":{
+  "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24": {
     "Item": "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24",
     "Description": "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-CHICKEN-HOT-N-SOUR-INDIAN-MASALA-160-GM-X-24",
+    "category": "GM-grocermill"
   },
-  "BON CHICKEN RED MASALA 165 GMX 24":{
+  "BON CHICKEN RED MASALA 165 GMX 24": {
     "Item": "BON CHICKEN RED MASALA 165 GMX 24",
     "Description": "BON CHICKEN RED MASALA 165 GMX 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-CHICKEN-RED-MASALA-165-GM-X-24",
+    "category": "GM-grocermill"
   },
-  "BON PICKLE POWDER 150 GM X 24":{
+  "BON PICKLE POWDER 150 GM X 24": {
     "Item": "BON PICKLE POWDER 150 GM X 24",
     "Description": "BON PICKLE POWDER 150 GM X 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-PICKLE-POWDER-150-GM-X-24",
+    "category": "GM-grocermill"
   },
-  "BON CHICKEN GHEE ROAST MASALA 130GM X 24":{
+  "BON CHICKEN GHEE ROAST MASALA 130GM X 24": {
     "Item": "BON CHICKEN GHEE ROAST MASALA 130GM X 24",
     "Description": "BON CHICKEN GHEE ROAST MASALA 130GM X 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-CHICKEN-GHEE-ROAST-MASALA-130GM-X-24",
+    "category": "GM-grocermill"
   },
-  "KERAMILL HOT LIME PICKLE 300 GM X 12":{
+  "KERAMILL HOT LIME PICKLE 300 GM X 12": {
     "Item": "KERAMILL HOT LIME PICKLE 300 GM X 12",
     "Description": "KERAMILL HOT LIME PICKLE 300 GM X 12",
     "Quantity": "12",
-    "Price": "15.48"
+    "Price": "15.48",
+    "sku": "KERAMILL-HOT-LIME-PICKLE-300-GM-X-12",
+    "category": "GM-grocermill"
   },
-  "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12":{
+  "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12": {
     "Item": "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12",
     "Description": "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12",
     "Quantity": "12",
-    "Price": "15.48"
+    "Price": "15.48",
+    "sku": "KERAMILL-CUT-MANGO-PICKLE-300GM-300GM-X-12",
+    "category": "GM-grocermill"
   },
-  "KERAMILL GARLIC PICKLE 300 GM X 12":{
+  "KERAMILL GARLIC PICKLE 300 GM X 12": {
     "Item": "KERAMILL GARLIC PICKLE 300 GM X 12",
     "Description": "KERAMILL GARLIC PICKLE 300 GM X 12",
     "Quantity": "12",
-    "Price": "15.60"
+    "Price": "15.60",
+    "sku": "KERAMILL-GARLIC-PICKLE-300-GM-X-12",
+    "category": "GM-grocermill"
   },
-  "KERAMILL CHUKKU KAPPI 240GM X 48":{
+  "KERAMILL CHUKKU KAPPI 240GM X 48": {
     "Item": "KERAMILL CHUKKU KAPPI 240GM X 48",
     "Description": "KERAMILL CHUKKU KAPPI 240GM X 48",
     "Quantity": "48",
-    "Price": "64.80"
+    "Price": "64.80",
+    "sku": "KERAMILL-CHUKKU-KAPPI-240GM-X-48",
+    "category": "GM-grocermill"
   },
-  "BON BUTTER CHICKEN MASALA 165GM X 24":{
+  "BON BUTTER CHICKEN MASALA 165GM X 24": {
     "Item": "BON BUTTER CHICKEN MASALA 165GM X 24",
     "Description": "BON BUTTER CHICKEN MASALA 165GM X 24",
     "Quantity": "24",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "BON-BUTTER-CHICKEN-MASALA-165GM-X-24",
+    "category": "GM-grocermill"
   }
 }

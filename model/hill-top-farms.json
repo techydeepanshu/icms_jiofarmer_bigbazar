@@ -1,0 +1,50 @@
+{
+  "JUMBO WHITE 1 DOZEN": {
+    "Item": "JUMBO WHITE 1 DOZEN",
+    "Description": "JUMBO WHITE 1 DOZEN",
+    "Quantity": 50,
+    "Price": 26.16,
+    "sku": "JUMBO-WHITE-1-DOZEN",
+    "category": "Hill-top-Farms"
+  },
+  "MEDIUM BROWN 1 DOZEN": {
+    "Item": "MEDIUM BROWN 1 DOZEN",
+    "Description": "MEDIUM BROWN 1 DOZEN",
+    "Quantity": 50,
+    "Price": 27,
+    "sku": "MEDIUM-BROWN-1-DOZEN",
+    "category": "Hill-top-Farms"
+  },
+  "MEDIUM WHITE 1 DOZEN": {
+    "Item": "MEDIUM WHITE 1 DOZEN",
+    "Description": "MEDIUM WHITE 1 DOZEN",
+    "Quantity": 50,
+    "Price": 25.2,
+    "sku": "MEDIUM-WHITE-1-DOZEN",
+    "category": "Hill-top-Farms"
+  },
+  "JUMBO ORGANIC": {
+    "Item": "JUMBO ORGANIC",
+    "Description": "JUMBO ORGANIC",
+    "Quantity": 50,
+    "Price": 53.8,
+    "sku": "JUMBO-ORGANIC",
+    "category": "Hill-top-Farms"
+  },
+  "LARGE ORGANIC": {
+    "Item": "LARGE ORGANIC",
+    "Description": "LARGE ORGANIC",
+    "Quantity": 50,
+    "Price": 57.35,
+    "sku": "LARGE-ORGANIC",
+    "category": "Hill-top-Farms"
+  },
+  "MEDIUM ORGANIC": {
+    "Item": "MEDIUM ORGANIC",
+    "Description": "MEDIUM ORGANIC",
+    "Quantity": 50,
+    "Price": 45.85,
+    "sku": "MEDIUM-ORGANIC",
+    "category": "Hill-top-Farms"
+  }
+}

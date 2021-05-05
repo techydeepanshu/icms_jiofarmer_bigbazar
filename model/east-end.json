@@ -1,116 +1,202 @@
 {
-  "BPCUP007":{
+  "BPCUP007": {
     "Item": "BPCUP007",
     "Description": "Cumin Powder - 12*7 oz",
     "Quantity": "7",
-    "Price": "23.50"
+    "Price": "23.50",
+    "sku": "CUMIN-POWDER---127-OZ",
+    "category": "East-food"
   },
-  "BPGIP007":{
+  "BPGIP007": {
     "Item": "BPGIP007",
     "Description": "Ginger Powder - 12*7 oz",
     "Quantity": "7",
     "Price": "28.00"
   },
-  "BPCPROO7":{
+  "BPCPROO7": {
     "Item": "BPCPROO7",
     "Description": "Chilli Powder 12*7 oz",
     "Quantity": "7",
     "Price": "26.00"
   },
-  "BWCUS007":{
+  "BWCUS007": {
     "Item": "BWCUS007",
     "Description": "Cumin Seeds - 12*7 oz",
     "Quantity": "7",
-    "Price": "24.00"
+    "Price": "24.00",
+    "sku": "CUMIN-SEEDS---127-OZ",
+    "category": "East-food"
   },
-  "BWMS010":{
+  "BWMS010": {
     "Item": "BWMS010",
     "Description": "Fenugreek Seed - 12*10oz",
     "Quantity": "10",
     "Price": "23.50"
   },
-  "BPBP007":{
+  "BPBP007": {
     "Item": "BPBP007",
     "Description": "Black Pepper Powder - 12*7 oz",
     "Quantity": "7",
-    "Price": "36.50"
+    "Price": "36.50",
+    "sku": "BLACK-PEPPER-POWDER---127-OZ",
+    "category": "East-food"
   },
-  "BPTP007":{
+  "BPTP007": {
     "Item": "BPTP007",
     "Description": "Turmeric Powder - 12*7 oz",
     "Quantity": "7",
-    "Price": "22.50"
+    "Price": "22.50",
+    "sku": "TURMERIC-POWDER---127-OZ",
+    "category": "East-food"
   },
-  "BWCS045":{
+  "BWCS045": {
     "Item": "BWCS045",
     "Description": "Cinamon Stick - 12*4.5oz",
     "Quantity": "4.5",
     "Price": "36.00"
   },
-  "BPGP007":{
+  "BPGP007": {
     "Item": "BPGP007",
     "Description": "Garlic Powder - 12*7 oz",
     "Quantity": "7",
-    "Price": "28.00"
+    "Price": "28.00",
+    "sku": "GARLIC-POWDER---127-OZ",
+    "category": "East-food"
   },
-  "BPCIP007":{
+  "BPCIP007": {
     "Item": "BPCIP007",
     "Description": "Cinamon Powder - 12*7 oz New",
     "Quantity": "7",
     "Price": "24.00"
   },
-  "BPGM007":{
+  "BPGM007": {
     "Item": "BPGM007",
     "Description": "Garam Masala - 12*7 oz",
     "Quantity": "7",
-    "Price": "28.00"
+    "Price": "28.00",
+    "sku": "GARAM-MASALA---127-OZ",
+    "category": "East-food"
   },
-  "BWFS007":{
+  "BWFS007": {
     "Item": "BWFS007",
     "Description": "Fennel Seed - 12*7 oz",
     "Quantity": "7",
     "Price": "23.50"
   },
-  "BWAS007":{
+  "BWAS007": {
     "Item": "BWAS007",
     "Description": "Ajwan Seed - 12*7 oz",
     "Quantity": "7",
     "Price": "30.00"
   },
-  "BPCOR014":{
+  "BPCOR014": {
     "Item": "BPCOR014",
     "Description": "Coriander Powder - 12*14 oz",
     "Quantity": "14",
     "Price": "33.00"
   },
-  "BPCUR014":{
+  "BPCUR014": {
     "Item": "BPCUR014",
     "Description": "Curry Powder - 12*14 oz",
     "Quantity": "14",
     "Price": "30.00"
   },
-  "BPTP014":{
+  "BPTP014": {
     "Item": "BPTP014",
     "Description": "Turmeric Powder - 12*14 oz",
     "Quantity": "14",
     "Price": "30.00"
   },
-  "BWCUS014":{
+  "BWCUS014": {
     "Item": "BWCUS014",
     "Description": "Cumin Seeds - 12*14 oz",
     "Quantity": "14",
     "Price": "36.00"
   },
-  "BPGM014":{
+  "BPGM014": {
     "Item": "BPGM014",
     "Description": "Garam Masala - 12*14 oz",
     "Quantity": "14",
     "Price": "42.00"
   },
-  "BWWC035":{
+  "BWWC035": {
     "Item": "BWWC035",
     "Description": "Whole Chilli R) - 12*3.5 oz",
     "Quantity": "3.5",
-    "Price": "24.00"
+    "Price": "24.00",
+    "sku": "WHOLE-CHILLI-R)---123.5-OZ",
+    "category": "East-food"
+  },
+  "BWCOS005": {
+    "Item": "BWCOS005",
+    "Description": "CORIANDER SEEDS - 125OZ",
+    "Quanitty": 50,
+    "Price": 21,
+    "sku": "CORIANDER-SEEDS---125OZ",
+    "category": "East-food"
+  },
+  "CS045": {
+    "Item": "BWCS045",
+    "Description": "CINAMON STICK - 124.5OZ",
+    "Quanitty": 50,
+    "Price": 21.6,
+    "sku": "CINAMON-STICK---124.5OZ",
+    "category": "East-food"
+  },
+  "BWWC175": {
+    "Item": "BWWC175",
+    "Description": "WHOLE CHILLI R) - 121.75 OZ",
+    "Quanitty": 50,
+    "Price": 21.6,
+    "sku": "WHOLE-CHILLI-R)---121.75-OZ",
+    "category": "East-food"
+  },
+  "BPRCC055": {
+    "Item": "BPRCC055",
+    "Description": "RED CRUSHED CHILLI - 125.5 OZ",
+    "Quanitty": 50,
+    "Price": 22.5,
+    "sku": "RED-CRUSHED-CHILLI---125.5-OZ",
+    "category": "East-food"
+  },
+  "BPRCC011": {
+    "Item": "BPRCC011",
+    "Description": "RED CRUSHED CHILLI - 1211 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "RED-CRUSHED-CHILLI---1211-OZ",
+    "category": "East-food"
+  },
+  "BPPA014": {
+    "Item": "BPPA014",
+    "Description": "PAPRIKA - 1214 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "PAPRIKA---1214-OZ",
+    "category": "East-food"
+  },
+  "BPCPE014": {
+    "Item": "BPCPE014",
+    "Description": "CHILLI POWDER EX-HOT-1214OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "CHILLI-POWDER-EX-HOT-1214OZ",
+    "category": "East-food"
+  },
+  "BPCPR014": {
+    "Item": "BPCPR014",
+    "Description": "CHILLI POWDER 1214 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "CHILLI-POWDER-1214-OZ",
+    "category": "East-food"
+  },
+  "BPBP014": {
+    "Item": "BPBP014",
+    "Description": "BLACK PEPPER POWDER - 1214",
+    "Quanitty": 50,
+    "Price": 48,
+    "sku": "BLACK-PEPPER-POWDER---1214",
+    "category": "East-food"
   }
 }

@@ -1,0 +1,386 @@
+{
+  "TAPIOCA SLICED 908g x 18":{
+    "Item": "TAPIOCA SLICED 908g x 18",
+    "Description": "TAPIOCA SLICED 908g x 18",
+    "Quantity": 18,
+    "Price": 29.71,
+    "sku": "TAPIOCA-SLICED-908g-x-18",
+    "category": "delight-foods"
+  },
+  "TAPIOCA REG. 908g x 18":{
+    "Item": "TAPIOCA REG. 908g x 18",
+    "Description": "TAPIOCA REG. 908g x 18",
+    "Quantity": 18,
+    "Price": 26.1,
+    "sku": "TAPIOCA-REG.-908g-x-18",
+    "category": "delight-foods"
+  },
+  "DRUMSTICK IQF 400g x 32 pkt":{
+    "Item": "DRUMSTICK IQF 400g x 32 pkt",
+    "Description": "DRUMSTICK IQF 400g x 32 pkt",
+    "Quantity": 32,
+    "Price": 48,
+    "sku": "DRUMSTICK-IQF-400g-x-32-pkt",
+    "category": "delight-foods"
+  },
+  "YAM SURAN 454g x 32":{
+    "Item": "YAM SURAN 454g x 32",
+    "Description": "YAM SURAN 454g x 32",
+    "Quantity": 32,
+    "Price": 49.6,
+    "sku": "YAM-SURAN-454g-x-32",
+    "category": "delight-foods"
+  },
+  "OKRA CUT 400g x 24":{
+    "Item": "OKRA CUT 400g x 24",
+    "Description": "OKRA CUT 400g x 24",
+    "Quantity": 24,
+    "Price": 36.8,
+    "sku": "OKRA-CUT-400g-x-24",
+    "category": "delight-foods"
+  },
+  "MUTTON CURRY 10 oz x12":{
+    "Item": "MUTTON CURRY 10 oz x12",
+    "Description": "MUTTON CURRY 10 oz x12",
+    "Quantity": 12,
+    "Price": 45,
+    "sku": "MUTTON-CURRY-10-oz-x12",
+    "category": "delight-foods"
+  },
+  "BEEF PATTY FRITTERS 10oz x 12p":{
+    "Item": "BEEF PATTY FRITTERS 10oz x 12p",
+    "Description": "BEEF PATTY FRITTERS 10oz x 12p",
+    "Quantity": 12,
+    "Price": 45,
+    "sku": "BEEF-PATTY-FRITTERS-10oz-x-12p",
+    "category": "delight-foods"
+  },
+  "CHICKEN 65 100Z x 12PK":{
+    "Item": "CHICKEN 65 100Z x 12PK",
+    "Description": "CHICKEN 65 100Z x 12PK",
+    "Quantity": 12,
+    "Price": 45,
+    "sku": "CHICKEN-65-100Z-x-12PK",
+    "category": "delight-foods"
+  },
+  "POROTA-MALABAR FAMILY 2Ibx16pk":{
+    "Item": "POROTA-MALABAR FAMILY 2Ibx16pk",
+    "Description": "POROTA-MALABAR FAMILY 2Ibx16pk",
+    "Quantity": 16,
+    "Price": 44,
+    "sku": "POROTA-MALABAR-FAMILY-2Ibx16pk",
+    "category": "delight-foods"
+  },
+  "POROTTA - D/D 454gm x 28pk":{
+    "Item": "POROTTA - D/D 454gm x 28pk",
+    "Description": "POROTTA - D/D 454gm x 28pk",
+    "Quantity": 28,
+    "Price": 42,
+    "sku": "POROTTA---D/D-454gm-x-28pk",
+    "category": "delight-foods"
+  },
+  "IDIYAPPAM BROWN 454gx28pkts":{
+    "Item": "IDIYAPPAM BROWN 454gx28pkts",
+    "Description": "IDIYAPPAM BROWN 454gx28pkts",
+    "Quantity": 28,
+    "Price": 42,
+    "sku": "IDIYAPPAM-BROWN-454gx28pkts",
+    "category": "delight-foods"
+  },
+  "COCKTAIL SAMOSA VEG. 300x12":{
+    "Item": "COCKTAIL SAMOSA VEG. 300x12",
+    "Description": "COCKTAIL SAMOSA VEG. 300x12",
+    "Quantity": 12,
+    "Price": 22,
+    "sku": "COCKTAIL-SAMOSA-VEG.-300x12",
+    "category": "delight-foods"
+  },
+  "IDIYAPPAM WHITE 454gx28pkts":{
+    "Item": "IDIYAPPAM WHITE 454gx28pkts",
+    "Description": "IDIYAPPAM WHITE 454gx28pkts",
+    "Quantity": 28,
+    "Price": 42,
+    "sku": "IDIYAPPAM-WHITE-454gx28pkts",
+    "category": "delight-foods"
+  },
+  "PUTTU WHITE 350gm x 28 pkts":{
+    "Item": "PUTTU WHITE 350gm x 28 pkts",
+    "Description": "PUTTU WHITE 350gm x 28 pkts",
+    "Quantity": 28,
+    "Price": 42,
+    "sku": "PUTTU-WHITE-350gm-x-28-pkts",
+    "category": "delight-foods"
+  },
+  "ELAYADA JAGGERY 454gm x 28pkt":{
+    "Item": "ELAYADA JAGGERY 454gm x 28pkt",
+    "Description": "ELAYADA JAGGERY 454gm x 28pkt",
+    "Quantity": 28,
+    "Price": 47.6,
+    "sku": "ELAYADA-JAGGERY-454gm-x-28pkt",
+    "category": "delight-foods"
+  },
+  "KOZHUKATTA 454gm x 28pkts":{
+    "Item": "KOZHUKATTA 454gm x 28pkts",
+    "Description": "KOZHUKATTA 454gm x 28pkts",
+    "Quantity": 28,
+    "Price": 50.4,
+    "sku": "KOZHUKATTA-454gm-x-28pkts",
+    "category": "delight-foods"
+  },
+  "NEYYAPPAM 350gm x 28pkts":{
+    "Item": "NEYYAPPAM 350gm x 28pkts",
+    "Description": "NEYYAPPAM 350gm x 28pkts",
+    "Quantity": 28,
+    "Price": 50.4,
+    "sku": "NEYYAPPAM-350gm-x-28pkts",
+    "category": "delight-foods"
+  },
+  "PALAPPAM 227gm x 28 pkts":{
+    "Item": "PALAPPAM 227gm x 28 pkts",
+    "Description": "PALAPPAM 227gm x 28 pkts",
+    "Quantity": 28,
+    "Price": 42,
+    "sku": "PALAPPAM-227gm-x-28-pkts",
+    "category": "delight-foods"
+  },
+  "DESI DELIGHT KOTH POROT 1kgx16":{
+    "Item": "DESI DELIGHT KOTH POROT 1kgx16",
+    "Description": "DESI DELIGHT KOTH POROT 1kgx16",
+    "Quantity": 16,
+    "Price": 52,
+    "sku": "DESI-DELIGHT-KOTH-POROT-1kgx16",
+    "category": "delight-foods"
+  },
+  "DESI DELIGH TAPIOCA 5IbX6pkts":{
+    "Item": "DESI DELIGH TAPIOCA 5IbX6pkts",
+    "Description": "DESI DELIGH TAPIOCA 5IbX6pkts",
+    "Quantity": 6,
+    "Price": 19.8,
+    "sku": "DESI-DELIGH-TAPIOCA-5IbX6pkts",
+    "category": "delight-foods"
+  },
+  "DAILY D DATES N CASHEW 700x12":{
+    "Item": "DAILY D DATES N CASHEW 700x12",
+    "Description": "DAILY D DATES N CASHEW 700x12",
+    "Quantity": 12,
+    "Price": 78,
+    "sku": "DAILY-D-DATES-N-CASHEW-700x12",
+    "category": "delight-foods"
+  },
+  "DAILY D PLUM SPECIAL 700x12":{
+    "Item": "DAILY D PLUM SPECIAL 700x12",
+    "Description": "DAILY D PLUM SPECIAL 700x12",
+    "Quantity": 12,
+    "Price": 66,
+    "sku": "DAILY-D-PLUM-SPECIAL-700x12",
+    "category": "delight-foods"
+  },
+  "FRUIT RICH PLUM 700gx12(delici":{
+    "Item": "FRUIT RICH PLUM 700gx12(delici",
+    "Description": "FRUIT RICH PLUM 700gx12(delici",
+    "Quantity": 12,
+    "Price": 66,
+    "sku": "FRUIT-RICH-PLUM-700gx12(delici",
+    "category": "delight-foods"
+  },
+  "DAILY D PLUM PASSION 700g x12p":{
+    "Item": "DAILY D PLUM PASSION 700g x12p",
+    "Description": "DAILY D PLUM PASSION 700g x12p",
+    "Quantity": 12,
+    "Price": 60,
+    "sku": "DAILY-D-PLUM-PASSION-700g-x12p",
+    "category": "delight-foods"
+  },
+  "NAAN - SWEET 300gm x 28 pkts":{
+    "Item": "NAAN - SWEET 300gm x 28 pkts",
+    "Description": "NAAN - SWEET 300gm x 28 pkts",
+    "Quantity": 28,
+    "Price": 50.4,
+    "sku": "NAAN---SWEET-300gm-x-28-pkts",
+    "category": "delight-foods"
+  },
+  "ARVI 454g x 32pkts":{
+    "Item": "ARVI 454g x 32pkts",
+    "Description": "ARVI 454g x 32pkts",
+    "Quantity": 32,
+    "Price": 44.8,
+    "sku": "ARVI-454g-x-32pkts",
+    "category": "delight-foods"
+  },
+  "AVIYAL MIX 454gmx 24pkts":{
+    "Item": "AVIYAL MIX 454gmx 24pkts",
+    "Description": "AVIYAL MIX 454gmx 24pkts",
+    "Quantity": 24,
+    "Price": 44.8,
+    "sku": "AVIYAL-MIX-454gmx-24pkts",
+    "category": "delight-foods"
+  },
+  "GRATED COCONUT 454g x 32pkt":{
+    "Item": "GRATED COCONUT 454g x 32pkt",
+    "Description": "GRATED COCONUT 454g x 32pkt",
+    "Quantity": 32,
+    "Price": 64,
+    "sku": "GRATED-COCONUT-454g-x-32pkt",
+    "category": "delight-foods"
+  },
+  "SLICED COCONUT 400g x 24":{
+    "Item": "SLICED COCONUT 400g x 24",
+    "Description": "SLICED COCONUT 400g x 24",
+    "Quantity": 24,
+    "Price": 55.2,
+    "sku": "SLICED-COCONUT-400g-x-24",
+    "category": "delight-foods"
+  },
+  "SAMBAR MIX 400g x 24":{
+    "Item": "SAMBAR MIX 400g x 24",
+    "Description": "SAMBAR MIX 400g x 24",
+    "Quantity": 24,
+    "Price": 40.8,
+    "sku": "SAMBAR-MIX-400g-x-24",
+    "category": "delight-foods"
+  },
+  "RABBIT FISH STEAK 908x20":{
+    "Item": "RABBIT FISH STEAK 908x20",
+    "Description": "RABBIT FISH STEAK 908x20",
+    "Quantity": 20,
+    "Price": 120,
+    "sku": "RABBIT-FISH-STEAK-908x20",
+    "category": "delight-foods"
+  },
+  "SAIL FISH CURRY CUT 908x20":{
+    "Item": "SAIL FISH CURRY CUT 908x20",
+    "Description": "SAIL FISH CURRY CUT 908x20",
+    "Quantity": 20,
+    "Price": 150,
+    "sku": "SAIL-FISH-CURRY-CUT-908x20",
+    "category": "delight-foods"
+  },
+  "WHITE SNAPPER STEAK 21bx20 DRY":{
+    "Item": "WHITE SNAPPER STEAK 21bx20 DRY",
+    "Description": "WHITE SNAPPER STEAK 21bx20 DRY",
+    "Quantity": 20,
+    "Price": 130,
+    "sku": "WHITE-SNAPPER-STEAK-21bx20-DRY",
+    "category": "delight-foods"
+  },
+  "IDLI RAVA 1KGx12":{
+    "Item": "IDLI RAVA 1KGx12",
+    "Description": "IDLI RAVA 1KGx12",
+    "Quantity": 12,
+    "Price": 19.2,
+    "sku": "IDLI-RAVA-1KGx12",
+    "category": "delight-foods"
+  },
+  "IDIYAPPAMPODI -BRWN 1 KG x12":{
+    "Item": "IDIYAPPAMPODI -BRWN 1 KG x12",
+    "Description": "IDIYAPPAMPODI -BRWN 1 KG x12",
+    "Quantity": 12,
+    "Price": 19.2,
+    "sku": "IDIYAPPAMPODI--BRWN-1-KG-x12",
+    "category": "delight-foods"
+  },
+  "INSTANT IDLI MIX 1 KG x 12":{
+    "Item": "INSTANT IDLI MIX 1 KG x 12",
+    "Description": "INSTANT IDLI MIX 1 KG x 12",
+    "Quantity": 12,
+    "Price": 22.2,
+    "sku": "INSTANT-IDLI-MIX-1-KG-x-12",
+    "category": "delight-foods"
+  },
+  "INST PALAPPAM MIX KG x 1":{
+    "Item": "INST PALAPPAM MIX KG x 1",
+    "Description": "INST PALAPPAM MIX KG x 1",
+    "Quantity": 1,
+    "Price": 22.2,
+    "sku": "INST-PALAPPAM-MIX-KG-x-1",
+    "category": "delight-foods"
+  },
+  "INSTANT VATIAYAPPAM MIX 1 KG":{
+    "Item": "INSTANT VATIAYAPPAM MIX 1 KG",
+    "Description": "INSTANT VATIAYAPPAM MIX 1 KG",
+    "Quantity": 1,
+    "Price": 22.2,
+    "sku": "INSTANT-VATIAYAPPAM-MIX-1-KG",
+    "category": "delight-foods"
+  },
+  "INSTANT UPPUMA MIX 1 KG x 12":{
+    "Item": "INSTANT UPPUMA MIX 1 KG x 12",
+    "Description": "INSTANT UPPUMA MIX 1 KG x 12",
+    "Quantity": 12,
+    "Price": 27,
+    "sku": "INSTANT-UPPUMA-MIX-1-KG-x-12",
+    "category": "delight-foods"
+  },
+  "RICE FLOUR FRIED BRN 1 KG x 12":{
+    "Item": "RICE FLOUR FRIED BRN 1 KG x 12",
+    "Description": "RICE FLOUR FRIED BRN 1 KG x 12",
+    "Quantity": 12,
+    "Price": 20.4,
+    "sku": "RICE-FLOUR-FRIED-BRN-1-KG-x-12",
+    "category": "delight-foods"
+  },
+  "ROASTED RAVA 1 KG x 12":{
+    "Item": "ROASTED RAVA 1 KG x 12",
+    "Description": "ROASTED RAVA 1 KG x 12",
+    "Quantity": 12,
+    "Price": 19.2,
+    "sku": "ROASTED-RAVA-1-KG-x-12",
+    "category": "delight-foods"
+  },
+  "SAMBA WHEAT PUTTUPODI 1KG x":{
+    "Item": "SAMBA WHEAT PUTTUPODI 1KG x",
+    "Description": "SAMBA WHEAT PUTTUPODI 1KG x",
+    "Quantity": 1,
+    "Price": 21,
+    "sku": "SAMBA-WHEAT-PUTTUPODI-1KG-x",
+    "category": "delight-foods"
+  },
+  "PALAPPAMPODI 1 KG x 12":{
+    "Item": "PALAPPAMPODI 1 KG x 12",
+    "Description": "PALAPPAMPODI 1 KG x 12",
+    "Quantity": 12,
+    "Price": 19.2,
+    "sku": "PALAPPAMPODI-1-KG-x-12",
+    "category": "delight-foods"
+  },
+  "DD KERALA MIXTURE 400x24":{
+    "Item": "DD KERALA MIXTURE 400x24",
+    "Description": "DD KERALA MIXTURE 400x24",
+    "Quantity": 24,
+    "Price": 46.8,
+    "sku": "DD-KERALA-MIXTURE-400x24",
+    "category": "delight-foods"
+  },
+  "DD KERALA MIXTURE HOT 400x24":{
+    "Item": "DD KERALA MIXTURE HOT 400x24",
+    "Description": "DD KERALA MIXTURE HOT 400x24",
+    "Quantity": 24,
+    "Price": 46.8,
+    "sku": "DD-KERALA-MIXTURE-HOT-400x24",
+    "category": "delight-foods"
+  },
+  "SESAME BALL WHITE 175g x18":{
+    "Item": "SESAME BALL WHITE 175g x18",
+    "Description": "SESAME BALL WHITE 175g x18",
+    "Quantity": 18,
+    "Price": 27.9,
+    "sku": "SESAME-BALL-WHITE-175g-x18",
+    "category": "delight-foods"
+  },
+  "SESAME BALL BLACK 175g x18":{
+    "Item": "SESAME BALL BLACK 175g x18",
+    "Description": "SESAME BALL BLACK 175g x18",
+    "Quantity": 18,
+    "Price": 27.9,
+    "sku": "SESAME-BALL-BLACK-175g-x18",
+    "category": "delight-foods"
+  },
+  "INST SEMIYA PAYASAM MIX200x30":{
+    "Item": "INST SEMIYA PAYASAM MIX200x30",
+    "Description": "INST SEMIYA PAYASAM MIX200x30",
+    "Quantity": 30,
+    "Price": 45,
+    "sku": "INST-SEMIYA-PAYASAM-MIX200x30",
+    "category": "delight-foods"
+  }
+}
