@@ -1,0 +1,114 @@
+{
+  "SA Chakki 20": {
+    "Item": "SA Chakki 20",
+    "Description": "Swama Chakki Fresh Atta 20 lb X",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Swama-Chakki-Fresh-Atta-20-lb-X",
+    "category": "shakti"
+  },
+  "GC PM Card": {
+    "Item": "GC PM Card",
+    "Description": "Girnar Cardamom Premix 10 sachets X 24 X",
+    "Quantity": 24,
+    "Price": 85,
+    "sku": "Girnar-Cardamom-Premix-10-sachets-X-24-X",
+    "category": "shakti"
+  },
+  "GC Detox G ": {
+    "Item": "GC Detox G",
+    "Description": "Girnar Detox Green Tea (Desi Khawa)10 bags X 12 X",
+    "Quantity": 12,
+    "Price": 30,
+    "sku": "Girnar-Detox-Green-Tea-(Desi-Khawa)10-bags-X-12-X",
+    "category": "shakti"
+  },
+  "GC Detox G": {
+    "Item": "GC Detox G",
+    "Description": "Girnar Detox Green Tea Bags (DESI KHAWA) 36 bags X 12 X",
+    "Quantity": 24,
+    "Price": 75,
+    "sku": "Girnar-Detox-Green-Tea-Bags-(DESI-KHAWA)-36-bags-X-12-X-",
+    "category": "shakti"
+  },
+  "GC PM Gin": {
+    "Item": "GC PM Gin",
+    "Description": "Girnar Ginger Premix 10 sachets X 24 X",
+    "Quantity": 24,
+    "Price": 85,
+    "sku": "Girnar-Ginger-Premix-10-sachets-X-24-X",
+    "category": "shakti"
+  },
+  "GC PM Mas": {
+    "Item": "GC PM Mas",
+    "Description": "Girnar Masala Premix 10 sachets X 24 X",
+    "Quantity": 24,
+    "Price": 85,
+    "sku": "Girnar-Masala-Premix-10-sachets-X-24-X",
+    "category": "shakti"
+  },
+  "GC PM Uns C": {
+    "Item": "GC PM Uns",
+    "Description": "Girnar Unsweet Cardamom Premix 10 sachets X 24 X (REGULAR PRICING IN EFFECT AS STICKER PRICING IS DONE)",
+    "Quantity": 24,
+    "Price": 90,
+    "sku": "Girnar-Unsweet-Cardamom-Premix-10-sachets-X-24-X-(REGULAR-PRICING-IN-EFFECT-AS-STICKER-PRICING-IS-DONE)",
+    "category": "shakti"
+  },
+  "GC PM Uns G": {
+    "Item": "GC PM Uns",
+    "Description": "Girnar Unsweet Ginger 10 sachets X 24 X",
+    "Quantity": 24,
+    "Price": 90,
+    "sku": "Girnar-Unsweet-Ginger-10-sachets-X-24-X",
+    "category": "shakti"
+  },
+  "GC PM Uns M": {
+    "Item": "GC PM Uns",
+    "Description": "Girnar Unsweet Masala Premix 10 sachets X 24 X",
+    "Quantity": 24,
+    "Price": 90,
+    "sku": "Girnar-Unsweet-Masala-Premix-10-sachets-X-24-X",
+    "category": "shakti"
+  },
+  "GC Kashmir": {
+    "Item": "GC Kashmir",
+    "Description": "Girnar Kashmiri Kahwa 5 sachets X 30 X",
+    "Quantity": 30,
+    "Price": 50,
+    "sku": "Girnar-Kashmiri-Kahwa-5-sachets-X-30-X",
+    "category": "shakti"
+  },
+  "GC PM Lem": {
+    "Item": "GC PM Lem",
+    "Description": "Girnar Lemon Grass Premix 10 sachets X 24 X (REGULAR PRICING IN EFFECT AS STICKER PRICING IS DONE)",
+    "Quantity": 24,
+    "Price": 85,
+    "sku": "Girnar-Lemon-Grass-Premix-10-sachets-X-24-X-(REGULAR-PRICING-IN-EFFECT-AS-STICKER-PRICING-IS-DONE)",
+    "category": "shakti"
+  },
+  "ZR005": {
+    "Item": "ZR005",
+    "Description": "Zafrani Reserve 10 lbs X",
+    "Quantity": 1,
+    "Price": 12.5,
+    "sku": "Zafrani-Reserve-10-lbs-X",
+    "category": "shakti"
+  },
+  "NI 24 Origin": {
+    "Item": "NI 24 Origin",
+    "Description": "Nandita 24 Original (Nag Champa) 15 GM X 1 DOZEN",
+    "Quantity": 12,
+    "Price": 500,
+    "sku": "Nandita-24-Original-(Nag-Champa)-15-GM-X-1-DOZEN",
+    "category": "shakti"
+  },
+  "NI Roya Att": {
+    "Item": "NI Roya Att",
+    "Description": "NI Roya Attar 15 X 50 Dozen",
+    "Quantity": 15,
+    "Price": 499.99,
+    "sku": "NI-Roya-Attar-15-X-50-Dozen-",
+    "category": "shakti"
+  }
+}

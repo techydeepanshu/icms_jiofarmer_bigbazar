@@ -1,0 +1,210 @@
+{
+  "31100": {
+    "Item": 31100,
+    "Description": "AMCHUR SLICE SWAD 20 X 200 G",
+    "Price": 38,
+    "Quantity": 20,
+    "sku": "AMCHUR-SLICE-SWAD-20-X-200-G",
+    "category": "raja-food"
+  },
+  "32095": {
+    "Item": 32095,
+    "Description": "FENNEL POWDER SWAD 20 X 200GM",
+    "Price": 23,
+    "Quantity": 20,
+    "sku": "FENNEL-POWDER-SWAD-20-X-200GM",
+    "category": "raja-food"
+  },
+  "32930": {
+    "Item": 32930,
+    "Description": "SESAME SEED WHITE SWAD 20 X 400GM",
+    "Price": 43,
+    "Quantity": 20,
+    "sku": "SESAME-SEED-WHITE-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "32960": {
+    "Item": 32960,
+    "Description": "SESAME SEED BROWN SWAD 20 X 400GM",
+    "Price": 43,
+    "Quantity": 20,
+    "sku": "SESAME-SEED-BROWN-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "34060": {
+    "Item": 34060,
+    "Description": "BLACK PEPPER PWD SWAD 20X14 OZ",
+    "Price": 58,
+    "Quantity": 20,
+    "sku": "BLACK-PEPPER-PWD-SWAD-20X14-OZ",
+    "category": "raja-food"
+  },
+  "34050": {
+    "Item": 34050,
+    "Description": "BLACK PEPPER POWDER SWAD 20 X 7 OZ",
+    "Price": 43,
+    "Quantity": 20,
+    "sku": "BLACK-PEPPER-POWDER-SWAD-20-X-7-OZ",
+    "category": "raja-food"
+  },
+  "31290": {
+    "Item": 31290,
+    "Description": "BLACK PEPPER WHOLE SWAD 20 X 7 OZ",
+    "Price": 35,
+    "Quantity": 20,
+    "sku": "BLACK-PEPPER-WHOLE-SWAD-20-X-7-OZ",
+    "category": "raja-food"
+  },
+  "34305": {
+    "Item": 34305,
+    "Description": "CHILLI POWDER EXTRA HOT SWAD 20 X 400GM",
+    "Price": 45,
+    "Quantity": 20,
+    "sku": "CHILLI-POWDER-EXTRA-HOT-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "31670": {
+    "Item": 31670,
+    "Description": "CINAMON STICK ROUND SWAD 20 X 14 OZ",
+    "Price": 83,
+    "Quantity": 20,
+    "sku": "CINAMON-STICK-ROUND-SWAD-20-X-14-OZ",
+    "category": "raja-food"
+  },
+  "34430": {
+    "Item": 34430,
+    "Description": "CORIANDER POWDER SWAD 20 X 400GM",
+    "Price": 38,
+    "Quantity": 20,
+    "sku": "CORIANDER-POWDER-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "31800": {
+    "Item": 31800,
+    "Description": "CORIANDER SEED SWAD 10 X 400GM",
+    "Price": 23,
+    "Quantity": 10,
+    "sku": "CORIANDER-SEED-SWAD-10-X-400GM",
+    "category": "raja-food"
+  },
+  "31850": {
+    "Item": 31850,
+    "Description": "CUMIN SEED SWAD 20 X 400GM",
+    "Price": 58,
+    "Quantity": 20,
+    "sku": "CUMIN-SEED-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "34520": {
+    "Item": 34520,
+    "Description": "CORIANDER CUMIN POWDER SWAD 20 X 400GM",
+    "Price": 35,
+    "Quantity": 20,
+    "sku": "CORIANDER-CUMIN-POWDER-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "32590": {
+    "Item": 32590,
+    "Description": "FENUGREEK SEED SWAD 20 X 400GM",
+    "Price": 28,
+    "Quantity": 20,
+    "sku": "FENUGREEK-SEED-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "32670": {
+    "Item": 32670,
+    "Description": "MUSTARD SEED SWAD 20 X 400GM",
+    "Price": 28,
+    "Quantity": 20,
+    "sku": "MUSTARD-SEED-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "35070": {
+    "Item": 35070,
+    "Description": "PAPRIKA SWAD 20 X 14 OZ",
+    "Price": 48,
+    "Quantity": 20,
+    "sku": "PAPRIKA-SWAD-20-X-14-OZ",
+    "category": "raja-food"
+  },
+  "32830": {
+    "Item": 32830,
+    "Description": "POPPY SEED SWAD 20 X 200GM",
+    "Price": 58,
+    "Quantity": 20,
+    "sku": "POPPY-SEED-SWAD-20-X-200GM",
+    "category": "raja-food"
+  },
+  "35140": {
+    "Item": 35140,
+    "Description": "TURMERIC POWDER SWAD 20 X 400GM",
+    "Price": 43,
+    "Quantity": 20,
+    "sku": "TURMERIC-POWDER-SWAD-20-X-400GM",
+    "category": "raja-food"
+  },
+  "17100": {
+    "Item": 17100,
+    "Description": "BESAN (CANADA) SWAD 16 X 2 LBS",
+    "Price": 28,
+    "Quantity": 16,
+    "sku": "BESAN-(CANADA)-SWAD-16-X-2-LBS",
+    "category": "raja-food"
+  },
+  "17090": {
+    "Item": 17090,
+    "Description": "BESAN (CANADA) SWAD 8 X 4 LB",
+    "Price": 28,
+    "Quantity": 8,
+    "sku": "BESAN-(CANADA)-SWAD-8-X-4-LB",
+    "category": "raja-food"
+  },
+  "27200": {
+    "Item": 27200,
+    "Description": "VIJYA CHAKLI 25 X 7 OZ",
+    "Price": 55,
+    "Quantity": 25,
+    "sku": "VIJYA-CHAKLI-25-X-7-OZ",
+    "category": "raja-food"
+  },
+  "19270": {
+    "Item": 19270,
+    "Description": "PEANUT SWAD 8 X 4 LBS",
+    "Price": 50,
+    "Quantity": 8,
+    "sku": "PEANUT-SWAD-8-X-4-LBS",
+    "category": "raja-food"
+  },
+  "19240": {
+    "Item": 19240,
+    "Description": "PEANUT SWAD 16 X 28 OZ",
+    "Price": 48,
+    "Quantity": 16,
+    "sku": "PEANUT-SWAD-16-X-28-OZ",
+    "category": "raja-food"
+  },
+  "19230": {
+    "Item": 19230,
+    "Description": "PEANUT SWAD 20 X 14 02",
+    "Price": 38,
+    "Quantity": 20,
+    "sku": "PEANUT-SWAD-20-X-14-02",
+    "category": "raja-food"
+  },
+  "10095": {
+    "Item": 10095,
+    "Description": "KABULI CHANA SWAD 20 X2LBS REAL",
+    "Price": 33,
+    "Quantity": 20,
+    "sku": "KABULI-CHANA-SWAD-20-X2LBS-REAL",
+    "category": "raja-food"
+  },
+  "84246": {
+    "Item": 84246,
+    "Description": "BIKAJI FAMILY GARLIC NAAN (8 X 1200 GM)",
+    "Price": 35,
+    "Quantity": 8,
+    "sku": "BIKAJI-FAMILY-GARLIC-NAAN-(8-X-1200-GM)",
+    "category": "raja-food"
+  }
+}

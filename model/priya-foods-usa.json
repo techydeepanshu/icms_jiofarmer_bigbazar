@@ -1,0 +1,514 @@
+{
+  "FERRERO ROCHER CHOCOLATE16X48": {
+    "Item": "FERRERO ROCHER CHOCOLATE16X48",
+    "Description": "FERRERO ROCHER CHOCOLATE16X48",
+    "Price": 208,
+    "Quantity": 48,
+    "sku": "FERRERO-ROCHER-CHOCOLATE16X48",
+    "category": "Priya-food-USA 1"
+  },
+  "TI HIM DLHT TIMUR WHOLE 100GM": {
+    "Item": "TI HIM DLHT TIMUR WHOLE 100GM",
+    "Description": "TI HIM DLHT TIMUR WHOLE 100GM",
+    "Price": 50,
+    "Quantity": 1,
+    "sku": "TI-HIM-DLHT-TIMUR-WHOLE-100GM",
+    "category": "Priya-food-USA 1"
+  },
+  "HIM NEPALI DUNGE PAPAD 140Z20": {
+    "Item": "HIM NEPALI DUNGE PAPAD 140Z20",
+    "Description": "HIM NEPALI DUNGE PAPAD 140Z20",
+    "Price": 30,
+    "Quantity": 1,
+    "sku": "HIM-NEPALI-DUNGE-PAPAD-140Z20",
+    "category": "Priya-food-USA 1"
+  },
+  "PEANUT OIL GROUNDNUTSLTRBIC": {
+    "Item": "PEANUT OIL GROUNDNUTSLTRBIC",
+    "Description": "PEANUT OIL GROUNDNUTSLTRBIC",
+    "Price": 96,
+    "Quantity": 1,
+    "sku": "PEANUT-OIL-GROUNDNUTSLTRBIC",
+    "category": "Priya-food-USA 1"
+  },
+  "GOYA TOMATO SAUCE8OZ": {
+    "Item": "GOYA TOMATO SAUCE8OZ",
+    "Description": "GOYA TOMATO SAUCE8OZ",
+    "Price": 24,
+    "Quantity": 1,
+    "sku": "GOYA-TOMATO-SAUCE8OZ",
+    "category": "Priya-food-USA 1"
+  },
+  "GOYA PASTE 60Z48PC": {
+    "Item": "GOYA PASTE 60Z48PC",
+    "Description": "GOYA PASTE 60Z48PC",
+    "Price": 32,
+    "Quantity": 48,
+    "sku": "GOYA-PASTE-60Z48PC",
+    "category": "Priya-food-USA 1"
+  },
+  "GOYA PASTE 28OZ 12PC": {
+    "Item": "GOYA PASTE 28OZ 12PC",
+    "Description": "GOYA PASTE 28OZ 12PC",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "GOYA-PASTE-28OZ-12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "HUNTS TOMATO PASTE 180Z24PC": {
+    "Item": "HUNTS TOMATO PASTE 180Z24PC",
+    "Description": "HUNTS TOMATO PASTE 180Z24PC",
+    "Price": 60,
+    "Quantity": 24,
+    "sku": "HUNTS-TOMATO-PASTE-180Z24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "HUNTS SOUCE 8OZ 48PC": {
+    "Item": "HUNTS SOUCE 8OZ 48PC",
+    "Description": "HUNTS SOUCE 8OZ 48PC",
+    "Price": 36,
+    "Quantity": 48,
+    "sku": "HUNTS-SOUCE-8OZ-48PC",
+    "category": "Priya-food-USA 1"
+  },
+  "HUNTS TOMATO PUREE290212}": {
+    "Item": "HUNTS TOMATO PUREE290212}",
+    "Description": "HUNTS TOMATO PUREE290212}",
+    "Price": 30,
+    "Quantity": 1,
+    "sku": "HUNTS-TOMATO-PUREE290212}",
+    "category": "Priya-food-USA 1"
+  },
+  "HUNTS SOUCE 29OZ 12PC": {
+    "Item": "HUNTS SOUCE 29OZ 12PC",
+    "Description": "HUNTS SOUCE 29OZ 12PC",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "HUNTS-SOUCE-29OZ-12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "HUNTS CRUSHED TOMATOES29Z12PC": {
+    "Item": "HUNTS CRUSHED TOMATOES29Z12PC",
+    "Description": "HUNTS CRUSHED TOMATOES29Z12PC",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "HUNTS-CRUSHED-TOMATOES29Z12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "CHICK PEASRED KID15.524P5+2": {
+    "Item": "CHICK PEASRED KID15.524P5+2",
+    "Description": "CHICK PEASRED KID15.524P5+2",
+    "Price": 24,
+    "Quantity": 1,
+    "sku": "CHICK-PEASRED-KID15.524P5+2",
+    "category": "Priya-food-USA 1"
+  },
+  "BLACK E PEASBLACK WHITE": {
+    "Item": "BLACK E PEASBLACK WHITE",
+    "Description": "BLACK E PEASBLACK WHITE",
+    "Price": 24,
+    "Quantity": 1,
+    "sku": "BLACK-E-PEASBLACK-WHITE",
+    "category": "Priya-food-USA 1"
+  },
+  "COCO GOYA COCONUT CREAM 150Z24PC": {
+    "Item": "COCO GOYA COCONUT CREAM 150Z24PC",
+    "Description": "COCO GOYA COCONUT CREAM 150Z24PC",
+    "Price": 44,
+    "Quantity": 24,
+    "sku": "COCO-GOYA-COCONUT-CREAM-150Z24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "HOT SOUCE 5OZ12P": {
+    "Item": "HOT SOUCE 5OZ12P",
+    "Description": "HOT SOUCE 5OZ12P",
+    "Price": 48,
+    "Quantity": 12,
+    "sku": "HOT-SOUCE-5OZ12P",
+    "category": "Priya-food-USA 1"
+  },
+  "CHINGS RED GREEN SAUCE9048": {
+    "Item": "CHINGS RED GREEN SAUCE9048",
+    "Description": "CHINGS RED GREEN SAUCE9048",
+    "Price": 28,
+    "Quantity": 1,
+    "sku": "CHINGS-RED-GREEN-SAUCE9048",
+    "category": "Priya-food-USA 1"
+  },
+  "BREAD CRUMBS240212PC": {
+    "Item": "BREAD CRUMBS240212PC",
+    "Description": "BREAD CRUMBS240212PC",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "BREAD-CRUMBS240212PC",
+    "category": "Priya-food-USA 1"
+  },
+  "BREAD CRUMBS150212PC": {
+    "Item": "BREAD CRUMBS150212PC",
+    "Description": "BREAD CRUMBS150212PC",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "BREAD-CRUMBS150212PC",
+    "category": "Priya-food-USA 1"
+  },
+  "TAMRIND SEEDLESS16024": {
+    "Item": "TAMRIND SEEDLESS16024",
+    "Description": "TAMRIND SEEDLESS16024",
+    "Price": 120,
+    "Quantity": 24,
+    "sku": "TAMRIND-SEEDLESS16024",
+    "category": "Priya-food-USA 1"
+  },
+  "HIM NEPALI SOYAWADI 14OZ20PK": {
+    "Item": "HIM NEPALI SOYAWADI 14OZ20PK",
+    "Description": "HIM NEPALI SOYAWADI 14OZ20PK",
+    "Price": 30,
+    "Quantity": 20,
+    "sku": "HIM-NEPALI-SOYAWADI-14OZ20PK",
+    "category": "Priya-food-USA 1"
+  },
+  "CLUB SODA BOTTLE ILT12PK": {
+    "Item": "CLUB SODA BOTTLE ILT12PK",
+    "Description": "CLUB SODA BOTTLE ILT12PK",
+    "Price": 17,
+    "Quantity": 12,
+    "sku": "CLUB-SODA-BOTTLE-ILT12PK",
+    "category": "Priya-food-USA 1"
+  },
+  "MIXLEACHEEMANGOJELLY JAR6PC": {
+    "Item": "MIXLEACHEEMANGOJELLY JAR6PC",
+    "Description": "MIXLEACHEEMANGOJELLY JAR6PC",
+    "Price": 22,
+    "Quantity": 6,
+    "sku": "MIXLEACHEEMANGOJELLY-JAR6PC",
+    "category": "Priya-food-USA 1"
+  },
+  "COOKIE GOYA": {
+    "Item": "COOKIE GOYA",
+    "Description": "COOKIE GOYA",
+    "Price": 20,
+    "Quantity": 1,
+    "sku": "COOKIE-GOYA",
+    "category": "Priya-food-USA 1"
+  },
+  "GOYA MARIA COOKIE32": {
+    "Item": "GOYA MARIA COOKIE32",
+    "Description": "GOYA MARIA COOKIE32",
+    "Price": 14,
+    "Quantity": 1,
+    "sku": "GOYA-MARIA-COOKIE32",
+    "category": "Priya-food-USA 1"
+  },
+  "MAAKI MASSARIPA 5LB6PBIG": {
+    "Item": "MAAKI MASSARIPA 5LB6PBIG",
+    "Description": "MAAKI MASSARIPA 5LB6PBIG",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "MAAKI-MASSARIPA-5LB6PBIG",
+    "category": "Priya-food-USA 1"
+  },
+  "MAKKI ATTA MASSARIPA SMALL12PC": {
+    "Item": "MAKKI ATTA MASSARIPA SMALL12PC",
+    "Description": "MAKKI ATTA MASSARIPA SMALL12PC",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "MAKKI-ATTA-MASSARIPA-SMALL12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "CHANA DAL KABULI CHANA4LB2+2": {
+    "Item": "CHANA DAL KABULI CHANA4LB2+2",
+    "Description": "CHANA DAL KABULI CHANA4LB2+2",
+    "Price": 33,
+    "Quantity": 4,
+    "sku": "CHANA-DAL-KABULI-CHANA4LB2+2",
+    "category": "Priya-food-USA 1"
+  },
+  "KALA CHANA 4LBX10PK": {
+    "Item": "KALA CHANA 4LBX10PK",
+    "Description": "KALA CHANA 4LBX10PK",
+    "Price": 32,
+    "Quantity": 10,
+    "sku": "KALA-CHANA-4LBX10PK",
+    "category": "Priya-food-USA 1"
+  },
+  "MASOOR DAL 4LBX10P": {
+    "Item": "MASOOR DAL 4LBX10P",
+    "Description": "MASOOR DAL 4LBX10P",
+    "Price": 30,
+    "Quantity": 10,
+    "sku": "MASOOR-DAL-4LBX10P",
+    "category": "Priya-food-USA 1"
+  },
+  "MOONG DAL 4LBX10PK": {
+    "Item": "MOONG DAL 4LBX10PK",
+    "Description": "MOONG DAL 4LBX10PK",
+    "Price": 45,
+    "Quantity": 10,
+    "sku": "MOONG-DAL-4LBX10PK",
+    "category": "Priya-food-USA 1"
+  },
+  "URAD WHOLE BLACK4LB10PK": {
+    "Item": "URAD WHOLE BLACK4LB10PK",
+    "Description": "URAD WHOLE BLACK4LB10PK",
+    "Price": 45,
+    "Quantity": 10,
+    "sku": "URAD-WHOLE-BLACK4LB10PK",
+    "category": "Priya-food-USA 1"
+  },
+  "CHICK PEAS 9. MM": {
+    "Item": "CHICK PEAS 9. MM",
+    "Description": "CHICK PEAS 9. MM",
+    "Price": 35,
+    "Quantity": 1,
+    "sku": "CHICK-PEAS-9.-MM",
+    "category": "Priya-food-USA 1"
+  },
+  "APPLE JUICE 64OZ8PK": {
+    "Item": "APPLE JUICE 64OZ8PK",
+    "Description": "APPLE JUICE 64OZ8PK",
+    "Price": 26,
+    "Quantity": 8,
+    "sku": "APPLE-JUICE-64OZ8PK",
+    "category": "Priya-food-USA 1"
+  },
+  "JUICE640Z8PF": {
+    "Item": "JUICE640Z8PF",
+    "Description": "JUICE640Z8PF",
+    "Price": 26,
+    "Quantity": 8,
+    "sku": "JUICE640Z8PF",
+    "category": "Priya-food-USA 1"
+  },
+  "CORN FLAKES 1802CEREAL6PC": {
+    "Item": "CORN FLAKES 1802CEREAL6PC",
+    "Description": "CORN FLAKES 1802CEREAL6PC",
+    "Price": 25,
+    "Quantity": 6,
+    "sku": "CORN-FLAKES-1802CEREAL6PC",
+    "category": "Priya-food-USA 1"
+  },
+  "CORN FLAKES 12.212PC": {
+    "Item": "CORN FLAKES 12.212PC",
+    "Description": "CORN FLAKES 12.212PC",
+    "Price": 38,
+    "Quantity": 12,
+    "sku": "CORN-FLAKES-12.212PC",
+    "category": "Priya-food-USA 1"
+  },
+  "DELTA RICE 25LB BAG": {
+    "Item": "DELTA RICE 25LB BAG",
+    "Description": "DELTA RICE 25LB BAG",
+    "Price": 13,
+    "Quantity": 1,
+    "sku": "DELTA-RICE-25LB-BAG",
+    "category": "Priya-food-USA 1"
+  },
+  "DELTA RICE 50LB BAG": {
+    "Item": "DELTA RICE 50LB BAG",
+    "Description": "DELTA RICE 50LB BAG",
+    "Price": 24,
+    "Quantity": 1,
+    "sku": "DELTA-RICE-50LB-BAG",
+    "category": "Priya-food-USA 1"
+  },
+  "AJAX 120Z28OZ52OZ": {
+    "Item": "AJAX 120Z28OZ52OZ",
+    "Description": "AJAX 120Z28OZ52OZ",
+    "Price": 24,
+    "Quantity": 1,
+    "sku": "AJAX-120Z28OZ52OZ",
+    "category": "Priya-food-USA 1"
+  },
+  "LIGHT PEANUT BUTTER 120Z12SMALL": {
+    "Item": "LIGHT PEANUT BUTTER 120Z12SMALL",
+    "Description": "LIGHT PEANUT BUTTER 120Z12SMALL",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "LIGHT-PEANUT-BUTTER-120Z12SMALL",
+    "category": "Priya-food-USA 1"
+  },
+  "GOYA MACKEREL FISHTOMATOFISH24": {
+    "Item": "GOYA MACKEREL FISHTOMATOFISH24",
+    "Description": "GOYA MACKEREL FISHTOMATOFISH24",
+    "Price": 42,
+    "Quantity": 24,
+    "sku": "GOYA-MACKEREL-FISHTOMATOFISH24",
+    "category": "Priya-food-USA 1"
+  },
+  "VINIGER GALLON 4PC": {
+    "Item": "VINIGER GALLON 4PC",
+    "Description": "VINIGER GALLON 4PC",
+    "Price": 10,
+    "Quantity": 4,
+    "sku": "VINIGER-GALLON-4PC",
+    "category": "Priya-food-USA 1"
+  },
+  "VINIGER HEINZ 160Z12PC": {
+    "Item": "VINIGER HEINZ 160Z12PC",
+    "Description": "VINIGER HEINZ 160Z12PC",
+    "Price": 16,
+    "Quantity": 12,
+    "sku": "VINIGER-HEINZ-160Z12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "REALEMON JUICE80Z12PC": {
+    "Item": "REALEMON JUICE80Z12PC",
+    "Description": "REALEMON JUICE80Z12PC",
+    "Price": 19,
+    "Quantity": 12,
+    "sku": "REALEMON-JUICE80Z12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "PATANJALI COW GHEE1LITER12PC": {
+    "Item": "PATANJALI COW GHEE1LITER12PC",
+    "Description": "PATANJALI COW GHEE1LITER12PC",
+    "Price": 120,
+    "Quantity": 12,
+    "sku": "PATANJALI-COW-GHEE1LITER12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "BROOM50P": {
+    "Item": "BROOM50P",
+    "Description": "BROOM50P",
+    "Price": 120,
+    "Quantity": 50,
+    "sku": "BROOM50P",
+    "category": "Priya-food-USA 1"
+  },
+  "KETCHUP HEINZ 14OZ16PC": {
+    "Item": "KETCHUP HEINZ 14OZ16PC",
+    "Description": "KETCHUP HEINZ 14OZ16PC",
+    "Price": 30,
+    "Quantity": 16,
+    "sku": "KETCHUP-HEINZ-14OZ16PC",
+    "category": "Priya-food-USA 1"
+  },
+  "SUPERIOR CRYSTAL SALT24PK": {
+    "Item": "SUPERIOR CRYSTAL SALT24PK",
+    "Description": "SUPERIOR CRYSTAL SALT24PK",
+    "Price": 20,
+    "Quantity": 24,
+    "sku": "SUPERIOR-CRYSTAL-SALT24PK",
+    "category": "Priya-food-USA 1"
+  },
+  "REDCROSS IODIZED SALT24PC": {
+    "Item": "REDCROSS IODIZED SALT24PC",
+    "Description": "REDCROSS IODIZED SALT24PC",
+    "Price": 18,
+    "Quantity": 24,
+    "sku": "REDCROSS-IODIZED-SALT24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "BROWN SUGAR 800G12PCSINDIA": {
+    "Item": "BROWN SUGAR 800G12PCSINDIA",
+    "Description": "BROWN SUGAR 800G12PCSINDIA",
+    "Price": 32,
+    "Quantity": 12,
+    "sku": "BROWN-SUGAR-800G12PCSINDIA",
+    "category": "Priya-food-USA 1"
+  },
+  "SOYA SAUCE50Z12PC": {
+    "Item": "SOYA SAUCE50Z12PC",
+    "Description": "SOYA SAUCE50Z12PC",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "SOYA-SAUCE50Z12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "TERYAKI SOUCE10OZ12PC": {
+    "Item": "TERYAKI SOUCE10OZ12PC",
+    "Description": "TERYAKI SOUCE10OZ12PC",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "TERYAKI-SOUCE10OZ12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "CHILLY GARLIC18OZCHILLY GARLIC8OZ": {
+    "Item": "CHILLY GARLIC18OZCHILLY GARLIC8OZ",
+    "Description": "CHILLY GARLIC18OZCHILLY GARLIC8OZ",
+    "Price": 32,
+    "Quantity": 1,
+    "sku": "CHILLY-GARLIC18OZCHILLY-GARLIC8OZ",
+    "category": "Priya-food-USA 1"
+  },
+  "NESTLE TABLE CREAM 24PC": {
+    "Item": "NESTLE TABLE CREAM 24PC",
+    "Description": "NESTLE TABLE CREAM 24PC",
+    "Price": 48,
+    "Quantity": 24,
+    "sku": "NESTLE-TABLE-CREAM-24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "SWEET CONDENCE MILK24PC": {
+    "Item": "SWEET CONDENCE MILK24PC",
+    "Description": "SWEET CONDENCE MILK24PC",
+    "Price": 60,
+    "Quantity": 24,
+    "sku": "SWEET-CONDENCE-MILK24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "MAGNOLIA MILK24PC": {
+    "Item": "MAGNOLIA MILK24PC",
+    "Description": "MAGNOLIA MILK24PC",
+    "Price": 35,
+    "Quantity": 24,
+    "sku": "MAGNOLIA-MILK24PC",
+    "category": "Priya-food-USA 1"
+  },
+  "BI BERIO OIL BIG3PC5LTR": {
+    "Item": "BI BERIO OIL BIG3PC5LTR",
+    "Description": "BI BERIO OIL BIG3PC5LTR",
+    "Price": 90,
+    "Quantity": 1,
+    "sku": "BI-BERIO-OIL-BIG3PC5LTR",
+    "category": "Priya-food-USA 1"
+  },
+  "EXTRA VIRZIN SUPREMO3LITER4PC": {
+    "Item": "EXTRA VIRZIN SUPREMO3LITER4PC",
+    "Description": "EXTRA VIRZIN SUPREMO3LITER4PC",
+    "Price": 60,
+    "Quantity": 4,
+    "sku": "EXTRA-VIRZIN-SUPREMO3LITER4PC",
+    "category": "Priya-food-USA 1"
+  },
+  "MAZOLA CONOLAVEG96ZPC": {
+    "Item": "MAZOLA CONOLAVEG96ZPC",
+    "Description": "MAZOLA CONOLAVEG96ZPC",
+    "Price": 42,
+    "Quantity": 1,
+    "sku": "MAZOLA-CONOLAVEG96ZPC",
+    "category": "Priya-food-USA 1"
+  },
+  "DETTOL LIQ ILITER12PC": {
+    "Item": "DETTOL LIQ ILITER12PC",
+    "Description": "DETTOL LIQ ILITER12PC",
+    "Price": 130,
+    "Quantity": 12,
+    "sku": "DETTOL-LIQ-ILITER12PC",
+    "category": "Priya-food-USA 1"
+  },
+  "SWAD MAMRA BASMATI 10X14OZ": {
+    "Item": "SWAD MAMRA BASMATI 10X14OZ",
+    "Description": "SWAD MAMRA BASMATI 10X14OZ",
+    "Price": 14,
+    "Quantity": 10,
+    "sku": "SWAD-MAMRA-BASMATI-10X14OZ",
+    "category": "Priya-food-USA 1"
+  },
+  "CHILLI STUFFED TENTI DELLA 12P": {
+    "Item": "CHILLI STUFFED TENTI DELLA 12P",
+    "Description": "CHILLI STUFFED TENTI DELLA 12P",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "CHILLI-STUFFED-TENTI-DELLA-12P",
+    "category": "Priya-food-USA 1"
+  },
+  "LYCHEE IN SYRUP20OZ24PC": {
+    "Item": "LYCHEE IN SYRUP20OZ24PC",
+    "Description": "LYCHEE IN SYRUP20OZ24PC",
+    "Price": 48,
+    "Quantity": 24,
+    "sku": "LYCHEE-IN-SYRUP20OZ24PC",
+    "category": "Priya-food-USA 1"
+  }
+}

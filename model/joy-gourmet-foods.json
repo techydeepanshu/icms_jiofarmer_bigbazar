@@ -1,122 +1,162 @@
 {
-  "GHEE320Z":{
+  "GHEE320Z": {
     "Item": "GHEE320Z",
     "Description": "MAKHAN GHEE 1X12X32OZ",
     "Quantity": "12",
-    "Price": "120.00"
+    "Price": "120.00",
+    "sku": "MAKHAN-GHEE-1X12X32OZ",
+    "category": "joy-gourment-foods"
   },
-  "CORRI CHU 8":{
+  "CORRI CHU 8": {
     "Item": "CORRI CHU 8",
     "Description": "CORRIANDER CHUTNEY FRESH 1X12X8 OZ",
     "Quantity": "12",
-    "Price": "26.00"
+    "Price": "26.00",
+    "sku": "CORRIANDER-CHUTNEY-FRESH-1X12X8-OZ",
+    "category": "joy-gourment-foods"
   },
-  "MNTCHT8OZ":{
+  "MNTCHT8OZ": {
     "Item": "MNTCHT8OZ",
     "Description": "MINT CHUTNEY FRESH 1X12X8 OZ",
     "Quantity": "12",
-    "Price": "26.00"
+    "Price": "26.00",
+    "sku": "MINT-CHUTNEY-FRESH-1X12X8-OZ",
+    "category": "joy-gourment-foods"
   },
-  "TMANDCHTNY8":{
+  "TMANDCHTNY8": {
     "Item": "TMANDCHTNY8",
     "Description": "TAMARIND CHUTNEY 1X12X8 OZ",
     "Quantity": "12",
-    "Price": "26.00"
+    "Price": "26.00",
+    "sku": "TAMARIND-CHUTNEY-1X12X8-OZ",
+    "category": "joy-gourment-foods"
   },
-  "DATES&TAMERI":{
+  "DATES&TAMERI": {
     "Item": "DATES&TAMERI",
     "Description": "DATES & TAMARIND CHUTNEY 1X12X8 OZ",
     "Quantity": "12",
-    "Price": "26.00"
+    "Price": "26.00",
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X8-OZ",
+    "category": "joy-gourment-foods"
   },
-  "DTS/TMRD160ZS":{
+  "DTS/TMRD160ZS": {
     "Item": "DTS/TMRD160ZS",
     "Description": "DATES & TAMARIND CHUTNEY 1X12X16 OZS",
     "Quantity": "12",
-    "Price": "40.00"
+    "Price": "40.00",
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X16-OZS",
+    "category": "joy-gourment-foods"
   },
-  "DTS/TMRND320ZS":{
+  "DTS/TMRND320ZS": {
     "Item": "DTS/TMRND320ZS",
     "Description": "DATES & TAMARIND CHUTNEY 1X12X32 OZS",
     "Quantity": "12",
-    "Price": "72.00"
+    "Price": "72.00",
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X32-OZS",
+    "category": "joy-gourment-foods"
   },
-  "TMRNDCNCRT14":{
+  "TMRNDCNCRT14": {
     "Item": "TMRNDCNCRT14",
     "Description": "TAMARIND CONCENTRATE 1X12X14 OZS",
     "Quantity": "12",
-    "Price": "36.00"
+    "Price": "36.00",
+    "sku": "TAMARIND-CONCENTRATE-1X12X14-OZS",
+    "category": "joy-gourment-foods"
   },
-  "GRCHLLY8OZ":{
+  "GRCHLLY8OZ": {
     "Item": "GRCHLLY8OZ",
     "Description": "GREEN CHILLY CHCINEY 1XI2X8 OZ",
     "Quantity": "12",
-    "Price": "26.00"
+    "Price": "26.00",
+    "sku": "GREEN-CHILLY-CHCINEY-1XI2X8-OZ",
+    "category": "joy-gourment-foods"
   },
-  "ALMDOL16":{
+  "ALMDOL16": {
     "Item": "ALMDOL16",
     "Description": "REFINED ALMOND OIL 1X12X16OZ",
     "Quantity": "12",
-    "Price": "54.00"
+    "Price": "54.00",
+    "sku": "REFINED-ALMOND-OIL-1X12X16OZ",
+    "category": "joy-gourment-foods"
   },
-  "MMPDER":{
+  "MMPDER": {
     "Item": "MMPDER",
     "Description": "MILK MAVA POWDER 1X12X12OZ",
     "Quantity": "12",
-    "Price": "45.00"
+    "Price": "45.00",
+    "sku": "MILK-MAVA-POWDER-1X12X12OZ",
+    "category": "joy-gourment-foods"
   },
-  "FRIED PANEER2 ":{
+  "FRIED PANEER2 ": {
     "Item": "FRIED PANEER2 ",
     "Description": "JOY FRIED PANEER 1X10X2 LBS.(32 OZS.)",
     "Quantity": "10",
-    "Price": "85.00"
+    "Price": "85.00",
+    "sku": "JOY-FRIED-PANEER-1X10X2-LBS.(32-OZS.)",
+    "category": "joy-gourment-foods"
   },
-  "FRIEDPAN7OZ":{
+  "FRIEDPAN7OZ": {
     "Item": "FRIEDPAN7OZ",
     "Description": "FRIED PANEER (JOY)1XI2X7 OZ",
     "Quantity": "12",
-    "Price": "37.50"
+    "Price": "37.50",
+    "sku": "FRIED-PANEER-(JOY)1XI2X7-OZ",
+    "category": "joy-gourment-foods"
   },
-  "MLASSI640ZS":{
+  "MLASSI640ZS": {
     "Item": "MLASSI640ZS",
     "Description": "JOY MANG0(1/2 GAL) LASSI 1X9X64 FL OZS.",
     "Quantity": "9",
-    "Price": "45.00"
+    "Price": "45.00",
+    "sku": "JOY-MANG0(1/2-GAL)-LASSI-1X9X64-FL-OZS.",
+    "category": "joy-gourment-foods"
   },
-  "JYCMPNR8X2.25":{
+  "JYCMPNR8X2.25": {
     "Item": "JYCMPNR8X2.25",
     "Description": "JOY COMMERCIAL PANEER 8/2.25LB.",
     "Quantity": "8",
-    "Price": "67.00"
+    "Price": "67.00",
+    "sku": "JOY-COMMERCIAL-PANEER-8/2.25LB.",
+    "category": "joy-gourment-foods"
   },
-  "NING1/2":{
+  "NING1/2": {
     "Item": "NING1/2",
     "Description": "MANGO ICECREAM 1/2 GALLON",
     "Quantity": "1",
-    "Price": "5.00"
+    "Price": "5.00",
+    "sku": "MANGO-ICECREAM-1/2-GALLON",
+    "category": "joy-gourment-foods"
   },
-  "MNGQT":{
+  "MNGQT": {
     "Item": "MNGQT",
     "Description": "MANGO QUART ICECREAM",
     "Quantity": "1",
-    "Price": "3.00"
+    "Price": "3.00",
+    "sku": "MANGO-QUART-ICECREAM",
+    "category": "joy-gourment-foods"
   },
-  "GRLGRMX260Z":{
+  "GRLGRMX260Z": {
     "Item": "GRLGRMX260Z",
     "Description": "MAHARAJA GARLIC/GINGER MIX 1X12X26OZ",
     "Quantity": "12",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "MAHARAJA-GARLIC/GINGER-MIX-1X12X26OZ-",
+    "category": "joy-gourment-foods"
   },
-  "GHEE160Z":{
+  "GHEE160Z": {
     "Item": "GHEE160Z",
     "Description": "MAKHAN GHEE 1X12X16OZ",
     "Quantity": "12",
-    "Price": "64.00"
+    "Price": "64.00",
+    "sku": "MAKHAN-GHEE-1X12X16OZ",
+    "category": "joy-gourment-foods"
   },
-  "GHEE8OZ":{
+  "GHEE8OZ": {
     "Item": "GHEE8OZ",
     "Description": "MAKHAN GHEE 11XI2X8OZ (6Ib.)",
     "Quantity": "12",
-    "Price": "42.00"
+    "Price": "42.00",
+    "sku": "MAKHAN-GHEE-11XI2X8OZ-(6Ib.)",
+    "category": "joy-gourment-foods"
   }
 }

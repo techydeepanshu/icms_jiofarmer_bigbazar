@@ -1,0 +1,66 @@
+{
+  "SH": {
+    "Item": "SH",
+    "Description": "SHIKAKAI",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "SHIKA-KAI",
+    "category": "rane-music"
+  },
+  "MI": {
+    "Item": "MI",
+    "Description": "MULTANI MITTI",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "MULTANI-MITTI",
+    "category": "rane-music"
+  },
+  "L": {
+    "Item": "L",
+    "Description": "LIMCA CAN",
+    "Price": 14.5,
+    "Quantity": 1,
+    "sku": "LIMCA-CAN",
+    "category": "rane-music"
+  },
+  "KMM": {
+    "Item": "KMM",
+    "Description": "KURKURE MASALA MUNCH",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "KURKURE-MASALA-MUNCH",
+    "category": "rane-music"
+  },
+  "KSM": {
+    "Item": "KSM",
+    "Description": "KURKURE SOLID MASTI",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "KURKURE-SOLID-MASTI",
+    "category": "rane-music"
+  },
+  "LTT": {
+    "Item": "LTT",
+    "Description": "LAYS TOMATO TANGO",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-TOMATO-TANGO",
+    "category": "rane-music"
+  },
+  "MM": {
+    "Item": "MM",
+    "Description": "LAYS MASALA MAGIC",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-MASALA-MAGIC",
+    "category": "rane-music"
+  },
+  "LSC": {
+    "Item": "LSC",
+    "Description": "LAYS SOUR CREAM",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-SOUR-CREAM",
+    "category": "rane-music"
+  }
+}
