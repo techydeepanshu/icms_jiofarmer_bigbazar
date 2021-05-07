@@ -1,0 +1,647 @@
+{
+  "Couscous(TRIA) 1 kg X 12 (MEDIUM)": {
+    "Item": "Couscous(TRIA) 1 kg X 12 (MEDIUM)",
+    "Description": "Couscous(TRIA) 1 kg X 12 (MEDIUM)",
+    "Quantity": 12,
+    "Price": 25.5,
+    "sku": "Couscous(TRIA)-1-kg-X-12-(MEDIUM)"
+  },
+  "Couscous(TRIA) 1 KG x 12 (FINE)": {
+    "Item": "Couscous(TRIA) 1 KG x 12 (FINE)",
+    "Description": "Couscous(TRIA) 1 KG x 12 (FINE)",
+    "Quantity": 12,
+    "Price": 25.5,
+    "sku": "Couscous(TRIA)-1-KG-x-12-(FINE)"
+  },
+  "CousCouS (TRIA) 1 Kg x 15 (DIETETIQUE)": {
+    "Item": "CousCouS (TRIA) 1 Kg x 15 (DIETETIQUE)",
+    "Description": "CousCouS (TRIA) 1 Kg x 15 (DIETETIQUE)",
+    "Quantity": 15,
+    "Price": 38.25,
+    "sku": "CousCouS-(TRIA)-1-Kg-x-15-(DIETETIQUE)"
+  },
+  "Olive Oil Extra Virgin (KOURA) 93oz x 4": {
+    "Item": "Olive Oil Extra Virgin (KOURA) 93oz x 4",
+    "Description": "Olive Oil Extra Virgin (KOURA) 93oz x 4",
+    "Quantity": 4,
+    "Price": 57.15,
+    "sku": "Olive-Oil-Extra-Virgin-(KOURA)-93oz-x-4"
+  },
+  "Orlando Grape Leaves 16 Oz x 12": {
+    "Item": "Orlando Grape Leaves 16 Oz x 12",
+    "Description": "Orlando Grape Leaves 16 Oz x 12",
+    "Quantity": 12,
+    "Price": 57.15,
+    "sku": "Orlando-Grape-Leaves-16-Oz-x-12"
+  },
+  "Tahini Plastic 1 Lb x12 (BEIRUT)": {
+    "Item": "Tahini Plastic 1 Lb x12 (BEIRUT)",
+    "Description": "Tahini Plastic 1 Lb x12 (BEIRUT)",
+    "Quantity": 12,
+    "Price": 29.85,
+    "sku": "Tahini-Plastic-1-Lb-x12-(BEIRUT)"
+  },
+  "Tahini Pfastic 2 LBx12 (BEIRUT)": {
+    "Item": "Tahini Pfastic 2 LBx12 (BEIRUT)",
+    "Description": "Tahini Pfastic 2 LBx12 (BEIRUT)",
+    "Quantity": 12,
+    "Price": 53.55,
+    "sku": "Tahini-Pfastic-2-LBx12-(BEIRUT)"
+  },
+  "Laziza Beer (APPLE) 11.1 FlOz x 24": {
+    "Item": "Laziza Beer (APPLE) 11.1 FlOz x 24",
+    "Description": "Laziza Beer (APPLE) 11.1 FlOz x 24",
+    "Quantity": 24,
+    "Price": 19.65,
+    "sku": "Laziza-Beer-(APPLE)-11.1-FlOz-x-24"
+  },
+  "Laziza Beer(Pomegranate)11.1 flozx24": {
+    "Item": "Laziza Beer(Pomegranate)11.1 flozx24",
+    "Description": "Laziza Beer(Pomegranate)11.1 flozx24",
+    "Quantity": 24,
+    "Price": 19.65,
+    "sku": "Laziza-Beer(Pomegranate)11.1-flozx24"
+  },
+  "Frozen Mlukea (Montana) Ground 400gx20 ($ UP)": {
+    "Item": "Frozen Mlukea (Montana) Ground 400gx20 ($ UP)",
+    "Description": "Frozen Mlukea (Montana) Ground 400gx20 ($ UP)",
+    "Quantity": 20,
+    "Price": 20.7,
+    "sku": "Frozen-Mlukea-(Montana)-Ground-400gx20-($-UP)"
+  },
+  "Frozen Okrall #0 (MONTANA)400g x 20 ($ UP)": {
+    "Item": "Frozen Okrall #0 (MONTANA)400g x 20 ($ UP)",
+    "Description": "Frozen Okrall #0 (MONTANA)400g x 20 ($ UP)",
+    "Quantity": 20,
+    "Price": 48.75,
+    "sku": "Frozen-Okrall-#0-(MONTANA)400g-x-20-($-UP)"
+  },
+  "Frozen Double Peeled hava (MONTANA)400gx20 ($ UP)": {
+    "Item": "Frozen Double Peeled hava (MONTANA)400gx20 ($ UP)",
+    "Description": "Frozen Double Peeled hava (MONTANA)400gx20 ($ UP)",
+    "Quantity": 20,
+    "Price": 36.2,
+    "sku": "Frozen-Double-Peeled-hava-(MONTANA)400gx20-($-UP)"
+  },
+  "Frozen Falafel (Montana)1 /2 cooked 400gx.20 ($ UP)": {
+    "Item": "Frozen Falafel (Montana)1 /2 cooked 400gx.20 ($ UP)",
+    "Description": "Frozen Falafel (Montana)1 /2 cooked 400gx.20 ($ UP)",
+    "Quantity": 20,
+    "Price": 35.45,
+    "sku": "Frozen-Falafel-(Montana)1-/2-cooked-400gx.20-($-UP)"
+  },
+  "Frozen Vegetables (Montana) 400gx20 ($ UP)": {
+    "Item": "Frozen Vegetables (Montana) 400gx20 ($ UP)",
+    "Description": "Frozen Vegetables (Montana) 400gx20 ($ UP)",
+    "Quantity": 20,
+    "Price": 26.1,
+    "sku": "Frozen-Vegetables-(Montana)-400gx20-($-UP)"
+  },
+  "Frozen Artichoke (MONTANA) 400Gr x 20 ($ UP)": {
+    "Item": "Frozen Artichoke (MONTANA) 400Gr x 20 ($ UP)",
+    "Description": "Frozen Artichoke (MONTANA) 400Gr x 20 ($ UP)",
+    "Quantity": 20,
+    "Price": 47.2,
+    "sku": "Frozen-Artichoke-(MONTANA)-400Gr-x-20-($-UP)"
+  },
+  "Frozen Falafel (Heba) cooked w/Tahini 12 Patties X 20": {
+    "Item": "Frozen Falafel (Heba) cooked w/Tahini 12 Patties X 20",
+    "Description": "Frozen Falafel (Heba) cooked w/Tahini 12 Patties X 20",
+    "Quantity": 20,
+    "Price": 69.4,
+    "sku": "Frozen-Falafel-(Heba)-cooked-w/Tahini-12-Patties-X-20"
+  },
+  "Frozen Falafel (Heba)1/2cooked 20traysx12Patties": {
+    "Item": "Frozen Falafel (Heba)1/2cooked 20traysx12Patties",
+    "Description": "Frozen Falafel (Heba)1/2cooked 20traysx12Patties",
+    "Quantity": 12,
+    "Price": 46.95,
+    "sku": "Frozen-Falafel-(Heba)1/2cooked-20traysx12Patties"
+  },
+  "Fillo (APOLLO) 1 Lb x 24": {
+    "Item": "Fillo (APOLLO) 1 Lb x 24",
+    "Description": "Fillo (APOLLO) 1 Lb x 24",
+    "Quantity": 24,
+    "Price": 52.55,
+    "sku": "Fillo-(APOLLO)-1-Lb-x-24"
+  },
+  "Kataify (APOLLO) 1 lb x 12": {
+    "Item": "Kataify (APOLLO) 1 lb x 12",
+    "Description": "Kataify (APOLLO) 1 lb x 12",
+    "Quantity": 12,
+    "Price": 28.05,
+    "sku": "Kataify-(APOLLO)-1-lb-x-12"
+  },
+  "Lahmajoun (KUPALIAN) HOT 12 x 10 pcs$ UP": {
+    "Item": "Lahmajoun (KUPALIAN) HOT 12 x 10 pcs$ UP",
+    "Description": "Lahmajoun (KUPALIAN) HOT 12 x 10 pcs$ UP",
+    "Quantity": 10,
+    "Price": 166.3,
+    "sku": "Lahmajoun-(KUPALIAN)-HOT-12-x-10-pcs$-UP"
+  },
+  "Yogurt (Arz) 32 Oz x 6 E:02-21-21": {
+    "Item": "Yogurt (Arz) 32 Oz x 6 E:02-21-21",
+    "Description": "Yogurt (Arz) 32 Oz x 6 E:02-21-21",
+    "Quantity": 6,
+    "Price": 18.65,
+    "sku": "Yogurt-(Arz)-32-Oz-x-6-E:02-21-21"
+  },
+  "Yogurt (Arz) 4 Lb x 6E: 02.05.21 $UP": {
+    "Item": "Yogurt (Arz) 4 Lb x 6E: 02.05.21 $UP",
+    "Description": "Yogurt (Arz) 4 Lb x 6E: 02.05.21 $UP",
+    "Quantity": 6,
+    "Price": 34.7,
+    "sku": "Yogurt-(Arz)-4-Lb-x-6E:-02.05.21-$UP"
+  },
+  "Basterma Halal (sliced) 20 Lb": {
+    "Item": "Basterma Halal (sliced) 20 Lb",
+    "Description": "Basterma Halal (sliced) 20 Lb",
+    "Quantity": 1,
+    "Price": 211.15,
+    "sku": "Basterma-Halal-(sliced)-20-Lb"
+  },
+  "Al Maraai Cream Cheese Spread (8 SQUARES) 160gx30": {
+    "Item": "Al Maraai Cream Cheese Spread (8 SQUARES) 160gx30",
+    "Description": "Al Maraai Cream Cheese Spread (8 SQUARES) 160gx30",
+    "Quantity": 30,
+    "Price": 39.8,
+    "sku": "Al-Maraai-Cream-Cheese-Spread-(8-SQUARES)-160gx30"
+  },
+  "Green Land Feta (Regular) 500 Gr x 24 '": {
+    "Item": "Green Land Feta (Regular) 500 Gr x 24 '",
+    "Description": "Green Land Feta (Regular) 500 Gr x 24 '",
+    "Quantity": 24,
+    "Price": 42.85,
+    "sku": "Green-Land-Feta-(Regular)-500-Gr-x-24-'"
+  },
+  "Green Land Feta (LIGHT) Cheese 500 grx24": {
+    "Item": "Green Land Feta (LIGHT) Cheese 500 grx24",
+    "Description": "Green Land Feta (LIGHT) Cheese 500 grx24",
+    "Quantity": 24,
+    "Price": 42.85,
+    "sku": "Green-Land-Feta-(LIGHT)-Cheese-500-grx24"
+  },
+  "Romi Cheese Sliced(Katilo Halayeb)200gx48": {
+    "Item": "Romi Cheese Sliced(Katilo Halayeb)200gx48",
+    "Description": "Romi Cheese Sliced(Katilo Halayeb)200gx48",
+    "Quantity": 48,
+    "Price": 140.8,
+    "sku": "Romi-Cheese-Sliced(Katilo-Halayeb)200gx48"
+  },
+  "Laziza Beer (STRAWBERRY) 11.1 Fl Oz x 24": {
+    "Item": "Laziza Beer (STRAWBERRY) 11.1 Fl Oz x 24",
+    "Description": "Laziza Beer (STRAWBERRY) 11.1 Fl Oz x 24",
+    "Quantity": 24,
+    "Price": 19.65,
+    "sku": "Laziza-Beer-(STRAWBERRY)-11.1-Fl-Oz-x-24"
+  },
+  "Laziza Beer (RASPBERRY) 11.1 Fl Oz x 24": {
+    "Item": "Laziza Beer (RASPBERRY) 11.1 Fl Oz x 24",
+    "Description": "Laziza Beer (RASPBERRY) 11.1 Fl Oz x 24",
+    "Quantity": 24,
+    "Price": 19.65,
+    "sku": "Laziza-Beer-(RASPBERRY)-11.1-Fl-Oz-x-24"
+  },
+  "Laziza Beer (PEACH) 11.1 Fl Oz x 24": {
+    "Item": "Laziza Beer (PEACH) 11.1 Fl Oz x 24",
+    "Description": "Laziza Beer (PEACH) 11.1 Fl Oz x 24",
+    "Quantity": 24,
+    "Price": 19.65,
+    "sku": "Laziza-Beer-(PEACH)-11.1-Fl-Oz-x-24"
+  },
+  "White Pepper 100 Cr x 10 (ABIDO)": {
+    "Item": "White Pepper 100 Cr x 10 (ABIDO)",
+    "Description": "White Pepper 100 Cr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 39.55,
+    "sku": "White-Pepper-100-Cr-x-10-(ABIDO)"
+  },
+  "Kebbeh Spices 80 Cr x 10 (ABIDO)": {
+    "Item": "Kebbeh Spices 80 Cr x 10 (ABIDO)",
+    "Description": "Kebbeh Spices 80 Cr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 16.85,
+    "sku": "Kebbeh-Spices-80-Cr-x-10-(ABIDO)"
+  },
+
+  "Labne (Arz) 1Lbx12 (Exp 03.29.21) $UP": {
+    "Item": "Labne (Arz) 1Lbx12 (Exp 03.29.21) $UP",
+    "Description": "Labne (Arz) 1Lbx12 (Exp 03.29.21) $UP",
+    "Quantity": 12,
+    "Price": 26.3,
+    "sku": "Labne-(Arz)-1Lbx12-(Exp-03.29.21)-$UP"
+  },
+  "Labne (Karoun) Original Kefir 3LbX6(E 04.04.21)$UP": {
+    "Item": "Labne (Karoun) Original Kefir 3LbX6(E 04.04.21)$UP",
+    "Description": "Labne (Karoun) Original Kefir 3LbX6(E 04.04.21)$UP",
+    "Quantity": 6,
+    "Price": "39 30",
+    "sku": "Labne-(Karoun)-Original-Kefir-3LbX6(E-04.04.21)$UP"
+  },
+  "Summac Powder 80 Gr x 10 (ABIDO)": {
+    "Item": "Summac Powder 80 Gr x 10 (ABIDO)",
+    "Description": "Summac Powder 80 Gr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 22.45,
+    "sku": "Summac-Powder-80-Gr-x-10-(ABIDO)"
+  },
+  "Shawarma Spices 100 Gr x 10 (ABIDO)": {
+    "Item": "Shawarma Spices 100 Gr x 10 (ABIDO)",
+    "Description": "Shawarma Spices 100 Gr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 28.05,
+    "sku": "Shawarma-Spices-100-Gr-x-10-(ABIDO)"
+  },
+  "Chicken Shawarma 100 gr x 10 (ABIDO)": {
+    "Item": "Chicken Shawarma 100 gr x 10 (ABIDO)",
+    "Description": "Chicken Shawarma 100 gr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 29.6,
+    "sku": "Chicken-Shawarma-100-gr-x-10-(ABIDO)"
+  },
+  "Allspice Ground 100 Cr x 10 (ABIDO)": {
+    "Item": "Allspice Ground 100 Cr x 10 (ABIDO)",
+    "Description": "Allspice Ground 100 Cr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 22.45,
+    "sku": "Allspice-Ground-100-Cr-x-10-(ABIDO)"
+  },
+  "Anise Seeds 80 Gr x 10 (ABIDO)": {
+    "Item": "Anise Seeds 80 Gr x 10 (ABIDO)",
+    "Description": "Anise Seeds 80 Gr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 14.3,
+    "sku": "Anise-Seeds-80-Gr-x-10-(ABIDO)"
+  },
+  "Mixed Spices 100 Gr x 10 (ABIDO)": {
+    "Item": "Mixed Spices 100 Gr x 10 (ABIDO)",
+    "Description": "Mixed Spices 100 Gr x 10 (ABIDO)",
+    "Quantity": 10,
+    "Price": 26.55,
+    "sku": "Mixed-Spices-100-Gr-x-10-(ABIDO)"
+  },
+  "Dry mulakhea (BAROODY) (Box) 200g x 20": {
+    "Item": "Dry mulakhea (BAROODY) (Box) 200g x 20",
+    "Description": "Dry mulakhea (BAROODY) (Box) 200g x 20",
+    "Quantity": 20,
+    "Price": 79.05,
+    "sku": "Dry-mulakhea-(BAROODY)-(Box)-200g-x-20-"
+  },
+  "Rose Water (CORTAS) 10 Oz x 24": {
+    "Item": "Rose Water (CORTAS) 10 Oz x 24",
+    "Description": "Rose Water (CORTAS) 10 Oz x 24",
+    "Quantity": 24,
+    "Price": 43.9,
+    "sku": "Rose-Water-(CORTAS)-10-Oz-x-24"
+  },
+  "Orange Water (CORTAS)10 Ozx24 ($UP)": {
+    "Item": "Orange Water (CORTAS)10 Ozx24 ($UP)",
+    "Description": "Orange Water (CORTAS)10 Ozx24 ($UP)",
+    "Quantity": 24,
+    "Price": 43.9,
+    "sku": "Orange-Water-(CORTAS)10-Ozx24-($UP)"
+  },
+  "Foul (CORTAS) Plain 14 Oz x 24": {
+    "Item": "Foul (CORTAS) Plain 14 Oz x 24",
+    "Description": "Foul (CORTAS) Plain 14 Oz x 24",
+    "Quantity": 24,
+    "Price": 16.6,
+    "sku": "Foul-(CORTAS)-Plain-14-Oz-x-24"
+  },
+  "Foul (CORTAS) w/Chili 15 Oz x 24": {
+    "Item": "Foul (CORTAS) w/Chili 15 Oz x 24",
+    "Description": "Foul (CORTAS) w/Chili 15 Oz x 24",
+    "Quantity": 24,
+    "Price": 19.75,
+    "sku": "Foul-(CORTAS)-w/Chili-15-Oz-x-24"
+  },
+  "Foul (CORTAS) Peeled Secret Recipe 14 Oz x 24": {
+    "Item": "Foul (CORTAS) Peeled Secret Recipe 14 Oz x 24",
+    "Description": "Foul (CORTAS) Peeled Secret Recipe 14 Oz x 24",
+    "Quantity": 24,
+    "Price": 19.75,
+    "sku": "Foul-(CORTAS)-Peeled-Secret-Recipe-14-Oz-x-24"
+  },
+  "Hummus Tahini (CORTAS) 400 Gr-x 24": {
+    "Item": "Hummus Tahini (CORTAS) 400 Gr-x 24",
+    "Description": "Hummus Tahini (CORTAS) 400 Gr-x 24",
+    "Quantity": 24,
+    "Price": 21.2,
+    "sku": "Hummus-Tahini-(CORTAS)-400-Gr-x-24"
+  },
+  "Vegeta 1 Kg x 10 (bag)": {
+    "Item": "Vegeta 1 Kg x 10 (bag)",
+    "Description": "Vegeta 1 Kg x 10 (bag)",
+    "Quantity": 10,
+    "Price": 60.2,
+    "sku": "Vegeta-1-Kg-x-10-(bag)"
+  },
+  "Noodles (Cheveux D'ange) (TRIA) 500 Gr x 12": {
+    "Item": "Noodles (Cheveux D'ange) (TRIA) 500 Gr x 12",
+    "Description": "Noodles (Cheveux D'ange) (TRIA) 500 Gr x 12",
+    "Quantity": 12,
+    "Price": 16.2,
+    "sku": "Noodles-(Cheveux-D'ange)-(TRIA)-500-Gr-x-12"
+  },
+  "Dry Lemon (LIGHT) 22 Lb": {
+    "Item": "Dry Lemon (LIGHT) 22 Lb",
+    "Description": "Dry Lemon (LIGHT) 22 Lb",
+    "Quantity": 1,
+    "Price": 78.55,
+    "sku": "Dry-Lemon-(LIGHT)-22-Lb"
+  },
+  "Dry Fava Medium 55 Lb": {
+    "Item": "Dry Fava Medium 55 Lb",
+    "Description": "Dry Fava Medium 55 Lb",
+    "Quantity": 1,
+    "Price": 68.35,
+    "sku": "Dry-Fava-Medium-55-Lb"
+  },
+  "Lima Beans (PERU) (Jumbo) 55 Lb $ DOWN": {
+    "Item": "Lima Beans (PERU) (Jumbo) 55 Lb $ DOWN",
+    "Description": "Lima Beans (PERU) (Jumbo) 55 Lb $ DOWN",
+    "Quantity": 1,
+    "Price": 86.7,
+    "sku": "Lima-Beans-(PERU)-(Jumbo)-55-Lb-$-DOWN"
+  },
+  "Laziza Beer (APPLE) 11.1 ($ UP)": {
+    "Item": "Laziza Beer (APPLE) 11.1 ($ UP)",
+    "DESCRIPTION": "Laziza Beer (APPLE) 11.1 ($ UP)",
+    "PRICE": 19.65,
+    "quantity": 1,
+    "sku": "Laziza-Beer-(APPLE)-11.1-($-UP)-",
+    "category": "BAROODY"
+  },
+  "Laziza Beer (HEY) 11.1 ($ up)": {
+    "Item": "Laziza Beer (HEY) 11.1 ($ up)",
+    "DESCRIPTION": "Laziza Beer (HEY) 11.1 ($ up)",
+    "PRICE": 19.65,
+    "quantity": 1,
+    "sku": "Laziza-Beer-(HEY)-11.1-($-up)-",
+    "category": "BAROODY"
+  },
+  "Maamoul Dates (BAROODY)(box)480gx12": {
+    "Item": "Maamoul Dates (BAROODY)(box)480gx12",
+    "DESCRIPTION": "Maamoul Dates (BAROODY)(box)480gx12",
+    "PRICE": 33.7,
+    "quantity": 12,
+    "sku": "Maamoul-Dates-(BAROODY)(box)480gx12-",
+    "category": "BAROODY"
+  },
+  "Frozen Mlukea (Montana) Ground 400Grx20": {
+    "Item": "Frozen Mlukea (Montana) Ground 400Grx20",
+    "DESCRIPTION": "Frozen Mlukea (Montana) Ground 400Grx20",
+    "PRICE": 19.65,
+    "quantity": 20,
+    "sku": "Frozen-Mlukea-(Montana)-Ground-400Grx20-",
+    "category": "BAROODY"
+  },
+  "Frozen Okra #0 (MONTANA)400g x": {
+    "Item": "Frozen Okra #0 (MONTANA)400g x",
+    "DESCRIPTION": "Frozen Okra #0 (MONTANA)400g x",
+    "PRICE": 47.7,
+    "quantity": 1,
+    "sku": "Frozen-Okra-#0-(MONTANA)400g-x-",
+    "category": "BAROODY"
+  },
+  "Quails (Halal) (Jumbo)\" Valley' 6 PCS X 12 ": {
+    "Item": "Quails (Halal) (Jumbo)\" Valley' 6 PCS X 12 ",
+    "DESCRIPTION": "Quails (Halal) (Jumbo)\" Valley' 6 PCS X 12 ",
+    "PRICE": 106.1,
+    "quantity": 12,
+    "sku": "Quails-(Halal)-(Jumbo)\"-Valley'-6-PCS-X-12-",
+    "category": "BAROODY"
+  },
+  "Lahmajoun (KUPALIAN) HOT 12x10 pcs $UP": {
+    "Item": "Lahmajoun (KUPALIAN) HOT 12x10 pcs $UP",
+    "DESCRIPTION": "Lahmajoun (KUPALIAN) HOT 12x10 pcs $UP",
+    "PRICE": 166.3,
+    "quantity": 12,
+    "sku": "Lahmajoun-(KUPALIAN)-HOT-12x10-pcs-$UP-",
+    "category": "BAROODY"
+  },
+  "Lahmajoun (KUPALIAN) REGULAR 12x10 pes $UP": {
+    "Item": "Lahmajoun (KUPALIAN) REGULAR 12x10 pes $UP",
+    "DESCRIPTION": "Lahmajoun (KUPALIAN) REGULAR 12x10 pes $UP",
+    "PRICE": 166.3,
+    "quantity": 12,
+    "sku": "Lahmajoun-(KUPALIAN)-REGULAR-12x10-pes-$UP-",
+    "category": "BAROODY"
+  },
+  "Zaatar (KABATILO) 400 Gr x 12": {
+    "Item": "Zaatar (KABATILO) 400 Gr x 12",
+    "DESCRIPTION": "Zaatar (KABATILO) 400 Gr x 12",
+    "PRICE": 27.3,
+    "quantity": 12,
+    "sku": "Zaatar-(KABATILO)-400-Gr-x-12-",
+    "category": "BAROODY"
+  },
+  "Vegeta 1 Kg X 6 (Plastic Container)": {
+    "Item": "Vegeta 1 Kg X 6 (Plastic Container)",
+    "DESCRIPTION": "Vegeta 1 Kg X 6 (Plastic Container)",
+    "PRICE": 43.9,
+    "quantity": 6,
+    "sku": "Vegeta-1-Kg-X-6-(Plastic-Container)-",
+    "category": "BAROODY"
+  },
+  "Mahlab Seeds 50 Gr X 10 (ABIDO)": {
+    "Item": "Mahlab Seeds 50 Gr X 10 (ABIDO)",
+    "DESCRIPTION": "Mahlab Seeds 50 Gr X 10 (ABIDO)",
+    "PRICE": 39.8,
+    "quantity": 10,
+    "sku": "Mahlab-Seeds-50-Gr-X-10-(ABIDO)-",
+    "category": "BAROODY"
+  },
+  "Kebbeh Spices 80 Gr X 10 (ABIDO)": {
+    "Item": "Kebbeh Spices 80 Gr X 10 (ABIDO)",
+    "DESCRIPTION": "Kebbeh Spices 80 Gr X 10 (ABIDO)",
+    "PRICE": 16.85,
+    "quantity": 10,
+    "sku": "Kebbeh-Spices-80-Gr-X-10-(ABIDO)-",
+    "category": "BAROODY"
+  },
+  "Ouzi Spices 100 Gr X 10 (ABIDO)": {
+    "Item": "Ouzi Spices 100 Gr X 10 (ABIDO)",
+    "DESCRIPTION": "Ouzi Spices 100 Gr X 10 (ABIDO)",
+    "PRICE": 24.5,
+    "quantity": 10,
+    "sku": "Ouzi-Spices-100-Gr-X-10-(ABIDO)-",
+    "category": "BAROODY"
+  },
+  "Dried Chickpeas (MEXICAN) (SPLIT) 55 Lb": {
+    "Item": "Dried Chickpeas (MEXICAN) (SPLIT) 55 Lb",
+    "DESCRIPTION": "Dried Chickpeas (MEXICAN) (SPLIT) 55 Lb",
+    "PRICE": 28.05,
+    "quantity": 1,
+    "sku": "Dried-Chickpeas-(MEXICAN)-(SPLIT)-55-Lb-",
+    "category": "BAROODY"
+  },
+  "Green Lentils (LARGE) 55 Lbs": {
+    "Item": "Green Lentils (LARGE) 55 Lbs",
+    "DESCRIPTION": "Green Lentils (LARGE) 55 Lbs",
+    "PRICE": 32.65,
+    "quantity": 1,
+    "sku": "Green-Lentils-(LARGE)-55-Lbs-",
+    "category": "BAROODY"
+  },
+  "Green Lentils (S) 55 Lbs": {
+    "Item": "Green Lentils (S) 55 Lbs",
+    "DESCRIPTION": "Green Lentils (S) 55 Lbs",
+    "PRICE": 30.6,
+    "quantity": 1,
+    "sku": "Green-Lentils-(S)-55-Lbs-",
+    "category": "BAROODY"
+  },
+  "Lupini Beans 55 lbs (L)": {
+    "Item": "Lupini Beans 55 lbs (L)",
+    "DESCRIPTION": "Lupini Beans 55 lbs (L)",
+    "PRICE": 78.55,
+    "quantity": 1,
+    "sku": "Lupini-Beans-55-lbs-(L)-",
+    "category": "BAROODY"
+  },
+  "Rose Water (CORTAS) 10 Oz X 24 ($ UP)": {
+    "Item": "Rose Water (CORTAS) 10 Oz X 24 ($ UP)",
+    "DESCRIPTION": "Rose Water (CORTAS) 10 Oz X 24 ($ UP)",
+    "PRICE": 43.9,
+    "quantity": 24,
+    "sku": "Rose-Water-(CORTAS)-10-Oz-X-24-($-UP)-",
+    "category": "BAROODY"
+  },
+  "Foul (CORTAS) Plain 14 Oz X 24": {
+    "Item": "Foul (CORTAS) Plain 14 Oz X 24",
+    "DESCRIPTION": "Foul (CORTAS) Plain 14 Oz X 24",
+    "PRICE": 16.6,
+    "quantity": 24,
+    "sku": "Foul-(CORTAS)-Plain-14-Oz-X-24-",
+    "category": "BAROODY"
+  },
+  "Foul (CORTAS) w/Cumin 15 Oz x 24": {
+    "Item": "Foul (CORTAS) w/Cumin 15 Oz x 24",
+    "DESCRIPTION": "Foul (CORTAS) w/Cumin 15 Oz x 24",
+    "PRICE": 19.75,
+    "quantity": 24,
+    "sku": "Foul-(CORTAS)-w/Cumin-15-Oz-x-24-",
+    "category": "BAROODY"
+  },
+  "Tahini Plastic (ALKANATER) 2 Lb X 12": {
+    "Item": "Tahini Plastic (ALKANATER) 2 Lb X 12",
+    "DESCRIPTION": "Tahini Plastic (ALKANATER) 2 Lb X 12",
+    "PRICE": 59.2,
+    "quantity": 12,
+    "sku": "Tahini-Plastic-(ALKANATER)-2-Lb-X-12-",
+    "category": "BAROODY"
+  },
+  "Tahini Plastic 2 Lb x12 (BEIRUT)": {
+    "Item": "Tahini Plastic 2 Lb x12 (BEIRUT)",
+    "DESCRIPTION": "Tahini Plastic 2 Lb x12 (BEIRUT)",
+    "PRICE": 53.55,
+    "quantity": 12,
+    "sku": "Tahini-Plastic-2-Lb-x12-(BEIRUT)-",
+    "category": "BAROODY"
+  },
+  "Romi Cheese Sliced'Vacuumed Al Maraai 250gx24": {
+    "Item": "Romi Cheese Sliced'Vacuumed Al Maraai 250gx24",
+    "DESCRIPTION": "Romi Cheese Sliced'Vacuumed Al Maraai 250gx24",
+    "PRICE": 88.75,
+    "quantity": 24,
+    "sku": "Romi-Cheese-Sliced'Vacuumed-Al-Maraai-250gx24-",
+    "category": "BAROODY"
+  },
+  "Basterma Halal (SLICED) 20 Lb $UP": {
+    "Item": "Basterma Halal (SLICED) 20 Lb $UP",
+    "DESCRIPTION": "Basterma Halal (SLICED) 20 Lb $UP",
+    "PRICE": 211.15,
+    "quantity": 1,
+    "sku": "Basterma-Halal-(SLICED)-20-Lb-$UP-",
+    "category": "BAROODY"
+  },
+  "Green Land Feta (Istanbuli) Cheese 500 gnx24": {
+    "Item": "Green Land Feta (Istanbuli) Cheese 500 gnx24",
+    "DESCRIPTION": "Green Land Feta (Istanbuli) Cheese 500 gnx24",
+    "PRICE": 42.85,
+    "quantity": 24,
+    "sku": "Green-Land-Feta-(Istanbuli)-Cheese-500-gnx24-",
+    "category": "BAROODY"
+  },
+  "Green Land Fata (low calt) Cheese 500 gnx24": {
+    "Item": "Green Land Fata (low calt) Cheese 500 gnx24",
+    "DESCRIPTION": "Green Land Fata (low calt) Cheese 500 gnx24",
+    "PRICE": 42.85,
+    "quantity": 24,
+    "sku": "Green-Land-Fata-(low-calt)-Cheese-500-gnx24-",
+    "category": "BAROODY"
+  },
+  "Green Land Feta (LIGHT) Cheese 500 gn/24": {
+    "Item": "Green Land Feta (LIGHT) Cheese 500 gn/24",
+    "DESCRIPTION": "Green Land Feta (LIGHT) Cheese 500 gn/24",
+    "PRICE": 42.85,
+    "quantity": 24,
+    "sku": "Green-Land-Feta-(LIGHT)-Cheese-500-gn/24-",
+    "category": "BAROODY"
+  },
+  "Green Land Feta (Regular) 500 Gr x 24": {
+    "Item": "Green Land Feta (Regular) 500 Gr x 24",
+    "DESCRIPTION": "Green Land Feta (Regular) 500 Gr x 24",
+    "PRICE": 42.85,
+    "quantity": 24,
+    "sku": "Green-Land-Feta-(Regular)-500-Gr-x-24-",
+    "category": "BAROODY"
+  },
+  "Al Maraai Cream Cheese Spread (TRIANGLES) 120 Gr X 36": {
+    "Item": "Al Maraai Cream Cheese Spread (TRIANGLES) 120 Gr X 36",
+    "DESCRIPTION": "Al Maraai Cream Cheese Spread (TRIANGLES) 120 Gr X 36",
+    "PRICE": 35.7,
+    "quantity": 36,
+    "sku": "Al-Maraai-Cream-Cheese-Spread-(TRIANGLES)-120-Gr-X-36-",
+    "category": "BAROODY"
+  },
+  "Domyati Creme Cheese (NORDEX) 500 Grx 14": {
+    "Item": "Domyati Creme Cheese (NORDEX) 500 Grx 14",
+    "DESCRIPTION": "Domyati Creme Cheese (NORDEX) 500 Grx 14",
+    "PRICE": 67.35,
+    "quantity": 14,
+    "sku": "Domyati-Creme-Cheese-(NORDEX)-500-Grx-14-",
+    "category": "BAROODY"
+  },
+  "Yogurt (Arz) 32 Ozx6 E:01-11-21": {
+    "Item": "Yogurt (Arz) 32 Ozx6 E:01-11-21",
+    "DESCRIPTION": "Yogurt (Arz) 32 Ozx6 E:01-11-21",
+    "PRICE": 18.65,
+    "quantity": 6,
+    "sku": "Yogurt-(Arz)-32-Ozx6-E:01-11-21-",
+    "category": "BAROODY"
+  },
+  "Yogurt (Arz) 4 Lbx6E: 11.14.20 $ UP Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021) Admadia": {
+    "Item": "Yogurt (Arz) 4 Lbx6E: 11.14.20 $ UP Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021) Admadia",
+    "DESCRIPTION": "Yogurt (Arz) 4 Lbx6E: 11.14.20 $ UP Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021) Admadia",
+    "PRICE": 34.7,
+    "quantity": 6,
+    "sku": "Yogurt-(Arz)-4-Lbx6E:-11.14.20-$-UP-Labne-(Arz)-1Lbx12-(Exp-01.18.21)-$UP-French-Feta-Chees-(Valbresso)-600Grx8-$UP-(E-02-2021)-Admadia-",
+    "category": "BAROODY"
+  },
+  "Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP": {
+    "Item": "Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP",
+    "DESCRIPTION": "Labne (Arz) 1Lbx12 (Exp 01.18.21) $UP",
+    "PRICE": 26.3,
+    "quantity": 12,
+    "sku": "-Labne-(Arz)-1Lbx12-(Exp-01.18.21)-$UP-",
+    "category": "BAROODY"
+  },
+  "French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021)": {
+    "Item": "French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021)",
+    "DESCRIPTION": "French Feta Chees (Valbresso) 600Grx8 $UP (E 02-2021)",
+    "PRICE": 66.3,
+    "quantity": 8,
+    "sku": "-French-Feta-Chees-(Valbresso)-600Grx8-$UP-(E-02-2021)-",
+    "category": "BAROODY"
+  },
+  "Rose Water (CORTAS) 10 Oz x 24 ($ UP) (add on)": {
+    "Item": "Rose Water (CORTAS) 10 Oz x 24 ($ UP) (add on)",
+    "DESCRIPTION": "Rose Water (CORTAS) 10 Oz x 24 ($ UP) (add on)",
+    "PRICE": 43.9,
+    "quantity": 24,
+    "sku": "Rose-Water-(CORTAS)-10-Oz-x-24-($-UP)-(add-on)-",
+    "category": "BAROODY"
+  }
+}

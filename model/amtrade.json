@@ -294,5 +294,145 @@
     "Description": "GOURMET MAGIC SUN FLOWER OIL 12X1LTR",
     "sku": "GOURMET-MAGIC-SUN-FLOWER-OIL-12X1LTR",
     "category": "amtrade"
+  },
+  "MRT001": {
+    "Item": "MRT001",
+    "Description": "ALU MATAR 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "ALU-MATAR-20X300g"
+  },
+  "MRT005": {
+    "Item": "MRT005",
+    "Description": "CHANA MASALA 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "CHANA-MASALA-20X300g-"
+  },
+  "MRT006": {
+    "Item": "MRT006",
+    "Description": "DAL FRY 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "DAL-FRY-20X300g-"
+  },
+  "MRT009": {
+    "Item": "MRT009",
+    "Description": "MIX VEG CURRY 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "MIX-VEG-CURRY-20X300g-"
+  },
+  "MRT012": {
+    "Item": "MRT012",
+    "Description": "PALAK PANEER 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "PALAK-PANEER-20X300g-"
+  },
+  "MRT013": {
+    "Item": "MRT013",
+    "Description": "PANEER BUTTER MASALA 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "PANEER-BUTTER-MASALA-20X300g-"
+  },
+  "MRT015": {
+    "Item": "MRT015",
+    "Description": "PANEER TIKKA MASALA 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "PANEER-TIKKA-MASALA-20X300g-"
+  },
+  "MRT018": {
+    "Item": "MRT018",
+    "Description": "RAJMA MASALA 20X300g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "RAJMA-MASALA-20X300g-"
+  },
+  "MRC008": {
+    "Item": "MRC008",
+    "Description": "TOMATO RICE 20X250g",
+    "Quantity": 20,
+    "Price": 30,
+    "sku": "TOMATO-RICE-20X250g-"
+  },
+  "MPW011": {
+    "Item": "MPW011",
+    "Description": "SPICY SAMBAR POWDER 36X100g",
+    "Quantity": 36,
+    "Price": 48,
+    "sku": "SPICY-SAMBAR-POWDER-36X100g-"
+  },
+  "MIM018": {
+    "Item": "MIM018",
+    "Description": "RICE IDL1 30X200g",
+    "Quantity": 30,
+    "Price": 33,
+    "sku": "RICE-IDL1-30X200g-"
+  },
+  "MIM019": {
+    "Item": "MIM019",
+    "Description": "SAMBAR MIX 30X200g",
+    "Quantity": 30,
+    "Price": 44,
+    "sku": "SAMBAR-MIX-30X200g-"
+  },
+  "MIM004": {
+    "Item": "MIM004",
+    "Description": "GULAB JAMUN 24X200g",
+    "Quantity": 24,
+    "Price": 28,
+    "sku": "GULAB-JAMUN-24X200g-"
+  },
+  "MIM017": {
+    "Item": "MIM017",
+    "Description": "RAVA IDLI 24X500g",
+    "Quantity": 24,
+    "Price": 44,
+    "sku": "RAVA-IDLI-24X500g--"
+  },
+  "MDT003": {
+    "Item": "MDT003",
+    "Description": "ROSE DRINK in TIN (Exp 08/22) 48X180m1",
+    "Quantity": 48,
+    "Price": 51,
+    "sku": "ROSE-DRINK-in-TIN-(Exp-08/22)-48X180m1-"
+  },
+  "MGT001": {
+    "Item": "MGT001",
+    "Description": "GULAB JAMUN TIN 12X1kg",
+    "Quantity": 12,
+    "Price": 44,
+    "sku": "GULAB-JAMUN-TIN-12X1kg-"
+  },
+  "INC003": {
+    "Item": "INC003",
+    "Description": "INDIA'S NATURE C/OIL 12X1LTR",
+    "Quantity": 12,
+    "Price": 56,
+    "sku": "INDIA'S-NATURE-C/OIL-12X1LTR-"
+  },
+  "INPK05": {
+    "Item": "INPK05",
+    "Description": "LOW SODIUM MIXED VEG PICKLE IN OLIVE OIL 3X6X500G",
+    "Quantity": 6,
+    "Price": 48.6,
+    "sku": "LOW-SODIUM-MIXED-VEG-PICKLE-IN-OLIVE-OIL-3X6X500G-"
+  },
+  "INPK07": {
+    "Item": "INPK07",
+    "Description": "LOW SODIUM MANGO AND CHILLI PICKLE IN OLIVE OIL 3X6X500G",
+    "Quantity": 6,
+    "Price": 48.6,
+    "sku": "LOW-SODIUM-MANGO-AND-CHILLI-PICKLE-IN-OLIVE-OIL-3X6X500G-"
+  },
+  "INPK08": {
+    "Item": "INPK08",
+    "Description": "LOW SODIUM MANGO AND GINGER PICKLE IN OLIVE OIL 3X6X500G",
+    "Quantity": 6,
+    "Price": 48.6,
+    "sku": "LOW-SODIUM-MANGO-AND-GINGER-PICKLE-IN-OLIVE-OIL-3X6X500G-"
   }
 }

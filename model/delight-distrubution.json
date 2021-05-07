@@ -1,0 +1,72 @@
+{
+  "Basmati Rice:Hobbi Long Grain Parboiled Rice 20Lbs x 2": {
+    "Item": "Basmati Rice:Hobbi Long Grain Parboiled Rice 20Lbs x 2",
+    "Description": "Basmati Rice:Hobbi Long Grain Parboiled Rice 20Lbs x 2",
+    "Quantity": 2,
+    "Price": 21,
+    "sku": "Basmati-Rice:Hobbi-Long-Grain-Parboiled-Rice-20Lbs-x-2-"
+  },
+  "Basmati Rice:Chadni Chwak Basmati Rice 4 x 10Lb": {
+    "Item": "Basmati Rice:Chadni Chwak Basmati Rice 4 x 10Lb",
+    "Description": "Basmati Rice:Chadni Chwak Basmati Rice 4 x 10Lb",
+    "Quantity": 4,
+    "Price": 40,
+    "sku": "Basmati-Rice:Chadni-Chwak-Basmati-Rice-4-x-10Lb-"
+  },
+  "Snacks:Mr. Twist Crakers 25 x 80": {
+    "Item": "Snacks:Mr. Twist Crakers 25 x 80",
+    "Description": "Snacks:Mr. Twist Crakers 25 x 80",
+    "Quantity": 25,
+    "Price": 25,
+    "sku": "Snacks:Mr.-Twist-Crakers-25-x-80-"
+  },
+  "Snacks:Bombay Potato Crakers 25gm x 80": {
+    "Item": "Snacks:Bombay Potato Crakers 25gm x 80",
+    "Description": "Snacks:Bombay Potato Crakers 25gm x 80",
+    "Quantity": 80,
+    "Price": 24,
+    "sku": "Snacks:Bombay-Potato-Crakers-25gm-x-80-"
+  },
+  "Wheel Soap": {
+    "Item": "Wheel Soap",
+    "Description": "Wheel Soap",
+    "Quantity": 1,
+    "Price": 36,
+    "sku": "Wheel-Soap-"
+  },
+  "Snacks:OVIJAT LACCHA SEMAI 200GM X 40": {
+    "Item": "Snacks:OVIJAT LACCHA SEMAI 200GM X 40",
+    "Description": "Snacks:OVIJAT LACCHA SEMAI 200GM X 40",
+    "Quantity": 40,
+    "Price": 40,
+    "sku": "Snacks:OVIJAT-LACCHA-SEMAI-200GM-X-40-"
+  },
+  "Ovijat Bay Leaf 50x 100gm": {
+    "Item": "Ovijat Bay Leaf 50x 100gm",
+    "Description": "Ovijat Bay Leaf 50x 100gm",
+    "Quantity": 50,
+    "Price": 50,
+    "sku": "Ovijat-Bay-Leaf-50x-100gm-"
+  },
+  "Puja nut coin cut 100gm x 72 pcs": {
+    "Item": "Puja nut coin cut 100gm x 72 pcs",
+    "Description": "Puja nut coin cut 100gm x 72 pcs",
+    "Quantity": 72,
+    "Price": 64.8,
+    "sku": "Puja-nut-coin-cut-100gm-x-72-pcs-"
+  },
+  "Pula nut (Diamond Cut 100gm*50 100gm xn72": {
+    "Item": "Pula nut (Diamond Cut 100gm*50 100gm xn72",
+    "Description": "Pula nut (Diamond Cut 100gm*50 100gm xn72",
+    "Quantity": 50,
+    "Price": 64.8,
+    "sku": "Pula-nut-(Diamond-Cut-100gm*50-100gm-xn72-"
+  },
+  "Juice&Drink:nawon coconut Water with Pulp": {
+    "Item": "Juice&Drink:nawon coconut Water with Pulp",
+    "Description": "Juice&Drink:nawon coconut Water with Pulp",
+    "Quantity": 1,
+    "Price": 16,
+    "sku": "Juice&Drink:nawon-coconut-Water-with-Pulp-"
+  }
+}

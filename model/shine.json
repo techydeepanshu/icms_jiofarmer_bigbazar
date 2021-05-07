@@ -3,60 +3,80 @@
     "Item": "SFF MP",
     "Description": "SFF MP 'SF' MALABAR PAROTTA 454GM*30",
     "Quantity": "30",
-    "Price": "48.00"
+    "Price": "48.00",
+    "sku": "SFF-MP-\"SF\"-MALABAR-PAROTTA-454GM*30",
+    "category": "shine"
   },
   "SFF MPF": {
     "Item": "SFF MPF",
     "Description": "SFF MPF 'SF' MALABAR PAROTTA FAM PACK 2LBS*10",
     "Quantity": "10",
-    "Price": "31.50"
+    "Price": "31.50",
+    "sku": "SFF-MPF-\"SF\"-MALABAR-PAROTTA-FAM-PACK-2LBS*10",
+    "category": "shine"
   },
   "SFF GC": {
     "Item": "SFF GC",
     "Description": "SFF GC 'SF' HAND GRATED COCONUT 454GM*44",
     "Quantity": "44",
-    "Price": "85.80"
+    "Price": "85.80",
+    "sku": "SFF-GC-\"SF\"-HAND-GRATED-COCONUT-454GM*44",
+    "category": "shine"
   },
   "SFF RP": {
     "Item": "SFF RP",
     "Description": "SFF RP 'SF' RESTAURANT PAROTTA 4LBS*10",
     "Quantity": "10",
-    "Price": "59.50"
+    "Price": "59.50",
+    "sku": "SFF-RP-\"SF\"-RESTAURANT-PAROTTA-4LBS*10",
+    "category": "shine"
   },
   "SFF RPHC": {
     "Item": "SFF RPHC",
     "Description": "SFF RPHC 'SF' RESTAURANT PAROTTA HALF CKD 4LBS*10",
     "Quantity": "10",
-    "Price": "59.50"
+    "Price": "59.50",
+    "sku": "SFF-RPHC-\"SF\"-RESTAURANT-PAROTTA-HALF-CKD-4LBS*10",
+    "category": "shine"
   },
   "SFF KAP": {
     "Item": "SFF KAP",
     "Description": "SFF KAP 'SF' KUMBILAPPAM 454GM*22",
     "Quantity": "22",
-    "Price": "57.20"
+    "Price": "57.20",
+    "sku": "SFF-KAP-\"SF\"-KUMBILAPPAM-454GM*22",
+    "category": "shine"
   },
   "SFF VSRTF": {
     "Item": "SFF VSRTF",
     "Description": "SFF VSRTF 'SF' VEG SAMOSA (READY TO FRY) 700GM*12",
     "Quantity": "12",
-    "Price": "66.00"
+    "Price": "66.00",
+    "sku": "SFF-VSRTF-\"SF\"-VEG-SAMOSA-(READY-TO-FRY)-700GM*12",
+    "category": "shine"
   },
   "SFF OSRTF": {
     "Item": "SFF OSRTF",
     "Description": "SFF OSRTF 'SF' ONION SAMOSA(READY TO FRY) 700GM*12",
     "Quantity": "12",
-    "Price": "66.00"
+    "Price": "66.00",
+    "sku": "SFF-OSRTF-\"SF\"-ONION-SAMOSA(READY-TO-FRY)-700GM*12",
+    "category": "shine"
   },
   "SFF TD2": {
     "Item": "SFF TD2",
     "Description": "SFF TD2 'SF' TAPIOCA DRUM 2LBS*20",
     "Quantity": "20",
-    "Price": "29.00"
+    "Price": "29.00",
+    "sku": "SFF-TD2-\"SF\"-TAPIOCA-DRUM-2LBS*20",
+    "category": "shine"
   },
   "SFF TD4": {
     "Item": "SFF TD4",
     "Description": "SFF TD4 'SF' TAPIOCA DRUM 4LBS*10",
     "Quantity": "10",
-    "Price": "29.00"
+    "Price": "29.00",
+    "sku": "SFF-TD4-\"SF\"-TAPIOCA-DRUM-4LBS*10",
+    "category": "shine"
   }
 }

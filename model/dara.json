@@ -1,0 +1,275 @@
+{
+  "2831": {
+    "Item": "2831",
+    "Description": "ARZ PLAIN YOGURT- YOGURT SADE 6/2 LB",
+    "Quantity": 6,
+    "Price": 19.25,
+    "sku": "ARZ-PLAIN-YOGURT--YOGURT-SADE-6/2-LB-"
+  },
+  "2898": {
+    "Item": "2898",
+    "Description": "BAGDAT CHILLIES GROUND/ACI TOZ BIBER PET 6X550 GR",
+    "Quantity": 6,
+    "Price": 30.6,
+    "sku": "BAGDAT-CHILLIES-GROUND/ACI-TOZ-BIBER-PET-6X550-GR-"
+  },
+  "2855": {
+    "Item": "2855",
+    "Description": "BAGDAT DESSICATED COCONUT GRATED/HINDISTAN CEVIZI 10X160 GR",
+    "Quantity": 10,
+    "Price": 23,
+    "sku": "BAGDAT-DESSICATED-COCONUT-GRATED/HINDISTAN-CEVIZI-10X160-GR-"
+  },
+  "2895": {
+    "Item": "2895",
+    "Description": "BAGDAT DRIED MINT/NANE PET 6X180 GR",
+    "Quantity": 6,
+    "Price": 14,
+    "sku": "BAGDAT-DRIED-MINT/NANE-PET-6X180-GR"
+  },
+  "2890": {
+    "Item": "2890",
+    "Description": "BAGDAT RED PEPPER FLAKES/PUL BIBER PET 6X500 GR",
+    "Quantity": 6,
+    "Price": 22.8,
+    "sku": "BAGDAT-RED-PEPPER-FLAKES/PUL-BIBER-PET-6X500-GR--"
+  },
+  "2894": {
+    "Item": "2894",
+    "Description": "BAGDAT THYME RUBBED/KEKIK PET 6X145 GR",
+    "Quantity": 6,
+    "Price": 13.6,
+    "sku": "BAGDAT-THYME-RUBBED/KEKIK-PET-6X145-GR-"
+  },
+  "1325": {
+    "Item": "1325",
+    "Description": "DR OETKER CACAO / KAKAO 24X100 GR",
+    "Quantity": 24,
+    "Price": 38.4,
+    "sku": "DR-OETKER-CACAO-/-KAKAO-24X100-GR-"
+  },
+  "1717": {
+    "Item": "1717",
+    "Description": "DR OETKR RICE FLOUR-PIRINC UNU 12X175GR",
+    "Quantity": 12,
+    "Price": 12,
+    "sku": "DR-OETKR-RICE-FLOUR-PIRINC-UNU-12X175GR-"
+  },
+  "1334": {
+    "Item": "1334",
+    "Description": "DR OETKER WHEAT STARCH / BUGDAY NISASTASI 12X150 GR",
+    "Quantity": 12,
+    "Price": 12,
+    "sku": "DR-OETKER-WHEAT-STARCH-/-BUGDAY-NISASTASI-12X150-GR-"
+  },
+  "1332": {
+    "Item": "1332",
+    "Description": "DR OETKER WIHPPED CREM PLAIN / KREM SANTI SADE 12X150 GR",
+    "Quantity": 12,
+    "Price": 15.9,
+    "sku": "DR-OETKER-WIHPPED-CREM-PLAIN-/-KREM-SANTI-SADE-12X150-GR-"
+  },
+  "2408": {
+    "Item": "2408",
+    "Description": "KAROUN BREAKFAST CREAM/QAYMAK 12X8 OZ",
+    "Quantity": 12,
+    "Price": 38,
+    "sku": "KAROUN-BREAKFAST-CREAM/QAYMAK-12X8-OZ-"
+  },
+  "1532": {
+    "Item": "1532",
+    "Description": "KAROUN LABNE 12/1",
+    "Quantity": 12,
+    "Price": 27,
+    "sku": "KAROUN-LABNE-12/1-"
+  },
+  "1535": {
+    "Item": "1535",
+    "Description": "KAROUN YOGURT DRINK 24/1 PT",
+    "Quantity": 24,
+    "Price": 27,
+    "sku": "KAROUN-YOGURT-DRINK-24/1-PT-"
+  },
+  "1237": {
+    "Item": "1237",
+    "Description": "KNORR MERCIMF_K CORBA / TRADITIONAL TURKISH SOUP WITH RED LENTIL 12x76 GR",
+    "Quantity": 12,
+    "Price": 8.4,
+    "sku": "KNORR-MERCIMF_K-CORBA-/-TRADITIONAL-TURKISH-SOUP-WITH-RED-LENTIL-12x76-GR-"
+  },
+  "2210": {
+    "Item": "2210",
+    "Description": "KNORR TRADITIONAL TOMATO SOUP WITH WHEAT / YORESEL DOVME BUGDAY DOMATES 12X95 GR",
+    "Quantity": 12,
+    "Price": 14.5,
+    "sku": "KNORR-TRADITIONAL-TOMATO-SOUP-WITH-WHEAT-/-YORESEL-DOVME-BUGDAY-DOMATES-12X95-GR-"
+  },
+  "2951": {
+    "Item": "2951",
+    "Description": "NIMET CRACKED GREEN OLIVES / KIRMA YESIL ZEYTIN 6X1700 CC",
+    "Quantity": 6,
+    "Price": 29,
+    "sku": "NIMET-CRACKED-GREEN-OLIVES-/-KIRMA-YESIL-ZEYTIN-6X1700-CC-"
+  },
+  "3058": {
+    "Item": "3058",
+    "Description": "NIMET FULL-FAT TULUM CHEESE/TAM YAGLI TULUM PEYNIRT 6X500 G",
+    "Quantity": 6,
+    "Price": 36,
+    "sku": "NIMET-FULL-FAT-TULUM-CHEESE/TAM-YAGLI-TULUM-PEYNIRT-6X500-G-"
+  },
+  "2723": {
+    "Item": "2723",
+    "Description": "SEPETCIOGLU CEZERYE 12X350 GR",
+    "Quantity": 12,
+    "Price": 52.19,
+    "sku": "SEPETCIOGLU-CEZERYE-12X350-GR"
+  },
+  "2721": {
+    "Item": "2721",
+    "Description": "SEPETCIOGLU TURKISH COTTON CANDY / PISMANIYE 10X350 G",
+    "Quantity": 10,
+    "Price": 37.54,
+    "sku": "SEPETCIOGLU-TURKISH-COTTON-CANDY-/-PISMANIYE-10X350-G-"
+  },
+  "2011": {
+    "Item": "2011",
+    "Description": "SUTAS BREAKFAST CREAM / KAYMAK 27X200 ML (521190)",
+    "Quantity": 27,
+    "Price": 39.42,
+    "sku": "SUTAS-BREAKFAST-CREAM-/-KAYMAK-27X200-ML-(521190)-"
+  },
+  "3091": {
+    "Item": "3091",
+    "Description": "SUTAS CREAM CHEESE GLASS JAR BLUE CAP 8X300 G",
+    "Quantity": 8,
+    "Price": 25,
+    "sku": "SUTAS-CREAM-CHEESE-GLASS-JAR-BLUE-CAP-8X300-G-"
+  },
+  "1749": {
+    "Item": "1749",
+    "Description": "SUTAS LABANEH I LABNE12X700 GR ( 350490)",
+    "Quantity": 12,
+    "Price": 48,
+    "sku": "SUTAS-LABANEH-I-LABNE12X700-GR-(-350490)"
+  },
+  "1757": {
+    "Item": "1757",
+    "Description": "SUTAS MIHALIC CHEESE 11X350 GR (317191)",
+    "Quantity": 11,
+    "Price": 54,
+    "sku": "SUTAS-MIHALIC-CHEESE-11X350-GR-(317191)-"
+  },
+  "2006": {
+    "Item": "2006",
+    "Description": "SUTAS STRAINED WHITE CHEESE / SUZME PEYNIR 12X500 GR (324592)",
+    "Quantity": 12,
+    "Price": 44,
+    "sku": "SUTAS-STRAINED-WHITE-CHEESE-/-SUZME-PEYNIR-12X500-GR-(324592)-"
+  },
+  "2394": {
+    "Item": "2394",
+    "Description": "SUTAS TRIANGLE CHEESE / UCGEN PEYNIR 16X12,5 GR (345090)",
+    "Quantity": 16,
+    "Price": 36,
+    "sku": "SUTAS-TRIANGLE-CHEESE-/-UCGEN-PEYNIR-16X12,5-GR-(345090)-"
+  },
+  "3032": {
+    "Item": "3032",
+    "Description": "TAFE COOKIES W.DATES AND ALMOND/BADEMLI HURMALI KURABIYE 12X300 GR",
+    "Quantity": 12,
+    "Price": 60,
+    "sku": "TAFE-COOKIES-W.DATES-AND-ALMOND/BADEMLI-HURMALI-KURABIYE-12X300-GR--"
+  },
+  "2330": {
+    "Item": "2330",
+    "Description": "TAT CABBAGE PICKLES / LAHANA TURSUSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 21,
+    "sku": "TAT-CABBAGE-PICKLES-/-LAHANA-TURSUSU-12X720-GR--"
+  },
+  "3073": {
+    "Item": "3073",
+    "Description": "TAT HOT PICKLED BABY PEPPERS/BIBERIYE TURSU 12X720 CC",
+    "Quantity": 12,
+    "Price": 30.96,
+    "sku": "TAT-HOT-PICKLED-BABY-PEPPERS/BIBERIYE-TURSU-12X720-CC-"
+  },
+  "1745": {
+    "Item": "1745",
+    "Description": "TAT MIXED PICKLES / KARISIK TURSU 12X720 ML",
+    "Quantity": 12,
+    "Price": 17.5,
+    "sku": "TAT-MIXED-PICKLES-/-KARISIK-TURSU-12X720-ML-"
+  },
+  "3074": {
+    "Item": "3074",
+    "Description": "TAT PICKLED CORNICHONS-GEWURZGURKEN JAR/ ALMAN TIPI KORNISON TURSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 19.44,
+    "sku": "TAT-PICKLED-CORNICHONS-GEWURZGURKEN-JAR/-ALMAN-TIPI-KORNISON-TURSU-12X720-GR"
+  },
+  "3071": {
+    "Item": "3071",
+    "Description": "TAT PICKLED HOT PEPPERS/ACI DIBER TURSLJSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 15.48,
+    "sku": "TAT-PICKLED-HOT-PEPPERS/ACI-DIBER-TURSLJSU-12X720-GR-"
+  },
+  "2143": {
+    "Item": "2143",
+    "Description": "TAT VILLAGE TOMATE PASTE SALTED / KOY DOMATES SALCASI 6X1700 GR",
+    "Quantity": 6,
+    "Price": 42,
+    "sku": "TAT-VILLAGE-TOMATE-PASTE-SALTED-/-KOY-DOMATES-SALCASI-6X1700-GR-"
+  },
+  "2994": {
+    "Item": "2994",
+    "Description": "TORKU CARAMALISED CARROT PASTE W/PISTACHIOS / FINDIKLI CEZERYE 12X390 GR",
+    "Quantity": 12,
+    "Price": 49.14,
+    "sku": "TORKU-CARAMALISED-CARROT-PASTE-W/PISTACHIOS-/-FINDIKLI-CEZERYE-12X390-GR-"
+  },
+  "2537": {
+    "Item": "2537",
+    "Description": "TORKU GRAPE MOLASSES/UZUM PEKMEZI 12X750 GR",
+    "Quantity": 12,
+    "Price": 47.9,
+    "sku": "TORKU-GRAPE-MOLASSES/UZUM-PEKMEZI-12X750-GR-"
+  },
+  "2534": {
+    "Item": "2534",
+    "Description": "TORKU HALVA PLAIN / SADE HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 19.76,
+    "sku": "TORKU-HALVA-PLAIN-/-SADE-HELVA-12X350-GR-"
+  },
+  "2535": {
+    "Item": "2535",
+    "Description": "TORKU HALVA W COCOA / KAKAOLU HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 19.76,
+    "sku": "TORKU-HALVA-W-COCOA-/-KAKAOLU-HELVA-12X350-GR-"
+  },
+  "2536": {
+    "Item": "2536",
+    "Description": "TORKU HALVA W PISTACHIO / ANTEP FISTIKLI HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 34.9,
+    "sku": "TORKU-HALVA-W-PISTACHIO-/-ANTEP-FISTIKLI-HELVA-12X350-GR-"
+  },
+  "2530": {
+    "Item": "2530",
+    "Description": "TORKU SESAME TAHINI 12X600 G /7",
+    "Quantity": 12,
+    "Price": 48.9,
+    "sku": "TORKU-SESAME-TAHINI-12X600-G-/7-"
+  },
+  "1727": {
+    "Item": "1727",
+    "Description": "USDA ORGANIC POMEGRANATE MOLASSES 12X12.35 OZ",
+    "Quantity": 12,
+    "Price": 3.08,
+    "sku": "USDA-ORGANIC-POMEGRANATE-MOLASSES-12X12.35-OZ-"
+  }
+}

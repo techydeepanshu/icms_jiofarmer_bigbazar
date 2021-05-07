@@ -1,0 +1,922 @@
+{
+  "ORGCOILB": {
+    "Item": "ORGCOILB",
+    "Description": "Anand Frozen Grated Coconut - 24 x 1 lb (#1)",
+    "Price": 55.92,
+    "Quantity": 24,
+    "sku": "Anand-Frozen-Grated-Coconut---24-x-1-lb-(#1)-",
+    "category": "Babco"
+  },
+  "ORBAF1LB": {
+    "Item": "ORBAF1LB",
+    "Description": "Anand Frozen Banana Fry - 12 x 1 Lb (#22)",
+    "Price": 24.8,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Banana-Fry---12-x-1-Lb-(#22)-",
+    "category": "Babco"
+  },
+  "ORBAR1LB": {
+    "Item": "ORBAR1LB",
+    "Description": "Anand Frozen Banana Roast - 12 X 1 lb (#16)",
+    "Price": 24.8,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Banana-Roast---12-X-1-lb-(#16)-",
+    "category": "Babco"
+  },
+  "OREJC1LB": {
+    "Item": "OREJC1LB",
+    "Description": "Anand Frozen Elayada - Jackfruit - 12 x 1 lb (#17)",
+    "Price": 25.4,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Elayada---Jackfruit---12-x-1-lb-(#17)-",
+    "category": "Babco"
+  },
+  "ORIDB1LB": {
+    "Item": "ORIDB1LB",
+    "Description": "Anand Frozen Idiyappam Puncha / Brown - 12 X 1 lb",
+    "Price": 22.4,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Idiyappam-Puncha-/-Brown---12-X-1-lb-",
+    "category": "Babco"
+  },
+  "ORIDW1LB": {
+    "Item": "ORIDW1LB",
+    "Description": "Anand Frozen Idiyappam White - 12 x 1 lb",
+    "Price": 22.4,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Idiyappam-White---12-x-1-lb-",
+    "category": "Babco"
+  },
+  "ORPUR1LB": {
+    "Item": "ORPUR1LB",
+    "Description": "Anand Frozen Puttu Puncha with Kadala - 12 X lb",
+    "Price": 24.2,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Puttu-Puncha-with-Kadala---12-X-lb-",
+    "category": "Babco"
+  },
+  "ORPUW1LB": {
+    "Item": "ORPUW1LB",
+    "Description": "Anand Frozen Puttu White with Kadala - 12 x 1 lb (#31)",
+    "Price": 24.2,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Puttu-White-with-Kadala---12-x-1-lb-(#31)-",
+    "category": "Babco"
+  },
+  "ORUZU350": {
+    "Item": "ORUZU350",
+    "Description": "Anand Frozen Uzhunnu Vada - 14 X 350 g (#59)",
+    "Price": 30.6,
+    "Quantity": 14,
+    "sku": "Anand-Frozen-Uzhunnu-Vada---14-X-350-g-(#59)-",
+    "category": "Babco"
+  },
+  "ORBAJ1LB": {
+    "Item": "ORBAJ1LB",
+    "Description": "Anand Frozen Baby Jackfruit Pieces - 12 x 1 lb (#38)",
+    "Price": 23,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Baby-Jackfruit-Pieces---12-x-1-lb-(#38)-",
+    "category": "Babco"
+  },
+  "ORSAM1LB": {
+    "Item": "ORSAM1LB",
+    "Description": "Anand Frozen Sambar Mix (Mixed Veg) 12 X 1 lb (#43)",
+    "Price": 23.6,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Sambar-Mix-(Mixed-Veg)-12-X-1-lb-(#43)-",
+    "category": "Babco"
+  },
+  "ORFKP2LB": {
+    "Item": "ORFKP2LB",
+    "Description": "Anand Frozen Kerala Parata Family Pack - 14x2lb (#4)",
+    "Price": 38.3,
+    "Quantity": 14,
+    "sku": "Anand-Frozen-Kerala-Parata-Family-Pack---14x2lb-(#4)-",
+    "category": "Babco"
+  },
+  "ORCPA2LB": {
+    "Item": "ORCPA2LB",
+    "Description": "Anand Frozen Kerala Parata Catering Parata - 12 X 2 lb (#5)",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Kerala-Parata-Catering-Parata---12-X-2-lb-(#5)-",
+    "category": "Babco"
+  },
+  "ORWHF2LB": {
+    "Item": "ORWHF2LB",
+    "Description": "Anand Frozen Wheat Parota - Family Pack - 14 x 2 lb (#10)",
+    "Price": 35.46,
+    "Quantity": 14,
+    "sku": "Anand-Frozen-Wheat-Parota---Family-Pack---14-x-2-lb-(#10)-",
+    "category": "Babco"
+  },
+  "ORWHC2LB": {
+    "Item": "ORWHC2LB",
+    "Description": "Anand Frozen Wheat Parata Catering Pack - 12 X 2 lb (#11)",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "Anand-Frozen-Wheat-Parata-Catering-Pack---12-X-2-lb-(#11)-",
+    "category": "Babco"
+  },
+  "SUBCM50": {
+    "Item": "SUBCM50",
+    "Description": "Suhana Butter Chicken Mix - 12 X 50 g",
+    "Price": 12.5,
+    "Quantity": 12,
+    "sku": "Suhana-Butter-Chicken-Mix---12-X-50-g-",
+    "category": "Babco"
+  },
+  "SUCCM80": {
+    "Item": "SUCCM80",
+    "Description": "Suhana Chicken Curry Mix - 10 x 80 g",
+    "Price": 10.5,
+    "Quantity": 10,
+    "sku": "Suhana-Chicken-Curry-Mix---10-x-80-g-",
+    "category": "Babco"
+  },
+  "SUCTM80": {
+    "Item": "SUCTM80",
+    "Description": "Suhana Chicken Tikka Masala Mix - 10 x 80 g",
+    "Price": 10.5,
+    "Quantity": 10,
+    "sku": "Suhana-Chicken-Tikka-Masala-Mix---10-x-80-g-",
+    "category": "Babco"
+  },
+  "SUSPM50": {
+    "Item": "SUSPM50",
+    "Description": "Suhana Shahi Paneer Mix - 12 x 50 g",
+    "Price": 12.5,
+    "Quantity": 12,
+    "sku": "Suhana-Shahi-Paneer-Mix---12-x-50-g-",
+    "category": "Babco"
+  },
+  "SUVBM50": {
+    "Item": "SUVBM50",
+    "Description": "Suhana Veg Biryani Mix - 12 X 50 g",
+    "Price": 12.5,
+    "Quantity": 12,
+    "sku": "Suhana-Veg-Biryani-Mix---12-X-50-g-",
+    "category": "Babco"
+  },
+  "SUCTP100": {
+    "Item": "SUCTP100",
+    "Description": "Suhana Chicken Tandoori Mix Paste - 10 x 100 g",
+    "Price": 10.5,
+    "Quantity": 10,
+    "sku": "Suhana-Chicken-Tandoori-Mix-Paste---10-x-100-g-",
+    "category": "Babco"
+  },
+  "SUDCC235": {
+    "Item": "SUDCC235",
+    "Description": "Pravin Delhi Chat Chutney - 12 x 235 g",
+    "Price": 15.75,
+    "Quantity": 12,
+    "sku": "Pravin-Delhi-Chat-Chutney---12-x-235-g-",
+    "category": "Babco"
+  },
+  "SUPPC250": {
+    "Item": "SUPPC250",
+    "Description": "Pravin Pani Puri Chutney - 12 x 250 g",
+    "Price": 15.75,
+    "Quantity": 12,
+    "sku": "Pravin-Pani-Puri-Chutney---12-x-250-g-",
+    "category": "Babco"
+  },
+  "SUSAM250": {
+    "Item": "SUSAM250",
+    "Description": "Pravin Samosa Chutney - 12 X 250 g",
+    "Price": 15.75,
+    "Quantity": 12,
+    "sku": "Pravin-Samosa-Chutney---12-X-250-g-",
+    "category": "Babco"
+  },
+  "ANCBS400": {
+    "Item": "ANCBS400",
+    "Description": "Anand Banana Chips (Chilli) - 20 x 400 g",
+    "Price": 60.2,
+    "Quantity": 20,
+    "sku": "Anand-Banana-Chips-(Chilli)---20-x-400-g-",
+    "category": "Babco"
+  },
+  "ANBCL400": {
+    "Item": "ANBCL400",
+    "Description": "Anand Banana Chips (Large Pack) - 20 X 400g",
+    "Price": 60.2,
+    "Quantity": 20,
+    "sku": "Anand-Banana-Chips-(Large-Pack)---20-X-400g-",
+    "category": "Babco"
+  },
+  "ANJAC200": {
+    "Item": "ANJAC200",
+    "Description": "Anand Jackfruits Chips - 20 x 200 g (No. 1)",
+    "Price": 38.7,
+    "Quantity": 20,
+    "sku": "Anand-Jackfruits-Chips---20-x-200-g-(No.-1)-",
+    "category": "Babco"
+  },
+  "ANMPE400": {
+    "Item": "ANMPE400",
+    "Description": "Anand Kappalandi (Peanut) Masala - 20 X 400 g",
+    "Price": 40.2,
+    "Quantity": 20,
+    "sku": "Anand-Kappalandi-(Peanut)-Masala---20-X-400-g-",
+    "category": "Babco"
+  },
+  "ANCCM400": {
+    "Item": "ANCCM400",
+    "Description": "Anand Channachur Mixture - 20 x 400 g (No.8)",
+    "Price": 39.7,
+    "Quantity": 20,
+    "sku": "Anand-Channachur-Mixture---20-x-400-g-(No.8)-",
+    "category": "Babco"
+  },
+  "ANKEM400": {
+    "Item": "ANKEM400",
+    "Description": "Anand Kerala Mixture - 20 X 400 g (Box 9)",
+    "Price": 39.7,
+    "Quantity": 20,
+    "sku": "Anand-Kerala-Mixture---20-X-400-g-(Box-9)-",
+    "category": "Babco"
+  },
+  "ANSPM400": {
+    "Item": "ANSPM400",
+    "Description": "Anand Spicy Mixture - Hot - 20 x 400 g (Box 12)",
+    "Price": 39.7,
+    "Quantity": 20,
+    "sku": "Anand-Spicy-Mixture---Hot---20-x-400-g-(Box-12)-",
+    "category": "Babco"
+  },
+  "ANTRM400": {
+    "Item": "ANTRM400",
+    "Description": "Anand Trissur Spicy Mixture - 20 x 400 g (Box 13)",
+    "Price": 39.7,
+    "Quantity": 20,
+    "sku": "Anand-Trissur-Spicy-Mixture---20-x-400-g-(Box-13)-",
+    "category": "Babco"
+  },
+  "ANMUM200": {
+    "Item": "ANMUM200",
+    "Description": "Anand Madras Muruku - spicy - 20 x 200 g (Box 15)",
+    "Price": 37.7,
+    "Quantity": 20,
+    "sku": "Anand-Madras-Muruku---spicy---20-x-200-g-(Box-15)-",
+    "category": "Babco"
+  },
+  "ANMUR200": {
+    "Item": "ANMUR200",
+    "Description": "Anand Rice Muruku - 20 X 200 g (Box 16)",
+    "Price": 37.7,
+    "Quantity": 20,
+    "sku": "Anand-Rice-Muruku---20-X-200-g-(Box-16)-",
+    "category": "Babco"
+  },
+  "ANPLC400": {
+    "Item": "ANPLC400",
+    "Description": "Anand Plantain Chips (Nendrakai) - 20 x 400 g (Box 22)",
+    "Price": 60.7,
+    "Quantity": 20,
+    "sku": "Anand-Plantain-Chips-(Nendrakai)---20-x-400-g-(Box-22)-",
+    "category": "Babco"
+  },
+  "ANBMA400": {
+    "Item": "ANBMA400",
+    "Description": "Anand Boondhi (Masala) - 20 X 400 g",
+    "Price": 39.2,
+    "Quantity": 20,
+    "sku": "Anand-Boondhi-(Masala)---20-X-400-g-",
+    "category": "Babco"
+  },
+  "ANBPL400": {
+    "Item": "ANBPL400",
+    "Description": "Anand Boondi (Plain) - 20 X 400 g",
+    "Price": 39.2,
+    "Quantity": 20,
+    "sku": "Anand-Boondi-(Plain)---20-X-400-g-",
+    "category": "Babco"
+  },
+  "ANPCM200": {
+    "Item": "ANPCM200",
+    "Description": "Anand Potato Chips (Masala) - 20 X 200 g",
+    "Price": 39.2,
+    "Quantity": 20,
+    "sku": "Anand-Potato-Chips-(Masala)---20-X-200-g-",
+    "category": "Babco"
+  },
+  "ANBAM200": {
+    "Item": "ANBAM200",
+    "Description": "Anand Baby Muruku Spicy - 20 X 200 g",
+    "Price": 38.2,
+    "Quantity": 20,
+    "sku": "Anand-Baby-Muruku-Spicy---20-X-200-g-",
+    "category": "Babco"
+  },
+  "ANMIM200": {
+    "Item": "ANMIM200",
+    "Description": "Anand Muruku Mini - 20 X 200 g",
+    "Price": 38.2,
+    "Quantity": 20,
+    "sku": "Anand-Muruku-Mini---20-X-200-g-",
+    "category": "Babco"
+  },
+  "ANSMU200": {
+    "Item": "ANSMU200",
+    "Description": "Anand Spicy Muruku - 20 x 200 g",
+    "Price": 38.2,
+    "Quantity": 20,
+    "sku": "Anand-Spicy-Muruku---20-x-200-g-",
+    "category": "Babco"
+  },
+  "ANMBH740": {
+    "Item": "ANMBH740",
+    "Description": "Anand Bhel Mix (Spicy) - 10 X 740 g",
+    "Price": 38.6,
+    "Quantity": 10,
+    "sku": "Anand-Bhel-Mix-(Spicy)---10-X-740-g-",
+    "category": "Babco"
+  },
+  "ANMBM740": {
+    "Item": "ANMBM740",
+    "Description": "Anand Bhel Mix (Plain) - 10 X 740 g",
+    "Price": 38.6,
+    "Quantity": 10,
+    "sku": "Anand-Bhel-Mix-(Plain)---10-X-740-g-",
+    "category": "Babco"
+  },
+  "ANMKA400": {
+    "Item": "ANMKA400",
+    "Description": "Anand Kachori - 20 X 400 g",
+    "Price": 40.2,
+    "Quantity": 20,
+    "sku": "Anand-Kachori---20-X-400-g-",
+    "category": "Babco"
+  },
+  "ANMPB400-": {
+    "Item": "ANMPB400-",
+    "Description": "Anand Puri (for Bhel) - 20 X 400 g RT",
+    "Price": 40.2,
+    "Quantity": 20,
+    "sku": "Anand-Puri-(for-Bhel)---20-X-400-g-RT-",
+    "category": "Babco"
+  },
+  "ANRAF2LB": {
+    "Item": "ANRAF2LB",
+    "Description": "Anand Ragi Flour Regular - 10 X 2 lb",
+    "Price": 18,
+    "Quantity": 10,
+    "sku": "Anand-Ragi-Flour-Regular---10-X-2-lb-",
+    "category": "Babco"
+  },
+  "ANRAR2LB": {
+    "Item": "ANRAR2LB",
+    "Description": "Anand Ragi Flour Roasted - 10 x 2 lb",
+    "Price": 18,
+    "Quantity": 10,
+    "sku": "Anand-Ragi-Flour-Roasted---10-x-2-lb-",
+    "category": "Babco"
+  },
+  "ANFRA5LB": {
+    "Item": "ANFRA5LB",
+    "Description": "Anand Ragi Flour Regular - 4 X 5 lb",
+    "Price": 16,
+    "Quantity": 4,
+    "sku": "Anand-Ragi-Flour-Regular---4-X-5-lb-",
+    "category": "Babco"
+  },
+  "ADDHM340": {
+    "Item": "ADDHM340",
+    "Description": "Adarsh Dhal Mixture - 20 x 340 g",
+    "Price": 28,
+    "Quantity": 20,
+    "sku": "Adarsh-Dhal-Mixture---20-x-340-g-",
+    "category": "Babco"
+  },
+  "ADKAR170": {
+    "Item": "ADKAR170",
+    "Description": "Adarsh Karasev - 20 X 170 g",
+    "Price": 20,
+    "Quantity": 20,
+    "sku": "Adarsh-Karasev---20-X-170-g-",
+    "category": "Babco"
+  },
+  "ADSMM170": {
+    "Item": "ADSMM170",
+    "Description": "Adarsh Spicy Mullu Murukku - 20 x 170 g",
+    "Price": 20,
+    "Quantity": 20,
+    "sku": "Adarsh-Spicy-Mullu-Murukku---20-x-170-g-",
+    "category": "Babco"
+  },
+  "JAMIX200": {
+    "Item": "JAMIX200",
+    "Description": "Janaki Mixture - 24 X 200 g",
+    "Price": 42,
+    "Quantity": 24,
+    "sku": "Janaki-Mixture---24-X-200-g-",
+    "category": "Babco"
+  },
+  "JAMUL200": {
+    "Item": "JAMUL200",
+    "Description": "Janaki Mullu Muruku - 24 x 200 g",
+    "Price": 42,
+    "Quantity": 24,
+    "sku": "Janaki-Mullu-Muruku---24-x-200-g-",
+    "category": "Babco"
+  },
+  "JARIB200": {
+    "Item": "JARIB200",
+    "Description": "Janaki Ribbon Pakoda - 24 X 200 g",
+    "Price": 42,
+    "Quantity": 24,
+    "sku": "Janaki-Ribbon-Pakoda---24-X-200-g-",
+    "category": "Babco"
+  },
+  "JATHA200": {
+    "Item": "JATHA200",
+    "Description": "Janaki Thattai (Chakkalu) - 24 X 200 g",
+    "Price": 42,
+    "Quantity": 24,
+    "sku": "Janaki-Thattai-(Chakkalu)---24-X-200-g-",
+    "category": "Babco"
+  },
+  "ANNCB200": {
+    "Item": "ANNCB200",
+    "Description": "Anand Nelakadle (Peanut) Chikki Bar - 20 x 200 g",
+    "Price": 30.6,
+    "Quantity": 20,
+    "sku": "Anand-Nelakadle-(Peanut)-Chikki-Bar---20-x-200-g-",
+    "category": "Babco"
+  },
+  "ANNLP200": {
+    "Item": "ANNLP200",
+    "Description": "Anand Nelakadle (Peanut) Laddu - 20 X 200",
+    "Price": 30.6,
+    "Quantity": 20,
+    "sku": "Anand-Nelakadle-(Peanut)-Laddu---20-X-200-",
+    "category": "Babco"
+  },
+  "ANSEL200": {
+    "Item": "ANSEL200",
+    "Description": "Anand Sesame Laddu - 20 X 200 g",
+    "Price": 32.6,
+    "Quantity": 20,
+    "sku": "Anand-Sesame-Laddu---20-X-200-g-",
+    "category": "Babco"
+  },
+  "ANBSL200": {
+    "Item": "ANBSL200",
+    "Description": "Anand Black Sesame Laddu - 20 x 200 g",
+    "Price": 32.6,
+    "Quantity": 20,
+    "sku": "Anand-Black-Sesame-Laddu---20-x-200-g-",
+    "category": "Babco"
+  },
+  "ANSAN200": {
+    "Item": "ANSAN200",
+    "Description": "Anand Sanam Variety Dry Whole chillies - 20 x 200 g (S2)",
+    "Price": 41,
+    "Quantity": 20,
+    "sku": "Anand-Sanam-Variety-Dry-Whole-chillies---20-x-200-g-(S2)-",
+    "category": "Babco"
+  },
+  "ANKAS200": {
+    "Item": "ANKAS200",
+    "Description": "Anand Kashmiri Chilli - 20 x 200 g (K2)",
+    "Price": 51,
+    "Quantity": 20,
+    "sku": "Anand-Kashmiri-Chilli---20-x-200-g-(K2)-",
+    "category": "Babco"
+  },
+  "ANTEJ200": {
+    "Item": "ANTEJ200",
+    "Description": "Anand Teja Dry Whole Chillies - 20 X 200 g (T2)",
+    "Price": 41,
+    "Quantity": 20,
+    "sku": "Anand-Teja-Dry-Whole-Chillies---20-X-200-g-(T2)-",
+    "category": "Babco"
+  },
+  "ANMAL200": {
+    "Item": "ANMAL200",
+    "Description": "Anand Madras Appalam - 50 X 200 g (#61)",
+    "Price": 56.5,
+    "Quantity": 50,
+    "sku": "Anand-Madras-Appalam---50-X-200-g-(#61)-",
+    "category": "Babco"
+  },
+  "ANGUP200": {
+    "Item": "ANGUP200",
+    "Description": "Anand Guruvayoor Pappadam - 50 X 200 g (#29)",
+    "Price": 61.5,
+    "Quantity": 50,
+    "sku": "Anand-Guruvayoor-Pappadam---50-X-200-g-(#29)-",
+    "category": "Babco"
+  },
+  "ANFSC400": {
+    "Item": "ANFSC400",
+    "Description": "Anand Fryums - Star (Color) - 20 x 400 g",
+    "Price": 33,
+    "Quantity": 20,
+    "sku": "Anand-Fryums---Star-(Color)---20-x-400-g-",
+    "category": "Babco"
+  },
+  "ANFWC400": {
+    "Item": "ANFWC400",
+    "Description": "Anand Fryums - Wheel (Color) - 20 x 400 g",
+    "Price": 33,
+    "Quantity": 20,
+    "sku": "Anand-Fryums---Wheel-(Color)---20-x-400-g-",
+    "category": "Babco"
+  },
+  "ANKCG400": {
+    "Item": "ANKCG400",
+    "Description": "Anand Kichiya - Green Chilli - 20 x 400 g",
+    "Price": 53,
+    "Quantity": 20,
+    "sku": "Anand-Kichiya---Green-Chilli---20-x-400-g-",
+    "category": "Babco"
+  },
+  "ANKCJ400": {
+    "Item": "ANKCJ400",
+    "Description": "Anand Khichiya - Jeera - 20 X 400 g",
+    "Price": 53,
+    "Quantity": 20,
+    "sku": "Anand-Khichiya---Jeera---20-X-400-g-",
+    "category": "Babco"
+  },
+  "LXPFC400": {
+    "Item": "LXPFC400",
+    "Description": "Laxminarayan Potato Chewda - 10 X 400 g",
+    "Price": 31.5,
+    "Quantity": 10,
+    "sku": "Laxminarayan-Potato-Chewda---10-X-400-g-",
+    "category": "Babco"
+  },
+  "LPMCM300": {
+    "Item": "LPMCM300",
+    "Description": "Maggi Coconut Milk Powder - 12 X 300 g",
+    "Price": 35,
+    "Quantity": 12,
+    "sku": "Maggi-Coconut-Milk-Powder---12-X-300-g-",
+    "category": "Babco"
+  },
+  "UBCBM070": {
+    "Item": "UBCBM070",
+    "Description": "Ustad's Chicken Biryani Masala - 12 x 70 g (#5)",
+    "Price": 13.8,
+    "Quantity": 12,
+    "sku": "Ustad's-Chicken-Biryani-Masala---12-x-70-g-(#5)-",
+    "category": "Babco"
+  },
+  "UBCCM065": {
+    "Item": "UBCCM065",
+    "Description": "Ustad's Chicken Curry Masala - 12 X 65 g (#6)",
+    "Price": 13.8,
+    "Quantity": 12,
+    "sku": "Ustad's-Chicken-Curry-Masala---12-X-65-g-(#6)-",
+    "category": "Babco"
+  },
+  "UBCHC110": {
+    "Item": "UBCHC110",
+    "Description": "Ustad's Chilli Chicken Masala - 12 x 110 g (#10)",
+    "Price": 13.8,
+    "Quantity": 12,
+    "sku": "Ustad's-Chilli-Chicken-Masala---12-x-110-g-(#10)-",
+    "category": "Babco"
+  },
+  "UBKGM045": {
+    "Item": "UBKGM045",
+    "Description": "Ustad's Kadai Ghosht Masala - 12 x 45 g (#16)",
+    "Price": 13.8,
+    "Quantity": 12,
+    "sku": "Ustad's-Kadai-Ghosht-Masala---12-x-45-g-(#16)-",
+    "category": "Babco"
+  },
+  "UBTCM055": {
+    "Item": "UBTCM055",
+    "Description": "Ustad's Tandoori Chicken Masala - 12 X 55 g (#21)",
+    "Price": 13.8,
+    "Quantity": 12,
+    "sku": "Ustad's-Tandoori-Chicken-Masala---12-X-55-g-(#21)-",
+    "category": "Babco"
+  },
+  "SKC65200": {
+    "Item": "SKC65200",
+    "Description": "Sakthi Chilli Chicken 65 - 10 x 200 g (#6)",
+    "Price": 18,
+    "Quantity": 10,
+    "sku": "Sakthi-Chilli-Chicken-65---10-x-200-g-(#6)-",
+    "category": "Babco"
+  },
+  "SKCCP200": {
+    "Item": "SKCCP200",
+    "Description": "Sakthi Chilli Chutney Powder - 10 X 200 g (#7)",
+    "Price": 16,
+    "Quantity": 10,
+    "sku": "Sakthi-Chilli-Chutney-Powder---10-X-200-g-(#7)-",
+    "category": "Babco"
+  },
+  "SKGAM200": {
+    "Item": "SKGAM200",
+    "Description": "Sakthi Garam Masala - 10 X 200 g (#16)",
+    "Price": 22.5,
+    "Quantity": 10,
+    "sku": "Sakthi-Garam-Masala---10-X-200-g-(#16)-",
+    "category": "Babco"
+  },
+  "NPAPM1KG": {
+    "Item": "NPAPM1KG",
+    "Description": "Nirapara Appam / Idiyappam Podi - 10 x 1 Kg",
+    "Price": 26.2,
+    "Quantity": 10,
+    "sku": "Nirapara-Appam-/-Idiyappam-Podi---10-x-1-Kg-",
+    "category": "Babco"
+  },
+  "NPCPP1KG": {
+    "Item": "NPCPP1KG",
+    "Description": "Nirapara Chemba Puttu Podi - 10 X 1 Kg",
+    "Price": 25.7,
+    "Quantity": 10,
+    "sku": "Nirapara-Chemba-Puttu-Podi---10-X-1-Kg-",
+    "category": "Babco"
+  },
+  "NPEPP1KG": {
+    "Item": "NPEPP1KG",
+    "Description": "Nirapara Easy Palappam Podi - 10 x 1 Kg",
+    "Price": 27.2,
+    "Quantity": 10,
+    "sku": "Nirapara-Easy-Palappam-Podi---10-x-1-Kg-",
+    "category": "Babco"
+  },
+  "NPPUT1KG": {
+    "Item": "NPPUT1KG",
+    "Description": "Nirapara Puttu Podi 10 X 1 kg",
+    "Price": 26.2,
+    "Quantity": 10,
+    "sku": "Nirapara-Puttu-Podi-10-X-1-kg-",
+    "category": "Babco"
+  },
+  "NPROS1KG": {
+    "Item": "NPROS1KG",
+    "Description": "Nirapara Roasted Semolina 10 x 1 kg",
+    "Price": 27.7,
+    "Quantity": 10,
+    "sku": "Nirapara-Roasted-Semolina-10-x-1-kg-",
+    "category": "Babco"
+  },
+  "NPUPR1KG": {
+    "Item": "NPUPR1KG",
+    "Description": "Nirapara Upma Rava 10 x 1 kg",
+    "Price": 26.2,
+    "Quantity": 10,
+    "sku": "Nirapara-Upma-Rava-10-x-1-kg-",
+    "category": "Babco"
+  },
+  "NPCMR400": {
+    "Item": "NPCMR400",
+    "Description": "Nirapara Cut Mango Pickle (Red) 12 x 400g",
+    "Price": 23.7,
+    "Quantity": 12,
+    "sku": "Nirapara-Cut-Mango-Pickle-(Red)-12-x-400g-",
+    "category": "Babco"
+  },
+  "NPKAD400": {
+    "Item": "NPKAD400",
+    "Description": "Nirapara Kadumango Pickle - 12 x 400 g",
+    "Price": 23.7,
+    "Quantity": 12,
+    "sku": "Nirapara-Kadumango-Pickle---12-x-400-g-",
+    "category": "Babco"
+  },
+  "NPCKN200": {
+    "Item": "NPCKN200",
+    "Description": "Nirapara Chicken Masala - 12 x 200 g",
+    "Price": 19.5,
+    "Quantity": 12,
+    "sku": "Nirapara-Chicken-Masala---12-x-200-g-",
+    "category": "Babco"
+  },
+  "NPFML200": {
+    "Item": "NPFML200",
+    "Description": "Nirapara Fish Masala - 12 x 200 g",
+    "Price": 19.5,
+    "Quantity": 12,
+    "sku": "Nirapara-Fish-Masala---12-x-200-g-",
+    "category": "Babco"
+  },
+  "NPSAM200": {
+    "Item": "NPSAM200",
+    "Description": "Nirapara Sambar Powder 12 x 200 g",
+    "Price": 19.5,
+    "Quantity": 12,
+    "sku": "Nirapara-Sambar-Powder-12-x-200-g-",
+    "category": "Babco"
+  },
+  "BHAIP1KG": {
+    "Item": "BHAIP1KG",
+    "Description": "Brahmins Appam Idiyappam Powder - 12 X 1 kg",
+    "Price": 29,
+    "Quantity": 12,
+    "sku": "Brahmins-Appam-Idiyappam-Powder---12-X-1-kg-",
+    "category": "Babco"
+  },
+  "BHCIP1KG": {
+    "Item": "BHCIP1KG",
+    "Description": "Brahmins Chemba Idiyappam Podi - 12 x 1 Kg",
+    "Price": 32.6,
+    "Quantity": 12,
+    "sku": "Brahmins-Chemba-Idiyappam-Podi---12-x-1-Kg-",
+    "category": "Babco"
+  },
+  "BHCPP1KG": {
+    "Item": "BHCPP1KG",
+    "Description": "Brahmins Chemba Puttu Powder - 12 X 1 Kg",
+    "Price": 33.2,
+    "Quantity": 12,
+    "sku": "Brahmins-Chemba-Puttu-Powder---12-X-1-Kg-",
+    "category": "Babco"
+  },
+  "BHDOS1KG": {
+    "Item": "BHDOS1KG",
+    "Description": "Brahmins Dosa Podi - 12 x 1 kg",
+    "Price": 36.2,
+    "Quantity": 12,
+    "sku": "Brahmins-Dosa-Podi---12-x-1-kg-",
+    "category": "Babco"
+  },
+  "BHEPP1KG": {
+    "Item": "BHEPP1KG",
+    "Description": "Brahmins Easy Palappam Mix - 12 X 1 Kg",
+    "Price": 37.76,
+    "Quantity": 12,
+    "sku": "Brahmins-Easy-Palappam-Mix---12-X-1-Kg-",
+    "category": "Babco"
+  },
+  "BHFRA1KG": {
+    "Item": "BHFRA1KG",
+    "Description": "Brahmins Fried Rava - 12 x 1 Kg",
+    "Price": 29.6,
+    "Quantity": 12,
+    "sku": "Brahmins-Fried-Rava---12-x-1-Kg-",
+    "category": "Babco"
+  },
+  "BHOAT1KG": {
+    "Item": "BHOAT1KG",
+    "Description": "Brahmins Oats Puttu Podi - 12 X 1 kg",
+    "Price": 52.4,
+    "Quantity": 12,
+    "sku": "Brahmins-Oats-Puttu-Podi---12-X-1-kg-",
+    "category": "Babco"
+  },
+  "BHPUT1KG": {
+    "Item": "BHPUT1KG",
+    "Description": "Brahmins Puttu Powder - 12 X 1 Kg",
+    "Price": 29,
+    "Quantity": 12,
+    "sku": "Brahmins-Puttu-Powder---12-X-1-Kg-",
+    "category": "Babco"
+  },
+  "BHSPD200": {
+    "Item": "BHSPD200",
+    "Description": "Brahmins Sambar Powder Duplex - 20 X 200 g",
+    "Price": 41,
+    "Quantity": 20,
+    "sku": "Brahmins-Sambar-Powder-Duplex---20-X-200-g-",
+    "category": "Babco"
+  },
+  "BHGAM100": {
+    "Item": "BHGAM100",
+    "Description": "Brahmins Garam Masala Duplex - 10 x 100 g",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Brahmins-Garam-Masala-Duplex---10-x-100-g-",
+    "category": "Babco"
+  },
+  "BHLIM300": {
+    "Item": "BHLIM300",
+    "Description": "Brahmins Lime Pickle Bottle - 12 X 300 g",
+    "Price": 20.2,
+    "Quantity": 12,
+    "sku": "Brahmins-Lime-Pickle-Bottle---12-X-300-g-",
+    "category": "Babco"
+  },
+  "BHSLM300": {
+    "Item": "BHSLM300",
+    "Description": "Brahmins Sliced Mango Pickle Bottle - 12 x 300 g",
+    "Price": 21.4,
+    "Quantity": 12,
+    "sku": "Brahmins-Sliced-Mango-Pickle-Bottle---12-x-300-g-",
+    "category": "Babco"
+  },
+  "NPKMR10KG": {
+    "Item": "NPKMR10KG",
+    "Description": "Nirapara Palakkadan Matta Rice (Silky Sortex) Green Bag - 1 x 10 kg",
+    "Price": 14.5,
+    "Quantity": 1,
+    "sku": "Nirapara-Palakkadan-Matta-Rice-(Silky-Sortex)-Green-Bag---1-x-10-kg-",
+    "category": "Babco"
+  },
+  "PZKMR20": {
+    "Item": "PZKMR20",
+    "Description": "Pavizham Long Grain Matta Rice - 1 x 10 kg",
+    "Price": 12,
+    "Quantity": 1,
+    "sku": "Pavizham-Long-Grain-Matta-Rice---1-x-10-kg-",
+    "category": "Babco"
+  },
+  "TIUNS224": {
+    "Item": "TIUNS224",
+    "Description": "Tea India Chai Moments (Unsweetened) - 6/10 X 224 g",
+    "Price": 22,
+    "Quantity": 10,
+    "sku": "Tea-India-Chai-Moments-(Unsweetened)---6/10-X-224-g-",
+    "category": "Babco"
+  },
+  "TIBLT5.44": {
+    "Item": "TIBLT5.44",
+    "Description": "Tea India Orange Pekoe Black Tea - 8/216 x 5.44 kg",
+    "Price": 52,
+    "Quantity": 8,
+    "sku": "Tea-India-Orange-Pekoe-Black-Tea---8/216-x-5.44-kg-",
+    "category": "Babco"
+  },
+  "PGAAP750": {
+    "Item": "PGAAP750",
+    "Description": "PriyaGold Butter Bite Cookies (Almond & Pistachio) - 12 x 650 g",
+    "Price": 31.6,
+    "Quantity": 12,
+    "sku": "PriyaGold-Butter-Bite-Cookies-(Almond-&-Pistachio)---12-x-650-g-",
+    "category": "Babco"
+  },
+  "PGBUT750": {
+    "Item": "PGBUT750",
+    "Description": "PriyaGold Butter Bite Cookies (Premium Butter) - 12 x 650 g",
+    "Price": 19.6,
+    "Quantity": 12,
+    "sku": "PriyaGold-Butter-Bite-Cookies-(Premium-Butter)---12-x-650-g-",
+    "category": "Babco"
+  },
+  "PGDEL500": {
+    "Item": "PGDEL500",
+    "Description": "Priyagold Butter Delite (Crackers with Black Cumin Seeds) - 12 x 400 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Butter-Delite-(Crackers-with-Black-Cumin-Seeds)---12-x-400-g-",
+    "category": "Babco"
+  },
+  "PGCHO500": {
+    "Item": "PGCHO500",
+    "Description": "Priyagold Classic Cream (Chocolate) - 12 x 400 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Classic-Cream-(Chocolate)---12-x-400-g-",
+    "category": "Babco"
+  },
+  "PGCAR500": {
+    "Item": "PGCAR500",
+    "Description": "Priyagold Classic Cream (Cardamon) - 12 X 400 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Classic-Cream-(Cardamon)---12-X-400-g-",
+    "category": "Babco"
+  },
+  "PGORA500": {
+    "Item": "PGORA500",
+    "Description": "Priyagold Classic Cream (Orange) - 12 x 400 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Classic-Cream-(Orange)---12-x-400-g-",
+    "category": "Babco"
+  },
+  "PGCSS500": {
+    "Item": "PGCSS500",
+    "Description": "Priyagold Cnc Crackers (Sweet & Salty) - 12 X 450 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Cnc-Crackers-(Sweet-&-Salty)---12-X-450-g-",
+    "category": "Babco"
+  },
+  "PGMLB550": {
+    "Item": "PGMLB550",
+    "Description": "Priyagold Marie Lite Biscuits - 12 x 450 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Marie-Lite-Biscuits---12-x-450-g-",
+    "category": "Babco"
+  },
+  "PGBZZ500": {
+    "Item": "PGBZZ500",
+    "Description": "Priyagold Zigzag Biscuits - 12 X 450 g",
+    "Price": 18.4,
+    "Quantity": 12,
+    "sku": "Priyagold-Zigzag-Biscuits---12-X-450-g-",
+    "category": "Babco"
+  },
+  "GUMSB200": {
+    "Item": "GUMSB200",
+    "Description": "Gullon Maria Sugarfree SF 200g - 16 x 200 g",
+    "Price": 25.6,
+    "Quantity": 16,
+    "sku": "Gullon-Maria-Sugarfree-SF-200g---16-x-200-g-",
+    "category": "Babco"
+  }
+}

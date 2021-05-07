@@ -1,24 +1,4 @@
 {
-  "BPCUP007": {
-    "Item": "BPCUP007",
-    "Description": "Cumin Powder - 12*7 oz",
-    "Quantity": "7",
-    "Price": "23.50",
-    "sku": "CUMIN-POWDER---127-OZ",
-    "category": "East-food"
-  },
-  "BPGIP007": {
-    "Item": "BPGIP007",
-    "Description": "Ginger Powder - 12*7 oz",
-    "Quantity": "7",
-    "Price": "28.00"
-  },
-  "BPCPROO7": {
-    "Item": "BPCPROO7",
-    "Description": "Chilli Powder 12*7 oz",
-    "Quantity": "7",
-    "Price": "26.00"
-  },
   "BWCUS007": {
     "Item": "BWCUS007",
     "Description": "Cumin Seeds - 12*7 oz",
@@ -27,12 +7,7 @@
     "sku": "CUMIN-SEEDS---127-OZ",
     "category": "East-food"
   },
-  "BWMS010": {
-    "Item": "BWMS010",
-    "Description": "Fenugreek Seed - 12*10oz",
-    "Quantity": "10",
-    "Price": "23.50"
-  },
+
   "BPBP007": {
     "Item": "BPBP007",
     "Description": "Black Pepper Powder - 12*7 oz",
@@ -49,12 +24,6 @@
     "sku": "TURMERIC-POWDER---127-OZ",
     "category": "East-food"
   },
-  "BWCS045": {
-    "Item": "BWCS045",
-    "Description": "Cinamon Stick - 12*4.5oz",
-    "Quantity": "4.5",
-    "Price": "36.00"
-  },
   "BPGP007": {
     "Item": "BPGP007",
     "Description": "Garlic Powder - 12*7 oz",
@@ -62,12 +31,6 @@
     "Price": "28.00",
     "sku": "GARLIC-POWDER---127-OZ",
     "category": "East-food"
-  },
-  "BPCIP007": {
-    "Item": "BPCIP007",
-    "Description": "Cinamon Powder - 12*7 oz New",
-    "Quantity": "7",
-    "Price": "24.00"
   },
   "BPGM007": {
     "Item": "BPGM007",
@@ -77,48 +40,7 @@
     "sku": "GARAM-MASALA---127-OZ",
     "category": "East-food"
   },
-  "BWFS007": {
-    "Item": "BWFS007",
-    "Description": "Fennel Seed - 12*7 oz",
-    "Quantity": "7",
-    "Price": "23.50"
-  },
-  "BWAS007": {
-    "Item": "BWAS007",
-    "Description": "Ajwan Seed - 12*7 oz",
-    "Quantity": "7",
-    "Price": "30.00"
-  },
-  "BPCOR014": {
-    "Item": "BPCOR014",
-    "Description": "Coriander Powder - 12*14 oz",
-    "Quantity": "14",
-    "Price": "33.00"
-  },
-  "BPCUR014": {
-    "Item": "BPCUR014",
-    "Description": "Curry Powder - 12*14 oz",
-    "Quantity": "14",
-    "Price": "30.00"
-  },
-  "BPTP014": {
-    "Item": "BPTP014",
-    "Description": "Turmeric Powder - 12*14 oz",
-    "Quantity": "14",
-    "Price": "30.00"
-  },
-  "BWCUS014": {
-    "Item": "BWCUS014",
-    "Description": "Cumin Seeds - 12*14 oz",
-    "Quantity": "14",
-    "Price": "36.00"
-  },
-  "BPGM014": {
-    "Item": "BPGM014",
-    "Description": "Garam Masala - 12*14 oz",
-    "Quantity": "14",
-    "Price": "42.00"
-  },
+
   "BWWC035": {
     "Item": "BWWC035",
     "Description": "Whole Chilli R) - 12*3.5 oz",
@@ -198,5 +120,97 @@
     "Price": 48,
     "sku": "BLACK-PEPPER-POWDER---1214",
     "category": "East-food"
+  },
+
+  "BPCUP007": {
+    "Item": "BPCUP007",
+    "Description": "Cumin Powder - 12*7 oz",
+    "Quantity": 7,
+    "Price": 23.5,
+    "sku": "Cumin-Powder---12*7-oz"
+  },
+  "BPGIP007": {
+    "Item": "BPGIP007",
+    "Description": "Ginger Powder - 12*7 oz",
+    "Quantity": 7,
+    "Price": 28,
+    "sku": "Ginger-Powder---12*7-oz"
+  },
+  "BPCPROO7": {
+    "Item": "BPCPROO7",
+    "Description": "Chilli Powder 12*7 oz",
+    "Quantity": 7,
+    "Price": 26,
+    "sku": "Chilli-Powder-12*7-oz"
+  },
+  "BWMS010": {
+    "Item": "BWMS010",
+    "Description": "Fenugreek Seed - 12*10oz",
+    "Quantity": 10,
+    "Price": 23.5,
+    "sku": "Fenugreek-Seed---12*10oz"
+  },
+  "BWCS045": {
+    "Item": "BWCS045",
+    "Description": "Cinamon Stick - 12*4.5oz",
+    "Quantity": 4.5,
+    "Price": 36,
+    "sku": "Cinamon-Stick---12*4.5oz"
+  },
+  "BPCIP007": {
+    "Item": "BPCIP007",
+    "Description": "Cinamon Powder - 12*7 oz New",
+    "Quantity": 7,
+    "Price": 24,
+    "sku": "Cinamon-Powder---12*7-oz-New"
+  },
+  "BWFS007": {
+    "Item": "BWFS007",
+    "Description": "Fennel Seed - 12*7 oz",
+    "Quantity": 7,
+    "Price": 23.5,
+    "sku": "Fennel-Seed---12*7-oz"
+  },
+  "BWAS007": {
+    "Item": "BWAS007",
+    "Description": "Ajwan Seed - 12*7 oz",
+    "Quantity": 7,
+    "Price": 30,
+    "sku": "Ajwan-Seed---12*7-oz"
+  },
+  "BPCOR014": {
+    "Item": "BPCOR014",
+    "Description": "Coriander Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 33,
+    "sku": "Coriander-Powder---12*14-oz"
+  },
+  "BPCUR014": {
+    "Item": "BPCUR014",
+    "Description": "Curry Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 30,
+    "sku": "Curry-Powder---12*14-oz"
+  },
+  "BPTP014": {
+    "Item": "BPTP014",
+    "Description": "Turmeric Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 30,
+    "sku": "Turmeric-Powder---12*14-oz"
+  },
+  "BWCUS014": {
+    "Item": "BWCUS014",
+    "Description": "Cumin Seeds - 12*14 oz",
+    "Quantity": 14,
+    "Price": 36,
+    "sku": "Cumin-Seeds---12*14-oz"
+  },
+  "BPGM014": {
+    "Item": "BPGM014",
+    "Description": "Garam Masala - 12*14 oz",
+    "Quantity": 14,
+    "Price": 42,
+    "sku": "Garam-Masala---12*14-oz"
   }
 }

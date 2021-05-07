@@ -1,0 +1,322 @@
+{
+  "NOOR IRON CONCAVE TAWA 9": {
+    "Item": "NOOR IRON CONCAVE TAWA 9",
+    "Description": "NOOR IRON CONCAVE TAWA 9",
+    "Price": 4.5,
+    "Quantity": 1,
+    "sku": "NOOR-IRON-CONCAVE-TAWA-9",
+    "category": "shreeji-jay1"
+  },
+  "JASPER IRON FLAT TAWA 11": {
+    "Item": "JASPER IRON FLAT TAWA 11",
+    "Description": "JASPER IRON FLAT TAWA 11",
+    "Price": 6.5,
+    "Quantity": 1,
+    "sku": "JASPER-IRON-FLAT-TAWA-11",
+    "category": "shreeji-jay1"
+  },
+  "VINOD 2 POURER MILKPAN 20CM": {
+    "Item": "VINOD 2 POURER MILKPAN 20CM",
+    "Description": "VINOD 2 POURER MILKPAN 20CM",
+    "Price": 9,
+    "Quantity": 1,
+    "sku": "VINOD-2-POURER-MILKPAN-20CM",
+    "category": "shreeji-jay1"
+  },
+  "4PC SAUCE PAN SET ALUMINIUM": {
+    "Item": "4PC SAUCE PAN SET ALUMINIUM",
+    "Description": "4PC SAUCE PAN SET ALUMINIUM",
+    "Price": 22,
+    "Quantity": 1,
+    "sku": "4PC-SAUCE-PAN-SET-ALUMINIUM",
+    "category": "shreeji-jay1"
+  },
+  "S.S. TAWA 18CM": {
+    "Item": "S.S. TAWA 18CM",
+    "Description": "S.S. TAWA 18CM",
+    "Price": 45,
+    "Quantity": 1,
+    "sku": "S.S.-TAWA-18CM",
+    "category": "shreeji-jay1"
+  },
+  "COFFEE WARMER 250ML": {
+    "Item": "COFFEE WARMER 250ML",
+    "Description": "COFFEE WARMER 250ML",
+    "Price": 3.5,
+    "Quantity": 1,
+    "sku": "COFFEE-WARMER-250ML",
+    "category": "shreeji-jay1"
+  },
+  "COFFEE WARMER 350ML": {
+    "Item": "COFFEE WARMER 350ML",
+    "Description": "COFFEE WARMER 350ML",
+    "Price": 4,
+    "Quantity": 1,
+    "sku": "COFFEE-WARMER-350ML",
+    "category": "shreeji-jay1"
+  },
+  "COFFEE WARMER 650ML": {
+    "Item": "COFFEE WARMER 650ML",
+    "Description": "COFFEE WARMER 650ML",
+    "Price": 5.25,
+    "Quantity": 1,
+    "sku": "COFFEE-WARMER-650ML",
+    "category": "shreeji-jay1"
+  },
+  "BLACK DOTTED KADAI 22CM": {
+    "Item": "BLACK DOTTED KADAI 22CM",
+    "Description": "BLACK DOTTED KADAI 22CM",
+    "Price": 7,
+    "Quantity": 1,
+    "sku": "BLACK-DOTTED-KADAI-22CM",
+    "category": "shreeji-jay1"
+  },
+  "BLACK DOTED KADHAI 24CM": {
+    "Item": "BLACK DOTED KADHAI 24CM",
+    "Description": "BLACK DOTED KADHAI 24CM",
+    "Price": 8,
+    "Quantity": 1,
+    "sku": "BLACK-DOTED-KADHAI-24CM",
+    "category": "shreeji-jay1"
+  },
+  "MUKTA VATKI 4.5": {
+    "Item": "MUKTA VATKI 4.5",
+    "Description": "MUKTA VATKI 4.5",
+    "Price": 0.9,
+    "Quantity": 1,
+    "sku": "MUKTA-VATKI-4.5",
+    "category": "shreeji-jay1"
+  },
+  "MUKTA VATKI 5.0": {
+    "Item": "MUKTA VATKI 5.0",
+    "Description": "MUKTA VATKI 5.0",
+    "Price": 1,
+    "Quantity": 1,
+    "sku": "MUKTA-VATKI-5.0",
+    "category": "shreeji-jay1"
+  },
+  "MUKTA VATKI 5.5": {
+    "Item": "MUKTA VATKI 5.5",
+    "Description": "MUKTA VATKI 5.5",
+    "Price": 1.1,
+    "Quantity": 1,
+    "sku": "MUKTA-VATKI-5.5",
+    "category": "shreeji-jay1"
+  },
+  "MUKTA VATKI 6.0": {
+    "Item": "MUKTA VATKI 6.0",
+    "Description": "MUKTA VATKI 6.0",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "MUKTA-VATKI-6.0",
+    "category": "shreeji-jay1"
+  },
+  "MUKTA VATKI 6.5": {
+    "Item": "MUKTA VATKI 6.5",
+    "Description": "MUKTA VATKI 6.5",
+    "Price": 1.45,
+    "Quantity": 1,
+    "sku": "MUKTA-VATKI-6.5",
+    "category": "shreeji-jay1"
+  },
+  "S.S. GLASS AMRAPALI": {
+    "Item": "S.S. GLASS AMRAPALI",
+    "Description": "S.S. GLASS AMRAPALI",
+    "Price": 0.9,
+    "Quantity": 1,
+    "sku": "S.S.-GLASS-AMRAPALI",
+    "category": "shreeji-jay1"
+  },
+  "S.S. GLASS FLOWER": {
+    "Item": "S.S. GLASS FLOWER",
+    "Description": "S.S. GLASS FLOWER",
+    "Price": 0.9,
+    "Quantity": 1,
+    "sku": "S.S.-GLASS-FLOWER",
+    "category": "shreeji-jay1"
+  },
+  "S.S. LASSI GLASS": {
+    "Item": "S.S. LASSI GLASS",
+    "Description": "S.S. LASSI GLASS",
+    "Price": 1,
+    "Quantity": 1,
+    "sku": "S.S.-LASSI-GLASS",
+    "category": "shreeji-jay1"
+  },
+  "HAWKINS COOKER CLASSIC 3.OLTR": {
+    "Item": "HAWKINS COOKER CLASSIC 3.OLTR",
+    "Description": "HAWKINS COOKER CLASSIC 3.OLTR",
+    "Price": 19,
+    "Quantity": 1,
+    "sku": "HAWKINS-COOKER-CLASSIC-3.OLTR",
+    "category": "shreeji-jay1"
+  },
+  "HAWKINS COOKER CLASSIC 5.OLTR": {
+    "Item": "HAWKINS COOKER CLASSIC 5.OLTR",
+    "Description": "HAWKINS COOKER CLASSIC 5.OLTR",
+    "Price": 26,
+    "Quantity": 1,
+    "sku": "HAWKINS-COOKER-CLASSIC-5.OLTR",
+    "category": "shreeji-jay1"
+  },
+  "JAY S.S. PURI PRESS MACHINE": {
+    "Item": "JAY S.S. PURI PRESS MACHINE",
+    "Description": "JAY S.S. PURI PRESS MACHINE",
+    "Price": 8.5,
+    "Quantity": 1,
+    "sku": "JAY-S.S.-PURI-PRESS-MACHINE",
+    "category": "shreeji-jay1"
+  },
+  "CHAPATI PRESS 4": {
+    "Item": "CHAPATI PRESS 4",
+    "Description": "CHAPATI PRESS 4",
+    "Price": 8,
+    "Quantity": 4,
+    "sku": "CHAPATI-PRESS-4",
+    "category": "shreeji-jay1"
+  },
+  "PLASTIC TEA STAINER 1": {
+    "Item": "PLASTIC TEA STAINER 1",
+    "Description": "PLASTIC TEA STAINER 1",
+    "Price": 3.5,
+    "Quantity": 1,
+    "sku": "PLASTIC-TEA-STAINER-1",
+    "category": "shreeji-jay1"
+  },
+  "PLASTIC TEA STAINER 2": {
+    "Item": "PLASTIC TEA STAINER 2",
+    "Description": "PLASTIC TEA STAINER 2",
+    "Price": 4,
+    "Quantity": 2,
+    "sku": "PLASTIC-TEA-STAINER-2",
+    "category": "shreeji-jay1"
+  },
+  "JUICE STAINER 5": {
+    "Item": "JUICE STAINER 5",
+    "Description": "JUICE STAINER 5",
+    "Price": 6.5,
+    "Quantity": 5,
+    "sku": "JUICE-STAINER-5",
+    "category": "shreeji-jay1"
+  },
+  "JUICE STAINER 7": {
+    "Item": "JUICE STAINER 7",
+    "Description": "JUICE STAINER 7",
+    "Price": 9,
+    "Quantity": 7,
+    "sku": "JUICE-STAINER-7",
+    "category": "shreeji-jay1"
+  },
+  "S.S. PAVALI SET 12x18": {
+    "Item": "S.S. PAVALI SET 12x18",
+    "Description": "S.S. PAVALI SET 12x18",
+    "Price": 85,
+    "Quantity": 12,
+    "sku": "S.S.-PAVALI-SET-12x18",
+    "category": "shreeji-jay1"
+  },
+  "PAVBHAJI PLATE SQUARE 25x25": {
+    "Item": "PAVBHAJI PLATE SQUARE 25x25",
+    "Description": "PAVBHAJI PLATE SQUARE 25x25",
+    "Price": 2.25,
+    "Quantity": 25,
+    "sku": "PAVBHAJI-PLATE-SQUARE-25x25",
+    "category": "shreeji-jay1"
+  },
+  "PAVBHAJI PLATE SQUARE 26x29": {
+    "Item": "PAVBHAJI PLATE SQUARE 26x29",
+    "Description": "PAVBHAJI PLATE SQUARE 26x29",
+    "Price": 2.5,
+    "Quantity": 26,
+    "sku": "PAVBHAJI-PLATE-SQUARE-26x29",
+    "category": "shreeji-jay1"
+  },
+  "SADA VATKI 4.5": {
+    "Item": "SADA VATKI 4.5",
+    "Description": "SADA VATKI 4.5",
+    "Price": 0.9,
+    "Quantity": 1,
+    "sku": "SADA-VATKI-4.5",
+    "category": "shreeji-jay1"
+  },
+  "SADA VATKI 5.0": {
+    "Item": "SADA VATKI 5.0",
+    "Description": "SADA VATKI 5.0",
+    "Price": 1,
+    "Quantity": 1,
+    "sku": "SADA-VATKI-5.0",
+    "category": "shreeji-jay1"
+  },
+  "SADA VATKI 5.5": {
+    "Item": "SADA VATKI 5.5",
+    "Description": "SADA VATKI 5.5",
+    "Price": 1.1,
+    "Quantity": 1,
+    "sku": "SADA-VATKI-5.5",
+    "category": "shreeji-jay1"
+  },
+  "SADA VATKI 6.0": {
+    "Item": "SADA VATKI 6.0",
+    "Description": "SADA VATKI 6.0",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "SADA-VATKI-6.0",
+    "category": "shreeji-jay1"
+  },
+  "DYNA 1 ITR MUG COLOR": {
+    "Item": "DYNA 1 ITR MUG COLOR",
+    "Description": "DYNA 1 ITR MUG COLOR",
+    "Price": 0.7,
+    "Quantity": 1,
+    "sku": "DYNA-1-ITR-MUG-COLOR",
+    "category": "shreeji-jay1"
+  },
+  "DYNA 1.5 ITR MUG COLOR": {
+    "Item": "DYNA 1.5 ITR MUG COLOR",
+    "Description": "DYNA 1.5 ITR MUG COLOR",
+    "Price": 0.9,
+    "Quantity": 1,
+    "sku": "DYNA-1.5-ITR-MUG-COLOR",
+    "category": "shreeji-jay1"
+  },
+  "COFFEE FILTER 0": {
+    "Item": "COFFEE FILTER 0",
+    "Description": "COFFEE FILTER 0",
+    "Price": 4,
+    "Quantity": 1,
+    "sku": "COFFEE-FILTER-0",
+    "category": "shreeji-jay1"
+  },
+  "ORBIT HAND BLENDER 110V": {
+    "Item": "ORBIT HAND BLENDER 110V",
+    "Description": "ORBIT HAND BLENDER 110V",
+    "Price": 10,
+    "Quantity": 1,
+    "sku": "ORBIT-HAND-BLENDER-110V",
+    "category": "shreeji-jay1"
+  },
+  "ORBIT WET DRY GRINDER 110V": {
+    "Item": "ORBIT WET DRY GRINDER 110V",
+    "Description": "ORBIT WET DRY GRINDER 110V",
+    "Price": 29,
+    "Quantity": 1,
+    "sku": "ORBIT-WET-DRY-GRINDER-110V",
+    "category": "shreeji-jay1"
+  },
+  "CARPET 3X6": {
+    "Item": "CARPET 3X6",
+    "Description": "CARPET 3X6",
+    "Price": 4,
+    "Quantity": 3,
+    "sku": "CARPET-3X6",
+    "category": "shreeji-jay1"
+  },
+  "OXSODISED TEMPLE 6x18": {
+    "Item": "OXSODISED TEMPLE 6x18",
+    "Description": "OXSODISED TEMPLE 6x18",
+    "Price": 75,
+    "Quantity": 6,
+    "sku": "OXSODISED-TEMPLE-6x18",
+    "category": "shreeji-jay1"
+  }
+}
