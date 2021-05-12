@@ -10,6 +10,7 @@ const UpdateInventory = (props) => {
   const [newInventoryData, setNewInventoryData] = useState(
     props.newInventoryData
   );
+  const [posProducts, setPosProducts] = useState([]);
   const [notFoundProducts, setNotFoundProducts] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [redirect, setRedirect] = useState(false);
@@ -165,7 +166,10 @@ const UpdateInventory = (props) => {
       .filter((item) => item !== null);
 
     const wooComResponse = await pushToWoocom(updatedWoocomProducts);
-    const posResponse = await pushToPOS(data);
+
+    const posResponse = await pushToPOS(posProducts);
+
+    console.log(posResponse)
     /**filter out the items not pushed on store */
     const itemsNotPushed = newInventoryData.filter(
       ({ item: item1 }) =>
@@ -173,7 +177,7 @@ const UpdateInventory = (props) => {
     );
     /**set the current table data to be the not pushed items */
     setNewInventoryData(itemsNotPushed);
-    console.log("woo com", itemsNotPushed)
+    console.log("woo com", itemsNotPushed);
     setLoader(false);
     if (itemsNotPushed.length === 0) {
       window.alert("Inventory updated successfully");
@@ -243,27 +247,28 @@ const UpdateInventory = (props) => {
     const responses = await Promise.all(
       products.map(async (product) => {
         try {
+          const { COST, PRICE, SKU, UPC, ITEMNAME, TOTALQTY, isNew } = product;
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
-              UPC: "0123456",
-              ITEMNAME: product.description,
+              UPC,
+              ITEMNAME,
               DESCRIPTION: product.description,
-              PRICE: product.sp,
-              COST: product.cp,
-              QTY: product.qty,
-              SIZE: "70 gm",
-              PACK: "Single",
+              PRICE,
+              COST,
+              QTY: TOTALQTY,
+              SIZE: "",
+              PACK: "",
               REPLACEQTY: 1,
               DEPARTMENT: "GROSARY",
               CATEGORY: "SNACKS",
-              SUBCATEGORY: "NOODLE",
+              SUBCATEGORY: "",
               ISFOODSTAMP: 1,
               ISWEIGHTED: 0,
               ISTAXABLE: 1,
-              VENDORNAME: "Test Grosary",
-              VENDORCODE: "T12456",
-              VENDORCOST: "0.70",
-              ISNEWITEM: 1,
+              VENDORNAME: "",
+              VENDORCODE: "",
+              VENDORCOST: "",
+              ISNEWITEM: isNew ? 1 : 0,
             })
           );
           console.log("res from POS", res);
@@ -279,7 +284,6 @@ const UpdateInventory = (props) => {
     return responses.filter((item) => item !== null);
   };
   useEffect(() => {
-    getInventoryData();
     async function getProducts() {
       const items = await Promise.all(
         newInventoryData.map(async (row) => {
@@ -321,9 +325,61 @@ const UpdateInventory = (props) => {
       setWooComProducts(items.filter((ele) => ele !== null));
       setNotFoundProducts(tempNotFoundProducts);
     }
+
+    async function getPosProducts() {
+      /**
+       * "[{\"SKU\":91842,\"UPC\":\"0123456\",\"ITEMNAME\":\"Maggi Masala Noodles1\",\"PRICE\":1.13,\"COST\":0.69,\"TOTALQTY\":16.000,\"PACKNAME\":\"Single\",\"SIZENAME\":\"70 gm\",\"DEPNAME\":\"GROSARY\",\"CATNAME\":\"SNACKS\",\"SUBCATNAME\":\"NOODLE\",\"FOODSTAMPITEM\":\"Yes\",\"WEIGHTEDITEM\":\"No\"}]
+       */
+      setLoader(true);
+
+      const items = await Promise.all(
+
+        newInventoryData
+          .filter((row) => !row.isForReview)
+          .map(async (row) => {
+            try {
+              const res = await inventoryService.GetPOSProductDetails(
+                row.barcode
+              );
+              console.log('from pos', res)
+              const { COST, PRICE, SKU, UPC, ITEMNAME, TOTALQTY } = res[0];
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU,
+                UPC,
+                ITEMNAME,
+                TOTALQTY:
+                  parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+                itemNo: row.itemNo,
+                isNew: false,
+              };
+            } catch (error) {
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU: row.itemNo,
+                UPC: row.barcode,
+                ITEMNAME: row.description,
+                TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                itemNo: row.itemNo,
+                isNew: true,
+              };
+            }
+          })
+      );
+      debugger;
+      setLoader(false);
+      setPosProducts(items.filter((ele) => ele !== null));
+    }
+    getInventoryData();
     getProducts();
+    getPosProducts();
   }, []);
   useEffect(() => {}, [newInventoryData, setLoader, notFoundProducts]);
+
   if (redirect) {
     return <Redirect to="/" />;
   }

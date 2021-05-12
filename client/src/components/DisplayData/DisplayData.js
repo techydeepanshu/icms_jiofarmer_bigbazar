@@ -119,7 +119,7 @@ const DisplayData = (props) => {
               <IconButton
                 color="primary"
                 aria-label="add to review"
-                onClick={() => addForReview(element)}
+                onClick={() => addForReview(element, index)}
               >
                 <AddShoppingCartIcon />
               </IconButton>
@@ -257,7 +257,7 @@ const DisplayData = (props) => {
     }
   };
 
-  const addForReview = async (item) => {
+  const addForReview = async (item, index) => {
     const data = {
       barcode: item.barcode,
       posName: item.posName,
@@ -266,6 +266,9 @@ const DisplayData = (props) => {
     };
     try {
       firebase.database().ref("/review").child(`${item.itemNo}`).set(data);
+      let tempTableData = [...tableData];
+      tempTableData[index]["isForReview"] = true;
+      setTableData(tempTableData);
       return true;
     } catch (error) {
       console.log(error);
@@ -445,7 +448,7 @@ const DisplayData = (props) => {
   }, []);
 
   useEffect(() => {
-    // console.log("rerendered", tableData[0]);
+    console.log("rerendered", tableData);
   }, [tableData]);
 
   if (loader) {

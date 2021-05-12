@@ -21,6 +21,17 @@ export class InventoryService {
     const res = await WordpressAxios.post("products", data);
     return res.data;
   }
+
+  async GetPOSProductDetails(upc, itemName = "") {
+    const response = await Axios.get("/api/getPOSProduct", {
+      params: { upc, itemName },
+    });
+    return response.data;
+  }
+  async GetAllProducts() {
+    const res = await POSAxios.get("/Item/GetItemList");
+    return res.data;
+  }
   async UpdatePOSProducts(data) {
     const res = await POSAxios.post("/Product/ManageItem", data);
     return res.data;

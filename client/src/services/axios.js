@@ -29,8 +29,9 @@ export { WordpressAxios };
 const POSAxios = axios.create({
   // baseURL: "https://dataservices.sypramsoftware.com/api",
   auth: {
-    username: "MeCHHkZ9",
-    password: "tdypsA=",
+    UserId: "MeCHHkZ9",
+    Password: "tdypsA =",
+    Pin: "lqBZghxJgaVE",
   },
   headers: {
     Pin: "lqBZghxJgaVE",

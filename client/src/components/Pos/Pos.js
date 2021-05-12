@@ -62,7 +62,7 @@ const Pos = () => {
     setShowModal(!showModal);
   };
   useEffect(() => {
-    const ref = firebase.database().ref("/queue");
+    const ref = firebase.database().ref("/review");
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
         const data = Object.values(snapshot.val());
