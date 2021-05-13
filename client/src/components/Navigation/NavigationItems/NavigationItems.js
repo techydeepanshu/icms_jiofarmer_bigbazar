@@ -11,18 +11,19 @@ const NavigationItems = (props) => {
         // console.log("User", user)
     }, [user])
     return (
-        <ul className={styles.NavigationItems}>
-            <img className={styles.logo}  src={CwIcon} alt=""/>
-            {props.isAuth?
-                <>
-                    <NavigationItem link = "/logout">Logout</NavigationItem>
-                    <NavigationItem  link="/queue">Show Queue</NavigationItem>
-                    <NavigationItem  link="/pos">Show Pos</NavigationItem>
-                    <NavigationItem  link="/inventory">Inventory</NavigationItem>
-                </>
-            :null}
-        </ul>
-    )
+      <ul className={styles.NavigationItems}>
+        <img className={styles.logo} src={CwIcon} alt="" />
+        {props.isAuth ? (
+          <>
+            <NavigationItem link="/logout">Logout</NavigationItem>
+            <NavigationItem link="/queue">Show Queue</NavigationItem>
+            <NavigationItem link="/pos">Show Pos</NavigationItem>
+            <NavigationItem link="/inventory">Inventory</NavigationItem>
+            <NavigationItem link="/invoice">Scan Invoice</NavigationItem>
+          </>
+        ) : null}
+      </ul>
+    );
 };
 
 export default NavigationItems;
