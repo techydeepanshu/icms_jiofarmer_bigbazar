@@ -19,8 +19,8 @@ export default Axios;
 const WordpressAxios = axios.create({
   baseURL: "https://maharajafarmersmarketusa.com/wp-json/wc/v2",
   auth: {
-    username: "ck_cd683dbf821efdb611473ba8213e9a1680df1c08",
-    password: "cs_33e2223596248d67eb8b9fb66973cf8689e4bfd8",
+    username: "ck_e08ee57c7e2b0e7c10a2c932f2ea24cc4264055f",
+    password: "cs_1ae97918f989d6af747fd703d4ce77e821c8b738",
   },
 });
 
