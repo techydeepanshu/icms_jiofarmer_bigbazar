@@ -10,12 +10,12 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-const chetakData = require("./new-model/chetak-products.json");
+const chetakData = require("./dummy/chetak-products.json");
 const krishnaFoodsData = require("./new-model/krishna-foods-products.json");
 const seamarkData = require("./new-model/seamark.json");
 const advanceFoodsData = require("./new-model/advance-foods.json");
 const joyGourmetFoodsData = require("./new-model/joy-gourmet-foods.json");
-const bestFoodsData = require("./new-model/best-foods.json");
+const bestFoodsData = require("./dummy/best-foods.json");
 const katzmanData = require("./new-model/katzman.json");
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");

@@ -336,7 +336,7 @@ const DisplayData = (props) => {
   useEffect(() => {
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
-      return chetak();
+      // return chetak();
 
       setLoader(true);
       const ocrData = await Promise.all(
@@ -347,7 +347,7 @@ const DisplayData = (props) => {
             // return res.body;
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
-            // console.log("error fetching descripton", error);
+            console.log("error fetching descripton", error);
             // return null;
             throw new Error(error);
           }

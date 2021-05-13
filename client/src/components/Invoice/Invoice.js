@@ -67,18 +67,17 @@ const Invoice = (props) => {
         );
         setFilename(filenames);
       };
-      // postImage()
-      //   .then((data) => {
+      postImage()
+        .then((data) => {
           setLoader(false);
           setRedirect(true);
           props.history.push(path);
-        // })
-        // .catch((err) => {
-        //   setLoader(false);
-        //   alert("Please try again.");
-        //   // console.log("err", err);
-        // });
-      // .finally(() => setLoader(false));
+        })
+        .catch((err) => {
+          setLoader(false);
+          alert("Please try again.");
+          // console.log("err", err);
+        });
     } else {
       alert("Select an image");
     }

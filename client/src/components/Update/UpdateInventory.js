@@ -370,7 +370,6 @@ const UpdateInventory = (props) => {
             }
           })
       );
-      debugger;
       setLoader(false);
       setPosProducts(items.filter((ele) => ele !== null));
     }
