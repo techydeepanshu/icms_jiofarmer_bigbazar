@@ -175,12 +175,24 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
     json: true,
   };
   function callback(error, response, body) {
-    console.log(body)
+    console.log(body);
     res.send(body);
   }
   request(options, callback);
 });
 
+app.get("/api/sync", validateLogin, function (req, res) {
+  let options = {
+    method: "GET",
+    url: "http:54.234.86.83:3001/sync",
+    json: true,
+  };
+  function callback(error, response, body) {
+    console.log(body);
+    res.send(body);
+  }
+  request(options, callback);
+});
 if (process.env.NODE_ENV === "production") {
   //It will serve the files from main.js
   app.use(express.static("client/build"));

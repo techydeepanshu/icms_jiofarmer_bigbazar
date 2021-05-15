@@ -327,13 +327,9 @@ const UpdateInventory = (props) => {
     }
 
     async function getPosProducts() {
-      /**
-       * "[{\"SKU\":91842,\"UPC\":\"0123456\",\"ITEMNAME\":\"Maggi Masala Noodles1\",\"PRICE\":1.13,\"COST\":0.69,\"TOTALQTY\":16.000,\"PACKNAME\":\"Single\",\"SIZENAME\":\"70 gm\",\"DEPNAME\":\"GROSARY\",\"CATNAME\":\"SNACKS\",\"SUBCATNAME\":\"NOODLE\",\"FOODSTAMPITEM\":\"Yes\",\"WEIGHTEDITEM\":\"No\"}]
-       */
       setLoader(true);
-
+      let hasErrorOccured = false
       const items = await Promise.all(
-
         newInventoryData
           .filter((row) => !row.isForReview)
           .map(async (row) => {
@@ -356,6 +352,7 @@ const UpdateInventory = (props) => {
                 isNew: false,
               };
             } catch (error) {
+              hasErrorOccured = true
               return {
                 ...row,
                 COST: row.cp,
@@ -370,6 +367,9 @@ const UpdateInventory = (props) => {
             }
           })
       );
+      if (hasErrorOccured) {
+        alert("Couldn't fetch some data from POS")
+      }
       setLoader(false);
       setPosProducts(items.filter((ele) => ele !== null));
     }

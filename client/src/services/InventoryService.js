@@ -36,4 +36,8 @@ export class InventoryService {
     const res = await POSAxios.post("/Product/ManageItem", data);
     return res.data;
   }
+  async SyncInventory() {
+    const res = await Axios.get("/api/sync")
+    return res.data
+  }
 }
