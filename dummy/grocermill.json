@@ -5,7 +5,7 @@
     "Quantity": "17",
     "Price": "25.02",
     "POS": "KERALA MIXTURE",
-    "Barcode": "765677718479"
+    "Barcode": "765677717479"
   },
   "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL HOT MIXTURE (POUCH) 300GM X 18",
@@ -13,7 +13,7 @@
     "Quantity": "18",
     "Price": "25.02",
     "POS": "BAKEMILL HOT MIXTURE",
-    "Barcode": "765677718480"
+    "Barcode": "765677717480"
   },
   "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL EXTRA HOT MIXTURE (POUCH) 300GM X 18",
@@ -21,7 +21,7 @@
     "Quantity": "18",
     "Price": "25.02",
     "POS": "BAKEMILL EXTRA HOT MIXTURE",
-    "Barcode": "765677718481"
+    "Barcode": "765677717481"
   },
   "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18": {
     "Item": "BAKEMILL GARLIC MIXTURE (POUCH) 300GM X 18",
@@ -29,7 +29,7 @@
     "Quantity": "18",
     "Price": "25.02",
     "POS": "BAKEMILL GARLIC MIXTURE",
-    "Barcode": "765677718482"
+    "Barcode": "765677717482"
   },
   "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18": {
     "Item": "BAKEMILL TOMATO CHILLI MIXTURE(POUCH) 300GM X 18",
@@ -37,7 +37,7 @@
     "Quantity": "18",
     "Price": "25.02",
     "POS": "TOMATO SAUCE",
-    "Barcode": "765677718483"
+    "Barcode": "765677717483"
   },
   "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18": {
     "Item": "BAKEMILL BANANA CHIPS (POUCH) 200 GM X 18",
@@ -45,7 +45,7 @@
     "Quantity": "18",
     "Price": "25.02",
     "POS": "BANANA CHIPS",
-    "Barcode": "765677718484"
+    "Barcode": "765677717484"
   },
   "BON BAFATH POWDER 165 GM X 24": {
     "Item": "BON BAFATH POWDER 165 GM X 24",
@@ -53,7 +53,7 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "RIN POWDER",
-    "Barcode": "765677718485"
+    "Barcode": "765677717485"
   },
   "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24": {
     "Item": "BON CHICKEN HOT N SOUR (INDIAN) MASALA 160 GMX 24",
@@ -61,7 +61,7 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "CHICKEN MIX",
-    "Barcode": "765677718486"
+    "Barcode": "765677717486"
   },
   "BON CHICKEN RED MASALA 165 GMX 24": {
     "Item": "BON CHICKEN RED MASALA 165 GMX 24",
@@ -69,7 +69,7 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "CHICKEN MIX",
-    "Barcode": "765677718487"
+    "Barcode": "765677717487"
   },
   "BON PICKLE POWDER 150 GM X 24": {
     "Item": "BON PICKLE POWDER 150 GM X 24",
@@ -77,7 +77,7 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "LG POWDRE",
-    "Barcode": "765677718488"
+    "Barcode": "765677717488"
   },
   "BON CHICKEN GHEE ROAST MASALA 130GM X 24": {
     "Item": "BON CHICKEN GHEE ROAST MASALA 130GM X 24",
@@ -85,7 +85,7 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "CHICKEN LEG",
-    "Barcode": "765677718489"
+    "Barcode": "765677717489"
   },
   "KERAMILL HOT LIME PICKLE 300 GM X 12": {
     "Item": "KERAMILL HOT LIME PICKLE 300 GM X 12",
@@ -93,7 +93,7 @@
     "Quantity": "12",
     "Price": "15.48",
     "POS": "777 LIME PICKLE",
-    "Barcode": "765677718490"
+    "Barcode": "765677717490"
   },
   "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12": {
     "Item": "KERAMILL CUT MANGO PICKLE 300GM 300 GM X 12",
@@ -101,7 +101,7 @@
     "Quantity": "12",
     "Price": "15.48",
     "POS": "LAXMI MANGO PICLE",
-    "Barcode": "765677718491"
+    "Barcode": "765677717491"
   },
   "KERAMILL GARLIC PICKLE 300 GM X 12": {
     "Item": "KERAMILL GARLIC PICKLE 300 GM X 12",
@@ -109,7 +109,7 @@
     "Quantity": "12",
     "Price": "15.60",
     "POS": "777 AMLA PICKLE",
-    "Barcode": "765677718492"
+    "Barcode": "765677717492"
   },
   "KERAMILL CHUKKU KAPPI 240GM X 48": {
     "Item": "KERAMILL CHUKKU KAPPI 240GM X 48",
@@ -117,7 +117,7 @@
     "Quantity": "48",
     "Price": "64.80",
     "POS": "NIRAPARA CHUKKU KAPPI 150 G",
-    "Barcode": "765677718493"
+    "Barcode": "765677717493"
   },
   "BON BUTTER CHICKEN MASALA 165GM X 24": {
     "Item": "BON BUTTER CHICKEN MASALA 165GM X 24",
@@ -125,6 +125,6 @@
     "Quantity": "24",
     "Price": "42.00",
     "POS": "BON BUTTER CHICKEN",
-    "Barcode": "765677718494"
+    "Barcode": "765677717494"
   }
 }
