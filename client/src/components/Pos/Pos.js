@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { InventoryService } from "../../services/InventoryService";
-import {Api} from "../../services/Api"
+import { Api } from "../../services/Api";
 import {
   CModal,
   CModalBody,
@@ -23,27 +23,27 @@ import firebase from "../../firebase";
 import Spinner from "../../UI/Spinner/Spinner";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
-const Pos = () => {
+const POS = () => {
   const inventoryService = new InventoryService();
-  const api=new Api();
+  const api = new Api();
   const [queue, setQueue] = useState([]);
   const [loader, setLoader] = useState(true);
   const [categoryArray, setCategoryArray] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState(null);
   const [header, setHeader] = useState([]);
-  const [fuzzSuggestion,setFuzzSuggestion]=useState([]);
+  const [fuzzSuggestion, setFuzzSuggestion] = useState([]);
+  const [modalLabel, setModalLabel] = useState("");
   const [state, setState] = useState({
-    name: "",
-    type: "",
-    regular_price: "",
+    item: "",
+    quantity: "",
     description: "",
-    short_description: "",
-    categories: [],
-    images: [],
+    price: "",
+    pos: "",
+    barcode: "",
   });
   const handleChange = (event, val) => {
-    let newState = Object.assign({}, state);
+    let newState = { ...state };
     if (event.target.name !== "categories" && event.target.name !== "images")
       newState[event.target.name] = event.target.value;
     else {
@@ -89,31 +89,31 @@ const Pos = () => {
     }
     setHeader(header);
     let newState = {
-      name: o.description,
-      type: "simple",
-      regular_price: o.cp,
+      item: o.itemNo,
       description: o.description,
-      short_description: o.description,
-      categories: [],
-      images: [],
+      pos: o.posName,
+      barcode: o.barcode,
     };
     setState(newState);
     api
-    .GetFuzz(o.description,"pos")
-    .then((res) => setFuzzSuggestion(res.result))
-    .catch((err) => console.log(err));
+      .GetFuzz(o.description, "queue")
+      .then((res) => {
+        const filter = res.result.map((element) => {
+          let obj = { ...element };
+          obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          return obj;
+        });
+        setFuzzSuggestion(filter);
+      })
+      .catch((err) => console.log(err));
   };
   const addProduct = () => {
-    setShowModal(!showModal);
-    inventoryService
-      .createProduct(state)
-      .then((res) => alert("Successfully created a product"))
-      .catch((err) => alert("Some error occuured in creating product"));
+   
   };
 
   const deleteAddedProducts = (item) => {
     try {
-      firebase.database().ref("/queue").child(`${item}`).remove();
+      firebase.database().ref("/review").child(`${item}`).remove();
       let temp = [...queue];
       setQueue(temp.filter((product) => product !== item));
       return true;
@@ -130,7 +130,7 @@ const Pos = () => {
     <div style={{ marginTop: "90px" }}>
       <div className="row">
         {queue.map((q, i) => (
-          <div className="col-md-4" key={q.sku} style={{ padding: "10px" }}>
+          <div className="col-md-4" key={q.itemNo} style={{ padding: "10px" }}>
             <div style={{ border: "1px solid grey", margin: "10px" }}>
               <div className="text-center bg-secondary">{q.itemNo}</div>
               <br />
@@ -143,6 +143,7 @@ const Pos = () => {
                     className="btn btn-sm btn-primary"
                     onClick={() => {
                       setShowModal(true);
+                      setModalLabel(q.itemNo);
                       setContentExtra(q);
                     }}
                   >
@@ -155,7 +156,7 @@ const Pos = () => {
         ))}
       </div>
       <CModal show={showModal} onClose={toggleModal}>
-        <CModalHeader closeButton>Add Product</CModalHeader>
+        <CModalHeader closeButton>{modalLabel}</CModalHeader>
         <CModalBody>
           <CContainer fluid>
             <CRow>
@@ -163,15 +164,21 @@ const Pos = () => {
                 <CFormGroup>
                   <CLabel htmlFor="name">Name</CLabel>
                   <Autocomplete
-                    value={state.name}
+                    value={state.item}
                     onChange={(event, newValue) => {
                       if (newValue) {
-                        handleChange(event, "");
+                        let newState = { ...state };
+                        console.log(newValue);
+                        // newState.item = newValue.name;
+                        newState.description = newValue.name;
+                        newState.barcode = newValue.upc;
+                        newState.pos = newValue.name;
+                        setState(newState);
                       }
                     }}
                     id="combo-box"
-                    options={fuzzSuggestion.map(e=>e.name)}
-                    getOptionLabel={(option) => option}
+                    options={fuzzSuggestion}
+                    getOptionLabel={(option) => option.label ?? state.item}
                     style={{ paddingTop: 4 }}
                     renderInput={(params) => (
                       <TextField {...params} variant="outlined" size="small" />
@@ -181,22 +188,22 @@ const Pos = () => {
                 <CRow>
                   <CCol sm="6">
                     <CFormGroup>
-                      <CLabel htmlFor="type">Type</CLabel>
+                      <CLabel htmlFor="type">Bracode</CLabel>
                       <CInput
                         type="text"
                         name="type"
-                        value={state.type}
+                        value={state.barcode}
                         onChange={(event) => handleChange(event, "")}
                       />
                     </CFormGroup>
                   </CCol>
                   <CCol sm="6">
                     <CFormGroup>
-                      <CLabel htmlFor="regular_price">Regular Price</CLabel>
+                      <CLabel htmlFor="regular_price">POS Name</CLabel>
                       <CInput
                         type="text"
                         name="regular_price"
-                        value={state.regular_price}
+                        value={state.pos}
                         onChange={(event) => handleChange(event, "")}
                       />
                     </CFormGroup>
@@ -211,7 +218,7 @@ const Pos = () => {
                     onChange={(event) => handleChange(event, "")}
                   />
                 </CFormGroup>
-                <CFormGroup>
+                {/* <CFormGroup>
                   <CLabel htmlFor="short_description">Short Description</CLabel>
                   <CInput
                     type="text"
@@ -219,8 +226,8 @@ const Pos = () => {
                     value={state.short_description}
                     onChange={(event) => handleChange(event, "")}
                   />
-                </CFormGroup>
-                <CRow>
+                </CFormGroup> */}
+                {/* <CRow>
                   <CCol sm="3">
                     <CFormGroup>
                       <CLabel htmlFor="categories">Category</CLabel>
@@ -245,7 +252,7 @@ const Pos = () => {
                     </CFormGroup>
                   </CCol>
                   <CCol sm="9"></CCol>
-                </CRow>
+                </CRow> */}
               </CCol>
             </CRow>
           </CContainer>
@@ -269,4 +276,4 @@ const Pos = () => {
     </div>
   );
 };
-export default Pos;
+export default POS;
