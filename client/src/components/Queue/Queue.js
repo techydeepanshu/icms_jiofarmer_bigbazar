@@ -34,6 +34,7 @@ const Queue = () => {
   const [header, setHeader] = useState([]);
   const [fuzzSuggestion, setFuzzSuggestion] = useState([]);
   const [modalLabel, setModalLabel] = useState("");
+  const [selectedItemNo, setSelectedItemNo] = useState("")
   const [state, setState] = useState({
     name: "",
     type: "",
@@ -114,18 +115,22 @@ const Queue = () => {
       .catch((err) => console.log(err));
   };
   const addProduct = () => {
+    console.log(selectedItemNo)
     setShowModal(!showModal);
     inventoryService
       .createProduct(state)
+      .then(() => deleteAddedProducts(selectedItemNo))
       .then((res) => alert("Successfully created a product"))
       .catch((err) => alert("Some error occuured in creating product"));
   };
 
   const deleteAddedProducts = (item) => {
+    console.log('item to be deleted', item)
     try {
-      firebase.database().ref("/queue").child(`${item}`).remove();
+      firebase.database().ref(`/queue/${item}`).remove();
       let temp = [...queue];
-      setQueue(temp.filter((product) => product !== item));
+      const filetered = temp.filter((product) => product.itemNo !== item)
+      setQueue(filetered);
       return true;
     } catch (error) {
       console.log(error);
@@ -154,6 +159,7 @@ const Queue = () => {
                     onClick={() => {
                       setShowModal(true);
                       setModalLabel(q.description);
+                      setSelectedItemNo(q.itemNo)
                       setContentExtra(q);
                     }}
                   >
