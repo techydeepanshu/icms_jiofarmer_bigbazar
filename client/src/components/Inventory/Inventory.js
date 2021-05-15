@@ -42,37 +42,37 @@ const Inventory = () => {
   const fields = [
     {
       key: "upc",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "item_name",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "cost",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "price",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "current_stock_quantity",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "sold_quantity",
-      _style: { width: "20%" },
+      _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
