@@ -5,7 +5,7 @@
     "Quantity": "7",
     "Price": "23.50",
     "POS": "AACHI CUMIN POWDER",
-    "Barcode": "765677719460"
+    "Barcode": "765677718460"
   },
   "BPGIP007": {
     "Item": "BPGIP007",
@@ -13,7 +13,7 @@
     "Quantity": "7",
     "Price": "28.00",
     "POS": "DEEP GINGER POWDER",
-    "Barcode": "765677719461"
+    "Barcode": "765677718461"
   },
   "BPCPROO7": {
     "Item": "BPCPROO7",
@@ -21,7 +21,7 @@
     "Quantity": "7",
     "Price": "26.00",
     "POS": "AHMED CHILLI POWDER",
-    "Barcode": "765677719462"
+    "Barcode": "765677718462"
   },
   "BWCUS007": {
     "Item": "BWCUS007",
@@ -29,7 +29,7 @@
     "Quantity": "7",
     "Price": "24.00",
     "POS": "AARA CUMIN SEEDS",
-    "Barcode": "765677719463"
+    "Barcode": "765677718463"
   },
   "BWMS010": {
     "Item": "BWMS010",
@@ -37,7 +37,7 @@
     "Quantity": "10",
     "Price": "23.50",
     "POS": "DEEP FENUGREEK SEEDS",
-    "Barcode": "765677719464"
+    "Barcode": "765677718464"
   },
   "BPBP007": {
     "Item": "BPBP007",
@@ -45,7 +45,7 @@
     "Quantity": "7",
     "Price": "36.50",
     "POS": "BLACK PEPPER POWDER  90LB",
-    "Barcode": "765677719465"
+    "Barcode": "765677718465"
   },
   "BPTP007": {
     "Item": "BPTP007",
@@ -53,7 +53,7 @@
     "Quantity": "7",
     "Price": "22.50",
     "POS": "TURMERIC POWDER",
-    "Barcode": "765677719466"
+    "Barcode": "765677718466"
   },
   "BWCS045": {
     "Item": "BWCS045",
@@ -61,7 +61,7 @@
     "Quantity": "4.5",
     "Price": "36.00",
     "POS": "BHAVANI CINNAMON STICK",
-    "Barcode": "765677719467"
+    "Barcode": "765677718467"
   },
   "BPGP007": {
     "Item": "BPGP007",
@@ -69,7 +69,7 @@
     "Quantity": "7",
     "Price": "28.00",
     "POS": "777 GARLIC DHALL POWDER",
-    "Barcode": "765677719468"
+    "Barcode": "765677718468"
   },
   "BPCIP007": {
     "Item": "BPCIP007",
@@ -77,7 +77,7 @@
     "Quantity": "7",
     "Price": "24.00",
     "POS": "SANJEEVANI ORG CINNAMON POWDER",
-    "Barcode": "765677719469"
+    "Barcode": "765677718469"
   },
   "BPGM007": {
     "Item": "BPGM007",
@@ -85,7 +85,7 @@
     "Quantity": "7",
     "Price": "28.00",
     "POS": "GARAM MASALA",
-    "Barcode": "765677719470"
+    "Barcode": "765677718470"
   },
   "BWFS007": {
     "Item": "BWFS007",
@@ -93,7 +93,7 @@
     "Quantity": "7",
     "Price": "23.50",
     "POS": "DEEP FENNEL SEED",
-    "Barcode": "765677719471"
+    "Barcode": "765677718471"
   },
   "BWAS007": {
     "Item": "BWAS007",
@@ -101,7 +101,7 @@
     "Quantity": "7",
     "Price": "30.00",
     "POS": "AJWAN SEED  45LB",
-    "Barcode": "765677719472"
+    "Barcode": "765677718472"
   },
   "BPCOR014": {
     "Item": "BPCOR014",
@@ -109,7 +109,7 @@
     "Quantity": "14",
     "Price": "33.00",
     "POS": "AACHI CORIANDER POWDER",
-    "Barcode": "765677719473"
+    "Barcode": "765677718473"
   },
   "BPCUR014": {
     "Item": "BPCUR014",
@@ -117,7 +117,7 @@
     "Quantity": "14",
     "Price": "30.00",
     "POS": "AHMED CURRY POWDER",
-    "Barcode": "765677719474"
+    "Barcode": "765677718474"
   },
   "BPTP014": {
     "Item": "BPTP014",
@@ -125,7 +125,7 @@
     "Quantity": "14",
     "Price": "30.00",
     "POS": "TURMERIC POWDER",
-    "Barcode": "765677719475"
+    "Barcode": "765677718475"
   },
   "BWCUS014": {
     "Item": "BWCUS014",
@@ -133,7 +133,7 @@
     "Quantity": "14",
     "Price": "36.00",
     "POS": "AARA CUMIN SEEDS",
-    "Barcode": "765677719476"
+    "Barcode": "765677718476"
   },
   "BPGM014": {
     "Item": "BPGM014",
@@ -141,7 +141,7 @@
     "Quantity": "14",
     "Price": "42.00",
     "POS": "GARAM MASALA",
-    "Barcode": "765677719477"
+    "Barcode": "765677718477"
   },
   "BWWC035": {
     "Item": "BWWC035",
@@ -149,6 +149,6 @@
     "Quantity": "3.5",
     "Price": "24.00",
     "POS": "ANAND DRY WHOLE CHILLIES",
-    "Barcode": "765677719478"
+    "Barcode": "765677718478"
   }
 }
