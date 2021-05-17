@@ -33,7 +33,7 @@ export class InventoryService {
     return res.data;
   }
   async UpdatePOSProducts(data) {
-    const res = await POSAxios.post("/Product/ManageItem", data);
+    const res = await Axios.post("/api/pos/Product/ManageItem", data);
     return res.data;
   }
   async SyncInventory() {

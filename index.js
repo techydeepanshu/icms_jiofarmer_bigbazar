@@ -193,6 +193,34 @@ app.get("/api/sync", validateLogin, function (req, res) {
   }
   request(options, callback);
 });
+
+/**create/update product on POS */
+app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
+  const data = req.body;
+
+  let options = {
+    method: "POST",
+    url: "https://dataservices.sypramsoftware.com/api/Product/ManageItem",
+    headers: {
+      UserId: "MeCHHkZ9",
+      Password: "tdypsA =",
+      Pin: "lqBZghxJgaVE",
+    },
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
 if (process.env.NODE_ENV === "production") {
   //It will serve the files from main.js
   app.use(express.static("client/build"));
