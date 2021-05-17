@@ -23,11 +23,12 @@ const Inventory = () => {
           ItemName,
           Cost,
           Price,
-          TotalQty,
-          Difference: TotalQty - PrevTotalQty,
+          CurrentStockQuantity:TotalQty,
+          PreviousQuantity: PrevTotalQty,
         };
-      });
+      });console.table(data)
       setProducts(data);
+      alert("Sync complete");
     } catch (error) {
       alert("Couldn't sync inventory", error);
     }
@@ -47,31 +48,31 @@ const Inventory = () => {
       filter: false,
     },
     {
-      key: "item_name",
+      key: "ItemName",
       _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
-      key: "cost",
+      key: "Cost",
       _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
-      key: "price",
+      key: "Price",
       _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
-      key: "current_stock_quantity",
+      key: "CurrentStockQuantity",
       _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
-      key: "sold_quantity",
+      key: "PreviousQuantity",
       _style: { width: "10%" },
       sorter: false,
       filter: false,

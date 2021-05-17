@@ -184,7 +184,7 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
 app.get("/api/sync", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http:54.234.86.83:3001/sync",
+    url: "http://54.234.86.83:3001/sync",
     json: true,
   };
   function callback(error, response, body) {
