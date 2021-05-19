@@ -23,6 +23,7 @@ const DisplayData = (props) => {
   const [inventoryData, setInventoryData] = useState([]);
   const [itemNoDropdown, setItemNoDropdown] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [reviewItems, setReviewItems] = useState([])
   const tesseractService = new TesseractService();
   const header = [
     "Serial No.",
@@ -138,7 +139,7 @@ const DisplayData = (props) => {
                 aria-label="add to review"
                 onClick={() => addForReview(element, index)}
               >
-                <AddShoppingCartIcon />
+                <AddShoppingCartIcon style={reviewItems.includes(index) ?{backgroundColor: "green"}: null}/>
               </IconButton>
               <div className={styles.tooltip}>
                 <p>POS Product- {element.posName}</p>
@@ -280,6 +281,9 @@ const DisplayData = (props) => {
       itemNo: item.itemNo,
       description: item.description,
     };
+    const tempReviewItems = [...reviewItems]
+    tempReviewItems.push(index)
+    setReviewItems(tempReviewItems)
     try {
       firebase.database().ref("/review").child(`${item.itemNo}`).set(data);
       let tempTableData = [...tableData];
