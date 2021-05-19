@@ -49,6 +49,7 @@ const DisplayData = (props) => {
       extendedPrice: "",
       markup: 0,
       sp: 0,
+      show: true,
     });
     setTableData(tempTableData);
   };
@@ -66,7 +67,7 @@ const DisplayData = (props) => {
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
-        <th key={index}>
+        <th key={index} >
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <TextField
@@ -75,7 +76,7 @@ const DisplayData = (props) => {
               onChange={(e) => {
                 setMarkup(e.target.value);
               }}
-              style={{ width: 100 }}
+              style={{ width: 80 }}
             />
           ) : null}
         </th>
@@ -206,8 +207,8 @@ const DisplayData = (props) => {
       return (
         <div className={styles.tablewrapper}>
           <table className="table table-hover table-responsive-sm">
+            <thead><tr>{renderTableHeader()}</tr></thead>              
             <tbody>
-              <tr>{renderTableHeader()}</tr>
               {rows}
               <tr>
                 <td>
@@ -295,6 +296,9 @@ const DisplayData = (props) => {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
       tempTableData[row]["sku"] = productDetails[value].sku;
+      /**auto populate barcode */
+      tempTableData[row]["barcode"] = productDetails[value].Barcode;
+      tempTableData[row]["posName"] = productDetails[value].POS
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
