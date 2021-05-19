@@ -55,14 +55,30 @@ const DisplayData = (props) => {
   };
   const deleteRow = (index) => {
     let tempTableData = [...tableData];
+    console.log(emptyColumnList.length, 'before')
     if (tableData[index]["show"]) {
       if (window.confirm("Delete the item?")) {
         tempTableData[index]["show"] = false;
+        const i = emptyColumnList.indexOf(index);
+        if (i > -1) {
+          emptyColumnList.splice(i, 1);
+        }
       }
     } else {
       tempTableData[index]["show"] = true;
+      if (
+        tempTableData[index]["qty"] !== "" &&
+        tempTableData[index]["itemNo"] !== "" &&
+        tempTableData[index]["unitPrice"] !== ""
+      ) {
+        const i = emptyColumnList.indexOf(index);
+        if (i > -1) {
+          emptyColumnList.splice(i, 1);
+        }
+      }
     }
     setTableData(tempTableData);
+    setEmptyColumn(emptyColumnList);
   };
   const renderTableHeader = () => {
     return header.map((key, index) => {
@@ -242,8 +258,7 @@ const DisplayData = (props) => {
   };
 
   const pushInventoryDetails = () => {
-    // console.log("Pushing inventory");
-    if (emptyColumn.length === 0 && emptyColumnList.length === 0) {
+    if (emptyColumn.length === 0) {
       let tempTable = [];
       tableData.forEach((element, index) => {
         let rowData = { index: index + 1, ...element };
@@ -347,23 +362,13 @@ const DisplayData = (props) => {
         props.filename.map(async (file) => {
           try {
             const res = await tesseractService.GetOCRData(file);
-            // console.log("Gettting description for", inputFile, res)
-            // return res.body;
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
             console.log("error fetching descripton", error);
-            // return null;
             throw new Error(error);
           }
         })
       );
-      // const ocrData = await tesseractService.GetOCRData(props.filename);
-      // console.log("ocr recieved data", ocrData);
-      /**
-       * combine ocrdata into "newData" and return it
-       */
-      // setLoader(false);
-      /** apply filter for the specific invoice */
       let newData = [];
       ocrData.forEach((data) => (newData = [...newData, ...data]));
       return newData;
@@ -373,8 +378,6 @@ const DisplayData = (props) => {
         props.selectedInvoice
       );
       return products;
-      // setItemNoDropdown(Object.keys(products))
-      // setProductDetails(products);
     }
     fetchOCRData().then((ocrData) => {
       invoiceData()
@@ -450,10 +453,6 @@ const DisplayData = (props) => {
       // .then(() => setLoader(false))
     });
   }, []);
-
-  useEffect(() => {
-    console.log("rerendered", tableData);
-  }, [tableData]);
 
   if (loader) {
     return <Spinner />;
