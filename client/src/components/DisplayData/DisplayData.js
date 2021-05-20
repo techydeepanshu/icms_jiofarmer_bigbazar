@@ -28,6 +28,7 @@ const DisplayData = (props) => {
   const header = [
     "Serial No.",
     "Barcode",
+    "POS SKU",
     "Qty Shipped",
     "ITEM NO",
     "DESCRPTION",
@@ -156,6 +157,7 @@ const DisplayData = (props) => {
                 <p>UPC- {element.barcode}</p>
               </div>
             </td>
+            <td>{element.posSku}</td>
             <td>
               <TextField
                 type="number"
@@ -327,9 +329,10 @@ const DisplayData = (props) => {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
       tempTableData[row]["sku"] = productDetails[value].sku;
-      /**auto populate barcode */
+      /**auto populate barcode & other pos fields*/
       tempTableData[row]["barcode"] = productDetails[value].Barcode;
       tempTableData[row]["posName"] = productDetails[value].POS;
+      tempTableData[row]["posSku"] = productDetails[value].POSSKU;
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
@@ -414,6 +417,7 @@ const DisplayData = (props) => {
               row.itemNo = row.description.trim().toUpperCase();
             }
             row.itemNo = row.itemNo.toString().toUpperCase();
+
             row.description =
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].Description
@@ -436,6 +440,7 @@ const DisplayData = (props) => {
                 : "";
             row.markup = 0;
             row.show = true;
+            row.posSku = products[row.itemNo].POSSKU ?? "some sku";
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode

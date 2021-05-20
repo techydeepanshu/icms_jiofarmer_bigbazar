@@ -54,7 +54,8 @@ const UpdateInventory = (props) => {
           }
         >
           <td>{index + 1}</td>
-          <td>{element.barcode}</td>
+          <td>{element.barcode}</td> 
+          <td>{element.posSku}</td>
           <td>{element.qty}</td>
           <td>{element.itemNo}</td>
           <td>{element.description}</td>
@@ -169,7 +170,7 @@ const UpdateInventory = (props) => {
 
     const posResponse = await pushToPOS(posProducts);
 
-    console.log(posResponse)
+    console.log(posResponse);
     /**filter out the items not pushed on store */
     const itemsNotPushed = newInventoryData.filter(
       ({ item: item1 }) =>
@@ -328,7 +329,7 @@ const UpdateInventory = (props) => {
 
     async function getPosProducts() {
       setLoader(true);
-      let hasErrorOccured = false
+      let hasErrorOccured = false;
       const items = await Promise.all(
         newInventoryData
           .filter((row) => !row.isForReview)
@@ -337,7 +338,7 @@ const UpdateInventory = (props) => {
               const res = await inventoryService.GetPOSProductDetails(
                 row.barcode
               );
-              console.log('from pos', res)
+              console.log("from pos", res);
               const { COST, PRICE, SKU, UPC, ITEMNAME, TOTALQTY } = res[0];
               return {
                 ...row,
@@ -352,7 +353,7 @@ const UpdateInventory = (props) => {
                 isNew: false,
               };
             } catch (error) {
-              hasErrorOccured = true
+              hasErrorOccured = true;
               return {
                 ...row,
                 COST: row.cp,
@@ -368,7 +369,7 @@ const UpdateInventory = (props) => {
           })
       );
       if (hasErrorOccured) {
-        alert("Couldn't fetch some data from POS")
+        alert("Couldn't fetch some data from POS");
       }
       setLoader(false);
       setPosProducts(items.filter((ele) => ele !== null));
