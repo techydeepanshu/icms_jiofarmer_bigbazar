@@ -14,8 +14,8 @@ import firebase from "../../firebase";
 import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
+let emptyColumnList = [];
 const DisplayData = (props) => {
-  let emptyColumnList = [];
   const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
@@ -23,7 +23,7 @@ const DisplayData = (props) => {
   const [inventoryData, setInventoryData] = useState([]);
   const [itemNoDropdown, setItemNoDropdown] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [reviewItems, setReviewItems] = useState([])
+  const [reviewItems, setReviewItems] = useState([]);
   const tesseractService = new TesseractService();
   const header = [
     "Serial No.",
@@ -52,11 +52,13 @@ const DisplayData = (props) => {
       sp: 0,
       show: true,
     });
+    emptyColumnList.push(tempTableData.length - 1);
+    setEmptyColumn(emptyColumnList);
     setTableData(tempTableData);
   };
   const deleteRow = (index) => {
     let tempTableData = [...tableData];
-    console.log(emptyColumnList.length, 'before')
+    // console.log(emptyColumnList.length, "before");
     if (tableData[index]["show"]) {
       if (window.confirm("Delete the item?")) {
         tempTableData[index]["show"] = false;
@@ -76,6 +78,8 @@ const DisplayData = (props) => {
         if (i > -1) {
           emptyColumnList.splice(i, 1);
         }
+      } else {
+        emptyColumnList.push(index)
       }
     }
     setTableData(tempTableData);
@@ -84,7 +88,7 @@ const DisplayData = (props) => {
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
-        <th key={index} >
+        <th key={index}>
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <TextField
@@ -111,7 +115,7 @@ const DisplayData = (props) => {
           !element.pieces ||
           isNaN(element.unitPrice) ||
           isNaN(element.extendedPrice);
-        if (isEmpty) {
+        if (isEmpty && element.show) {
           let emptyColumn = [...emptyColumnList, index];
           emptyColumnList = [...new Set(emptyColumn)];
         }
@@ -139,7 +143,13 @@ const DisplayData = (props) => {
                 aria-label="add to review"
                 onClick={() => addForReview(element, index)}
               >
-                <AddShoppingCartIcon style={reviewItems.includes(index) ?{backgroundColor: "green"}: null}/>
+                <AddShoppingCartIcon
+                  style={
+                    reviewItems.includes(index)
+                      ? { backgroundColor: "green" }
+                      : null
+                  }
+                />
               </IconButton>
               <div className={styles.tooltip}>
                 <p>POS Product- {element.posName}</p>
@@ -220,11 +230,12 @@ const DisplayData = (props) => {
           </tr>
         );
       });
-
       return (
         <div className={styles.tablewrapper}>
           <table className="table table-hover table-responsive-sm">
-            <thead><tr>{renderTableHeader()}</tr></thead>              
+            <thead>
+              <tr>{renderTableHeader()}</tr>
+            </thead>
             <tbody>
               {rows}
               <tr>
@@ -255,7 +266,6 @@ const DisplayData = (props) => {
         </div>
       );
     }
-    return <h2>Fetching Data</h2>;
   };
 
   const pushInventoryDetails = () => {
@@ -281,9 +291,9 @@ const DisplayData = (props) => {
       itemNo: item.itemNo,
       description: item.description,
     };
-    const tempReviewItems = [...reviewItems]
-    tempReviewItems.push(index)
-    setReviewItems(tempReviewItems)
+    const tempReviewItems = [...reviewItems];
+    tempReviewItems.push(index);
+    setReviewItems(tempReviewItems);
     try {
       firebase.database().ref("/review").child(`${item.itemNo}`).set(data);
       let tempTableData = [...tableData];
@@ -309,15 +319,17 @@ const DisplayData = (props) => {
       if (index > -1) {
         emptyColumnList.splice(index, 1);
       }
-      setEmptyColumn(emptyColumnList);
+    } else {
+      emptyColumnList.push(row);
     }
+    setEmptyColumn(emptyColumnList);
     if (key === "itemNo") {
       tempTableData[row]["description"] = productDetails[value].Description;
       tempTableData[row]["pieces"] = productDetails[value].Quantity;
       tempTableData[row]["sku"] = productDetails[value].sku;
       /**auto populate barcode */
       tempTableData[row]["barcode"] = productDetails[value].Barcode;
-      tempTableData[row]["posName"] = productDetails[value].POS
+      tempTableData[row]["posName"] = productDetails[value].POS;
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
@@ -458,6 +470,7 @@ const DisplayData = (props) => {
     });
   }, []);
 
+  console.log(emptyColumn, emptyColumnList);
   if (loader) {
     return <Spinner />;
   }
