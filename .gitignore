@@ -1,8 +1,4 @@
 node_modules
-/uploads
 .env
+auto-assignment
 /upload
-/a
-/csv
-a.py
-z.txt
