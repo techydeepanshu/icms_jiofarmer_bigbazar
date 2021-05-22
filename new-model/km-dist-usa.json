@@ -1,0 +1,422 @@
+{
+  "KC10120": {
+    "Item": "KC10120",
+    "Description": "Casserole Non-Stick (Glass lid) 20 CM",
+    "Quantity": 1,
+    "Price": 11.75,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-20-CM--",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KC10122": {
+    "Item": "KC10122",
+    "Description": "Casserole Non-Stick (Glass lid) 22 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-22-CM",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KC10124": {
+    "Item": "KC10124",
+    "Description": "Casserole Non-Stick (Glass lid) 24 CM",
+    "Quantity": 1,
+    "Price": 14.85,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-24-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KCI0126": {
+    "Item": "KCI0126",
+    "Description": "Casserole Non-Stick (Glass lid) 26 CM",
+    "Quantity": 1,
+    "Price": 16.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-26-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KC10130": {
+    "Item": "KC10130",
+    "Description": "Casserole Non-Stick (Glass lid) 30 CM",
+    "Quantity": 1,
+    "Price": 20.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-30-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KCI0134": {
+    "Item": "KCI0134",
+    "Description": "Casserole Non-Stick (Glass lid) 34 CM",
+    "Quantity": 1,
+    "Price": 29,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-34-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KC10140": {
+    "Item": "KC10140",
+    "Description": "Kiam Casserole with Lid 40 CM",
+    "Quantity": 1,
+    "Price": 38.25,
+    "sku": "Kiam-Casserole-with-Lid-40-CM-",
+    "POS": "K C B",
+    "Barcode": "812042002702",
+    "PosSKU": "9729"
+  },
+  "KK10422": {
+    "Item": "KK10422",
+    "Description": "Kari Non-Stick (Glass Lid) 22 CM",
+    "Quantity": 1,
+    "Price": 11.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-22-CM--",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KKI0424": {
+    "Item": "KKI0424",
+    "Description": "Kari Non-Stick (Glass Lid) 24 CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-24-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KK10426": {
+    "Item": "KK10426",
+    "Description": "Kari Non-Stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-26-CM-",
+    "POS": "KIAM CASSEROLE NON STICK GLASS LID",
+    "Barcode": "102012101321",
+    "PosSKU": "39628"
+  },
+  "KK10522": {
+    "Item": "KK10522",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 22 CM",
+    "Quantity": 1,
+    "Price": 11.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-22-CM-",
+    "POS": "SONEX NON STICK",
+    "Barcode": "3852",
+    "PosSKU": "49046"
+  },
+  "KK10524": {
+    "Item": "KK10524",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 24CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-24CM-",
+    "POS": "SONEX NON STICK",
+    "Barcode": "3852",
+    "PosSKU": "49046"
+  },
+  "KK10526": {
+    "Item": "KK10526",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-26-CM-",
+    "POS": "SONEX NON STICK",
+    "Barcode": "3852",
+    "PosSKU": "49046"
+  },
+  "KM10626": {
+    "Item": "KM10626",
+    "Description": "Multipan with Glass Lid 26 CM",
+    "Quantity": 1,
+    "Price": 13,
+    "sku": "Multipan-with-Glass-Lid-26-CM-",
+    "POS": "ULTRA TIDE",
+    "Barcode": "037000277842",
+    "PosSKU": "51834"
+  },
+  "KM10632": {
+    "Item": "KM10632",
+    "Description": "Multipan with Glass Lid 32 CM",
+    "Quantity": 1,
+    "Price": 18.75,
+    "sku": "Multipan-with-Glass-Lid-32-CM-",
+    "POS": "ULTRA TIDE",
+    "Barcode": "037000277842",
+    "PosSKU": "51834"
+  },
+  "KF10326": {
+    "Item": "KF10326",
+    "Description": "Frypan non-stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "Frypan-non-stick-(Glass-Lid)-26-CM-",
+    "POS": "KIAM FRYPAN NON STICK WITHOUT LID",
+    "Barcode": "102012102243",
+    "PosSKU": "39639"
+  },
+  "KF10328": {
+    "Item": "KF10328",
+    "Description": "Frypan non-stick (Glass Lid) 28 CM",
+    "Quantity": 1,
+    "Price": 13.35,
+    "sku": "Frypan-non-stick-(Glass-Lid)-28-CM-",
+    "POS": "KIAM FRYPAN NON STICK WITHOUT LID",
+    "Barcode": "102012102243",
+    "PosSKU": "39639"
+  },
+  "KF10216": {
+    "Item": "KF10216",
+    "Description": "Frypan Non-Stick(Without Lid) I6CM",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Frypan-Non-Stick(Without-Lid)-I6CM-",
+    "POS": "KIAM FRYPAN NON STICK WITHOUT LID",
+    "Barcode": "102012102243",
+    "PosSKU": "39639"
+  },
+  "KF10220": {
+    "Item": "KF10220",
+    "Description": "Frypan Non-Stick(Without Lid) 20 CM",
+    "Quantity": 1,
+    "Price": 7,
+    "sku": "Frypan-Non-Stick(Without-Lid)-20-CM-",
+    "POS": "KIAM FRYPAN NON STICK WITHOUT LID",
+    "Barcode": "102012102243",
+    "PosSKU": "39639"
+  },
+  "KF10224": {
+    "Item": "KF10224",
+    "Description": "Frypan Non-Stick(Without Lid) 24 CM",
+    "Quantity": 1,
+    "Price": 8.5,
+    "sku": "Frypan-Non-Stick(Without-Lid)-24-CM-",
+    "POS": "KIAM FRYPAN NON STICK WITHOUT LID",
+    "Barcode": "102012102243",
+    "PosSKU": "39639"
+  },
+  "KAM510014": {
+    "Item": "KAM510014",
+    "Description": "Alu Milkpan (Bakelite Handle) 14 CM",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-14-CM-",
+    "POS": "MILK PAN 1",
+    "Barcode": "6663500000",
+    "PosSKU": "66635"
+  },
+  "KAM510016": {
+    "Item": "KAM510016",
+    "Description": "Alu Milkpan (Bakelite Handle) 16 CM",
+    "Quantity": 1,
+    "Price": 5,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-16-CM-",
+    "POS": "MILK PAN 1",
+    "Barcode": "6663500000",
+    "PosSKU": "66635"
+  },
+  "KAM510018": {
+    "Item": "KAM510018",
+    "Description": "Alu Milkpan (Bakelite Handle) 18 CM",
+    "Quantity": 1,
+    "Price": 5.75,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-18-CM-",
+    "POS": "MILK PAN 1",
+    "Barcode": "6663500000",
+    "PosSKU": "66635"
+  },
+  "CPBU20232": {
+    "Item": "CPBU20232",
+    "Description": "Plastic Bucket 20 Ltr.",
+    "Quantity": 1,
+    "Price": 3.25,
+    "sku": "Plastic-Bucket-20-Ltr.-",
+    "POS": "PLASTIC PEELER",
+    "Barcode": "815540014789",
+    "PosSKU": "45945"
+  },
+  "CPBU20233": {
+    "Item": "CPBU20233",
+    "Description": "Plastic Bucket 24 Ltr.",
+    "Quantity": 1,
+    "Price": 3.75,
+    "sku": "Plastic-Bucket-24-Ltr.-",
+    "POS": "PLASTIC PEELER",
+    "Barcode": "815540014789",
+    "PosSKU": "45945"
+  },
+  "CSP-50": {
+    "Item": "CSP-50",
+    "Description": "Steelness Steel Cooking Pot sets",
+    "Quantity": 1,
+    "Price": 45,
+    "sku": "Steelness-Steel-Cooking-Pot-sets-",
+    "POS": "COOKING POTS",
+    "Barcode": "608106500921",
+    "PosSKU": "33338"
+  },
+  "CSS20365": {
+    "Item": "CSS20365",
+    "Description": "Steeliness Steel Stainer 26 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 4,
+    "sku": "Steeliness-Steel-Stainer-26-CM-(Heavy-Duty)-",
+    "POS": "STEEL STAINNER",
+    "Barcode": "10032",
+    "PosSKU": "49289"
+  },
+  "CSS20366": {
+    "Item": "CSS20366",
+    "Description": "Steeliness Steel Stainer 28 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Steeliness-Steel-Stainer-28-CM-(Heavy-Duty)",
+    "POS": "STEEL STAINNER",
+    "Barcode": "10032",
+    "PosSKU": "49289"
+  },
+  "CSS20377": {
+    "Item": "CSS20377",
+    "Description": "Steelness Steel Stainer 30 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 5,
+    "sku": "Steelness-Steel-Stainer-30-CM-(Heavy-Duty)-",
+    "POS": "STEEL STAINNER",
+    "Barcode": "10032",
+    "PosSKU": "49289"
+  },
+  "CCB2030": {
+    "Item": "CCB2030",
+    "Description": "Cutting Board wooden (20*30) CM",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Cutting-Board-wooden-(20*30)-CM-",
+    "POS": "CUTTING BOARD",
+    "Barcode": "506900",
+    "PosSKU": "33596"
+  },
+  "CCB2034": {
+    "Item": "CCB2034",
+    "Description": "Cutting Board wooden (24*34) CM",
+    "Quantity": 1,
+    "Price": 2.85,
+    "sku": "Cutting-Board-wooden-(24*34)-CM",
+    "POS": "CUTTING BOARD",
+    "Barcode": "506900",
+    "PosSKU": "33596"
+  },
+  "CR132036": {
+    "Item": "CR132036",
+    "Description": "Wooden Cutting Board Round",
+    "Quantity": 1,
+    "Price": 5.5,
+    "sku": "Wooden-Cutting-Board-Round-",
+    "POS": "CUTTING BOARD",
+    "Barcode": "506900",
+    "PosSKU": "33596"
+  },
+  "CCR2095": {
+    "Item": "CCR2095",
+    "Description": "Can Opener 2095",
+    "Quantity": 1,
+    "Price": 2.1,
+    "sku": "Can-Opener-2095-",
+    "POS": "CAN OPENER",
+    "Barcode": "10029",
+    "PosSKU": "3464"
+  },
+  "CHP20271": {
+    "Item": "CHP20271",
+    "Description": "liot Pot pad 16 CM",
+    "Quantity": 1,
+    "Price": 0.85,
+    "sku": "liot-Pot-pad-16-CM-",
+    "POS": "JUICY LITE TAMRIND FRUIT PAPAD",
+    "Barcode": "890023008042",
+    "PosSKU": "38894"
+  },
+  "CHP20272": {
+    "Item": "CHP20272",
+    "Description": "Hot Pot pad 18 CM",
+    "Quantity": 1,
+    "Price": 0.95,
+    "sku": "Hot-Pot-pad-18-CM-",
+    "POS": "KIAM  HOT POT",
+    "Barcode": "102012308256",
+    "PosSKU": "39615"
+  },
+  "CEF20339": {
+    "Item": "CEF20339",
+    "Description": "Eggs beaters mixer",
+    "Quantity": 1,
+    "Price": 1.75,
+    "sku": "Eggs-beaters-mixer",
+    "POS": "MR EGG",
+    "Barcode": "f9617952",
+    "PosSKU": "13522"
+  },
+  "CRS20310": {
+    "Item": "CRS20310",
+    "Description": "Steel Rice spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle-",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  },
+  "CCS20311": {
+    "Item": "CCS20311",
+    "Description": "Steel chakni spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-chakni-spoon-with-Granite-Handle-",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  },
+  "CCS20312": {
+    "Item": "CCS20312",
+    "Description": "Steel dall spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-dall-spoon-with-Granite-Handle-",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  },
+  "CCS20313": {
+    "Item": "CCS20313",
+    "Description": "Steel Rice spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle-",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  },
+  "CCS20315": {
+    "Item": "CCS20315",
+    "Description": "Steel Rice spoon with Granite Handle- S",
+    "Quantity": 1,
+    "Price": 1.5,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle--S-",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  },
+  "CGRS20316": {
+    "Item": "CGRS20316",
+    "Description": "Golden color Rice spoon (steelness steel)",
+    "Quantity": 1,
+    "Price": 1.45,
+    "sku": "Golden-color-Rice-spoon-(steelness-steel)",
+    "POS": "STEEL SPOON",
+    "Barcode": "042814705153",
+    "PosSKU": "49287"
+  }
+}

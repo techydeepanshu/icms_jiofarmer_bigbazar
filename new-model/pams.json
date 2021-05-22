@@ -1,0 +1,22 @@
+{
+  "METHI": {
+    "Item": "METHI",
+    "Description": "METHI",
+    "Quantity": 1,
+    "Price": 24,
+    "sku": "MET-HI",
+    "POS": "24 MANTRA ORG 7 GRAINS METHI ATTA",
+    "Barcode": "8904083519867",
+    "PosSKU": "6"
+  },
+  "MINT": {
+    "Item": "MINT",
+    "Description": "MINT",
+    "Quantity": 1,
+    "Price": 14,
+    "sku": "MIN-T",
+    "POS": "ABALI YOGURT SODA MINT",
+    "Barcode": "040087001125",
+    "PosSKU": "439"
+  }
+}

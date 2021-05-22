@@ -1,0 +1,68 @@
+{
+  "FIL2218 IONIKI GREEK WILD GREENS PIE 6/850 GR.": {
+    "Item": "FIL2218 IONIKI GREEK WILD GREENS PIE 6/850 GR.",
+    "Quantity": 50,
+    "Description": "FIL2218 IONIKI GREEK WILD GREENS PIE 6/850 GR.",
+    "Price": 36,
+    "sku": "FIL2218-IONIKI-GREEK-WILD-GREENS-PIE-6/850-GR.",
+    "category": "loumidis-food",
+    "POS": "GREEN GRAPES",
+    "Barcode": "3915",
+    "PosSKU": "7668"
+  },
+  "FIL2227 TRADITIONAL FILO PIE W/ FETA EVOO 6X8501": {
+    "Item": "FIL2227 TRADITIONAL FILO PIE W/ FETA EVOO 6X8501",
+    "Quantity": 50,
+    "Description": "FIL2227 TRADITIONAL FILO PIE W/ FETA EVOO 6X8501",
+    "Price": 36,
+    "sku": "FIL2227-TRADITIONAL-FILO-PIE-W/-FETA-EVOO-6X8501",
+    "category": "loumidis-food",
+    "POS": "FILOSOPHY TRADITIONAL FILO PIE",
+    "Barcode": "5205427004975",
+    "PosSKU": "66909"
+  },
+  "FIL2228 IONIKI FILLO PASTRY SHEETS 7 12 X 1.1 LBS.": {
+    "Item": "FIL2228 IONIKI FILLO PASTRY SHEETS 7 12 X 1.1 LBS.",
+    "Quantity": 50,
+    "Description": "FIL2228 IONIKI FILLO PASTRY SHEETS 7 12 X 1.1 LBS.",
+    "Price": 28,
+    "sku": "FIL2228-IONIKI-FILLO-PASTRY-SHEETS-7-12-X-1.1-LBS.",
+    "category": "loumidis-food",
+    "POS": "KONTOS FILLO NO 4 PASTRY SHEET",
+    "Barcode": "032394800034",
+    "PosSKU": "10480"
+  },
+  "FIL2203N BOUGATSA TRADITIONAL PIE 8/500GR.": {
+    "Item": "FIL2203N BOUGATSA TRADITIONAL PIE 8/500GR.",
+    "Quantity": 50,
+    "Description": "FIL2203N BOUGATSA TRADITIONAL PIE 8/500GR.",
+    "Price": 28,
+    "sku": "FIL2203N-BOUGATSA-TRADITIONAL-PIE-8/500GR.",
+    "category": "loumidis-food",
+    "POS": "PREGO TRADITIONAL",
+    "Barcode": "910007019225",
+    "PosSKU": "46169"
+  },
+  "FIL2229 FILOSOPHY PUFF PASTRY 12/2X425GR": {
+    "Item": "FIL2229 FILOSOPHY PUFF PASTRY 12/2X425GR",
+    "Quantity": 50,
+    "Description": "FIL2229 FILOSOPHY PUFF PASTRY 12/2X425GR",
+    "Price": 34,
+    "sku": "FIL2229-FILOSOPHY-PUFF-PASTRY-12/2X425GR",
+    "category": "loumidis-food",
+    "POS": "XZ PUFF PASTRY",
+    "Barcode": "5201231004309",
+    "PosSKU": "52935"
+  },
+  "ALA1071 LOUMIDIS PITA BREAD 7 12X10PCS": {
+    "Item": "ALA1071 LOUMIDIS PITA BREAD 7 12X10PCS",
+    "Quantity": 50,
+    "Description": "ALA1071 LOUMIDIS PITA BREAD 7 12X10PCS",
+    "Price": 19,
+    "sku": "ALA1071-LOUMIDIS-PITA-BREAD-7-12X10PCS",
+    "category": "loumidis-food",
+    "POS": "LOUMIDIS PITA BREAD",
+    "Barcode": "003303547012",
+    "PosSKU": "41322"
+  }
+}

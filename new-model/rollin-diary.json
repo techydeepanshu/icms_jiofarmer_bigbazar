@@ -1,0 +1,134 @@
+{
+  "77": {
+    "Item": "77",
+    "Description": "S/F HG 1% ORGANIC/6",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "S/F-HG-1%-ORGANIC/6-",
+    "category": "ROLLINDAIRY",
+    "POS": "TARLA SUN DRIED ORGANIC FIGS",
+    "Barcode": "8697439061263",
+    "PosSKU": "50562"
+  },
+  "78": {
+    "Item": "78",
+    "Description": "S/F HG ORGANIC SKIM",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "S/F-HG-ORGANIC-SKIM-",
+    "category": "ROLLINDAIRY",
+    "POS": "SILK ORGANIC",
+    "Barcode": "025293600232",
+    "PosSKU": "18295"
+  },
+  "204": {
+    "Item": "204",
+    "Description": "TAMPICO FRT PNCH GA",
+    "Price": 7.96,
+    "Quantity": 1,
+    "sku": "TAMPICO-FRT-PNCH-GA-",
+    "category": "ROLLINDAIRY",
+    "POS": "TAMPICO PUNCH",
+    "Barcode": "095188975912",
+    "PosSKU": "50507"
+  },
+  "207": {
+    "Item": "207",
+    "Description": "TAMPICO CITRUS GAL/",
+    "Price": 7.96,
+    "Quantity": 1,
+    "sku": "TAMPICO-CITRUS-GAL/-",
+    "category": "ROLLINDAIRY",
+    "POS": "AL AMIRA",
+    "Barcode": "5285002390242",
+    "PosSKU": "27147"
+  },
+  "219": {
+    "Item": "219",
+    "Description": "2 LE L.F. PLAIN AXELR",
+    "Price": 30.42,
+    "Quantity": 1,
+    "sku": "2-LE-L.F.-PLAIN-AXELR-",
+    "category": "ROLLINDAIRY",
+    "POS": "ENO PLAIN",
+    "Barcode": "8901571001064",
+    "PosSKU": "6283"
+  },
+  "242": {
+    "Item": "242",
+    "Description": "BREAKSTONE WHIP SWE",
+    "Price": 57.36,
+    "Quantity": 1,
+    "sku": "BREAKSTONE-WHIP-SWE-",
+    "category": "ROLLINDAIRY",
+    "POS": "BREAKSTONES TEMP TEE",
+    "Barcode": "021000302703",
+    "PosSKU": "31872"
+  },
+  "578": {
+    "Item": "578",
+    "Description": "LAYOGURT 6/5 LB",
+    "Price": 62.82,
+    "Quantity": 1,
+    "sku": "LAYOGURT-6/5-LB-",
+    "category": "ROLLINDAIRY",
+    "POS": "LAYOGURT BANANA CREAM535",
+    "Barcode": "053600000628",
+    "PosSKU": "11279"
+  },
+  "611": {
+    "Item": "611",
+    "Description": "LAC SKM NO CALCIUM",
+    "Price": 29.34,
+    "Quantity": 1,
+    "sku": "LAC-SKM-NO-CALCIUM-",
+    "category": "ROLLINDAIRY",
+    "POS": "MANDOR ALMOND ORIGINAL CALCIUM MILK",
+    "Barcode": "743724577549",
+    "PosSKU": "12100"
+  },
+  "613": {
+    "Item": "613",
+    "Description": "LAG 96 02 1 %/6",
+    "Price": 29.34,
+    "Quantity": 1,
+    "sku": "LAG-96-02-1-%/6-",
+    "category": "ROLLINDAIRY",
+    "POS": "MILAGROSA JASMINE RICE",
+    "Barcode": "714760040182",
+    "PosSKU": "7664"
+  },
+  "1164": {
+    "Item": "1164",
+    "Description": "HORIZON DHA HOMO",
+    "Price": 54.48,
+    "Quantity": 1,
+    "sku": "HORIZON-DHA-HOMO-",
+    "category": "ROLLINDAIRY",
+    "POS": "HORIZON DHA 2%REDUCED FAT",
+    "Barcode": "742365264351",
+    "PosSKU": "61667"
+  },
+  "1165": {
+    "Item": "1165",
+    "Description": "HORIZON HOMO",
+    "Price": 25.8,
+    "Quantity": 1,
+    "sku": "HORIZON-HOMO-",
+    "category": "ROLLINDAIRY",
+    "POS": "HORIZON  DHA OMEGA 3 WHOLE MILK",
+    "Barcode": "742365264474",
+    "PosSKU": "8874"
+  },
+  "1176": {
+    "Item": "1176",
+    "Description": "ORGANIC VALLEY WHOL.",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "ORGANIC-VALLEY-WHOL.-",
+    "category": "ROLLINDAIRY",
+    "POS": "ORGANIC VALLEY",
+    "Barcode": "093966514001",
+    "PosSKU": "14818"
+  }
+}

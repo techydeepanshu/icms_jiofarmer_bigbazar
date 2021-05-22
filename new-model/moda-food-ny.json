@@ -1,0 +1,122 @@
+{
+  "Moda chicken doner": {
+    "Item": "Moda chicken doner",
+    "Description": "Moda chicken doner",
+    "Quantity": 1,
+    "Price": 6.45,
+    "sku": "Moda-chicken-doner-",
+    "POS": "MODA CHICKEN DONER KEBAB",
+    "Barcode": "709951520147",
+    "PosSKU": "66771"
+  },
+  "Sliced Cooked Beef Doner (Shawarma), 8oz": {
+    "Item": "Sliced Cooked Beef Doner (Shawarma), 8oz",
+    "Description": "Sliced Cooked Beef Doner (Shawarma), 8oz",
+    "Quantity": 1,
+    "Price": 7.25,
+    "sku": "Sliced-Cooked-Beef-Doner-(Shawarma),-8oz-",
+    "POS": "DORE COOKIE",
+    "Barcode": "8690504008699",
+    "PosSKU": "20708"
+  },
+  "Pista Leaves (Katmer), 2 pcs": {
+    "Item": "Pista Leaves (Katmer), 2 pcs",
+    "Description": "Pista Leaves (Katmer), 2 pcs",
+    "Quantity": 1,
+    "Price": 2.6,
+    "sku": "Pista-Leaves-(Katmer),-2-pcs--",
+    "POS": "PAN LEAVES",
+    "Barcode": "3382",
+    "PosSKU": "14992"
+  },
+  "Gursoy Hazelnut 500 gr": {
+    "Item": "Gursoy Hazelnut 500 gr",
+    "Description": "Gursoy Hazelnut 500 gr",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Gursoy-Hazelnut-500-gr-",
+    "POS": "GURSOY COCOA N HAZELNUT SPREAD",
+    "Barcode": "8693887003176",
+    "PosSKU": "37032"
+  },
+  "Assorted baklava big size": {
+    "Item": "Assorted baklava big size",
+    "Description": "Assorted baklava big size",
+    "Quantity": 1,
+    "Price": 6.75,
+    "sku": "Assorted-baklava-big-size-",
+    "POS": "GALIL BAKLAVA ASSORTED",
+    "Barcode": "7994711003107",
+    "PosSKU": "36008"
+  },
+  "Alibaba baklava 4 pcs": {
+    "Item": "Alibaba baklava 4 pcs",
+    "Description": "Alibaba baklava 4 pcs",
+    "Quantity": 1,
+    "Price": 2.2,
+    "sku": "Alibaba-baklava-4-pcs",
+    "POS": "MODA BAKLAVA",
+    "Barcode": "709951520550",
+    "PosSKU": "66770"
+  },
+  "Rumi's Love pistachio Halva": {
+    "Item": "Rumi's Love pistachio Halva",
+    "Description": "Rumi's Love pistachio Halva",
+    "Quantity": 1,
+    "Price": 3.95,
+    "sku": "Rumi's-Love-pistachio-Halva-",
+    "POS": "RUMIS PISTACHIO HALVA",
+    "Barcode": "850015573002",
+    "PosSKU": "53397"
+  },
+  "Rumis love plain halva": {
+    "Item": "Rumis love plain halva",
+    "Description": "Rumis love plain halva",
+    "Quantity": 1,
+    "Price": 3,
+    "sku": "Rumis-love-plain-halva-",
+    "POS": "RAHU PLAIN",
+    "Barcode": "200050710000",
+    "PosSKU": "16396"
+  },
+  "Baklava with Double Pistachio, 9pcs": {
+    "Item": "Baklava with Double Pistachio, 9pcs",
+    "Description": "Baklava with Double Pistachio, 9pcs",
+    "Quantity": 1,
+    "Price": 8.25,
+    "sku": "Baklava-with-Double-Pistachio,-9pcs-",
+    "POS": "HALVA WITH PISTACHIO",
+    "Barcode": "603608000481",
+    "PosSKU": "37405"
+  },
+  "Double roasted Antep pistachio 400 gr": {
+    "Item": "Double roasted Antep pistachio 400 gr",
+    "Description": "Double roasted Antep pistachio 400 gr",
+    "Quantity": 1,
+    "Price": 8.1,
+    "sku": "Double-roasted-Antep-pistachio-400-gr-",
+    "POS": "IMREN DOUBLE ROASTED PISTACHIO",
+    "Barcode": "8699273510068",
+    "PosSKU": "9112"
+  },
+  "Pistachio by Izzet 200 gr": {
+    "Item": "Pistachio by Izzet 200 gr",
+    "Description": "Pistachio by Izzet 200 gr",
+    "Quantity": 1,
+    "Price": 4.99,
+    "sku": "Pistachio-by-Izzet-200-gr-",
+    "POS": "BY IZZET PISTACHIO",
+    "Barcode": "8699495572165",
+    "PosSKU": "66715"
+  },
+  "Papagan sunflower seed": {
+    "Item": "Papagan sunflower seed",
+    "Description": "Papagan sunflower seed",
+    "Quantity": 1,
+    "Price": 1.95,
+    "sku": "Papagan-sunflower-seed-",
+    "POS": "SUNFLOWER SEEDS",
+    "Barcode": "794711001370",
+    "PosSKU": "6904"
+  }
+}

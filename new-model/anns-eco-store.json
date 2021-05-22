@@ -1,0 +1,233 @@
+{
+  "EMP BRPB20": {
+    "Item": "EMP BRPB20",
+    "Description": "EMPRESS BASMATI RICE (XTRA LONG) PARBOILED 20 LBS2",
+    "Quantity": 20,
+    "Price": 32,
+    "sku": "EMPRESS-BASMATI-RICE-(XTRA-LONG)-PARBOILED-20-LBS2",
+    "category": "anns-eco-store",
+    "POS": "PARBOILED RICE",
+    "Barcode": "966990",
+    "PosSKU": "15114"
+  },
+  "RP DBR": {
+    "Item": "RP DBR",
+    "Description": "RICE PLUS BASMATI RICE (SUITABLE FOR DIABETIC) 10 LBS 4",
+    "Quantity": 10,
+    "Price": 42,
+    "sku": "RICE-PLUS-BASMATI-RICE-(SUITABLE-FOR-DIABETIC)-10-LBS-4",
+    "category": "anns-eco-store",
+    "POS": "FORKS 50LB",
+    "Barcode": "407100",
+    "PosSKU": "6649"
+  },
+  "NM SMR": {
+    "Item": "NM SMR",
+    "Description": "NELMANI SONA MASOORI RICE 20LBS2",
+    "Quantity": 20,
+    "Price": 24,
+    "sku": "NELMANI-SONA-MASOORI-RICE-20LBS2",
+    "category": "anns-eco-store",
+    "POS": "INDIAS NATURE SONA MASOORI RICE",
+    "Barcode": "749088800200",
+    "PosSKU": "9167"
+  },
+  "SF JFC": {
+    "Item": "SF JFC",
+    "Description": "SF JACKFRUIT CHIPS 200GM36 (DELIVERED)",
+    "Quantity": 36,
+    "Price": 81,
+    "sku": "SF-JACKFRUIT-CHIPS-200GM36-(DELIVERED)",
+    "category": "anns-eco-store",
+    "POS": "JACKFRUIT SEED",
+    "Barcode": "8810024271056",
+    "PosSKU": "65447"
+  },
+  "SF DT4": {
+    "Item": "SF DT4",
+    "Description": "SF DRIED TAPIOCA 4LBS5",
+    "Quantity": 5,
+    "Price": 35,
+    "sku": "SF-DRIED-TAPIOCA-4LBS5",
+    "category": "anns-eco-store",
+    "POS": "DOUBLE HORSE DRIED TAPIOCA",
+    "Barcode": "8904011503890",
+    "PosSKU": "34783"
+  },
+  "SF RC4": {
+    "Item": "SF RC4",
+    "Description": "SF RED CHORI 4LB10",
+    "Quantity": 20,
+    "Price": 52,
+    "sku": "SF-RED-CHORI-4LB10",
+    "category": "anns-eco-store",
+    "POS": "SWAD RED CHORI",
+    "Barcode": "051179103047",
+    "PosSKU": "19245"
+  },
+  "SF RC2": {
+    "Item": "SF RC2",
+    "Description": "SF RED CHORI 2LBS20",
+    "Quantity": 6,
+    "Price": 52,
+    "sku": "SF-RED-CHORI-2LBS20",
+    "category": "anns-eco-store",
+    "POS": "SWAD RED CHORI",
+    "Barcode": "051179103047",
+    "PosSKU": "19245"
+  },
+  "GW SFO2": {
+    "Item": "GW SFO2",
+    "Description": "GW SUNFLOWER OIL 2LTR6",
+    "Quantity": 20,
+    "Price": 21,
+    "sku": "GW-SUNFLOWER-OIL-2LTR6",
+    "category": "anns-eco-store",
+    "POS": "SUNFLOWER OIL",
+    "Barcode": "628055030133",
+    "PosSKU": "49512"
+  },
+  "SF MRFTK": {
+    "Item": "SF MRFTK",
+    "Description": "MATTA RICE FLAKES (THICK) 500GM20 - B.BOX",
+    "Quantity": 20,
+    "Price": 25,
+    "sku": "MATTA-RICE-FLAKES-(THICK)-500GM20---B.BOX",
+    "category": "anns-eco-store",
+    "POS": "MATTA RICE",
+    "Barcode": "964620",
+    "PosSKU": "12343"
+  },
+  "SF MRFTN": {
+    "Item": "SF MRFTN",
+    "Description": "SF MATTA RICE FLAKES ( THIN) 500GM20",
+    "Quantity": 24,
+    "Price": 31.5,
+    "sku": "SF-MATTA-RICE-FLAKES-(-THIN)-500GM20",
+    "category": "anns-eco-store",
+    "POS": "MATTA RICE",
+    "Barcode": "964620",
+    "PosSKU": "12343"
+  },
+  "SF WRF": {
+    "Item": "SF WRF",
+    "Description": "SF WHITE RICE FLAKES 400GM24",
+    "Quantity": 34,
+    "Price": 31.2,
+    "sku": "SF-WHITE-RICE-FLAKES-400GM24",
+    "category": "anns-eco-store",
+    "POS": "WHITE CHEESE 60 %",
+    "Barcode": "4002566009585",
+    "PosSKU": "6292"
+  },
+  "RT CH": {
+    "Item": "RT CH",
+    "Description": "REAL TREAT CHANACHUR 400GM34",
+    "Quantity": 10,
+    "Price": 66.3,
+    "sku": "REAL-TREAT-CHANACHUR-400GM34",
+    "category": "anns-eco-store",
+    "POS": "REAL TREAT CHANACHAR HOT MIX",
+    "Barcode": "707466921305",
+    "PosSKU": "16662"
+  },
+  "SFF MPF": {
+    "Item": "SFF MPF",
+    "Description": "SFF MALABAR PAROTTA FAM PACK 2LB10",
+    "Quantity": 10,
+    "Price": 31.5,
+    "sku": "SFF-MALABAR-PAROTTA-FAM-PACK-2LB10",
+    "category": "anns-eco-store",
+    "POS": "POTATOES PACK",
+    "Barcode": "033383536507",
+    "PosSKU": "46091"
+  },
+  "SFF RPHC": {
+    "Item": "SFF RPHC",
+    "Description": "SFF RESTAURANT PAROTTA HALF CKD 4LBS10",
+    "Quantity": 10,
+    "Price": 59.5,
+    "sku": "SFF-RESTAURANT-PAROTTA-HALF-CKD-4LBS10",
+    "category": "anns-eco-store",
+    "POS": "RASTAURANT POROTTA",
+    "Barcode": "664648221069",
+    "PosSKU": "67087"
+  },
+  "SFF GJFR": {
+    "Item": "SFF GJFR",
+    "Description": "SFF GREEN JACKFRUIT RAW 454GM25",
+    "Quantity": 25,
+    "Price": 66.25,
+    "sku": "SFF-GREEN-JACKFRUIT-RAW-454GM25",
+    "category": "anns-eco-store",
+    "POS": "LAXMI GREEN JACKFRUIT",
+    "Barcode": "7232462600686",
+    "PosSKU": "11065"
+  },
+  "SFF KA": {
+    "Item": "SFF KA",
+    "Description": "SFF KUMBILAPPAM 454GM22",
+    "Quantity": 22,
+    "Price": 57.2,
+    "sku": "SFF-KUMBILAPPAM-454GM22",
+    "category": "anns-eco-store",
+    "POS": "MMRF KUMBILIAPPAM",
+    "Barcode": "870400000104",
+    "PosSKU": "13294"
+  },
+  "SSF ISW": {
+    "Item": "SSF ISW",
+    "Description": "INDIAN SARDINE WHOLE 2LBS12",
+    "Quantity": 12,
+    "Price": 59.4,
+    "sku": "INDIAN-SARDINE-WHOLE-2LBS12",
+    "category": "anns-eco-store",
+    "POS": "SUPARI WHOLE",
+    "Barcode": "964720",
+    "PosSKU": "18692"
+  },
+  "SSF IBAPR": {
+    "Item": "SSF IBAPR",
+    "Description": "INDIAN BIG ANCHOVY (P/R) 2LBS12",
+    "Quantity": 12,
+    "Price": 78,
+    "sku": "INDIAN-BIG-ANCHOVY-(P/R)-2LBS12",
+    "category": "anns-eco-store",
+    "POS": "DRY ANCHOVY",
+    "Barcode": "963420",
+    "PosSKU": "34927"
+  },
+  "SSF IMPR": {
+    "Item": "SSF IMPR",
+    "Description": "INDIAN MACKEREL(P/R) 2LB12",
+    "Quantity": 12,
+    "Price": 86.4,
+    "sku": "INDIAN-MACKEREL(P/R)-2LB12",
+    "category": "anns-eco-store",
+    "POS": "NIRU MACKEREL",
+    "Barcode": "5066178101746",
+    "PosSKU": "44100"
+  },
+  "SSF IBP": {
+    "Item": "SSF IBP",
+    "Description": "INDIAN BLACK POMFRET (1000/2000) 22LBS",
+    "Quantity": 2,
+    "Price": 77,
+    "sku": "INDIAN-BLACK-POMFRET-(1000/2000)-22LBS",
+    "category": "anns-eco-store",
+    "POS": "BLACK FIG",
+    "Barcode": "7758452000316",
+    "PosSKU": "2633"
+  },
+  "SSF IKSPR": {
+    "Item": "SSF IKSPR",
+    "Description": "INDIAN KELLIMEEN SMALL (P/R) 2LB12",
+    "Quantity": 12,
+    "Price": 86.4,
+    "sku": "INDIAN-KELLIMEEN-SMALL-(P/R)-2LB12",
+    "category": "anns-eco-store",
+    "POS": "TEA INDIA",
+    "Barcode": "084643940138",
+    "PosSKU": "19686"
+  }
+}

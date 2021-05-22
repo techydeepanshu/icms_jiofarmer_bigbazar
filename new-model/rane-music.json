@@ -1,0 +1,90 @@
+{
+  "SH": {
+    "Item": "SH",
+    "Description": "SHIKAKAI",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "SHIKA-KAI",
+    "category": "rane-music",
+    "POS": "AYUR AMLA SHIKAKAI SHAMPOO WITH REETHA",
+    "Barcode": "8904135205021",
+    "PosSKU": "1581"
+  },
+  "MI": {
+    "Item": "MI",
+    "Description": "MULTANI MITTI",
+    "Price": 1.25,
+    "Quantity": 1,
+    "sku": "MULTANI-MITTI",
+    "category": "rane-music",
+    "POS": "MULTANI MITTI",
+    "Barcode": "1266",
+    "PosSKU": "13667"
+  },
+  "L": {
+    "Item": "L",
+    "Description": "LIMCA CAN",
+    "Price": 14.5,
+    "Quantity": 1,
+    "sku": "LIMCA-CAN",
+    "category": "rane-music",
+    "POS": "LIMCA CAN",
+    "Barcode": "8901764051258",
+    "PosSKU": "11512"
+  },
+  "KMM": {
+    "Item": "KMM",
+    "Description": "KURKURE MASALA MUNCH",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "KURKURE-MASALA-MUNCH",
+    "category": "rane-music",
+    "POS": "KURKURE MASALA MUNCH",
+    "Barcode": "8901491100519",
+    "PosSKU": "10720"
+  },
+  "KSM": {
+    "Item": "KSM",
+    "Description": "KURKURE SOLID MASTI",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "KURKURE-SOLID-MASTI",
+    "category": "rane-music",
+    "POS": "KURKURE SOLID MASTI",
+    "Barcode": "8901491366229",
+    "PosSKU": "10723"
+  },
+  "LTT": {
+    "Item": "LTT",
+    "Description": "LAYS TOMATO TANGO",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-TOMATO-TANGO",
+    "category": "rane-music",
+    "POS": "LAYS TOMATO TANGO",
+    "Barcode": "8901491101820",
+    "PosSKU": "11297"
+  },
+  "MM": {
+    "Item": "MM",
+    "Description": "LAYS MASALA MAGIC",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-MASALA-MAGIC",
+    "category": "rane-music",
+    "POS": "LAYS MAGIC MASALA",
+    "Barcode": "8901491503020",
+    "PosSKU": "11289"
+  },
+  "LSC": {
+    "Item": "LSC",
+    "Description": "LAYS SOUR CREAM",
+    "Price": 36,
+    "Quantity": 1,
+    "sku": "LAYS-SOUR-CREAM",
+    "category": "rane-music",
+    "POS": "LAYOGURT BANANA CREAM535",
+    "Barcode": "053600000628",
+    "PosSKU": "11279"
+  }
+}

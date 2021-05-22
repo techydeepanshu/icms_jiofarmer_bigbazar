@@ -1,0 +1,46 @@
+{
+  "RSWTC2": {
+    "Quantity": 50,
+    "Item": "RSWTC2",
+    "Description": "TC BRAND ROSE WATER 24 X 200 ML",
+    "Price": 20,
+    "sku": "TC-BRAND-ROSE-WATER-24-X-200-ML",
+    "category": "I-sifol-llc",
+    "POS": "AHMED ROSE WATER",
+    "Barcode": "054529017018",
+    "PosSKU": "673"
+  },
+  "KWWTC2": {
+    "Quantity": 50,
+    "Item": "KWWTC2",
+    "Description": "TC BRAND KEWRA WATER 24X200 ML",
+    "Price": 21,
+    "sku": "TC-BRAND-KEWRA-WATER-24X200-ML",
+    "category": "I-sifol-llc",
+    "POS": "TOOBA KEWRA WATER",
+    "Barcode": "8961100055111",
+    "PosSKU": "20250"
+  },
+  "RIKMTC20": {
+    "Quantity": 50,
+    "Item": "RIKMTC20",
+    "Description": "TAMARIND CHEF KERALA MATTA RICE 20 LBS",
+    "Price": 9.5,
+    "sku": "TAMARIND-CHEF-KERALA-MATTA-RICE-20-LBS",
+    "category": "I-sifol-llc",
+    "POS": "MATTA RICE",
+    "Barcode": "964620",
+    "PosSKU": "12343"
+  },
+  "FLBSMR04": {
+    "Quantity": 50,
+    "Item": "FLBSMR04",
+    "Description": "MEERA BESAN 8 X 4 LBS",
+    "Price": 26,
+    "sku": "MEERA-BESAN-8-X-4-LBS",
+    "category": "I-sifol-llc",
+    "POS": "LIMA BEANS 3LBS",
+    "Barcode": "051179103559",
+    "PosSKU": "11508"
+  }
+}

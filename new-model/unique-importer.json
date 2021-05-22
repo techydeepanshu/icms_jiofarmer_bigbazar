@@ -1,0 +1,112 @@
+{
+  "NEELA P.B BASHMATI 20LB [2X1]": {
+    "Item": "NEELA P.B BASHMATI 20LB [2X1]",
+    "Description": "NEELA P.B BASHMATI 20LB [2X1]",
+    "Price": 36,
+    "Quantity": 2,
+    "sku": "NEELA-P.B-BASHMATI-20LB-[2X1]",
+    "category": "unique-importer",
+    "POS": "BEST BASMATI",
+    "Barcode": "8906010554026",
+    "PosSKU": "31138"
+  },
+  "GOLDEN POMFRET 600-800G 40LB@3.25": {
+    "Item": "GOLDEN POMFRET 600-800G 40LB@3.25",
+    "Description": "GOLDEN POMFRET 600-800G 40LB@3.25",
+    "Price": 130,
+    "Quantity": 1,
+    "sku": "GOLDEN-POMFRET-600-800G-40LB3.25",
+    "category": "unique-importer",
+    "POS": "GOLD OIL",
+    "Barcode": "8901088017398",
+    "PosSKU": "17277"
+  },
+  "SILVER-POMFRET 400UP10KG22.05LB @6.25/LB": {
+    "Item": "SILVER-POMFRET 400UP10KG22.05LB @6.25/LB",
+    "Description": "SILVER-POMFRET 400UP10KG22.05LB @6.25/LB",
+    "Price": 137.8125,
+    "Quantity": 1,
+    "sku": "SILVER-POMFRET-400UP10KG22.05LB-6.25/LB",
+    "category": "unique-importer",
+    "POS": "SILVER CAFE",
+    "Barcode": "8906058380120",
+    "PosSKU": "18303"
+  },
+  "HILSHA (NEELA)800/1000 20KG44.10LB @6.99/LB": {
+    "Item": "HILSHA (NEELA)800/1000 20KG44.10LB @6.99/LB",
+    "Description": "HILSHA (NEELA)800/1000 20KG44.10LB @6.99/LB",
+    "Price": 308.26,
+    "Quantity": 1,
+    "sku": "HILSHA-(NEELA)800/1000-20KG44.10LB-6.99/LB",
+    "category": "unique-importer",
+    "POS": "LEGAL HILSA",
+    "Barcode": "8831961082727",
+    "PosSKU": "41033"
+  },
+  "SWAI FILLET 7/9 1X15L@B3.25": {
+    "Item": "SWAI FILLET 7/9 1X15L@B3.25",
+    "Description": "SWAI FILLET 7/9 1X15L@B3.25",
+    "Price": 48.75,
+    "Quantity": 1,
+    "sku": "SWAI-FILLET-7/9-1X15LB3.25",
+    "category": "unique-importer",
+    "POS": "GOLD AND FANCY SWAI FILLETS",
+    "Barcode": "040976310451",
+    "PosSKU": "36558"
+  },
+  "31/40 SHRIMP RAW 10X2LB": {
+    "Item": "31/40 SHRIMP RAW 10X2LB",
+    "Description": "31/40 SHRIMP RAW 10X2LB",
+    "Price": 140,
+    "Quantity": 10,
+    "sku": "31/40-SHRIMP-RAW-10X2LB",
+    "category": "unique-importer",
+    "POS": "7 STAR PEELED RAW SHRIMP 16 20",
+    "Barcode": "869161451089",
+    "PosSKU": "212"
+  },
+  "TRAY SHRIMP 25X340GM@3.75": {
+    "Item": "TRAY SHRIMP 25X340GM@3.75",
+    "Description": "TRAY SHRIMP 25X340GM@3.75",
+    "Price": 93.75,
+    "Quantity": 25,
+    "sku": "TRAY-SHRIMP-25X340GM3.75",
+    "category": "unique-importer",
+    "POS": "NEELA TRAY SHRIMP",
+    "Barcode": "710308054031",
+    "PosSKU": "20375"
+  },
+  "21/25 SHRIMP TAIL ON 10X2LB": {
+    "Item": "21/25 SHRIMP TAIL ON 10X2LB",
+    "Description": "21/25 SHRIMP TAIL ON 10X2LB",
+    "Price": 140,
+    "Quantity": 10,
+    "sku": "21/25-SHRIMP-TAIL-ON-10X2LB",
+    "category": "unique-importer",
+    "POS": "COOKED SHRIMP TAIL OFF",
+    "Barcode": "729696118485",
+    "PosSKU": "4270"
+  },
+  "71/90 SHRIMP COOKED T/OFF 20X1LB": {
+    "Item": "71/90 SHRIMP COOKED T/OFF 20X1LB",
+    "Description": "71/90 SHRIMP COOKED T/OFF 20X1LB",
+    "Price": 140,
+    "Quantity": 20,
+    "sku": "71/90-SHRIMP-COOKED-T/OFF-20X1LB",
+    "category": "unique-importer",
+    "POS": "COOKED SHRIMP TAIL OFF",
+    "Barcode": "729696118485",
+    "PosSKU": "4270"
+  },
+  "NEELA HALAL QUAIL (SP) (6QUAIL/TRAY) 1X12 TRAY": {
+    "Item": "NEELA HALAL QUAIL (SP) (6QUAIL/TRAY) 1X12 TRAY",
+    "Description": "NEELA HALAL QUAIL (SP) (6QUAIL/TRAY) 1X12 TRAY",
+    "Price": 100,
+    "Quantity": 12,
+    "sku": "NEELA-HALAL-QUAIL-(SP)-(6QUAIL/TRAY)-1X12-TRAY",
+    "category": "unique-importer",
+    "POS": "DEEP AMLA",
+    "Barcode": "011433159869",
+    "PosSKU": "4833"
+  }
+}

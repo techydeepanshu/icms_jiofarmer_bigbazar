@@ -1,0 +1,24 @@
+{
+  "RD 20 LB": {
+    "Quantity": 50,
+    "Item": "RD 20 LB",
+    "Description": "ROYDE JASEMINE RICE 20 LB",
+    "Price": 14,
+    "category": "spicy-sense",
+    "sku": "ROYDE-JASEMINE-RICE-20-LB",
+    "POS": "ROYDE JASMINE RICE",
+    "Barcode": "8858701404526",
+    "PosSKU": "17125"
+  },
+  "KR M 400": {
+    "Quantity": 50,
+    "Item": "KR M 400",
+    "Description": "ML X 24 KARA COCONUT UTH MILK 24X400 ML",
+    "Price": 14,
+    "category": "spicy-sense",
+    "sku": "ML-X-24-KARA-COCONUT-UTH-MILK-24X400-ML",
+    "POS": "KARA COCONUT MILK",
+    "Barcode": "8886303210542",
+    "PosSKU": "9880"
+  }
+}

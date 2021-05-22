@@ -1,0 +1,57 @@
+{
+  "90240": {
+    "Quantity": 50,
+    "Item": "90240",
+    "Description": "NUTRELLA SOYA MINI 200 GM60",
+    "Price": 45,
+    "category": "producenmore",
+    "sku": "NUTRELLA-SOYA-MINI-200-GM60",
+    "POS": "NUTRELLA SOYA MINI CHUNKS",
+    "Barcode": "8906032011019",
+    "PosSKU": "14601"
+  },
+  "90263": {
+    "Quantity": 50,
+    "Item": "90263",
+    "Description": "CHINGS NOODLES HOT GARLIC 240 GM36",
+    "Price": 32,
+    "category": "producenmore",
+    "sku": "CHINGS-NOODLES-HOT-GARLIC-240-GM36",
+    "POS": "CHINGS SECRET HOT GARLIC NOODLES",
+    "Barcode": "8901595963362",
+    "PosSKU": "3966"
+  },
+  "90264": {
+    "Quantity": 50,
+    "Item": "90264",
+    "Description": "CHINGS NOODLES MANCHURIAN 240GM36",
+    "Price": 32,
+    "category": "producenmore",
+    "sku": "CHINGS-NOODLES-MANCHURIAN-240GM36",
+    "POS": "CHINGS SECRET MANCHURIAN NOODLES",
+    "Barcode": "8901595963348",
+    "PosSKU": "3970"
+  },
+  "90265": {
+    "Quantity": 50,
+    "Item": "90265",
+    "Description": "CHINGS SAUCE RED CHILLY 200 ML24",
+    "Price": 24,
+    "category": "producenmore",
+    "sku": "CHINGS-SAUCE-RED-CHILLY-200-ML24",
+    "POS": "CHINGS SECRET RED CHILLI SAUCE",
+    "Barcode": "8901595862740",
+    "PosSKU": "3973"
+  },
+  "90266": {
+    "Quantity": 50,
+    "Item": "90266",
+    "Description": "MDH KASURI METHI 1 KG6",
+    "Price": 84,
+    "category": "producenmore",
+    "sku": "MDH-KASURI-METHI-1-KG6",
+    "POS": "DES METHI",
+    "Barcode": "839451001744",
+    "PosSKU": "34420"
+  }
+}

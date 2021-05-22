@@ -1,0 +1,101 @@
+{
+  "BEEF BACON SLICED GS (3)": {
+    "Item": "BEEF BACON SLICED GS (3)",
+    "Description": "BEEF BACON SLICED GS (3)",
+    "Quantity": 3,
+    "Price": 6.75,
+    "sku": "BEEF-BACON-SLICED-GS-(3)",
+    "category": "Baraka-cold",
+    "POS": "BEEF GYRO SLICES",
+    "Barcode": "624967600075",
+    "PosSKU": "778"
+  },
+  "TURKEY BACON SLICED GS (3)": {
+    "Item": "TURKEY BACON SLICED GS (3)",
+    "Description": "TURKEY BACON SLICED GS (3)",
+    "Quantity": 3,
+    "Price": 4.5,
+    "sku": "TURKEY-BACON-SLICED-GS-(3)",
+    "category": "Baraka-cold",
+    "POS": "ORANGE SLICE",
+    "Barcode": "965110",
+    "PosSKU": "14748"
+  },
+  "TURKEY BREAST SLICED GS (2)": {
+    "Item": "TURKEY BREAST SLICED GS (2)",
+    "Description": "TURKEY BREAST SLICED GS (2)",
+    "Quantity": 2,
+    "Price": 6.5,
+    "sku": "TURKEY-BREAST-SLICED-GS-(2)",
+    "category": "Baraka-cold",
+    "POS": "BARAKA TURKEY BREAST SLICED",
+    "Barcode": "890573001371",
+    "PosSKU": "1995"
+  },
+  "BEEF FRANKS OW (2)": {
+    "Item": "BEEF FRANKS OW (2)",
+    "Description": "BEEF FRANKS OW (2)",
+    "Quantity": 2,
+    "Price": 5,
+    "sku": "BEEF-FRANKS-OW-(2)",
+    "category": "Baraka-cold",
+    "POS": "BARAKA BEEF FRANKS",
+    "Barcode": "614832070010",
+    "PosSKU": "1956"
+  },
+  "TURKEY HOT SAUSAGE GS (2)": {
+    "Item": "TURKEY HOT SAUSAGE GS (2)",
+    "Description": "TURKEY HOT SAUSAGE GS (2)",
+    "Quantity": 2,
+    "Price": 4.25,
+    "sku": "TURKEY-HOT-SAUSAGE-GS-(2)",
+    "category": "Baraka-cold",
+    "POS": "AL SAFA TURKEY HOTLINKS",
+    "Barcode": "62496711309",
+    "PosSKU": "67545"
+  },
+  "TURKEY PASTRAMI WHOLE GS (2)": {
+    "Item": "TURKEY PASTRAMI WHOLE GS (2)",
+    "Description": "TURKEY PASTRAMI WHOLE GS (2)",
+    "Quantity": 2,
+    "Price": 4.75,
+    "sku": "TURKEY-PASTRAMI-WHOLE-GS-(2)",
+    "category": "Baraka-cold",
+    "POS": "TURKY PASTRAMI",
+    "Barcode": "791241594549",
+    "PosSKU": "51572"
+  },
+  "SMOKED TURKEY MR (2)": {
+    "Item": "SMOKED TURKEY MR (2)",
+    "Description": "SMOKED TURKEY MR (2)",
+    "Quantity": 2,
+    "Price": 5,
+    "sku": "SMOKED-TURKEY-MR-(2)",
+    "category": "Baraka-cold",
+    "POS": "AS SALAAM SMOKED SLICED TURKEY BREAST",
+    "Barcode": "791241594341",
+    "PosSKU": "1427"
+  },
+  "TURKEY BREAST BRASIED MR (3)": {
+    "Item": "TURKEY BREAST BRASIED MR (3)",
+    "Description": "TURKEY BREAST BRASIED MR (3)",
+    "Quantity": 3,
+    "Price": 5.9,
+    "sku": "TURKEY-BREAST-BRASIED-MR-(3)",
+    "category": "Baraka-cold",
+    "POS": "BEST BASMATI",
+    "Barcode": "8906010554026",
+    "PosSKU": "31138"
+  },
+  "BUFFALO CHICKEN BREAST MR (1)": {
+    "Item": "BUFFALO CHICKEN BREAST MR (1)",
+    "Description": "BUFFALO CHICKEN BREAST MR (1)",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "BUFFALO-CHICKEN-BREAST-MR-(1)",
+    "category": "Baraka-cold",
+    "POS": "CHICKEN MIX",
+    "Barcode": "8961014002522",
+    "PosSKU": "65009"
+  }
+}

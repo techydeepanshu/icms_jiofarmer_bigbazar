@@ -1,0 +1,297 @@
+{
+  "BWCUS007": {
+    "Item": "BWCUS007",
+    "Description": "Cumin Seeds - 12*7 oz",
+    "Quantity": "7",
+    "Price": "24.00",
+    "sku": "CUMIN-SEEDS---127-OZ",
+    "category": "East-food",
+    "POS": "AARA CUMIN SEEDS",
+    "Barcode": "859800005025",
+    "PosSKU": "27016"
+  },
+  "BPBP007": {
+    "Item": "BPBP007",
+    "Description": "Black Pepper Powder - 12*7 oz",
+    "Quantity": "7",
+    "Price": "36.50",
+    "sku": "BLACK-PEPPER-POWDER---127-OZ",
+    "category": "East-food",
+    "POS": "BLACK PEPPER POWDER  90LB",
+    "Barcode": "0223000",
+    "PosSKU": "2643"
+  },
+  "BPTP007": {
+    "Item": "BPTP007",
+    "Description": "Turmeric Powder - 12*7 oz",
+    "Quantity": "7",
+    "Price": "22.50",
+    "sku": "TURMERIC-POWDER---127-OZ",
+    "category": "East-food",
+    "POS": "TURMERIC POWDER",
+    "Barcode": "714760813373",
+    "PosSKU": "5487"
+  },
+  "BPGP007": {
+    "Item": "BPGP007",
+    "Description": "Garlic Powder - 12*7 oz",
+    "Quantity": "7",
+    "Price": "28.00",
+    "sku": "GARLIC-POWDER---127-OZ",
+    "category": "East-food",
+    "POS": "777 GARLIC DHALL POWDER",
+    "Barcode": "897231002411",
+    "PosSKU": "219"
+  },
+  "BPGM007": {
+    "Item": "BPGM007",
+    "Description": "Garam Masala - 12*7 oz",
+    "Quantity": "7",
+    "Price": "28.00",
+    "sku": "GARAM-MASALA---127-OZ",
+    "category": "East-food",
+    "POS": "GARAM MASALA",
+    "Barcode": "011433071253",
+    "PosSKU": "4974"
+  },
+  "BWWC035": {
+    "Item": "BWWC035",
+    "Description": "Whole Chilli R) - 12*3.5 oz",
+    "Quantity": "3.5",
+    "Price": "24.00",
+    "sku": "WHOLE-CHILLI-R)---123.5-OZ",
+    "category": "East-food",
+    "POS": "ANAND DRY WHOLE CHILLIES",
+    "Barcode": "878776006195",
+    "PosSKU": "1092"
+  },
+  "BWCOS005": {
+    "Item": "BWCOS005",
+    "Description": "CORIANDER SEEDS - 125OZ",
+    "Quanitty": 50,
+    "Price": 21,
+    "sku": "CORIANDER-SEEDS---125OZ",
+    "category": "East-food",
+    "POS": "SHUDH CORIANDER SEED",
+    "Barcode": "793585016503",
+    "PosSKU": "18193"
+  },
+  "CS045": {
+    "Item": "BWCS045",
+    "Description": "CINAMON STICK - 124.5OZ",
+    "Quanitty": 50,
+    "Price": 21.6,
+    "sku": "CINAMON-STICK---124.5OZ",
+    "category": "East-food",
+    "POS": "BHAVANI CINNAMON STICK",
+    "Barcode": "846532003788",
+    "PosSKU": "31211"
+  },
+  "BWWC175": {
+    "Item": "BWWC175",
+    "Description": "WHOLE CHILLI R) - 121.75 OZ",
+    "Quanitty": 50,
+    "Price": 21.6,
+    "sku": "WHOLE-CHILLI-R)---121.75-OZ",
+    "category": "East-food",
+    "POS": "ANAND DRY WHOLE CHILLIES",
+    "Barcode": "878776006195",
+    "PosSKU": "1092"
+  },
+  "BPRCC055": {
+    "Item": "BPRCC055",
+    "Description": "RED CRUSHED CHILLI - 125.5 OZ",
+    "Quanitty": 50,
+    "Price": 22.5,
+    "sku": "RED-CRUSHED-CHILLI---125.5-OZ",
+    "category": "East-food",
+    "POS": "CHILLI CRUSHED",
+    "Barcode": "965260",
+    "PosSKU": "32951"
+  },
+  "BPRCC011": {
+    "Item": "BPRCC011",
+    "Description": "RED CRUSHED CHILLI - 1211 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "RED-CRUSHED-CHILLI---1211-OZ",
+    "category": "East-food",
+    "POS": "CHILLI CRUSHED",
+    "Barcode": "965260",
+    "PosSKU": "32951"
+  },
+  "BPPA014": {
+    "Item": "BPPA014",
+    "Description": "PAPRIKA - 1214 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "PAPRIKA---1214-OZ",
+    "category": "East-food",
+    "POS": "FINEST CHOICE SPANISH PAPRIKA8OZ",
+    "Barcode": "012345031625",
+    "PosSKU": "35684"
+  },
+  "BPCPE014": {
+    "Item": "BPCPE014",
+    "Description": "CHILLI POWDER EX-HOT-1214OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "CHILLI-POWDER-EX-HOT-1214OZ",
+    "category": "East-food",
+    "POS": "CHILLI POWDER EXTRA HOT",
+    "Barcode": "216000",
+    "PosSKU": "3936"
+  },
+  "BPCPR014": {
+    "Item": "BPCPR014",
+    "Description": "CHILLI POWDER 1214 OZ",
+    "Quanitty": 50,
+    "Price": 36,
+    "sku": "CHILLI-POWDER-1214-OZ",
+    "category": "East-food",
+    "POS": "AHMED CHILLI POWDER",
+    "Barcode": "054529006029",
+    "PosSKU": "595"
+  },
+  "BPBP014": {
+    "Item": "BPBP014",
+    "Description": "BLACK PEPPER POWDER - 1214",
+    "Quanitty": 50,
+    "Price": 48,
+    "sku": "BLACK-PEPPER-POWDER---1214",
+    "category": "East-food",
+    "POS": "SHUDH BLACK PEPPER POWDER",
+    "Barcode": "793585017432",
+    "PosSKU": "18172"
+  },
+  "BPCUP007": {
+    "Item": "BPCUP007",
+    "Description": "Cumin Powder - 12*7 oz",
+    "Quantity": 7,
+    "Price": 23.5,
+    "sku": "Cumin-Powder---12*7-oz",
+    "POS": "AACHI CUMIN POWDER",
+    "Barcode": "8906021126069",
+    "PosSKU": "312"
+  },
+  "BPGIP007": {
+    "Item": "BPGIP007",
+    "Description": "Ginger Powder - 12*7 oz",
+    "Quantity": 7,
+    "Price": 28,
+    "sku": "Ginger-Powder---12*7-oz",
+    "POS": "DEEP GINGER POWDER",
+    "Barcode": "011433112666",
+    "PosSKU": "4987"
+  },
+  "BPCPROO7": {
+    "Item": "BPCPROO7",
+    "Description": "Chilli Powder 12*7 oz",
+    "Quantity": 7,
+    "Price": 26,
+    "sku": "Chilli-Powder-12*7-oz",
+    "POS": "AHMED CHILLI POWDER",
+    "Barcode": "054529006029",
+    "PosSKU": "595"
+  },
+  "BWMS010": {
+    "Item": "BWMS010",
+    "Description": "Fenugreek Seed - 12*10oz",
+    "Quantity": 10,
+    "Price": 23.5,
+    "sku": "Fenugreek-Seed---12*10oz",
+    "POS": "DEEP FENUGREEK SEEDS",
+    "Barcode": "011433073196",
+    "PosSKU": "4971"
+  },
+  "BWCS045": {
+    "Item": "BWCS045",
+    "Description": "Cinamon Stick - 12*4.5oz",
+    "Quantity": 4.5,
+    "Price": 36,
+    "sku": "Cinamon-Stick---12*4.5oz",
+    "POS": "BHAVANI CINNAMON STICK",
+    "Barcode": "846532003788",
+    "PosSKU": "31211"
+  },
+  "BPCIP007": {
+    "Item": "BPCIP007",
+    "Description": "Cinamon Powder - 12*7 oz New",
+    "Quantity": 7,
+    "Price": 24,
+    "sku": "Cinamon-Powder---12*7-oz-New",
+    "POS": "SANJEEVANI ORG CINNAMON POWDER",
+    "Barcode": "8906054844053",
+    "PosSKU": "17366"
+  },
+  "BWFS007": {
+    "Item": "BWFS007",
+    "Description": "Fennel Seed - 12*7 oz",
+    "Quantity": 7,
+    "Price": 23.5,
+    "sku": "Fennel-Seed---12*7-oz",
+    "POS": "DEEP FENNEL SEED",
+    "Barcode": "011433073172",
+    "PosSKU": "4969"
+  },
+  "BWAS007": {
+    "Item": "BWAS007",
+    "Description": "Ajwan Seed - 12*7 oz",
+    "Quantity": 7,
+    "Price": 30,
+    "sku": "Ajwan-Seed---12*7-oz",
+    "POS": "AJWAN SEED  45LB",
+    "Barcode": "241000",
+    "PosSKU": "745"
+  },
+  "BPCOR014": {
+    "Item": "BPCOR014",
+    "Description": "Coriander Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 33,
+    "sku": "Coriander-Powder---12*14-oz",
+    "POS": "AACHI CORIANDER POWDER",
+    "Barcode": "8906021120685",
+    "PosSKU": "310"
+  },
+  "BPCUR014": {
+    "Item": "BPCUR014",
+    "Description": "Curry Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 30,
+    "sku": "Curry-Powder---12*14-oz",
+    "POS": "AHMED CURRY POWDER",
+    "Barcode": "054529505850",
+    "PosSKU": "600"
+  },
+  "BPTP014": {
+    "Item": "BPTP014",
+    "Description": "Turmeric Powder - 12*14 oz",
+    "Quantity": 14,
+    "Price": 30,
+    "sku": "Turmeric-Powder---12*14-oz",
+    "POS": "TURMERIC POWDER",
+    "Barcode": "714760813373",
+    "PosSKU": "5487"
+  },
+  "BWCUS014": {
+    "Item": "BWCUS014",
+    "Description": "Cumin Seeds - 12*14 oz",
+    "Quantity": 14,
+    "Price": 36,
+    "sku": "Cumin-Seeds---12*14-oz",
+    "POS": "AARA CUMIN SEEDS",
+    "Barcode": "859800005025",
+    "PosSKU": "27016"
+  },
+  "BPGM014": {
+    "Item": "BPGM014",
+    "Description": "Garam Masala - 12*14 oz",
+    "Quantity": 14,
+    "Price": 42,
+    "sku": "Garam-Masala---12*14-oz",
+    "POS": "GARAM MASALA",
+    "Barcode": "011433071253",
+    "PosSKU": "4974"
+  }
+}

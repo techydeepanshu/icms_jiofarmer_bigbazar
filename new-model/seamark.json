@@ -1,0 +1,92 @@
+{
+  "10010163": {
+    "Item": "10010163",
+    "Description": "ROHU CLEAN BLOCK 18X500G",
+    "Quantity": "18",
+    "Price": "3.5",
+    "sku": "ROHU-CLEAN-BLOCK-18X500G",
+    "POS": "BLACK CHANA",
+    "Barcode": "0700300",
+    "PosSKU": "2625"
+  },
+  "10010234": {
+    "Item": "10010234",
+    "Description": "KOI (Climbing Perch) BLOCK 18X500G",
+    "Quantity": "18",
+    "Price": "3.5",
+    "sku": "KOI-(Climbing-Perch)-BLOCK-18X500G",
+    "POS": "K C B",
+    "Barcode": "812042002702",
+    "PosSKU": "9729"
+  },
+  "20010210": {
+    "Item": "20010210",
+    "Description": "KESKI (Sprat) BLOCK  36X250G",
+    "Quantity": "36",
+    "Price": "1.25",
+    "sku": "KESKI-(Sprat)-BLOCK--36X250G-",
+    "POS": "HAOR SPRAT KESKI",
+    "Barcode": "7182178143307",
+    "PosSKU": "65670"
+  },
+  "50260088": {
+    "Item": "50260088",
+    "Description": "POMFRET GOLDEN WHL 500/700 GMS 20 LBS",
+    "Quantity": "1",
+    "Price": "3.5",
+    "sku": "POMFRET-GOLDEN-WHL-500/700-GMS-20-LBS-",
+    "POS": "WHITE POMPFRET",
+    "Barcode": "1658",
+    "PosSKU": "21521"
+  },
+  "60810037": {
+    "Item": "60810037",
+    "Description": "TELAPIA FILLET 10 LBS",
+    "Quantity": "1",
+    "Price": "3.1",
+    "sku": "TELAPIA-FILLET-10-LBS-",
+    "POS": "B TEX",
+    "Barcode": "1423",
+    "PosSKU": "27815"
+  },
+  "190010020": {
+    "Item": "190010020",
+    "Description": "SAMOSA VEGETABLE (25Pcs) 20X500G",
+    "Quantity": "20",
+    "Price": "2.5",
+    "sku": "SAMOSA-VEGETABLE-(25Pcs)-20X500G",
+    "POS": "IBCO VEGETABLE SAMOSA FP 25 PCS",
+    "Barcode": "5027891337058",
+    "PosSKU": "9008"
+  },
+  "190010046": {
+    "Item": "190010046",
+    "Description": "PARATHA PLAIN (FAMILY PACK) 12X1600G",
+    "Quantity": "12",
+    "Price": "4",
+    "sku": "PARATHA-PLAIN-(FAMILY-PACK)-12X1600G",
+    "POS": "PLAIN PARATHA",
+    "Barcode": "9556587988107",
+    "PosSKU": "10000"
+  },
+  "190010079": {
+    "Item": "190010079",
+    "Description": "SAMOSA VEGETABLE FAMILY PACK 16X900G",
+    "Quantity": "16",
+    "Price": "5.25",
+    "sku": "SAMOSA-VEGETABLE-FAMILY-PACK-16X900G-",
+    "POS": "IBCO VEGETABLE SAMOSA",
+    "Barcode": "5027891332534",
+    "PosSKU": "9007"
+  },
+  "190010098": {
+    "Item": "190010098",
+    "Description": "SPRING ROLL VEGETABLE F/ PK 16X900G",
+    "Quantity": "16",
+    "Price": "4.5",
+    "sku": "SPRING-ROLL-VEGETABLE-F/-PK-16X900G",
+    "POS": "DEEP VEGETABLE SPRING ROLLS",
+    "Barcode": "011433031509",
+    "PosSKU": "5358"
+  }
+}

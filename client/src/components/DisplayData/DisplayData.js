@@ -89,7 +89,7 @@ const DisplayData = (props) => {
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
-        <th key={index}>
+        <th key={index} style={{position:"sticky",top:"70px",background:"	#505050",color:"white"}}>
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <TextField
@@ -235,10 +235,8 @@ const DisplayData = (props) => {
       return (
         <div className={styles.tablewrapper}>
           <table className="table table-hover table-responsive-sm">
-            <thead>
-              <tr>{renderTableHeader()}</tr>
-            </thead>
             <tbody>
+              <tr>{renderTableHeader()}</tr>
               {rows}
               <tr>
                 <td>

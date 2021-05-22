@@ -1,0 +1,12 @@
+{
+  "BUK": {
+    "Item": "BUK",
+    "Description": "BUSHEL [s] KIRBIES",
+    "Quantity": 1,
+    "Price": 36,
+    "sku": "BUSHEL-[s]-KIRBIES",
+    "POS": "BHEL PURI KIT",
+    "Barcode": "011433156509",
+    "PosSKU": "1857"
+  }
+}

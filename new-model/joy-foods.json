@@ -1,0 +1,222 @@
+{
+  "FRESHPAN7OZS": {
+    "Item": "FRESHPAN7OZS",
+    "Description": "FRESH PANEER(JOY) 1X12X7 OZ",
+    "Price": 37.5,
+    "Quantity": 12,
+    "sku": "FRESH-PANEER(JOY)-1X12X7-OZ-",
+    "cat": "joyfoods",
+    "POS": "JOY FRESH PANEER CUBES",
+    "Barcode": "680617606675",
+    "PosSKU": "9640"
+  },
+  "JOYMALAIPANE": {
+    "Item": "JOYMALAIPANE",
+    "Description": "JOY 'MALAI' PANEER 1X20X12 OZS.",
+    "Price": 70,
+    "Quantity": 20,
+    "sku": "JOY-'MALAI'-PANEER-1X20X12-OZS.-",
+    "cat": "joyfoods",
+    "POS": "JOY MALAI PANEER",
+    "Barcode": "680617606552",
+    "PosSKU": "9664"
+  },
+  "MLASSI640ZS": {
+    "Item": "MLASSI640ZS",
+    "Description": "JOY MANGO(1/2 GAL) LASSI 1X9X64 FL OZS.",
+    "Price": 45,
+    "Quantity": 9,
+    "sku": "JOY-MANGO(1/2-GAL)-LASSI-1X9X64-FL-OZS.-",
+    "cat": "joyfoods",
+    "POS": "JOY LASSI MINT",
+    "Barcode": "680617100609",
+    "PosSKU": "9656"
+  },
+  "MSLCHS1/2GAL": {
+    "Item": "MSLCHS1/2GAL",
+    "Description": "JOY MASALA CHAAS 1X9X64 FL OZS.",
+    "Price": 24,
+    "Quantity": 20,
+    "sku": "JOY-MASALA-CHAAS-1X9X64-FL-OZS.-",
+    "cat": "joyfoods",
+    "POS": "JOYMEE MASALA",
+    "Barcode": "8996001526040",
+    "PosSKU": "38872"
+  },
+  "MLASSI": {
+    "Item": "MLASSI",
+    "Description": "JOY LASSI MANGO 1X20X16 FL OZ",
+    "Price": 30,
+    "Quantity": 20,
+    "sku": "JOY-LASSI-MANGO-1X20X16-FL-OZ-",
+    "cat": "joyfoods",
+    "POS": "JOY LASSI MINT",
+    "Barcode": "680617100609",
+    "PosSKU": "9656"
+  },
+  "SPRLL12PC": {
+    "Item": "SPRLL12PC",
+    "Description": "LARGE VEG.SPRING ROLL 1X12X12 PCS",
+    "Price": 48,
+    "Quantity": 12,
+    "sku": "LARGE-VEG.SPRING-ROLL-1X12X12-PCS-",
+    "cat": "joyfoods",
+    "POS": "JOY VEG SPRING ROLL",
+    "Barcode": "680617505503",
+    "PosSKU": "38869"
+  },
+  "ALMDOL!6": {
+    "Item": "ALMDOL!6",
+    "Description": "REFINED ALMOND OIL IX12X16OZ",
+    "Price": 54,
+    "Quantity": 12,
+    "sku": "REFINED-ALMOND-OIL-IX12X16OZ-",
+    "cat": "joyfoods",
+    "POS": "JOY ALMOND OIL",
+    "Barcode": "680617606200",
+    "PosSKU": "9618"
+  },
+  "MMPDER": {
+    "Item": "MMPDER",
+    "Description": "MILK MAVA POWDER 1x12X12OZ",
+    "Price": 45,
+    "Quantity": 12,
+    "sku": "MILK-MAVA-POWDER-1x12X12OZ-",
+    "cat": "joyfoods",
+    "POS": "DEEP MILK MAVA POWDER",
+    "Barcode": "011433071246",
+    "PosSKU": "5125"
+  },
+  "CORIND CHU260": {
+    "Item": "CORIND CHU260",
+    "Description": "CORRIANDER CHUTNEY IX12X260ZS",
+    "Price": 48,
+    "Quantity": 12,
+    "sku": "CORRIANDER-CHUTNEY-IX12X260ZS-",
+    "cat": "joyfoods",
+    "POS": "JOY CORIANDER CHUTNEY",
+    "Barcode": "680617604022",
+    "PosSKU": "9628"
+  },
+  "DTS/TMRND320ZS": {
+    "Item": "DTS/TMRND320ZS",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X32 OZS",
+    "Price": 72,
+    "Quantity": 12,
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X32-OZS-",
+    "cat": "joyfoods",
+    "POS": "JOY TAMARIND AND DATE CHUTNEY",
+    "Barcode": "680617600222",
+    "PosSKU": "9695"
+  },
+  "DTS/TMRD160Z:": {
+    "Item": "DTS/TMRD160Z:",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X16 OZS",
+    "Price": 40,
+    "Quantity": 12,
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X16-OZS-",
+    "cat": "joyfoods",
+    "POS": "JOY TAMARIND AND DATE CHUTNEY",
+    "Barcode": "680617600222",
+    "PosSKU": "9695"
+  },
+  "PNPRMSL8OZ": {
+    "Item": "PNPRMSL8OZ",
+    "Description": "PANI PURI MASALA 1X12X 8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "PANI-PURI-MASALA-1X12X-8-OZ-",
+    "cat": "joyfoods",
+    "POS": "PANI PURI",
+    "Barcode": "068656002052",
+    "PosSKU": "15005"
+  },
+  "GRCHLLY8OZ": {
+    "Item": "GRCHLLY8OZ",
+    "Description": "GREEN CHILLY CHUTNEY 1X12 8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "GREEN-CHILLY-CHUTNEY-1X12-8-OZ-",
+    "cat": "joyfoods",
+    "POS": "RED CHILLI CHUTNEY",
+    "Barcode": "707466921602",
+    "PosSKU": "61715"
+  },
+  "TMRNDCHTNY8": {
+    "Item": "TMRNDCHTNY8",
+    "Description": "TAMARIND CHUTNEY 1X12X8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "TAMARIND-CHUTNEY-1X12X8-OZ-",
+    "cat": "joyfoods",
+    "POS": "JOY TAMARIND CHUTNEY",
+    "Barcode": "680617604060",
+    "PosSKU": "58601"
+  },
+  "DATES&TAMERI": {
+    "Item": "DATES&TAMERI",
+    "Description": "DATES & TAMARIND CHUTNEY 1X12X8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "DATES-&-TAMARIND-CHUTNEY-1X12X8-OZ-",
+    "cat": "joyfoods",
+    "POS": "JOY TAMARIND AND DATE CHUTNEY",
+    "Barcode": "680617600222",
+    "PosSKU": "9695"
+  },
+  "MNTCHT8OZ": {
+    "Item": "MNTCHT8OZ",
+    "Description": "MINT CHUTNEY FRESH1X12X8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "MINT-CHUTNEY-FRESH1X12X8-OZ-",
+    "cat": "joyfoods",
+    "POS": "FRESH MIX",
+    "Barcode": "071279271033",
+    "PosSKU": "35870"
+  },
+  "CORRI CHU 8": {
+    "Item": "CORRI CHU 8",
+    "Description": "CORRIANDER CHUTNEY FRESH 1X12X8 OZ",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "CORRIANDER-CHUTNEY-FRESH-1X12X8-OZ-",
+    "cat": "joyfoods",
+    "POS": "DEEP CORIANDER CHUTNEY",
+    "Barcode": "011433150538",
+    "PosSKU": "4909"
+  },
+  "GHEE160Z": {
+    "Item": "GHEE160Z",
+    "Description": "MAKHAN GHEE IX12X16OZ MAHARAJA BRAND",
+    "Price": 64,
+    "Quantity": 12,
+    "sku": "MAKHAN-GHEE-IX12X16OZ-MAHARAJA-BRAND-",
+    "cat": "joyfoods",
+    "POS": "MAHARAJA MAIDA",
+    "Barcode": "682500372469",
+    "PosSKU": "28299"
+  },
+  "GHEE320Z": {
+    "Item": "GHEE320Z",
+    "Description": "MAKHAN GHEE IX12X32OZ MAHARAJA BRAND",
+    "Price": 120,
+    "Quantity": 12,
+    "sku": "MAKHAN-GHEE-IX12X32OZ-MAHARAJA-BRAND-",
+    "cat": "joyfoods",
+    "POS": "MAHARAJA MAIDA",
+    "Barcode": "682500372469",
+    "PosSKU": "28299"
+  },
+  "TANDPAS26 OZ": {
+    "Item": "TANDPAS26 OZ",
+    "Description": "TANDOORI PASTE1X12X260Z",
+    "Price": 48,
+    "Quantity": 12,
+    "sku": "TANDOORI-PASTE1X12X260Z-",
+    "cat": "joyfoods",
+    "POS": "AHMED TANDOORI PASTE",
+    "Barcode": "054529007019",
+    "PosSKU": "686"
+  }
+}

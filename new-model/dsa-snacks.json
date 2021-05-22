@@ -1,0 +1,178 @@
+{
+  "SWEET TAMARIND DON DIEGO 24 CT./ 8 oz": {
+    "Item": "SWEET TAMARIND DON DIEGO 24 CT./ 8 oz",
+    "Description": "SWEET TAMARIND DON DIEGO 24 CT./ 8 oz",
+    "Quantity": 24,
+    "Price": 55.2,
+    "sku": "SWEET-TAMARIND-DON-DIEGO-24-CT./-8-oz",
+    "POS": "SWEET TAMARIND",
+    "Barcode": "8858652601289",
+    "PosSKU": "19360"
+  },
+  "PURE GINGER 24 CT./ 4 oz": {
+    "Item": "PURE GINGER 24 CT./ 4 oz",
+    "Description": "PURE GINGER 24 CT./ 4 oz",
+    "Quantity": 24,
+    "Price": 43.2,
+    "sku": "PURE-GINGER-24-CT./-4-oz",
+    "POS": "OW REAL GINGER CHAI",
+    "Barcode": "8906079340318",
+    "PosSKU": "14873"
+  },
+  "TAMARIND CHEW 24 CT./ 4 oz": {
+    "Item": "TAMARIND CHEW 24 CT./ 4 oz",
+    "Description": "TAMARIND CHEW 24 CT./ 4 oz",
+    "Quantity": 24,
+    "Price": 43.2,
+    "sku": "TAMARIND-CHEW-24-CT./-4-oz",
+    "POS": "BEST TAMARIND",
+    "Barcode": "234567787655",
+    "PosSKU": "31151"
+  },
+  "HAPPY GIANT EGG 12 CT./ 1.5 OZ": {
+    "Item": "HAPPY GIANT EGG 12 CT./ 1.5 OZ",
+    "Description": "HAPPY GIANT EGG 12 CT./ 1.5 OZ",
+    "Quantity": 12,
+    "Price": 31.32,
+    "sku": "HAPPY-GIANT-EGG-12-CT./-1.5-OZ-",
+    "POS": "ORGANIC EGG",
+    "Barcode": "856209005083",
+    "PosSKU": "44753"
+  },
+  "MAGIK GIANT EGG 12 CT./ 1.5 OZ": {
+    "Item": "MAGIK GIANT EGG 12 CT./ 1.5 OZ",
+    "Description": "MAGIK GIANT EGG 12 CT./ 1.5 OZ",
+    "Quantity": 12,
+    "Price": 31.32,
+    "sku": "MAGIK-GIANT-EGG-12-CT./-1.5-OZ-",
+    "POS": "ORGANIC EGG",
+    "Barcode": "856209005083",
+    "PosSKU": "44753"
+  },
+  "SICAZKA GIANT EGG 12 CT./ 1.5 OZ": {
+    "Item": "SICAZKA GIANT EGG 12 CT./ 1.5 OZ",
+    "Description": "SICAZKA GIANT EGG 12 CT./ 1.5 OZ",
+    "Quantity": 12,
+    "Price": 31.32,
+    "sku": "SICAZKA-GIANT-EGG-12-CT./-1.5-OZ-",
+    "POS": "ORGANIC EGG",
+    "Barcode": "856209005083",
+    "PosSKU": "44753"
+  },
+  "HANUTA 18 CT./44g": {
+    "Item": "HANUTA 18 CT./44g",
+    "Description": "HANUTA 18 CT./44g",
+    "Quantity": 18,
+    "Price": 24,
+    "sku": "HANUTA-18-CT./44g",
+    "POS": "M M PEANUT 48CT",
+    "Barcode": "040000000327",
+    "PosSKU": "41444"
+  },
+  "TROPIC TOSTON SALTY 24 CT./ 2 OZ": {
+    "Item": "TROPIC TOSTON SALTY 24 CT./ 2 OZ",
+    "Description": "TROPIC TOSTON SALTY 24 CT./ 2 OZ",
+    "Quantity": 24,
+    "Price": 27.6,
+    "sku": "TROPIC-TOSTON-SALTY-24-CT./-2-OZ",
+    "POS": "TROPIC MAX TOSTONES",
+    "Barcode": "7862112310728",
+    "PosSKU": "20429"
+  },
+  "TROPICMAX PLANTAIN SWEET 24 CT./ 2.5 oz": {
+    "Item": "TROPICMAX PLANTAIN SWEET 24 CT./ 2.5 oz",
+    "Description": "TROPICMAX PLANTAIN SWEET 24 CT./ 2.5 oz",
+    "Quantity": 24,
+    "Price": 24,
+    "sku": "TROPICMAX-PLANTAIN-SWEET-24-CT./-2.5-oz",
+    "POS": "SWEET ONION",
+    "Barcode": "5225",
+    "PosSKU": "19353"
+  },
+  "TROPICMAX PLANTAIN LEMON 24 CT./ 2.5 oz": {
+    "Item": "TROPICMAX PLANTAIN LEMON 24 CT./ 2.5 oz",
+    "Description": "TROPICMAX PLANTAIN LEMON 24 CT./ 2.5 oz",
+    "Quantity": 24,
+    "Price": 24,
+    "sku": "TROPICMAX-PLANTAIN-LEMON-24-CT./-2.5-oz",
+    "POS": "TROPICMAX PLANTAIN CHIPS",
+    "Barcode": "7862112310346",
+    "PosSKU": "20476"
+  },
+  "TROPICMAX PLANTAIN SALTY 24 CT./ 2.5 oz": {
+    "Item": "TROPICMAX PLANTAIN SALTY 24 CT./ 2.5 oz",
+    "Description": "TROPICMAX PLANTAIN SALTY 24 CT./ 2.5 oz",
+    "Quantity": 24,
+    "Price": 24,
+    "sku": "TROPICMAX-PLANTAIN-SALTY-24-CT./-2.5-oz",
+    "POS": "SAMAI PLANTAIN STRIPS",
+    "Barcode": "832697001103",
+    "PosSKU": "17340"
+  },
+  "HAPPY GIANT EGG 12 CT. / 1.5 OZ.": {
+    "Item": "HAPPY GIANT EGG 12 CT. / 1.5 OZ.",
+    "Description": "HAPPY GIANT EGG 12 CT. / 1.5 OZ.",
+    "Quantity": 50,
+    "Price": 31.32,
+    "sku": "HAPPY-GIANT-EGG-12-CT.-/-1.5-OZ.",
+    "category": "dsa-snacks",
+    "POS": "ORGANIC EGG",
+    "Barcode": "856209005083",
+    "PosSKU": "44753"
+  },
+  "LUCKY EGGS 48 CT. / 1 OZ.": {
+    "Item": "LUCKY EGGS 48 CT. / 1 OZ.",
+    "Description": "LUCKY EGGS 48 CT. / 1 OZ.",
+    "Quantity": 50,
+    "Price": 50.4,
+    "sku": "LUCKY-EGGS-48-CT.-/-1-OZ.",
+    "category": "dsa-snacks",
+    "POS": "LUX 100G",
+    "Barcode": "8901030155642",
+    "PosSKU": "11778"
+  },
+  "SWEET 24 CT. / 8 OZ.": {
+    "Item": "SWEET 24 CT. / 8 OZ.",
+    "Description": "SWEET 24 CT. / 8 OZ.",
+    "Quantity": 50,
+    "Price": 55.2,
+    "sku": "SWEET-24-CT.-/-8-OZ.",
+    "category": "dsa-snacks",
+    "POS": "ABC MEDIUM SWEET SOY SAUCE",
+    "Barcode": "711844110069",
+    "PosSKU": "441"
+  },
+  "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.": {
+    "Item": "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.",
+    "Description": "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.",
+    "Quantity": 50,
+    "Price": 14.4,
+    "sku": "DON-DIEGO-MARSHMALLOWS-12-CT.-/-3-OZ.",
+    "category": "dsa-snacks",
+    "POS": "DON DIEGO MARSHMALLOWS",
+    "Barcode": "787790165637",
+    "PosSKU": "65379"
+  },
+  "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.": {
+    "Item": "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.",
+    "Description": "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.",
+    "Quantity": 50,
+    "Price": 33.6,
+    "sku": "HEALTHY-MIXED-NUT-BAR-24-CT.-/-5-OZ.",
+    "category": "dsa-snacks",
+    "POS": "MIX NUTS",
+    "Barcode": "10090",
+    "PosSKU": "13282"
+  },
+  "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.": {
+    "Item": "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.",
+    "Description": "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.",
+    "Quantity": 50,
+    "Price": 22.5,
+    "sku": "TOSTONES-TO-GO-LIGHTY-SALTY-12-CT.-/-4-OZ.",
+    "category": "dsa-snacks",
+    "POS": "IODIZED SALT",
+    "Barcode": "652010000084",
+    "PosSKU": "16683"
+  }
+}

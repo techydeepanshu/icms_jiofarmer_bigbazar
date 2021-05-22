@@ -1,0 +1,102 @@
+{
+  "Hair Pack:Amla Hair Pack AMLA HAIR PACK": {
+    "Item": "Hair Pack:Amla Hair Pack AMLA HAIR PACK",
+    "Description": "Hair Pack:Amla Hair Pack AMLA HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Amla-Hair-Pack-AMLA-HAIR-PACK-",
+    "POS": "MIRCH MASALA PARATHA FAMILY PACK",
+    "Barcode": "011433119269",
+    "PosSKU": "13180"
+  },
+  "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK": {
+    "Item": "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK",
+    "Description": "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Mehendi-hair-PackMEHENDI-HAIR-PACK-",
+    "POS": "ARZOO MEHENDI",
+    "Barcode": "076586031127",
+    "PosSKU": "1409"
+  },
+  "Face Pack:Multani lemon LEMON FACEPACK": {
+    "Item": "Face Pack:Multani lemon LEMON FACEPACK",
+    "Description": "Face Pack:Multani lemon LEMON FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-lemon-LEMON-FACEPACK-",
+    "POS": "ULTIMATE LEMONS",
+    "Barcode": "033383119069",
+    "PosSKU": "51818"
+  },
+  "Face Pack: Multani Premium Face Pack MULTANI FACEPACK": {
+    "Item": "Face Pack: Multani Premium Face Pack MULTANI FACEPACK",
+    "Description": "Face Pack: Multani Premium Face Pack MULTANI FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:-Multani-Premium-Face-Pack-MULTANI-FACEPACK-",
+    "POS": "BLACK MUSLI",
+    "Barcode": "967180",
+    "PosSKU": "28160"
+  },
+  "Face Pack:Multani rose Face Pack ROSE FACEPACK": {
+    "Item": "Face Pack:Multani rose Face Pack ROSE FACEPACK",
+    "Description": "Face Pack:Multani rose Face Pack ROSE FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-rose-Face-Pack-ROSE-FACEPACK-",
+    "POS": "BLACK MUSLI",
+    "Barcode": "967180",
+    "PosSKU": "28160"
+  },
+  "Face Pack:Multani-Sandal SANDAL FACEPACK": {
+    "Item": "Face Pack:Multani-Sandal SANDAL FACEPACK",
+    "Description": "Face Pack:Multani-Sandal SANDAL FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-Sandal-SANDAL-FACEPACK-",
+    "POS": "SWAD CANDY PACK",
+    "Barcode": "752541993432",
+    "PosSKU": "63758"
+  },
+  "OrangeFacepack ORANGE FACEPACK": {
+    "Item": "OrangeFacepack ORANGE FACEPACK",
+    "Description": "OrangeFacepack ORANGE FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "OrangeFacepack-ORANGE-FACEPACK-",
+    "POS": "ORANGE BAG",
+    "Barcode": "845857020029",
+    "PosSKU": "14741"
+  },
+  "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK": {
+    "Item": "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK",
+    "Description": "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Reetha_Hair-Pack-REETHA-HAIR-PACK-",
+    "POS": "AIR WICK",
+    "Barcode": "062338758190",
+    "PosSKU": "709"
+  },
+  "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK": {
+    "Item": "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK",
+    "Description": "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Sheekakai-hair-Pack-SHIKAKKAI-HAIR-PACK-",
+    "POS": "AIR WICK",
+    "Barcode": "062338758190",
+    "PosSKU": "709"
+  },
+  "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers": {
+    "Item": "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers",
+    "Description": "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers",
+    "Quantity": 1,
+    "Price": 5.99,
+    "sku": "Sugar-Supplernent:Sugset-Flowers(Paneer-ke-Phool)-Sugset-Flowers-",
+    "POS": "SUGSET PANEER KA PHOOL",
+    "Barcode": "639738996332",
+    "PosSKU": "18559"
+  }
+}

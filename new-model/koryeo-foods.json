@@ -1,0 +1,68 @@
+{
+  "A10525": {
+    "Item": "A10525",
+    "Quantity": 50,
+    "Description": "SHRIMP SALAD 100/200 CLEAR FARM INDONESIA 20/1 LB",
+    "Price": 91,
+    "sku": "SHRIMP-SALAD-100/200-CLEAR-FARM-INDONESIA-20/1-LB",
+    "category": "Koryeo-food",
+    "POS": "ALPHA SHRIMP 16 20",
+    "Barcode": "617865861792",
+    "PosSKU": "27270"
+  },
+  "A10947": {
+    "Item": "A10947",
+    "Quantity": 50,
+    "Description": "MIXED SEAFOOD NEW WILD THAILAND 10/2 LB",
+    "Price": 59,
+    "sku": "MIXED-SEAFOOD-NEW-WILD-THAILAND-10/2-LB",
+    "category": "Koryeo-food",
+    "POS": "BD. MIXED",
+    "Barcode": "8812411275074",
+    "PosSKU": "65469"
+  },
+  "A10536": {
+    "Item": "A10536",
+    "Quantity": 50,
+    "Description": "MUSSEL MEAT FARM CHILE 10/2 LB",
+    "Price": 50,
+    "sku": "MUSSEL-MEAT-FARM-CHILE-10/2-LB",
+    "category": "Koryeo-food",
+    "POS": "MUSSEL MEAT",
+    "Barcode": "72969611561",
+    "PosSKU": "43130"
+  },
+  "A10742": {
+    "Item": "A10742",
+    "Quantity": 50,
+    "Description": "SHRIMP EASY PEEL 31/40 20/1 LB",
+    "Price": 84,
+    "sku": "SHRIMP-EASY-PEEL-31/40-20/1-LB",
+    "category": "Koryeo-food",
+    "POS": "PEELED SHRIMP",
+    "Barcode": "729696118508",
+    "PosSKU": "45561"
+  },
+  "A10848": {
+    "Item": "A10848",
+    "Quantity": 50,
+    "Description": "SHRIMP COOKED 71/90 CLEAR FARM INDONESIA 10/2 LB",
+    "Price": 97,
+    "sku": "SHRIMP-COOKED-71/90-CLEAR-FARM-INDONESIA-10/2-LB",
+    "category": "Koryeo-food",
+    "POS": "VINOD COOKWARE",
+    "Barcode": "827016250010",
+    "PosSKU": "21292"
+  },
+  "A11254": {
+    "Item": "A11254",
+    "Quantity": 50,
+    "Description": "TILAPIA FILLET 7/9 KORYEO FARM CHINA 10 LB 100 120/P",
+    "Price": 24,
+    "sku": "TILAPIA-FILLET-7/9-KORYEO-FARM-CHINA-10-LB-100-120/P",
+    "category": "Koryeo-food",
+    "POS": "GILLETE FOAMY",
+    "Barcode": "047400240407",
+    "PosSKU": "7113"
+  }
+}

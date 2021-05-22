@@ -1,0 +1,24 @@
+{
+  "ROOPALEE 20 LB": {
+    "Item": "ROOPALEE 20 LB",
+    "Description": "PARBOILED BASMATI (20 LB X 2)",
+    "Price": 17,
+    "Quantity": 2,
+    "sku": "PARBOILED-BASMATI-(20-LB-X-2)-",
+    "category": "putulldist",
+    "POS": "DEER SELLA PARBOILED SUPER BASMATI",
+    "Barcode": "765312331227",
+    "PosSKU": "5478"
+  },
+  "RESHME 20 LB": {
+    "Item": "RESHME 20 LB",
+    "Description": "PARBOILED BASMATI (20 LB X 2)",
+    "Price": 17,
+    "Quantity": 2,
+    "sku": "PARBOILED-BASMATI-(20-LB-X-2)-",
+    "category": "putulldist",
+    "POS": "DEER SELLA PARBOILED SUPER BASMATI",
+    "Barcode": "765312331227",
+    "PosSKU": "5478"
+  }
+}

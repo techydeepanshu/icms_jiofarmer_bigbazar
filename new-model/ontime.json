@@ -1,0 +1,167 @@
+{
+  "MANGO JUICE (PET) 1000 ML": {
+    "Quantity": 50,
+    "Item": "MANGO JUICE (PET) 1000 ML",
+    "Description": "PRAN MANGO JUICE (PET) 1000 ML X 12",
+    "Price": 12,
+    "category": "ontime",
+    "sku": "1000-ML-PRAN-MANGO-JUICE-(PET)-1000-ML-X-12",
+    "POS": "MANGO JUICE",
+    "Barcode": "846656000618",
+    "PosSKU": "41637"
+  },
+  "MANGO JUICE (PET) 1500 ML": {
+    "Quantity": 50,
+    "Item": "MANGO JUICE (PET) 1500 ML",
+    "Description": "PRAN MANGO JUICE 1500ML- 6 PET BOTTLE",
+    "Price": 9,
+    "category": "ontime",
+    "sku": "1500-ML-PRAN-MANGO-JUICE-1500ML--6-PET-BOTTLE",
+    "POS": "MANGO JUICE",
+    "Barcode": "846656000618",
+    "PosSKU": "41637"
+  },
+  "PUFFED RICE-400 GM": {
+    "Quantity": 50,
+    "Item": "PUFFED RICE-400 GM",
+    "Description": "PRAN MURI (PUFFED RICE) 400 GM X 20",
+    "Price": 22,
+    "category": "ontime",
+    "sku": "PRAN-MURI-(PUFFED-RICE)-400-GM-X-20",
+    "POS": "PRAN PUFFED RICE",
+    "Barcode": "831730005696",
+    "PosSKU": "15958"
+  },
+  "OLIO VILLA 4X1 GL": {
+    "Quantity": 50,
+    "Item": "OLIO VILLA 4X1 GL",
+    "Description": "4 X 1GL",
+    "Price": 29,
+    "category": "ontime",
+    "sku": "GL-4-X-1GL",
+    "POS": "PRINGLES XTREME",
+    "Barcode": "037000230182",
+    "PosSKU": "46249"
+  },
+  "OKF Aloe Drink Pineapple 50.70Z": {
+    "Quantity": 50,
+    "Item": "OKF Aloe Drink Pineapple 50.70Z",
+    "Description": "OKF ALOE DRINK PINEAPPLE 50.70Z",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "PINEAPPLE-50.70Z-OKF-ALOE-DRINK-PINEAPPLE-50.70Z",
+    "POS": "OKF ALOE DRINK",
+    "Barcode": "884394002174",
+    "PosSKU": "44587"
+  },
+  "OKF Aloe Drink Original 50.7 OZ": {
+    "Quantity": 50,
+    "Item": "OKF Aloe Drink Original 50.7 OZ",
+    "Description": "OKF ALOE DRINK ORIGINAL 50.7 OZ",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "ORIGINAL-50.7-OZ-OKF-ALOE-DRINK-ORIGINAL-50.7-OZ",
+    "POS": "OKF ALOE DRINK ORIGINAL",
+    "Barcode": "884394007285",
+    "PosSKU": "14659"
+  },
+  "OKF Aloe Drink Pomegran 50.7 OZ": {
+    "Quantity": 50,
+    "Item": "OKF Aloe Drink Pomegran 50.7 OZ",
+    "Description": "OKF ALOE DRINK POMEGRANATE 50.7 OZ",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "POMEGRAN-50.7-OZ-OKF-ALOE-DRINK-POMEGRANATE-50.7-OZ",
+    "POS": "OKF ALOE DRINK",
+    "Barcode": "884394002174",
+    "PosSKU": "44587"
+  },
+  "OKF ALOE DRINK STRAWBERRY 50.7 OZ": {
+    "Quantity": 50,
+    "Item": "OKF ALOE DRINK STRAWBERRY 50.7 OZ",
+    "Description": "OKF ALOE DRINK STRAWBERRY 50.7 OZ",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "STRAWBER-50.7-OZ-OKF-ALOE-DRINK-STRAWBERRY-50.7-OZ",
+    "POS": "OKF ALOE DRINK",
+    "Barcode": "884394002174",
+    "PosSKU": "44587"
+  },
+  "OKF ALOE DRINK SUGARFREE 50.7 OZ": {
+    "Quantity": 50,
+    "Item": "OKF ALOE DRINK SUGARFREE 50.7 OZ",
+    "Description": " OKF ALOE DRINK SUGARFREE 50.7 OZ",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "SUGARFREE-50.70Z-OKF-ALOE-DRINK-SUGARFREE-50.7-OZ",
+    "POS": "OKF ALOE DRINK",
+    "Barcode": "884394002174",
+    "PosSKU": "44587"
+  },
+  "OKF ALOE DRINK MANGO 50.7 OZ ": {
+    "Quantity": 50,
+    "Item": "OKF ALOE DRINK MANGO 50.7 OZ ",
+    "Description": "OKF ALOE DRINK MANGO 50.7 OZ",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "MANGO-50.7-OZ-OKF-ALOE-DRINK-MANGO-50.7-OZ",
+    "POS": "MANGO DRINK",
+    "Barcode": "838927500460",
+    "PosSKU": "41635"
+  },
+  "OKF ALOE DRINK COCONUT 50.7 OZ ": {
+    "Quantity": 50,
+    "Item": "OKF ALOE DRINK COCONUT 50.7 OZ ",
+    "Description": "OKF ALOE DRINK COCONUT 50.7 OZ X 12",
+    "Price": 17,
+    "category": "ontime",
+    "sku": "COCONUT-50.7-OZ-OKF-ALOE-DRINK-COCONUT-50.7-OZ-X-12",
+    "POS": "DRY COCONUT",
+    "Barcode": "1294",
+    "PosSKU": "5963"
+  },
+  "NOODLES SHRIMP 4P": {
+    "Quantity": 50,
+    "Item": "NOODLES SHRIMP 4P",
+    "Description": "NOODLES SHRIMP 4P X 15",
+    "Price": 12,
+    "category": "ontime",
+    "sku": "NOODLES-SHRIMP-4P-X-15",
+    "POS": "MR NOODLES SHRIMP FLAVOUR",
+    "Barcode": "841165115600",
+    "PosSKU": "13526"
+  },
+  "NOODLES SPECIAL CHICKEN 4P": {
+    "Quantity": 50,
+    "Item": "NOODLES SPECIAL CHICKEN 4P",
+    "Description": "NOODLES CHICKEN 4PCS X15",
+    "Price": 12,
+    "category": "ontime",
+    "sku": "4P-NOODLES-CHICKEN-4PCS-X15",
+    "POS": "RUM PUM NOODLES CHICKEN",
+    "Barcode": "9506000022444",
+    "PosSKU": "17152"
+  },
+  "NOODLES CURRY 4P": {
+    "Quantity": 50,
+    "Item": "NOODLES CURRY 4P",
+    "Description": "NOODLES CURRY 4PCS X15",
+    "Price": 12,
+    "category": "ontime",
+    "sku": "NOODLES-CURRY-4PCS-X15",
+    "POS": "CURRY NOODLES",
+    "Barcode": "8901014003174",
+    "PosSKU": "65071"
+  },
+  "NOODLES VEGETABLE 4P": {
+    "Quantity": 50,
+    "Item": "NOODLES VEGETABLE 4P",
+    "Description": "PRAN NOODLES VEGETABLE 4P X 15",
+    "Price": 12,
+    "category": "ontime",
+    "sku": "PRAN-NOODLES-VEGETABLE-4P-X-15",
+    "POS": "PRAN MR NOODLES VEGETABLE FLAVOUR",
+    "Barcode": "846656014875",
+    "PosSKU": "15946"
+  }
+}

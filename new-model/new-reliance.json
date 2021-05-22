@@ -1,0 +1,57 @@
+{
+  "1": {
+    "Item": "1",
+    "Price": 50,
+    "Description": "RES-NK REHMAT SHRN NAN KHATI 350GMX20 CASE",
+    "category": "new-reliance",
+    "sku": "-RES-NK-REHMAT-SHRN-NAN-KHATI-350GMX20-CASE",
+    "Quantity": 50,
+    "POS": "NAN KHATIE",
+    "Barcode": "012042002959",
+    "PosSKU": "13756"
+  },
+  "2": {
+    "Item": "2",
+    "Price": 12,
+    "Description": "LU-PC LU-PRINCE CHOCOLATE 95GMSX24 CASE",
+    "category": "new-reliance",
+    "sku": "-LU-PC-LU-PRINCE-CHOCOLATE-95GMSX24-CASE",
+    "Quantity": 50,
+    "POS": "AERO CHOCOLATE",
+    "Barcode": "7613035058347",
+    "PosSKU": "29121"
+  },
+  "24": {
+    "Item": "24",
+    "Price": 2.5,
+    "Description": "SONF-HT MOUTH FRESHNER HUMTUM PC",
+    "category": "new-reliance",
+    "sku": "-SONF-HT-MOUTH-FRESHNER-HUMTUM-PC",
+    "Quantity": 50,
+    "POS": "THUMS UP",
+    "Barcode": "8901764042706",
+    "PosSKU": "20100"
+  },
+  "LU-ZEERA": {
+    "Item": "LU-ZEERA",
+    "Price": 12,
+    "Description": "LU-ZEERA PLUS 126GMSX24 CASE",
+    "category": "new-reliance",
+    "sku": "-LU-ZEERA-PLUS-126GMSX24-CASE",
+    "Quantity": 50,
+    "POS": "T PLUS MASALA",
+    "Barcode": "8902167000294",
+    "PosSKU": "12737"
+  },
+  "RES-CRS": {
+    "Item": "RES-CRS",
+    "Price": 46,
+    "Description": "REHMAT SHRN CAKE RUSK 350GMX20 CASE",
+    "category": "new-reliance",
+    "sku": "-REHMAT-SHRN-CAKE-RUSK-350GMX20-CASE",
+    "Quantity": 50,
+    "POS": "REHMAT E SHEREEN RUSK",
+    "Barcode": "8964000883334",
+    "PosSKU": "16779"
+  }
+}

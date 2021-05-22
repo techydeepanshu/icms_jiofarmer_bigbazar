@@ -1,0 +1,57 @@
+{
+  "CUMIN SEEDS 165.0 LB": {
+    "Item": "CUMIN SEEDS 165.0 LB",
+    "Description": "CUMIN SEEDS 165.0 LB",
+    "Quantity": 1,
+    "Price": 2.49,
+    "sku": "CUMIN-SEEDS-165.0-LB--",
+    "category": "NIRAV-INDIAN-GROCERIES-&-SPICES",
+    "POS": "CUMIN SEED 1 70LB",
+    "Barcode": "244000",
+    "PosSKU": "4421"
+  },
+  "MUSTARD SEEDS 110.0 LB": {
+    "Item": "MUSTARD SEEDS 110.0 LB",
+    "Description": "MUSTARD SEEDS 110.0 LB",
+    "Quantity": 1,
+    "Price": 0.95,
+    "sku": "MUSTARD-SEEDS-110.0-LB--",
+    "category": "NIRAV-INDIAN-GROCERIES-&-SPICES",
+    "POS": "MUSTARD SEED BLACK 090LB",
+    "Barcode": "228000",
+    "PosSKU": "13712"
+  },
+  "NIRAV * CARDAMON WHOLE 30LB 2 BOX": {
+    "Item": "NIRAV * CARDAMON WHOLE 30LB 2 BOX",
+    "Description": "NIRAV * CARDAMON WHOLE 30LB 2 BOX",
+    "Quantity": 1,
+    "Price": 735,
+    "sku": "NIRAV-*-CARDAMON-WHOLE-30LB-2-BOX",
+    "category": "NIRAV-INDIAN-GROCERIES-&-SPICES",
+    "POS": "URAD WHOLE",
+    "Barcode": "705500",
+    "PosSKU": "20814"
+  },
+  "NIRAV MUSTARD OIL EXTRN 6x1Ltr 1.0 CASE": {
+    "Item": "NIRAV MUSTARD OIL EXTRN 6x1Ltr 1.0 CASE",
+    "Description": "NIRAV MUSTARD OIL EXTRN 6x1Ltr 1.0 CASE",
+    "Quantity": 1,
+    "Price": 28.5,
+    "sku": "NIRAV-MUSTARD-OIL-EXTRN-6x1Ltr-1.0-CASE-",
+    "category": "NIRAV-INDIAN-GROCERIES-&-SPICES",
+    "POS": "NIRAV MUSTARD OIL",
+    "Barcode": "024433004251",
+    "PosSKU": "14440"
+  },
+  "URAD DAL THAILAND 55Lb": {
+    "Item": "URAD DAL THAILAND 55Lb",
+    "Description": "URAD DAL THAILAND 55Lb",
+    "Quantity": 1,
+    "Price": 51,
+    "sku": "URAD-DAL-THAILAND-55Lb-",
+    "category": "NIRAV-INDIAN-GROCERIES-&-SPICES",
+    "POS": "DALL MOTH",
+    "Barcode": "812042001910",
+    "PosSKU": "61678"
+  }
+}

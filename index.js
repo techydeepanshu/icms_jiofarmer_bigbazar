@@ -10,13 +10,13 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-const chetakData = require("./dummy/chetak-products.json");
-const krishnaFoodsData = require("./new-model/krishna-foods-products.json");
-const seamarkData = require("./new-model/seamark.json");
-const advanceFoodsData = require("./new-model/advance-foods.json");
-const joyGourmetFoodsData = require("./new-model/joy-gourmet-foods.json");
-const bestFoodsData = require("./dummy/best-foods.json");
-const katzmanData = require("./new-model/katzman.json");
+const chetakData = require("./new-model/chetak-products.json");
+// const krishnaFoodsData = require("./new-model/krishna-foods-products.json");
+// const seamarkData = require("./new-model/seamark.json");
+// const advanceFoodsData = require("./new-model/advance-foods.json");
+// const joyGourmetFoodsData = require("./new-model/joy-gourmet-foods.json");
+// const bestFoodsData = require("./new-model/best-foods.json");
+// const katzmanData = require("./new-model/katzman.json");
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");
 
@@ -80,7 +80,7 @@ app.get("/api/product", validateLogin, (req, res) => {
 
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
   const type = req.query["type"];
-  const dirname = type === "queue" ? "/csv/Hicksville.csv" : "/csv/Export.csv";
+  const dirname = type === "queue" ? "/csv/Export.csv" : "/csv/Hicksville.csv";
   const newProcess = spawn("python", [
     "./script.py",
     req.query["name"],

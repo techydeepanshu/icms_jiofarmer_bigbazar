@@ -1,0 +1,172 @@
+{
+  "CABBAGE GREEN": {
+    "Item": "CABBAGE GREEN",
+    "Description": "CABBAGE GREEN",
+    "Quantity": "1",
+    "Price": "20",
+    "sku": "CABBAGE-GREEN-",
+    "POS": "GREEN CABBAGE",
+    "Barcode": "2060",
+    "PosSKU": "7652"
+  },
+  "EGGPLANT FCY 18": {
+    "Item": "EGGPLANT FCY 18",
+    "Description": "EGGPLANT FCY 18",
+    "Quantity": "18",
+    "Price": "22",
+    "sku": "EGGPLANT-FCY-18-",
+    "POS": "GALIL FRIED GRILLED EGGPLANT",
+    "Barcode": "794711002162",
+    "PosSKU": "6832"
+  },
+  "CUCUMBER SUPER": {
+    "Item": "CUCUMBER SUPER",
+    "Description": "CUCUMBER SUPER",
+    "Quantity": "1",
+    "Price": "42.95",
+    "sku": "CUCUMBER-SUPER-",
+    "POS": "PRI AVOT CUCUMBER 7 9",
+    "Barcode": "794711005569",
+    "PosSKU": "16012"
+  },
+  "SCALLION MED 48": {
+    "Item": "SCALLION MED 48",
+    "Description": "SCALLION MED 48",
+    "Quantity": "48",
+    "Price": "18.5",
+    "sku": "SCALLION-MED-48-",
+    "POS": "LAFE CALIFORNIA BLEND",
+    "Barcode": "023545103999",
+    "PosSKU": "10841"
+  },
+  "BROCCOLI RABE": {
+    "Item": "BROCCOLI RABE",
+    "Description": "BROCCOLI RABE",
+    "Quantity": "1",
+    "Price": "39",
+    "sku": "BROCCOLI-RABE-",
+    "POS": "LAFE BROCCOLI SPEARS",
+    "Barcode": "023545103968",
+    "PosSKU": "10838"
+  },
+  "LEEK TEXAS 12": {
+    "Item": "LEEK TEXAS 12",
+    "Description": "LEEK TEXAS 12",
+    "Quantity": "12",
+    "Price": "28",
+    "sku": "LEEK-TEXAS-12-",
+    "POS": "AL GHAZALEEN TEA",
+    "Barcode": "4796002518174",
+    "PosSKU": "760"
+  },
+  "MUSH CELLO 10X8oz": {
+    "Item": "MUSH CELLO 10X8oz",
+    "Description": "MUSH CELLO 10X8oz",
+    "Quantity": "8",
+    "Price": "11.5",
+    "sku": "MUSH-CELLO-10X8oz-",
+    "POS": "CUPS 7 OZ",
+    "Barcode": "041594071007",
+    "PosSKU": "4426"
+  },
+  "BASIL": {
+    "Item": "BASIL",
+    "Description": "BASIL",
+    "Quantity": "1",
+    "Price": "27.5",
+    "sku": "BASIL-",
+    "POS": "ABIDO BASIL",
+    "Barcode": "5283001109070",
+    "PosSKU": "450"
+  },
+  "HERB THYME BF KILO": {
+    "Item": "HERB THYME BF KILO",
+    "Description": "HERB THYME BF KILO",
+    "Quantity": "1",
+    "Price": "14",
+    "sku": "HERB-THYME-BF-KILO-",
+    "POS": "HERBS TILIO",
+    "Barcode": "821522500447",
+    "PosSKU": "8591"
+  },
+  "HERB ROSEMARY BF KILO": {
+    "Item": "HERB ROSEMARY BF KILO",
+    "Description": "HERB ROSEMARY BF KILO",
+    "Quantity": "1",
+    "Price": "14",
+    "sku": "HERB-ROSEMARY-BF-KILO-",
+    "POS": "ROSE OIL",
+    "Barcode": "1435",
+    "PosSKU": "47494"
+  },
+  "PAPAYA BIG BOX 14CT": {
+    "Item": "PAPAYA BIG BOX 14CT",
+    "Description": "PAPAYA BIG BOX 14CT",
+    "Quantity": "14",
+    "Price": "23",
+    "sku": "PAPAYA-BIG-BOX-14CT-",
+    "POS": "BOSC PEAR",
+    "Barcode": "92728",
+    "PosSKU": "2854"
+  },
+  "COCONUT 40": {
+    "Item": "COCONUT 40",
+    "Description": "COCONUT 40",
+    "Quantity": "40",
+    "Price": "45",
+    "sku": "COCONUT-40-",
+    "POS": "24 MANTRA ORG COCONUT POWDER",
+    "Barcode": "8904083510161",
+    "PosSKU": "27"
+  },
+  "YAUTIA": {
+    "Item": "YAUTIA",
+    "Description": "YAUTIA",
+    "Quantity": "1",
+    "Price": "39.5",
+    "sku": "YAUTIA-",
+    "POS": "PRIYA UTAPPAM MIX",
+    "Barcode": "785018138227",
+    "PosSKU": "16128"
+  },
+  "GUAVA": {
+    "Item": "GUAVA",
+    "Description": "GUAVA",
+    "Quantity": "1",
+    "Price": "26.95",
+    "sku": "GUAVA-",
+    "POS": "24 MANTRA ORGANIC GUAVA JUICE",
+    "Barcode": "8904083512783",
+    "PosSKU": "141"
+  },
+  "GRAPE B SUMMER ROYAL SDLS BAG": {
+    "Item": "GRAPE B SUMMER ROYAL SDLS BAG",
+    "Description": "GRAPE B SUMMER ROYAL SDLS BAG",
+    "Quantity": "1",
+    "Price": "36",
+    "sku": "GRAPE-B-SUMMER-ROYAL-SDLS-BAG",
+    "POS": "BABY GRAPES",
+    "Barcode": "852731004198",
+    "PosSKU": "1630"
+  },
+  "COCONUT/YOUNG WHITE": {
+    "Item": "COCONUT/YOUNG WHITE",
+    "Description": "COCONUT/YOUNG WHITE",
+    "Quantity": "1",
+    "Price": "22",
+    "sku": "COCONUT/YOUNG-WHITE-",
+    "POS": "COCONUT WHOLE",
+    "Barcode": "964610",
+    "PosSKU": "4190"
+  },
+  "ONION CAMBRAY 42CT": {
+    "Item": "ONION CAMBRAY 42CT",
+    "Description": "ONION CAMBRAY 42CT",
+    "Quantity": "42",
+    "Price": "22",
+    "sku": "ONION-CAMBRAY-42CT",
+    "POS": "LAYS CREAM AND ONION",
+    "Barcode": "8901491101813",
+    "PosSKU": "11286"
+  }
+}

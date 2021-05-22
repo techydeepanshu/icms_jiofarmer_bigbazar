@@ -1,0 +1,668 @@
+{
+  "Punjabi Wadi Jar 12*400GM": {
+    "Item": "Punjabi Wadi Jar 12*400GM",
+    "Description": "Punjabi Wadi Jar 12*400GM",
+    "Quantity": "12",
+    "Price": "41.09",
+    "POS": "PUNJABI WADI",
+    "Barcode": "1110",
+    "PosSKU": "46365"
+  },
+  "Chana Dal 21b": {
+    "Item": "Chana Dal 21b",
+    "Description": "Chana Dal 21b",
+    "Quantity": "1",
+    "Price": "38.96",
+    "POS": "CHANA DAL",
+    "Barcode": "808550100061",
+    "PosSKU": "2780"
+  },
+  "Chana Dal 41b": {
+    "Item": "Chana Dal 41b",
+    "Description": "Chana Dal 41b",
+    "Quantity": "1",
+    "Price": "36.24",
+    "POS": "CHANA DAL",
+    "Barcode": "808550100061",
+    "PosSKU": "2780"
+  },
+  "Chana Dal 7Lb": {
+    "Item": "Chana Dal 7Lb",
+    "Description": "Chana Dal 7Lb",
+    "Quantity": "1",
+    "Price": "31.4356",
+    "POS": "CHANA DAL",
+    "Barcode": "808550100061",
+    "PosSKU": "2780"
+  },
+  "KABULI CHANA 2Lb": {
+    "Item": "KABULI CHANA 2Lb",
+    "Description": "KABULI CHANA 2Lb",
+    "Quantity": "1",
+    "Price": "46.96",
+    "POS": "KABULI CHANA",
+    "Barcode": "962860",
+    "PosSKU": "9774"
+  },
+  "KABULI CHANA 7Lb": {
+    "Item": "KABULI CHANA 7Lb",
+    "Description": "KABULI CHANA 7Lb",
+    "Quantity": "1",
+    "Price": "38.187",
+    "POS": "KABULI CHANA",
+    "Barcode": "962860",
+    "PosSKU": "9774"
+  },
+  "Chana KALA 2Lb": {
+    "Item": "Chana KALA 2Lb",
+    "Description": "Chana KALA 2Lb",
+    "Quantity": "1",
+    "Price": "39.36",
+    "POS": "KALA CHANA",
+    "Barcode": "793585016268",
+    "PosSKU": "18217"
+  },
+  "Chana KALA 4Lb": {
+    "Item": "Chana KALA 4Lb",
+    "Description": "Chana KALA 4Lb",
+    "Quantity": "1",
+    "Price": "35.76",
+    "POS": "KALA CHANA",
+    "Barcode": "793585016268",
+    "PosSKU": "18217"
+  },
+  "Chana KALA 7Lb": {
+    "Item": "Chana KALA 7Lb",
+    "Description": "Chana KALA 7Lb",
+    "Quantity": "1",
+    "Price": "30.286",
+    "POS": "KALA CHANA",
+    "Barcode": "793585016268",
+    "PosSKU": "18217"
+  },
+  "Red Kidney Light 2Lb": {
+    "Item": "Red Kidney Light 2Lb",
+    "Description": "Red Kidney Light 2Lb",
+    "Quantity": "1",
+    "Price": "45.56",
+    "POS": "TOROS LIGHT RED KIDNEY BEANS",
+    "Barcode": "703856249585",
+    "PosSKU": "51305"
+  },
+  "MASOOR DAL 2Lb": {
+    "Item": "MASOOR DAL 2Lb",
+    "Description": "MASOOR DAL 2Lb",
+    "Quantity": "1",
+    "Price": "35.16",
+    "POS": "MASOOR WHOLE INDIA 2LB",
+    "Barcode": "706100",
+    "PosSKU": "42006"
+  },
+  "MASOOR DAL 4Lb": {
+    "Item": "MASOOR DAL 4Lb",
+    "Description": "MASOOR DAL 4Lb",
+    "Quantity": "1",
+    "Price": "32.44",
+    "POS": "MASOOR WHOLE INDIA 2LB",
+    "Barcode": "706100",
+    "PosSKU": "42006"
+  },
+  "MASOOR DAL 7Lb": {
+    "Item": "MASOOR DAL 7Lb",
+    "Description": "MASOOR DAL 7Lb",
+    "Quantity": "1",
+    "Price": "28.086",
+    "POS": "MASOOR WHOLE INDIA 2LB",
+    "Barcode": "706100",
+    "PosSKU": "42006"
+  },
+  "Masoor Gota[Malka] 7Lb": {
+    "Item": "Masoor Gota[Malka] 7Lb",
+    "Description": "Masoor Gota[Malka] 7Lb",
+    "Quantity": "1",
+    "Price": "32.5626",
+    "POS": "MALKA MASOOR",
+    "Barcode": "700700",
+    "PosSKU": "12019"
+  },
+  "masoor whole (Matki) 4Lb": {
+    "Item": "masoor whole (Matki) 4Lb",
+    "Description": "masoor whole (Matki) 4Lb",
+    "Quantity": "1",
+    "Price": "37.88",
+    "POS": "SWAD MASOOR MATKI",
+    "Barcode": "051179102033",
+    "PosSKU": "19173"
+  },
+  "MOONG CHILKA 7Lb": {
+    "Item": "MOONG CHILKA 7Lb",
+    "Description": "MOONG CHILKA 7Lb",
+    "Quantity": "1",
+    "Price": "33.1366",
+    "POS": "PARLIAMENT SANJEEVANI ORG MOONG CHILKA",
+    "Barcode": "857339005646",
+    "PosSKU": "15214"
+  },
+  "Moong Dal 7Lb": {
+    "Item": "Moong Dal 7Lb",
+    "Description": "Moong Dal 7Lb",
+    "Quantity": "1",
+    "Price": "34.2846",
+    "POS": "MOONG DAL",
+    "Barcode": "8904063230096",
+    "PosSKU": "8126"
+  },
+  "MOONG WHOLE 2Lb": {
+    "Item": "MOONG WHOLE 2Lb",
+    "Description": "MOONG WHOLE 2Lb",
+    "Quantity": "1",
+    "Price": "42.16",
+    "POS": "MOONG WHOLE",
+    "Barcode": "700250",
+    "PosSKU": "13365"
+  },
+  "MOONG WHOLE 7Lb": {
+    "Item": "MOONG WHOLE 7Lb",
+    "Description": "MOONG WHOLE 7Lb",
+    "Quantity": "1",
+    "Price": "32.587",
+    "POS": "MOONG WHOLE",
+    "Barcode": "700250",
+    "PosSKU": "13365"
+  },
+  "Urad Whole 7Lb": {
+    "Item": "Urad Whole 7Lb",
+    "Description": "Urad Whole 7Lb",
+    "Quantity": "1",
+    "Price": "38.236",
+    "POS": "URAD WHOLE",
+    "Barcode": "705500",
+    "PosSKU": "20814"
+  },
+  "BROWN SUGAR 4Lb": {
+    "Item": "BROWN SUGAR 4Lb",
+    "Description": "BROWN SUGAR 4Lb",
+    "Quantity": "1",
+    "Price": "38.00",
+    "POS": "LAFE BROWN SUGAR",
+    "Barcode": "023545208670",
+    "PosSKU": "10839"
+  },
+  "AJWAIN SEED 100 GM Bag": {
+    "Item": "AJWAIN SEED 100 GM Bag",
+    "Description": "AJWAIN SEED 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.10",
+    "POS": "LAXMI AJWAIN SEEDS",
+    "Barcode": "723246176024",
+    "PosSKU": "10947"
+  },
+  "AJWAIN SEED 200 GM Bag": {
+    "Item": "AJWAIN SEED 200 GM Bag",
+    "Description": "AJWAIN SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50",
+    "POS": "LAXMI AJWAIN SEEDS",
+    "Barcode": "723246176024",
+    "PosSKU": "10947"
+  },
+  "AJWAIN SEED 400 GM Bag": {
+    "Item": "AJWAIN SEED 400 GM Bag",
+    "Description": "AJWAIN SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30",
+    "POS": "LAXMI AJWAIN SEEDS",
+    "Barcode": "723246176024",
+    "PosSKU": "10947"
+  },
+  "AJWAIN SEED 800 GM Bag": {
+    "Item": "AJWAIN SEED 800 GM Bag",
+    "Description": "AJWAIN SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "3.90",
+    "POS": "LAXMI AJWAIN SEEDS",
+    "Barcode": "723246176024",
+    "PosSKU": "10947"
+  },
+  "Amchur PWD 100 GM": {
+    "Item": "Amchur PWD 100 GM",
+    "Description": "Amchur PWD 100 GM",
+    "Quantity": "1",
+    "Price": "1.20",
+    "POS": "MDH AMACHUR POWDER",
+    "Barcode": "6291103750006",
+    "PosSKU": "12654"
+  },
+  "BAY LEAVE 100 GM Bag": {
+    "Item": "BAY LEAVE 100 GM Bag",
+    "Description": "BAY LEAVE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40",
+    "POS": "EGN BAY LEAF",
+    "Barcode": "850437151109",
+    "PosSKU": "6179"
+  },
+  "BLACK MUSTURD SEED 200 GM Bag": {
+    "Item": "BLACK MUSTURD SEED 200 GM Bag",
+    "Description": "BLACK MUSTURD SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.30",
+    "POS": "MUSTARD SEED BLACK 090LB",
+    "Barcode": "228000",
+    "PosSKU": "13712"
+  },
+  "BLACK PEPPER POWDER 400 GM Bag": {
+    "Item": "BLACK PEPPER POWDER 400 GM Bag",
+    "Description": "BLACK PEPPER POWDER 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10",
+    "POS": "MC BLACK PEPPER",
+    "Barcode": "052100304410",
+    "PosSKU": "42286"
+  },
+  "BLACK PEPPER WHOLE 100 GM Bag": {
+    "Item": "BLACK PEPPER WHOLE 100 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.49",
+    "POS": "MC BLACK PEPPER",
+    "Barcode": "052100304410",
+    "PosSKU": "42286"
+  },
+  "BLACK PEPPER WHOLE 200 GM Bag": {
+    "Item": "BLACK PEPPER WHOLE 200 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.39",
+    "POS": "MC BLACK PEPPER",
+    "Barcode": "052100304410",
+    "PosSKU": "42286"
+  },
+  "BLACK PEPPER WHOLE 400 GM Bag": {
+    "Item": "BLACK PEPPER WHOLE 400 GM Bag",
+    "Description": "BLACK PEPPER WHOLE 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10",
+    "POS": "MC BLACK PEPPER",
+    "Barcode": "052100304410",
+    "PosSKU": "42286"
+  },
+  "BLACK SALT 200 GM Bag": {
+    "Item": "BLACK SALT 200 GM Bag",
+    "Description": "BLACK SALT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.30",
+    "POS": "MALKA BLACK SALT",
+    "Barcode": "705632494318",
+    "PosSKU": "12015"
+  },
+  "CHARGUND 200GM": {
+    "Item": "CHARGUND 200GM",
+    "Description": "CHARGUND 200GM",
+    "Quantity": "1",
+    "Price": "2.70",
+    "POS": "MEENAKSHI CHAR GUND",
+    "Barcode": "890023005027",
+    "PosSKU": "42432"
+  },
+  "CINNAMON FLAT 200 GM Bag": {
+    "Item": "CINNAMON FLAT 200 GM Bag",
+    "Description": "CINNAMON FLAT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.00",
+    "POS": "PALAT CINNAMON",
+    "Barcode": "8904025901682",
+    "PosSKU": "44980"
+  },
+  "CINNAMON STICK Roll 8CM 200 GM Bag": {
+    "Item": "CINNAMON STICK Roll 8CM 200 GM Bag",
+    "Description": "CINNAMON STICK Roll 8CM 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.40",
+    "POS": "LAXMI CINNAMON STICK ROUND",
+    "Barcode": "723246178103",
+    "PosSKU": "10996"
+  },
+  "CINNAMON STICK Roll 8CM 400 GM Bag": {
+    "Item": "CINNAMON STICK Roll 8CM 400 GM Bag",
+    "Description": "CINNAMON STICK Roll 8CM 400 GM Bag",
+    "Quantity": "1",
+    "Price": "4.10",
+    "POS": "LAXMI CINNAMON STICK ROUND",
+    "Barcode": "723246178103",
+    "PosSKU": "10996"
+  },
+  "CLOVE WHOLE 200 GM Bag": {
+    "Item": "CLOVE WHOLE 200 GM Bag",
+    "Description": "CLOVE WHOLE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "3.90",
+    "POS": "MAYA CLOVES WHOLE",
+    "Barcode": "020843250066",
+    "PosSKU": "12397"
+  },
+  "CORIANDER SEED 200 GM Bag": {
+    "Item": "CORIANDER SEED 200 GM Bag",
+    "Description": "CORIANDER SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40",
+    "POS": "MAYA CORIANDER SEEDS",
+    "Barcode": "020843250073",
+    "PosSKU": "12403"
+  },
+  "CORIANDER SEED 400 GM Bag": {
+    "Item": "CORIANDER SEED 400 GM Bag",
+    "Description": "CORIANDER SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30",
+    "POS": "MAYA CORIANDER SEEDS",
+    "Barcode": "020843250073",
+    "PosSKU": "12403"
+  },
+  "CUMIN POWDER 200 GM Bag": {
+    "Item": "CUMIN POWDER 200 GM Bag",
+    "Description": "CUMIN POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50",
+    "POS": "MAYA CUMIN POWDER",
+    "Barcode": "020843240128",
+    "PosSKU": "12413"
+  },
+  "CUMIN POWDER 400 GM Bag": {
+    "Item": "CUMIN POWDER 400 GM Bag",
+    "Description": "CUMIN POWDER 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.30",
+    "POS": "MAYA CUMIN POWDER",
+    "Barcode": "020843240128",
+    "PosSKU": "12413"
+  },
+  "Cumin SEED 400 GM Bag": {
+    "Item": "Cumin SEED 400 GM Bag",
+    "Description": "Cumin SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.80",
+    "POS": "MAYA CUMIN SEED",
+    "Barcode": "020843140862",
+    "PosSKU": "12419"
+  },
+  "Cumin SEED 800 GM Bag": {
+    "Item": "Cumin SEED 800 GM Bag",
+    "Description": "Cumin SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "5.00",
+    "POS": "MAYA CUMIN SEED",
+    "Barcode": "020843140862",
+    "PosSKU": "12419"
+  },
+  "DRY MINT 100 GM Bag": {
+    "Item": "DRY MINT 100 GM Bag",
+    "Description": "DRY MINT 100 GM Bag",
+    "Quantity": "1",
+    "Price": "1.40",
+    "POS": "MAYA DRY MINT",
+    "Barcode": "020843140992",
+    "PosSKU": "12434"
+  },
+  "FENNEL SEED 200 GM Bag": {
+    "Item": "FENNEL SEED 200 GM Bag",
+    "Description": "FENNEL SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.50",
+    "POS": "MAYA FENNEL SEEDS",
+    "Barcode": "020843250172",
+    "PosSKU": "12441"
+  },
+  "FENNEL SEED 400 GM Bag": {
+    "Item": "FENNEL SEED 400 GM Bag",
+    "Description": "FENNEL SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "MAYA FENNEL SEEDS",
+    "Barcode": "020843250172",
+    "PosSKU": "12441"
+  },
+  "FENNEL SEED 800 GM Bag": {
+    "Item": "FENNEL SEED 800 GM Bag",
+    "Description": "FENNEL SEED 800 GM Bag",
+    "Quantity": "1",
+    "Price": "4.00",
+    "POS": "MAYA FENNEL SEEDS",
+    "Barcode": "020843250172",
+    "PosSKU": "12441"
+  },
+  "FENNEL SEED 5LB": {
+    "Item": "FENNEL SEED 5LB",
+    "Description": "FENNEL SEED 5LB",
+    "Quantity": "1",
+    "Price": "9.75",
+    "POS": "DEEP FENNEL SEED",
+    "Barcode": "011433073172",
+    "PosSKU": "4969"
+  },
+  "FENUGREEK (Methi) SEED 200 GM Bag": {
+    "Item": "FENUGREEK (Methi) SEED 200 GM Bag",
+    "Description": "FENUGREEK (Methi) SEED 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.10",
+    "POS": "METHI SEED",
+    "Barcode": "02310006",
+    "PosSKU": "28539"
+  },
+  "Flex PWD 400 GM": {
+    "Item": "Flex PWD 400 GM",
+    "Description": "Flex PWD 400 GM",
+    "Quantity": "1",
+    "Price": "2.30",
+    "POS": "ALSI POWDER FLEX",
+    "Barcode": "963960",
+    "PosSKU": "927"
+  },
+  "Flex Seed 400 GM": {
+    "Item": "Flex Seed 400 GM",
+    "Description": "Flex Seed 400 GM",
+    "Quantity": "1",
+    "Price": "2.30",
+    "POS": "SHILOH FARMS ORG BROWN FLAX SEEDS",
+    "Barcode": "047593302715",
+    "PosSKU": "48693"
+  },
+  "KALONJI (BLACK CIM1N) SEED 400 GM Bag": {
+    "Item": "KALONJI (BLACK CIM1N) SEED 400 GM Bag",
+    "Description": "KALONJI (BLACK CIM1N) SEED 400 GM Bag",
+    "Quantity": "1",
+    "Price": "3.30",
+    "POS": "SHREE KALONJI",
+    "Barcode": "890023001555",
+    "PosSKU": "48742"
+  },
+  "NUTMEG WHOLE 100 GM Bag": {
+    "Item": "NUTMEG WHOLE 100 GM Bag",
+    "Description": "NUTMEG WHOLE 100 GM Bag",
+    "Quantity": "1",
+    "Price": "2.61",
+    "POS": "NUTMEG WHOLE",
+    "Barcode": "793283751850",
+    "PosSKU": "64852"
+  },
+  "PAPRIKA POWDER 200 GM Bag": {
+    "Item": "PAPRIKA POWDER 200 GM Bag",
+    "Description": "PAPRIKA POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.80",
+    "POS": "MAY PAPRIKA POWDER",
+    "Barcode": "020843240289",
+    "PosSKU": "12351"
+  },
+  "KASHMIRI CHILLI 400GM": {
+    "Item": "KASHMIRI CHILLI 400GM",
+    "Description": "KASHMIRI CHILLI 400GM",
+    "Quantity": "1",
+    "Price": "3.20",
+    "POS": "ANAND KASHMIRI CHILLI",
+    "Barcode": "878776008212",
+    "PosSKU": "1131"
+  },
+  "RED CHILLI WHOLE HOT 200 GM Bag": {
+    "Item": "RED CHILLI WHOLE HOT 200 GM Bag",
+    "Description": "RED CHILLI WHOLE HOT 200 GM Bag",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "A1 CHIPS",
+    "Barcode": "8904123527029",
+    "PosSKU": "28950"
+  },
+  "SESAME SEED WHITE 200 GM Bag": {
+    "Item": "SESAME SEED WHITE 200 GM Bag",
+    "Description": "SESAME SEED WHITE 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.70",
+    "POS": "SESAME SEEDS WHITE",
+    "Barcode": "965080",
+    "PosSKU": "17610"
+  },
+  "SESAME SEED WHITE 400 GM Bag": {
+    "Item": "SESAME SEED WHITE 400 GM Bag",
+    "Description": "SESAME SEED WHITE 400 GM Bag",
+    "Quantity": "1",
+    "Price": "2.70",
+    "POS": "SESAME SEEDS WHITE",
+    "Barcode": "965080",
+    "PosSKU": "17610"
+  },
+  "TURMERIC 5LB": {
+    "Item": "TURMERIC 5LB",
+    "Description": "TURMERIC 5LB",
+    "Quantity": "1",
+    "Price": "8.00",
+    "POS": "HEMANI TURMERIC OIL",
+    "Barcode": "8964000267295",
+    "PosSKU": "8543"
+  },
+  "CURRY POWDER 200 GM Bag": {
+    "Item": "CURRY POWDER 200 GM Bag",
+    "Description": "CURRY POWDER 200 GM Bag",
+    "Quantity": "1",
+    "Price": "1.60",
+    "POS": "MAYA CURRY POWDER",
+    "Barcode": "020843120253",
+    "PosSKU": "12424"
+  },
+  "Shudh Kasoori Methi lkg*6": {
+    "Item": "Shudh Kasoori Methi lkg*6",
+    "Description": "Shudh Kasoori Methi lkg*6",
+    "Quantity": "6",
+    "Price": "66.00",
+    "POS": "MDH KASOORI METHI",
+    "Barcode": "8902167000164",
+    "PosSKU": "12698"
+  },
+  "Pachranga Amla Pickle 12*800GM": {
+    "Item": "Pachranga Amla Pickle 12*800GM",
+    "Description": "Pachranga Amla Pickle 12*800GM",
+    "Quantity": "12",
+    "Price": "34.89",
+    "POS": "PACHRANGA AMLA PICKLE",
+    "Barcode": "8906068350823",
+    "PosSKU": "44919"
+  },
+  "Lahori Mix 400GM x 12": {
+    "Item": "Lahori Mix 400GM x 12",
+    "Description": "Lahori Mix 400GM x 12",
+    "Quantity": "12",
+    "Price": "31.44",
+    "POS": "DEER LAHORI MIX",
+    "Barcode": "714760141766",
+    "PosSKU": "5453"
+  },
+  "SHUDH Thread Mishri Pet Jar 400 GM X 12": {
+    "Item": "SHUDH Thread Mishri Pet Jar 400 GM X 12",
+    "Description": "SHUDH Thread Mishri Pet Jar 400 GM X 12",
+    "Quantity": "12",
+    "Price": "36.00",
+    "POS": "SHUDH THREAD MISHRI ROCK SUGAR",
+    "Barcode": "793585018484",
+    "PosSKU": "18269"
+  },
+  "Peanut Gaz7ak 400G X 24": {
+    "Item": "Peanut Gaz7ak 400G X 24",
+    "Description": "Peanut Gaz7ak 400G X 24",
+    "Quantity": "24",
+    "Price": "55.20",
+    "POS": "RAW PEANUTS",
+    "Barcode": "1018",
+    "PosSKU": "16606"
+  },
+  "Peanut Gazzak 400G Tray X 20": {
+    "Item": "Peanut Gazzak 400G Tray X 20",
+    "Description": "Peanut Gazzak 400G Tray X 20",
+    "Quantity": "20",
+    "Price": "50.00",
+    "POS": "RAW PEANUTS",
+    "Barcode": "1018",
+    "PosSKU": "16606"
+  },
+  "Peanut Gazzak 200G x 40": {
+    "Item": "Peanut Gazzak 200G x 40",
+    "Description": "Peanut Gazzak 200G x 40",
+    "Quantity": "40",
+    "Price": "65.00",
+    "POS": "PEANUT GACHAK",
+    "Barcode": "685349934287",
+    "PosSKU": "15436"
+  },
+  "Rewri 400 GM X 24": {
+    "Item": "Rewri 400 GM X 24",
+    "Description": "Rewri 400 GM X 24",
+    "Quantity": "24",
+    "Price": "48.00",
+    "POS": "SUDH GUR REWRI",
+    "Barcode": "793585020159",
+    "PosSKU": "18548"
+  },
+  "Shudh Rusk 600G*12": {
+    "Item": "Shudh Rusk 600G*12",
+    "Description": "Shudh Rusk 600G*12",
+    "Quantity": "12",
+    "Price": "27.00",
+    "POS": "SHUDH ELAICHI SUJI RUSK",
+    "Barcode": "7935850209828",
+    "PosSKU": "66584"
+  },
+  "SHUDH Suji Rusk Cardamom 600G*12": {
+    "Item": "SHUDH Suji Rusk Cardamom 600G*12",
+    "Description": "SHUDH Suji Rusk Cardamom 600G*12",
+    "Quantity": "12",
+    "Price": "27.00",
+    "POS": "GROUND CARDAMOM",
+    "Barcode": "967200",
+    "PosSKU": "36937"
+  },
+  "SHUDH Suji Rusk (Fennel) 600G*I2": {
+    "Item": "SHUDH Suji Rusk (Fennel) 600G*I2",
+    "Description": "SHUDH Suji Rusk (Fennel) 600G*I2",
+    "Quantity": "12",
+    "Price": "27.00",
+    "POS": "SHUDH ELAICHI SUJI RUSK",
+    "Barcode": "7935850209828",
+    "PosSKU": "66584"
+  },
+  "BROWN & POLSON CUSTARD POWDER VANILLA 500GM": {
+    "Item": "BROWN & POLSON CUSTARD POWDER VANILLA 500GM",
+    "Description": "BROWN & POLSON CUSTARD POWDER VANILLA 500GM",
+    "Quantity": "1",
+    "Price": "2.625",
+    "POS": "BROWN N POLSON CUSTARD POWDER V",
+    "Barcode": "8901030551956",
+    "PosSKU": "3267"
+  },
+  "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM": {
+    "Item": "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM",
+    "Description": "COLGATE TOOTHPASTE STRONG TEETH 1 Doz X 200 GM",
+    "Quantity": "12",
+    "Price": "27.00",
+    "POS": "NEEM TOOTHPASTE",
+    "Barcode": "8901424004051",
+    "PosSKU": "14126"
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "Verka US Paneer 14 oz x24": {
+    "Item": "Verka US Paneer 14 oz x24",
+    "Description": "Verka US Paneer 14 oz x24",
+    "Quantity": 24,
+    "Price": 108,
+    "sku": "Verka-US-Paneer-14-oz-x24",
+    "POS": "JOY PANEER",
+    "Barcode": "680617606507",
+    "PosSKU": "9682"
+  },
+  "Verka US Paneer 2 lb x 16": {
+    "Item": "Verka US Paneer 2 lb x 16",
+    "Description": "Verka US Paneer 2 lb x 16",
+    "Quantity": 16,
+    "Price": 156,
+    "sku": "Verka-US-Paneer-2-lb-x-16",
+    "POS": "VERKA PANEER",
+    "Barcode": "856904000253",
+    "PosSKU": "21230"
+  },
+  "Regular Aloe Vera Juice 1 L": {
+    "Item": "Regular Aloe Vera Juice 1 L",
+    "Description": "Regular Aloe Vera Juice 1 L",
+    "Quantity": 1,
+    "Price": 7.75,
+    "sku": "Regular-Aloe-Vera-Juice-1-L-",
+    "POS": "VEDIC ALOE JUICE REGULAR",
+    "Barcode": "8525180067596",
+    "PosSKU": "21109"
+  },
+  "Regular Amla/Giloy juice 1L IMMUNE SUPPORT": {
+    "Item": "Regular Amla/Giloy juice 1L IMMUNE SUPPORT",
+    "Description": "Regular Amla/Giloy juice 1L IMMUNE SUPPORT",
+    "Quantity": 1,
+    "Price": 8.25,
+    "sku": "Regular-Amla/Giloy-juice-1L-IMMUNE-SUPPORT-",
+    "POS": "AMLA OIL",
+    "Barcode": "8886213900083",
+    "PosSKU": "27374"
+  },
+  "Reg Immune Power juice 1L": {
+    "Item": "Reg Immune Power juice 1L",
+    "Description": "Reg Immune Power juice 1L",
+    "Quantity": 1,
+    "Price": 9.49,
+    "sku": "Reg-Immune-Power-juice-1L-",
+    "POS": "VEDIC IMMUNE PODWER JUICE",
+    "Barcode": "6860918217402",
+    "PosSKU": "64919"
+  },
+  "Regular Triphalla Juice 1 L": {
+    "Item": "Regular Triphalla Juice 1 L",
+    "Description": "Regular Triphalla Juice 1 L",
+    "Quantity": 1,
+    "Price": 7,
+    "sku": "Regular-Triphalla-Juice-1-L-",
+    "POS": "VEDIC TRIPHALA JUICE REGULAR",
+    "Barcode": "8904045052432",
+    "PosSKU": "52257"
+  },
+  "Regular Karela/Jamun juice 1L": {
+    "Item": "Regular Karela/Jamun juice 1L",
+    "Description": "Regular Karela/Jamun juice 1L",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Regular-Karela/Jamun-juice-1L-",
+    "POS": "KARELA JAMUN  JUICE",
+    "Barcode": "8906068416079",
+    "PosSKU": "39168"
+  },
+  "Reg Shila Power juice (17 herbs) 500m1": {
+    "Item": "Reg Shila Power juice (17 herbs) 500m1",
+    "Description": "Reg Shila Power juice (17 herbs) 500m1",
+    "Quantity": 1,
+    "Price": 9,
+    "sku": "Reg-Shila-Power-juice-(17-herbs)-500m1-",
+    "POS": "RED PEAR",
+    "Barcode": "1544",
+    "PosSKU": "16707"
+  },
+  "Organic Tulsi Juice 500m1": {
+    "Item": "Organic Tulsi Juice 500m1",
+    "Description": "Organic Tulsi Juice 500m1",
+    "Quantity": 1,
+    "Price": 5.75,
+    "sku": "Organic-Tulsi-Juice-500m1-",
+    "POS": "VEDIC TULSI JUICE ORGANIC",
+    "Barcode": "8904045058090",
+    "PosSKU": "52261"
+  },
+  "Organic Coconut oil well 56 oz": {
+    "Item": "Organic Coconut oil well 56 oz",
+    "Description": "Organic Coconut oil well 56 oz",
+    "Quantity": 1,
+    "Price": 13.99,
+    "sku": "Organic-Coconut-oil-well-56-oz-",
+    "POS": "COCONUT OIL",
+    "Barcode": "665244047701",
+    "PosSKU": "4172"
+  },
+  "Burman SN Yellow Mustard 20 oz": {
+    "Item": "Burman SN Yellow Mustard 20 oz",
+    "Description": "Burman SN Yellow Mustard 20 oz",
+    "Quantity": 1,
+    "Price": 1.99,
+    "sku": "Burman-SN-Yellow-Mustard-20-oz-",
+    "POS": "MUSTARD OIL",
+    "Barcode": "8902089010050",
+    "PosSKU": "19860"
+  },
+  "Gharana Jalapeno Chakri 25pcs x 602 (170gm)": {
+    "Item": "Gharana Jalapeno Chakri 25pcs x 602 (170gm)",
+    "Description": "Gharana Jalapeno Chakri 25pcs x 602 (170gm)",
+    "Quantity": 25,
+    "Price": 49.99,
+    "sku": "Gharana-Jalapeno-Chakri-25pcs-x-602-(170gm)-",
+    "POS": "SGB CHAKRI",
+    "Barcode": "8906074201225",
+    "PosSKU": "48412"
+  },
+  "Verka US Jeera Biscuit 20/300gm": {
+    "Item": "Verka US Jeera Biscuit 20/300gm",
+    "Description": "Verka US Jeera Biscuit 20/300gm",
+    "Quantity": 20,
+    "Price": 45.5,
+    "sku": "Verka-US-Jeera-Biscuit-20/300gm-",
+    "POS": "GUR BISCUITS",
+    "Barcode": "068656020193",
+    "PosSKU": "7349"
+  },
+  "(US) Fruit Mask 150gm": {
+    "Item": "(US) Fruit Mask 150gm",
+    "Description": "(US) Fruit Mask 150gm",
+    "Quantity": 1,
+    "Price": 3.72,
+    "sku": "(US)-Fruit-Mask-150gm-",
+    "POS": "MIX FRUIT",
+    "Barcode": "963980",
+    "PosSKU": "28635"
+  },
+  "(US) Apricot Scrub 150ml": {
+    "Item": "(US) Apricot Scrub 150ml",
+    "Description": "(US) Apricot Scrub 150ml",
+    "Quantity": 1,
+    "Price": 3.72,
+    "sku": "(US)-Apricot-Scrub-150ml",
+    "POS": "BLACK APRICOT",
+    "Barcode": "3851",
+    "PosSKU": "28144"
+  },
+  "(US) Complexion Brightening Face Wash 150gm": {
+    "Item": "(US) Complexion Brightening Face Wash 150gm",
+    "Description": "(US) Complexion Brightening Face Wash 150gm",
+    "Quantity": 1,
+    "Price": 3.49,
+    "sku": "(US)-Complexion-Brightening-Face-Wash-150gm-",
+    "POS": "NEEM FACE WASH",
+    "Barcode": "807522050717",
+    "PosSKU": "43557"
+  },
+  "(US) Neem Face Wash 150ml": {
+    "Item": "(US) Neem Face Wash 150ml",
+    "Description": "(US) Neem Face Wash 150ml",
+    "Quantity": 1,
+    "Price": 2.97,
+    "sku": "(US)-Neem-Face-Wash-150ml",
+    "POS": "EVWRYUTH NEEM FACE WASH",
+    "Barcode": "8901120146017",
+    "PosSKU": "35390"
+  },
+  "Org Veda Organic Giloy Powder 7oz (200gm)": {
+    "Item": "Org Veda Organic Giloy Powder 7oz (200gm)",
+    "Description": "Org Veda Organic Giloy Powder 7oz (200gm)",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Org-Veda-Organic-Giloy-Powder-7oz-(200gm)",
+    "POS": "ORGANIC VEDA GILOY POWDER",
+    "Barcode": "815733021303",
+    "PosSKU": "29832"
+  },
+  "Org Veda Organic Triphlla powder 7 oz": {
+    "Item": "Org Veda Organic Triphlla powder 7 oz",
+    "Description": "Org Veda Organic Triphlla powder 7 oz",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Org-Veda-Organic-Triphlla-powder-7-oz-",
+    "POS": "TRIPHALA POWDER",
+    "Barcode": "051179981058",
+    "PosSKU": "51363"
+  },
+  "Org Veda Organic Amla powder 7 oz": {
+    "Item": "Org Veda Organic Amla powder 7 oz",
+    "Description": "Org Veda Organic Amla powder 7 oz",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Org-Veda-Organic-Amla-powder-7-oz-",
+    "POS": "ORGANIC VEDA GILOY POWDER",
+    "Barcode": "815733021303",
+    "PosSKU": "29832"
+  },
+  "Org Veda Organic Neem powder 7oz": {
+    "Item": "Org Veda Organic Neem powder 7oz",
+    "Description": "Org Veda Organic Neem powder 7oz",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Org-Veda-Organic-Neem-powder-7oz-",
+    "POS": "ORGANIC VEDA GILOY POWDER",
+    "Barcode": "815733021303",
+    "PosSKU": "29832"
+  },
+  "24 MANTRA BROWN CHANNA 4LB X 10": {
+    "Item": "24 MANTRA BROWN CHANNA 4LB X 10",
+    "Description": "24 MANTRA BROWN CHANNA 4LB X 10",
+    "Quantity": 10,
+    "Price": 70.49,
+    "sku": "24-MANTRA-BROWN-CHANNA-4LB-X-10-",
+    "POS": "24 MANTRA ORG BROWN CHANA",
+    "Barcode": "8904083512127",
+    "PosSKU": "17"
+  },
+  "24 MANTRA PANCHRATAN DAL 4LB x 10": {
+    "Item": "24 MANTRA PANCHRATAN DAL 4LB x 10",
+    "Description": "24 MANTRA PANCHRATAN DAL 4LB x 10",
+    "Quantity": 10,
+    "Price": 99.73,
+    "sku": "24-MANTRA-PANCHRATAN-DAL-4LB-x-10-",
+    "POS": "24 MANTRA ORG PANCHARATAN DAL",
+    "Barcode": "8904083517535",
+    "PosSKU": "70"
+  },
+  "24 MANTRA CHITKABRA RAJMA HIMALAYAN 2 lb x 14": {
+    "Item": "24 MANTRA CHITKABRA RAJMA HIMALAYAN 2 lb x 14",
+    "Description": "24 MANTRA CHITKABRA RAJMA HIMALAYAN 2 lb x 14",
+    "Quantity": 14,
+    "Price": 50.18,
+    "sku": "24-MANTRA-CHITKABRA-RAJMA-HIMALAYAN-2-lb-x-14-",
+    "POS": "HIMALAYA BAEL",
+    "Barcode": "8901138834395",
+    "PosSKU": "37924"
+  },
+  "24 MANTRA MASOOR DAL 4 lb x 10": {
+    "Item": "24 MANTRA MASOOR DAL 4 lb x 10",
+    "Description": "24 MANTRA MASOOR DAL 4 lb x 10",
+    "Quantity": 10,
+    "Price": 68.11,
+    "sku": "24-MANTRA-MASOOR-DAL-4-lb-x-10-",
+    "POS": "24 MANTRA ORG MASOOR DAL",
+    "Barcode": "8904083512189",
+    "PosSKU": "59"
+  },
+  "24 MANTRA MASOOR DAL 2 lbs x 12": {
+    "Item": "24 MANTRA MASOOR DAL 2 lbs x 12",
+    "Description": "24 MANTRA MASOOR DAL 2 lbs x 12",
+    "Quantity": 12,
+    "Price": 43.59,
+    "sku": "24-MANTRA-MASOOR-DAL-2-lbs-x-12-",
+    "POS": "24 MANTRA ORG MASOOR DAL",
+    "Barcode": "8904083512189",
+    "PosSKU": "59"
+  },
+  "24 MANTRA KABULI GHANA 2 lb x 14": {
+    "Item": "24 MANTRA KABULI GHANA 2 lb x 14",
+    "Description": "24 MANTRA KABULI GHANA 2 lb x 14",
+    "Quantity": 14,
+    "Price": 81.13,
+    "sku": "24-MANTRA-KABULI-GHANA-2-lb-x-14",
+    "POS": "KABULI CHANA",
+    "Barcode": "962860",
+    "PosSKU": "9774"
+  },
+  "24 MANTRA KABULI CHANA 4 lb x 10": {
+    "Item": "24 MANTRA KABULI CHANA 4 lb x 10",
+    "Description": "24 MANTRA KABULI CHANA 4 lb x 10",
+    "Quantity": 10,
+    "Price": 111.62,
+    "sku": "24-MANTRA-KABULI-CHANA-4-lb-x-10-",
+    "POS": "KABULI CHANA",
+    "Barcode": "962860",
+    "PosSKU": "9774"
+  },
+  "24 MANTRA MOONG DAL 2 lb x 12": {
+    "Item": "24 MANTRA MOONG DAL 2 lb x 12",
+    "Description": "24 MANTRA MOONG DAL 2 lb x 12",
+    "Quantity": 12,
+    "Price": 47.38,
+    "sku": "24-MANTRA-MOONG-DAL-2-lb-x-12-",
+    "POS": "ROOP MANTRA",
+    "Barcode": "8908001753371",
+    "PosSKU": "47426"
+  },
+  "24 MANTRA MOONG DAL 4 lb x 10": {
+    "Item": "24 MANTRA MOONG DAL 4 lb x 10",
+    "Description": "24 MANTRA MOONG DAL 4 lb x 10",
+    "Quantity": 10,
+    "Price": 84.52,
+    "sku": "24-MANTRA-MOONG-DAL-4-lb-x-10-",
+    "POS": "ROOP MANTRA",
+    "Barcode": "8908001753371",
+    "PosSKU": "47426"
+  },
+  "24 MANTRA GREEN MOONG WHOLE 4 lb x 10": {
+    "Item": "24 MANTRA GREEN MOONG WHOLE 4 lb x 10",
+    "Description": "24 MANTRA GREEN MOONG WHOLE 4 lb x 10",
+    "Quantity": 10,
+    "Price": 72.99,
+    "sku": "24-MANTRA-GREEN-MOONG-WHOLE-4-lb-x-10-",
+    "POS": "MOONG WHOLE",
+    "Barcode": "700250",
+    "PosSKU": "13365"
+  },
+  "24 MANTRA GREEN MOONG DAL SPLIT 4 lb x 10": {
+    "Item": "24 MANTRA GREEN MOONG DAL SPLIT 4 lb x 10",
+    "Description": "24 MANTRA GREEN MOONG DAL SPLIT 4 lb x 10",
+    "Quantity": 10,
+    "Price": 78.99,
+    "sku": "24-MANTRA-GREEN-MOONG-DAL-SPLIT-4-lb-x-10",
+    "POS": "MOONG SPLIT",
+    "Barcode": "705900",
+    "PosSKU": "13362"
+  },
+  "24 MANTRA RAGI FLOUR 4 lb x 10": {
+    "Item": "24 MANTRA RAGI FLOUR 4 lb x 10",
+    "Description": "24 MANTRA RAGI FLOUR 4 lb x 10",
+    "Quantity": 10,
+    "Price": 50.06,
+    "sku": "24-MANTRA-RAGI-FLOUR-4-lb-x-10-",
+    "POS": "24 MANTRA ORG RICE FLOUR",
+    "Barcode": "8904083513513",
+    "PosSKU": "81"
+  },
+  "24 MANTRA ORGANC IDLI RAVA 4LB x 10": {
+    "Item": "24 MANTRA ORGANC IDLI RAVA 4LB x 10",
+    "Description": "24 MANTRA ORGANC IDLI RAVA 4LB x 10",
+    "Quantity": 10,
+    "Price": 37.47,
+    "sku": "24-MANTRA-ORGANC-IDLI-RAVA-4LB-x-10-",
+    "POS": "24 MANTRA ORGANIC RAJMA",
+    "Barcode": "8904083518129",
+    "PosSKU": "156"
+  },
+  "24 MANTRA WHEAT DHALIYA 2 lb x 10": {
+    "Item": "24 MANTRA WHEAT DHALIYA 2 lb x 10",
+    "Description": "24 MANTRA WHEAT DHALIYA 2 lb x 10",
+    "Quantity": 10,
+    "Price": 20.18,
+    "sku": "24-MANTRA-WHEAT-DHALIYA-2-lb-x-10-",
+    "POS": "24 MANTRA ORG WHEAT DHALIYA",
+    "Barcode": "8904083512448",
+    "PosSKU": "108"
+  },
+  "24 MANTRA Organic Wheat Drialiya 4 lb x10": {
+    "Item": "24 MANTRA Organic Wheat Drialiya 4 lb x10",
+    "Description": "24 MANTRA Organic Wheat Drialiya 4 lb x10",
+    "Quantity": 10,
+    "Price": 34.66,
+    "sku": "24-MANTRA-Organic-Wheat-Drialiya-4-lb-x10-",
+    "POS": "24 MANTRA ORGANIC WHEAT DHALIYA",
+    "Barcode": "8904083516859",
+    "PosSKU": "109"
+  },
+  "24 MANTRA CINNAMON POWDER 3.5 OZ x 26": {
+    "Item": "24 MANTRA CINNAMON POWDER 3.5 OZ x 26",
+    "Description": "24 MANTRA CINNAMON POWDER 3.5 OZ x 26",
+    "Quantity": 26,
+    "Price": 55.83,
+    "sku": "24-MANTRA-CINNAMON-POWDER-3.5-OZ-x-26-",
+    "POS": "24 MANTRA ORG CINNAMON POWDER",
+    "Barcode": "8904083514367",
+    "PosSKU": "24"
+  },
+  "24 MANTRA TURMERIC POWDER 7 Oz x 16": {
+    "Item": "24 MANTRA TURMERIC POWDER 7 Oz x 16",
+    "Description": "24 MANTRA TURMERIC POWDER 7 Oz x 16",
+    "Quantity": 16,
+    "Price": 30.99,
+    "sku": "24-MANTRA-TURMERIC-POWDER-7-Oz-x-16-",
+    "POS": "TURMERIC POWDER",
+    "Barcode": "714760813373",
+    "PosSKU": "5487"
+  },
+  "24 MANTRA TURMERIC POWDER JAR 11 oz x 24": {
+    "Item": "24 MANTRA TURMERIC POWDER JAR 11 oz x 24",
+    "Description": "24 MANTRA TURMERIC POWDER JAR 11 oz x 24",
+    "Quantity": 24,
+    "Price": 71.64,
+    "sku": "24-MANTRA-TURMERIC-POWDER-JAR-11-oz-x-24-",
+    "POS": "TURMERIC POWDER",
+    "Barcode": "714760813373",
+    "PosSKU": "5487"
+  },
+  "Verka US Peanut Laddoo 200gm x 25": {
+    "Item": "Verka US Peanut Laddoo 200gm x 25",
+    "Description": "Verka US Peanut Laddoo 200gm x 25",
+    "Quantity": 25,
+    "Price": 37.5,
+    "sku": "Verka-US-Peanut-Laddoo-200gm-x-25-",
+    "POS": "VERKA PEANUT LADDOO",
+    "Barcode": "856904001007",
+    "PosSKU": "21235"
+  },
+  "Verka US Sesame Chikki 200gm x 25": {
+    "Item": "Verka US Sesame Chikki 200gm x 25",
+    "Description": "Verka US Sesame Chikki 200gm x 25",
+    "Quantity": 25,
+    "Price": 43.75,
+    "sku": "Verka-US-Sesame-Chikki-200gm-x-25-",
+    "POS": "GEM CHIKKIS",
+    "Barcode": "011433152532",
+    "PosSKU": "36340"
+  },
+  "Verka US Butter Chicken Paste 12/300gm": {
+    "Item": "Verka US Butter Chicken Paste 12/300gm",
+    "Description": "Verka US Butter Chicken Paste 12/300gm",
+    "Quantity": 12,
+    "Price": 28.75,
+    "sku": "Verka-US-Butter-Chicken-Paste-12/300gm",
+    "POS": "ICM BUTTER CHIKEN",
+    "Barcode": "610395702771",
+    "PosSKU": "38260"
+  },
+  "Verka US Tandori paste 12/750gm": {
+    "Item": "Verka US Tandori paste 12/750gm",
+    "Description": "Verka US Tandori paste 12/750gm",
+    "Quantity": 12,
+    "Price": 48.25,
+    "sku": "Verka-US-Tandori-paste-12/750gm-",
+    "POS": "VERKA TANDOORI PASTE",
+    "Barcode": "856904002325",
+    "PosSKU": "66629"
+  },
+  "Verka US Turmeric Paste 24/300gm": {
+    "Item": "Verka US Turmeric Paste 24/300gm",
+    "Description": "Verka US Turmeric Paste 24/300gm",
+    "Quantity": 24,
+    "Price": 48.25,
+    "sku": "Verka-US-Turmeric-Paste-24/300gm-",
+    "POS": "TURMERIC SOAP",
+    "Barcode": "1350",
+    "PosSKU": "30376"
+  },
+  "Verka US Ginger/Garlic Paste 12/750gm": {
+    "Item": "Verka US Ginger/Garlic Paste 12/750gm",
+    "Description": "Verka US Ginger/Garlic Paste 12/750gm",
+    "Quantity": 12,
+    "Price": 48.25,
+    "sku": "Verka-US-Ginger/Garlic-Paste-12/750gm-",
+    "POS": "MAYA GINGER GARLIC PASTE",
+    "Barcode": "020843180639",
+    "PosSKU": "42111"
+  },
+  "Verka US Green Chilli Paste 12/250gm": {
+    "Item": "Verka US Green Chilli Paste 12/250gm",
+    "Description": "Verka US Green Chilli Paste 12/250gm",
+    "Quantity": 12,
+    "Price": 28.75,
+    "sku": "Verka-US-Green-Chilli-Paste-12/250gm-",
+    "POS": "GREEN PEAS",
+    "Barcode": "011433131650",
+    "PosSKU": "5004"
+  },
+  "Verka US Red Chilli pastel 2/250gm": {
+    "Item": "Verka US Red Chilli pastel 2/250gm",
+    "Description": "Verka US Red Chilli pastel 2/250gm",
+    "Quantity": 2,
+    "Price": 28.75,
+    "sku": "Verka-US-Red-Chilli-pastel-2/250gm-",
+    "POS": "RED LABEL",
+    "Barcode": "068400612728",
+    "PosSKU": "16686"
+  },
+  "Verka US Date Tamarind Chutney 12/350gm": {
+    "Item": "Verka US Date Tamarind Chutney 12/350gm",
+    "Description": "Verka US Date Tamarind Chutney 12/350gm",
+    "Quantity": 12,
+    "Price": 28.75,
+    "sku": "Verka-US-Date-Tamarind-Chutney-12/350gm-",
+    "POS": "DEEP TAMARIND DATE CHUTNEY",
+    "Barcode": "011433110280",
+    "PosSKU": "5304"
+  },
+  "Verka US Garlic Chutney 12/300gm": {
+    "Item": "Verka US Garlic Chutney 12/300gm",
+    "Description": "Verka US Garlic Chutney 12/300gm",
+    "Quantity": 12,
+    "Price": 28.75,
+    "sku": "Verka-US-Garlic-Chutney-12/300gm-",
+    "POS": "GARLIC CHUTNEY",
+    "Barcode": "723246009261",
+    "PosSKU": "6980"
+  },
+  "Verka US Thai Tamarind wet 14oz x 50": {
+    "Item": "Verka US Thai Tamarind wet 14oz x 50",
+    "Description": "Verka US Thai Tamarind wet 14oz x 50",
+    "Quantity": 50,
+    "Price": 123.5,
+    "sku": "Verka-US-Thai-Tamarind-wet-14oz-x-50-",
+    "POS": "GOYA TAMARIND",
+    "Barcode": "041331028004",
+    "PosSKU": "36786"
+  },
+  "Verka US Misri 12/600gm": {
+    "Item": "Verka US Misri 12/600gm",
+    "Description": "Verka US Misri 12/600gm",
+    "Quantity": 12,
+    "Price": 36,
+    "sku": "Verka-US-Misri-12/600gm",
+    "POS": "VERKA MISRI",
+    "Barcode": "856904001748",
+    "PosSKU": "67345"
+  },
+  "Verka US Peanut Chikki 200 gm x 25": {
+    "Item": "Verka US Peanut Chikki 200 gm x 25",
+    "Description": "Verka US Peanut Chikki 200 gm x 25",
+    "Quantity": 25,
+    "Price": 37.5,
+    "sku": "Verka-US-Peanut-Chikki-200-gm-x-25-",
+    "POS": "GEM PEANUT CHIKKIS",
+    "Barcode": "1173",
+    "PosSKU": "36342"
+  },
+  "Verka US Sesame Ladoo 25/200gm": {
+    "Item": "Verka US Sesame Ladoo 25/200gm",
+    "Description": "Verka US Sesame Ladoo 25/200gm",
+    "Quantity": 25,
+    "Price": 43.75,
+    "sku": "Verka-US-Sesame-Ladoo-25/200gm-",
+    "POS": "VERKA SESAME LADDOO",
+    "Barcode": "856904001212",
+    "PosSKU": "66655"
+  },
+  "Verka US Rajgira Chikki 25/100gm": {
+    "Item": "Verka US Rajgira Chikki 25/100gm",
+    "Description": "Verka US Rajgira Chikki 25/100gm",
+    "Quantity": 25,
+    "Price": 27.5,
+    "sku": "Verka-US-Rajgira-Chikki-25/100gm-",
+    "POS": "GEM CHIKKIS",
+    "Barcode": "011433152532",
+    "PosSKU": "36340"
+  },
+  "Verka US Rajgira Ladoo 25/100gm": {
+    "Item": "Verka US Rajgira Ladoo 25/100gm",
+    "Description": "Verka US Rajgira Ladoo 25/100gm",
+    "Quantity": 25,
+    "Price": 27.5,
+    "sku": "Verka-US-Rajgira-Ladoo-25/100gm-",
+    "POS": "RAJGIRA LADOO",
+    "Barcode": "8901738705309",
+    "PosSKU": "31293"
+  },
+  "Verka US Kurmurru Chikki 25/100gm": {
+    "Item": "Verka US Kurmurru Chikki 25/100gm",
+    "Description": "Verka US Kurmurru Chikki 25/100gm",
+    "Quantity": 25,
+    "Price": 27.5,
+    "sku": "Verka-US-Kurmurru-Chikki-25/100gm-",
+    "POS": "GEM CHIKKIS",
+    "Barcode": "011433152532",
+    "PosSKU": "36340"
+  }
+}

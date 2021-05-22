@@ -30,7 +30,7 @@ const UpdateInventory = (props) => {
   };
   const renderTableHeader = () => {
     return header.map((key, index) => {
-      return <th key={index}>{key.toUpperCase()}</th>;
+      return <th key={index} style={{position:"sticky",top:"70px",background:"#505050",color:"white"}}>{key.toUpperCase()}</th>;
     });
   };
   const renderTableData = () => {

@@ -1,0 +1,132 @@
+{
+  "Gur Rewari": {
+    "Item": "Gur Rewari",
+    "Description": "Gur Rewari 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "52",
+    "sku": "Gur-Rewari-400-gms-20-/-ctn-",
+    "POS": "GUR REWADI",
+    "Barcode": "409800",
+    "PosSKU": "7791"
+  },
+  "Sugar Rewari": {
+    "Item": "Sugar Rewari",
+    "Description": "Sugar rewari 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "52",
+    "sku": "Gur-Rewari-400-gms-20-/-ctn-",
+    "POS": "BB SUGAR REWARI",
+    "Barcode": "8905157002070",
+    "PosSKU": "2079"
+  },
+  "Gur Gajj": {
+    "Item": "Gur Gajj",
+    "Description": "Dry Fruit Gur Gajjak  400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "70",
+    "sku": "Dry-Fruit-Gur-Gajjak-400-gms-20-/-ctn-",
+    "POS": "BIKAJI DRY FRUIT GUR GAJJAK",
+    "Barcode": "8906005508843",
+    "PosSKU": "2437"
+  },
+  "Gurr Khasta Gajjak": {
+    "Item": "Gurr Khasta Gajjak",
+    "Description": "Gur Khasta Gajjak 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "70",
+    "sku": "Gur-Khasta-Gajjak-400-gms-/-20-ctn-",
+    "POS": "BIKANO KHASTA GUR GAJJAK",
+    "Barcode": "8901414001787",
+    "PosSKU": "2553"
+  },
+  "Seasme ladoo": {
+    "Item": "Seasme ladoo",
+    "Description": "Seasme ladoo Bikaji, 240 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "50",
+    "sku": "Seasme-ladoo-Bikaji,-240-gm-/-20-ctn-",
+    "POS": "BIKAJI CHIPS",
+    "Barcode": "8906005502346",
+    "PosSKU": "2431"
+  },
+  "Peanut Ladoo": {
+    "Item": "Peanut Ladoo",
+    "Description": "Peanut Ladoo Bikaji 240 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "50",
+    "sku": "Peanut-Ladoo-Bikaji-240-gms-/-20-ctn",
+    "POS": "SWAD PEANUT LADOO",
+    "Barcode": "051179300309",
+    "PosSKU": "50116"
+  },
+  "Rajgeron ladoo": {
+    "Item": "Rajgeron ladoo",
+    "Description": "Rajgeron Ladoo Bikaji 150 gm, 20 / ctn",
+    "Quantity": "20",
+    "Price": "50",
+    "sku": "Rajgeron-Ladoo-Bikaji-150-gm-,-20-/-ctn-",
+    "POS": "RAJGIRA LADOO",
+    "Barcode": "8901738705309",
+    "PosSKU": "31293"
+  },
+  "Pea ChiKi": {
+    "Item": "Pea ChiKi",
+    "Description": "Peanut Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "55",
+    "sku": "Peanut-Chikki-400-gms-/-20-ctn-",
+    "POS": "M M PEANUT 48CT",
+    "Barcode": "040000000327",
+    "PosSKU": "41444"
+  },
+  "Se Chikki": {
+    "Item": "Se Chikki",
+    "Description": "Saesme Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "65",
+    "sku": "Saesme-Chikki-400-Gms-/-20-Ctn-",
+    "POS": "GEM SEESAME CHIKKIS",
+    "Barcode": "1172",
+    "PosSKU": "36343"
+  },
+  "Ass Chiki": {
+    "Item": "Ass Chiki",
+    "Description": "Assorted Chikki 400 gms 20 / ctn",
+    "Quantity": "20",
+    "Price": "65",
+    "sku": "Assorted-Chikki-400-gms-20-/-ctn-",
+    "POS": "ASSORTED COOKIES",
+    "Barcode": "854430006008",
+    "PosSKU": "30456"
+  },
+  "Gobhi Parantha 4 Pcs": {
+    "Item": "Gobhi Parantha 4 Pcs",
+    "Description": "Gobhi Parantha (4 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "21",
+    "sku": "",
+    "POS": "BIKAJI GOBI PARATHA",
+    "Barcode": "8906005501127",
+    "PosSKU": "2440"
+  },
+  "Methi Parantha 6 Pcs": {
+    "Item": "Methi Parantha 6 Pcs",
+    "Description": "Methi Parantha (6 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "19.8",
+    "sku": "",
+    "POS": "BIKAJI METHI PARA",
+    "Barcode": "8906005503350",
+    "PosSKU": "2474"
+  },
+  "Home Style Parantha 6 Pcs": {
+    "Item": "Home Style Parantha 6 Pcs",
+    "Description": "Home Style Parantha (6 Pcs X 12 Pks) Bikaji",
+    "Quantity": "12",
+    "Price": "19.2",
+    "sku": "",
+    "POS": "BIKAJI METHI PARATHA",
+    "Barcode": "8906005501172",
+    "PosSKU": "2475"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "22": {
+    "Item": "22",
+    "Description": "LUPITA COTIJA MOLIDA 14 OZ 12/14 oz",
+    "Quantity": 12,
+    "Price": 50,
+    "sku": "LUPITA-COTIJA-MOLIDA-14-OZ-12/14-oz",
+    "POS": "LUPITA COTIJA MOLIDA",
+    "Barcode": "819753000232",
+    "PosSKU": "11771"
+  },
+  "161": {
+    "Item": "161",
+    "Description": "QUAIL EGGS 40 PCK 40/18 eggs",
+    "Quantity": 18,
+    "Price": 90,
+    "sku": "QUAIL-EGGS-40-PCK-40/18-eggs",
+    "POS": "GOLDEN JUMBO QUAILS 6 PCS",
+    "Barcode": "045142126164",
+    "PosSKU": "7341"
+  },
+  "258": {
+    "Item": "258",
+    "Description": "DUCK EGGS 24 PCK 24/6 eggs",
+    "Quantity": 6,
+    "Price": 91,
+    "sku": "DUCK-EGGS-24-PCK-24/6-eggs",
+    "POS": "DUCK EGG",
+    "Barcode": "698264005000",
+    "PosSKU": "5974"
+  }
+}

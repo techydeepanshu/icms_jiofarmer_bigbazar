@@ -1,0 +1,233 @@
+{
+  "DH15": {
+    "Item": "DH15",
+    "Description": "D HORSE DOSA MIX 1KG12",
+    "Quantity": 50,
+    "Price": 30.5,
+    "category": "maharaja",
+    "sku": "D-HORSE-DOSA-MIX-1KG12",
+    "POS": "DRY DOSA",
+    "Barcode": "8906074670021",
+    "PosSKU": "34930"
+  },
+  "DH19": {
+    "Item": "DH19",
+    "Description": "D.HORSE 6 MIN IDIYAPPAM POWDER 1KG12",
+    "Quantity": 50,
+    "Price": 22.24,
+    "category": "maharaja",
+    "sku": "D.HORSE-6-MIN-IDIYAPPAM-POWDER-1KG12",
+    "POS": "CUMIN POWDER",
+    "Barcode": "723246176444",
+    "PosSKU": "4413"
+  },
+  "PV01": {
+    "Item": "PV01",
+    "Description": "PAVIZHAM MATTA RICE LONG GRAIN 10KG",
+    "Quantity": 50,
+    "Price": 12,
+    "category": "maharaja",
+    "sku": "PAVIZHAM-MATTA-RICE-LONG-GRAIN-10KG",
+    "POS": "PAVIZHAM  MATTA RICE",
+    "Barcode": "8906004650925",
+    "PosSKU": "15419"
+  },
+  "KT24": {
+    "Item": "KT24",
+    "Description": "K.TREASURES CORIANDER POWDER 1 KG12",
+    "Quantity": 50,
+    "Price": 47,
+    "category": "maharaja",
+    "sku": "K.TREASURES-CORIANDER-POWDER-1-KG12",
+    "POS": "777 RASAM POWDER",
+    "Barcode": "897231001452",
+    "PosSKU": "26993"
+  },
+  "KT27": {
+    "Item": "KT27",
+    "Description": "K.TREASURES KASHMIRI CHILLI POWDER 1 KG12",
+    "Quantity": 50,
+    "Price": 78.15,
+    "category": "maharaja",
+    "sku": "K.TREASURES-KASHMIRI-CHILLI-POWDER-1-KG12",
+    "POS": "K V L KASHMIRI CHILLI POWDER",
+    "Barcode": "643864543834",
+    "PosSKU": "38938"
+  },
+  "KT26": {
+    "Item": "KT26",
+    "Description": "K.TREASURES KASHMIRI CHILLI POWDER 400GM24",
+    "Quantity": 50,
+    "Price": 67.58,
+    "category": "maharaja",
+    "sku": "K.TREASURES-KASHMIRI-CHILLI-POWDER-400GM24",
+    "POS": "K V L KASHMIRI CHILLI POWDER",
+    "Barcode": "643864543834",
+    "PosSKU": "38938"
+  },
+  "KT23": {
+    "Item": "KT23",
+    "Description": "K.TREASURES CORIANDER POWDER 400 GM24",
+    "Quantity": 50,
+    "Price": 39.15,
+    "category": "maharaja",
+    "sku": "K.TREASURES-CORIANDER-POWDER-400-GM24",
+    "POS": "MAYA CORIANDER POWDER",
+    "Barcode": "020843240104",
+    "PosSKU": "12400"
+  },
+  "KT18": {
+    "Item": "KT18",
+    "Description": "K.TREASURE EGG MASALA 100GM12",
+    "Quantity": 50,
+    "Price": 63.39,
+    "category": "maharaja",
+    "sku": "K.TREASURE-EGG-MASALA-100GM12",
+    "POS": "TEA MASALA",
+    "Barcode": "8901786021000",
+    "PosSKU": "6374"
+  },
+  "KT11": {
+    "Item": "KT11",
+    "Description": "K.TREASURES SAMBAR POWDER 200GM15",
+    "Quantity": 50,
+    "Price": 79.8,
+    "category": "maharaja",
+    "sku": "K.TREASURES-SAMBAR-POWDER-200GM15",
+    "POS": "777 SAMBAR POWDER",
+    "Barcode": "897231000912",
+    "PosSKU": "240"
+  },
+  "KT08": {
+    "Item": "KT08",
+    "Description": "K.TREASURES CHICKEN MASALA 200GM15",
+    "Quantity": 50,
+    "Price": 79.8,
+    "category": "maharaja",
+    "sku": "K.TREASURES-CHICKEN-MASALA-200GM15",
+    "POS": "TEA MASALA",
+    "Barcode": "8901786021000",
+    "PosSKU": "6374"
+  },
+  "KT01": {
+    "Item": "KT01",
+    "Description": "K.TREASURES WHITE PUTTU PODI 1KG12",
+    "Quantity": 50,
+    "Price": 23.5,
+    "category": "maharaja",
+    "sku": "K.TREASURES-WHITE-PUTTU-PODI-1KG12",
+    "POS": "RAGI PUTTU PODI",
+    "Barcode": "8906014081061",
+    "PosSKU": "22939"
+  },
+  "KT02": {
+    "Item": "KT02",
+    "Description": "K.TREASURES CHEMBA PUTTU PODI 1KG12",
+    "Quantity": 50,
+    "Price": 24.5,
+    "category": "maharaja",
+    "sku": "K.TREASURES-CHEMBA-PUTTU-PODI-1KG12",
+    "POS": "RAGI PUTTU PODI",
+    "Barcode": "8906014081061",
+    "PosSKU": "22939"
+  },
+  "KT03": {
+    "Item": "KT03",
+    "Description": "K.TREASURES EASY PALAPPAM PODI 1KG12",
+    "Quantity": 50,
+    "Price": 24.95,
+    "category": "maharaja",
+    "sku": "K.TREASURES-EASY-PALAPPAM-PODI-1KG12",
+    "POS": "PALAPPAM PODI",
+    "Barcode": "8908005767503",
+    "PosSKU": "10361"
+  },
+  "KT04": {
+    "Item": "KT04",
+    "Description": "K.TREASURES DOSA PODI 1KG12",
+    "Quantity": 50,
+    "Price": 27.5,
+    "category": "maharaja",
+    "sku": "K.TREASURES-DOSA-PODI-1KG12",
+    "POS": "TIDE PODS",
+    "Barcode": "037000930457",
+    "PosSKU": "20154"
+  },
+  "KT05": {
+    "Item": "KT05",
+    "Description": "K.TREASURES IDILY PODI 1KG12",
+    "Quantity": 50,
+    "Price": 27.5,
+    "category": "maharaja",
+    "sku": "K.TREASURES-IDILY-PODI-1KG12",
+    "POS": "TIDE PODS",
+    "Barcode": "037000930457",
+    "PosSKU": "20154"
+  },
+  "KT06A": {
+    "Item": "KT06A",
+    "Description": "K.TREASURES IDIYAPPAM/PATHIRI PODI 1KG12",
+    "Quantity": 50,
+    "Price": 24.5,
+    "category": "maharaja",
+    "sku": "K.TREASURES-IDIYAPPAM/PATHIRI-PODI-1KG12",
+    "POS": "PATHIRI PODI",
+    "Barcode": "665244225017",
+    "PosSKU": "65498"
+  },
+  "KT07": {
+    "Item": "KT07",
+    "Description": "K TREASURES ROASTED RAVA 1KG12",
+    "Quantity": 50,
+    "Price": 23.5,
+    "category": "maharaja",
+    "sku": "K-TREASURES-ROASTED-RAVA-1KG12",
+    "POS": "ROASTED RAVA",
+    "Barcode": "8904011508109",
+    "PosSKU": "5832"
+  },
+  "DH08": {
+    "Item": "DH08",
+    "Description": "D HORSE WHITE PUTTU POWDER 1KG12",
+    "Quantity": 50,
+    "Price": 24.3,
+    "category": "maharaja",
+    "sku": "D-HORSE-WHITE-PUTTU-POWDER-1KG12",
+    "POS": "PUTTU POWDER",
+    "Barcode": "8906014080019",
+    "PosSKU": "3048"
+  },
+  "DH09": {
+    "Item": "DH09",
+    "Description": "D HORSE CHEMBA PUTTU PODI 1KG12",
+    "Quantity": 50,
+    "Price": 27.69,
+    "category": "maharaja",
+    "sku": "D-HORSE-CHEMBA-PUTTU-PODI-1KG12",
+    "POS": "RAGI PUTTU PODI",
+    "Barcode": "8906014081061",
+    "PosSKU": "22939"
+  },
+  "DH10": {
+    "Item": "DH10",
+    "Description": "D HORSE SAMBA WHEAT PUTTU PODI 1KG12",
+    "Quantity": 50,
+    "Price": 30.59,
+    "category": "maharaja",
+    "sku": "D-HORSE-SAMBA-WHEAT-PUTTU-PODI-1KG12",
+    "POS": "SAMBA WHEAT PUTTU PODI",
+    "Barcode": "8904011504774",
+    "PosSKU": "5835"
+  },
+  "DH11": {
+    "Item": "DH11",
+    "Description": "D HORSE ROASTED RAVA 1KG12",
+    "Quantity": 50,
+    "Price": 23.94,
+    "category": "maharaja",
+    "sku": "D-HORSE-ROASTED-RAVA-1KG12",
+    "POS": "ROASTED RAVA",
+    "Barcode": "8904011508109",
+    "PosSKU": "5832"
+  }
+}

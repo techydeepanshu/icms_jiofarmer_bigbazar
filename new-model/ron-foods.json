@@ -1,0 +1,112 @@
+{
+  "SAUSAGE MEAT MASALA 100 G": {
+    "Item": "SAUSAGE MEAT MASALA 100 G",
+    "Description": "SAUSAGE MEAT MASALA 100 G",
+    "Price": 0.99,
+    "Quantity": 1,
+    "sku": "SAUSAGE-MEAT-MASALA-100-G",
+    "category": "ron-food",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004",
+    "PosSKU": "6363"
+  },
+  "CHICKEN CURRY MASALA 200 G": {
+    "Item": "CHICKEN CURRY MASALA 200 G",
+    "Description": "CHICKEN CURRY MASALA 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "CHICKEN-CURRY-MASALA-200-G",
+    "category": "ron-food",
+    "POS": "CHICKEN CURRY",
+    "Barcode": "8908005767695",
+    "PosSKU": "10331"
+  },
+  "CHICKEN ROAST PASTE 200 G": {
+    "Item": "CHICKEN ROAST PASTE 200 G",
+    "Description": "CHICKEN ROAST PASTE 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "CHICKEN-ROAST-PASTE-200-G",
+    "category": "ron-food",
+    "POS": "CHICKEN LEG",
+    "Barcode": "200157",
+    "PosSKU": "3897"
+  },
+  "MUTTON CURRY PASTE 200 G": {
+    "Item": "MUTTON CURRY PASTE 200 G",
+    "Description": "MUTTON CURRY PASTE 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "MUTTON-CURRY-PASTE-200-G",
+    "category": "ron-food",
+    "POS": "ANNAPOORNA SPICE MIX MUTTON CURRY",
+    "Barcode": "8904040305984",
+    "PosSKU": "1255"
+  },
+  "VINDALOO PASTE 200 G": {
+    "Item": "VINDALOO PASTE 200 G",
+    "Description": "VINDALOO PASTE 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "VINDALOO-PASTE-200-G",
+    "category": "ron-food",
+    "POS": "DEEP VINDALOO PASTE",
+    "Barcode": "011433114004",
+    "PosSKU": "5360"
+  },
+  "CHETTINAD CHICKEN MASALA 200 G": {
+    "Item": "CHETTINAD CHICKEN MASALA 200 G",
+    "Description": "CHETTINAD CHICKEN MASALA 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "CHETTINAD-CHICKEN-MASALA-200-G",
+    "category": "ron-food",
+    "POS": "AACHI CHETINAD CHICKEN MASALA",
+    "Barcode": "8904209306173",
+    "PosSKU": "28831"
+  },
+  "RECHEADO MASALA(FISH FRY) 200 G": {
+    "Item": "RECHEADO MASALA(FISH FRY) 200 G",
+    "Description": "RECHEADO MASALA(FISH FRY) 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "RECHEADO-MASALA(FISH-FRY)-200-G",
+    "category": "ron-food",
+    "POS": "FISH FRY MASALA",
+    "Barcode": "8908005767664",
+    "PosSKU": "10346"
+  },
+  "SORPOTEL PASTE 200 G": {
+    "Item": "SORPOTEL PASTE 200 G",
+    "Description": "SORPOTEL PASTE 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "SORPOTEL-PASTE-200-G",
+    "category": "ron-food",
+    "POS": "GOANA FOODS SORPOTEL PASTE",
+    "Barcode": "8908004890257",
+    "PosSKU": "7226"
+  },
+  "CAFREAL MASALA (CHICKEN) PASTE 200 G": {
+    "Item": "CAFREAL MASALA (CHICKEN) PASTE 200 G",
+    "Description": "CAFREAL MASALA (CHICKEN) PASTE 200 G",
+    "Price": 2.5,
+    "Quantity": 1,
+    "sku": "CAFREAL-MASALA-(CHICKEN)-PASTE-200-G",
+    "category": "ron-food",
+    "POS": "CHICKEN MASALA",
+    "Barcode": "8901786161003",
+    "PosSKU": "6352"
+  },
+  "TENDLIM PICKLE 200 G": {
+    "Item": "TENDLIM PICKLE 200 G",
+    "Description": "TENDLIM PICKLE 200 G",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "TENDLIM-PICKLE-200-G",
+    "category": "ron-food",
+    "POS": "GOANA TENDLIM PICKLE",
+    "Barcode": "8908004890141",
+    "PosSKU": "7236"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "JUMBO WHITE 1 DOZEN": {
+    "Item": "JUMBO WHITE 1 DOZEN",
+    "Description": "JUMBO WHITE 1 DOZEN",
+    "Quantity": 50,
+    "Price": 26.16,
+    "sku": "JUMBO-WHITE-1-DOZEN",
+    "category": "Hill-top-Farms",
+    "POS": "WHITE EGG JUMBO",
+    "Barcode": "715141328615",
+    "PosSKU": "21505"
+  },
+  "MEDIUM BROWN 1 DOZEN": {
+    "Item": "MEDIUM BROWN 1 DOZEN",
+    "Description": "MEDIUM BROWN 1 DOZEN",
+    "Quantity": 50,
+    "Price": 27,
+    "sku": "MEDIUM-BROWN-1-DOZEN",
+    "category": "Hill-top-Farms",
+    "POS": "ALDERFER ORG BROWN MEDIUM 18 EGG",
+    "Barcode": "0698264000814",
+    "PosSKU": "815"
+  },
+  "MEDIUM WHITE 1 DOZEN": {
+    "Item": "MEDIUM WHITE 1 DOZEN",
+    "Description": "MEDIUM WHITE 1 DOZEN",
+    "Quantity": 50,
+    "Price": 25.2,
+    "sku": "MEDIUM-WHITE-1-DOZEN",
+    "category": "Hill-top-Farms",
+    "POS": "WHITE PLUM",
+    "Barcode": "7091",
+    "PosSKU": "21520"
+  },
+  "JUMBO ORGANIC": {
+    "Item": "JUMBO ORGANIC",
+    "Description": "JUMBO ORGANIC",
+    "Quantity": 50,
+    "Price": 53.8,
+    "sku": "JUMBO-ORGANIC",
+    "category": "Hill-top-Farms",
+    "POS": "HILLANDALE JUMBO ORGANIC",
+    "Barcode": "077438559899",
+    "PosSKU": "8652"
+  },
+  "LARGE ORGANIC": {
+    "Item": "LARGE ORGANIC",
+    "Description": "LARGE ORGANIC",
+    "Quantity": 50,
+    "Price": 57.35,
+    "sku": "LARGE-ORGANIC",
+    "category": "Hill-top-Farms",
+    "POS": "HILLANDALE ORGANIC LARGE EGGS",
+    "Barcode": "077438555556",
+    "PosSKU": "8655"
+  },
+  "MEDIUM ORGANIC": {
+    "Item": "MEDIUM ORGANIC",
+    "Description": "MEDIUM ORGANIC",
+    "Quantity": 50,
+    "Price": 45.85,
+    "sku": "MEDIUM-ORGANIC",
+    "category": "Hill-top-Farms",
+    "POS": "AROSIS ORGANIC GREEK MEDIUM BEANS",
+    "Barcode": "5200101474037",
+    "PosSKU": "1378"
+  }
+}

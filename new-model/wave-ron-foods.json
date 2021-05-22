@@ -1,0 +1,92 @@
+{
+  "Sausage Meat Masala 100 g": {
+    "Item": "Sausage Meat Masala 100 g",
+    "Description": "Sausage Meat Masala 100 g",
+    "Quantity": "1",
+    "Price": "0.99",
+    "POS": "MEAT MASALA",
+    "Barcode": "8901786151004",
+    "PosSKU": "6363"
+  },
+  "Chicken Curry Masala 200 g": {
+    "Item": "Chicken Curry Masala 200 g",
+    "Description": "Chicken Curry Masala 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "CHICKEN CURRY",
+    "Barcode": "8908005767695",
+    "PosSKU": "10331"
+  },
+  "Chicken Roast Paste 200 g": {
+    "Item": "Chicken Roast Paste 200 g",
+    "Description": "Chicken Roast Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "CHICKEN LEG",
+    "Barcode": "200157",
+    "PosSKU": "3897"
+  },
+  "Mutton Curry Paste 200 g": {
+    "Item": "Mutton Curry Paste 200 g",
+    "Description": "Mutton Curry Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "ANNAPOORNA SPICE MIX MUTTON CURRY",
+    "Barcode": "8904040305984",
+    "PosSKU": "1255"
+  },
+  "Vindaloo Paste 200 g": {
+    "Item": "Vindaloo Paste 200 g",
+    "Description": "Vindaloo Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "DEEP VINDALOO PASTE",
+    "Barcode": "011433114004",
+    "PosSKU": "5360"
+  },
+  "Chettinad Chicken Masala 200 g": {
+    "Item": "Chettinad Chicken Masala 200 g",
+    "Description": "Chettinad Chicken Masala 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "AACHI CHETINAD CHICKEN MASALA",
+    "Barcode": "8904209306173",
+    "PosSKU": "28831"
+  },
+  "Recheado Masala(Fish fry) 200 g": {
+    "Item": "Recheado Masala(Fish fry) 200 g",
+    "Description": "Recheado Masala(Fish fry) 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "FISH FRY MASALA",
+    "Barcode": "8908005767664",
+    "PosSKU": "10346"
+  },
+  "Sorpotel Paste 200 g": {
+    "Item": "Sorpotel Paste 200 g",
+    "Description": "Sorpotel Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "GOANA FOODS SORPOTEL PASTE",
+    "Barcode": "8908004890257",
+    "PosSKU": "7226"
+  },
+  "Cafreal Masala (Chicken) Paste 200 g": {
+    "Item": "Cafreal Masala (Chicken) Paste 200 g",
+    "Description": "Cafreal Masala (Chicken) Paste 200 g",
+    "Quantity": "1",
+    "Price": "2.50",
+    "POS": "CHICKEN MASALA",
+    "Barcode": "8901786161003",
+    "PosSKU": "6352"
+  },
+  "Tendlim Pickle 200 g": {
+    "Item": "Tendlim Pickle 200 g",
+    "Description": "Tendlim Pickle 200 g",
+    "Quantity": "1",
+    "Price": "2.00",
+    "POS": "GOANA TENDLIM PICKLE",
+    "Barcode": "8908004890141",
+    "PosSKU": "7236"
+  }
+}

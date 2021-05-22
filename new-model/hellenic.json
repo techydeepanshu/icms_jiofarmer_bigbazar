@@ -1,0 +1,24 @@
+{
+  "OIL - HELLENIC 3 LITER EVOO 4X3LITER": {
+    "Item": "OIL - HELLENIC 3 LITER EVOO 4X3LITER",
+    "Description": "OIL - HELLENIC 3 LITER EVOO 4X3LITER",
+    "Quantity": 50,
+    "Price": 62,
+    "sku": "OIL---HELLENIC-3-LITER-EVOO-4X3LITER",
+    "category": "HELLENIC",
+    "POS": "LINSEED  OIL",
+    "Barcode": "28457037",
+    "PosSKU": "11517"
+  },
+  "SPICES - FARMA 12 UNITS": {
+    "Item": "SPICES - FARMA 12 UNITS",
+    "Description": "SPICES - FARMA 12 UNITS",
+    "Quantity": 50,
+    "Price": 24,
+    "sku": "SPICES---FARMA-12-UNITS",
+    "category": "HELLENIC",
+    "POS": "FARMA CAJUN SPICE",
+    "Barcode": "012729004207",
+    "PosSKU": "38995"
+  }
+}

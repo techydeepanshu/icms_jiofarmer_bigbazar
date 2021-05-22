@@ -1,0 +1,82 @@
+{
+  "W W Roti": {
+    "Item": "W W Roti",
+    "Description": "Whole Wheat Roti",
+    "Quantity": 1,
+    "Price": 1.5,
+    "sku": "Whole-Wheat-Roti",
+    "POS": "CRISPY PUNJABI ROTI WHOLE WHEAT",
+    "Barcode": "627265008451",
+    "PosSKU": "4377"
+  },
+  "Chappati FP-25": {
+    "Item": "Chappati FP-25",
+    "Description": "Chappati Family Pack- 25",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Chappati-Family-Pack--25",
+    "POS": "NARMADA CHAPPATHI FAMILY PAC",
+    "Barcode": "8904051310458",
+    "PosSKU": "43294"
+  },
+  "Tawa Roti FP-25": {
+    "Item": "Tawa Roti FP-25",
+    "Description": "Tawa Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Tawa-Roti-Family-Pack-25",
+    "POS": "TAWA ROTI",
+    "Barcode": "890105002036",
+    "PosSKU": "19645"
+  },
+  "W W Roti FP-25": {
+    "Item": "W W Roti FP-25",
+    "Description": "Whole Wheat Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Whole-Wheat-Roti-Family-Pack-25",
+    "POS": "WHOLE WHEAT",
+    "Barcode": "4235467942570",
+    "PosSKU": "52767"
+  },
+  "W W Tawa FP-25": {
+    "Item": "W W Tawa FP-25",
+    "Description": "Whole Wheat Tawa Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Whole-Wheat-Tawa-Roti-Family-Pack-25",
+    "POS": "TAWA ROTI",
+    "Barcode": "890105002036",
+    "PosSKU": "19645"
+  },
+  "M G Tawa FP-20": {
+    "Item": "M G Tawa FP-20",
+    "Description": "Multi-Grain Tawa Roti Family Pack-20",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Multi-Grain-Tawa-Roti-Family-Pack-20",
+    "POS": "TAWA ROTI",
+    "Barcode": "890105002036",
+    "PosSKU": "19645"
+  },
+  "Methi Paratha": {
+    "Item": "Methi Paratha",
+    "Description": "Methi Paratha",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Methi-Paratha",
+    "POS": "ASHOK METHI PARATHA 5 PCS",
+    "Barcode": "8901552014496",
+    "PosSKU": "1434"
+  },
+  "Idly Mix": {
+    "Item": "Idly Mix",
+    "Description": "Idly Mix",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Idly-Mix",
+    "POS": "AACHI RAVA IDLY MIX",
+    "Barcode": "8906021127172",
+    "PosSKU": "361"
+  }
+}

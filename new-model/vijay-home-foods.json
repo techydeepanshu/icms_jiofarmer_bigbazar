@@ -1,0 +1,79 @@
+{
+  "VB101": {
+    "Description": "Vijay Idli Batter",
+    "Item": "VB101",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Vijay-Idli-Batter-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "VIJAY DOSA BATTER",
+    "Barcode": "6368248564024",
+    "PosSKU": "21276"
+  },
+  "VB102": {
+    "Description": "Vijay Dosa Batter",
+    "Item": "VB102",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Vijay-Dosa-Batter-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "VIJAY DOSA BATTER",
+    "Barcode": "6368248564024",
+    "PosSKU": "21276"
+  },
+  "VB103": {
+    "Description": "Uthappam Batter",
+    "Item": "VB103",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Uthappam-Batter-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "SUTAS BUTTER",
+    "Barcode": "8690767713118",
+    "PosSKU": "18932"
+  },
+  "VB104": {
+    "Description": "Adai",
+    "Item": "VB104",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Adai-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "AACHI ADAI MIX POWDER",
+    "Barcode": "8906021120012",
+    "PosSKU": "294"
+  },
+  "VRTE201": {
+    "Description": "Sambar",
+    "Item": "VRTE201",
+    "Price": 4,
+    "Quantity": 1,
+    "sku": "Sambar-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "24 MANTRA ORGANIC SAMBAR POWDER",
+    "Barcode": "8904083501701",
+    "PosSKU": "162"
+  },
+  "VP301": {
+    "Description": "RK Idli Chilli Powder",
+    "Item": "VP301",
+    "Price": 1.75,
+    "Quantity": 1,
+    "sku": "RK-Idli-Chilli-Powder-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "777 IDLY CHILLI POWDER",
+    "Barcode": "897231000523",
+    "PosSKU": "224"
+  },
+  "VP302": {
+    "Description": "RK Chutney Powder",
+    "Item": "VP302",
+    "Price": 1.75,
+    "Quantity": 1,
+    "sku": "RK-Chutney-Powder-",
+    "category": "VIJAYHOMEFOODS",
+    "POS": "SHINE PRAWNS CHUTNEY POWDER",
+    "Barcode": "8901484011150",
+    "PosSKU": "18073"
+  }
+}

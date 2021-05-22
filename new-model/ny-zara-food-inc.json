@@ -1,0 +1,22 @@
+{
+  "SCA20": {
+    "Item": "SCA20",
+    "Description": "SWARNA CHAKKI ATTA 20LB",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "SWARNA-CHAKKI-ATTA-20LB",
+    "POS": "SWARNA CHAKKI ATTA",
+    "Barcode": "873106004551",
+    "PosSKU": "19339"
+  },
+  "SDA20": {
+    "Item": "SDA20",
+    "Description": "SWARNA DURUM ATTA 20LB",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "SWARNA-DURUM-ATTA-20LB",
+    "POS": "SWARNA DURUM ATTA",
+    "Barcode": "873106006203",
+    "PosSKU": "19340"
+  }
+}

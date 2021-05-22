@@ -1,0 +1,162 @@
+{
+  "BANANA STEM": {
+    "Item": "BANANA STEM",
+    "Description": "BANANA STEM",
+    "Quantity": "1",
+    "Price": "0.53333",
+    "sku": "BANANA-STEM",
+    "POS": "BANANA STEM",
+    "Barcode": "5529",
+    "PosSKU": "1824"
+  },
+  "BREAD FRUIT": {
+    "Item": "BREAD FRUIT",
+    "Description": "BREAD FRUIT",
+    "Quantity": "1",
+    "Price": "1.00",
+    "sku": "BREAD-FRUIT",
+    "POS": "BREAD FRUIT",
+    "Barcode": "4777",
+    "PosSKU": "3081"
+  },
+  "CHAYOTE": {
+    "Item": "CHAYOTE",
+    "Description": "CHAYOTE",
+    "Quantity": "1",
+    "Price": "0.60",
+    "sku": "CHAYOTE",
+    "POS": "YO CRUNCH",
+    "Barcode": "046675013129",
+    "PosSKU": "21688"
+  },
+  "CHINESE OKRA (TURIA) (IMPORT)": {
+    "Item": "CHINESE OKRA (TURIA) (IMPORT)",
+    "Description": "CHINESE OKRA (TURIA) (IMPORT)",
+    "Quantity": "1",
+    "Price": "1.0333",
+    "sku": "CHINESE-OKRA-(TURIA)-(IMPORT)",
+    "POS": "CHINESE POTATO",
+    "Barcode": "8904051310786",
+    "PosSKU": "32965"
+  },
+  "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)": {
+    "Item": "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)",
+    "Description": "DESI OKRA (INDIAN) (HOND) (12 - 14 LB) - (S)",
+    "Quantity": "12",
+    "Price": "26.00",
+    "sku": "DESI-OKRA-(INDIAN)-(HOND)-(12---14-LB)---(S)",
+    "POS": "TOORDAL INDIA2LB",
+    "Barcode": "200254",
+    "PosSKU": "51226"
+  },
+  "GANGURA LEAVES (FL)": {
+    "Item": "GANGURA LEAVES (FL)",
+    "Description": "GANGURA LEAVES (FL)",
+    "Quantity": "1",
+    "Price": "2.10",
+    "sku": "GANGURA-LEAVES-(FL)",
+    "POS": "GONGURA LEAVES",
+    "Barcode": "3696",
+    "PosSKU": "7374"
+  },
+  "GREEN MANGO (IMPORT)": {
+    "Item": "GREEN MANGO (IMPORT)",
+    "Description": "GREEN MANGO (IMPORT)",
+    "Quantity": "1",
+    "Price": "2.82",
+    "sku": "GREEN-MANGO-(IMPORT)",
+    "POS": "S KPOOR MANGO GREEN CHILLI",
+    "Barcode": "8904117600387",
+    "PosSKU": "47690"
+  },
+  "GREEN VATANA": {
+    "Item": "GREEN VATANA",
+    "Description": "GREEN VATANA",
+    "Quantity": "1",
+    "Price": "1.45",
+    "sku": "GREEN-VATANA",
+    "POS": "GREEN PEAS",
+    "Barcode": "011433131650",
+    "PosSKU": "5004"
+  },
+  "GUWAR BEANS (DOM.": {
+    "Item": "GUWAR BEANS (DOM.",
+    "Description": "GUWAR BEANS (DOM.",
+    "Quantity": "1",
+    "Price": "1.40",
+    "sku": "GUWAR-BEANS-(DOM.",
+    "POS": "DOG AN",
+    "Barcode": "8699432209567",
+    "PosSKU": "62712"
+  },
+  "LONG SQUASH (DUDHI) (IMPORT)": {
+    "Item": "LONG SQUASH (DUDHI) (IMPORT)",
+    "Description": "LONG SQUASH (DUDHI) (IMPORT)",
+    "Quantity": "1",
+    "Price": "0.575",
+    "sku": "LONG-SQUASH-(DUDHI)-(IMPORT)",
+    "POS": "MAPRO ORANGE SQUASH",
+    "Barcode": "8901044570554",
+    "PosSKU": "41785"
+  },
+  "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)": {
+    "Item": "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)",
+    "Description": "OKRA (AMERICAN) (HOND) (12 - 14 LB) - (S)",
+    "Quantity": "12",
+    "Price": "19.00",
+    "sku": "OKRA-(AMERICAN)-(HOND)-(12---14-LB)---(S)",
+    "POS": "CAN OPENER",
+    "Barcode": "10029",
+    "PosSKU": "3464"
+  },
+  "PARVAL (IMPORT)": {
+    "Item": "PARVAL (IMPORT)",
+    "Description": "PARVAL (IMPORT)",
+    "Quantity": "1",
+    "Price": "1.32",
+    "sku": "PARVAL-(IMPORT)",
+    "POS": "GUR PARA",
+    "Barcode": "609224600814",
+    "PosSKU": "19718"
+  },
+  "THAI CHILLI (GREEN)": {
+    "Item": "THAI CHILLI (GREEN)",
+    "Description": "THAI CHILLI (GREEN)",
+    "Quantity": "1",
+    "Price": "0.96667",
+    "sku": "THAI-CHILLI-(GREEN)",
+    "POS": "VADILAL HARI MIRCH GREEN CHILLI",
+    "Barcode": "8901777033661",
+    "PosSKU": "52041"
+  },
+  "TINDORA": {
+    "Item": "TINDORA",
+    "Description": "TINDORA",
+    "Quantity": "1",
+    "Price": "1.36667",
+    "sku": "TINDORA",
+    "POS": "DAILY DELIGHT TINDORA",
+    "Barcode": "664648720364",
+    "PosSKU": "4642"
+  },
+  "TURMERIC (YELLOW) (BIG)": {
+    "Item": "TURMERIC (YELLOW) (BIG)",
+    "Description": "TURMERIC (YELLOW) (BIG)",
+    "Quantity": "1",
+    "Price": "3.76667",
+    "sku": "TURMERIC-(YELLOW)-(BIG)",
+    "POS": "YELLOW TURMERIC",
+    "Barcode": "2082",
+    "PosSKU": "21683"
+  },
+  "WINTER MELON": {
+    "Item": "WINTER MELON",
+    "Description": "WINTER MELON",
+    "Quantity": "1",
+    "Price": "16.00",
+    "sku": "WINTER-MELON",
+    "POS": "BABY WATER MELON",
+    "Barcode": "1067",
+    "PosSKU": "29625"
+  }
+}

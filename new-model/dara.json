@@ -1,0 +1,392 @@
+{
+  "1237": {
+    "Item": "1237",
+    "Description": "KNORR MERCIMF_K CORBA / TRADITIONAL TURKISH SOUP WITH RED LENTIL 12x76 GR",
+    "Quantity": 12,
+    "Price": 8.4,
+    "sku": "KNORR-MERCIMF_K-CORBA-/-TRADITIONAL-TURKISH-SOUP-WITH-RED-LENTIL-12x76-GR-",
+    "POS": "TURKY PASTRAMI",
+    "Barcode": "791241594549",
+    "PosSKU": "51572"
+  },
+  "1325": {
+    "Item": "1325",
+    "Description": "DR OETKER CACAO / KAKAO 24X100 GR",
+    "Quantity": 24,
+    "Price": 38.4,
+    "sku": "DR-OETKER-CACAO-/-KAKAO-24X100-GR-",
+    "POS": "DR OETKER KAKAO",
+    "Barcode": "8690629431426",
+    "PosSKU": "5895"
+  },
+  "1332": {
+    "Item": "1332",
+    "Description": "DR OETKER WIHPPED CREM PLAIN / KREM SANTI SADE 12X150 GR",
+    "Quantity": 12,
+    "Price": 15.9,
+    "sku": "DR-OETKER-WIHPPED-CREM-PLAIN-/-KREM-SANTI-SADE-12X150-GR-",
+    "POS": "DR OETKER KREM SANTI",
+    "Barcode": "8690629229634",
+    "PosSKU": "5901"
+  },
+  "1334": {
+    "Item": "1334",
+    "Description": "DR OETKER WHEAT STARCH / BUGDAY NISASTASI 12X150 GR",
+    "Quantity": 12,
+    "Price": 12,
+    "sku": "DR-OETKER-WHEAT-STARCH-/-BUGDAY-NISASTASI-12X150-GR-",
+    "POS": "DR OETKER BUGDAY NISASTASI",
+    "Barcode": "8690629440572",
+    "PosSKU": "34858"
+  },
+  "1532": {
+    "Item": "1532",
+    "Description": "KAROUN LABNE 12/1",
+    "Quantity": 12,
+    "Price": 27,
+    "sku": "KAROUN-LABNE-12/1-",
+    "POS": "KAROUN MEDITERANEAN LITE LABNE",
+    "Barcode": "796252222153",
+    "PosSKU": "9934"
+  },
+  "1535": {
+    "Item": "1535",
+    "Description": "KAROUN YOGURT DRINK 24/1 PT",
+    "Quantity": 24,
+    "Price": 27,
+    "sku": "KAROUN-YOGURT-DRINK-24/1-PT-",
+    "POS": "KAROUN PLAIN YOGURT",
+    "Barcode": "796252100017",
+    "PosSKU": "39205"
+  },
+  "1717": {
+    "Item": "1717",
+    "Description": "DR OETKR RICE FLOUR-PIRINC UNU 12X175GR",
+    "Quantity": 12,
+    "Price": 12,
+    "sku": "DR-OETKR-RICE-FLOUR-PIRINC-UNU-12X175GR-",
+    "POS": "5 ROSES FLOUR",
+    "Barcode": "25638",
+    "PosSKU": "28869"
+  },
+  "1727": {
+    "Item": "1727",
+    "Description": "USDA ORGANIC POMEGRANATE MOLASSES 12X12.35 OZ",
+    "Quantity": 12,
+    "Price": 3.08,
+    "sku": "USDA-ORGANIC-POMEGRANATE-MOLASSES-12X12.35-OZ-",
+    "POS": "ORGANIC POMEGRANATE MOLASSES",
+    "Barcode": "4760081503628",
+    "PosSKU": "14813"
+  },
+  "1745": {
+    "Item": "1745",
+    "Description": "TAT MIXED PICKLES / KARISIK TURSU 12X720 ML",
+    "Quantity": 12,
+    "Price": 17.5,
+    "sku": "TAT-MIXED-PICKLES-/-KARISIK-TURSU-12X720-ML-",
+    "POS": "TAT MIXED PICKLES",
+    "Barcode": "8690635190218",
+    "PosSKU": "58630"
+  },
+  "1749": {
+    "Item": "1749",
+    "Description": "SUTAS LABANEH I LABNE12X700 GR ( 350490)",
+    "Quantity": 12,
+    "Price": 48,
+    "sku": "SUTAS-LABANEH-I-LABNE12X700-GR-(-350490)",
+    "POS": "STAR ANIS",
+    "Barcode": "963210",
+    "PosSKU": "49238"
+  },
+  "1757": {
+    "Item": "1757",
+    "Description": "SUTAS MIHALIC CHEESE 11X350 GR (317191)",
+    "Quantity": 11,
+    "Price": 54,
+    "sku": "SUTAS-MIHALIC-CHEESE-11X350-GR-(317191)-",
+    "POS": "TEKSUT MIHALIC CHEESE",
+    "Barcode": "8690158020320",
+    "PosSKU": "50788"
+  },
+  "2006": {
+    "Item": "2006",
+    "Description": "SUTAS STRAINED WHITE CHEESE / SUZME PEYNIR 12X500 GR (324592)",
+    "Quantity": 12,
+    "Price": 44,
+    "sku": "SUTAS-STRAINED-WHITE-CHEESE-/-SUZME-PEYNIR-12X500-GR-(324592)-",
+    "POS": "WHITE PLUM",
+    "Barcode": "7091",
+    "PosSKU": "21520"
+  },
+  "2011": {
+    "Item": "2011",
+    "Description": "SUTAS BREAKFAST CREAM / KAYMAK 27X200 ML (521190)",
+    "Quantity": 27,
+    "Price": 39.42,
+    "sku": "SUTAS-BREAKFAST-CREAM-/-KAYMAK-27X200-ML-(521190)-",
+    "POS": "BREAKFAST CREAM/KAYMAK",
+    "Barcode": "8690767673443",
+    "PosSKU": "18928"
+  },
+  "2143": {
+    "Item": "2143",
+    "Description": "TAT VILLAGE TOMATE PASTE SALTED / KOY DOMATES SALCASI 6X1700 GR",
+    "Quantity": 6,
+    "Price": 42,
+    "sku": "TAT-VILLAGE-TOMATE-PASTE-SALTED-/-KOY-DOMATES-SALCASI-6X1700-GR-",
+    "POS": "TAT TOMATO PASTE",
+    "Barcode": "8690635030750",
+    "PosSKU": "19624"
+  },
+  "2210": {
+    "Item": "2210",
+    "Description": "KNORR TRADITIONAL TOMATO SOUP WITH WHEAT / YORESEL DOVME BUGDAY DOMATES 12X95 GR",
+    "Quantity": 12,
+    "Price": 14.5,
+    "sku": "KNORR-TRADITIONAL-TOMATO-SOUP-WITH-WHEAT-/-YORESEL-DOVME-BUGDAY-DOMATES-12X95-GR-",
+    "POS": "KNORR TOMATO SOUP",
+    "Barcode": "8901030421778",
+    "PosSKU": "39985"
+  },
+  "2330": {
+    "Item": "2330",
+    "Description": "TAT CABBAGE PICKLES / LAHANA TURSUSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 21,
+    "sku": "TAT-CABBAGE-PICKLES-/-LAHANA-TURSUSU-12X720-GR--",
+    "POS": "777 MAHANI PICKLE",
+    "Barcode": "897231000646",
+    "PosSKU": "26989"
+  },
+  "2394": {
+    "Item": "2394",
+    "Description": "SUTAS TRIANGLE CHEESE / UCGEN PEYNIR 16X12,5 GR (345090)",
+    "Quantity": 16,
+    "Price": 36,
+    "sku": "SUTAS-TRIANGLE-CHEESE-/-UCGEN-PEYNIR-16X12,5-GR-(345090)-",
+    "POS": "SUTAS KREM PEYNIR",
+    "Barcode": "8690767711169",
+    "PosSKU": "18940"
+  },
+  "2408": {
+    "Item": "2408",
+    "Description": "KAROUN BREAKFAST CREAM/QAYMAK 12X8 OZ",
+    "Quantity": 12,
+    "Price": 38,
+    "sku": "KAROUN-BREAKFAST-CREAM/QAYMAK-12X8-OZ-",
+    "POS": "KAROUN BREAKFAST CREAM  2408",
+    "Barcode": "796252222191",
+    "PosSKU": "9929"
+  },
+  "2530": {
+    "Item": "2530",
+    "Description": "TORKU SESAME TAHINI 12X600 G /7",
+    "Quantity": 12,
+    "Price": 48.9,
+    "sku": "TORKU-SESAME-TAHINI-12X600-G-/7-",
+    "POS": "TORKU TAHIN SESAME",
+    "Barcode": "8690120035116",
+    "PosSKU": "20324"
+  },
+  "2534": {
+    "Item": "2534",
+    "Description": "TORKU HALVA PLAIN / SADE HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 19.76,
+    "sku": "TORKU-HALVA-PLAIN-/-SADE-HELVA-12X350-GR-",
+    "POS": "HALVA PLAIN",
+    "Barcode": "075013114082",
+    "PosSKU": "37402"
+  },
+  "2535": {
+    "Item": "2535",
+    "Description": "TORKU HALVA W COCOA / KAKAOLU HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 19.76,
+    "sku": "TORKU-HALVA-W-COCOA-/-KAKAOLU-HELVA-12X350-GR-",
+    "POS": "HALVA WIT COCOA",
+    "Barcode": "075013114099",
+    "PosSKU": "37404"
+  },
+  "2536": {
+    "Item": "2536",
+    "Description": "TORKU HALVA W PISTACHIO / ANTEP FISTIKLI HELVA 12X350 GR",
+    "Quantity": 12,
+    "Price": 34.9,
+    "sku": "TORKU-HALVA-W-PISTACHIO-/-ANTEP-FISTIKLI-HELVA-12X350-GR-",
+    "POS": "TORKU HELVA PISTACHIO",
+    "Barcode": "8690120050218",
+    "PosSKU": "51264"
+  },
+  "2537": {
+    "Item": "2537",
+    "Description": "TORKU GRAPE MOLASSES/UZUM PEKMEZI 12X750 GR",
+    "Quantity": 12,
+    "Price": 47.9,
+    "sku": "TORKU-GRAPE-MOLASSES/UZUM-PEKMEZI-12X750-GR-",
+    "POS": "GESAS GRAPE MOLASSES",
+    "Barcode": "8690661081153",
+    "PosSKU": "7078"
+  },
+  "2721": {
+    "Item": "2721",
+    "Description": "SEPETCIOGLU TURKISH COTTON CANDY / PISMANIYE 10X350 G",
+    "Quantity": 10,
+    "Price": 37.54,
+    "sku": "SEPETCIOGLU-TURKISH-COTTON-CANDY-/-PISMANIYE-10X350-G-",
+    "POS": "COTTON CANDY ",
+    "Barcode": "8436552401897",
+    "PosSKU": "65546"
+  },
+  "2723": {
+    "Item": "2723",
+    "Description": "SEPETCIOGLU CEZERYE 12X350 GR",
+    "Quantity": 12,
+    "Price": 52.19,
+    "sku": "SEPETCIOGLU-CEZERYE-12X350-GR",
+    "POS": "LUX 100G",
+    "Barcode": "8901030155642",
+    "PosSKU": "11778"
+  },
+  "2831": {
+    "Item": "2831",
+    "Description": "ARZ PLAIN YOGURT- YOGURT SADE 6/2 LB",
+    "Quantity": 6,
+    "Price": 19.25,
+    "sku": "ARZ-PLAIN-YOGURT--YOGURT-SADE-6/2-LB-",
+    "POS": "LA YOGURT SABOR  LATINO",
+    "Barcode": "053600000260",
+    "PosSKU": "10812"
+  },
+  "2855": {
+    "Item": "2855",
+    "Description": "BAGDAT DESSICATED COCONUT GRATED/HINDISTAN CEVIZI 10X160 GR",
+    "Quantity": 10,
+    "Price": 23,
+    "sku": "BAGDAT-DESSICATED-COCONUT-GRATED/HINDISTAN-CEVIZI-10X160-GR-",
+    "POS": "DRY COCONUT",
+    "Barcode": "1294",
+    "PosSKU": "5963"
+  },
+  "2890": {
+    "Item": "2890",
+    "Description": "BAGDAT RED PEPPER FLAKES/PUL BIBER PET 6X500 GR",
+    "Quantity": 6,
+    "Price": 22.8,
+    "sku": "BAGDAT-RED-PEPPER-FLAKES/PUL-BIBER-PET-6X500-GR--",
+    "POS": "DR PEPPER",
+    "Barcode": "782040",
+    "PosSKU": "5924"
+  },
+  "2894": {
+    "Item": "2894",
+    "Description": "BAGDAT THYME RUBBED/KEKIK PET 6X145 GR",
+    "Quantity": 6,
+    "Price": 13.6,
+    "sku": "BAGDAT-THYME-RUBBED/KEKIK-PET-6X145-GR-",
+    "POS": "AGAR AGER",
+    "Barcode": "1422",
+    "PosSKU": "29131"
+  },
+  "2895": {
+    "Item": "2895",
+    "Description": "BAGDAT DRIED MINT/NANE PET 6X180 GR",
+    "Quantity": 6,
+    "Price": 14,
+    "sku": "BAGDAT-DRIED-MINT/NANE-PET-6X180-GR",
+    "POS": "DRY DATES",
+    "Barcode": "0404500",
+    "PosSKU": "5966"
+  },
+  "2898": {
+    "Item": "2898",
+    "Description": "BAGDAT CHILLIES GROUND/ACI TOZ BIBER PET 6X550 GR",
+    "Quantity": 6,
+    "Price": 30.6,
+    "sku": "BAGDAT-CHILLIES-GROUND/ACI-TOZ-BIBER-PET-6X550-GR-",
+    "POS": "ACI BIBER CHILI",
+    "Barcode": "8690560024022",
+    "PosSKU": "64818"
+  },
+  "2951": {
+    "Item": "2951",
+    "Description": "NIMET CRACKED GREEN OLIVES / KIRMA YESIL ZEYTIN 6X1700 CC",
+    "Quantity": 6,
+    "Price": 29,
+    "sku": "NIMET-CRACKED-GREEN-OLIVES-/-KIRMA-YESIL-ZEYTIN-6X1700-CC-",
+    "POS": "GREEN OLIVES CRACKED",
+    "Barcode": "821522000596",
+    "PosSKU": "36916"
+  },
+  "2994": {
+    "Item": "2994",
+    "Description": "TORKU CARAMALISED CARROT PASTE W/PISTACHIOS / FINDIKLI CEZERYE 12X390 GR",
+    "Quantity": 12,
+    "Price": 49.14,
+    "sku": "TORKU-CARAMALISED-CARROT-PASTE-W/PISTACHIOS-/-FINDIKLI-CEZERYE-12X390-GR-",
+    "POS": "BABY CARROT",
+    "Barcode": "3098",
+    "PosSKU": "1622"
+  },
+  "3032": {
+    "Item": "3032",
+    "Description": "TAFE COOKIES W.DATES AND ALMOND/BADEMLI HURMALI KURABIYE 12X300 GR",
+    "Quantity": 12,
+    "Price": 60,
+    "sku": "TAFE-COOKIES-W.DATES-AND-ALMOND/BADEMLI-HURMALI-KURABIYE-12X300-GR--",
+    "POS": "ALMOND CANDY",
+    "Barcode": "966930",
+    "PosSKU": "27210"
+  },
+  "3058": {
+    "Item": "3058",
+    "Description": "NIMET FULL-FAT TULUM CHEESE/TAM YAGLI TULUM PEYNIRT 6X500 G",
+    "Quantity": 6,
+    "Price": 36,
+    "sku": "NIMET-FULL-FAT-TULUM-CHEESE/TAM-YAGLI-TULUM-PEYNIRT-6X500-G-",
+    "POS": "NIMET FULL FAT TULUM CHEESE",
+    "Barcode": "656793324375",
+    "PosSKU": "66554"
+  },
+  "3071": {
+    "Item": "3071",
+    "Description": "TAT PICKLED HOT PEPPERS/ACI DIBER TURSLJSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 15.48,
+    "sku": "TAT-PICKLED-HOT-PEPPERS/ACI-DIBER-TURSLJSU-12X720-GR-",
+    "POS": "BERRAK HOT PEPPER PICKLES",
+    "Barcode": "8690531031721",
+    "PosSKU": "2205"
+  },
+  "3073": {
+    "Item": "3073",
+    "Description": "TAT HOT PICKLED BABY PEPPERS/BIBERIYE TURSU 12X720 CC",
+    "Quantity": 12,
+    "Price": 30.96,
+    "sku": "TAT-HOT-PICKLED-BABY-PEPPERS/BIBERIYE-TURSU-12X720-CC-",
+    "POS": "TUKAS HOT PEPPER PICKLE   3208004",
+    "Barcode": "8690508600424",
+    "PosSKU": "20494"
+  },
+  "3074": {
+    "Item": "3074",
+    "Description": "TAT PICKLED CORNICHONS-GEWURZGURKEN JAR/ ALMAN TIPI KORNISON TURSU 12X720 GR",
+    "Quantity": 12,
+    "Price": 19.44,
+    "sku": "TAT-PICKLED-CORNICHONS-GEWURZGURKEN-JAR/-ALMAN-TIPI-KORNISON-TURSU-12X720-GR",
+    "POS": "TAT CORNICHON PICKLES 2141",
+    "Barcode": "8690635190010",
+    "PosSKU": "19602"
+  },
+  "3091": {
+    "Item": "3091",
+    "Description": "SUTAS CREAM CHEESE GLASS JAR BLUE CAP 8X300 G",
+    "Quantity": 8,
+    "Price": 25,
+    "sku": "SUTAS-CREAM-CHEESE-GLASS-JAR-BLUE-CAP-8X300-G-",
+    "POS": "GLASS JAR 1.8L",
+    "Barcode": "6953440504499",
+    "PosSKU": "64956"
+  }
+}

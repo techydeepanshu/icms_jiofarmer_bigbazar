@@ -1,0 +1,292 @@
+{
+  "S-Boondi 341Gx15": {
+    "Item": "S-Boondi 341Gx15",
+    "Description": "S-Boondi 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Boondi-341Gx15-",
+    "POS": "ANAND MASALA BOONDI",
+    "Barcode": "878776002616",
+    "PosSKU": "1159"
+  },
+  "S-Chakri 250Gx15": {
+    "Item": "S-Chakri 250Gx15",
+    "Description": "S-Chakri 250Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Chakri-250Gx15-",
+    "POS": "SGB CHAKRI",
+    "Barcode": "8906074201225",
+    "PosSKU": "48412"
+  },
+  "S-Channa 341Gx15": {
+    "Item": "S-Channa 341Gx15",
+    "Description": "S-Channa 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Channa-341Gx15-",
+    "POS": "BANSI ROASTED MASALA CHANNA  G49",
+    "Barcode": "011433152594",
+    "PosSKU": "1927"
+  },
+  "S-Channadal 341Gx15": {
+    "Item": "S-Channadal 341Gx15",
+    "Description": "S-Channadal 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Channadal-341Gx15-",
+    "POS": "BANSI ROASTED MASALA CHANNA  G49",
+    "Barcode": "011433152594",
+    "PosSKU": "1927"
+  },
+  "S-Masala Boondi 300Gx15": {
+    "Item": "S-Masala Boondi 300Gx15",
+    "Description": "S-Masala Boondi 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Masala-Boondi-300Gx15-",
+    "POS": "ANAND MASALA BOONDI",
+    "Barcode": "878776002616",
+    "PosSKU": "1159"
+  },
+  "S-Exhot Punjabi Mix 300Gx15": {
+    "Item": "S-Exhot Punjabi Mix 300Gx15",
+    "Description": "S-Exhot Punjabi Mix 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Exhot-Punjabi-Mix-300Gx15-",
+    "POS": "PUNJABI MIX",
+    "Barcode": "808550100016",
+    "PosSKU": "2802"
+  },
+  "S-Sev Fine 341Gx15": {
+    "Item": "S-Sev Fine 341Gx15",
+    "Description": "S-Sev Fine 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Sev-Fine-341Gx15-",
+    "POS": "DEAD SEA SALT FINE",
+    "Barcode": "1644601025",
+    "PosSKU": "33948"
+  },
+  "S-Sev Hot 300Gx15": {
+    "Item": "S-Sev Hot 300Gx15",
+    "Description": "S-Sev Hot 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Sev-Hot-300Gx15-",
+    "POS": "CHINGS SECRET HOT N SOUR SOUP",
+    "Barcode": "8901595961412",
+    "PosSKU": "3967"
+  },
+  "S-Sev Regular 300Gx15": {
+    "Item": "S-Sev Regular 300Gx15",
+    "Description": "S-Sev Regular 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Sev-Regular-300Gx15-",
+    "POS": "JOY REGULAR SEV",
+    "Barcode": "680617709499",
+    "PosSKU": "38862"
+  },
+  "S-Watana 300Gx15": {
+    "Item": "S-Watana 300Gx15",
+    "Description": "S-Watana 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Watana-300Gx15-",
+    "POS": "WATAN DRIED APRICOT",
+    "Barcode": "088247504666",
+    "PosSKU": "52638"
+  },
+  "S-Alu Patta 200Gx15": {
+    "Item": "S-Alu Patta 200Gx15",
+    "Description": "S-Alu Patta 200Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Alu-Patta-200Gx15-",
+    "POS": "SURATI ALU PATTA",
+    "Barcode": "068656001031",
+    "PosSKU": "18789"
+  },
+  "S-S-Khatta Meetha 300Gx15": {
+    "Item": "S-S-Khatta Meetha 300Gx15",
+    "Description": "S-S-Khatta Meetha 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-S-Khatta-Meetha-300Gx15",
+    "POS": "KHATTA MEETHA",
+    "Barcode": "8904063230140",
+    "PosSKU": "8089"
+  },
+  "S-Mini Bhakarwadi 300Gx15": {
+    "Item": "S-Mini Bhakarwadi 300Gx15",
+    "Description": "S-Mini Bhakarwadi 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Mini-Bhakarwadi-300Gx15",
+    "POS": "SURATI MINI BHAKARWADI",
+    "Barcode": "068656002175",
+    "PosSKU": "66457"
+  },
+  "S-Moongdal 341Gx15": {
+    "Item": "S-Moongdal 341Gx15",
+    "Description": "S-Moongdal 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Moongdal-341Gx15",
+    "POS": "SURATI MOONGDAL KACHORI",
+    "Barcode": "068656009815",
+    "PosSKU": "18852"
+  },
+  "S-Peanut Bhujiya 300Gx15": {
+    "Item": "S-Peanut Bhujiya 300Gx15",
+    "Description": "S-Peanut Bhujiya 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Peanut-Bhujiya-300Gx15",
+    "POS": "SURATI PEANUT BHUJIYA",
+    "Barcode": "068656001178",
+    "PosSKU": "18863"
+  },
+  "S-Plantain Chips 341Gx15": {
+    "Item": "S-Plantain Chips 341Gx15",
+    "Description": "S-Plantain Chips 341Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Plantain-Chips-341Gx15",
+    "POS": "TROPIC MAX PLANTAIN CHIPS SWEET",
+    "Barcode": "7862112310025",
+    "PosSKU": "20428"
+  },
+  "S-Sabzi Pakoda 300Gx15": {
+    "Item": "S-Sabzi Pakoda 300Gx15",
+    "Description": "S-Sabzi Pakoda 300Gx15",
+    "Quantity": "15",
+    "Price": "30.00",
+    "sku": "S-Sabzi-Pakoda-300Gx15",
+    "POS": "HALDIRAMS SABJI PAKODA",
+    "Barcode": "8904063206862",
+    "PosSKU": "8206"
+  },
+  "Sh-Bhavnagri Gathiya 600Gx10": {
+    "Item": "Sh-Bhavnagri Gathiya 600Gx10",
+    "Description": "Sh-Bhavnagri Gathiya 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00",
+    "sku": "Sh-Bhavnagri-Gathiya-600Gx10",
+    "POS": "BHAVNAGRI GATHIA",
+    "Barcode": "808550100160",
+    "PosSKU": "2775"
+  },
+  "Sh-Bhel Mix Spicy 600Gx10": {
+    "Item": "Sh-Bhel Mix Spicy 600Gx10",
+    "Description": "Sh-Bhel Mix Spicy 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00",
+    "sku": "Sh-Bhel-Mix-Spicy-600Gx10",
+    "POS": "SWAD BHEL MIX",
+    "Barcode": "051179277397",
+    "PosSKU": "18996"
+  },
+  "Sh-Boondi 600Gx10": {
+    "Item": "Sh-Boondi 600Gx10",
+    "Description": "Sh-Boondi 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00",
+    "sku": "Sh-Boondi-600Gx10",
+    "POS": "SHALINI BOONDI",
+    "Barcode": "068656021794",
+    "PosSKU": "17686"
+  },
+  "Sh-Sev Regular 600Gx10": {
+    "Item": "Sh-Sev Regular 600Gx10",
+    "Description": "Sh-Sev Regular 600Gx10",
+    "Quantity": "10",
+    "Price": "30.00",
+    "sku": "Sh-Sev-Regular-600Gx10",
+    "POS": "SHALINI SEV REGULAR",
+    "Barcode": "068656021954",
+    "PosSKU": "17696"
+  },
+  "S-Masala Bhungra 80Gx15": {
+    "Item": "S-Masala Bhungra 80Gx15",
+    "Description": "S-Masala Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00",
+    "sku": "S-Masala-Bhungra-80Gx15",
+    "POS": "SURATI BHUNGRA MASALA",
+    "Barcode": "068656021275",
+    "PosSKU": "18797"
+  },
+  "S-Spicy Bhungra 80Gx15": {
+    "Item": "S-Spicy Bhungra 80Gx15",
+    "Description": "S-Spicy Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00",
+    "sku": "S-Spicy-Bhungra-80Gx15",
+    "POS": "SURATI BHUNGRA SPICY",
+    "Barcode": "068656021138",
+    "PosSKU": "18799"
+  },
+  "S-Plain Bhungra 80Gx15": {
+    "Item": "S-Plain Bhungra 80Gx15",
+    "Description": "S-Plain Bhungra 80Gx15",
+    "Quantity": "15",
+    "Price": "15.00",
+    "sku": "S-Plain-Bhungra-80Gx15",
+    "POS": "SURATI BHUNGRA PLAIN",
+    "Barcode": "068656021121",
+    "PosSKU": "18798"
+  },
+  "S-Cheddar Jalapeno Tubes 80Gx12": {
+    "Item": "S-Cheddar Jalapeno Tubes 80Gx12",
+    "Description": "S-Cheddar Jalapeno Tubes 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00",
+    "sku": "S-Cheddar-Jalapeno-Tubes-80Gx12",
+    "POS": "SURATI CHEDDAR JALAPENO",
+    "Barcode": "068656002229",
+    "PosSKU": "18811"
+  },
+  "S-Spicy Chilli Crunch Tubes 80Gx12": {
+    "Item": "S-Spicy Chilli Crunch Tubes 80Gx12",
+    "Description": "S-Spicy Chilli Crunch Tubes 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00",
+    "sku": "S-Spicy-Chilli-Crunch-Tubes-80Gx12",
+    "POS": "CHILLI CRUSHED",
+    "Barcode": "965260",
+    "PosSKU": "32951"
+  },
+  "S-Masala Munch Shells 80Gx12": {
+    "Item": "S-Masala Munch Shells 80Gx12",
+    "Description": "S-Masala Munch Shells 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00",
+    "sku": "S-Masala-Munch-Shells-80Gx12",
+    "POS": "MASALA MUNCH",
+    "Barcode": "068656002236",
+    "PosSKU": "18844"
+  },
+  "S-Sriracha Splash Potato Chips 80Gx12": {
+    "Item": "S-Sriracha Splash Potato Chips 80Gx12",
+    "Description": "S-Sriracha Splash Potato Chips 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00",
+    "sku": "S-Sriracha-Splash-Potato-Chips-80Gx12",
+    "POS": "SRIRACHA SPLASH",
+    "Barcode": "068656002243",
+    "PosSKU": "61684"
+  },
+  "S-Thai Sweet Chili Chips 80Gx12": {
+    "Item": "S-Thai Sweet Chili Chips 80Gx12",
+    "Description": "S-Thai Sweet Chili Chips 80Gx12",
+    "Quantity": "12",
+    "Price": "12.00",
+    "sku": "S-Thai-Sweet-Chili-Chips-80Gx12",
+    "POS": "S K SWEET",
+    "Barcode": "7000",
+    "PosSKU": "47648"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "189011": {
+    "Item": "189011",
+    "Description": "Rubicon - 100% Juice Blend - Mango - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Mango---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "PARLE MANGO BITE",
+    "Barcode": "8901719210419",
+    "PosSKU": "45338"
+  },
+  "189012": {
+    "Item": "189012",
+    "Description": "Rubicon - 100% Juice Blend - Guava - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Guava---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "MIRA GUAVA JUICE",
+    "Barcode": "036426300462",
+    "PosSKU": "42756"
+  },
+  "189013": {
+    "Item": "189013",
+    "Description": "Rubicon - 100% Juice Blend - Lychee - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Lychee---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "TIGER JUICE",
+    "Barcode": "817074003017",
+    "PosSKU": "51101"
+  },
+  "189014": {
+    "Item": "189014",
+    "Description": "Rubicon - 100% Juice Blend - Pomegranate - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Pomegranate---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "TIGER JUICE",
+    "Barcode": "817074003017",
+    "PosSKU": "51101"
+  },
+  "189015": {
+    "Item": "189015",
+    "Description": "Rubicon - 100% Juice Blend - Passion - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Passion---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "RUBICON PASSION FRUIT",
+    "Barcode": "064579007037",
+    "PosSKU": "17139"
+  },
+  "189016": {
+    "Item": "189016",
+    "Description": "Rubicon - 100% Juice Blend - Soursop (Guanabana) - Liter / 12PK",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Soursop-(Guanabana)---Liter-/-12PK-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "TIGER JUICE",
+    "Barcode": "817074003017",
+    "PosSKU": "51101"
+  },
+  "189832": {
+    "Item": "189832",
+    "Description": "Rubicon - 100% Juice Blend - Liter / 12PK - Buy 32 Cases Get 8 Free kumar STATE",
+    "Price": 240,
+    "Quantity": 12,
+    "sku": "Rubicon---100%-Juice-Blend---Liter-/-12PK---Buy-32-Cases-Get-8-Free-kumar-STATE-",
+    "category": "PREFERREDBEVERAGE",
+    "POS": "LIFE BUOY CARE",
+    "Barcode": "8901030195136",
+    "PosSKU": "11474"
+  }
+}
