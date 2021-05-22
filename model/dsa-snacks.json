@@ -75,5 +75,53 @@
     "Quantity": 24,
     "Price": 24,
     "sku": "TROPICMAX-PLANTAIN-SALTY-24-CT./-2.5-oz"
+  },
+  "HAPPY GIANT EGG 12 CT. / 1.5 OZ.": {
+    "Item": "HAPPY GIANT EGG 12 CT. / 1.5 OZ.",
+    "Description": "HAPPY GIANT EGG 12 CT. / 1.5 OZ.",
+    "Quantity": 50,
+    "Price": 31.32,
+    "sku": "HAPPY-GIANT-EGG-12-CT.-/-1.5-OZ.",
+    "category": "dsa-snacks"
+  },
+  "LUCKY EGGS 48 CT. / 1 OZ.": {
+    "Item": "LUCKY EGGS 48 CT. / 1 OZ.",
+    "Description": "LUCKY EGGS 48 CT. / 1 OZ.",
+    "Quantity": 50,
+    "Price": 50.4,
+    "sku": "LUCKY-EGGS-48-CT.-/-1-OZ.",
+    "category": "dsa-snacks"
+  },
+  "SWEET 24 CT. / 8 OZ.": {
+    "Item": "SWEET 24 CT. / 8 OZ.",
+    "Description": "SWEET 24 CT. / 8 OZ.",
+    "Quantity": 50,
+    "Price": 55.2,
+    "sku": "SWEET-24-CT.-/-8-OZ.",
+    "category": "dsa-snacks"
+  },
+  "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.": {
+    "Item": "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.",
+    "Description": "DON DIEGO MARSHMALLOWS 12 CT. / 3 OZ.",
+    "Quantity": 50,
+    "Price": 14.4,
+    "sku": "DON-DIEGO-MARSHMALLOWS-12-CT.-/-3-OZ.",
+    "category": "dsa-snacks"
+  },
+  "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.": {
+    "Item": "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.",
+    "Description": "HEALTHY MIXED NUT BAR 24 CT. / 5 OZ.",
+    "Quantity": 50,
+    "Price": 33.6,
+    "sku": "HEALTHY-MIXED-NUT-BAR-24-CT.-/-5-OZ.",
+    "category": "dsa-snacks"
+  },
+  "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.": {
+    "Item": "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.",
+    "Description": "TOSTONES TO-GO LIGHTY SALTY 12 CT. / 4 OZ.",
+    "Quantity": 50,
+    "Price": 22.5,
+    "sku": "TOSTONES-TO-GO-LIGHTY-SALTY-12-CT.-/-4-OZ.",
+    "category": "dsa-snacks"
   }
 }

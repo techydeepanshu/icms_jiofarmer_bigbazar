@@ -1,0 +1,98 @@
+{
+  "1176": {
+    "Item": "1176",
+    "Description": "ORGANIC VALLEY WHOL.",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "ORGANIC-VALLEY-WHOL.-",
+    "category": "ROLLINDAIRY"
+  },
+  "77": {
+    "Item": "77",
+    "Description": "S/F HG 1% ORGANIC/6",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "S/F-HG-1%-ORGANIC/6-",
+    "category": "ROLLINDAIRY"
+  },
+  "78": {
+    "Item": "78",
+    "Description": "S/F HG ORGANIC SKIM",
+    "Price": 24.54,
+    "Quantity": 1,
+    "sku": "S/F-HG-ORGANIC-SKIM-",
+    "category": "ROLLINDAIRY"
+  },
+  "611": {
+    "Item": "611",
+    "Description": "LAC SKM NO CALCIUM",
+    "Price": 29.34,
+    "Quantity": 1,
+    "sku": "LAC-SKM-NO-CALCIUM-",
+    "category": "ROLLINDAIRY"
+  },
+  "613": {
+    "Item": "613",
+    "Description": "LAG 96 02 1 %/6",
+    "Price": 29.34,
+    "Quantity": 1,
+    "sku": "LAG-96-02-1-%/6-",
+    "category": "ROLLINDAIRY"
+  },
+  "1164": {
+    "Item": "1164",
+    "Description": "HORIZON DHA HOMO",
+    "Price": 54.48,
+    "Quantity": 1,
+    "sku": "HORIZON-DHA-HOMO-",
+    "category": "ROLLINDAIRY"
+  },
+  "1165": {
+    "Item": "1165",
+    "Description": "HORIZON HOMO",
+    "Price": 25.8,
+    "Quantity": 1,
+    "sku": "HORIZON-HOMO-",
+    "category": "ROLLINDAIRY"
+  },
+  "242": {
+    "Item": "242",
+    "Description": "BREAKSTONE WHIP SWE",
+    "Price": 57.36,
+    "Quantity": 1,
+    "sku": "BREAKSTONE-WHIP-SWE-",
+    "category": "ROLLINDAIRY"
+  },
+  "204": {
+    "Item": "204",
+    "Description": "TAMPICO FRT PNCH GA",
+    "Price": 7.96,
+    "Quantity": 1,
+    "sku": "TAMPICO-FRT-PNCH-GA-",
+    "category": "ROLLINDAIRY"
+  },
+  "207": {
+    "Item": "207",
+    "Description": "TAMPICO CITRUS GAL/",
+    "Price": 7.96,
+    "Quantity": 1,
+    "sku": "TAMPICO-CITRUS-GAL/-",
+    "category": "ROLLINDAIRY"
+  },
+  "219": {
+    "Item": "219",
+    "Description": "2 LE L.F. PLAIN AXELR",
+    "Price": 30.42,
+    "Quantity": 1,
+    "sku": "2-LE-L.F.-PLAIN-AXELR-",
+    "category": "ROLLINDAIRY"
+  },
+  "578": {
+    "Item": "578",
+    "Description": "LAYOGURT 6/5 LB",
+    "Price": 62.82,
+    "Quantity": 1,
+    "sku": "LAYOGURT-6/5-LB-",
+    "category": "ROLLINDAIRY"
+  }
+}

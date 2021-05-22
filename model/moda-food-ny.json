@@ -1,0 +1,86 @@
+{
+  "Moda chicken doner": {
+    "Item": "Moda chicken doner",
+    "Description": "Moda chicken doner",
+    "Quantity": 1,
+    "Price": 6.45,
+    "sku": "Moda-chicken-doner-"
+  },
+  "Sliced Cooked Beef Doner (Shawarma), 8oz": {
+    "Item": "Sliced Cooked Beef Doner (Shawarma), 8oz",
+    "Description": "Sliced Cooked Beef Doner (Shawarma), 8oz",
+    "Quantity": 1,
+    "Price": 7.25,
+    "sku": "Sliced-Cooked-Beef-Doner-(Shawarma),-8oz-"
+  },
+  "Pista Leaves (Katmer), 2 pcs": {
+    "Item": "Pista Leaves (Katmer), 2 pcs",
+    "Description": "Pista Leaves (Katmer), 2 pcs",
+    "Quantity": 1,
+    "Price": 2.6,
+    "sku": "Pista-Leaves-(Katmer),-2-pcs--"
+  },
+  "Gursoy Hazelnut 500 gr": {
+    "Item": "Gursoy Hazelnut 500 gr",
+    "Description": "Gursoy Hazelnut 500 gr",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "Gursoy-Hazelnut-500-gr-"
+  },
+  "Assorted baklava big size": {
+    "Item": "Assorted baklava big size",
+    "Description": "Assorted baklava big size",
+    "Quantity": 1,
+    "Price": 6.75,
+    "sku": "Assorted-baklava-big-size-"
+  },
+  "Alibaba baklava 4 pcs": {
+    "Item": "Alibaba baklava 4 pcs",
+    "Description": "Alibaba baklava 4 pcs",
+    "Quantity": 1,
+    "Price": 2.2,
+    "sku": "Alibaba-baklava-4-pcs"
+  },
+  "Rumi's Love pistachio Halva": {
+    "Item": "Rumi's Love pistachio Halva",
+    "Description": "Rumi's Love pistachio Halva",
+    "Quantity": 1,
+    "Price": 3.95,
+    "sku": "Rumi's-Love-pistachio-Halva-"
+  },
+  "Rumis love plain halva": {
+    "Item": "Rumis love plain halva",
+    "Description": "Rumis love plain halva",
+    "Quantity": 1,
+    "Price": 3,
+    "sku": "Rumis-love-plain-halva-"
+  },
+  "Baklava with Double Pistachio, 9pcs": {
+    "Item": "Baklava with Double Pistachio, 9pcs",
+    "Description": "Baklava with Double Pistachio, 9pcs",
+    "Quantity": 1,
+    "Price": 8.25,
+    "sku": "Baklava-with-Double-Pistachio,-9pcs-"
+  },
+  "Double roasted Antep pistachio 400 gr": {
+    "Item": "Double roasted Antep pistachio 400 gr",
+    "Description": "Double roasted Antep pistachio 400 gr",
+    "Quantity": 1,
+    "Price": 8.1,
+    "sku": "Double-roasted-Antep-pistachio-400-gr-"
+  },
+  "Pistachio by Izzet 200 gr": {
+    "Item": "Pistachio by Izzet 200 gr",
+    "Description": "Pistachio by Izzet 200 gr",
+    "Quantity": 1,
+    "Price": 4.99,
+    "sku": "Pistachio-by-Izzet-200-gr-"
+  },
+  "Papagan sunflower seed": {
+    "Item": "Papagan sunflower seed",
+    "Description": "Papagan sunflower seed",
+    "Quantity": 1,
+    "Price": 1.95,
+    "sku": "Papagan-sunflower-seed-"
+  }
+}

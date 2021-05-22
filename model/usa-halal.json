@@ -1,0 +1,42 @@
+{
+  "CHTHIGHBLESS": {
+    "Item": "CHTHIGHBLESS",
+    "Description": "CHICKEN THIGHS BONELESS HALAL",
+    "Price": 32,
+    "Quantity": 1,
+    "sku": "CHICKEN-THIGHS-BONELESS-HALAL-",
+    "category": "USAHalal"
+  },
+  "CHCULTBLESS": {
+    "Item": "CHCULTBLESS",
+    "Description": "CHICKEN CUTLETS BONELESS HALAL",
+    "Price": 48,
+    "Quantity": 1,
+    "sku": "CHICKEN-CUTLETS-BONELESS-HALAL-",
+    "category": "USAHalal"
+  },
+  "CHLEG(ASSALAAMHA LAL)": {
+    "Item": "CHLEG(ASSALAAMHA LAL)",
+    "Description": "CHICKEN LEG(AS-SALAAM HALAL)",
+    "Price": 30,
+    "Quantity": 1,
+    "sku": "CHICKEN-LEG(AS-SALAAM-HALAL)-",
+    "category": "USAHalal"
+  },
+  "EYEROUNDBEEFHALAL": {
+    "Item": "EYEROUNDBEEFHALAL",
+    "Description": "BEEF EYE ROUND HALAL",
+    "Price": 3.49,
+    "Quantity": 1,
+    "sku": "BEEF-EYE-ROUND-HALAL-",
+    "category": "USAHalal"
+  },
+  "VEALSHLDER": {
+    "Item": "VEALSHLDER",
+    "Description": "VEAL SHOULDER",
+    "Price": 3.69,
+    "Quantity": 1,
+    "sku": "VEAL-SHOULDER-",
+    "category": "USAHalal"
+  }
+}

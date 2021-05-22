@@ -1,0 +1,296 @@
+{
+  "KC10120": {
+    "Item": "KC10120",
+    "Description": "Casserole Non-Stick (Glass lid) 20 CM",
+    "Quantity": 1,
+    "Price": 11.75,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-20-CM--"
+  },
+  "KC10122": {
+    "Item": "KC10122",
+    "Description": "Casserole Non-Stick (Glass lid) 22 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-22-CM"
+  },
+  "KC10124": {
+    "Item": "KC10124",
+    "Description": "Casserole Non-Stick (Glass lid) 24 CM",
+    "Quantity": 1,
+    "Price": 14.85,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-24-CM-"
+  },
+  "KCI0126": {
+    "Item": "KCI0126",
+    "Description": "Casserole Non-Stick (Glass lid) 26 CM",
+    "Quantity": 1,
+    "Price": 16.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-26-CM-"
+  },
+  "KC10130": {
+    "Item": "KC10130",
+    "Description": "Casserole Non-Stick (Glass lid) 30 CM",
+    "Quantity": 1,
+    "Price": 20.25,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-30-CM-"
+  },
+  "KCI0134": {
+    "Item": "KCI0134",
+    "Description": "Casserole Non-Stick (Glass lid) 34 CM",
+    "Quantity": 1,
+    "Price": 29,
+    "sku": "Casserole-Non-Stick-(Glass-lid)-34-CM-"
+  },
+  "KC10140": {
+    "Item": "KC10140",
+    "Description": "Kiam Casserole with Lid 40 CM",
+    "Quantity": 1,
+    "Price": 38.25,
+    "sku": "Kiam-Casserole-with-Lid-40-CM-"
+  },
+  "KK10422": {
+    "Item": "KK10422",
+    "Description": "Kari Non-Stick (Glass Lid) 22 CM",
+    "Quantity": 1,
+    "Price": 11.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-22-CM--"
+  },
+  "KKI0424": {
+    "Item": "KKI0424",
+    "Description": "Kari Non-Stick (Glass Lid) 24 CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-24-CM-"
+  },
+  "KK10426": {
+    "Item": "KK10426",
+    "Description": "Kari Non-Stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "Kari-Non-Stick-(Glass-Lid)-26-CM-"
+  },
+  "KK10522": {
+    "Item": "KK10522",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 22 CM",
+    "Quantity": 1,
+    "Price": 11.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-22-CM-"
+  },
+  "KK10524": {
+    "Item": "KK10524",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 24CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-24CM-"
+  },
+  "KK10526": {
+    "Item": "KK10526",
+    "Description": "One Handle Kari Non-Stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 13.25,
+    "sku": "One-Handle-Kari-Non-Stick-(Glass-Lid)-26-CM-"
+  },
+  "KM10626": {
+    "Item": "KM10626",
+    "Description": "Multipan with Glass Lid 26 CM",
+    "Quantity": 1,
+    "Price": 13,
+    "sku": "Multipan-with-Glass-Lid-26-CM-"
+  },
+  "KM10632": {
+    "Item": "KM10632",
+    "Description": "Multipan with Glass Lid 32 CM",
+    "Quantity": 1,
+    "Price": 18.75,
+    "sku": "Multipan-with-Glass-Lid-32-CM-"
+  },
+  "KF10326": {
+    "Item": "KF10326",
+    "Description": "Frypan non-stick (Glass Lid) 26 CM",
+    "Quantity": 1,
+    "Price": 12.25,
+    "sku": "Frypan-non-stick-(Glass-Lid)-26-CM-"
+  },
+  "KF10328": {
+    "Item": "KF10328",
+    "Description": "Frypan non-stick (Glass Lid) 28 CM",
+    "Quantity": 1,
+    "Price": 13.35,
+    "sku": "Frypan-non-stick-(Glass-Lid)-28-CM-"
+  },
+  "KF10216": {
+    "Item": "KF10216",
+    "Description": "Frypan Non-Stick(Without Lid) I6CM",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Frypan-Non-Stick(Without-Lid)-I6CM-"
+  },
+  "KF10220": {
+    "Item": "KF10220",
+    "Description": "Frypan Non-Stick(Without Lid) 20 CM",
+    "Quantity": 1,
+    "Price": 7,
+    "sku": "Frypan-Non-Stick(Without-Lid)-20-CM-"
+  },
+  "KF10224": {
+    "Item": "KF10224",
+    "Description": "Frypan Non-Stick(Without Lid) 24 CM",
+    "Quantity": 1,
+    "Price": 8.5,
+    "sku": "Frypan-Non-Stick(Without-Lid)-24-CM-"
+  },
+  "KAM510014": {
+    "Item": "KAM510014",
+    "Description": "Alu Milkpan (Bakelite Handle) 14 CM",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-14-CM-"
+  },
+  "KAM510016": {
+    "Item": "KAM510016",
+    "Description": "Alu Milkpan (Bakelite Handle) 16 CM",
+    "Quantity": 1,
+    "Price": 5,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-16-CM-"
+  },
+  "KAM510018": {
+    "Item": "KAM510018",
+    "Description": "Alu Milkpan (Bakelite Handle) 18 CM",
+    "Quantity": 1,
+    "Price": 5.75,
+    "sku": "Alu-Milkpan-(Bakelite-Handle)-18-CM-"
+  },
+  "CPBU20232": {
+    "Item": "CPBU20232",
+    "Description": "Plastic Bucket 20 Ltr.",
+    "Quantity": 1,
+    "Price": 3.25,
+    "sku": "Plastic-Bucket-20-Ltr.-"
+  },
+  "CPBU20233": {
+    "Item": "CPBU20233",
+    "Description": "Plastic Bucket 24 Ltr.",
+    "Quantity": 1,
+    "Price": 3.75,
+    "sku": "Plastic-Bucket-24-Ltr.-"
+  },
+  "CSP-50": {
+    "Item": "CSP-50",
+    "Description": "Steelness Steel Cooking Pot sets",
+    "Quantity": 1,
+    "Price": 45,
+    "sku": "Steelness-Steel-Cooking-Pot-sets-"
+  },
+  "CSS20365": {
+    "Item": "CSS20365",
+    "Description": "Steeliness Steel Stainer 26 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 4,
+    "sku": "Steeliness-Steel-Stainer-26-CM-(Heavy-Duty)-"
+  },
+  "CSS20366": {
+    "Item": "CSS20366",
+    "Description": "Steeliness Steel Stainer 28 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Steeliness-Steel-Stainer-28-CM-(Heavy-Duty)"
+  },
+  "CSS20377": {
+    "Item": "CSS20377",
+    "Description": "Steelness Steel Stainer 30 CM (Heavy Duty)",
+    "Quantity": 1,
+    "Price": 5,
+    "sku": "Steelness-Steel-Stainer-30-CM-(Heavy-Duty)-"
+  },
+  "CCB2030": {
+    "Item": "CCB2030",
+    "Description": "Cutting Board wooden (20*30) CM",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Cutting-Board-wooden-(20*30)-CM-"
+  },
+  "CCB2034": {
+    "Item": "CCB2034",
+    "Description": "Cutting Board wooden (24*34) CM",
+    "Quantity": 1,
+    "Price": 2.85,
+    "sku": "Cutting-Board-wooden-(24*34)-CM"
+  },
+  "CR132036": {
+    "Item": "CR132036",
+    "Description": "Wooden Cutting Board Round",
+    "Quantity": 1,
+    "Price": 5.5,
+    "sku": "Wooden-Cutting-Board-Round-"
+  },
+  "CCR2095": {
+    "Item": "CCR2095",
+    "Description": "Can Opener 2095",
+    "Quantity": 1,
+    "Price": 2.1,
+    "sku": "Can-Opener-2095-"
+  },
+  "CHP20271": {
+    "Item": "CHP20271",
+    "Description": "liot Pot pad 16 CM",
+    "Quantity": 1,
+    "Price": 0.85,
+    "sku": "liot-Pot-pad-16-CM-"
+  },
+  "CHP20272": {
+    "Item": "CHP20272",
+    "Description": "Hot Pot pad 18 CM",
+    "Quantity": 1,
+    "Price": 0.95,
+    "sku": "Hot-Pot-pad-18-CM-"
+  },
+  "CEF20339": {
+    "Item": "CEF20339",
+    "Description": "Eggs beaters mixer",
+    "Quantity": 1,
+    "Price": 1.75,
+    "sku": "Eggs-beaters-mixer"
+  },
+  "CRS20310": {
+    "Item": "CRS20310",
+    "Description": "Steel Rice spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle-"
+  },
+  "CCS20311": {
+    "Item": "CCS20311",
+    "Description": "Steel chakni spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-chakni-spoon-with-Granite-Handle-"
+  },
+  "CCS20312": {
+    "Item": "CCS20312",
+    "Description": "Steel dall spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-dall-spoon-with-Granite-Handle-"
+  },
+  "CCS20313": {
+    "Item": "CCS20313",
+    "Description": "Steel Rice spoon with Granite Handle",
+    "Quantity": 1,
+    "Price": 1.65,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle-"
+  },
+  "CCS20315": {
+    "Item": "CCS20315",
+    "Description": "Steel Rice spoon with Granite Handle- S",
+    "Quantity": 1,
+    "Price": 1.5,
+    "sku": "Steel-Rice-spoon-with-Granite-Handle--S-"
+  },
+  "CGRS20316": {
+    "Item": "CGRS20316",
+    "Description": "Golden color Rice spoon (steelness steel)",
+    "Quantity": 1,
+    "Price": 1.45,
+    "sku": "Golden-color-Rice-spoon-(steelness-steel)"
+  }
+}

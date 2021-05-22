@@ -1,0 +1,16 @@
+{
+  "METHI": {
+    "Item": "METHI",
+    "Description": "METHI",
+    "Quantity": 1,
+    "Price": 24,
+    "sku": "MET-HI"
+  },
+  "MINT": {
+    "Item": "MINT",
+    "Description": "MINT",
+    "Quantity": 1,
+    "Price": 14,
+    "sku": "MIN-T"
+  }
+}

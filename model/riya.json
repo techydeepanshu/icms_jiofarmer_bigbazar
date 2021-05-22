@@ -1,0 +1,714 @@
+{
+  "POLAND SPRING WATER*16oz*40BOTEL": {
+    "Quantity": 50,
+    "Item": "POLAND SPRING WATER*16oz*40BOTEL",
+    "Description": "POLAND SPRING WATER*16oz*40BOTEL",
+    "Price": 8.5,
+    "category": "riya",
+    "sku": "POLAND-SPRING-WATER*16oz*40BOTEL"
+  },
+  "FERRERO ROCHER CHOCOLATE*16X48": {
+    "Quantity": 50,
+    "Item": "FERRERO ROCHER CHOCOLATE*16X48",
+    "Description": "FERRERO ROCHER CHOCOLATE*16X48",
+    "Price": 208,
+    "category": "riya",
+    "sku": "FERRERO-ROCHER-CHOCOLATE*16X48"
+  },
+  "MORTON SALT IODIZED *24PC": {
+    "Quantity": 50,
+    "Item": "MORTON SALT IODIZED *24PC",
+    "Description": "MORTON SALT IODIZED *24PC",
+    "Price": 24,
+    "category": "riya",
+    "sku": "MORTON-SALT-IODIZED-*24PC"
+  },
+  "SOCIETY TEA MASALA*450*12P*": {
+    "Quantity": 50,
+    "Item": "SOCIETY TEA MASALA*450*12P*",
+    "Description": "SOCIETY TEA MASALA*450*12P*",
+    "Price": 64,
+    "category": "riya",
+    "sku": "SOCIETY-TEA-MASALA*450*12P*"
+  },
+  "SOCIETY TEA REG*450G*12P*": {
+    "Quantity": 50,
+    "Item": "SOCIETY TEA REG*450G*12P*",
+    "Description": "SOCIETY TEA REG*450G*12P*",
+    "Price": 54,
+    "category": "riya",
+    "sku": "SOCIETY-TEA-REG*450G*12P*"
+  },
+  "DRY GREEN PIZON PEAS *1LB*24*SMALL": {
+    "Quantity": 50,
+    "Item": "DRY GREEN PIZON PEAS *1LB*24*SMALL",
+    "Description": "DRY GREEN PIZON PEAS *1LB*24*SMALL",
+    "Price": 38,
+    "category": "riya",
+    "sku": "DRY-GREEN-PIZON-PEAS-*1LB*24*SMALL"
+  },
+  "HIM FARFAR*140z*lOPK": {
+    "Quantity": 50,
+    "Item": "HIM FARFAR*140z*lOPK",
+    "Description": "HIM FARFAR*140z*lOPK",
+    "Price": 20,
+    "category": "riya",
+    "sku": "HIM-FARFAR*140z*lOPK"
+  },
+  "FOOD COLOR RED,YELL,25G*12": {
+    "Quantity": 50,
+    "Item": "FOOD COLOR RED,YELL,25G*12",
+    "Description": "FOOD COLOR RED,YELL,25G*12",
+    "Price": 12,
+    "category": "riya",
+    "sku": "FOOD-COLOR-RED,YELL,25G*12"
+  },
+  "HIM DLHT TIMUR WHOLE *100GM": {
+    "Quantity": 50,
+    "Item": "HIM DLHT TIMUR WHOLE *100GM",
+    "Description": "HIM DLHT TIMUR WHOLE *100GM",
+    "Price": 50,
+    "category": "riya",
+    "sku": "HIM-DLHT-TIMUR-WHOLE-*100GM"
+  },
+  "HIM NEPALI DUNGE PAPAD 140Z *20": {
+    "Quantity": 50,
+    "Item": "HIM NEPALI DUNGE PAPAD 140Z *20",
+    "Description": "HIM NEPALI DUNGE PAPAD 140Z *20",
+    "Price": 30,
+    "category": "riya",
+    "sku": "HIM-NEPALI-DUNGE-PAPAD-140Z-*20"
+  },
+  "PEANUT OIL ...": {
+    "Quantity": 50,
+    "Item": "PEANUT OIL ...",
+    "Description": "PEANUT OIL ...",
+    "Price": 96,
+    "category": "riya",
+    "sku": "PEANUT-OIL-..."
+  },
+  "GOYA TOMATO SAUCE*8oz": {
+    "Quantity": 50,
+    "Item": "GOYA TOMATO SAUCE*8oz",
+    "Description": "GOYA TOMATO SAUCE*8oz",
+    "Price": 24,
+    "category": "riya",
+    "sku": "GOYA-TOMATO-SAUCE*8oz"
+  },
+  "GOYA PASTE *6oz*48PC": {
+    "Quantity": 50,
+    "Item": "GOYA PASTE *6oz*48PC",
+    "Description": "GOYA PASTE *6oz*48PC",
+    "Price": 32,
+    "category": "riya",
+    "sku": "GOYA-PASTE-*6oz*48PC"
+  },
+  "GOYA PASTE *28oz*12PC": {
+    "Quantity": 50,
+    "Item": "GOYA PASTE *28oz*12PC",
+    "Description": "GOYA PASTE *28oz*12PC",
+    "Price": 30,
+    "category": "riya",
+    "sku": "GOYA-PASTE-*28oz*12PC"
+  },
+  "HUNTS TOMATO PASTE *180z*24PC": {
+    "Quantity": 50,
+    "Item": "HUNTS TOMATO PASTE *180z*24PC",
+    "Description": "HUNTS TOMATO PASTE *180z*24PC",
+    "Price": 60,
+    "category": "riya",
+    "sku": "HUNTS-TOMATO-PASTE-*180z*24PC"
+  },
+  "HUNTS SOUCE 8oz *48pc": {
+    "Quantity": 50,
+    "Item": "HUNTS SOUCE 8oz *48pc",
+    "Description": "HUNTS SOUCE 8oz *48pc",
+    "Price": 36,
+    "category": "riya",
+    "sku": "HUNTS-SOUCE-8oz-*48pc"
+  },
+  "HUNTS TOMATO PUREE*29oz*12PC": {
+    "Quantity": 50,
+    "Item": "HUNTS TOMATO PUREE*29oz*12PC",
+    "Description": "HUNTS TOMATO PUREE*29oz*12PC",
+    "Price": 30,
+    "category": "riya",
+    "sku": "HUNTS-TOMATO-PUREE*29oz*12PC"
+  },
+  "HUNTS SOUCE 29oz *12PC": {
+    "Quantity": 50,
+    "Item": "HUNTS SOUCE 29oz *12PC",
+    "Description": "HUNTS SOUCE 29oz *12PC",
+    "Price": 30,
+    "category": "riya",
+    "sku": "HUNTS-SOUCE-29oz-*12PC"
+  },
+  "HUNTS CRUSHED TOMATOES*29z12PC": {
+    "Quantity": 50,
+    "Item": "HUNTS CRUSHED TOMATOES*29z12PC",
+    "Description": "HUNTS CRUSHED TOMATOES*29z12PC",
+    "Price": 30,
+    "category": "riya",
+    "sku": "HUNTS-CRUSHED-TOMATOES*29z12PC"
+  },
+  "CHICK PEAS*RED KID,15.5*24P*5+2": {
+    "Quantity": 50,
+    "Item": "CHICK PEAS*RED KID,15.5*24P*5+2",
+    "Description": "CHICK PEAS*RED KID,15.5*24P*5+2",
+    "Price": 24,
+    "category": "riya",
+    "sku": "CHICK-PEAS*RED-KID,15.5*24P*5+2"
+  },
+  "BLACK E PEAS*BLACK,WHITE, BEAN*SMALL": {
+    "Quantity": 50,
+    "Item": "BLACK E PEAS*BLACK,WHITE, BEAN*SMALL",
+    "Description": "BLACK E PEAS*BLACK,WHITE, BEAN*SMALL",
+    "Price": 24,
+    "category": "riya",
+    "sku": "BLACK-E-PEAS*BLACK,WHITE,-BEAN*SMALL"
+  },
+  "GOYA CORN SMALL CAN*15.5*24P": {
+    "Quantity": 50,
+    "Item": "GOYA CORN SMALL CAN*15.5*24P",
+    "Description": "GOYA CORN SMALL CAN*15.5*24P",
+    "Price": 24,
+    "category": "riya",
+    "sku": "GOYA-CORN-SMALL-CAN*15.5*24P"
+  },
+  "RED K1D,BLACK E *BLACK BEAN*29oz": {
+    "Quantity": 50,
+    "Item": "RED K1D,BLACK E *BLACK BEAN*29oz",
+    "Description": "RED K1D,BLACK E *BLACK BEAN*29oz",
+    "Price": 23,
+    "category": "riya",
+    "sku": "RED-K1D,BLACK-E-*BLACK-BEAN*29oz"
+  },
+  "GOYA COCONUT CREAM *I 5oz*24PC": {
+    "Quantity": 50,
+    "Item": "GOYA COCONUT CREAM *I 5oz*24PC",
+    "Description": "GOYA COCONUT CREAM *I 5oz*24PC",
+    "Price": 44,
+    "category": "riya",
+    "sku": "GOYA-COCONUT-CREAM-*I-5oz*24PC"
+  },
+  "BOWL NOODEL*12PC": {
+    "Quantity": 50,
+    "Item": "BOWL NOODEL*12PC",
+    "Description": "BOWL NOODEL*12PC",
+    "Price": 10,
+    "category": "riya",
+    "sku": "BOWL-NOODEL*12PC"
+  },
+  "CHOLULA, RED,GREEN HOT SOUCE": {
+    "Quantity": 50,
+    "Item": "CHOLULA, RED,GREEN HOT SOUCE",
+    "Description": "CHOLULA, RED,GREEN HOT SOUCE",
+    "Price": 32,
+    "category": "riya",
+    "sku": "CHOLULA,-RED,GREEN-HOT-SOUCE"
+  },
+  "TABASCUE HOT SOUCE**50Z*12P": {
+    "Quantity": 50,
+    "Item": "TABASCUE HOT SOUCE**50Z*12P",
+    "Description": "TABASCUE HOT SOUCE**50Z*12P",
+    "Price": 48,
+    "category": "riya",
+    "sku": "TABASCUE-HOT-SOUCE**50Z*12P"
+  },
+  "CHINGS RED, GREEN SAUCE*90*48": {
+    "Quantity": 50,
+    "Item": "CHINGS RED, GREEN SAUCE*90*48",
+    "Description": "CHINGS RED, GREEN SAUCE*90*48",
+    "Price": 28,
+    "category": "riya",
+    "sku": "CHINGS-RED,-GREEN-SAUCE*90*48"
+  },
+  "BREAD CRUMBS*24oz*12pc": {
+    "Quantity": 50,
+    "Item": "BREAD CRUMBS*24oz*12pc",
+    "Description": "BREAD CRUMBS*24oz*12pc",
+    "Price": 30,
+    "category": "riya",
+    "sku": "BREAD-CRUMBS*24oz*12pc"
+  },
+  "BREAD CRUMBS*15oz*12pc": {
+    "Quantity": 50,
+    "Item": "BREAD CRUMBS*15oz*12pc",
+    "Description": "BREAD CRUMBS*15oz*12pc",
+    "Price": 24,
+    "category": "riya",
+    "sku": "BREAD-CRUMBS*15oz*12pc"
+  },
+  "TAMRIND SEEDLESS*16oz*40": {
+    "Quantity": 50,
+    "Item": "TAMRIND SEEDLESS*16oz*40",
+    "Description": "TAMRIND SEEDLESS*16oz*40",
+    "Price": 120,
+    "category": "riya",
+    "sku": "TAMRIND-SEEDLESS*16oz*40"
+  },
+  "HIM NEPALI SOYAWADI*140Z*20PK": {
+    "Quantity": 50,
+    "Item": "HIM NEPALI SOYAWADI*140Z*20PK",
+    "Description": "HIM NEPALI SOYAWADI*140Z*20PK",
+    "Price": 30,
+    "category": "riya",
+    "sku": "HIM-NEPALI-SOYAWADI*140Z*20PK"
+  },
+  "CLUB SODA BOTTLE*1LT*12PK": {
+    "Quantity": 50,
+    "Item": "CLUB SODA BOTTLE*1LT*12PK",
+    "Description": "CLUB SODA BOTTLE*1LT*12PK",
+    "Price": 17,
+    "category": "riya",
+    "sku": "CLUB-SODA-BOTTLE*1LT*12PK"
+  },
+  "YEAST *250z*18PK*3PK": {
+    "Quantity": 50,
+    "Item": "YEAST *250z*18PK*3PK",
+    "Description": "YEAST *250z*18PK*3PK",
+    "Price": 44,
+    "category": "riya",
+    "sku": "YEAST-*250z*18PK*3PK"
+  },
+  "MIX*LEACHEE,MANGO,JELLY JAR*6PC": {
+    "Quantity": 50,
+    "Item": "MIX*LEACHEE,MANGO,JELLY JAR*6PC",
+    "Description": "MIX*LEACHEE,MANGO,JELLY JAR*6PC",
+    "Price": 22,
+    "category": "riya",
+    "sku": "MIX*LEACHEE,MANGO,JELLY-JAR*6PC"
+  },
+  "SUGARFREE COOKIE GOYA": {
+    "Quantity": 50,
+    "Item": "SUGARFREE COOKIE GOYA",
+    "Description": "SUGARFREE COOKIE GOYA",
+    "Price": 20,
+    "category": "riya",
+    "sku": "SUGARFREE-COOKIE-GOYA"
+  },
+  "GOYA MARIA COOK1E*32": {
+    "Quantity": 50,
+    "Item": "GOYA MARIA COOK1E*32",
+    "Description": "GOYA MARIA COOK1E*32",
+    "Price": 14,
+    "category": "riya",
+    "sku": "GOYA-MARIA-COOK1E*32"
+  },
+  "MAAKI MASSARIPA *5LB*6P*BIG": {
+    "Quantity": 50,
+    "Item": "MAAKI MASSARIPA *5LB*6P*BIG",
+    "Description": "MAAKI MASSARIPA *5LB*6P*BIG",
+    "Price": 36,
+    "category": "riya",
+    "sku": "MAAKI-MASSARIPA-*5LB*6P*BIG"
+  },
+  "MAKKI A'TTA MASSARIPA SMALL*12pc": {
+    "Quantity": 50,
+    "Item": "MAKKI A'TTA MASSARIPA SMALL*12pc",
+    "Description": "MAKKI A'TTA MASSARIPA SMALL*12pc",
+    "Price": 26,
+    "category": "riya",
+    "sku": "MAKKI-A'TTA-MASSARIPA-SMALL*12pc"
+  },
+  "CHANA DAL ,KABULI CHANA*4LB*2+2": {
+    "Quantity": 50,
+    "Item": "CHANA DAL ,KABULI CHANA*4LB*2+2",
+    "Description": "CHANA DAL ,KABULI CHANA*4LB*2+2",
+    "Price": 33,
+    "category": "riya",
+    "sku": "CHANA-DAL-,KABULI-CHANA*4LB*2+2"
+  },
+  "KALA CHANA *4LBX1OPK": {
+    "Quantity": 50,
+    "Item": "KALA CHANA *4LBX1OPK",
+    "Description": "KALA CHANA *4LBX1OPK",
+    "Price": 32,
+    "category": "riya",
+    "sku": "KALA-CHANA-*4LBX1OPK"
+  },
+  "MASOOR DAL *4LBX1OP": {
+    "Quantity": 50,
+    "Item": "MASOOR DAL *4LBX1OP",
+    "Description": "MASOOR DAL *4LBX1OP",
+    "Price": 30,
+    "category": "riya",
+    "sku": "MASOOR-DAL-*4LBX1OP"
+  },
+  "MOONG DAL,*4LBX1OPK": {
+    "Quantity": 50,
+    "Item": "MOONG DAL,*4LBX1OPK",
+    "Description": "MOONG DAL,*4LBX1OPK",
+    "Price": 45,
+    "category": "riya",
+    "sku": "MOONG-DAL,*4LBX1OPK"
+  },
+  "URAD WHOLE BLACK*4LB*10PK": {
+    "Quantity": 50,
+    "Item": "URAD WHOLE BLACK*4LB*10PK",
+    "Description": "URAD WHOLE BLACK*4LB*10PK",
+    "Price": 45,
+    "category": "riya",
+    "sku": "URAD-WHOLE-BLACK*4LB*10PK"
+  },
+  "CHICK PEAS *9. MM": {
+    "Quantity": 50,
+    "Item": "CHICK PEAS *9. MM",
+    "Description": "CHICK PEAS *9. MM",
+    "Price": 35,
+    "category": "riya",
+    "sku": "CHICK-PEAS-*9.-MM"
+  },
+  "APPLE JUICE *640z*8PK": {
+    "Quantity": 50,
+    "Item": "APPLE JUICE *640z*8PK",
+    "Description": "APPLE JUICE *640z*8PK",
+    "Price": 26,
+    "category": "riya",
+    "sku": "APPLE-JUICE-*640z*8PK"
+  },
+  "CRANBERRY JUICE*64oz*8PK": {
+    "Quantity": 50,
+    "Item": "CRANBERRY JUICE*64oz*8PK",
+    "Description": "CRANBERRY JUICE*64oz*8PK",
+    "Price": 26,
+    "category": "riya",
+    "sku": "CRANBERRY-JUICE*64oz*8PK"
+  },
+  "CORN FLAKES*18oz*CEREAL*6PC": {
+    "Quantity": 50,
+    "Item": "CORN FLAKES*18oz*CEREAL*6PC",
+    "Description": "CORN FLAKES*18oz*CEREAL*6PC",
+    "Price": 25,
+    "category": "riya",
+    "sku": "CORN-FLAKES*18oz*CEREAL*6PC"
+  },
+  "CORN FLAKES *12.2*12PC": {
+    "Quantity": 50,
+    "Item": "CORN FLAKES *12.2*12PC",
+    "Description": "CORN FLAKES *12.2*12PC",
+    "Price": 38,
+    "category": "riya",
+    "sku": "CORN-FLAKES-*12.2*12PC"
+  },
+  "DELTA RICE *25LB *BAG": {
+    "Quantity": 50,
+    "Item": "DELTA RICE *25LB *BAG",
+    "Description": "DELTA RICE *25LB *BAG",
+    "Price": 13,
+    "category": "riya",
+    "sku": "DELTA-RICE-*25LB-*BAG"
+  },
+  "DELTA RICE *50LB* BAG": {
+    "Quantity": 50,
+    "Item": "DELTA RICE *50LB* BAG",
+    "Description": "DELTA RICE *50LB* BAG",
+    "Price": 24,
+    "category": "riya",
+    "sku": "DELTA-RICE-*50LB*-BAG"
+  },
+  "AJAX *12oz*28oz*52oz": {
+    "Quantity": 50,
+    "Item": "AJAX *12oz*28oz*52oz",
+    "Description": "AJAX *12oz*28oz*52oz",
+    "Price": 24,
+    "category": "riya",
+    "sku": "AJAX-*12oz*28oz*52oz"
+  },
+  "LIGHT PEANUT BUTTER *120z*I2*SMALL": {
+    "Quantity": 50,
+    "Item": "LIGHT PEANUT BUTTER *120z*I2*SMALL",
+    "Description": "LIGHT PEANUT BUTTER *120z*I2*SMALL",
+    "Price": 30,
+    "category": "riya",
+    "sku": "LIGHT-PEANUT-BUTTER-*120z*I2*SMALL"
+  },
+  "GOYA MACKEREL FISH,TOMATO,FISH*24": {
+    "Quantity": 50,
+    "Item": "GOYA MACKEREL FISH,TOMATO,FISH*24",
+    "Description": "GOYA MACKEREL FISH,TOMATO,FISH*24",
+    "Price": 42,
+    "category": "riya",
+    "sku": "GOYA-MACKEREL-FISH,TOMATO,FISH*24"
+  },
+  "VINIGER GALLON *4PC": {
+    "Quantity": 50,
+    "Item": "VINIGER GALLON *4PC",
+    "Description": "VINIGER GALLON *4PC",
+    "Price": 10,
+    "category": "riya",
+    "sku": "VINIGER-GALLON-*4PC"
+  },
+  "VINIGER HEINZ *160z*12PC": {
+    "Quantity": 50,
+    "Item": "VINIGER HEINZ *160z*12PC",
+    "Description": "VINIGER HEINZ *160z*12PC",
+    "Price": 16,
+    "category": "riya",
+    "sku": "VINIGER-HEINZ-*160z*12PC"
+  },
+  "REALEMON JUICE*8oz*12PC": {
+    "Quantity": 50,
+    "Item": "REALEMON JUICE*8oz*12PC",
+    "Description": "REALEMON JUICE*8oz*12PC",
+    "Price": 19,
+    "category": "riya",
+    "sku": "REALEMON-JUICE*8oz*12PC"
+  },
+  "PATANJALI COW GHEE*1LITER*12PC": {
+    "Quantity": 50,
+    "Item": "PATANJALI COW GHEE*1LITER*12PC",
+    "Description": "PATANJALI COW GHEE*1LITER*12PC",
+    "Price": 120,
+    "category": "riya",
+    "sku": "PATANJALI-COW-GHEE*1LITER*12PC"
+  },
+  "VETNAMESE BROOM*50P": {
+    "Quantity": 50,
+    "Item": "VETNAMESE BROOM*50P",
+    "Description": "VETNAMESE BROOM*50P",
+    "Price": 120,
+    "category": "riya",
+    "sku": "VETNAMESE-BROOM*50P"
+  },
+  "DRESSING 15oz *12PC*BIG": {
+    "Quantity": 50,
+    "Item": "DRESSING 15oz *12PC*BIG",
+    "Description": "DRESSING 15oz *12PC*BIG",
+    "Price": 38,
+    "category": "riya",
+    "sku": "DRESSING-15oz-*12PC*BIG"
+  },
+  "DRESSING SMALL*80Z*12PC": {
+    "Quantity": 50,
+    "Item": "DRESSING SMALL*80Z*12PC",
+    "Description": "DRESSING SMALL*80Z*12PC",
+    "Price": 18,
+    "category": "riya",
+    "sku": "DRESSING-SMALL*80Z*12PC"
+  },
+  "KETCHUP HEINZ *14oz*16PC": {
+    "Quantity": 50,
+    "Item": "KETCHUP HEINZ *14oz*16PC",
+    "Description": "KETCHUP HEINZ *14oz*16PC",
+    "Price": 30,
+    "category": "riya",
+    "sku": "KETCHUP-HEINZ-*14oz*16PC"
+  },
+  "SUPERIOR CRYSTAL SALT*24PK": {
+    "Quantity": 50,
+    "Item": "SUPERIOR CRYSTAL SALT*24PK",
+    "Description": "SUPERIOR CRYSTAL SALT*24PK",
+    "Price": 20,
+    "category": "riya",
+    "sku": "SUPERIOR-CRYSTAL-SALT*24PK"
+  },
+  "REDCROSS IODIZED SALT*24PC": {
+    "Quantity": 50,
+    "Item": "REDCROSS IODIZED SALT*24PC",
+    "Description": "REDCROSS IODIZED SALT*24PC",
+    "Price": 18,
+    "category": "riya",
+    "sku": "REDCROSS-IODIZED-SALT*24PC"
+  },
+  "HIM BROWN SUGAR 800G*12pcs*INDIA": {
+    "Quantity": 50,
+    "Item": "HIM BROWN SUGAR 800G*12pcs*INDIA",
+    "Description": "HIM BROWN SUGAR 800G*12pcs*INDIA",
+    "Price": 32,
+    "category": "riya",
+    "sku": "HIM-BROWN-SUGAR-800G*12pcs*INDIA"
+  },
+  "SOYA SAUCE*5oz*12PC": {
+    "Quantity": 50,
+    "Item": "SOYA SAUCE*5oz*12PC",
+    "Description": "SOYA SAUCE*5oz*12PC",
+    "Price": 18,
+    "category": "riya",
+    "sku": "SOYA-SAUCE*5oz*12PC"
+  },
+  "TERYAKI SOUCE*10oz*12PC": {
+    "Quantity": 50,
+    "Item": "TERYAKI SOUCE*10oz*12PC",
+    "Description": "TERYAKI SOUCE*10oz*12PC",
+    "Price": 26,
+    "category": "riya",
+    "sku": "TERYAKI-SOUCE*10oz*12PC"
+  },
+  "CHILLY GARLIC*180zCHILLY GARLIC*8oz": {
+    "Quantity": 50,
+    "Item": "CHILLY GARLIC*180zCHILLY GARLIC*8oz",
+    "Description": "CHILLY GARLIC*180zCHILLY GARLIC*8oz",
+    "Price": 32,
+    "category": "riya",
+    "sku": "CHILLY-GARLIC*180zCHILLY-GARLIC*8oz"
+  },
+  "SIRACHA *280Z": {
+    "Quantity": 50,
+    "Item": "SIRACHA *280Z",
+    "Description": "SIRACHA *280Z",
+    "Price": 34,
+    "category": "riya",
+    "sku": "SIRACHA-*280Z"
+  },
+  "SIRACHA *170z": {
+    "Quantity": 50,
+    "Item": "SIRACHA *170z",
+    "Description": "SIRACHA *170z",
+    "Price": 32,
+    "category": "riya",
+    "sku": "SIRACHA-*170z"
+  },
+  "NESTLE TABLE CREAM *24PC": {
+    "Quantity": 50,
+    "Item": "NESTLE TABLE CREAM *24PC",
+    "Description": "NESTLE TABLE CREAM *24PC",
+    "Price": 48,
+    "category": "riya",
+    "sku": "NESTLE-TABLE-CREAM-*24PC"
+  },
+  "SWEET CONDENCE MILK*24PC": {
+    "Quantity": 50,
+    "Item": "SWEET CONDENCE MILK*24PC",
+    "Description": "SWEET CONDENCE MILK*24PC",
+    "Price": 60,
+    "category": "riya",
+    "sku": "SWEET-CONDENCE-MILK*24PC"
+  },
+  "MAGNOLIA MILK*24PC": {
+    "Quantity": 50,
+    "Item": "MAGNOLIA MILK*24PC",
+    "Description": "MAGNOLIA MILK*24PC",
+    "Price": 35,
+    "category": "riya",
+    "sku": "MAGNOLIA-MILK*24PC"
+  },
+  "BERIO OIL BIG*3PC*5LTR": {
+    "Quantity": 50,
+    "Item": "BERIO OIL BIG*3PC*5LTR",
+    "Description": "BERIO OIL BIG*3PC*5LTR",
+    "Price": 90,
+    "category": "riya",
+    "sku": "BERIO-OIL-BIG*3PC*5LTR"
+  },
+  "EXTRA VIRZIN SUPREMO*3LITER4PC": {
+    "Quantity": 50,
+    "Item": "EXTRA VIRZIN SUPREMO*3LITER4PC",
+    "Description": "EXTRA VIRZIN SUPREMO*3LITER4PC",
+    "Price": 60,
+    "category": "riya",
+    "sku": "EXTRA-VIRZIN-SUPREMO*3LITER4PC"
+  },
+  "MAZOLA CONOLA,VEG*96z*PC": {
+    "Quantity": 50,
+    "Item": "MAZOLA CONOLA,VEG*96z*PC",
+    "Description": "MAZOLA CONOLA,VEG*96z*PC",
+    "Price": 42,
+    "category": "riya",
+    "sku": "MAZOLA-CONOLA,VEG*96z*PC"
+  },
+  "DETTOL LIQ *1LITER*12PC": {
+    "Quantity": 50,
+    "Item": "DETTOL LIQ *1LITER*12PC",
+    "Description": "DETTOL LIQ *1LITER*12PC",
+    "Price": 130,
+    "category": "riya",
+    "sku": "DETTOL-LIQ-*1LITER*12PC"
+  },
+  "FOCO COCONUT BIG*24CAN": {
+    "Quantity": 50,
+    "Item": "FOCO COCONUT BIG*24CAN",
+    "Description": "FOCO COCONUT BIG*24CAN",
+    "Price": 23,
+    "category": "riya",
+    "sku": "FOCO-COCONUT-BIG*24CAN"
+  },
+  "FOCO COCONUT, GUAVA,24PC": {
+    "Quantity": 50,
+    "Item": "FOCO COCONUT, GUAVA,24PC",
+    "Description": "FOCO COCONUT, GUAVA,24PC",
+    "Price": 19,
+    "category": "riya",
+    "sku": "FOCO-COCONUT,-GUAVA,24PC"
+  },
+  "OREO COOKIE BLUE,YELL*12PK": {
+    "Quantity": 50,
+    "Item": "OREO COOKIE BLUE,YELL*12PK",
+    "Description": "OREO COOKIE BLUE,YELL*12PK",
+    "Price": 50,
+    "category": "riya",
+    "sku": "OREO-COOKIE-BLUE,YELL*12PK"
+  },
+  "COCONUT GEL IN SYRUP*24": {
+    "Quantity": 50,
+    "Item": "COCONUT GEL IN SYRUP*24",
+    "Description": "COCONUT GEL IN SYRUP*24",
+    "Price": 34,
+    "category": "riya",
+    "sku": "COCONUT-GEL-IN-SYRUP*24"
+  },
+  "SWAD MAMRA BASMATI*10X14oz": {
+    "Quantity": 50,
+    "Item": "SWAD MAMRA BASMATI*10X14oz",
+    "Description": "SWAD MAMRA BASMATI*10X14oz",
+    "Price": 14,
+    "category": "riya",
+    "sku": "SWAD-MAMRA-BASMATI*10X14oz"
+  },
+  "RAGU SAUCE *26oz*BIG": {
+    "Quantity": 50,
+    "Item": "RAGU SAUCE *26oz*BIG",
+    "Description": "RAGU SAUCE *26oz*BIG",
+    "Price": 32,
+    "category": "riya",
+    "sku": "RAGU-SAUCE-*26oz*BIG"
+  },
+  "RED CHILLI STUFFED.TENTI DELLA*12P": {
+    "Quantity": 50,
+    "Item": "RED CHILLI STUFFED.TENTI DELLA*12P",
+    "Description": "RED CHILLI STUFFED.TENTI DELLA*12P",
+    "Price": 36,
+    "category": "riya",
+    "sku": "RED-CHILLI-STUFFED.TENTI-DELLA*12P"
+  },
+  "CHICK PEAS,RED KID #i O*6PC": {
+    "Quantity": 50,
+    "Item": "CHICK PEAS,RED KID #i O*6PC",
+    "Description": "CHICK PEAS,RED KID #i O*6PC",
+    "Price": 32,
+    "category": "riya",
+    "sku": "CHICK-PEAS,RED-KID-#i-O*6PC"
+  },
+  "LYCHEE IN SYRUP*200z*24PC": {
+    "Quantity": 50,
+    "Item": "LYCHEE IN SYRUP*200z*24PC",
+    "Description": "LYCHEE IN SYRUP*200z*24PC",
+    "Price": 48,
+    "category": "riya",
+    "sku": "LYCHEE-IN-SYRUP*200z*24PC"
+  },
+  "WESSON CONOLA,VEG,CORN*GALL*4P": {
+    "Quantity": 50,
+    "Item": "WESSON CONOLA,VEG,CORN*GALL*4P",
+    "Description": "WESSON CONOLA,VEG,CORN*GALL*4P",
+    "Price": 28,
+    "category": "riya",
+    "sku": "WESSON-CONOLA,VEG,CORN*GALL*4P"
+  },
+  "OVALTEEN BIG *6PC": {
+    "Quantity": 50,
+    "Item": "OVALTEEN BIG *6PC",
+    "Description": "OVALTEEN BIG *6PC",
+    "Price": 55,
+    "category": "riya",
+    "sku": "OVALTEEN-BIG-*6PC"
+  },
+  "OVALTINE *400GM*12PC": {
+    "Quantity": 50,
+    "Item": "OVALTINE *400GM*12PC",
+    "Description": "OVALTINE *400GM*12PC",
+    "Price": 42,
+    "category": "riya",
+    "sku": "OVALTINE-*400GM*12PC"
+  }
+}

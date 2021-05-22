@@ -1,80 +1,93 @@
 {
-  "Gur Rewari":{
+  "Gur Rewari": {
     "Item": "Gur Rewari",
     "Description": "Gur Rewari 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "52"
+    "Price": "52",
+    "sku": "Gur-Rewari-400-gms-20-/-ctn-"
   },
-  "Sugar Rewari":{
+  "Sugar Rewari": {
     "Item": "Sugar Rewari",
     "Description": "Sugar rewari 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "52"
+    "Price": "52",
+    "sku": "Gur-Rewari-400-gms-20-/-ctn-"
   },
-  "Gur Gajj":{
+  "Gur Gajj": {
     "Item": "Gur Gajj",
     "Description": "Dry Fruit Gur Gajjak  400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "70"
+    "Price": "70",
+    "sku": "Dry-Fruit-Gur-Gajjak-400-gms-20-/-ctn-"
   },
-  "Gurr Khasta Gajjak":{
+  "Gurr Khasta Gajjak": {
     "Item": "Gurr Khasta Gajjak",
     "Description": "Gur Khasta Gajjak 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "70"
+    "Price": "70",
+    "sku": "Gur-Khasta-Gajjak-400-gms-/-20-ctn-"
   },
-  "Seasme ladoo":{
+  "Seasme ladoo": {
     "Item": "Seasme ladoo",
     "Description": "Seasme ladoo Bikaji, 240 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "50"
+    "Price": "50",
+    "sku": "Seasme-ladoo-Bikaji,-240-gm-/-20-ctn-"
   },
-  "Peanut Ladoo":{
+  "Peanut Ladoo": {
     "Item": "Peanut Ladoo",
     "Description": "Peanut Ladoo Bikaji 240 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "50"
+    "Price": "50",
+    "sku": "Peanut-Ladoo-Bikaji-240-gms-/-20-ctn"
   },
-  "Rajgeron ladoo":{
+  "Rajgeron ladoo": {
     "Item": "Rajgeron ladoo",
     "Description": "Rajgeron Ladoo Bikaji 150 gm, 20 / ctn",
     "Quantity": "20",
-    "Price": "50"
+    "Price": "50",
+    "sku": "Rajgeron-Ladoo-Bikaji-150-gm-,-20-/-ctn-"
   },
-  "Pea ChiKi":{
+  "Pea ChiKi": {
     "Item": "Pea ChiKi",
     "Description": "Peanut Chikki 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "55"
+    "Price": "55",
+    "sku": "Peanut-Chikki-400-gms-/-20-ctn-"
   },
-  "Se Chikki":{
+  "Se Chikki": {
     "Item": "Se Chikki",
     "Description": "Saesme Chikki 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "65"
+    "Price": "65",
+    "sku": "Saesme-Chikki-400-Gms-/-20-Ctn-"
   },
-  "Ass Chiki":{
+  "Ass Chiki": {
     "Item": "Ass Chiki",
     "Description": "Assorted Chikki 400 gms 20 / ctn",
     "Quantity": "20",
-    "Price": "65"
+    "Price": "65",
+    "sku": "Assorted-Chikki-400-gms-20-/-ctn-"
   },
-  "Gobhi Parantha 4 Pcs":{
+  "Gobhi Parantha 4 Pcs": {
     "Item": "Gobhi Parantha 4 Pcs",
     "Description": "Gobhi Parantha (4 Pcs X 12 Pks) Bikaji",
     "Quantity": "12",
-    "Price": "21"
+    "Price": "21",
+    "sku": ""
   },
-  "Methi Parantha 6 Pcs":{
+  "Methi Parantha 6 Pcs": {
     "Item": "Methi Parantha 6 Pcs",
     "Description": "Methi Parantha (6 Pcs X 12 Pks) Bikaji",
     "Quantity": "12",
-    "Price": "19.8"
+    "Price": "19.8",
+    "sku": ""
   },
-  "Home Style Parantha 6 Pcs":{
+  "Home Style Parantha 6 Pcs": {
     "Item": "Home Style Parantha 6 Pcs",
     "Description": "Home Style Parantha (6 Pcs X 12 Pks) Bikaji",
     "Quantity": "12",
-    "Price": "19.2"
+    "Price": "19.2",
+    "sku": ""
   }
 }

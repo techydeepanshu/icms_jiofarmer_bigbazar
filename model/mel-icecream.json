@@ -1,0 +1,458 @@
+{
+  "HDB1": {
+    "Description": "VAN MILK CHOCOLATE",
+    "Item": "HDB1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "VAN-MILK-CHOCOLATE",
+    "category": "mel-icecream"
+  },
+  "HDB2": {
+    "Description": "VAN ALMOND",
+    "Item": "HDB2",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "VAN-ALMOND",
+    "category": "mel-icecream"
+  },
+  "HDB3": {
+    "Description": "COFFEE ALMOND",
+    "Item": "HDB3",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "COFFEE-ALMOND",
+    "category": "mel-icecream"
+  },
+  "HDB4": {
+    "Description": "DARK CHOCOLATE",
+    "Item": "HDB4",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "DARK-CHOCOLATE",
+    "category": "mel-icecream"
+  },
+  "HDB5": {
+    "Description": "CARAMEL BAR",
+    "Item": "HDB5",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "CARAMEL-BAR",
+    "category": "mel-icecream"
+  },
+  "HDC1": {
+    "Description": "VANILLA",
+    "Item": "HDC1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "VANILLA",
+    "category": "mel-icecream"
+  },
+  "HDC2": {
+    "Description": "CHOCOLATE",
+    "Item": "HDC2",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "CHOCOLATE",
+    "category": "mel-icecream"
+  },
+  "HDC3": {
+    "Description": "STRAWBERRY",
+    "Item": "HDC3",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "STRAWBERRY",
+    "category": "mel-icecream"
+  },
+  "HDC4": {
+    "Description": "DULCE DE LECHE",
+    "Item": "HDC4",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "DULCE-DE-LECHE",
+    "category": "mel-icecream"
+  },
+  "HDC5": {
+    "Description": "COFFEE",
+    "Item": "HDC5",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "COFFEE",
+    "category": "mel-icecream"
+  },
+  "HDP1": {
+    "Description": "VANILLA",
+    "Item": "HDP1",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "VANILLA",
+    "category": "mel-icecream"
+  },
+  "HDP2": {
+    "Description": "CHOCOLATE",
+    "Item": "HDP2",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "CHOCOLATE",
+    "category": "mel-icecream"
+  },
+  "HDP3": {
+    "Description": "STRAWBERRY",
+    "Item": "HDP3",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "STRAWBERRY",
+    "category": "mel-icecream"
+  },
+  "HDP4": {
+    "Description": "DULCE DE LECHE",
+    "Item": "HDP4",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "DULCE-DE-LECHE",
+    "category": "mel-icecream"
+  },
+  "HDP5": {
+    "Description": "BUTTER PECAN",
+    "Item": "HDP5",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "BUTTER-PECAN",
+    "category": "mel-icecream"
+  },
+  "HDP6": {
+    "Description": "CARAMEL CONE",
+    "Item": "HDP6",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "CARAMEL-CONE",
+    "category": "mel-icecream"
+  },
+  "HDP7": {
+    "Description": "CHERRY VANILLA",
+    "Item": "HDP7",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "CHERRY-VANILLA",
+    "category": "mel-icecream"
+  },
+  "HDP8": {
+    "Description": "CHOC CHOC CHIP",
+    "Item": "HDP8",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "CHOC-CHOC-CHIP",
+    "category": "mel-icecream"
+  },
+  "HDP9": {
+    "Description": "CHOC PEANUT BUTTER",
+    "Item": "HDP9",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "CHOC-PEANUT-BUTTER",
+    "category": "mel-icecream"
+  },
+  "HDP10": {
+    "Description": "COFFEE",
+    "Item": "HDP10",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "COFFEE",
+    "category": "mel-icecream"
+  },
+  "HDP11": {
+    "Description": "COOKIE DOUGH",
+    "Item": "HDP11",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "COOKIE-DOUGH",
+    "category": "mel-icecream"
+  },
+  "HDP12": {
+    "Description": "COOKIE CREAM",
+    "Item": "HDP12",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "COOKIE-CREAM",
+    "category": "mel-icecream"
+  },
+  "HDP13": {
+    "Description": "MANGO",
+    "Item": "HDP13",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "MANGO",
+    "category": "mel-icecream"
+  },
+  "HDP14": {
+    "Description": "MINT CHOCOLATE CHIP",
+    "Item": "HDP14",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "MINT-CHOCOLATE-CHIP",
+    "category": "mel-icecream"
+  },
+  "HDP15": {
+    "Description": "PINEAPPLE COCONUT",
+    "Item": "HDP15",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "PINEAPPLE-COCONUT",
+    "category": "mel-icecream"
+  },
+  "HDP16": {
+    "Description": "PISTACHIO",
+    "Item": "HDP16",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "PISTACHIO",
+    "category": "mel-icecream"
+  },
+  "HDP17": {
+    "Description": "ROCKY ROAD",
+    "Item": "HDP17",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "ROCKY-ROAD",
+    "category": "mel-icecream"
+  },
+  "HDP18": {
+    "Description": "RUM RAISIN",
+    "Item": "HDP18",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "RUM-RAISIN",
+    "category": "mel-icecream"
+  },
+  "HDP19": {
+    "Description": "VAN SWISS ALMOND",
+    "Item": "HDP19",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "VAN-SWISS-ALMOND",
+    "category": "mel-icecream"
+  },
+  "HDP20": {
+    "Description": "VANILLA CHOC CHIP",
+    "Item": "HDP20",
+    "Price": 8,
+    "Quantity": 50,
+    "sku": "VANILLA-CHOC-CHIP",
+    "category": "mel-icecream"
+  },
+  "DB1": {
+    "Description": "STRAWBERRY SHORTCAKE",
+    "Item": "DB1",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "STRAWBERRY-SHORTCAKE",
+    "category": "mel-icecream"
+  },
+  "DB2": {
+    "Description": "COOKIE CREAM",
+    "Item": "DB2",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "COOKIE-CREAM",
+    "category": "mel-icecream"
+  },
+  "DB3": {
+    "Description": "VANILLA",
+    "Item": "DB3",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "VANILLA",
+    "category": "mel-icecream"
+  },
+  "DB4": {
+    "Description": "CHOCOLATE ECLAIR",
+    "Item": "DB4",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "CHOCOLATE-ECLAIR",
+    "category": "mel-icecream"
+  },
+  "DB5": {
+    "Description": "TOASTED ALMOND",
+    "Item": "DB5",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "TOASTED-ALMOND",
+    "category": "mel-icecream"
+  },
+  "DGV": {
+    "Description": "GIANT VANILA SANDWICH",
+    "Item": "DGV",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "GIANT-VANILA-SANDWICH",
+    "category": "mel-icecream"
+  },
+  "DGN": {
+    "Description": "GIANT NEO SANDWICH",
+    "Item": "DGN",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "GIANT-NEO-SANDWICH",
+    "category": "mel-icecream"
+  },
+  "DCCS": {
+    "Description": "COOKIE CHIP SANDWICH",
+    "Item": "DCCS",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "COOKIE-CHIP-SANDWICH",
+    "category": "mel-icecream"
+  },
+  "DSC1": {
+    "Description": "SUNDAE- STRAWBERRY",
+    "Item": "DSC1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "SUNDAE--STRAWBERRY",
+    "category": "mel-icecream"
+  },
+  "DSC2": {
+    "Description": "SUNDAE- CHOCOLATE",
+    "Item": "DSC2",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "SUNDAE--CHOCOLATE",
+    "category": "mel-icecream"
+  },
+  "DSC3": {
+    "Description": "SUNDAE- COTTON CANDY",
+    "Item": "DSC3",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "SUNDAE--COTTON-CANDY",
+    "category": "mel-icecream"
+  },
+  "NEB2": {
+    "Description": "NESTLE CRUNCH BAR",
+    "Item": "NEB2",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "NESTLE-CRUNCH-BAR",
+    "category": "mel-icecream"
+  },
+  "NEP1": {
+    "Description": "ORANGE PUSHUP",
+    "Item": "NEP1",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "ORANGE-PUSHUP",
+    "category": "mel-icecream"
+  },
+  "NEC1": {
+    "Description": "DRUMSTIK CONE VANILA",
+    "Item": "NEC1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "DRUMSTIK-CONE-VANILA",
+    "category": "mel-icecream"
+  },
+  "NET1": {
+    "Description": "TOLLHOUSE SANDWICH",
+    "Item": "NET1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "TOLLHOUSE-SANDWICH",
+    "category": "mel-icecream"
+  },
+  "MB3": {
+    "Description": "STRAWBERRY",
+    "Item": "MB3",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "STRAWBERRY",
+    "category": "mel-icecream"
+  },
+  "MM1": {
+    "Description": "MANGONADA CUP- 9OZ",
+    "Item": "MM1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "MANGONADA-CUP--9OZ",
+    "category": "mel-icecream"
+  },
+  "NEB1": {
+    "Description": "ORANGE CREAM BAR",
+    "Item": "NEB1",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "ORANGE-CREAM-BAR",
+    "category": "mel-icecream"
+  },
+  "NED1": {
+    "Description": "DIBS CRUNCH",
+    "Item": "NED1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "DIBS-CRUNCH",
+    "category": "mel-icecream"
+  },
+  "NEC2": {
+    "Description": "DRUMSTIK CONE CHOC",
+    "Item": "NEC2",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "DRUMSTIK-CONE-CHOC",
+    "category": "mel-icecream"
+  },
+  "MB1": {
+    "Description": "SNICKER ICE CRM BAR",
+    "Item": "MB1",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "SNICKER-ICE-CRM-BAR",
+    "category": "mel-icecream"
+  },
+  "MB2": {
+    "Description": "TWIX ICE CREAM BAR",
+    "Item": "MB2",
+    "Price": 24,
+    "Quantity": 50,
+    "sku": "TWIX-ICE-CREAM-BAR",
+    "category": "mel-icecream"
+  },
+  "BOM1": {
+    "Description": "BOMB POP- RWB",
+    "Item": "BOM1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "BOMB-POP--RWB",
+    "category": "mel-icecream"
+  },
+  "SNO1": {
+    "Description": "SNOWCONE",
+    "Item": "SNO1",
+    "Price": 12,
+    "Quantity": 50,
+    "sku": "SNOWCONE",
+    "category": "mel-icecream"
+  },
+  "FAC1": {
+    "Description": "FACE POP-SPNGE BOB",
+    "Item": "FAC1",
+    "Price": 18,
+    "Quantity": 50,
+    "sku": "FACE-POP-SPNGE-BOB",
+    "category": "mel-icecream"
+  },
+  "FAC2": {
+    "Description": "FACE POP- SPIDERMAN",
+    "Item": "FAC2",
+    "Price": 18,
+    "Quantity": 50,
+    "sku": "FACE-POP--SPIDERMAN",
+    "category": "mel-icecream"
+  },
+  "FAC3": {
+    "Description": "FACE POP- MINIONS",
+    "Item": "FAC3",
+    "Price": 18,
+    "Quantity": 50,
+    "sku": "FACE-POP--MINIONS",
+    "category": "mel-icecream"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "VB101": {
+    "Description": "Vijay Idli Batter",
+    "Item": "VB101",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Vijay-Idli-Batter-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VB102": {
+    "Description": "Vijay Dosa Batter",
+    "Item": "VB102",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Vijay-Dosa-Batter-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VB103": {
+    "Description": "Uthappam Batter",
+    "Item": "VB103",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Uthappam-Batter-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VB104": {
+    "Description": "Adai",
+    "Item": "VB104",
+    "Price": 2,
+    "Quantity": 1,
+    "sku": "Adai-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VRTE201": {
+    "Description": "Sambar",
+    "Item": "VRTE201",
+    "Price": 4,
+    "Quantity": 1,
+    "sku": "Sambar-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VP301": {
+    "Description": "RK Idli Chilli Powder",
+    "Item": "VP301",
+    "Price": 1.75,
+    "Quantity": 1,
+    "sku": "RK-Idli-Chilli-Powder-",
+    "category": "VIJAYHOMEFOODS"
+  },
+  "VP302": {
+    "Description": "RK Chutney Powder",
+    "Item": "VP302",
+    "Price": 1.75,
+    "Quantity": 1,
+    "sku": "RK-Chutney-Powder-",
+    "category": "VIJAYHOMEFOODS"
+  }
+}

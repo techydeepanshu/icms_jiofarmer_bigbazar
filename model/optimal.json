@@ -1,0 +1,370 @@
+{
+  "220110": {
+    "Item": "220110",
+    "Quantity": 50,
+    "Price": 59.5,
+    "Description": "CASE 61 KG 17.22 BOREK CHEESE BLUE DAIRYLAND",
+    "category": "optima",
+    "sku": "-CASE-61-KG-17.22-BOREK-CHEESE-BLUE-DAIRYLAND"
+  },
+  "220106": {
+    "Item": "220106",
+    "Quantity": 50,
+    "Price": 60.5,
+    "Description": "CASE 61 KG YUMUSAK CHEESE GREEN DAIRYLAND",
+    "category": "optima",
+    "sku": "-CASE-61-KG-YUMUSAK-CHEESE-GREEN-DAIRYLAND"
+  },
+  "220100": {
+    "Item": "220100",
+    "Quantity": 50,
+    "Price": 67,
+    "Description": "CASE 61 KG FETA DAIRYLAND 1KG DAIRYLAND",
+    "category": "optima",
+    "sku": "-CASE-61-KG-FETA-DAIRYLAND-1KG-DAIRYLAND"
+  },
+  "220212": {
+    "Item": "220212",
+    "Quantity": 50,
+    "Price": 64.9,
+    "Description": "CASE 6900 G FETA TRADITIONAL MTCALAVRITA PRE-P MILITSOPOULOS",
+    "category": "optima",
+    "sku": "-CASE-6900-G-FETA-TRADITIONAL-MTCALAVRITA-PRE-P-MILITSOPOULOS"
+  },
+  "220250": {
+    "Item": "220250",
+    "Quantity": 50,
+    "Price": 51.25,
+    "Description": "CASE 8400 G FETA BARREL AGED PACK IN BRINE ARAHOVA",
+    "category": "optima",
+    "sku": "-CASE-8400-G-FETA-BARREL-AGED-PACK-IN-BRINE-ARAHOVA"
+  },
+  "220220H": {
+    "Item": "220220H",
+    "Quantity": 50,
+    "Price": 26.95,
+    "Description": "CASE 12200 G FETA HOTOS PRE-PACK HOTOS",
+    "category": "optima",
+    "sku": "-CASE-12200-G-FETA-HOTOS-PRE-PACK-HOTOS"
+  },
+  "220222": {
+    "Item": "220222",
+    "Quantity": 50,
+    "Price": 35.95,
+    "Description": "CASE 12200 G FETA GREEK EPIROS PACK IN BRINE EPIROS",
+    "category": "optima",
+    "sku": "-CASE-12200-G-FETA-GREEK-EPIROS-PACK-IN-BRINE-EPIROS"
+  },
+  "220220": {
+    "Item": "220220",
+    "Quantity": 50,
+    "Price": 32.8,
+    "Description": "CASE 12200 G FETA ATTICA PRE-PACK ATTICA",
+    "category": "optima",
+    "sku": "-CASE-12200-G-FETA-ATTICA-PRE-PACK-ATTICA"
+  },
+  "220215": {
+    "Item": "220215",
+    "Quantity": 50,
+    "Price": 80.55,
+    "Description": "CASE 61 KG FETA GREEK EPIROS PACK IN BRINE EPIROS",
+    "category": "optima",
+    "sku": "-CASE-61-KG-FETA-GREEK-EPIROS-PACK-IN-BRINE-EPIROS"
+  },
+  "520128": {
+    "Item": "520128",
+    "Quantity": 50,
+    "Price": 30.1,
+    "Description": "BOX 1485 G CHOCOLATE LACTA PLAIN LACTA",
+    "category": "optima",
+    "sku": "-BOX-1485-G-CHOCOLATE-LACTA-PLAIN-LACTA"
+  },
+  "520087": {
+    "Item": "520087",
+    "Quantity": 50,
+    "Price": 29.85,
+    "Description": "BOX 1485 G CHOCOLATE LACTA ALMOND LACTA",
+    "category": "optima",
+    "sku": "-BOX-1485-G-CHOCOLATE-LACTA-ALMOND-LACTA"
+  },
+  "520110": {
+    "Item": "520110",
+    "Quantity": 50,
+    "Price": 11.5,
+    "Description": "BOX 2038 G CHOCOLATE WAFERS HAZELNUT ION",
+    "category": "optima",
+    "sku": "-BOX-2038-G-CHOCOLATE-WAFERS-HAZELNUT-ION"
+  },
+  "RT520107": {
+    "Item": "RT520107",
+    "Quantity": 50,
+    "Price": 12,
+    "Description": "BOX 2038 G CHOCOLATE WAFERS YGEIAS BLUE ION",
+    "category": "optima",
+    "sku": "-BOX-2038-G-CHOCOLATE-WAFERS-YGEIAS-BLUE-ION"
+  },
+  "520106": {
+    "Item": "520106",
+    "Quantity": 50,
+    "Price": 12.05,
+    "Description": "BOX 2038 G CHOCOLATE WAFERS RED ION",
+    "category": "optima",
+    "sku": "-BOX-2038-G-CHOCOLATE-WAFERS-RED-ION"
+  },
+  "480414": {
+    "Item": "480414",
+    "Quantity": 50,
+    "Price": 17.75,
+    "Description": "CASE 12500 G PASTA ORZO WHOLE WHEAT HELIOS HELIOS",
+    "category": "optima",
+    "sku": "-CASE-12500-G-PASTA-ORZO-WHOLE-WHEAT-HELIOS-HELIOS"
+  },
+  "480427": {
+    "Item": "480427",
+    "Quantity": 50,
+    "Price": 14.5,
+    "Description": "CASE 20250 G PASTA FIDES MISKO MISKO",
+    "category": "optima",
+    "sku": "-CASE-20250-G-PASTA-FIDES-MISKO-MISKO"
+  },
+  "480574": {
+    "Item": "480574",
+    "Quantity": 50,
+    "Price": 23.35,
+    "Description": "CASE 20500 G PASTA ORZO MISKO MISKO",
+    "category": "optima",
+    "sku": "-CASE-20500-G-PASTA-ORZO-MISKO-MISKO"
+  },
+  "480420": {
+    "Item": "480420",
+    "Quantity": 50,
+    "Price": 16.25,
+    "Description": "CASE 12500 G PASTA ASTRAKI STARS MISKO MISKO",
+    "category": "optima",
+    "sku": "-CASE-12500-G-PASTA-ASTRAKI-STARS-MISKO-MISKO"
+  },
+  "480418": {
+    "Item": "480418",
+    "Quantity": 50,
+    "Price": 16.03,
+    "Description": "CASE 12500 G PASTA TALIATELLES HELIOS HELIOS",
+    "category": "optima",
+    "sku": "-CASE-12500-G-PASTA-TALIATELLES-HELIOS-HELIOS"
+  },
+  "480416": {
+    "Item": "480416",
+    "Quantity": 50,
+    "Price": 13.9,
+    "Description": "CASE 12500 G PASTA FIDES CUT HELIOS HELIOS",
+    "category": "optima",
+    "sku": "-CASE-12500-G-PASTA-FIDES-CUT-HELIOS-HELIOS"
+  },
+  "480322": {
+    "Item": "480322",
+    "Quantity": 50,
+    "Price": 24.75,
+    "Description": "CASE 24500 G PASTA 10 MISKO MISKO",
+    "category": "optima",
+    "sku": "-CASE-24500-G-PASTA-10-MISKO-MISKO"
+  },
+  "500747": {
+    "Item": "500747",
+    "Quantity": 50,
+    "Price": 13.6,
+    "Description": "CASE 121 KG SALT SEA COARSE NIKIS KALLAS",
+    "category": "optima",
+    "sku": "-CASE-121-KG-SALT-SEA-COARSE-NIKIS-KALLAS"
+  },
+  "500748": {
+    "Item": "500748",
+    "Quantity": 50,
+    "Price": 19.45,
+    "Description": "CASE 16750 G SALT SEA KALLAS KALLAS",
+    "category": "optima",
+    "sku": "-CASE-16750-G-SALT-SEA-KALLAS-KALLAS"
+  },
+  "700100": {
+    "Item": "700100",
+    "Quantity": 50,
+    "Price": 17.7,
+    "Description": "CASE 610.6 OZ TAHINI GREEK ORGANIC PELLA",
+    "category": "optima",
+    "sku": "-CASE-610.6-OZ-TAHINI-GREEK-ORGANIC-PELLA"
+  },
+  "420744": {
+    "Item": "420744",
+    "Quantity": 50,
+    "Price": 81.8,
+    "Description": "CASE 12750 ML OLIVE OIL EXTRA VIRGIN SPITIKO SPITIKO",
+    "category": "optima",
+    "sku": "-CASE-12750-ML-OLIVE-OIL-EXTRA-VIRGIN-SPITIKO-SPITIKO"
+  },
+  "420402": {
+    "Item": "420402",
+    "Quantity": 50,
+    "Price": 97.31,
+    "Description": "CASE 62 LIT OLIVE OIL XV PET ILIADA ILIADA",
+    "category": "optima",
+    "sku": "-CASE-62-LIT-OLIVE-OIL-XV-PET-ILIADA-ILIADA"
+  },
+  "420615": {
+    "Item": "420615",
+    "Quantity": 50,
+    "Price": 61.75,
+    "Description": "CASE 43 LTR OLIVE OIL X-VIRGIN PYLOS PYLOS",
+    "category": "optima",
+    "sku": "-CASE-43-LTR-OLIVE-OIL-X-VIRGIN-PYLOS-PYLOS"
+  },
+  "420604": {
+    "Item": "420604",
+    "Quantity": 50,
+    "Price": 79.25,
+    "Description": "CASE 43 ITR OLIVE OIL X-VIRGIN MESSINIA MESSINIA",
+    "category": "optima",
+    "sku": "-CASE-43-ITR-OLIVE-OIL-X-VIRGIN-MESSINIA-MESSINIA"
+  },
+  "420401": {
+    "Item": "420401",
+    "Quantity": 50,
+    "Price": 91.75,
+    "Description": "CASE 43 LIT OLIVE OIL XV PDO KALAMATA ILIADA ILIADA",
+    "category": "optima",
+    "sku": "-CASE-43-LIT-OLIVE-OIL-XV-PDO-KALAMATA-ILIADA-ILIADA"
+  },
+  "520310": {
+    "Item": "520310",
+    "Quantity": 50,
+    "Price": 61.3,
+    "Description": "CASE 12500 G HONEY GREEK ORGANIC FIORA",
+    "category": "optima",
+    "sku": "-CASE-12500-G-HONEY-GREEK-ORGANIC-FIORA"
+  },
+  "520308": {
+    "Item": "520308",
+    "Quantity": 50,
+    "Price": 100.75,
+    "Description": "CASE 12450 G HONEY CRETE MONASTIRI MONASTIRI",
+    "category": "optima",
+    "sku": "-CASE-12450-G-HONEY-CRETE-MONASTIRI-MONASTIRI"
+  },
+  "160095": {
+    "Item": "160095",
+    "Quantity": 50,
+    "Price": 24.95,
+    "Description": "BOX 16250 G BISCUITS DIGESTIVE SUGAR FREE ALLATINI",
+    "category": "optima",
+    "sku": "-BOX-16250-G-BISCUITS-DIGESTIVE-SUGAR-FREE-ALLATINI"
+  },
+  "160080": {
+    "Item": "160080",
+    "Quantity": 50,
+    "Price": 20.55,
+    "Description": "BOX 12200 G BISCUITS STRAWBERRY CREAM SANDWICH PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-12200-G-BISCUITS-STRAWBERRY-CREAM-SANDWICH-PAPADOPOULOS"
+  },
+  "160071": {
+    "Item": "160071",
+    "Quantity": 50,
+    "Price": 16.9,
+    "Description": "BOX 16225 G BISCUITS PETIT BEURRE 16 PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-16225-G-BISCUITS-PETIT-BEURRE-16-PAPADOPOULOS"
+  },
+  "160065": {
+    "Item": "160065",
+    "Quantity": 50,
+    "Price": 20,
+    "Description": "BOX 12200 G BISCUITS ORANGE CREAM SANDWICH PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-12200-G-BISCUITS-ORANGE-CREAM-SANDWICH-PAPADOPOULOS"
+  },
+  "160059": {
+    "Item": "160059",
+    "Quantity": 50,
+    "Price": 18.85,
+    "Description": "BOX 12250 G BISCUITS MIRANDA PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-12250-G-BISCUITS-MIRANDA-PAPADOPOULOS"
+  },
+  "160047": {
+    "Item": "160047",
+    "Quantity": 50,
+    "Price": 20,
+    "Description": "BOX 12200 G BISCUITS COCOA CREAM SANDWICH PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-12200-G-BISCUITS-COCOA-CREAM-SANDWICH-PAPADOPOULOS"
+  },
+  "160043": {
+    "Item": "160043",
+    "Quantity": 50,
+    "Price": 18.75,
+    "Description": "BOX 12200 G BISCUITS VANILLA CREAM SANDWICH PAPADOPOULOS",
+    "category": "optima",
+    "sku": "-BOX-12200-G-BISCUITS-VANILLA-CREAM-SANDWICH-PAPADOPOULOS"
+  },
+  "120272": {
+    "Item": "120272",
+    "Quantity": 50,
+    "Price": 39,
+    "Description": "CASE 24400 G CHICK PEAS DRY KASTORIAS AROSIS",
+    "category": "optima",
+    "sku": "-CASE-24400-G-CHICK-PEAS-DRY-KASTORIAS-AROSIS"
+  },
+  "120450": {
+    "Item": "120450",
+    "Quantity": 50,
+    "Price": 38.75,
+    "Description": "CASE 24400 G LENTILS GREEK PRE- PACK AROSIS",
+    "category": "optima",
+    "sku": "-CASE-24400-G-LENTILS-GREEK-PRE--PACK-AROSIS"
+  },
+  "120249": {
+    "Item": "120249",
+    "Quantity": 50,
+    "Price": 90.1,
+    "Description": "CASE 24400 G BEANS GIANT PACK AROSIS",
+    "category": "optima",
+    "sku": "-CASE-24400-G-BEANS-GIANT-PACK-AROSIS"
+  },
+  "240742": {
+    "Item": "240742",
+    "Quantity": 50,
+    "Price": 44,
+    "Description": "CASE 50100 G SUNFLOWER SEEDS ROASTEDSALTED FREE TIME",
+    "category": "optima",
+    "sku": "-CASE-50100-G-SUNFLOWER-SEEDS-ROASTEDSALTED-FREE-TIME"
+  },
+  "230054": {
+    "Item": "230054",
+    "Quantity": 50,
+    "Price": 71.85,
+    "Description": "CASE 12454 G COFFEE LAIKO CYPRUS LAIKO",
+    "category": "optima",
+    "sku": "-CASE-12454-G-COFFEE-LAIKO-CYPRUS-LAIKO"
+  },
+  "460128": {
+    "Item": "460128",
+    "Quantity": 50,
+    "Price": 24.7,
+    "Description": "CASE 1210 OZ OKRA IN OIL ATTICA ATTICA",
+    "category": "optima",
+    "sku": "-CASE-1210-OZ-OKRA-IN-OIL-ATTICA-ATTICA"
+  },
+  "460127": {
+    "Item": "460127",
+    "Quantity": 50,
+    "Price": 20.4,
+    "Description": "CASE 1210 OZ EGGPLANT IN OIL ATTICA ATTICA",
+    "category": "optima",
+    "sku": "-CASE-1210-OZ-EGGPLANT-IN-OIL-ATTICA-ATTICA"
+  },
+  "460124": {
+    "Item": "460124",
+    "Quantity": 50,
+    "Price": 19.05,
+    "Description": "CASE 1210 OZ BEANS GIANT IN TOMATO SAUCE ATTICA ATTICA",
+    "category": "optima",
+    "sku": "-CASE-1210-OZ-BEANS-GIANT-IN-TOMATO-SAUCE-ATTICA-F46"
+  }
+}

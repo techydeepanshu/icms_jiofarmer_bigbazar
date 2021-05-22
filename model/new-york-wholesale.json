@@ -1,0 +1,72 @@
+{
+  "Hair Pack:Amla Hair Pack AMLA HAIR PACK": {
+    "Item": "Hair Pack:Amla Hair Pack AMLA HAIR PACK",
+    "Description": "Hair Pack:Amla Hair Pack AMLA HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Amla-Hair-Pack-AMLA-HAIR-PACK-"
+  },
+  "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK": {
+    "Item": "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK",
+    "Description": "Hair Pack:Mehendi hair PackMEHENDI HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Mehendi-hair-PackMEHENDI-HAIR-PACK-"
+  },
+  "Face Pack:Multani lemon LEMON FACEPACK": {
+    "Item": "Face Pack:Multani lemon LEMON FACEPACK",
+    "Description": "Face Pack:Multani lemon LEMON FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-lemon-LEMON-FACEPACK-"
+  },
+  "Face Pack: Multani Premium Face Pack MULTANI FACEPACK": {
+    "Item": "Face Pack: Multani Premium Face Pack MULTANI FACEPACK",
+    "Description": "Face Pack: Multani Premium Face Pack MULTANI FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:-Multani-Premium-Face-Pack-MULTANI-FACEPACK-"
+  },
+  "Face Pack:Multani rose Face Pack ROSE FACEPACK": {
+    "Item": "Face Pack:Multani rose Face Pack ROSE FACEPACK",
+    "Description": "Face Pack:Multani rose Face Pack ROSE FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-rose-Face-Pack-ROSE-FACEPACK-"
+  },
+  "Face Pack:Multani-Sandal SANDAL FACEPACK": {
+    "Item": "Face Pack:Multani-Sandal SANDAL FACEPACK",
+    "Description": "Face Pack:Multani-Sandal SANDAL FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Face-Pack:Multani-Sandal-SANDAL-FACEPACK-"
+  },
+  "OrangeFacepack ORANGE FACEPACK": {
+    "Item": "OrangeFacepack ORANGE FACEPACK",
+    "Description": "OrangeFacepack ORANGE FACEPACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "OrangeFacepack-ORANGE-FACEPACK-"
+  },
+  "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK": {
+    "Item": "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK",
+    "Description": "Hair Pack:Reetha_Hair Pack REETHA HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Reetha_Hair-Pack-REETHA-HAIR-PACK-"
+  },
+  "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK": {
+    "Item": "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK",
+    "Description": "Hair Pack:Sheekakai hair Pack SHIKAKKAI HAIR PACK",
+    "Quantity": 1,
+    "Price": 0.99,
+    "sku": "Hair-Pack:Sheekakai-hair-Pack-SHIKAKKAI-HAIR-PACK-"
+  },
+  "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers": {
+    "Item": "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers",
+    "Description": "Sugar-Supplernent:Sugset Flowers(Paneer ke Phool) Sugset Flowers",
+    "Quantity": 1,
+    "Price": 5.99,
+    "sku": "Sugar-Supplernent:Sugset-Flowers(Paneer-ke-Phool)-Sugset-Flowers-"
+  }
+}

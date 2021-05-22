@@ -1,0 +1,170 @@
+{
+  "Golden Stand 8x12": {
+    "Item": "Golden Stand 8x12",
+    "Description": "Golden Stand 8x12",
+    "Quantity": 8,
+    "Price": 6,
+    "sku": "Golden-Stand-8x12-"
+  },
+  "Golden Stand 10x14": {
+    "Item": "Golden Stand 10x14",
+    "Description": "Golden Stand 10x14",
+    "Quantity": 10,
+    "Price": 8,
+    "sku": "Golden-Stand-10x14-"
+  },
+  "Golden Stand 12x18": {
+    "Item": "Golden Stand 12x18",
+    "Description": "Golden Stand 12x18",
+    "Quantity": 12,
+    "Price": 10,
+    "sku": "Golden-Stand-12x18-"
+  },
+  "Bowl Set 5pcs": {
+    "Item": "Bowl Set 5pcs",
+    "Description": "Bowl Set 1 Tray, 2 spoon, 2 bowl",
+    "Quantity": 1,
+    "Price": 10,
+    "sku": "Bowl-Set-1-Tray,-2-spoon,-2-bowl-"
+  },
+  "Bowl Set 9pcs": {
+    "Item": "Bowl Set 9pcs",
+    "Description": "Bowl Set 1 tray, 4 spoon & 4 bowl",
+    "Quantity": 1,
+    "Price": 15,
+    "sku": "Bowl-Set-1-tray,-4-spoon-&-4-bowl-"
+  },
+  "4pcs Pyali Deep": {
+    "Item": "4pcs Pyali Deep",
+    "Description": "4pcs Pyali Deep 4\" assorted color",
+    "Quantity": 1,
+    "Price": 10,
+    "sku": "4pcs-Pyali-Deep-4\"-assorted-color"
+  },
+  "6pcs Pyali Deep": {
+    "Item": "6pcs Pyali Deep",
+    "Description": "6pcs Pyali Deep assorted colour",
+    "Quantity": 1,
+    "Price": 12,
+    "sku": "6pcs-Pyali-Deep-assorted-colour-"
+  },
+  "VIN-Momo maker": {
+    "Item": "VIN-Momo maker",
+    "Description": "STEAMER 5 TIER 24 CM",
+    "Quantity": 1,
+    "Price": 32,
+    "sku": "STEAMER-5-TIER-24-CM-"
+  },
+  "Anjali-Multi Slicer": {
+    "Item": "Anjali-Multi Slicer",
+    "Description": "Anjali-Multi Slicer Greater",
+    "Quantity": 1,
+    "Price": 4,
+    "sku": "Anjali-Multi-Slicer-Greater-"
+  },
+  "Anjali-Chop Round 2": {
+    "Item": "Anjali-Chop Round 2",
+    "Description": "Anjali-Chopping board Round No. 2",
+    "Quantity": 1,
+    "Price": 2.5,
+    "sku": "Anjali-Chopping-board-Round-No.-2-"
+  },
+  "Anjali-Chop Round 3": {
+    "Item": "Anjali-Chop Round 3",
+    "Description": "Anjali-Chopping board Round No. 3",
+    "Quantity": 1,
+    "Price": 3,
+    "sku": "Anjali-Chopping-board-Round-No.-3-"
+  },
+  "Anjali-Chop squa...": {
+    "Item": "Anjali-Chop squa...",
+    "Description": "Anjali-Chopping board square No. 2",
+    "Quantity": 1,
+    "Price": 2.5,
+    "sku": "Anjali-Chopping-board-square-No.-2-"
+  },
+  "Ind-Sev Sacha SS": {
+    "Item": "Ind-Sev Sacha SS",
+    "Description": "Sev Sacha Stainless Steel",
+    "Quantity": 1,
+    "Price": 7,
+    "sku": "Sev-Sacha-Stainless-Steel-"
+  },
+  "Brass Sev Sacha": {
+    "Item": "Brass Sev Sacha",
+    "Description": "BRASS SEV SANCHA",
+    "Quantity": 1,
+    "Price": 10,
+    "sku": "BRASS-SEV-SANCHA"
+  },
+  "Anjali-Masher Delux": {
+    "Item": "Anjali-Masher Delux",
+    "Description": "Anjali-Masher Delux",
+    "Quantity": 1,
+    "Price": 72,
+    "sku": "Anjali-Masher-Delux-"
+  },
+  "Anjali-Masher Oval": {
+    "Item": "Anjali-Masher Oval",
+    "Description": "Anjali-Masher Oval",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Anjali-Masher-Oval"
+  },
+  "Vin-Wisk": {
+    "Item": "Vin-Wisk",
+    "Description": "Vinod Wisk 25cm",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Vinod-Wisk-25cm-"
+  },
+  "Anjali-Baby spoon": {
+    "Item": "Anjali-Baby spoon",
+    "Description": "Anjali-Baby spoon 6pk",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Anjali-Baby-spoon-6pk-"
+  },
+  "Anjali-Pakkad": {
+    "Item": "Anjali-Pakkad",
+    "Description": "Anjali-Doctor Pakkad",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Anjali-Doctor-Pakkad-"
+  },
+  "Anjali-Pakkad Plastic Handle": {
+    "Item": "Anjali-Pakkad Plastic Handle",
+    "Description": "Anjali-Pakkad Plastic Handle",
+    "Quantity": 1,
+    "Price": 2.5,
+    "sku": "Anjali-Pakkad-Plastic-Handle-"
+  },
+  "Anjali-Scraper Zi...": {
+    "Item": "Anjali-Scraper Zi...",
+    "Description": "Anjali-Scraper Zig Zag Holes SC19",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Anjali-Scraper-Zig-Zag-Holes-SC19-"
+  },
+  "Anjali-Nano Slicer": {
+    "Item": "Anjali-Nano Slicer",
+    "Description": "Anjali-Nano Slicer",
+    "Quantity": 1,
+    "Price": 3,
+    "sku": "Anjali-Nano-Slicer-"
+  },
+  "IRON TADKA PAN 4": {
+    "Item": "IRON TADKA PAN 4",
+    "Description": "IRON TADKA PAN 4'",
+    "Quantity": 1,
+    "Price": 3.5,
+    "sku": "IRON-TADKA-PAN-4'"
+  },
+  "IRON TADKA PAN 5": {
+    "Item": "IRON TADKA PAN 5",
+    "Description": "IRON TADKA PAN 5'",
+    "Quantity": 1,
+    "Price": 4,
+    "sku": "IRON-TADKA-PAN-5'-"
+  }
+}

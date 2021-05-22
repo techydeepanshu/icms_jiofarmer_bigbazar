@@ -1,0 +1,330 @@
+{
+  "8920": {
+    "Item": "8920",
+    "Description": "BALKAN VALLEY COMBI CHEESE 800GR 6ea/bx (~$3.79ea)",
+    "Price": 22.74,
+    "Quantity": 6,
+    "sku": "BALKAN-VALLEY-COMBI-CHEESE-800GR-6ea/bx-(~$3.79ea)-",
+    "category": "vintage"
+  },
+  "9465": {
+    "Item": "9465",
+    "Description": "CAYKUR ORGANIC HEMSIN TEA CAN 400GR 12ea/bx (~$5.75ea)",
+    "Price": 69,
+    "Quantity": 12,
+    "sku": "CAYKUR-ORGANIC-HEMSIN-TEA-CAN-400GR-12ea/bx-(~$5.75ea)-",
+    "category": "vintage"
+  },
+  "9616": {
+    "Item": "9616",
+    "Description": "FISKOBIRLIK FISKOKREM HAZELNUT SPREAD W MILK 400GR 8ea/bx (~$2.75ea)",
+    "Price": 22,
+    "Quantity": 8,
+    "sku": "FISKOBIRLIK-FISKOKREM-HAZELNUT-SPREAD-W-MILK-400GR-8ea/bx-(~$2.75ea)-",
+    "category": "vintage"
+  },
+  "8010": {
+    "Item": "8010",
+    "Description": "ICIM LABNEH 550GR 12ea/bx (~$3.29ea)",
+    "Price": 39.48,
+    "Quantity": 12,
+    "sku": "ICIM-LABNEH-550GR-12ea/bx-(~$3.29ea)-",
+    "category": "vintage"
+  },
+  "8011": {
+    "Item": "8011",
+    "Description": "ICIM LABNEH 750GR 12ea/bx (~$4.79ea)",
+    "Price": 57.48,
+    "Quantity": 12,
+    "sku": "ICIM-LABNEH-750GR-12ea/bx-(~$4.79ea)-",
+    "category": "vintage"
+  },
+  "9184": {
+    "Item": "9184",
+    "Description": "IPEK ELBOW (DIRSEK) 454GR 20ea/bx",
+    "Price": 13,
+    "Quantity": 20,
+    "sku": "IPEK-ELBOW-(DIRSEK)-454GR-20ea/bx-",
+    "category": "vintage"
+  },
+  "9179": {
+    "Item": "9179",
+    "Description": "IPEK FARFALLE (KELEBEK) 454GR 20ea/bx (~$0.65ea)",
+    "Price": 13,
+    "Quantity": 20,
+    "sku": "IPEK-FARFALLE-(KELEBEK)-454GR-20ea/bx-(~$0.65ea)-",
+    "category": "vintage"
+  },
+  "9202": {
+    "Item": "9202",
+    "Description": "IPEK MANTI (MAKARNA) 454GR 20ea/bx (~$0.65ea)",
+    "Price": 13,
+    "Quantity": 20,
+    "sku": "IPEK-MANTI-(MAKARNA)-454GR-20ea/bx-(~$0.65ea)-",
+    "category": "vintage"
+  },
+  "5541": {
+    "Item": "5541",
+    "Description": "LEZIZ BALDO BAG 55Lb/ea (~$0.99Lb)",
+    "Price": 54.45,
+    "Quantity": 1,
+    "sku": "LEZIZ-BALDO-BAG-55Lb/ea-(~$0.99Lb)-",
+    "category": "vintage"
+  },
+  "5540": {
+    "Item": "5540",
+    "Description": "LEZIZ BALDO RICE 2LB 12ea/bx (~$2.15ea)",
+    "Price": 25.8,
+    "Quantity": 12,
+    "sku": "LEZIZ-BALDO-RICE-2LB-12ea/bx-(~$2.15ea)-",
+    "category": "vintage"
+  },
+  "4921": {
+    "Item": "4921",
+    "Description": "MB BLACK OLIVE PASTE 340GR GLASS 12ea/bx (~$1.50ea)",
+    "Price": 17.97,
+    "Quantity": 12,
+    "sku": "MB-BLACK-OLIVE-PASTE-340GR-GLASS-12ea/bx-(~$1.50ea)-",
+    "category": "vintage"
+  },
+  "4811": {
+    "Item": "4811",
+    "Description": "MB GEMLIK BLACK OLIVES S LOW SALT 800GR CAN 6ea/bx after %18.55 disc (~$3.25ea)",
+    "Price": 19.5,
+    "Quantity": 6,
+    "sku": "MB-GEMLIK-BLACK-OLIVES-S-LOW-SALT-800GR-CAN-6ea/bx-after-%18.55-disc-(~$3.25ea)-",
+    "category": "vintage"
+  },
+  "6306": {
+    "Item": "6306",
+    "Description": "MEHMET EFENDI TURKISH COFFEE 100GR 25ea/bx (~$1.15ea)",
+    "Price": 28.75,
+    "Quantity": 25,
+    "sku": "MEHMET-EFENDI-TURKISH-COFFEE-100GR-25ea/bx-(~$1.15ea)-",
+    "category": "vintage"
+  },
+  "9226": {
+    "Item": "9226",
+    "Description": "MERVE AGED FULL FAT TULUM CHEESE W/BLACK CARAWAY 500GR 6ea/bx (~$5.25ea)",
+    "Price": 31.5,
+    "Quantity": 6,
+    "sku": "MERVE-AGED-FULL-FAT-TULUM-CHEESE-W/BLACK-CARAWAY-500GR-6ea/bx-(~$5.25ea)-",
+    "category": "vintage"
+  },
+  "6442": {
+    "Item": "6442",
+    "Description": "MERVE BEEF FRANKS 1LB 12ea/bx (~$5.99ea)",
+    "Price": 71.88,
+    "Quantity": 12,
+    "sku": "MERVE-BEEF-FRANKS-1LB-12ea/bx-(~$5.99ea)-",
+    "category": "vintage"
+  },
+  "6444": {
+    "Item": "6444",
+    "Description": "MERVE BEEF SLICED SALAMI PLAIN 1LB 12ea/bx (~$5.99ea)",
+    "Price": 71.88,
+    "Quantity": 12,
+    "sku": "MERVE-BEEF-SLICED-SALAMI-PLAIN-1LB-12ea/bx-(~$5.99ea)-",
+    "category": "vintage"
+  },
+  "6448": {
+    "Item": "6448",
+    "Description": "MERVE BEEF SOUJOUK BUTCHER STYLE 1LB 12ea/bx (~$7.39ea)",
+    "Price": 88.68,
+    "Quantity": 12,
+    "sku": "MERVE-BEEF-SOUJOUK-BUTCHER-STYLE-1LB-12ea/bx-(~$7.39ea)-",
+    "category": "vintage"
+  },
+  "6447": {
+    "Item": "6447",
+    "Description": "MERVE BEEF SOUJOUK HOT ROUND 1LB 12ea/bx (~$7.39ea)",
+    "Price": 88.68,
+    "Quantity": 12,
+    "sku": "MERVE-BEEF-SOUJOUK-HOT-ROUND-1LB-12ea/bx-(~$7.39ea)-",
+    "category": "vintage"
+  },
+  "4308": {
+    "Item": "4308",
+    "Description": "MERVE CREAM ON TOP YOGURT 2LB 6ea/bx (~$2.99ea)",
+    "Price": 17.94,
+    "Quantity": 6,
+    "sku": "MERVE-CREAM-ON-TOP-YOGURT-2LB-6ea/bx-(~$2.99ea)-",
+    "category": "vintage"
+  },
+  "9222": {
+    "Item": "9222",
+    "Description": "MERVE FULL FAT KASHKAVAL CHEESE 400GR 12ea/bx (~$3.75ea)",
+    "Price": 45,
+    "Quantity": 12,
+    "sku": "MERVE-FULL-FAT-KASHKAVAL-CHEESE-400GR-12ea/bx-(~$3.75ea)-",
+    "category": "vintage"
+  },
+  "8443": {
+    "Item": "8443",
+    "Description": "MERVE LABNE 2LB 6ea/bx (~$4.08ea)",
+    "Price": 24.48,
+    "Quantity": 6,
+    "sku": "MERVE-LABNE-2LB-6ea/bx-(~$4.08ea)-",
+    "category": "vintage"
+  },
+  "4307": {
+    "Item": "4307",
+    "Description": "MERVE PLAIN YOGURT 2LB 6ea/bx (~$2.99ea)",
+    "Price": 17.94,
+    "Quantity": 6,
+    "sku": "MERVE-PLAIN-YOGURT-2LB-6ea/bx-(~$2.99ea)-",
+    "category": "vintage"
+  },
+  "7422": {
+    "Item": "7422",
+    "Description": "MERVE SHEEP CHEESE 454GR TIN 12ea/bx (~$4.49ea)",
+    "Price": 53.88,
+    "Quantity": 12,
+    "sku": "MERVE-SHEEP-CHEESE-454GR-TIN-12ea/bx-(~$4.49ea)-",
+    "category": "vintage"
+  },
+  "7423": {
+    "Item": "7423",
+    "Description": "MERVE SHEEP CHEESE 908GR TIN 8ea/bx (~$8.25ea)",
+    "Price": 66,
+    "Quantity": 8,
+    "sku": "MERVE-SHEEP-CHEESE-908GR-TIN-8ea/bx-(~$8.25ea)-",
+    "category": "vintage"
+  },
+  "6287": {
+    "Item": "6287",
+    "Description": "MERVE WHITE CHEESE 50% 800GR 6ea/bx (~$7.99ea)",
+    "Price": 47.94,
+    "Quantity": 6,
+    "sku": "MERVE-WHITE-CHEESE-50%-800GR-6ea/bx-(~$7.99ea)-",
+    "category": "vintage"
+  },
+  "8000": {
+    "Item": "8000",
+    "Description": "MERVE YOGURT DRINK-MINT 0.5GL 6ea/bx (~$3.99ea)",
+    "Price": 23.94,
+    "Quantity": 6,
+    "sku": "MERVE-YOGURT-DRINK-MINT-0.5GL-6ea/bx-(~$3.99ea)-",
+    "category": "vintage"
+  },
+  "4188": {
+    "Item": "4188",
+    "Description": "MERVE YOGURT DRINK-MINT 473ML 24ea/bx (~$1.19ea)",
+    "Price": 28.56,
+    "Quantity": 24,
+    "sku": "MERVE-YOGURT-DRINK-MINT-473ML-24ea/bx-(~$1.19ea)-",
+    "category": "vintage"
+  },
+  "4189": {
+    "Item": "4189",
+    "Description": "MERVE YOGURT DRINK-REGULAR 0.5GL 6ea/bx (~$3.99ea)",
+    "Price": 23.94,
+    "Quantity": 6,
+    "sku": "MERVE-YOGURT-DRINK-REGULAR-0.5GL-6ea/bx-(~$3.99ea)-",
+    "category": "vintage"
+  },
+  "4190": {
+    "Item": "4190",
+    "Description": "MERVE YOGURT DRINK-REGULAR 1GL 4ea/bx (~$7.49ea)",
+    "Price": 29.96,
+    "Quantity": 4,
+    "sku": "MERVE-YOGURT-DRINK-REGULAR-1GL-4ea/bx-(~$7.49ea)-",
+    "category": "vintage"
+  },
+  "4186": {
+    "Item": "4186",
+    "Description": "MERVE YOGURT DRINK-REGULAR 473ML 24ea/bx (~$1.19ea)",
+    "Price": 28.56,
+    "Quantity": 24,
+    "sku": "MERVE-YOGURT-DRINK-REGULAR-473ML-24ea/bx-(~$1.19ea)-",
+    "category": "vintage"
+  },
+  "4187": {
+    "Item": "4187",
+    "Description": "MERVE YOGURT DRINK-TURKISH STYLE 473ML 24ea/bx (~$1.19ea)",
+    "Price": 28.56,
+    "Quantity": 24,
+    "sku": "MERVE-YOGURT-DRINK-TURKISH-STYLE-473ML-24ea/bx-(~$1.19ea)-",
+    "category": "vintage"
+  },
+  "8444": {
+    "Item": "8444",
+    "Description": "MERVE YOGURT DRINK-TURKISH STYLE 0.5GL 6ea/bx (~$3.99ea)",
+    "Price": 23.94,
+    "Quantity": 6,
+    "sku": "MERVE-YOGURT-DRINK-TURKISH-STYLE-0.5GL-6ea/bx-(~$3.99ea)-",
+    "category": "vintage"
+  },
+  "4924": {
+    "Item": "4924",
+    "Description": "MIS PEPPER PASTE HOT 720GR GLASS 12ea/bx (~$3.99ea)",
+    "Price": 47.88,
+    "Quantity": 12,
+    "sku": "MIS-PEPPER-PASTE-HOT-720GR-GLASS-12ea/bx-(~$3.99ea)-",
+    "category": "vintage"
+  },
+  "4932": {
+    "Item": "4932",
+    "Description": "MIS PEPPER PASTE SWEET 720GR GLASS 12ea/bx (~$3.99ea)",
+    "Price": 47.88,
+    "Quantity": 12,
+    "sku": "MIS-PEPPER-PASTE-SWEET-720GR-GLASS-12ea/bx-(~$3.99ea)-",
+    "category": "vintage"
+  },
+  "4694": {
+    "Item": "4694",
+    "Description": "PODRAVKA VEGETA SEASONING 1KG BAG 10ea/bx (~$6.35ea)",
+    "Price": 63.5,
+    "Quantity": 10,
+    "sku": "PODRAVKA-VEGETA-SEASONING-1KG-BAG-10ea/bx-(~$6.35ea)-",
+    "category": "vintage"
+  },
+  "4697": {
+    "Item": "4697",
+    "Description": "PODRAVKA VEGETA SEASONING 2KG PLASTIC 6ea/bx (~$12.79ea)",
+    "Price": 76.74,
+    "Quantity": 6,
+    "sku": "PODRAVKA-VEGETA-SEASONING-2KG-PLASTIC-6ea/bx-(~$12.79ea)-",
+    "category": "vintage"
+  },
+  "5127": {
+    "Item": "5127",
+    "Description": "REIS ASURELIK BUGDAY 1KG 12ea/bx, (~$1.75ea)",
+    "Price": 21,
+    "Quantity": 12,
+    "sku": "REIS-ASURELIK-BUGDAY-1KG-12ea/bx,-(~$1.75ea)-",
+    "category": "vintage"
+  },
+  "5118": {
+    "Item": "5118",
+    "Description": "REIS BALDO RICE 1KG 12ea/bx (~$3.00ea)",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "REIS-BALDO-RICE-1KG-12ea/bx-(~$3.00ea)-",
+    "category": "vintage"
+  },
+  "3663": {
+    "Item": "3663",
+    "Description": "SARIKIZ MINERAL WATER W APPLE (ELMA) 250ML GLASS 24ea/bx after %10.00 disc (~$0.35ea)",
+    "Price": 8.42,
+    "Quantity": 24,
+    "sku": "SARIKIZ-MINERAL-WATER-W-APPLE-(ELMA)-250ML-GLASS-24ea/bx-after-%10.00-disc-(~$0.35ea)-",
+    "category": "vintage"
+  },
+  "9296": {
+    "Item": "9296",
+    "Description": "TADIM SUNFLOWER SEEDS UNSALTED 340GR 12ea/bx (~$2.69ea)",
+    "Price": 32.28,
+    "Quantity": 12,
+    "sku": "TADIM-SUNFLOWER-SEEDS-UNSALTED-340GR-12ea/bx-(~$2.69ea)-",
+    "category": "vintage"
+  },
+  "3685": {
+    "Item": "3685",
+    "Description": "TAMEK APRICOT JUICE 1LT TP 12ea/bx after %10.00 disc (~$0.89ea)",
+    "Price": 10.69,
+    "Quantity": 12,
+    "sku": "TAMEK-APRICOT-JUICE-1LT-TP-12ea/bx-after-%10.00-disc-(~$0.89ea)-",
+    "category": "vintage"
+  }
+}

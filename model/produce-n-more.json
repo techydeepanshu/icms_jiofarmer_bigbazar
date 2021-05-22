@@ -1,0 +1,42 @@
+{
+  "90263": {
+    "Quantity": 50,
+    "Item": "90263",
+    "Description": "CHINGS NOODLES HOT GARLIC 240 GM36",
+    "Price": 32,
+    "category": "producenmore",
+    "sku": "CHINGS-NOODLES-HOT-GARLIC-240-GM36"
+  },
+  "90264": {
+    "Quantity": 50,
+    "Item": "90264",
+    "Description": "CHINGS NOODLES MANCHURIAN 240GM36",
+    "Price": 32,
+    "category": "producenmore",
+    "sku": "CHINGS-NOODLES-MANCHURIAN-240GM36"
+  },
+  "90265": {
+    "Quantity": 50,
+    "Item": "90265",
+    "Description": "CHINGS SAUCE RED CHILLY 200 ML24",
+    "Price": 24,
+    "category": "producenmore",
+    "sku": "CHINGS-SAUCE-RED-CHILLY-200-ML24"
+  },
+  "90266": {
+    "Quantity": 50,
+    "Item": "90266",
+    "Description": "MDH KASURI METHI 1 KG6",
+    "Price": 84,
+    "category": "producenmore",
+    "sku": "MDH-KASURI-METHI-1-KG6"
+  },
+  "90240": {
+    "Quantity": 50,
+    "Item": "90240",
+    "Description": "NUTRELLA SOYA MINI 200 GM60",
+    "Price": 45,
+    "category": "producenmore",
+    "sku": "NUTRELLA-SOYA-MINI-200-GM60"
+  }
+}

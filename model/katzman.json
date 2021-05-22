@@ -3,102 +3,119 @@
     "Item": "CABBAGE GREEN",
     "Description": "CABBAGE GREEN",
     "Quantity": "1",
-    "Price": "20"
+    "Price": "20",
+    "sku": "CABBAGE-GREEN-"
   },
   "EGGPLANT FCY 18": {
     "Item": "EGGPLANT FCY 18",
     "Description": "EGGPLANT FCY 18",
     "Quantity": "18",
-    "Price": "22"
+    "Price": "22",
+    "sku": "EGGPLANT-FCY-18-"
   },
   "CUCUMBER SUPER": {
     "Item": "CUCUMBER SUPER",
     "Description": "CUCUMBER SUPER",
     "Quantity": "1",
-    "Price": "42.95"
+    "Price": "42.95",
+    "sku": "CUCUMBER-SUPER-"
   },
   "SCALLION MED 48": {
     "Item": "SCALLION MED 48",
     "Description": "SCALLION MED 48",
     "Quantity": "48",
-    "Price": "18.5"
+    "Price": "18.5",
+    "sku": "SCALLION-MED-48-"
   },
   "BROCCOLI RABE": {
     "Item": "BROCCOLI RABE",
     "Description": "BROCCOLI RABE",
     "Quantity": "1",
-    "Price": "39"
+    "Price": "39",
+    "sku": "BROCCOLI-RABE-"
   },
   "LEEK TEXAS 12": {
     "Item": "LEEK TEXAS 12",
     "Description": "LEEK TEXAS 12",
     "Quantity": "12",
-    "Price": "28"
+    "Price": "28",
+    "sku": "LEEK-TEXAS-12-"
   },
   "MUSH CELLO 10X8oz": {
     "Item": "MUSH CELLO 10X8oz",
     "Description": "MUSH CELLO 10X8oz",
     "Quantity": "8",
-    "Price": "11.5"
+    "Price": "11.5",
+    "sku": "MUSH-CELLO-10X8oz-"
   },
   "BASIL": {
     "Item": "BASIL",
     "Description": "BASIL",
     "Quantity": "1",
-    "Price": "27.5"
+    "Price": "27.5",
+    "sku": "BASIL-"
   },
   "HERB THYME BF KILO": {
     "Item": "HERB THYME BF KILO",
     "Description": "HERB THYME BF KILO",
     "Quantity": "1",
-    "Price": "14"
+    "Price": "14",
+    "sku": "HERB-THYME-BF-KILO-"
   },
   "HERB ROSEMARY BF KILO": {
     "Item": "HERB ROSEMARY BF KILO",
     "Description": "HERB ROSEMARY BF KILO",
     "Quantity": "1",
-    "Price": "14"
+    "Price": "14",
+    "sku": "HERB-ROSEMARY-BF-KILO-"
   },
   "PAPAYA BIG BOX 14CT": {
     "Item": "PAPAYA BIG BOX 14CT",
     "Description": "PAPAYA BIG BOX 14CT",
     "Quantity": "14",
-    "Price": "23"
+    "Price": "23",
+    "sku": "PAPAYA-BIG-BOX-14CT-"
   },
   "COCONUT 40": {
     "Item": "COCONUT 40",
     "Description": "COCONUT 40",
     "Quantity": "40",
-    "Price": "45"
+    "Price": "45",
+    "sku": "COCONUT-40-"
   },
   "YAUTIA": {
     "Item": "YAUTIA",
     "Description": "YAUTIA",
     "Quantity": "1",
-    "Price": "39.5"
+    "Price": "39.5",
+    "sku": "YAUTIA-"
   },
   "GUAVA": {
     "Item": "GUAVA",
     "Description": "GUAVA",
     "Quantity": "1",
-    "Price": "26.95"
+    "Price": "26.95",
+    "sku": "GUAVA-"
   },
   "GRAPE B SUMMER ROYAL SDLS BAG": {
     "Item": "GRAPE B SUMMER ROYAL SDLS BAG",
     "Description": "GRAPE B SUMMER ROYAL SDLS BAG",
     "Quantity": "1",
-    "Price": "36"
+    "Price": "36",
+    "sku": "GRAPE-B-SUMMER-ROYAL-SDLS-BAG"
   },
   "COCONUT/YOUNG WHITE": {
     "Item": "COCONUT/YOUNG WHITE",
     "Description": "COCONUT/YOUNG WHITE",
     "Quantity": "1",
-    "Price": "22"
+    "Price": "22",
+    "sku": "COCONUT/YOUNG-WHITE-"
   },
   "ONION CAMBRAY 42CT": {
     "Item": "ONION CAMBRAY 42CT",
     "Description": "ONION CAMBRAY 42CT",
     "Quantity": "42",
-    "Price": "22"
+    "Price": "22",
+    "sku": "ONION-CAMBRAY-42CT"
   }
 }

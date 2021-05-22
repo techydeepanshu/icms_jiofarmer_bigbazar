@@ -1,0 +1,434 @@
+{
+  "HP0325": {
+    "Item": "HP0325",
+    "Description": "250MM Glass Vase 12pcs/ctn",
+    "Price": 3.25,
+    "Quantity": 12,
+    "sku": "250MM-Glass-Vase-12pcs/ctn-",
+    "cat": "JCWImport"
+  },
+  "HP0530": {
+    "Item": "HP0530",
+    "Description": "300MM Glass Vase 8pcs/ctn",
+    "Price": 6,
+    "Quantity": 8,
+    "sku": "300MM-Glass-Vase-8pcs/ctn-",
+    "cat": "JCWImport"
+  },
+  "BMHP0830": {
+    "Item": "BMHP0830",
+    "Description": "300MM Glass Vase 8pcs/ctn",
+    "Price": 7,
+    "Quantity": 8,
+    "sku": "300MM-Glass-Vase-8pcs/ctn-",
+    "cat": "JCWImport"
+  },
+  "15HY919S": {
+    "Item": "15HY919S",
+    "Description": "1000ml Color Square GLASS JUSE BOTTLE 24pes / ctn",
+    "Price": 1.35,
+    "Quantity": 24,
+    "sku": "1000ml-Color-Square-GLASS-JUSE-BOTTLE-24pes-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "666-03": {
+    "Item": "666-03",
+    "Description": "Alu. #3 Caldero-6pes/ett-",
+    "Price": 5,
+    "Quantity": 6,
+    "sku": "Alu.-#3-Caldero-6pes/ett--",
+    "cat": "JCWImport"
+  },
+  "666-05": {
+    "Item": "666-05",
+    "Description": "Alu. #5 Caldero 6pes/ctn",
+    "Price": 7,
+    "Quantity": 6,
+    "sku": "Alu.-#5-Caldero-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "666-09": {
+    "Item": "666-09",
+    "Description": "Alu. #9 Caldero 6pes/ctn",
+    "Price": 10,
+    "Quantity": 6,
+    "sku": "Alu.-#9-Caldero-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "666-11": {
+    "Item": "666-11",
+    "Description": "Alu. #11 Caldero 6pc/ctn",
+    "Price": 12,
+    "Quantity": 6,
+    "sku": "Alu.-#11-Caldero-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "666-14": {
+    "Item": "666-14",
+    "Description": "Alu. #14 Caldero 6pc/ctn",
+    "Price": 14,
+    "Quantity": 6,
+    "sku": "Alu.-#14-Caldero-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "6003": {
+    "Item": "6003",
+    "Description": "14pc H EAVY Gauge Alum. Covered Sauce Pan Set 1set/ctn (1.5qt.2.75.qt.3.75qt.4.75qt.5.5qt.7qt.10qt.)",
+    "Price": 60,
+    "Quantity": 1,
+    "sku": "14pc-H-EAVY-Gauge-Alum.-Covered-Sauce-Pan-Set-1set/ctn-(1.5qt.2.75.qt.3.75qt.4.75qt.5.5qt.7qt.10qt.)--",
+    "cat": "JCWImport"
+  },
+  "4012-16": {
+    "Item": "4012-16",
+    "Description": "16cm n-stick sauce pan 6pc/ctn",
+    "Price": 4.75,
+    "Quantity": 6,
+    "sku": "16cm-n-stick-sauce-pan-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4013-18": {
+    "Item": "4013-18",
+    "Description": "18cm n-stick pan 6pc/ctn",
+    "Price": 5.75,
+    "Quantity": 6,
+    "sku": "18cm-n-stick-pan-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4014-20": {
+    "Item": "4014-20",
+    "Description": "20cm n-stick sauce pan 6pc/ctn",
+    "Price": 6.75,
+    "Quantity": 6,
+    "sku": "20cm-n-stick-sauce-pan-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4016-24": {
+    "Item": "4016-24",
+    "Description": "24cm Two Handles Wok Pan 8pc/cin",
+    "Price": 7,
+    "Quantity": 8,
+    "sku": "24cm-Two-Handles-Wok-Pan-8pc/cin-",
+    "cat": "JCWImport"
+  },
+  "4016-26": {
+    "Item": "4016-26",
+    "Description": "26cm wo llandles Wok Pan 8pc/etn",
+    "Price": 8,
+    "Quantity": 8,
+    "sku": "26cm-wo-llandles-Wok-Pan-8pc/etn-",
+    "cat": "JCWImport"
+  },
+  "4016-28": {
+    "Item": "4016-28",
+    "Description": "28cm Two Handles Wok Pan 8pc/ctn",
+    "Price": 9,
+    "Quantity": 8,
+    "sku": "28cm-Two-Handles-Wok-Pan-8pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4016-30": {
+    "Item": "4016-30",
+    "Description": "30cm Two Handles Wok Pan 8pc/ctn",
+    "Price": 10,
+    "Quantity": 8,
+    "sku": "30cm-Two-Handles-Wok-Pan-8pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4016-32": {
+    "Item": "4016-32",
+    "Description": "32cm Two Handles Wok Pan 8pc/ctn",
+    "Price": 11,
+    "Quantity": 8,
+    "sku": "32cm-Two-Handles-Wok-Pan-8pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-18": {
+    "Item": "4022-18",
+    "Description": "18cm Dutch Oven 6pes/ctn",
+    "Price": 6,
+    "Quantity": 6,
+    "sku": "18cm-Dutch-Oven-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-20": {
+    "Item": "4022-20",
+    "Description": "20cm Dutch Oven 6pes/ctn",
+    "Price": 7,
+    "Quantity": 6,
+    "sku": "20cm-Dutch-Oven-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-22": {
+    "Item": "4022-22",
+    "Description": "22cm Dutch Oven 6pes/ctn",
+    "Price": 8,
+    "Quantity": 6,
+    "sku": "22cm-Dutch-Oven-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-24": {
+    "Item": "4022-24",
+    "Description": "24cm Dutch Oven 6pes/ctn",
+    "Price": 9,
+    "Quantity": 6,
+    "sku": "24cm-Dutch-Oven-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-26": {
+    "Item": "4022-26",
+    "Description": "26cm Dutch Oven 6pes/ctn",
+    "Price": 10,
+    "Quantity": 6,
+    "sku": "26cm-Dutch-Oven-6pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "4022-30": {
+    "Item": "4022-30",
+    "Description": "30Cm Dutch Oven 6pc/ctn",
+    "Price": 13.5,
+    "Quantity": 6,
+    "sku": "30Cm-Dutch-Oven-6pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4555": {
+    "Item": "4555",
+    "Description": "10pc n-Stick heavy Stock Pots 30cm.32cm.34cm,36cm,40cm Dutch Oven Set Iset/ctn",
+    "Price": 83,
+    "Quantity": 10,
+    "sku": "10pc-n-Stick-heavy-Stock-Pots-30cm.32cm.34cm,36cm,40cm-Dutch-Oven-Set-Iset/ctn-",
+    "cat": "JCWImport"
+  },
+  "4 4555-49 RC - 2419": {
+    "Item": "4 4555-49 RC - 2419",
+    "Description": "40cm Dutch Oven 2pc/ctn",
+    "Price": 22.5,
+    "Quantity": 2,
+    "sku": "40cm-Dutch-Oven-2pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4004-20": {
+    "Item": "4004-20",
+    "Description": "20CM, FRY PAN HEAVY 12pc/ctn",
+    "Price": 5.5,
+    "Quantity": 12,
+    "sku": "20CM,-FRY-PAN-HEAVY-12pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4015-24": {
+    "Item": "4015-24",
+    "Description": "24cm n-Stick Teflon Classic Coating Alu Fry Pan 12pc/ctn",
+    "Price": 4.25,
+    "Quantity": 12,
+    "sku": "24cm-n-Stick-Teflon-Classic-Coating-Alu-Fry-Pan-12pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4011- 14": {
+    "Item": "4011- 14",
+    "Description": "14cm n-stick sauce pan 12pc/ctn",
+    "Price": 3,
+    "Quantity": 12,
+    "sku": "14cm-n-stick-sauce-pan-12pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4011-16": {
+    "Item": "4011-16",
+    "Description": "1 6cm n-stick sauce pan 12pc/ctn",
+    "Price": 3.5,
+    "Quantity": 12,
+    "sku": "1-6cm-n-stick-sauce-pan-12pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "4011-18": {
+    "Item": "4011-18",
+    "Description": "18cm n-Stick Sauce Pan 12PC/CTN",
+    "Price": 4,
+    "Quantity": 12,
+    "sku": "18cm-n-Stick-Sauce-Pan-12PC/CTN-",
+    "cat": "JCWImport"
+  },
+  "1008": {
+    "Item": "1008",
+    "Description": "6pc S.S Straight Shape pots (24cm ,26cm,28cm) 1set/ctn",
+    "Price": 51,
+    "Quantity": 1,
+    "sku": "6pc-S.S-Straight-Shape-pots-(24cm-,26cm,28cm)-1set/ctn-",
+    "cat": "JCWImport"
+  },
+  "1006G": {
+    "Item": "1006G",
+    "Description": "10pe S.S.American Soup Pot Set With Bakelite Handle S.S. Lid (18cm.20cm.22cm.24cm.26cm) 2est/ctn",
+    "Price": 51.25,
+    "Quantity": 1,
+    "sku": "10pe-S.S.American-Soup-Pot-Set-With-Bakelite-Handle-S.S.-Lid-(18cm.20cm.22cm.24cm.26cm)-2est/ctn-",
+    "cat": "JCWImport"
+  },
+  "3009-16": {
+    "Item": "3009-16",
+    "Description": "16cm S.SSauce pan 4pc/ctn",
+    "Price": 5.5,
+    "Quantity": 4,
+    "sku": "16cm-S.SSauce-pan-4pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "3009-18": {
+    "Item": "3009-18",
+    "Description": "18cm S.SSauce pan 4pc/ctn",
+    "Price": 6.5,
+    "Quantity": 4,
+    "sku": "18cm-S.SSauce-pan-4pc/ctn-",
+    "cat": "JCWImport"
+  },
+  "3009-20": {
+    "Item": "3009-20",
+    "Description": "20cm S.SSauce pan 4pe/ctn",
+    "Price": 7.5,
+    "Quantity": 4,
+    "sku": "20cm-S.SSauce-pan-4pe/ctn-",
+    "cat": "JCWImport"
+  },
+  "k006": {
+    "Item": "k006",
+    "Description": "S.S.Heavy Chef Knife 6\" 12/box",
+    "Price": 3.5,
+    "Quantity": 12,
+    "sku": "S.S.Heavy-Chef-Knife-6\"-12/box-",
+    "cat": "JCWImport"
+  },
+  "k008": {
+    "Item": "k008",
+    "Description": "S.S. Heavy Chef Knife 8\" 12/box",
+    "Price": 4.5,
+    "Quantity": 12,
+    "sku": "S.S.-Heavy-Chef-Knife-8\"-12/box-",
+    "cat": "JCWImport"
+  },
+  "k115-3.5": {
+    "Item": "k115-3.5",
+    "Description": "S.S. Heavy 3.5\" Knife 5*10,12/box 60pes/ctn",
+    "Price": 2.25,
+    "Quantity": 12,
+    "sku": "S.S.-Heavy-3.5\"-Knife-5*10,12/box-60pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "K114": {
+    "Item": "K114",
+    "Description": "S.S.Knife-Black Handle (Bone Chopper) 60pes/ctn",
+    "Price": 4,
+    "Quantity": 1,
+    "sku": "S.S.Knife-Black-Handle-(Bone-Chopper)-60pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "9011": {
+    "Item": "9011",
+    "Description": "Can Opener 48pes/ctn",
+    "Price": 3,
+    "Quantity": 48,
+    "sku": "Can-Opener-48pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "9012": {
+    "Item": "9012",
+    "Description": "Peeling Knife 80pes/ctn",
+    "Price": 1.25,
+    "Quantity": 80,
+    "sku": "Peeling-Knife-80pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "9014": {
+    "Item": "9014",
+    "Description": "Corkscrew 56pes/ctn",
+    "Price": 3,
+    "Quantity": 56,
+    "sku": "Corkscrew-56pes/ctn-",
+    "cat": "JCWImport"
+  },
+  "C60228-6": {
+    "Item": "C60228-6",
+    "Description": "18/0 STAINLESS STEEL DINNER SPOON.6PCS / BAG.50 BAGS / CARTON",
+    "Price": 1,
+    "Quantity": 6,
+    "sku": "18/0-STAINLESS-STEEL-DINNER-SPOON.6PCS-/-BAG.50-BAGS-/-CARTON-",
+    "cat": "JCWImport"
+  },
+  "SH8": {
+    "Item": "SH8",
+    "Description": "8cm S.S Hadle Strainer 300pes/ ctn",
+    "Price": 0.65,
+    "Quantity": 300,
+    "sku": "8cm-S.S-Hadle-Strainer-300pes/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH10": {
+    "Item": "SH10",
+    "Description": "10cm S.S Hadle Strainer 300pes / ctn",
+    "Price": 0.75,
+    "Quantity": 300,
+    "sku": "10cm-S.S-Hadle-Strainer-300pes-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH12": {
+    "Item": "SH12",
+    "Description": "12cm S.S Hadle Strainer 200pes / ctn",
+    "Price": 0.85,
+    "Quantity": 200,
+    "sku": "12cm-S.S-Hadle-Strainer-200pes-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH14": {
+    "Item": "SH14",
+    "Description": "14cm S.S Hadle Strainer 200pcs / ctn",
+    "Price": 1,
+    "Quantity": 200,
+    "sku": "14cm-S.S-Hadle-Strainer-200pcs-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH16": {
+    "Item": "SH16",
+    "Description": "16cm S.S Hadle Strainer 200pcs / ctn",
+    "Price": 1.25,
+    "Quantity": 200,
+    "sku": "16cm-S.S-Hadle-Strainer-200pcs-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH18": {
+    "Item": "SH18",
+    "Description": "18cm S.S Hadle Strainer 200pcs / ctn",
+    "Price": 1.45,
+    "Quantity": 200,
+    "sku": "18cm-S.S-Hadle-Strainer-200pcs-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SH20": {
+    "Item": "SH20",
+    "Description": "20cm S.S Hadle Strainer 100pcs / ctn",
+    "Price": 1.7,
+    "Quantity": 100,
+    "sku": "20cm-S.S-Hadle-Strainer-100pcs-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SS11.5": {
+    "Item": "SS11.5",
+    "Description": "11.5cm S.S. Sink Strainer 360pcs / ctn",
+    "Price": 0.85,
+    "Quantity": 360,
+    "sku": "11.5cm-S.S.-Sink-Strainer-360pcs-/-ctn-",
+    "cat": "JCWImport"
+  },
+  "SP11.5": {
+    "Item": "SP11.5",
+    "Description": "11.5cm S.S Purch Hole Sink Strainer 360pes / etn",
+    "Price": 0.95,
+    "Quantity": 360,
+    "sku": "11.5cm-S.S-Purch-Hole-Sink-Strainer-360pes-/-etn-",
+    "cat": "JCWImport"
+  },
+  "TB6210": {
+    "Item": "TB6210",
+    "Description": "Dish Brush 48pes / ctn Out-of-state sale. exempt from sales tax",
+    "Price": 0.75,
+    "Quantity": 1,
+    "sku": "Dish-Brush-48pes-/-ctn-Out-of-state-sale.-exempt-from-sales-tax-",
+    "cat": "JCWImport"
+  }
+}

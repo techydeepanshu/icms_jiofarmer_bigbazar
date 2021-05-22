@@ -1,0 +1,16 @@
+{
+  "SCA20": {
+    "Item": "SCA20",
+    "Description": "SWARNA CHAKKI ATTA 20LB",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "SWARNA-CHAKKI-ATTA-20LB"
+  },
+  "SDA20": {
+    "Item": "SDA20",
+    "Description": "SWARNA DURUM ATTA 20LB",
+    "Quantity": 1,
+    "Price": 7.5,
+    "sku": "SWARNA-DURUM-ATTA-20LB"
+  }
+}

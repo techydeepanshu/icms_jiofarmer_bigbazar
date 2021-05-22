@@ -1,0 +1,58 @@
+{
+  "W W Roti":{
+    "Item": "W W Roti",
+    "Description": "Whole Wheat Roti",
+    "Quantity": 1,
+    "Price": 1.5,
+    "sku": "Whole-Wheat-Roti"
+  },
+  "Chappati FP-25":{
+    "Item": "Chappati FP-25",
+    "Description": "Chappati Family Pack- 25",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Chappati-Family-Pack--25"
+  },
+  "Tawa Roti FP-25":{
+    "Item": "Tawa Roti FP-25",
+    "Description": "Tawa Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Tawa-Roti-Family-Pack-25"
+  },
+  "W W Roti FP-25":{
+    "Item": "W W Roti FP-25",
+    "Description": "Whole Wheat Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 4.5,
+    "sku": "Whole-Wheat-Roti-Family-Pack-25"
+  },
+  "W W Tawa FP-25":{
+    "Item": "W W Tawa FP-25",
+    "Description": "Whole Wheat Tawa Roti Family Pack-25",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Whole-Wheat-Tawa-Roti-Family-Pack-25"
+  },
+  "M G Tawa FP-20":{
+    "Item": "M G Tawa FP-20",
+    "Description": "Multi-Grain Tawa Roti Family Pack-20",
+    "Quantity": 1,
+    "Price": 6,
+    "sku": "Multi-Grain-Tawa-Roti-Family-Pack-20"
+  },
+  "Methi Paratha":{
+    "Item": "Methi Paratha",
+    "Description": "Methi Paratha",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Methi-Paratha"
+  },
+  "Idly Mix":{
+    "Item": "Idly Mix",
+    "Description": "Idly Mix",
+    "Quantity": 1,
+    "Price": 2,
+    "sku": "Idly-Mix"
+  }
+}

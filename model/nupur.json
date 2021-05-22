@@ -1,0 +1,138 @@
+{
+  "PA1582": {
+    "Item": "PA1582",
+    "Price": 27,
+    "Quantity": 50,
+    "Description": "PATANJALI NEEM GHANVATI 60 TABS (12) DZ",
+    "category": "nupur",
+    "sku": "-PATANJALI-NEEM-GHANVATI-60-TABS-(12)-DZ"
+  },
+  "PA1572": {
+    "Item": "PA1572",
+    "Price": 27,
+    "Quantity": 50,
+    "Description": "PATANJALI TULSI GHANVATI 60 TABS (12) DZ",
+    "category": "nupur",
+    "sku": "-PATANJALI-TULSI-GHANVATI-60-TABS-(12)-DZ"
+  },
+  "FM1": {
+    "Item": "FM1",
+    "Price": 14,
+    "Quantity": 50,
+    "Description": "FRY ME AT HOME PANIPURI 200GM (25) CS25",
+    "category": "nupur",
+    "sku": "-FRY-ME-AT-HOME-PANIPURI-200GM-(25)-CS25"
+  },
+  "EX6": {
+    "Item": "EX6",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "EXOTIC SUGARCANE JUICE PDR 100GM (24) CS24",
+    "category": "nupur",
+    "sku": "-EXOTIC-SUGARCANE-JUICE-PDR-100GM-(24)-CS24"
+  },
+  "TFMS": {
+    "Item": "TFMS",
+    "Price": 50,
+    "Quantity": 50,
+    "Description": "NILONS TUTIFRUITI MIX 150GM (72) CS72",
+    "category": "nupur",
+    "sku": "-NILONS-TUTIFRUITI-MIX-150GM-(72)-CS72"
+  },
+  "RJ2": {
+    "Item": "RJ2",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU BHAVNAGARI GATHIA 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-BHAVNAGARI-GATHIA-400GM-(20)-CS20"
+  },
+  "RJ3": {
+    "Item": "RJ3",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU BOMBAY MIX 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-BOMBAY-MIX-400GM-(20)-CS20"
+  },
+  "RJ5": {
+    "Item": "RJ5",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU KHATTA MITHA 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-KHATTA-MITHA-400GM-(20)-CS20"
+  },
+  "RJ6": {
+    "Item": "RJ6",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU MANGLORI MIX 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-MANGLORI-MIX-400GM-(20)-CS20"
+  },
+  "RJ8": {
+    "Item": "RJ8",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU NADIADI MIX 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-NADIADI-MIX-400GM-(20)-CS20"
+  },
+  "RJ13": {
+    "Item": "RJ13",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU SING BHUJIA 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-SING-BHUJIA-400GM-(20)-CS20"
+  },
+  "RJ14": {
+    "Item": "RJ14",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU SURTI SPECIAL 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-SURTI-SPECIAL-400GM-(20)-CS20"
+  },
+  "RJ15": {
+    "Item": "RJ15",
+    "Price": 32,
+    "Quantity": 50,
+    "Description": "RAJU TIKHA MIX 400GM (20) CS20",
+    "category": "nupur",
+    "sku": "-RAJU-TIKHA-MIX-400GM-(20)-CS20"
+  },
+  "EV12": {
+    "Item": "EV12",
+    "Price": 11,
+    "Quantity": 50,
+    "Description": "EVEREST CHAT MASALA 100GM (10) (10)",
+    "category": "nupur",
+    "sku": "-EVEREST-CHAT-MASALA-100GM-(10)-(10)"
+  },
+  "EV32": {
+    "Item": "EV32",
+    "Price": 12,
+    "Quantity": 50,
+    "Description": "EVEREST CHICKEN MASALA 100GM (10) (10)",
+    "category": "nupur",
+    "sku": "-EVEREST-CHICKEN-MASALA-100GM-(10)-(10)"
+  },
+  "EV72": {
+    "Item": "EV72",
+    "Price": 55,
+    "Quantity": 50,
+    "Description": "EVEREST KESAR MILK MASALA 100GM (10) (10)",
+    "category": "nupur",
+    "sku": "-EVEREST-KESAR-MILK-MASALA-100GM-(10)-(10)"
+  },
+  "EV92": {
+    "Item": "EV92",
+    "Price": 12,
+    "Quantity": 50,
+    "Description": "EVEREST MEAT MASALA 100GM (10) (10)",
+    "category": "nupur",
+    "sku": "-EVEREST-MEAT-MASALA-100GM-(10)-(10)"
+  }
+}

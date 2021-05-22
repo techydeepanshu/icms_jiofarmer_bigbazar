@@ -1,0 +1,578 @@
+{
+  "TOORA PAYA SPICE MTX [50+50 GRAMS X 12]": {
+    "Item": "TOORA PAYA SPICE MTX [50+50 GRAMS X 12]",
+    "Description": "TOORA PAYA SPICE MTX [50+50 GRAMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOORA-PAYA-SPICE-MTX-[50+50-GRAMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOORA SINDHI BIRY ANI MASALA [60+60 GRAMS, X 12]": {
+    "Item": "TOORA SINDHI BIRY ANI MASALA [60+60 GRAMS, X 12]",
+    "Description": "TOORA SINDHI BIRY ANI MASALA [60+60 GRAMS, X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOORA-SINDHI-BIRY-ANI-MASALA-[60+60-GRAMS,-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA VEGETALBE SPICE MIX [50+50 GRAMS X,12]": {
+    "Item": "TOOBA VEGETALBE SPICE MIX [50+50 GRAMS X,12]",
+    "Description": "TOOBA VEGETALBE SPICE MIX [50+50 GRAMS X,12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-VEGETALBE-SPICE-MIX-[50+50-GRAMS-X,12]-",
+    "category": "SHATA"
+  },
+  "TOOBA FRIED ONIONS [400 GMS (24)": {
+    "Item": "TOOBA FRIED ONIONS [400 GMS (24)",
+    "Description": "TOOBA FRIED ONIONS [400 GMS (24)",
+    "Price": 48,
+    "Quantity": 24,
+    "sku": "TOOBA-FRIED-ONIONS-[400-GMS-(24)-",
+    "category": "SHATA"
+  },
+  "TOOBA CHICKEN TIKKA MASALA [50+50 GMS X 12]": {
+    "Item": "TOOBA CHICKEN TIKKA MASALA [50+50 GMS X 12]",
+    "Description": "TOOBA CHICKEN TIKKA MASALA [50+50 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-CHICKEN-TIKKA-MASALA-[50+50-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA CORN FLOUR [300 GMS X 12]": {
+    "Item": "TOOBA CORN FLOUR [300 GMS X 12]",
+    "Description": "TOOBA CORN FLOUR [300 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-CORN-FLOUR-[300-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA ROSE WATER [800 ML X 6)": {
+    "Item": "TOOBA ROSE WATER [800 ML X 6)",
+    "Description": "TOOBA ROSE WATER [800 ML X 6)",
+    "Price": 15,
+    "Quantity": 6,
+    "sku": "TOOBA-ROSE-WATER-[800-ML-X-6)-",
+    "category": "SHATA"
+  },
+  "TOOBA VANILLA CUSTARD [300 GMSX12]": {
+    "Item": "TOOBA VANILLA CUSTARD [300 GMSX12]",
+    "Description": "TOOBA VANILLA CUSTARD [300 GMSX12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-VANILLA-CUSTARD-[300-GMSX12]-",
+    "category": "SHATA"
+  },
+  "TOOBA STRAWBERRY JELLY [90 GMS X 12]": {
+    "Item": "TOOBA STRAWBERRY JELLY [90 GMS X 12]",
+    "Description": "TOOBA STRAWBERRY JELLY [90 GMS X 12]",
+    "Price": 8,
+    "Quantity": 12,
+    "sku": "TOOBA-STRAWBERRY-JELLY-[90-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "MITCHELL'S CHILLI CARLIC SAUCE (300 GMS X (12)": {
+    "Item": "MITCHELL'S CHILLI CARLIC SAUCE (300 GMS X (12)",
+    "Description": "MITCHELL'S CHILLI CARLIC SAUCE (300 GMS X (12)",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "MITCHELL'S-CHILLI-CARLIC-SAUCE-(300-GMS-X-(12)-",
+    "category": "SHATA"
+  },
+  "MITCHELL'S SPINACH PUREE (800 GMSX: 12)": {
+    "Item": "MITCHELL'S SPINACH PUREE (800 GMSX: 12)",
+    "Description": "MITCHELL'S SPINACH PUREE (800 GMSX: 12)",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "MITCHELL'S-SPINACH-PUREE-(800-GMSX:-12)-",
+    "category": "SHATA"
+  },
+  "MITCHELL' S SARSON KA SAAG (425 GMS X 12)": {
+    "Item": "MITCHELL' S SARSON KA SAAG (425 GMS X 12)",
+    "Description": "MITCHELL' S SARSON KA SAAG (425 GMS X 12)",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "MITCHELL'-S-SARSON-KA-SAAG-(425-GMS-X-12)-",
+    "category": "SHATA"
+  },
+  "OARSHI ISPAGHOL HUSK (140 GMS X12) JARS": {
+    "Item": "OARSHI ISPAGHOL HUSK (140 GMS X12) JARS",
+    "Description": "OARSHI ISPAGHOL HUSK (140 GMS X12) JARS",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "OARSHI-ISPAGHOL-HUSK-(140-GMS-X12)-JARS-",
+    "category": "SHATA"
+  },
+  "UNITED KING ROAST ALMOND NAN KHATAFE (300GMSx12]": {
+    "Item": "UNITED KING ROAST ALMOND NAN KHATAFE (300GMSx12]",
+    "Description": "UNITED KING ROAST ALMOND NAN KHATAFE (300GMSx12]",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "UNITED-KING-ROAST-ALMOND-NAN-KHATAFE-(300GMSx12]-",
+    "category": "SHATA"
+  },
+  "U.K. KHAT MITHA Mix 400gmsX10": {
+    "Item": "U.K. KHAT MITHA Mix 400gmsX10",
+    "Description": "U.K. KHAT MITHA Mix 400gmsX10",
+    "Price": 25,
+    "Quantity": 10,
+    "sku": "U.K.-KHAT-MITHA-Mix-400gmsX10-Price-Changed-10/22/2020-",
+    "category": "SHATA"
+  },
+  "U.K. MOONGDAAL (400GMSX10)": {
+    "Item": "U.K. MOONGDAAL (400GMSX10)",
+    "Description": "U.K. MOONGDAAL (400GMSX10)",
+    "Price": 25,
+    "Quantity": 10,
+    "sku": "U.K.-MOONGDAAL-(400GMSX10)-Price-Changed-10/22/2020-",
+    "category": "SHATA"
+  },
+  "U.K. NIMKO MTX (400GMSX10)": {
+    "Item": "U.K. NIMKO MTX (400GMSX10)",
+    "Description": "U.K. NIMKO MTX (400GMSX10)",
+    "Price": 25,
+    "Quantity": 10,
+    "sku": "U.K.-NIMKO-MTX-(400GMSX10)-Price-Changed-10/22/2020-",
+    "category": "SHATA"
+  },
+  "UK PHENI (FREID VERMICELLIES)": {
+    "Item": "UK PHENI (FREID VERMICELLIES)",
+    "Description": "UK PHENI (FREID VERMICELLIES)",
+    "Price": 30,
+    "Quantity": 1,
+    "sku": "UK-PHENI-(FREID-VERMICELLIES)-",
+    "category": "SHATA"
+  },
+  "MORRE INSTANT CHATPATA CUP NOODLES (6SGMS X 24)": {
+    "Item": "MORRE INSTANT CHATPATA CUP NOODLES (6SGMS X 24)",
+    "Description": "MORRE INSTANT CHATPATA CUP NOODLES (6SGMS X 24)",
+    "Price": 18,
+    "Quantity": 24,
+    "sku": "MORRE-INSTANT-CHATPATA-CUP-NOODLES-(6SGMS-X-24)-",
+    "category": "SHATA"
+  },
+  "MORRE INSTANT CHICKEN CUP NOODLES (65GMS) 24)": {
+    "Item": "MORRE INSTANT CHICKEN CUP NOODLES (65GMS) 24)",
+    "Description": "MORRE INSTANT CHICKEN CUP NOODLES (65GMS) 24)",
+    "Price": 18,
+    "Quantity": 24,
+    "sku": "MORRE-INSTANT-CHICKEN-CUP-NOODLES-(65GMS)-24)-",
+    "category": "SHATA"
+  },
+  "MORRE CHICKEN CORN SOUP [48 GMS X 12]": {
+    "Item": "MORRE CHICKEN CORN SOUP [48 GMS X 12]",
+    "Description": "MORRE CHICKEN CORN SOUP [48 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "MORRE-CHICKEN-CORN-SOUP-[48-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "MORRE CHATPATA Instant Noodles [(65 GMS X 5) X12] F/P": {
+    "Item": "MORRE CHATPATA Instant Noodles [(65 GMS X 5) X12] F/P",
+    "Description": "MORRE CHATPATA Instant Noodles [(65 GMS X 5) X12] F/P",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "MORRE-CHATPATA-Instant-Noodles-[(65-GMS-X-5)-X12]-F/P-",
+    "category": "SHATA"
+  },
+  "MORRE CHICKEN Instant Noodles [(65 GMS X 6) X'12] F/P": {
+    "Item": "MORRE CHICKEN Instant Noodles [(65 GMS X 6) X'12] F/P",
+    "Description": "MORRE CHICKEN Instant Noodles [(65 GMS X 6) X'12] F/P",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "MORRE-CHICKEN-Instant-Noodles-[(65-GMS-X-6)-X'12]-F/P-",
+    "category": "SHATA"
+  },
+  "MORRE HOT & SOUR SOUP [55 GMS X 12]": {
+    "Item": "MORRE HOT & SOUR SOUP [55 GMS X 12]",
+    "Description": "MORRE HOT & SOUR SOUP [55 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "MORRE-HOT-&-SOUR-SOUP-[55-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "MEZBAN CHAIPARATHA [(110 GMS X.3) X24]": {
+    "Item": "MEZBAN CHAIPARATHA [(110 GMS X.3) X24]",
+    "Description": "MEZBAN CHAIPARATHA [(110 GMS X.3) X24]",
+    "Price": 36,
+    "Quantity": 24,
+    "sku": "MEZBAN-CHAIPARATHA-[(110-GMS-X.3)-X24]-",
+    "category": "SHATA"
+  },
+  "MEZEAN PARATHA ONION [(80 GMS X5) X 24]": {
+    "Item": "MEZEAN PARATHA ONION [(80 GMS X5) X 24]",
+    "Description": "MEZEAN PARATHA ONION [(80 GMS X5) X 24]",
+    "Price": 36,
+    "Quantity": 24,
+    "sku": "MEZEAN-PARATHA-ONION-[(80-GMS-X5)-X-24]-",
+    "category": "SHATA"
+  },
+  "MEZBAN ALOO (POTATO) PARATHA [(120 GMS x3) X24]": {
+    "Item": "MEZBAN ALOO (POTATO) PARATHA [(120 GMS x3) X24]",
+    "Description": "MEZBAN ALOO (POTATO) PARATHA [(120 GMS x3) X24]",
+    "Price": 36,
+    "Quantity": 24,
+    "sku": "MEZBAN-ALOO-(POTATO)-PARATHA-[(120-GMS-x3)-X24]-",
+    "category": "SHATA"
+  },
+  "DAWN PLAIN PARATHA [(80 GMS X 30) X 4] F/P": {
+    "Item": "DAWN PLAIN PARATHA [(80 GMS X 30) X 4] F/P",
+    "Description": "DAWN PLAIN PARATHA [(80 GMS X 30) X 4] F/P",
+    "Price": 28,
+    "Quantity": 4,
+    "sku": "DAWN-PLAIN-PARATHA-[(80-GMS-X-30)-X-4]-F/P-",
+    "category": "SHATA"
+  },
+  "MEZBAN ROGHNIKULCHA [(100 GMS X S) X 10]": {
+    "Item": "MEZBAN ROGHNIKULCHA [(100 GMS X S) X 10]",
+    "Description": "MEZBAN ROGHNIKULCHA [(100 GMS X S) X 10]",
+    "Price": 25,
+    "Quantity": 10,
+    "sku": "MEZBAN-ROGHNIKULCHA-[(100-GMS-X-S)-X-10]-",
+    "category": "SHATA"
+  },
+  "MEZBAN SHEERMAL [(225 GMS X3) X 20]": {
+    "Item": "MEZBAN SHEERMAL [(225 GMS X3) X 20]",
+    "Description": "MEZBAN SHEERMAL [(225 GMS X3) X 20]",
+    "Price": 45,
+    "Quantity": 20,
+    "sku": "MEZBAN-SHEERMAL-[(225-GMS-X3)-X-20]-",
+    "category": "SHATA"
+  },
+  "DAWN TANDOORI NAAN [(85 GMS X 15) X 8) FAMILY PACK": {
+    "Item": "DAWN TANDOORI NAAN [(85 GMS X 15) X 8) FAMILY PACK",
+    "Description": "DAWN TANDOORI NAAN [(85 GMS X 15) X 8) FAMILY PACK",
+    "Price": 40,
+    "Quantity": 8,
+    "sku": "DAWN-TANDOORI-NAAN-[(85-GMS-X-15)-X-8)-FAMILY-PACK-",
+    "category": "SHATA"
+  },
+  "MEZEAN Tandoori Round Nam [(S5 GMS X5) X24]": {
+    "Item": "MEZEAN Tandoori Round Nam [(S5 GMS X5) X24]",
+    "Description": "MEZEAN Tandoori Round Nam [(S5 GMS X5) X24]",
+    "Price": 48,
+    "Quantity": 24,
+    "sku": "MEZEAN-Tandoori-Round-Nam-[(S5-GMS-X5)-X24]-",
+    "category": "SHATA"
+  },
+  "MEZBAN CHICKEN PUFF PASTRY (Party Size) (540CMS X12)": {
+    "Item": "MEZBAN CHICKEN PUFF PASTRY (Party Size) (540CMS X12)",
+    "Description": "MEZBAN CHICKEN PUFF PASTRY (Party Size) (540CMS X12)",
+    "Price": 78,
+    "Quantity": 12,
+    "sku": "MEZBAN-CHICKEN-PUFF-PASTRY-(Party-Size)-(540CMS-X12)-",
+    "category": "SHATA"
+  },
+  "MEZRAN CHICKEN CHAPLIKABAB [340 GMS X 12]": {
+    "Item": "MEZRAN CHICKEN CHAPLIKABAB [340 GMS X 12]",
+    "Description": "MEZRAN CHICKEN CHAPLIKABAB [340 GMS X 12]",
+    "Price": 72,
+    "Quantity": 12,
+    "sku": "MEZRAN-CHICKEN-CHAPLIKABAB-[340-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "MEZBAN CHICKEN SAMOSA (320 GMS X 12]": {
+    "Item": "MEZBAN CHICKEN SAMOSA (320 GMS X 12]",
+    "Description": "MEZBAN CHICKEN SAMOSA (320 GMS X 12]",
+    "Price": 72,
+    "Quantity": 12,
+    "sku": "MEZBAN-CHICKEN-SAMOSA-(320-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "MEZBAN LAMB SEEKH KABAB [280 GMS X 12]": {
+    "Item": "MEZBAN LAMB SEEKH KABAB [280 GMS X 12]",
+    "Description": "MEZBAN LAMB SEEKH KABAB [280 GMS X 12]",
+    "Price": 108,
+    "Quantity": 12,
+    "sku": "MEZBAN-LAMB-SEEKH-KABAB-[280-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS DESIATTA (FLOUR) [20 LES]": {
+    "Item": "THREE RIVERS DESIATTA (FLOUR) [20 LES]",
+    "Description": "THREE RIVERS DESIATTA (FLOUR) [20 LES]",
+    "Price": 10,
+    "Quantity": 1,
+    "sku": "THREE-RIVERS-DESIATTA-(FLOUR)-[20-LES]-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS Basmati Rice": {
+    "Item": "THREE RIVERS Basmati Rice",
+    "Description": "THREE RIVERS Basmati Rice",
+    "Price": 44,
+    "Quantity": 1,
+    "sku": "THREE-RIVERS-Basmati-Rice-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS BOSTAAN GREEN TEA (600gmsX12)Tin Pack": {
+    "Item": "THREE RIVERS BOSTAAN GREEN TEA (600gmsX12)Tin Pack",
+    "Description": "THREE RIVERS BOSTAAN GREEN TEA (600gmsX12)Tin Pack",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "THREE-RIVERS-BOSTAAN-GREEN-TEA-(600gmsX12)Tin-Pack-",
+    "category": "SHATA"
+  },
+  "Three Rivers Instant Kashmiri": {
+    "Item": "Three Rivers Instant Kashmiri",
+    "Description": "Three Rivers Instant Kashmiri",
+    "Price": 120,
+    "Quantity": 1,
+    "sku": "Three-Rivers-Instant-Kashmiri-",
+    "category": "SHATA"
+  },
+  "PINK TEA (KASHMIRITEA) [150GMSX12]": {
+    "Item": "PINK TEA (KASHMIRITEA) [150GMSX12]",
+    "Description": "PINK TEA (KASHMIRITEA) [150GMSX12]",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "PINK-TEA-(KASHMIRITEA)-[150GMSX12]-",
+    "category": "SHATA"
+  },
+  "PONI (TEA STRAINER) [12PCS]": {
+    "Item": "PONI (TEA STRAINER) [12PCS]",
+    "Description": "PONI (TEA STRAINER) [12PCS]",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "PONI-(TEA-STRAINER)-[12PCS]-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS ORGANIC CUMUN WHOLE JAR (220gmsX9)": {
+    "Item": "THREE RIVERS ORGANIC CUMUN WHOLE JAR (220gmsX9)",
+    "Description": "THREE RIVERS ORGANIC CUMUN WHOLE JAR (220gmsX9)",
+    "Price": 22,
+    "Quantity": 9,
+    "sku": "THREE-RIVERS-ORGANIC-CUMUN-WHOLE-JAR-(220gmsX9)-",
+    "category": "SHATA"
+  },
+  "ALSI SEED WHOLE [200 GMS X 24]": {
+    "Item": "ALSI SEED WHOLE [200 GMS X 24]",
+    "Description": "ALSI SEED WHOLE [200 GMS X 24]",
+    "Price": 24,
+    "Quantity": 24,
+    "sku": "ALSI-SEED-WHOLE-[200-GMS-X-24]-",
+    "category": "SHATA"
+  },
+  "DRY GINGER (SOONDH) noo GMS X 24)": {
+    "Item": "DRY GINGER (SOONDH) noo GMS X 24)",
+    "Description": "DRY GINGER (SOONDH) noo GMS X 24)",
+    "Price": 36,
+    "Quantity": 24,
+    "sku": "DRY-GINGER-(SOONDH)-noo-GMS-X-24)-",
+    "category": "SHATA"
+  },
+  "GREEN CARDAMOM [50 GMS X 24]": {
+    "Item": "GREEN CARDAMOM [50 GMS X 24]",
+    "Description": "GREEN CARDAMOM [50 GMS X 24]",
+    "Price": 66,
+    "Quantity": 24,
+    "sku": "GREEN-CARDAMOM-[50-GMS-X-24]-",
+    "category": "SHATA"
+  },
+  "BLACK SALT [350 GMS X (12) JARS": {
+    "Item": "BLACK SALT [350 GMS X (12) JARS",
+    "Description": "BLACK SALT [350 GMS X (12) JARS",
+    "Price": 21,
+    "Quantity": 12,
+    "sku": "BLACK-SALT-[350-GMS-X-(12)-JARS-",
+    "category": "SHATA"
+  },
+  "FENUGREEK SEED (METHI SEED) [200 GMS X 24]": {
+    "Item": "FENUGREEK SEED (METHI SEED) [200 GMS X 24]",
+    "Description": "FENUGREEK SEED (METHI SEED) [200 GMS X 24]",
+    "Price": 30,
+    "Quantity": 24,
+    "sku": "FENUGREEK-SEED-(METHI-SEED)-[200-GMS-X-24]-",
+    "category": "SHATA"
+  },
+  "GREEN DRY MINT [100 GMS X 24]": {
+    "Item": "GREEN DRY MINT [100 GMS X 24]",
+    "Description": "GREEN DRY MINT [100 GMS X 24]",
+    "Price": 30,
+    "Quantity": 24,
+    "sku": "GREEN-DRY-MINT-[100-GMS-X-24]-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS HIMALAYAN salt(2lbsX12)": {
+    "Item": "THREE RIVERS HIMALAYAN salt(2lbsX12)",
+    "Description": "THREE RIVERS HIMALAYAN salt(2lbsX12)",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "THREE-RIVERS-HIMALAYAN-salt(2ibsX12)-",
+    "category": "SHATA"
+  },
+  "THRFE RIVERS ORGANIC Black Pepper Whole Jar (200gmsX9)": {
+    "Item": "THRFE RIVERS ORGANIC Black Pepper Whole Jar (200gmsX9)",
+    "Description": "THRFE RIVERS ORGANIC Black Pepper Whole Jar (200gmsX9)",
+    "Price": 27,
+    "Quantity": 9,
+    "sku": "THRFE-RIVERS-ORGANIC-Black-Pepper-Whole-Jar-(200gmsX9)-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS ORGANIC CORIANDER WHOLE (250gmsX6)": {
+    "Item": "THREE RIVERS ORGANIC CORIANDER WHOLE (250gmsX6)",
+    "Description": "THREE RIVERS ORGANIC CORIANDER WHOLE (250gmsX6)",
+    "Price": 15,
+    "Quantity": 6,
+    "sku": "THREE-RIVERS-ORGANIC-CORIANDER-WHOLE-(250gmsX6)-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS BOONDI (200GMS X 24)": {
+    "Item": "THREE RIVERS BOONDI (200GMS X 24)",
+    "Description": "THREE RIVERS BOONDI (200GMS X 24)",
+    "Price": 30,
+    "Quantity": 24,
+    "sku": "THREE-RIVERS-BOONDI-(200GMS-X-24)-",
+    "category": "SHATA"
+  },
+  "SPAGHOL HUSK (200GMS X12) PET JARS": {
+    "Item": "SPAGHOL HUSK (200GMS X12) PET JARS",
+    "Description": "SPAGHOL HUSK (200GMS X12) PET JARS",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "SPAGHOL-HUSK-(200GMS-X12)-PET-JARS-",
+    "category": "SHATA"
+  },
+  "TR BAJRA (MILLET) FLOUR [2LBS X 20]": {
+    "Item": "TR BAJRA (MILLET) FLOUR [2LBS X 20]",
+    "Description": "TR BAJRA (MILLET) FLOUR [2LBS X 20]",
+    "Price": 45,
+    "Quantity": 20,
+    "sku": "TR-BAJRA-(MILLET)-FLOUR-[2LBS-X-20]-",
+    "category": "SHATA"
+  },
+  "DRY DATES JARS [600 GMS X (12]": {
+    "Item": "DRY DATES JARS [600 GMS X (12]",
+    "Description": "DRY DATES JARS [600 GMS X (12]",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "DRY-DATES-JARS-[600-GMS-X-(12]-",
+    "category": "SHATA"
+  },
+  "ROASTED CORN [400 GMS X 12] JARS STATE": {
+    "Item": "ROASTED CORN [400 GMS X 12] JARS STATE",
+    "Description": "ROASTED CORN [400 GMS X 12] JARS STATE",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "ROASTED-CORN-[400-GMS-X-12]-JARS-STATE-",
+    "category": "SHATA"
+  },
+  "PAK DESI GHEE [1KGX12)": {
+    "Item": "PAK DESI GHEE [1KGX12)",
+    "Description": "PAK DESI GHEE [1KGX12)",
+    "Price": 120,
+    "Quantity": 12,
+    "sku": "PAK-DESI-GHEE-[1KGX12)-",
+    "category": "SHATA"
+  },
+  "PAK DESI GHEE 2.5 KG SLBS X 6)": {
+    "Item": "PAK DESI GHEE 2.5 KG SLBS X 6)",
+    "Description": "PAK DESI GHEE 2.5 KG SLBS X 6)",
+    "Price": 144,
+    "Quantity": 6,
+    "sku": "PAK-DESI-GHEE-2.5-KG-SLBS-X-6)-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS EXTRA VIRGIN OLIVE OIL (409-ML X 10)": {
+    "Item": "THREE RIVERS EXTRA VIRGIN OLIVE OIL (409-ML X 10)",
+    "Description": "THREE RIVERS EXTRA VIRGIN OLIVE OIL (409-ML X 10)",
+    "Price": 50,
+    "Quantity": 10,
+    "sku": "THREE-RIVERS-EXTRA-VIRGIN-OLIVE-OIL-(409-ML-X-10)-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS ALSI (FLAX) SEED OIL [250 MI. X 12]": {
+    "Item": "THREE RIVERS ALSI (FLAX) SEED OIL [250 MI. X 12]",
+    "Description": "THREE RIVERS ALSI (FLAX) SEED OIL [250 MI. X 12]",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "THREE-RIVERS-ALSI-(FLAX)-SEED-OIL-[250-MI.-X-12]-",
+    "category": "SHATA"
+  },
+  "THREE RIVERS (ARQ E badian) (240ML X 12)": {
+    "Item": "THREE RIVERS (ARQ E badian) (240ML X 12)",
+    "Description": "THREE RIVERS (ARQ E badian) (240ML X 12)",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "THREE-RIVERS-(ARQ-E-badian)-(240ML-X-12)-",
+    "category": "SHATA"
+  },
+  "LUDO (GAME)": {
+    "Item": "LUDO (GAME)",
+    "Description": "LUDO (GAME)",
+    "Price": 5,
+    "Quantity": 1,
+    "sku": "LUDO-(GAME)-",
+    "category": "SHATA"
+  },
+  "TOOBA GARLIC PASTE [750 GMS X 12]": {
+    "Item": "TOOBA GARLIC PASTE [750 GMS X 12]",
+    "Description": "TOOBA GARLIC PASTE [750 GMS X 12]",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "TOOBA-GARLIC-PASTE-[750-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA GREEN CHILLI SAUCE [320 GMS X 12]": {
+    "Item": "TOOBA GREEN CHILLI SAUCE [320 GMS X 12]",
+    "Description": "TOOBA GREEN CHILLI SAUCE [320 GMS X 12]",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "TOOBA-GREEN-CHILLI-SAUCE-[320-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA GINGER AND GARLIC MIX PASTE (750gx12)": {
+    "Item": "TOOBA GINGER AND GARLIC MIX PASTE (750gx12)",
+    "Description": "TOOBA GINGER AND GARLIC MIX PASTE (750gx12)",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "TOOBA-GINGER-AND-GARLIC-MIX-PASTE-(750gxl2)-",
+    "category": "SHATA"
+  },
+  "TOOBA BUTTER CHICKEN MASALA [50+50 GMS X 12]": {
+    "Item": "TOOBA BUTTER CHICKEN MASALA [50+50 GMS X 12]",
+    "Description": "TOOBA BUTTER CHICKEN MASALA [50+50 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-BUTTER-CHICKEN-MASALA-[50+50-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA CHICKEN MASALA [50450 GMS X 12]": {
+    "Item": "TOOBA CHICKEN MASALA [50450 GMS X 12]",
+    "Description": "TOOBA CHICKEN MASALA [50450 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-CHICKEN-MASALA-[50450-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA FRY/KARAHI GHOSHT MASALA [50+50 GMS X 12]": {
+    "Item": "TOOBA FRY/KARAHI GHOSHT MASALA [50+50 GMS X 12]",
+    "Description": "TOOBA FRY/KARAHI GHOSHT MASALA [50+50 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-FRY/KARAHI-GHOSHT-MASALA-[50+50-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA HALEEM MASALA [50450 GMS X 12]": {
+    "Item": "TOOBA HALEEM MASALA [50450 GMS X 12]",
+    "Description": "TOOBA HALEEM MASALA [50450 GMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-HALEEM-MASALA-[50450-GMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA MURGH CHOLAY MASALA [50+50 GRAMS X 12]": {
+    "Item": "TOOBA MURGH CHOLAY MASALA [50+50 GRAMS X 12]",
+    "Description": "TOOBA MURGH CHOLAY MASALA [50+50 GRAMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-MURGH-CHOLAY-MASALA-[50+50-GRAMS-X-12]-",
+    "category": "SHATA"
+  },
+  "TOOBA NEHARI MASALA [50450 GRAMS X 12]": {
+    "Item": "TOOBA NEHARI MASALA [50450 GRAMS X 12]",
+    "Description": "TOOBA NEHARI MASALA [50450 GRAMS X 12]",
+    "Price": 12,
+    "Quantity": 12,
+    "sku": "TOOBA-NEHARI-MASALA-[50450-GRAMS-X-12]-",
+    "category": "SHATA"
+  }
+}

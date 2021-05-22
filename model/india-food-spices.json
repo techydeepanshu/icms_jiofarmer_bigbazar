@@ -1,186 +1,291 @@
 {
-  "PRIYA PICKLES LIME WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES LIME WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES LIME WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES LIME WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES LIME WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-LIME-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES LIME WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES LIME WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES LIME WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES LIME WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES LIME WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-LIME-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MANGO WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MANGO WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MANGO WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MANGO WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MANGO WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MANGO-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MANGO WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MANGO WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MANGO WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MANGO WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MANGO WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MANGO-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MIXED VEG WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MIXED VEG WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MIXED VEG WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MIXED VEG WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MIXED VEG WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MIXED-VEG-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MIXED VEG WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MIXED VEG WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MIXED VEG WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MIXED VEG WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MIXED VEG WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MIXED-VEG-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES GINGER WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES GINGER WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES GINGER WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES GINGER WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES GINGER WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-GINGER-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES GINGER WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES GINGER WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES GINGER WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-GINGER-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES ONION 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES ONION 24 X 300 GMS",
+  "PRIYA PICKLES ONION 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES ONION 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES ONION 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-ONION-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES TOMATO WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES TOMATO WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES TOMATO WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES TOMATO WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES TOMATO WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-TOMATO-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES TOMATO WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES TOMATO WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES TOMATO WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES TOMATO WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES TOMATO WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-TOMATO-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES CORIANDER WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES CORIANDER WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES CORIANDER WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES CORIANDER WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES CORIANDER WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-CORIANDER-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES CORIANDER WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES CORIANDER WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES CORIANDER WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES CORIANDER WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES CORIANDER WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-CORIANDER-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES CITRON WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES CITRON WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES CITRON WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES CITRON WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES CITRON WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-CITRON-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES CITRON WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES CITRON WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES CITRON WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES CITRON WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES CITRON WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-CITRON-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES SWEET GINGER WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES SWEET GINGER WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES SWEET GINGER WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES SWEET GINGER WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES SWEET GINGER WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-SWEET-GINGER-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES SWEET GINGER WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES SWEET GINGER WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES SWEET GINGER WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES SWEET GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES SWEET GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-SWEET-GINGER-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MANGO GINGER WITH GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MANGO GINGER WITH GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MANGO GINGER WITH GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MANGO GINGER WITH GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MANGO GINGER WITH GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MANGO-GINGER-WITH-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA PICKLES MANGO GINGER WITHOUT GARLIC 24 X 300 GMS":{
-    "Item":"PRIYA PICKLES MANGO GINGER WITHOUT GARLIC 24 X 300 GMS",
+  "PRIYA PICKLES MANGO GINGER WITHOUT GARLIC 24 X 300 GMS": {
+    "Item": "PRIYA PICKLES MANGO GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Quantity": 50,
     "Description": "PRIYA PICKLES MANGO GINGER WITHOUT GARLIC 24 X 300 GMS",
     "Price": 33.6,
     "sku": "PRIYA-PICKLES-MANGO-GINGER-WITHOUT-GARLIC-24-X-300-GMS",
     "category": "India-food-spices"
   },
-  "PRIYA POWDER RASAM 12 X 100 GMS NEW PRICE":{
-    "Item":"PRIYA POWDER RASAM 12 X 100 GMS NEW PRICE",
+  "PRIYA POWDER RASAM 12 X 100 GMS NEW PRICE": {
+    "Item": "PRIYA POWDER RASAM 12 X 100 GMS NEW PRICE",
     "Quantity": 50,
     "Description": "PRIYA POWDER RASAM 12 X 100 GMS NEW PRICE",
     "Price": 13.2,
     "sku": "PRIYA-POWDER-RASAM-12-X-100-GMS-NEW-PRICE",
     "category": "Indian-food-spices"
   },
-  "TATA TEA PREMIUM 500 GMS X 24":{
-    "Item":"TATA TEA PREMIUM 500 GMS X 24",
+  "TATA TEA PREMIUM 500 GMS X 24": {
+    "Item": "TATA TEA PREMIUM 500 GMS X 24",
     "Quantity": 50,
     "Description": "TATA TEA PREMIUM 500 GMS X 24",
     "Price": 96,
     "sku": "TATA-TEA-PREMIUM-500-GMS-X-24",
     "category": "Indian-food-spices"
   },
-  "CHETTINAD THENKUZHAL 180 GMS X 24 SPECIAL INTRODUCTORY RATE":{
-    "Item":"CHETTINAD THENKUZHAL 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
+  "CHETTINAD THENKUZHAL 180 GMS X 24 SPECIAL INTRODUCTORY RATE": {
+    "Item": "CHETTINAD THENKUZHAL 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
     "Quantity": 50,
     "Description": "CHETTINAD THENKUZHAL 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
     "Price": 45.6,
     "sku": "CHETTINAD-THENKUZHAL-180-GMS-X-24-SPECIAL-INTRODUCTORY-RATE",
     "category": "Indian-food-spices"
   },
-  "CHETTINAD MANAPPARAI MURUKKU 180 GMS X 24 SPECIAL INTRODUCTORY RATE":{
-    "Item":"CHETTINAD MANAPPARAI MURUKKU 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
+  "CHETTINAD MANAPPARAI MURUKKU 180 GMS X 24 SPECIAL INTRODUCTORY RATE": {
+    "Item": "CHETTINAD MANAPPARAI MURUKKU 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
     "Quantity": 50,
     "Description": "CHETTINAD MANAPPARAI MURUKKU 180 GMS X 24 SPECIAL INTRODUCTORY RATE",
     "Price": 45.6,
     "sku": "CHETTINAD-MANAPPARAI-MURUKKU-180-GMS-X-24-SPECIAL-INTRODUCTORY-RATE",
     "category": "Indian-food-spices"
+  },
+  "Ching's Schezwan Miracle Masala 20 gms X 20": {
+    "Item": "Ching's Schezwan Miracle Masala 20 gms X 20",
+    "Description": "Ching's Schezwan Miracle Masala 20 gms X 20",
+    "Quantity": 20,
+    "Price": 7,
+    "sku": "Ching's-Schezwan-Miracle-Masala-20-gms-X-20-"
+  },
+  "Ching's Manchurian Miracle Masala 20 gms X 20": {
+    "Item": "Ching's Manchurian Miracle Masala 20 gms X 20",
+    "Description": "Ching's Manchurian Miracle Masala 20 gms X 20",
+    "Quantity": 20,
+    "Price": 7,
+    "sku": "Ching's-Manchurian-Miracle-Masala-20-gms-X-20-"
+  },
+  "Ching's Haka Noodle chowmein Miracle Masala 20 gms X 20": {
+    "Item": "Ching's Haka Noodle chowmein Miracle Masala 20 gms X 20",
+    "Description": "Ching's Haka Noodle chowmein Miracle Masala 20 gms X 20",
+    "Quantity": 20,
+    "Price": 7,
+    "sku": "Ching's-Haka-Noodle-chowmein-Miracle-Masala-20-gms-X-20-"
+  },
+  "Ching's Paneer ChilliMiracle Masala 20 gms X 20": {
+    "Item": "Ching's Paneer ChilliMiracle Masala 20 gms X 20",
+    "Description": "Ching's Paneer ChilliMiracle Masala 20 gms X 20",
+    "Quantity": 20,
+    "Price": 7,
+    "sku": "Ching's-Paneer-ChilliMiracle-Masala-20-gms-X-20-"
+  },
+  "Chettinad South Indian Jaggery Balls (Light) 700 gms X 18": {
+    "Item": "Chettinad South Indian Jaggery Balls (Light) 700 gms X 18",
+    "Description": "Chettinad South Indian Jaggery Balls (Light) 700 gms X 18",
+    "Quantity": 18,
+    "Price": 33.3,
+    "sku": "Chettinad-South-Indian-Jaggery-Balls-(Light)-700-gms-X-18-"
+  },
+  "Chettinad South Indian Jaggery Powder 907 gms X 12": {
+    "Item": "Chettinad South Indian Jaggery Powder 907 gms X 12",
+    "Description": "Chettinad South Indian Jaggery Powder 907 gms X 12",
+    "Quantity": 12,
+    "Price": 30,
+    "sku": "Chettinad-South-Indian-Jaggery-Powder-907-gms-X-12-"
+  },
+  "Chettinad Gingelly Oil 1 ltr X 10": {
+    "Item": "Chettinad Gingelly Oil 1 ltr X 10",
+    "Description": "Chettinad Gingelly Oil 1 ltr X 10",
+    "Quantity": 10,
+    "Price": 58,
+    "sku": "Chettinad-Gingelly-Oil-1-ltr-X-10-"
+  },
+  "Chettinad Gingelly Oil 2 ltr X 6": {
+    "Item": "Chettinad Gingelly Oil 2 ltr X 6",
+    "Description": "Chettinad Gingelly Oil 2 ltr X 6",
+    "Quantity": 6,
+    "Price": 65,
+    "sku": "Chettinad-Gingelly-Oil-2-ltr-X-6-"
+  },
+  "Kalyan No 1 Shev 200 gms X 40 ***Special Introductory Price***": {
+    "Item": "Kalyan No 1 Shev 200 gms X 40 ***Special Introductory Price***",
+    "Description": "Kalyan No 1 Shev 200 gms X 40 ***Special Introductory Price***",
+    "Quantity": 40,
+    "Price": 80,
+    "sku": "Kalyan-No-1-Shev-200-gms-X-40-***Special-Introductory-Price***-"
+  },
+  "Kalyan Misal Farsan 200 gms X 40 ***Special Introductory Price***": {
+    "Item": "Kalyan Misal Farsan 200 gms X 40 ***Special Introductory Price***",
+    "Description": "Kalyan Misal Farsan 200 gms X 40 ***Special Introductory Price***",
+    "Quantity": 40,
+    "Price": 90,
+    "sku": "Kalyan-Misal-Farsan-200-gms-X-40-***Special-Introductory-Price***-"
+  },
+  "Priya Bombay (Upma) Ravva 2 Lb X 20": {
+    "Item": "Priya Bombay (Upma) Ravva 2 Lb X 20",
+    "Description": "Priya Bombay (Upma) Ravva 2 Lb X 20",
+    "Quantity": 20,
+    "Price": 36,
+    "sku": "Priya-Bombay-(Upma)-Ravva-2-Lb-X-20-"
+  },
+  "Priya Vermicelli 1 kg X 12": {
+    "Item": "Priya Vermicelli 1 kg X 12",
+    "Description": "Priya Vermicelli 1 kg X 12",
+    "Quantity": 12,
+    "Price": 24,
+    "sku": "Priya-Vermicelli-1-kg-X-12-"
+  },
+  "Priya Roasted Vermicelli 1 kg X 12": {
+    "Item": "Priya Roasted Vermicelli 1 kg X 12",
+    "Description": "Priya Roasted Vermicelli 1 kg X 12",
+    "Quantity": 12,
+    "Price": 24,
+    "sku": "Priya-Roasted-Vermicelli-1-kg-X-12-"
+  },
+  "Chettinad Vetiver (Khus) Syrup 750 ml X 12": {
+    "Item": "Chettinad Vetiver (Khus) Syrup 750 ml X 12",
+    "Description": "Chettinad Vetiver (Khus) Syrup 750 ml X 12",
+    "Quantity": 12,
+    "Price": 36,
+    "sku": "Chettinad-Vetiver-(Khus)-Syrup-750-ml-X-12-"
+  },
+  "Chettinad Finger Millets 2 lbs X 12": {
+    "Item": "Chettinad Finger Millets 2 lbs X 12",
+    "Description": "Chettinad Finger Millets 2 lbs X 12",
+    "Quantity": 12,
+    "Price": 42,
+    "sku": "Chettinad-Finger-Millets-2-lbs-X-12-"
   }
 }

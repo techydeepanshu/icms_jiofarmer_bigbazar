@@ -1,0 +1,786 @@
+{
+  "1005001": {
+    "Item": "1005001",
+    "Description": "PIDE W/CHEESE (125GRX3PCS)x12",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "PIDE-W/CHEESE-(125GRX3PCS)x12-",
+    "category": "Turkana"
+  },
+  "1005002": {
+    "Item": "1005002",
+    "Description": "PIDE W/MIX CHEESES (125GRX3PCS)x12",
+    "Price": 42,
+    "Quantity": 12,
+    "sku": "PIDE-W/MIX-CHEESES-(125GRX3PCS)x12-",
+    "category": "Turkana"
+  },
+  "1006005": {
+    "Item": "1006005",
+    "Description": "SU BOREGI-SPECIAL PASTRY WITH CHEESE 800GRX10",
+    "Price": 69.95,
+    "Quantity": 10,
+    "sku": "SU-BOREGI-SPECIAL-PASTRY-WITH-CHEESE-800GRX10-",
+    "category": "Turkana"
+  },
+  "1006012": {
+    "Item": "1006012",
+    "Description": "BOREK PASTRY ROLLS WITH SPINACH 400GRx10",
+    "Price": 29.9,
+    "Quantity": 10,
+    "sku": "BOREK-PASTRY-ROLLS-WITH-SPINACH-400GRx10-",
+    "category": "Turkana"
+  },
+  "1006014": {
+    "Item": "1006014",
+    "Description": "FLORIA LAHMAJUN/HOT (6pcs) 25.8 OZ x 12",
+    "Price": 90,
+    "Quantity": 12,
+    "sku": "FLORIA-LAHMAJUN/HOT-(6pcs)-25.8-OZ-x-12-",
+    "category": "Turkana"
+  },
+  "1008001": {
+    "Item": "1008001",
+    "Description": "BOREK ROLLS WITH CHEESE 500g X 10",
+    "Price": 23.5,
+    "Quantity": 10,
+    "sku": "BOREK-ROLLS-WITH-CHEESE-500g-X-10-",
+    "category": "Turkana"
+  },
+  "1101002": {
+    "Item": "1101002",
+    "Description": "SPICY HUMMUS 10OZx12",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "SPICY-HUMMUS-10OZx12-",
+    "category": "Turkana"
+  },
+  "1101003": {
+    "Item": "1101003",
+    "Description": "BABA GANOUSH 10OZx12",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "BABA-GANOUSH-10OZx12-",
+    "category": "Turkana"
+  },
+  "1101051": {
+    "Item": "1101051",
+    "Description": "CREAM ON TOP YOGURT PLAIN (2LBx6)",
+    "Price": 16.5,
+    "Quantity": 6,
+    "sku": "CREAM-ON-TOP-YOGURT-PLAIN-(2LBx6)-",
+    "category": "Turkana"
+  },
+  "1102032": {
+    "Item": "1102032",
+    "Description": "SLICED KASHKAVAL CHEESE 500GRx12",
+    "Price": 72,
+    "Quantity": 12,
+    "sku": "SLICED-KASHKAVAL-CHEESE-500GRx12-",
+    "category": "Turkana"
+  },
+  "1103003": {
+    "Item": "1103003",
+    "Description": "WHITE CHEESE (60%) 6x800GR",
+    "Price": 56,
+    "Quantity": 6,
+    "sku": "WHITE-CHEESE-(60%)-6x800GR-",
+    "category": "Turkana"
+  },
+  "1103004": {
+    "Item": "1103004",
+    "Description": "ERZURUM BOREKLIK CHEESE 6x800GR",
+    "Price": 33,
+    "Quantity": 6,
+    "sku": "ERZURUM-BOREKLIK-CHEESE-6x800GR-",
+    "category": "Turkana"
+  },
+  "1104001": {
+    "Item": "1104001",
+    "Description": "CREAM SPREAD KAYMAK8 OZx12",
+    "Price": 34.5,
+    "Quantity": 12,
+    "sku": "CREAM-SPREAD-KAYMAK8-OZx12-",
+    "category": "Turkana"
+  },
+  "1109001": {
+    "Item": "1109001",
+    "Description": "FETA CHEESE FULL FAT 1KGx6",
+    "Price": 39,
+    "Quantity": 6,
+    "sku": "FETA-CHEESE-FULL-FAT-1KGx6-",
+    "category": "Turkana"
+  },
+  "1109002": {
+    "Item": "1109002",
+    "Description": "FETA CHEESE TIN (SHEEP) 1KGx8",
+    "Price": 99,
+    "Quantity": 8,
+    "sku": "FETA-CHEESE-TIN-(SHEEP)-1KGx8-",
+    "category": "Turkana"
+  },
+  "1109006": {
+    "Item": "1109006",
+    "Description": "FETA CHEESE FULL FAT 750GRx6",
+    "Price": 31.5,
+    "Quantity": 6,
+    "sku": "FETA-CHEESE-FULL-FAT-750GRx6-",
+    "category": "Turkana"
+  },
+  "1109013": {
+    "Item": "1109013",
+    "Description": "KASHKAVAL CHEESE ROUND 1KGx12",
+    "Price": 138,
+    "Quantity": 12,
+    "sku": "KASHKAVAL-CHEESE-ROUND-1KGx12-",
+    "category": "Turkana"
+  },
+  "1109015": {
+    "Item": "1109015",
+    "Description": "MOZZARELLA CHEESE 1KGx6",
+    "Price": 52,
+    "Quantity": 6,
+    "sku": "MOZZARELLA-CHEESE-1KGx6-",
+    "category": "Turkana"
+  },
+  "1109022": {
+    "Item": "1109022",
+    "Description": "CECIL CHEESE 200GRx12",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "CECIL-CHEESE-200GRx12-",
+    "category": "Turkana"
+  },
+  "1109031": {
+    "Item": "1109031",
+    "Description": "ROLLED BUTTER 500GRx12",
+    "Price": 86,
+    "Quantity": 12,
+    "sku": "ROLLED-BUTTER-500GRx12-",
+    "category": "Turkana"
+  },
+  "1109032": {
+    "Item": "1109032",
+    "Description": "ROLLED BUTTER 1000GRx6",
+    "Price": 42,
+    "Quantity": 6,
+    "sku": "ROLLED-BUTTER-1000GRx6-",
+    "category": "Turkana"
+  },
+  "1109047": {
+    "Item": "1109047",
+    "Description": "SUZME WHITE CHEESE 500GRx12",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "SUZME-WHITE-CHEESE-500GRx12-",
+    "category": "Turkana"
+  },
+  "1111005": {
+    "Item": "1111005",
+    "Description": "DOYUM BOREKLIK CHEESE 800Gx6",
+    "Price": 55.8,
+    "Quantity": 6,
+    "sku": "DOYUM-BOREKLIK-CHEESE-800Gx6-",
+    "category": "Turkana"
+  },
+  "1111015": {
+    "Item": "1111015",
+    "Description": "KASHKAVAL CHEESE 400Gx12 TRADITIONAL BUTTER 1KGx6",
+    "Price": 90,
+    "Quantity": 6,
+    "sku": "KASHKAVAL-CHEESE-400Gx12-TRADITIONAL-BUTTER-1KGx6-",
+    "category": "Turkana"
+  },
+  "1111041": {
+    "Item": "1111041",
+    "Description": "TRADITIONAL BUTTER 1KGx6",
+    "Price": 90,
+    "Quantity": 6,
+    "sku": "TRADITIONAL-BUTTER-1KGx6",
+    "category": "Turkana"
+  },
+  "1111046": {
+    "Item": "1111046",
+    "Description": "SLICED BURGER YELLOW CHEESE 350Gx12",
+    "Price": 56,
+    "Quantity": 12,
+    "sku": "SLICED-BURGER-YELLOW-CHEESE-350Gx12-",
+    "category": "Turkana"
+  },
+  "1111050": {
+    "Item": "1111050",
+    "Description": "FRESH CREAM CHEESE 200Gx12",
+    "Price": 19.8,
+    "Quantity": 12,
+    "sku": "FRESH-CREAM-CHEESE-200Gx12-",
+    "category": "Turkana"
+  },
+  "1111056": {
+    "Item": "1111056",
+    "Description": "SUZME DOUBLE CREAM WHITE CHEESE 250GRx12",
+    "Price": 31.96,
+    "Quantity": 12,
+    "sku": "SUZME-DOUBLE-CREAM-WHITE-CHEESE-250GRx12-",
+    "category": "Turkana"
+  },
+  "1111106": {
+    "Item": "1111106",
+    "Description": "LABANEH LEMON CHEESECAKE 180GX12 (SPREADABLE)",
+    "Price": 16.8,
+    "Quantity": 12,
+    "sku": "LABANEH-LEMON-CHEESECAKE-180GX12-(SPREADABLE)-",
+    "category": "Turkana"
+  },
+  "1111108": {
+    "Item": "1111108",
+    "Description": "LABANEH WITH GARLIC CHIVES 180GX12 (SPREADABLE)",
+    "Price": 16.8,
+    "Quantity": 12,
+    "sku": "LABANEH-WITH-GARLIC-CHIVES-180GX12-(SPREADABLE)-",
+    "category": "Turkana"
+  },
+  "1140001": {
+    "Item": "1140001",
+    "Description": "BYBLOS LEBNI 12/16 OZ",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "BYBLOS-LEBNI-12/16-OZ-",
+    "category": "Turkana"
+  },
+  "1140002": {
+    "Item": "1140002",
+    "Description": "BYBLOS YOGURT 6/32 OZ",
+    "Price": 18,
+    "Quantity": 6,
+    "sku": "BYBLOS-YOGURT-6/32-OZ-",
+    "category": "Turkana"
+  },
+  "1203003": {
+    "Item": "1203003",
+    "Description": "CHICKEN FRANKS 1LBX12",
+    "Price": 60.52,
+    "Quantity": 12,
+    "sku": "CHICKEN-FRANKS-1LBX12-",
+    "category": "Turkana"
+  },
+  "1203004": {
+    "Item": "1203004",
+    "Description": "BEEF FRANKS 1LBSx12",
+    "Price": 68.58,
+    "Quantity": 12,
+    "sku": "BEEF-FRANKS-1LBSx12-",
+    "category": "Turkana"
+  },
+  "1406027": {
+    "Item": "1406027",
+    "Description": "KREM SANTI SADE 150gr*12",
+    "Price": 13.2,
+    "Quantity": 12,
+    "sku": "KREM-SANTI-SADE-150gr*12-",
+    "category": "Turkana"
+  },
+  "1604062": {
+    "Item": "1604062",
+    "Description": "MARSMALLOW 50GRx24",
+    "Price": 18,
+    "Quantity": 24,
+    "sku": "MARSMALLOW-50GRx24-",
+    "category": "Turkana"
+  },
+  "1710031": {
+    "Item": "1710031",
+    "Description": "LUPPO CAKEBITE DARK 184Gx12",
+    "Price": 16.8,
+    "Quantity": 12,
+    "sku": "LUPPO-CAKEBITE-DARK-184Gx12-",
+    "category": "Turkana"
+  },
+  "1903001": {
+    "Item": "1903001",
+    "Description": "DELIGHT PISTACHIO (853) 454GRx12",
+    "Price": 38,
+    "Quantity": 12,
+    "sku": "DELIGHT-PISTACHIO-(853)-454GRx12-",
+    "category": "Turkana"
+  },
+  "1903005": {
+    "Item": "1903005",
+    "Description": "DELIGHT ROSE (873) 454GRx12",
+    "Price": 38,
+    "Quantity": 12,
+    "sku": "DELIGHT-ROSE-(873)-454GRx12-",
+    "category": "Turkana"
+  },
+  "1903006": {
+    "Item": "1903006",
+    "Description": "DELIGHT MIX NUTS (860) 454GRx12",
+    "Price": 38,
+    "Quantity": 12,
+    "sku": "DELIGHT-MIX-NUTS-(860)-454GRx12-",
+    "category": "Turkana"
+  },
+  "1903076": {
+    "Item": "1903076",
+    "Description": "DELIGHT FIG & WALNUT 454GRx12",
+    "Price": 38,
+    "Quantity": 12,
+    "sku": "DELIGHT-FIG-&-WALNUT-454GRx12-",
+    "category": "Turkana"
+  },
+  "1911001": {
+    "Item": "1911001",
+    "Description": "COTTON CANDY PACK 250GRx24",
+    "Price": 66,
+    "Quantity": 24,
+    "sku": "COTTON-CANDY-PACK-250GRx24-",
+    "category": "Turkana"
+  },
+  "2002080": {
+    "Item": "2002080",
+    "Description": "POP CAKE LEMON 144GRx10",
+    "Price": 11,
+    "Quantity": 10,
+    "sku": "POP-CAKE-LEMON-144GRx10-",
+    "category": "Turkana"
+  },
+  "2002099": {
+    "Item": "2002099",
+    "Description": "TEA BISCUIT 1KGx6",
+    "Price": 12,
+    "Quantity": 6,
+    "sku": "TEA-BISCUIT-1KGx6-",
+    "category": "Turkana"
+  },
+  "2206029": {
+    "Item": "2206029",
+    "Description": "SUNFLOWER SEEDS UNSALTED 300GRx14",
+    "Price": 36.6,
+    "Quantity": 14,
+    "sku": "SUNFLOWER-SEEDS-UNSALTED-300GRx14-",
+    "category": "Turkana"
+  },
+  "2206057": {
+    "Item": "2206057",
+    "Description": "SUNFLOWER SEEDS DAKOTA 300GRx14",
+    "Price": 36.6,
+    "Quantity": 14,
+    "sku": "SUNFLOWER-SEEDS-DAKOTA-300GRx14-",
+    "category": "Turkana"
+  },
+  "2209001": {
+    "Item": "2209001",
+    "Description": "ROASTED & SALTED SUNFLOWER SEEDS 200GRx24",
+    "Price": 26,
+    "Quantity": 24,
+    "sku": "ROASTED-&-SALTED-SUNFLOWER-SEEDS-200GRx24-",
+    "category": "Turkana"
+  },
+  "2308001": {
+    "Item": "2308001",
+    "Description": "Duru Coarse Bulgur 101 #3 1KGX10",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Duru-Coarse-Bulgur-101-#3-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308003": {
+    "Item": "2308003",
+    "Description": "Duru Coarse Bulgur W/Vermicelli 1KGX10",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Duru-Coarse-Bulgur-W/Vermicelli-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308008": {
+    "Item": "2308008",
+    "Description": "Duru Extra Coarse Bulgur 104 #4 1KGX10",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Duru-Extra-Coarse-Bulgur-104-#4-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308010": {
+    "Item": "2308010",
+    "Description": "Duru Medium Bulgur 107 #2 1KGX10",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Duru-Medium-Bulgur-107-#2-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308013": {
+    "Item": "2308013",
+    "Description": "Duru Brown Fine Bulgur 1KGX10",
+    "Price": 15.5,
+    "Quantity": 10,
+    "sku": "Duru-Brown-Fine-Bulgur-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308014": {
+    "Item": "2308014",
+    "Description": "Duru Baldo Rice 1KGX10",
+    "Price": 36,
+    "Quantity": 10,
+    "sku": "Duru-Baldo-Rice-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308025": {
+    "Item": "2308025",
+    "Description": "Duru Split Red Lentils 1KGX10",
+    "Price": 26,
+    "Quantity": 10,
+    "sku": "Duru-Split-Red-Lentils-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308029": {
+    "Item": "2308029",
+    "Description": "Duru Peeled wheat 1KGX10",
+    "Price": 18,
+    "Quantity": 10,
+    "sku": "Duru-Peeled-wheat-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308033": {
+    "Item": "2308033",
+    "Description": "Duru Chick Peas 9mm 1KGX10",
+    "Price": 26,
+    "Quantity": 10,
+    "sku": "Duru-Chick-Peas-9mm-1KGX10-",
+    "category": "Turkana"
+  },
+  "2308040": {
+    "Item": "2308040",
+    "Description": "Duru Coarse Bulgur (2500g x 6pcs)",
+    "Price": 22,
+    "Quantity": 6,
+    "sku": "Duru-Coarse-Bulgur-(2500g-x-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308041": {
+    "Item": "2308041",
+    "Description": "Duru Fine Bulgur (2500g X 6pcs)",
+    "Price": 22.5,
+    "Quantity": 6,
+    "sku": "Duru-Fine-Bulgur-(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308042": {
+    "Item": "2308042",
+    "Description": "Duru Extra Fine Bulgur (2500g X 6pcs)",
+    "Price": 22.5,
+    "Quantity": 6,
+    "sku": "Duru-Extra-Fine-Bulgur-(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308045": {
+    "Item": "2308045",
+    "Description": "Duru Baldo Rice (2500g x 6pcs)",
+    "Price": 47,
+    "Quantity": 6,
+    "sku": "Duru-Baldo-Rice-(2500g-x-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308046": {
+    "Item": "2308046",
+    "Description": "Duru Split Red Lentil (2500g X 6pcs)",
+    "Price": 38,
+    "Quantity": 6,
+    "sku": "Duru-Split-Red-Lentil-(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308047": {
+    "Item": "2308047",
+    "Description": "Duru ChickPeas 9mm (2500g x 6pcs)",
+    "Price": 42,
+    "Quantity": 6,
+    "sku": "Duru-ChickPeas-9mm-(2500g-x-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308049": {
+    "Item": "2308049",
+    "Description": "Duru Extra Coarse Bulgur(2500g X 6pcs)",
+    "Price": 22,
+    "Quantity": 6,
+    "sku": "Duru-Extra-Coarse-Bulgur(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308050": {
+    "Item": "2308050",
+    "Description": "Duru Medium Bulgur(2500g X 6pcs)",
+    "Price": 22.5,
+    "Quantity": 6,
+    "sku": "Duru-Medium-Bulgur(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308051": {
+    "Item": "2308051",
+    "Description": "Duru Extra Extra Coarse Bulgur(2500g X 6pcs)",
+    "Price": 22.5,
+    "Quantity": 6,
+    "sku": "Duru-Extra-Extra-Coarse-Bulgur(2500g-X-6pcs)-",
+    "category": "Turkana"
+  },
+  "2308053": {
+    "Item": "2308053",
+    "Description": "WHITE BEANS (7mm) 2500Gx6",
+    "Price": 47,
+    "Quantity": 6,
+    "sku": "WHITE-BEANS-(7mm)-2500Gx6-",
+    "category": "Turkana"
+  },
+  "2308078": {
+    "Item": "2308078",
+    "Description": "Duru Pilvalik Pirinc (Rice) (2500grx6pcs)",
+    "Price": 36,
+    "Quantity": 6,
+    "sku": "Duru-Pilvalik-Pirinc-(Rice)-(2500grx6pcs)-",
+    "category": "Turkana"
+  },
+  "2403004": {
+    "Item": "2403004",
+    "Description": "HALVA W/ PISTACHIO 700GRx6",
+    "Price": 36,
+    "Quantity": 6,
+    "sku": "HALVA-W/-PISTACHIO-700GRx6-",
+    "category": "Turkana"
+  },
+  "2602010": {
+    "Item": "2602010",
+    "Description": "ROSE PRESERVE 800GRx12",
+    "Price": 30.8,
+    "Quantity": 12,
+    "sku": "ROSE-PRESERVE-800GRx12-",
+    "category": "Turkana"
+  },
+  "2602011": {
+    "Item": "2602011",
+    "Description": "APRICOT PRESERVE 800GRx12",
+    "Price": 30.8,
+    "Quantity": 12,
+    "sku": "APRICOT-PRESERVE-800GRx12-",
+    "category": "Turkana"
+  },
+  "2801002": {
+    "Item": "2801002",
+    "Description": "EXTRA VIRGIN OLIVE OIL 1LTx12",
+    "Price": 43,
+    "Quantity": 12,
+    "sku": "EXTRA-VIRGIN-OLIVE-OIL-1LTx12-",
+    "category": "Turkana"
+  },
+  "2801003": {
+    "Item": "2801003",
+    "Description": "OLIVE OIL (EXTRA VIRGIN) 2LTx6",
+    "Price": 32.8,
+    "Quantity": 6,
+    "sku": "OLIVE-OIL-(EXTRA-VIRGIN)-2LTx6-",
+    "category": "Turkana"
+  },
+  "2801006": {
+    "Item": "2801006",
+    "Description": "AVOCADO OIL 1LTx12",
+    "Price": 40.6,
+    "Quantity": 12,
+    "sku": "AVOCADO-OIL-1LTx12-",
+    "category": "Turkana"
+  },
+  "2802011": {
+    "Item": "2802011",
+    "Description": "EXTRA VIRGIN OLIVE OIL/CANOLA - BLEND 1LTx12",
+    "Price": 39.36,
+    "Quantity": 12,
+    "sku": "EXTRA-VIRGIN-OLIVE-OIL/CANOLA---BLEND-1LTx12-",
+    "category": "Turkana"
+  },
+  "2806001": {
+    "Item": "2806001",
+    "Description": "SUNFLOWER OIL 1LTx12",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "SUNFLOWER-OIL-1LTx12-",
+    "category": "Turkana"
+  },
+  "2806007": {
+    "Item": "2806007",
+    "Description": "SUNFLOWER OIL 4.5LTx4",
+    "Price": 48,
+    "Quantity": 4,
+    "sku": "SUNFLOWER-OIL-4.5LTx4-",
+    "category": "Turkana"
+  },
+  "2902002": {
+    "Item": "2902002",
+    "Description": "IKRAM GOLD SELE 800GRX8 PET",
+    "Price": 48,
+    "Quantity": 8,
+    "sku": "IKRAM-GOLD-SELE-800GRX8-PET-",
+    "category": "Turkana"
+  },
+  "2902050": {
+    "Item": "2902050",
+    "Description": "GREEN CRACKED OLIVES 1500GRx6",
+    "Price": 47.94,
+    "Quantity": 6,
+    "sku": "GREEN-CRACKED-OLIVES-1500GRx6-",
+    "category": "Turkana"
+  },
+  "2902060": {
+    "Item": "2902060",
+    "Description": "BLACK OLIVES SELE 1000GRx6",
+    "Price": 41.75,
+    "Quantity": 6,
+    "sku": "BLACK-OLIVES-SELE-1000GRx6-",
+    "category": "Turkana"
+  },
+  "2902070": {
+    "Item": "2902070",
+    "Description": "NATURAL BLACK OLIVES SELE 700GRx12",
+    "Price": 30,
+    "Quantity": 12,
+    "sku": "NATURAL-BLACK-OLIVES-SELE-700GRx12-",
+    "category": "Turkana"
+  },
+  "2909005": {
+    "Item": "2909005",
+    "Description": "GREEN EDREMIT SCRATCHED OLIVES 720 GrX12",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "GREEN-EDREMIT-SCRATCHED-OLIVES-720-GrX12-",
+    "category": "Turkana"
+  },
+  "2909006": {
+    "Item": "2909006",
+    "Description": "GREEN CRACKED OLIVES 720 GrX12",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "GREEN-CRACKED-OLIVES-720-GrX12-",
+    "category": "Turkana"
+  },
+  "2909007": {
+    "Item": "2909007",
+    "Description": "GREEN OLIVES STUFFED WITH PEPPER 720 GrX12",
+    "Price": 33,
+    "Quantity": 12,
+    "sku": "GREEN-OLIVES-STUFFED-WITH-PEPPER-720-GrX12-",
+    "category": "Turkana"
+  },
+  "3208001": {
+    "Item": "3208001",
+    "Description": "JALAPENOS PICKLES 720GRx12",
+    "Price": 25.2,
+    "Quantity": 12,
+    "sku": "JALAPENOS-PICKLES-720GRx12-",
+    "category": "Turkana"
+  },
+  "3208002": {
+    "Item": "3208002",
+    "Description": "CUCUMBER PICKLES 720GRx12",
+    "Price": 19.2,
+    "Quantity": 12,
+    "sku": "CUCUMBER-PICKLES-720GRx12-",
+    "category": "Turkana"
+  },
+  "3208003": {
+    "Item": "3208003",
+    "Description": "MIXED PICKLES 720GRx12",
+    "Price": 19.2,
+    "Quantity": 12,
+    "sku": "MIXED-PICKLES-720GRx12-",
+    "category": "Turkana"
+  },
+  "3208005": {
+    "Item": "3208005",
+    "Description": "HOT PEPPER PICKLES 720GRx12",
+    "Price": 26,
+    "Quantity": 12,
+    "sku": "HOT-PEPPER-PICKLES-720GRx12-",
+    "category": "Turkana"
+  },
+  "3208016": {
+    "Item": "3208016",
+    "Description": "CUCUMBER PICKLES 3000GRx3",
+    "Price": 13.5,
+    "Quantity": 3,
+    "sku": "CUCUMBER-PICKLES-3000GRx3-",
+    "category": "Turkana"
+  },
+  "3208024": {
+    "Item": "3208024",
+    "Description": "HOT FINGER PEPPER LONG PICKLES 3000ml X4 PCS",
+    "Price": 32,
+    "Quantity": 4,
+    "sku": "HOT-FINGER-PEPPER-LONG-PICKLES-3000ml-X4-PCS-",
+    "category": "Turkana"
+  },
+  "3208027": {
+    "Item": "3208027",
+    "Description": "CUBUK CUCUMBER PICKLES 3000cc x 6",
+    "Price": 30,
+    "Quantity": 6,
+    "sku": "CUBUK-CUCUMBER-PICKLES-3000cc-x-6-",
+    "category": "Turkana"
+  },
+  "3208029": {
+    "Item": "3208029",
+    "Description": "MIXED PICKLES 3000cc x 6",
+    "Price": 23.97,
+    "Quantity": 6,
+    "sku": "MIXED-PICKLES-3000cc-x-6-",
+    "category": "Turkana"
+  },
+  "3306015": {
+    "Item": "3306015",
+    "Description": "STUFFED GRAPE LEAVES W/RICE 400Gx12",
+    "Price": 23.94,
+    "Quantity": 12,
+    "sku": "STUFFED-GRAPE-LEAVES-W/RICE-400Gx12-",
+    "category": "Turkana"
+  },
+  "3414002": {
+    "Item": "3414002",
+    "Description": "PEPPER PASTE MILD 720GRX12",
+    "Price": 36,
+    "Quantity": 12,
+    "sku": "PEPPER-PASTE-MILD-720GRX12-",
+    "category": "Turkana"
+  },
+  "3414005": {
+    "Item": "3414005",
+    "Description": "TOMATO PASTE 720GRx12",
+    "Price": 27,
+    "Quantity": 12,
+    "sku": "TOMATO-PASTE-720GRx12-",
+    "category": "Turkana"
+  },
+  "3421001": {
+    "Item": "3421001",
+    "Description": "TOMATO PASTE 700GRx12",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "TOMATO-PASTE-700GRx12-",
+    "category": "Turkana"
+  },
+  "4110004": {
+    "Item": "4110004",
+    "Description": "ROASTED RED PEPPERS720GRx12",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "ROASTED-RED-PEPPERS720GRx12-",
+    "category": "Turkana"
+  },
+  "4110006": {
+    "Item": "4110006",
+    "Description": "GREEN PEAS 720GRX12",
+    "Price": 18,
+    "Quantity": 12,
+    "sku": "GREEN-PEAS-720GRX12-",
+    "category": "Turkana"
+  },
+  "4110008": {
+    "Item": "4110008",
+    "Description": "GRILLED EGGPLANT 720GRx12",
+    "Price": 24,
+    "Quantity": 12,
+    "sku": "GRILLED-EGGPLANT-720GRx12-",
+    "category": "Turkana"
+  }
+}

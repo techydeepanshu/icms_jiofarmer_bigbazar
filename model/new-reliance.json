@@ -1,0 +1,42 @@
+{
+  "24": {
+    "Item": "24",
+    "Price": 2.5,
+    "Description": "SONF-HT MOUTH FRESHNER HUMTUM PC",
+    "category": "new-reliance",
+    "sku": "-SONF-HT-MOUTH-FRESHNER-HUMTUM-PC",
+    "Quantity": 50
+  },
+  "2": {
+    "Item": "2",
+    "Price": 12,
+    "Description": "LU-PC LU-PRINCE CHOCOLATE 95GMSX24 CASE",
+    "category": "new-reliance",
+    "sku": "-LU-PC-LU-PRINCE-CHOCOLATE-95GMSX24-CASE",
+    "Quantity": 50
+  },
+  "LU-ZEERA": {
+    "Item": "LU-ZEERA",
+    "Price": 12,
+    "Description": "LU-ZEERA PLUS 126GMSX24 CASE",
+    "category": "new-reliance",
+    "sku": "-LU-ZEERA-PLUS-126GMSX24-CASE",
+    "Quantity": 50
+  },
+  "RES-CRS": {
+    "Item": "RES-CRS",
+    "Price": 46,
+    "Description": "REHMAT SHRN CAKE RUSK 350GMX20 CASE",
+    "category": "new-reliance",
+    "sku": "-REHMAT-SHRN-CAKE-RUSK-350GMX20-CASE",
+    "Quantity": 50
+  },
+  "1": {
+    "Item": "1",
+    "Price": 50,
+    "Description": "RES-NK REHMAT SHRN NAN KHATI 350GMX20 CASE",
+    "category": "new-reliance",
+    "sku": "-RES-NK-REHMAT-SHRN-NAN-KHATI-350GMX20-CASE",
+    "Quantity": 50
+  }
+}

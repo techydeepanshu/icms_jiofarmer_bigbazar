@@ -1,0 +1,82 @@
+{
+  "SAUSAGE MEAT MASALA 100 G": {
+    "Item": "SAUSAGE MEAT MASALA 100 G",
+    "Description": "SAUSAGE MEAT MASALA 100 G",
+    "Quantity": 50,
+    "Price": 0.99,
+    "category": "ron",
+    "sku": "SAUSAGE-MEAT-MASALA-100-G"
+  },
+  "CHICKEN CURRY MASALA 200 G": {
+    "Item": "CHICKEN CURRY MASALA 200 G",
+    "Description": "CHICKEN CURRY MASALA 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "CHICKEN-CURRY-MASALA-200-G"
+  },
+  "CHICKEN ROAST PASTE 200 G": {
+    "Item": "CHICKEN ROAST PASTE 200 G",
+    "Description": "CHICKEN ROAST PASTE 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "CHICKEN-ROAST-PASTE-200-G"
+  },
+  "MUTTON CURRY PASTE 200 G": {
+    "Item": "MUTTON CURRY PASTE 200 G",
+    "Description": "MUTTON CURRY PASTE 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "MUTTON-CURRY-PASTE-200-G"
+  },
+  "VINDALOO PASTE 200 G": {
+    "Item": "VINDALOO PASTE 200 G",
+    "Description": "VINDALOO PASTE 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "VINDALOO-PASTE-200-G"
+  },
+  "CHETTINAD CHICKEN MASALA 200 G": {
+    "Item": "CHETTINAD CHICKEN MASALA 200 G",
+    "Description": "CHETTINAD CHICKEN MASALA 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "CHETTINAD-CHICKEN-MASALA-200-G"
+  },
+  "RECHEADO MASALA(FISH FRY) 200 G": {
+    "Item": "RECHEADO MASALA(FISH FRY) 200 G",
+    "Description": "RECHEADO MASALA(FISH FRY) 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "RECHEADO-MASALA(FISH-FRY)-200-G"
+  },
+  "SORPOTEL PASTE 200 G": {
+    "Item": "SORPOTEL PASTE 200 G",
+    "Description": "SORPOTEL PASTE 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "SORPOTEL-PASTE-200-G"
+  },
+  "CAFREAL MASALA (CHICKEN) PASTE 200 G": {
+    "Item": "CAFREAL MASALA (CHICKEN) PASTE 200 G",
+    "Description": "CAFREAL MASALA (CHICKEN) PASTE 200 G",
+    "Quantity": 50,
+    "Price": 2.5,
+    "category": "ron",
+    "sku": "CAFREAL-MASALA-(CHICKEN)-PASTE-200-G"
+  },
+  "TENDLIM PICKLE 200 G": {
+    "Item": "TENDLIM PICKLE 200 G",
+    "Description": "TENDLIM PICKLE 200 G",
+    "Quantity": 50,
+    "Price": 2,
+    "category": "ron",
+    "sku": "TENDLIM-PICKLE-200-G"
+  }
+}
