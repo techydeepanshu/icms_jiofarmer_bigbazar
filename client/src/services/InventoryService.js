@@ -1,6 +1,6 @@
 import { POSAxios, WordpressAxios } from "./axios";
 import Axios from "./axios";
-
+const appendURL=process.env.NODE_ENV==="production"?"/server":"";
 export class InventoryService {
   async GetProductDetails(productSKU) {
     const response = await WordpressAxios.get(`/products/`, {
@@ -23,7 +23,7 @@ export class InventoryService {
   }
 
   async GetPOSProductDetails(upc, itemName = "") {
-    const response = await Axios.get("/api/getPOSProduct", {
+    const response = await Axios.get(appendURL+"/api/getPOSProduct", {
       params: { upc, itemName },
     });
     return response.data;
@@ -33,11 +33,11 @@ export class InventoryService {
     return res.data;
   }
   async UpdatePOSProducts(data) {
-    const res = await Axios.post("/api/pos/Product/ManageItem", data);
+    const res = await Axios.post(appendURL+"/api/pos/Product/ManageItem", data);
     return res.data;
   }
   async SyncInventory() {
-    const res = await Axios.get("/api/sync")
+    const res = await Axios.get(appendURL+"/api/sync")
     return res.data
   }
 }

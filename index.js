@@ -93,7 +93,7 @@ app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
   for (let i = 0; i < result.length; i++) {
     let s = result[i].split("@@@");
     let obj =
-      type === "queue"
+      type === "pos"
         ? {
             sku: s[0] === "nan" ? null : s[0],
             upc: s[1] === "nan" ? null : s[1],
