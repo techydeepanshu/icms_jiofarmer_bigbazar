@@ -33,6 +33,7 @@ const POS = () => {
   const [content, setContent] = useState(null);
   const [header, setHeader] = useState([]);
   const [fuzzSuggestion, setFuzzSuggestion] = useState([]);
+  const [selectedItemNo, setSelectedItemNo] = useState("");
   const [modalLabel, setModalLabel] = useState("");
   const [state, setState] = useState({
     item: "",
@@ -41,22 +42,14 @@ const POS = () => {
     price: "",
     pos: "",
     barcode: "",
+    posSku: "",
+    invoice: "",
   });
-  const handleChange = (event, val) => {
-    let newState = { ...state };
-    if (event.target.name !== "categories" && event.target.name !== "images")
-      newState[event.target.name] = event.target.value;
-    else {
-      let o = null;
-      if (event.target.name === "categories") {
-        o = { id: val };
-        newState[event.target.name] = [o];
-      } else {
-        o = { src: val };
-        newState[event.target.name].push(o);
-      }
-    }
-    setState(newState);
+  const handleChange = (key, val) => {
+    setState({
+      ...state,
+      [key]: val,
+    });
   };
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -70,14 +63,6 @@ const POS = () => {
         setLoader(false);
       }
     });
-    let c = [];
-    inventoryService
-      .getAllProducts()
-      .then((res) => {
-        c = res.map((d) => d.categories[0].id);
-        setCategoryArray([...new Set(c)]);
-      })
-      .catch((err) => console.log(err));
   }, []);
   const setContentExtra = (o) => {
     setContent(o);
@@ -93,10 +78,12 @@ const POS = () => {
       description: o.description,
       pos: o.posName,
       barcode: o.barcode,
+      posSku: o.posSku || "",
+      invoice: o.invoiceName,
     };
     setState(newState);
     api
-      .GetFuzz(o.description, "queue")
+      .GetFuzz(o.description, "pos")
       .then((res) => {
         const filter = res.result.map((element) => {
           let obj = { ...element };
@@ -108,14 +95,38 @@ const POS = () => {
       .catch((err) => console.log(err));
   };
   const addProduct = () => {
-   
+    console.log(selectedItemNo);
+    setShowModal(!showModal);
+    const data = {
+      invoiceName: state.invoice,
+      itemName: state.item,
+      value: { POS: state.pos, Barcode: state.barcode, PosSKU: state.posSku },
+    };
+    debugger;
+    setLoader(true);
+    inventoryService
+      .UpdateProductFields(data)
+      .then((res) => {
+        if (!res) {
+          throw new Error("Product not created")
+        }
+        console.log(res);
+        alert("Successfully updated fields");
+      })
+      .then(() => deleteAddedProducts(selectedItemNo))
+      .catch((err) => {
+        console.log(err);
+        alert("Some error occuured in creating product");
+      })
+      .finally(() => setLoader(false));
   };
 
   const deleteAddedProducts = (item) => {
     try {
-      firebase.database().ref("/review").child(`${item}`).remove();
+      firebase.database().ref(`/review/${item}`).remove();
       let temp = [...queue];
-      setQueue(temp.filter((product) => product !== item));
+      const filetered = temp.filter((product) => product.itemNo !== item);
+      setQueue(filetered);
       return true;
     } catch (error) {
       console.log(error);
@@ -144,6 +155,7 @@ const POS = () => {
                     onClick={() => {
                       setShowModal(true);
                       setModalLabel(q.itemNo);
+                      setSelectedItemNo(q.itemNo);
                       setContentExtra(q);
                     }}
                   >
@@ -173,6 +185,7 @@ const POS = () => {
                         newState.description = newValue.name;
                         newState.barcode = newValue.upc;
                         newState.pos = newValue.name;
+                        newState.posSku = newValue.sku;
                         setState(newState);
                       }
                     }}
@@ -188,23 +201,27 @@ const POS = () => {
                 <CRow>
                   <CCol sm="6">
                     <CFormGroup>
-                      <CLabel htmlFor="type">Bracode</CLabel>
+                      <CLabel htmlFor="type">Barcode</CLabel>
                       <CInput
                         type="text"
                         name="type"
                         value={state.barcode}
-                        onChange={(event) => handleChange(event, "")}
+                        onChange={(event) =>
+                          handleChange("barcode", event.target.value)
+                        }
                       />
                     </CFormGroup>
                   </CCol>
                   <CCol sm="6">
                     <CFormGroup>
-                      <CLabel htmlFor="regular_price">POS Name</CLabel>
+                      <CLabel htmlFor="short_description">POS SKU</CLabel>
                       <CInput
                         type="text"
-                        name="regular_price"
-                        value={state.pos}
-                        onChange={(event) => handleChange(event, "")}
+                        name="short_description"
+                        value={state.posSku}
+                        onChange={(event) =>
+                          handleChange("posSku", event.target.value)
+                        }
                       />
                     </CFormGroup>
                   </CCol>
@@ -215,18 +232,22 @@ const POS = () => {
                     type="text"
                     name="description"
                     value={state.description}
-                    onChange={(event) => handleChange(event, "")}
+                    onChange={(event) =>
+                      handleChange("description", event.target.value)
+                    }
                   />
                 </CFormGroup>
-                {/* <CFormGroup>
-                  <CLabel htmlFor="short_description">Short Description</CLabel>
+                <CFormGroup>
+                  <CLabel htmlFor="regular_price">POS Name</CLabel>
                   <CInput
                     type="text"
-                    name="short_description"
-                    value={state.short_description}
-                    onChange={(event) => handleChange(event, "")}
+                    name="regular_price"
+                    value={state.pos}
+                    onChange={(event) =>
+                      handleChange("pos", event.target.value)
+                    }
                   />
-                </CFormGroup> */}
+                </CFormGroup>
                 {/* <CRow>
                   <CCol sm="3">
                     <CFormGroup>
