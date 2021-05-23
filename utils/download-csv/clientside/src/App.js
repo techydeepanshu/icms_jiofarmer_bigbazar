@@ -4,18 +4,26 @@ import axios from 'axios';
 import {CSVLink} from "react-csv";
 import { Multiselect } from 'multiselect-react-dropdown';
 import {applyFilter,emptyColumn} from './filter';
+import {InvoiceMapping} from './Invoice-Mapping';
 import {optionData} from './optionData'
 class App extends Component{
   constructor(props){
     super(props);
-    this.state={file:null,loading:false,arr:[],optionArray:[],optionSelected:"",option:null,data:[],options:[],csvData:[]}
+    this.state={file:null,loading:false,arr:[],optionArray:[],optionSelected:"",option:null,data:[],options:[],csvData:[],emptyColumnStatus:false}
     this.getFile=this.getFile.bind(this);
     this.onUpload=this.onUpload.bind(this);
     this.handleChange=this.handleChange.bind(this);
     this.onSelect=this.onSelect.bind(this);
   }
   handleChange(event){
-    this.setState({[event.target.name]:event.target.value});
+    let flag=false;
+    for(let i=0;i<InvoiceMapping.length;i++){
+      if(event.target.value===InvoiceMapping[i].slug){
+        flag=InvoiceMapping[i].emptyColumn;
+        break;
+      }
+    }
+    this.setState({[event.target.name]:event.target.value,emptyColumnStatus:flag});
   }
   componentDidMount(){
     let optionArray=[];
@@ -45,7 +53,7 @@ class App extends Component{
       d1.push(x);
       csvData.push(d1);
     }
-    console.log(csvData)
+    //console.log(csvData)
     this.setState({csvData:csvData})
   }
   getFile(file){this.setState({file:file})}
@@ -67,12 +75,12 @@ class App extends Component{
     .then((res) => {if(res.data.statusCode===undefined||res.data.statusCode!==200)throw "error"; else result=res.data.body})
     .catch((err) => {status=false;alert("Some error occured try again");});
     if(!status)return;
-    console.log(result)
-    // let resultNew=emptyColumn(result)
+    //console.log(result)
+    let resultNew=[...result];
+    if(this.state.emptyColumnStatus)resultNew=emptyColumn(result);
     // console.log(resultNew)
     let option=optionData[this.state.optionSelected];
-    let arr=applyFilter(result,option);
-     //let arr=applyFilter(resultNew,option);
+    let arr=applyFilter(resultNew,option);
     let data=[];
     let header=[];
     for(var prop in arr[0]){
