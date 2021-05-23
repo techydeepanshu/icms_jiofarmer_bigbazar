@@ -1,4 +1,4 @@
-const InvoiceMapping = [
+export const dropdownOptions = [
   {
     value: "Chetak",
     slug: "chetak",
@@ -144,7 +144,3 @@ const InvoiceMapping = [
   // {value:'',slug:'',jsonName:'vintage.json',emptyColumn:false,databaseName:'vintages'},
   // {value:'',slug:'',jsonName:'wave-ron-foods.json',emptyColumn:false,databaseName:'waveronfoods'}
 ];
-
-module.exports = {
-  InvoiceMapping,
-};

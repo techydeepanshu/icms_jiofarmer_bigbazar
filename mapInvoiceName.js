@@ -1,22 +1,9 @@
-const getDBInvoiceName = (slug) => {
-  switch (slug) {
-    case "chetak":
-      return "chetakproducts";
-    case "krishna-foods":
-      return "krishnafoodsproducts";
-    case "sea-mark":
-      return "seamarks";
-    case "advance-foods":
-      return "advancefoods";
-    case "joy-gourmet-foods":
-      return "joygourmetfoods";
-    case "best-foods":
-      return "bestfoods";
-    case "katzman":
-      return "katzmen";
+const { InvoiceMapping } = require("./Invoice-Mapping");
 
-    default:
-      break;
+const getDBInvoiceName = (slug) => {
+  for (let i = 0; i < InvoiceMapping.length; i++) {
+    if (slug === InvoiceMapping[i].slug)
+      return InvoiceMapping[i].databaseName
   }
 };
 
