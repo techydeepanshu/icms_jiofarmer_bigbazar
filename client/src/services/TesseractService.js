@@ -12,7 +12,7 @@ export class TesseractService {
         var res = await Axios.get(appendURL+`/api/product/`, {
           params: { invoiceName: invoiceName },
         });
-        return res.data.invoiceData
+        return res.data
     }
 
     async GetOCRData(filename) {

@@ -1,6 +1,7 @@
 import { POSAxios, WordpressAxios } from "./axios";
 import Axios from "./axios";
-const appendURL=process.env.NODE_ENV==="production"?"/server":"";
+const appendURL = process.env.NODE_ENV === "production" ? "/server" : "";
+
 export class InventoryService {
   async GetProductDetails(productSKU) {
     const response = await WordpressAxios.get(`/products/`, {
@@ -23,21 +24,40 @@ export class InventoryService {
   }
 
   async GetPOSProductDetails(upc, itemName = "") {
-    const response = await Axios.get(appendURL+"/api/getPOSProduct", {
+    const response = await Axios.get(appendURL + "/api/getPOSProduct", {
       params: { upc, itemName },
     });
     return response.data;
   }
-  async GetAllProducts() {
-    const res = await POSAxios.get("/Item/GetItemList");
-    return res.data;
-  }
   async UpdatePOSProducts(data) {
-    const res = await Axios.post(appendURL+"/api/pos/Product/ManageItem", data);
+    const res = await Axios.post(
+      appendURL + "/api/pos/Product/ManageItem",
+      data
+    );
     return res.data;
   }
   async SyncInventory() {
-    const res = await Axios.get(appendURL+"/api/sync")
-    return res.data
+    const res = await Axios.get(appendURL + "/api/sync");
+    return res.data;
+  }
+  async UpdateProductFields(data) {
+    /**
+     ***** data format
+     * data = {invoiceName: "chetak", itemName:"CAS 123", value:{"Description": "jnckwc", "Price": "44"}}
+     */
+    const res = await Axios.put(
+      appendURL + "/api/invoice/product/update",
+      data
+    );
+    return res.data;
+  }
+
+  async CreateNotFoundItems(data) {
+    /**
+     * data format
+     * {Item:String,Description:String,Quantity:String,Price:String,sku:String,Barcode:String,PosSKU:String,InvoiceName:String}
+     */
+    const res = await Axios.post(appendURL + "/api/invoice/notfound", data);
+    return res.data;
   }
 }

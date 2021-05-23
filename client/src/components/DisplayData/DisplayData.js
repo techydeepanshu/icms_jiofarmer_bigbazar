@@ -13,6 +13,7 @@ import { chetak } from "../../utils/invoice-filters/chetak";
 import firebase from "../../firebase";
 import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import { InventoryService } from "../../services/InventoryService";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
@@ -25,6 +26,8 @@ const DisplayData = (props) => {
   const [loader, setLoader] = useState(true);
   const [reviewItems, setReviewItems] = useState([]);
   const tesseractService = new TesseractService();
+  const inventoryService = new InventoryService();
+
   const header = [
     "Serial No.",
     "Barcode",
@@ -94,7 +97,7 @@ const DisplayData = (props) => {
           style={{
             position: "sticky",
             top: "70px",
-            background: "grey"
+            background: "grey",
           }}
         >
           {key.toUpperCase()}
@@ -279,7 +282,7 @@ const DisplayData = (props) => {
     }
   };
 
-  const pushInventoryDetails = () => {
+  const pushInventoryDetails = async () => {
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
     const tempTable = [];
     tableData.forEach((element, index) => {
@@ -291,9 +294,57 @@ const DisplayData = (props) => {
 
     console.log("notFoundItems", notFoundItems);
     console.log("final table data", tempTable);
+
     if (emptyColumn.length !== 0) {
       /**api to push  to not found list*/
+      setLoader(true);
+      const responses = await Promise.all(
+        notFoundItems.map(async (product) => {
+          try {
+            const data = {
+              Item: product.itemNo,
+              Description: product.description,
+              Quantity: product.qty,
+              Price: product.unitPrice,
+              sku: product.sku,
+              Barcode: product.barcode,
+              PosSKU: product.posSku,
+              InvoiceName: props.selectedInvoice,
+            };
+            await inventoryService.CreateNotFoundItems(data);
+            return true;
+          } catch (error) {
+            console.log(
+              "Couldn't create not found product",
+              product.description,
+              { error }
+            );
+            alert("Couldn't create product on website.");
+            return null;
+          }
+        })
+      );
+      setLoader(false);
     }
+    const priceIncreasedProducts = tempTable.filter(
+      (product) => product.priceIncrease !== 0
+    );
+    setLoader(true);
+    const res = await Promise.all(
+      priceIncreasedProducts.map(async (product) => {
+        try {
+          const data = {
+            invoiceName: props.selectedInvoice,
+            itemName: product.itemNo,
+            value: { Price: product.unitPrice },
+          };
+          await inventoryService.UpdateProductFields(data);
+        } catch (error) {
+          console.log(`couldn't update price for product ${product.itemNo}`);
+        }
+      })
+    );
+    setLoader(false);
     setInventoryData(tempTable);
     setPushToInventory(true);
   };
@@ -304,6 +355,8 @@ const DisplayData = (props) => {
       posName: item.posName,
       itemNo: item.itemNo,
       description: item.description,
+      invoiceName: props.selectedInvoice,
+      posSku: item.posSku,
     };
     const tempReviewItems = [...reviewItems];
     tempReviewItems.push(index);
@@ -503,13 +556,10 @@ const DisplayData = (props) => {
         })
         .catch((err) => {
           setLoader(false);
-          // console.log("err with ocr", err)
         });
-      // .then(() => setLoader(false))
     });
   }, []);
 
-  console.log(emptyColumn, emptyColumnList);
   if (loader) {
     return <Spinner />;
   }

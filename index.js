@@ -10,15 +10,9 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-const chetakData = require("./new-model/chetak-products.json");
-// const krishnaFoodsData = require("./new-model/krishna-foods-products.json");
-// const seamarkData = require("./new-model/seamark.json");
-// const advanceFoodsData = require("./new-model/advance-foods.json");
-// const joyGourmetFoodsData = require("./new-model/joy-gourmet-foods.json");
-// const bestFoodsData = require("./new-model/best-foods.json");
-// const katzmanData = require("./new-model/katzman.json");
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");
+const { getDBInvoiceName } = require("./mapInvoiceName");
 
 // for parsing application/json
 app.use(express.json());
@@ -56,26 +50,22 @@ app.post("/api/upload-image", validateLogin, (req, res) => {
 });
 
 app.get("/api/product", validateLogin, (req, res) => {
-  switch (req.query["invoiceName"]) {
-    case "chetak":
-      res.send({ invoiceData: chetakData });
-      break;
-    case "krishna-foods":
-      res.send({ invoiceData: krishnaFoodsData });
-    case "sea-mark":
-      res.send({ invoiceData: seamarkData });
-    case "advance-foods":
-      res.send({ invoiceData: advanceFoodsData });
-    case "joy-gourmet-foods":
-      res.send({ invoiceData: joyGourmetFoodsData });
-    case "best-foods":
-      res.send({ invoiceData: bestFoodsData });
-    case "katzman":
-      res.send({ invoiceData: katzmanData });
-    default:
-      break;
+  const invoice = getDBInvoiceName(req.query["invoiceName"])
+  let options = {
+    method: "GET",
+    url: `http://54.234.86.83:3001/invoice/${invoice}`,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
   }
-  // res.send({ item: jsonData[req.query["item"]] });
+  request(options, callback);
 });
 
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
@@ -206,6 +196,47 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
       Password: "tdypsA =",
       Pin: "lqBZghxJgaVE",
     },
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.put("/api/invoice/product/update", validateLogin, function (req, res) {
+  const data = req.body;
+  const { invoiceName, itemName, value } = data;
+  let options = {
+    method: "PUT",
+    url: `http://54.234.86.83:3001/invoice/${getDBInvoiceName(invoiceName)}/${itemName}`,
+    body: value,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.post("/api/invoice/notfound", validateLogin, function (req, res) {
+  const data = req.body;
+  let options = {
+    method: "POST",
+    url: "http://54.234.86.83:3001/notfound",
     body: data,
     json: true,
   };
