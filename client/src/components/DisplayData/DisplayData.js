@@ -80,7 +80,7 @@ const DisplayData = (props) => {
           emptyColumnList.splice(i, 1);
         }
       } else {
-        emptyColumnList.push(index)
+        emptyColumnList.push(index);
       }
     }
     setTableData(tempTableData);
@@ -89,7 +89,14 @@ const DisplayData = (props) => {
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
-        <th key={index} style={{position:"sticky",top:"70px",background:"	#505050",color:"white"}}>
+        <th
+          key={index}
+          style={{
+            position: "sticky",
+            top: "70px",
+            background: "grey"
+          }}
+        >
           {key.toUpperCase()}
           {key.includes("Mark") ? (
             <TextField
@@ -108,13 +115,13 @@ const DisplayData = (props) => {
 
   const renderTableData = () => {
     if (tableData) {
-      // console.log("invoiceData", itemNoDropdown);
       let rows = tableData.map((element, index) => {
         let isEmpty =
           element.qty === "" ||
           element.itemNo === "" ||
           !element.pieces ||
           isNaN(element.unitPrice) ||
+          element.unitPrice === "" ||
           isNaN(element.extendedPrice);
         if (isEmpty && element.show) {
           let emptyColumn = [...emptyColumnList, index];
@@ -198,12 +205,17 @@ const DisplayData = (props) => {
               <TextField
                 type="number"
                 value={element.unitPrice}
-                id="outlined-secondary"
                 variant="outlined"
                 onChange={(e) => {
                   handleChange(index, "unitPrice", e.target.value);
                 }}
-                style={{ width: 100 }}
+                style={
+                  element.priceIncrease === 1
+                    ? { backgroundColor: "#1a8cff", width: 100 }
+                    : element.priceIncrease === -1
+                    ? { backgroundColor: "#ffb31a", width: 100 }
+                    : { width: 100 }
+                }
               />
             </td>
             <td>{element.extendedPrice}</td>
@@ -213,7 +225,6 @@ const DisplayData = (props) => {
               <TextField
                 type="number"
                 value={element.markup}
-                id="outlined-secondary"
                 variant="outlined"
                 onChange={(e) => {
                   handleChange(index, "markup", e.target.value);
@@ -233,7 +244,7 @@ const DisplayData = (props) => {
         );
       });
       return (
-        <div className={styles.tablewrapper}>
+        <div style={{ marginTop: "70px" }}>
           <table className="table table-hover table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
@@ -269,19 +280,22 @@ const DisplayData = (props) => {
   };
 
   const pushInventoryDetails = () => {
-    if (emptyColumn.length === 0) {
-      let tempTable = [];
-      tableData.forEach((element, index) => {
+    const notFoundItems = emptyColumn.map((i) => tableData[i]);
+    const tempTable = [];
+    tableData.forEach((element, index) => {
+      if (!emptyColumn.includes(index) && element.show === true) {
         let rowData = { index: index + 1, ...element };
         tempTable.push(rowData);
-      });
-      let filterData = tempTable.filter((ele) => ele.show === true);
-      console.log("filterData", filterData);
-      setInventoryData(filterData);
-      setPushToInventory(true);
-    } else {
-      alert("Please fill all the values");
+      }
+    });
+
+    console.log("notFoundItems", notFoundItems);
+    console.log("final table data", tempTable);
+    if (emptyColumn.length !== 0) {
+      /**api to push  to not found list*/
     }
+    setInventoryData(tempTable);
+    setPushToInventory(true);
   };
 
   const addForReview = async (item, index) => {
@@ -309,7 +323,7 @@ const DisplayData = (props) => {
   const handleChange = async (row, key, value) => {
     let tempTableData = [...tableData];
     tempTableData[row][key] = value;
-
+    const { itemNo } = tempTableData[row];
     if (
       tempTableData[row]["qty"] !== "" &&
       tempTableData[row]["itemNo"] !== "" &&
@@ -330,7 +344,7 @@ const DisplayData = (props) => {
       /**auto populate barcode & other pos fields*/
       tempTableData[row]["barcode"] = productDetails[value].Barcode;
       tempTableData[row]["posName"] = productDetails[value].POS;
-      tempTableData[row]["posSku"] = productDetails[value].POSSKU;
+      tempTableData[row]["posSku"] = productDetails[value].PosSKU;
     }
 
     if (key === "unitPrice" || key === "markup" || key === "itemNo") {
@@ -355,6 +369,20 @@ const DisplayData = (props) => {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
     }
+    if (itemNo) {
+      if (+tempTableData[row]["unitPrice"] > +productDetails[itemNo].Price) {
+        tempTableData[row]["priceIncrease"] = 1;
+      } else if (
+        +tempTableData[row]["unitPrice"] < +productDetails[itemNo].Price
+      ) {
+        tempTableData[row]["priceIncrease"] = -1;
+      } else if (
+        +tempTableData[row]["unitPrice"] == +productDetails[itemNo].Price
+      ) {
+        tempTableData[row]["priceIncrease"] = 0;
+      }
+    }
+
     if (key === "barcode") {
       tempTableData[row]["barcode"] = value;
     }
@@ -438,7 +466,7 @@ const DisplayData = (props) => {
                 : "";
             row.markup = 0;
             row.show = true;
-            row.posSku = products[row.itemNo].POSSKU ?? "some sku";
+            row.posSku = products[row.itemNo].PosSKU ?? "";
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode
@@ -448,6 +476,14 @@ const DisplayData = (props) => {
               );
               cp = sp;
             }
+            if (+row.unitPrice > +products[row.itemNo].Price) {
+              row["priceIncrease"] = 1;
+            } else if (+row.unitPrice < +products[row.itemNo].Price) {
+              row["priceIncrease"] = -1;
+            } else if (+row.unitPrice == +products[row.itemNo].Price) {
+              row["priceIncrease"] = 0;
+            }
+
             /**filter out the rows for which qty shipped & extendedPrice is zero */
             if (row.qty == "0" && row.extendedPrice === "0.00") {
               return null;

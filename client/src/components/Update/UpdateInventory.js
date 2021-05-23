@@ -30,7 +30,18 @@ const UpdateInventory = (props) => {
   };
   const renderTableHeader = () => {
     return header.map((key, index) => {
-      return <th key={index} style={{position:"sticky",top:"70px",background:"#505050",color:"white"}}>{key.toUpperCase()}</th>;
+      return (
+        <th
+          key={index}
+          style={{
+            position: "sticky",
+            top: "70px",
+            background: "grey",
+          }}
+        >
+          {key.toUpperCase()}
+        </th>
+      );
     });
   };
   const renderTableData = () => {
@@ -54,7 +65,7 @@ const UpdateInventory = (props) => {
           }
         >
           <td>{index + 1}</td>
-          <td>{element.barcode}</td> 
+          <td>{element.barcode}</td>
           <td>{element.posSku}</td>
           <td>{element.qty}</td>
           <td>{element.itemNo}</td>
@@ -358,7 +369,7 @@ const UpdateInventory = (props) => {
                 ...row,
                 COST: row.cp,
                 PRICE: row.sp,
-                SKU: row.itemNo,
+                SKU: row.posSku,
                 UPC: row.barcode,
                 ITEMNAME: row.description,
                 TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
@@ -378,7 +389,6 @@ const UpdateInventory = (props) => {
     getProducts();
     getPosProducts();
   }, []);
-  useEffect(() => {}, [newInventoryData, setLoader, notFoundProducts]);
 
   if (redirect) {
     return <Redirect to="/" />;
