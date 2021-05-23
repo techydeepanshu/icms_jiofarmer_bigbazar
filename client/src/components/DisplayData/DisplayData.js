@@ -286,12 +286,11 @@ const DisplayData = (props) => {
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
     const tempTable = [];
     tableData.forEach((element, index) => {
-      if (!emptyColumn.includes(index) && element.show === true) {
+      if (!emptyColumn.includes(index) && element.show === true && element["isForReview"] != true) {
         let rowData = { index: index + 1, ...element };
         tempTable.push(rowData);
       }
     });
-
     console.log("notFoundItems", notFoundItems);
     console.log("final table data", tempTable);
 
@@ -345,7 +344,7 @@ const DisplayData = (props) => {
       })
     );
     setLoader(false);
-    setInventoryData(tempTable);
+    setInventoryData(mergeDuplicates(tempTable));
     setPushToInventory(true);
   };
 
@@ -448,6 +447,24 @@ const DisplayData = (props) => {
     for (let index = 0; index < tempTableData.length; index++) {
       handleChange(index, "markup", value);
     }
+  };
+
+  const mergeDuplicates = (a) => {
+    let arr = [...a];
+    let map = new Map();
+    for (let i = 0; i < arr.length; i++) {
+      if (!map.has(arr[i].itemNo)) map.set(arr[i].itemNo, arr[i]);
+      else {
+        let obj = { ...map.get(arr[i].itemNo) };
+        obj["qty"] = (
+          parseFloat(obj["qty"]) + parseFloat(arr[i].qty)
+        ).toString();
+        map.set(arr[i].itemNo, obj);
+      }
+    }
+    let newArr = [];
+    for (let x of map.values()) newArr.push(x);
+    return newArr;
   };
 
   useEffect(() => {
