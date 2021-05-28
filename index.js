@@ -50,7 +50,7 @@ app.post("/api/upload-image", validateLogin, (req, res) => {
 });
 
 app.get("/api/product", validateLogin, (req, res) => {
-  const invoice = getDBInvoiceName(req.query["invoiceName"])
+  const invoice = getDBInvoiceName(req.query["invoiceName"]);
   let options = {
     method: "GET",
     url: `http://54.234.86.83:3001/invoice/${invoice}`,
@@ -154,9 +154,9 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
     method: "GET",
     url: "https://dataservices.sypramsoftware.com/api/Product/GetItem",
     headers: {
-      UserId: "MeCHHkZ9",
-      Password: "tdypsA =",
-      Pin: "lqBZghxJgaVE",
+      UserId: "lRRqlkYefuV=",
+      Password: "lRRqlkYefuV6jJ==",
+      Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
     },
     body: {
       UPC: upc,
@@ -192,16 +192,16 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
     method: "POST",
     url: "https://dataservices.sypramsoftware.com/api/Product/ManageItem",
     headers: {
-      UserId: "MeCHHkZ9",
-      Password: "tdypsA =",
-      Pin: "lqBZghxJgaVE",
+      UserId: "lRRqlkYefuV=",
+      Password: "lRRqlkYefuV6jJ==",
+      Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
     },
     body: data,
     json: true,
   };
   function callback(error, response, body) {
     const status = response.statusCode;
-    console.log(error, body);
+    // console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {
@@ -216,13 +216,15 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const { invoiceName, itemName, value } = data;
   let options = {
     method: "PUT",
-    url: `http://54.234.86.83:3001/invoice/${getDBInvoiceName(invoiceName)}/${itemName}`,
+    url: `http://54.234.86.83:3001/invoice/${getDBInvoiceName(
+      invoiceName
+    )}/${itemName}`,
     body: value,
     json: true,
   };
   function callback(error, response, body) {
     const status = response.statusCode;
-    console.log(error, body);
+    // console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {
@@ -242,7 +244,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   };
   function callback(error, response, body) {
     const status = response.statusCode;
-    console.log(error, body);
+    // console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {
