@@ -35,11 +35,11 @@ const DisplayData = (props) => {
     "Qty Shipped",
     "ITEM NO",
     "DESCRPTION",
-    "Units(Per item)",
-    "Unit Price",
+    "Units in  Case",
+    "Case cost",
     "Extended Price",
-    "Cost Price",
-    "Selling Price",
+    "Unit Cost ",
+    "Unit Price",
     "Mark up (%)",
   ];
 
@@ -480,7 +480,7 @@ const DisplayData = (props) => {
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
             console.log("error fetching descripton", error);
-            throw new Error(error);
+            // throw new Error(error);
           }
         })
       );
