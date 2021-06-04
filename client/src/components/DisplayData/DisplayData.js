@@ -101,7 +101,7 @@ const DisplayData = (props) => {
           }}
         >
           {key.toUpperCase()}
-          {key.includes("Mark") ? (
+          {/* {key.includes("Mark") ? (
             <TextField
               type={"number"}
               variant="outlined"
@@ -110,7 +110,7 @@ const DisplayData = (props) => {
               }}
               style={{ width: 80 }}
             />
-          ) : null}
+          ) : null} */}
         </th>
       );
     });
@@ -223,18 +223,18 @@ const DisplayData = (props) => {
             </td>
             <td>{element.extendedPrice}</td>
             <td>{element.cp}</td>
-            <td>{element.sp}</td>
             <td>
               <TextField
                 type="number"
-                value={element.markup}
+                value={element.sp}
                 variant="outlined"
                 onChange={(e) => {
-                  handleChange(index, "markup", e.target.value);
+                  handleChange(index, "sp", e.target.value);
                 }}
                 style={{ width: 100 }}
               />
             </td>
+            <td>{element.markup}</td>
             <td>
               <Button
                 text={element.show ? "Delete" : "Undo"}
@@ -286,7 +286,11 @@ const DisplayData = (props) => {
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
     const tempTable = [];
     tableData.forEach((element, index) => {
-      if (!emptyColumn.includes(index) && element.show === true && element["isForReview"] != true) {
+      if (
+        !emptyColumn.includes(index) &&
+        element.show === true &&
+        element["isForReview"] != true
+      ) {
         let rowData = { index: index + 1, ...element };
         tempTable.push(rowData);
       }
@@ -399,17 +403,18 @@ const DisplayData = (props) => {
       tempTableData[row]["posSku"] = productDetails[value].PosSKU;
     }
 
-    if (key === "unitPrice" || key === "markup" || key === "itemNo") {
-      let cp = parseFloat(tempTableData[row]["unitPrice"]);
-      let markup = parseFloat(tempTableData[row]["markup"]);
+    if (key === "unitPrice" || key === "sp" || key === "itemNo") {
+      let cp = parseFloat(tempTableData[row]["cp"]);
+      let sp = parseFloat(tempTableData[row]["sp"]);
+      let markup = ((sp - cp) / cp) * 100;
       let cost =
         parseFloat(tempTableData[row]["unitPrice"]) /
         tempTableData[row]["pieces"];
-      let sp = cp + (cp * markup) / 100;
-      if (tempTableData[row]["pieces"]) {
-        sp = sp / tempTableData[row]["pieces"];
-      }
-      tempTableData[row]["sp"] = isNaN(sp) ? 0 : sp.toFixed(2);
+      // let sp = cp + (cp * markup) / 100;
+      // if (tempTableData[row]["pieces"]) {
+      //   sp = sp / tempTableData[row]["pieces"];
+      // }
+      tempTableData[row]["markup"] = isNaN(markup) ? 0 : markup.toFixed(2);
       tempTableData[row]["cp"] = isNaN(cost) ? 0 : cost.toFixed(2);
     }
 
@@ -417,9 +422,14 @@ const DisplayData = (props) => {
       const extendedPrice =
         parseFloat(tempTableData[row]["qty"]) *
         parseFloat(tempTableData[row]["unitPrice"]);
+      const cp = tempTableData[row]["unitPrice"] / tempTableData[row]["pieces"];
       if (!isNaN(extendedPrice)) {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
+      if(!isNaN(cp)) {
+        tempTableData[row]["cp"] = cp.toFixed(2);
+      }
+
     }
     if (itemNo) {
       if (+tempTableData[row]["unitPrice"] > +productDetails[itemNo].Price) {
