@@ -1,0 +1,78 @@
+For JSON
+
+1.to get all data from a particular invoice
+  get - http://54.234.86.83:3001/invoice/nameofinvoice
+  result- same as expected and if invoice doesn't exist then null
+  onError- response is "Some error occured"
+
+2. to update any filled for a particular invoice like barcode or price
+  put- http://54.234.86.83:3001/invoice/nameofinvoice/Itemname
+  schema of product(case sensistive) to be passed in body
+  {
+    "Description": "AAHU BARAH BASMATI SELA RICE MASTER CASE 4 PCS X 10LB",
+    "Quantity": 4,
+    "Price": 48,
+    "sku": "AAHU-BARAH-BASMATI-SELA-RICE-MASTER-CASE-4-PCS-X-10LB",
+    "POS": "AAHU BARAH",
+    "Barcode": "088247501078",
+    "PosSKU": "375"
+  }
+  Item is primary key so it is passed in url
+  Only pass the field which need to be updated
+  result- "Product updated successfully" and if invoice or item doesn't exist then null
+  onError- response is "Some error occured"
+
+
+
+
+For not found
+
+1.to get all data
+  get - http://54.234.86.83:3001/notfound
+  result- array of object where schema(case sensistive) of object is {Item:String,Description:String,Quantity:String,Price:String,sku:String,Barcode:String,PosSKU:String,InvoiceName:String}
+  onError- response is "Some error occured"
+
+2. create a product
+  post -http://54.234.86.83:3001/notfound
+  schema of product(case sensistive) to be passed in body {Item:String,Description:String,Quantity:String,Price:String,sku:String,Barcode:String,PosSKU:String,InvoiceName:String}
+  all fields are not necessary to pass
+  result- "Product created successfully"
+  onError- response is "Some error occured"
+
+
+For pos(UPC is primary key)
+
+1.to get all data ie(data we want during component did mount)
+  get- http://54.234.86.83:3001/pos
+  result-array of object where schema(case sensistive) of object is {SKU:String,UPC:String,ALTUPC1:String,ALTUPC2:String,ItemName:String,Vintage:String,TotalQty:String,Cost:String,PriceA:String,PriceB:String,PriceC:String,Department:String,SALEPRICE:String,SizeName:String,PackName:String,Price:String,STORECODE:String,soldQty:{type:String,default:"0"},wordpressSoldQty:{type:String,default:"0"},invoiceQty:{type:String,default:"0"}}
+  onError- response is "Some error occured"
+
+2.to create product(if it doesn't exist)
+  post-http://54.234.86.83:3001/pos
+  object where schema(case sensistive) to be passed in body ,fields like UPC,SKU, etc which are needed must be passed, only passed fields are inseretd in db
+  {SKU:String,UPC:String,ALTUPC1:String,ALTUPC2:String,ItemName:String,Vintage:String,TotalQty:String,Cost:String,PriceA:String,PriceB:String,PriceC:String,Department:String,SALEPRICE:String,SizeName:String,PackName:String,Price:String,STORECODE:String}
+  result-if UPC already exist then "This UPC already exist" else "Product created successfully"
+  onError- response is "Some error occured"
+
+
+3. to get data with given upc
+  get- http://54.234.86.83:3001/pos/:upc
+  result:if product doesn't exist then "No product with given upc" else object where schema(case sensistive) of object is {SKU:String,UPC:String,ALTUPC1:String,ALTUPC2:String,ItemName:String,Vintage:String,TotalQty:String,Cost:String,PriceA:String,PriceB:String,PriceC:String,Department:String,SALEPRICE:String,SizeName:String,PackName:String,Price:String,STORECODE:String,soldQty:{type:String,default:"0"},wordpressSoldQty:{type:String,default:"0"},invoiceQty:{type:String,default:"0"}}
+  onError- response is "Some error occured"
+
+4. on increasing the invoice Quantity of a product with a given upc
+  put- http://54.234.86.83:3001/pos/:upc/inv
+  schema (case sensistive) to be passed in body {count:number} if initial invoiceQty in database is 5 and count passed in body is 3 then after making the put request invoiceQty in database becomes 8
+  result-if upc doesn't exist No such product exist else Product updated successfully
+  onError- response is "Some error occured"
+
+5- sync
+ get-http://54.234.86.83:3001/pos/api/sync
+ result-array of object where schema(case sensistive) of object is {SKU:String,UPC:String,ALTUPC1:String,ALTUPC2:String,ItemName:String,Vintage:String,TotalQty:String,Cost:String,PriceA:String,PriceB:String,PriceC:String,Department:String,SALEPRICE:String,SizeName:String,PackName:String,Price:String,STORECODE:String,soldQty:{type:String,default:"0"},wordpressSoldQty:{type:String,default:"0"},invoiceQty:0}
+ onError- response is "Some error occured"
+
+Below api is restricted and don't use it in web app.Use it manullay if needed.
+
+7. to create a fresh pos[mongo] database(it deletes the entire old pos[mongo] database if exist and create a new database from existing pos databse)
+  get-http://54.234.86.83:3001/pos/api/refresh
+  its takes long time to perform this action
