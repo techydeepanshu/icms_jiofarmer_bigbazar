@@ -107,9 +107,10 @@ function sync(arr,newArr){
     let a=newArr[i];
     let b=arr[i];
     let obj={...a};
-    obj["soldQty"]=b.TotalQty+b.invoiceQty-a.TotalQty;
+    obj["soldQty"]=parseFloat(b.TotalQty)+parseFloat(b.invoiceQty)-parseFloat(a.TotalQty);
     obj["TotalQty"]=a.TotalQty;
     obj["invoiceQty"]=0;
+    obj["wordpressSoldQty"]=0;
     data.push(obj);
   }
   return data;
