@@ -45,7 +45,7 @@ const InvoiceMapping = [
   // {value:'',slug:'',jsonName:'galil-importing.json',emptyColumn:false,databaseName:'galilimportings'},
   {
     value: "Goyal group",
-    slug: "goyal-grp",
+    slug: "goyal-group",
     jsonName: "goyal-grp.json",
     emptyColumn: true,
     databaseName: "goyalgrps",
@@ -63,14 +63,14 @@ const InvoiceMapping = [
   // {value:'',slug:'',jsonName:'joy-foods.json',emptyColumn:false,databaseName:'joyfoods'},
   {
     value: "Joy gourmet foods",
-    slug: "joy-gourmet-foods",
+    slug: "joy-gourment-foods",
     jsonName: "joy-gourmet-foods.json",
     emptyColumn: true,
     databaseName: "joygourmetfoods",
   },
   {
     value: "Katzman",
-    slug: "katzman",
+    slug: "katzam-foods",
     jsonName: "katzman.json",
     emptyColumn: false,
     databaseName: "katzmen",
@@ -80,9 +80,9 @@ const InvoiceMapping = [
   // {value:'',slug:'',jsonNaseame:'krino-foods.json',emptyColumn:false,databaseName:'krinofoods'},
   {
     value: "Krishna Foods",
-    slug: "krishna-foods",
+    slug: "krishna-food-corp",
     jsonName: "krishna-foods-products.json",
-    emptyColumn: false,
+    emptyColumn: true,
     databaseName: "krishnafoodsproducts",
   },
   // {value:'',slug:'',jsonName:'krishna.json',emptyColumn:false,databaseName:'krishnas'},
@@ -168,7 +168,7 @@ const InvoiceMapping = [
   // {value:'',slug:'',jsonName:'us-gourmet-food.json',emptyColumn:false,databaseName:'usgourmetfoods'},
   {
     value: "USA Halal",
-    slug: "usa-halal",
+    slug: "usa-halal-foods",
     jsonName: "usa-halal.json",
     emptyColumn: false,
     databaseName: "usahalals",
