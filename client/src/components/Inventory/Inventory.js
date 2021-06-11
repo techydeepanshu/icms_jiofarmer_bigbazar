@@ -1,83 +1,137 @@
 import React, { useState } from "react";
 import { CRow, CCol, CDataTable } from "@coreui/react";
 import { InventoryService } from "../../services/InventoryService";
+import Spinner from "../../UI/Spinner/Spinner";
 const Inventory = () => {
   const inventoryService = new InventoryService();
   const [products, setProducts] = useState([]);
+  const [loader, setLoader] = useState(true);
+
   const getProducts = async () => {
     try {
+      setLoader(true);
       const res = await inventoryService.SyncInventory();
       const data = res.map((item) => {
         const {
           UPC,
+          SKU,
           ItemName,
           Price,
-          PrevPrice,
           Cost,
-          PrevCost,
           TotalQty,
-          PrevTotalQty,
+          soldQty,
+          wordpressSoldQty,
         } = item;
         return {
           upc: UPC,
           ItemName,
           Cost,
           Price,
-          CurrentStockQuantity:TotalQty,
-          PreviousQuantity: PrevTotalQty,
+          SKU,
+          CurrentStockQuantity: TotalQty,
+          POSSoldQuantity: soldQty,
+          wordpressSoldQty,
         };
-      });console.table(data)
+      });
       setProducts(data);
       alert("Sync complete");
     } catch (error) {
       alert("Couldn't sync inventory", error);
+    } finally {
+      setLoader(false);
     }
-    // if (products.length === 0)
-    //   inventoryService
-    //     .getAllProducts()
-    //     .then((res) => {
-    //       setProducts(res);
-    //     })
-    //     .catch((err) => console.log(err));
   };
   const fields = [
     {
       key: "upc",
+      _style: { width: "10%", position: "sticky", },
+      sorter: true,
+      filter: false,
+    },
+    {
+      key: "SKU",
       _style: { width: "10%" },
       sorter: false,
       filter: false,
     },
     {
       key: "ItemName",
-      _style: { width: "10%" },
+      _style: { width: "10%", position: "sticky", },
       sorter: false,
       filter: false,
     },
     {
       key: "Cost",
-      _style: { width: "10%" },
+      _style: { width: "10%", position: "sticky", },
       sorter: false,
       filter: false,
     },
     {
       key: "Price",
-      _style: { width: "10%" },
+      _style: { width: "10%", position: "sticky", },
       sorter: false,
       filter: false,
     },
     {
       key: "CurrentStockQuantity",
-      _style: { width: "10%" },
+      _style: { width: "10%", position: "sticky", },
       sorter: false,
       filter: false,
     },
     {
-      key: "PreviousQuantity",
-      _style: { width: "10%" },
+      key: "POSSoldQuantity",
+      _style: { width: "10%", position: "sticky", },
+      sorter: false,
+      filter: false,
+    },
+    {
+      key: "wordpressSoldQty",
+      _style: { width: "10%", position: "sticky", },
       sorter: false,
       filter: false,
     },
   ];
+
+  React.useEffect(() => {
+    async function getInitialSyncedData() {
+      try {
+        setLoader(true);
+        const res = await inventoryService.getInitialSyncedData();
+        const data = res.map((item) => {
+          const {
+            UPC,
+            SKU,
+            ItemName,
+            Price,
+            Cost,
+            TotalQty,
+            soldQty,
+            wordpressSoldQty,
+          } = item;
+          return {
+            upc: UPC,
+            ItemName,
+            Cost,
+            Price,
+            SKU,
+            CurrentStockQuantity: TotalQty,
+            POSSoldQuantity: soldQty,
+            wordpressSoldQty,
+          };
+        });
+        setProducts(data);
+      } catch (error) {
+        alert("Couldn't sync inventory", error);
+      } finally {
+        setLoader(false);
+      }
+    }
+    getInitialSyncedData();
+  }, []);
+
+  if (loader) {
+    return <Spinner />;
+  }
   return (
     <div style={{ marginTop: "80px" }}>
       <CRow>

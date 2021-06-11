@@ -18,16 +18,7 @@ const UpdateInventory = (props) => {
   const [wooComProducts, setWooComProducts] = useState([]);
   const inventoryService = new InventoryService();
   const tempNotFoundProducts = [];
-  const getInventoryData = () => {
-    const ref = firebase.database().ref("/test");
-    ref.on("value", (snapshot) => {
-      // console.log(snapshot.val());
-      if (snapshot.val()) {
-        const data = Object.values(snapshot.val());
-        setInventory(data);
-      }
-    });
-  };
+
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
@@ -177,26 +168,16 @@ const UpdateInventory = (props) => {
       })
       .filter((item) => item !== null);
 
-    const wooComResponse = await pushToWoocom(updatedWoocomProducts);
+    await pushToWoocom(updatedWoocomProducts);
+    await pushToPOS(posProducts);
 
-    const posResponse = await pushToPOS(posProducts);
-
-    console.log(posResponse);
-    /**filter out the items not pushed on store */
-    const itemsNotPushed = newInventoryData.filter(
-      ({ item: item1 }) =>
-        !wooComResponse.some(({ itemNo: item2 }) => item1 !== item2)
-    );
-    /**set the current table data to be the not pushed items */
-    setNewInventoryData(itemsNotPushed);
-    console.log("woo com", itemsNotPushed);
     setLoader(false);
-    if (itemsNotPushed.length === 0) {
-      window.alert("Inventory updated successfully");
-      setRedirect(true);
-    } else {
-      window.alert("Inventory not updated");
-    }
+    // if (itemsNotPushed.length === 0) {
+    window.alert("Inventory updated successfully");
+    setRedirect(true);
+    // } else {
+    //   window.alert("Inventory not updated");
+    // }
   };
 
   const pushToFirebase = async (item) => {
@@ -219,23 +200,11 @@ const UpdateInventory = (props) => {
     const responses = await Promise.all(
       products.map(async (product) => {
         try {
-          const res = await inventoryService.UpdateProductDetails(
-            product.id,
-            {
-              regular_price: product.regular_price,
-              stock_quantity: product.stock_quantity,
-            } /* {regular_price, stock_quantity} = product */
-          );
-          const {
-            id,
-            name,
-            regular_price,
-            price,
-            sku,
-            slug,
-            stock_quantity,
-            sale_price,
-          } = res;
+          const res = await inventoryService.UpdateProductDetails(product.id, {
+            regular_price: product.regular_price,
+            stock_quantity: product.stock_quantity,
+          });
+          const { id, name, regular_price, stock_quantity } = res;
           return {
             id,
             name,
@@ -251,7 +220,6 @@ const UpdateInventory = (props) => {
       })
     );
     setLoader(false);
-    return responses.filter((item) => item !== null);
   };
 
   const pushToPOS = async (products) => {
@@ -259,20 +227,31 @@ const UpdateInventory = (props) => {
     const responses = await Promise.all(
       products.map(async (product) => {
         try {
-          const { COST, PRICE, SKU, UPC, ITEMNAME, TOTALQTY, isNew } = product;
+          const {
+            COST,
+            PRICE,
+            UPC,
+            TOTALQTY,
+            isNew,
+            ITEMNAME,
+            BUYASCASE,
+            CASEUNITS,
+            CASECOST,
+            SKU,
+          } = product;
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
               UPC,
               ITEMNAME,
-              DESCRIPTION: product.description,
+              DESCRIPTION: "",
               PRICE,
               COST,
               QTY: TOTALQTY,
               SIZE: "",
               PACK: "",
               REPLACEQTY: 1,
-              DEPARTMENT: "GROSARY",
-              CATEGORY: "SNACKS",
+              DEPARTMENT: "",
+              CATEGORY: "",
               SUBCATEGORY: "",
               ISFOODSTAMP: 1,
               ISWEIGHTED: 0,
@@ -281,19 +260,40 @@ const UpdateInventory = (props) => {
               VENDORCODE: "",
               VENDORCOST: "",
               ISNEWITEM: isNew ? 1 : 0,
+              BUYASCASE,
+              CASEUNITS,
+              CASECOST,
             })
           );
-          console.log("res from POS", res);
+          console.log("updated pos data", res)
+          const data = {
+            UPC,
+            SKU,
+            Cost: COST,
+            ItemName: ITEMNAME,
+            Price: PRICE,
+            TotalQty: TOTALQTY,
+          };
+          if (isNew) {
+            const response = await inventoryService.CreateDBProduct(data);
+            console.log("Created new product", response);
+          } else {
+            const response = await inventoryService.UpdateDBProduct({
+              count: parseInt(product.qty) * parseInt(product.pieces),
+              UPC,
+            });
+            console.log("updated existing product", response);
+          }
+
+          // console.log("res from POS", res);
           return true;
         } catch (error) {
           console.log(error);
-          // alert("Couldn't update product on website.");
           return null;
         }
       })
     );
     setLoader(false);
-    return responses.filter((item) => item !== null);
   };
   useEffect(() => {
     async function getProducts() {
@@ -304,7 +304,7 @@ const UpdateInventory = (props) => {
              * The args in getproductdetails will be the sku fetched from the json file
              * const sku = jsonfile[row.itemNo]
              */
-            const res = await inventoryService.GetProductDetails(row.sku);
+            const res = await inventoryService.GetProductDetails(row.barcode);
             const {
               id,
               name,
@@ -349,8 +349,8 @@ const UpdateInventory = (props) => {
               const res = await inventoryService.GetPOSProductDetails(
                 row.barcode
               );
-              console.log("from pos", res);
-              const { COST, PRICE, SKU, UPC, ITEMNAME, TOTALQTY } = res[0];
+              console.log("fetched pos data", res);
+              const { SKU, UPC, ITEMNAME, TOTALQTY } = res[0];
               return {
                 ...row,
                 COST: row.cp,
@@ -362,6 +362,9 @@ const UpdateInventory = (props) => {
                   parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
                 itemNo: row.itemNo,
                 isNew: false,
+                BUYASCASE: 1,
+                CASEUNITS: row.qty.toString(),
+                CASECOST: row.unitPrice.toString(),
               };
             } catch (error) {
               hasErrorOccured = true;
@@ -375,6 +378,9 @@ const UpdateInventory = (props) => {
                 TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
                 itemNo: row.itemNo,
                 isNew: true,
+                BUYASCASE: 1,
+                CASEUNITS: row.qty.toString(),
+                CASECOST: row.unitPrice.toString(),
               };
             }
           })
@@ -385,7 +391,6 @@ const UpdateInventory = (props) => {
       setLoader(false);
       setPosProducts(items.filter((ele) => ele !== null));
     }
-    getInventoryData();
     getProducts();
     getPosProducts();
   }, []);

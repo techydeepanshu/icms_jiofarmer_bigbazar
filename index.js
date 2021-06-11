@@ -10,6 +10,7 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
+const isPOSProduction = false
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");
 const { getDBInvoiceName } = require("./mapInvoiceName");
@@ -58,7 +59,7 @@ app.get("/api/product", validateLogin, (req, res) => {
   };
   function callback(error, response, body) {
     const status = response.statusCode;
-    console.log(error, body);
+    // console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {
@@ -153,11 +154,17 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
   let options = {
     method: "GET",
     url: "https://dataservices.sypramsoftware.com/api/Product/GetItem",
-    headers: {
-      UserId: "lRRqlkYefuV=",
-      Password: "lRRqlkYefuV6jJ==",
-      Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
-    },
+    headers: isPOSProduction
+      ? {
+          UserId: "lRRqlkYefuV=",
+          Password: "lRRqlkYefuV6jJ==",
+          Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
+        }
+      : {
+          UserId: "MeCHHkZ9",
+          Password: "tdypsA =",
+          Pin: "lqBZghxJgaVE",
+        },
     body: {
       UPC: upc,
       ITEMNAME: itemName,
@@ -174,11 +181,11 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
 app.get("/api/sync", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http://54.234.86.83:3001/sync",
+    url: "http://54.234.86.83:3001/pos/api/sync",
     json: true,
   };
   function callback(error, response, body) {
-    console.log(body);
+    // console.log(body);
     res.send(body);
   }
   request(options, callback);
@@ -191,11 +198,17 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
   let options = {
     method: "POST",
     url: "https://dataservices.sypramsoftware.com/api/Product/ManageItem",
-    headers: {
-      UserId: "lRRqlkYefuV=",
-      Password: "lRRqlkYefuV6jJ==",
-      Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
-    },
+    headers: isPOSProduction
+      ? {
+          UserId: "lRRqlkYefuV=",
+          Password: "lRRqlkYefuV6jJ==",
+          Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
+        }
+      : {
+          UserId: "MeCHHkZ9",
+          Password: "tdypsA =",
+          Pin: "lqBZghxJgaVE",
+        },
     body: data,
     json: true,
   };
@@ -245,6 +258,65 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   function callback(error, response, body) {
     const status = response.statusCode;
     // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.get("/api/invoice/pos", validateLogin, function (req, res) {
+  let options = {
+    method: "GET",
+    url: "http://54.234.86.83:3001/pos",
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
+  const data = req.body;
+  let options = {
+    method: "POST",
+    url: "http://54.234.86.83:3001/pos",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
+  const data = req.body;
+  console.log("body data", data)
+  let options = {
+    method: "PUT",
+    url: `http://54.234.86.83:3001/pos/${data.UPC}/inv`,
+    body: {count: data.count},
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {

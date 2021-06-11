@@ -60,4 +60,18 @@ export class InventoryService {
     const res = await Axios.post(appendURL + "/api/invoice/notfound", data);
     return res.data;
   }
+
+  async UpdateDBProduct(data) {
+    const res = await Axios.put(appendURL + "/api/invoice/pos/update", data);
+    return res.data;
+  }
+  async CreateDBProduct(data) {
+    const res = await Axios.post(appendURL + "/api/invoice/pos/create", data);
+    return res.data;
+  }
+
+  async getInitialSyncedData() {
+    const res = await Axios.get(appendURL + "/api/invoice/pos");
+    return res.data;
+  }
 }
