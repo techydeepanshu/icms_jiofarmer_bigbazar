@@ -73,7 +73,7 @@ const InvoiceMapping = [
     slug: "katzam-foods",
     jsonName: "katzman.json",
     emptyColumn: false,
-    databaseName: "katzmen",
+    databaseName: "katzman",
   },
   // {value:'',slug:'',jsonName:'km-dist-usa.json',emptyColumn:false,databaseName:'kmdistusas'},
   // {value:'',slug:'',jsonName:'koryeo-foods.json',emptyColumn:false,databaseName:'koryeofoods'},

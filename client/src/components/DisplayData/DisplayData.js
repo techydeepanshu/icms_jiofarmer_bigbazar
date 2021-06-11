@@ -426,10 +426,9 @@ const DisplayData = (props) => {
       if (!isNaN(extendedPrice)) {
         tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
       }
-      if(!isNaN(cp)) {
+      if (!isNaN(cp)) {
         tempTableData[row]["cp"] = cp.toFixed(2);
       }
-
     }
     if (itemNo) {
       if (+tempTableData[row]["unitPrice"] > +productDetails[itemNo].Price) {
@@ -517,6 +516,7 @@ const DisplayData = (props) => {
           }
           products = convertToUpperCase(products);
 
+          console.log("OCERDATa", ocrData);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
@@ -546,7 +546,10 @@ const DisplayData = (props) => {
                 : "";
             row.markup = 0;
             row.show = true;
-            row.posSku = products[row.itemNo].PosSKU ?? "";
+            row.posSku =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].PosSKU
+                : "";
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode
@@ -556,11 +559,15 @@ const DisplayData = (props) => {
               );
               cp = sp;
             }
-            if (+row.unitPrice > +products[row.itemNo].Price) {
-              row["priceIncrease"] = 1;
-            } else if (+row.unitPrice < +products[row.itemNo].Price) {
-              row["priceIncrease"] = -1;
-            } else if (+row.unitPrice == +products[row.itemNo].Price) {
+            if (products[row.itemNo] !== undefined) {
+              if (+row.unitPrice > +products[row.itemNo].Price) {
+                row["priceIncrease"] = 1;
+              } else if (+row.unitPrice < +products[row.itemNo].Price) {
+                row["priceIncrease"] = -1;
+              } else if (+row.unitPrice == +products[row.itemNo].Price) {
+                row["priceIncrease"] = 0;
+              }
+            } else {
               row["priceIncrease"] = 0;
             }
 
@@ -582,6 +589,7 @@ const DisplayData = (props) => {
           setProductDetails(products);
         })
         .catch((err) => {
+          console.log("error on mapping ocrdata", err)
           setLoader(false);
         });
     });
