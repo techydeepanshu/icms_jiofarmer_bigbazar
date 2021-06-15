@@ -11,13 +11,13 @@ const UpdateInventory = (props) => {
     props.newInventoryData
   );
   const [posProducts, setPosProducts] = useState([]);
-  const [notFoundProducts, setNotFoundProducts] = useState([]);
-  const [inventory, setInventory] = useState([]);
+  // const [notFoundProducts, setNotFoundProducts] = useState([]);
+  // const [inventory, setInventory] = useState([]);
   const [redirect, setRedirect] = useState(false);
   const [loader, setLoader] = useState(true);
   const [wooComProducts, setWooComProducts] = useState([]);
   const inventoryService = new InventoryService();
-  const tempNotFoundProducts = [];
+  // const tempNotFoundProducts = [];
 
   const renderTableHeader = () => {
     return header.map((key, index) => {
@@ -37,23 +37,23 @@ const UpdateInventory = (props) => {
   };
   const renderTableData = () => {
     let rows = newInventoryData.map((element, index) => {
-      let isNotFound =
-        notFoundProducts.filter((val) => val.itemNo === element.itemNo).length >
-        0;
-      let isAddedToQueue =
-        notFoundProducts.filter(
-          (val) => val.itemNo === element.itemNo && val.isQueued
-        ).length > 0;
+      // let isNotFound =
+      //   notFoundProducts.filter((val) => val.itemNo === element.itemNo).length >
+      //   0;
+      // let isAddedToQueue =
+      //   notFoundProducts.filter(
+      //     (val) => val.itemNo === element.itemNo && val.isQueued
+      //   ).length > 0;
       return (
         <tr
           key={index}
-          style={
-            isAddedToQueue
-              ? { background: "green" }
-              : isNotFound
-              ? { background: "red" }
-              : null
-          }
+          // style={
+          //   isAddedToQueue
+          //     ? { background: "green" }
+          //     : isNotFound
+          //     ? { background: "red" }
+          //     : null
+          // }
         >
           <td>{index + 1}</td>
           <td>{element.barcode}</td>
@@ -67,7 +67,7 @@ const UpdateInventory = (props) => {
           <td>{element.cp}</td>
           <td>{element.sp}</td>
           <td>{element.markup}</td>
-          <td>
+          {/* <td>
             {isNotFound && !isAddedToQueue && (
               <Button
                 text={"Add to queue"}
@@ -76,7 +76,7 @@ const UpdateInventory = (props) => {
                 onClick={() => pushToFirebase(element)}
               />
             )}
-          </td>
+          </td> */}
         </tr>
       );
     });
@@ -180,21 +180,6 @@ const UpdateInventory = (props) => {
     // }
   };
 
-  const pushToFirebase = async (item) => {
-    try {
-      firebase.database().ref("/queue").child(`${item.itemNo}`).set(item);
-      let temp = [...notFoundProducts];
-      let index = temp.findIndex((product) => product.itemNo === item.itemNo);
-      temp[index]["isQueued"] = true;
-
-      setNotFoundProducts(temp);
-      return true;
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
-  };
-
   const pushToWoocom = async (products) => {
     setLoader(true);
     const responses = await Promise.all(
@@ -238,6 +223,7 @@ const UpdateInventory = (props) => {
             CASEUNITS,
             CASECOST,
             SKU,
+            DEPNAME,
           } = product;
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
@@ -250,7 +236,7 @@ const UpdateInventory = (props) => {
               SIZE: "",
               PACK: "",
               REPLACEQTY: 1,
-              DEPARTMENT: "",
+              DEPARTMENT: DEPNAME,
               CATEGORY: "",
               SUBCATEGORY: "",
               ISFOODSTAMP: 1,
@@ -265,7 +251,7 @@ const UpdateInventory = (props) => {
               CASECOST,
             })
           );
-          console.log("updated pos data", res)
+          console.log("updated pos data", res);
           const data = {
             UPC,
             SKU,
@@ -300,10 +286,6 @@ const UpdateInventory = (props) => {
       const items = await Promise.all(
         newInventoryData.map(async (row) => {
           try {
-            /**
-             * The args in getproductdetails will be the sku fetched from the json file
-             * const sku = jsonfile[row.itemNo]
-             */
             const res = await inventoryService.GetProductDetails(row.barcode);
             const {
               id,
@@ -327,7 +309,7 @@ const UpdateInventory = (props) => {
               itemNo: row.itemNo,
             };
           } catch (error) {
-            tempNotFoundProducts.push(row);
+            // tempNotFoundProducts.push(row);
             console.log("Couldn't fetch product from woodpress.", row.itemNo);
             return null;
           }
@@ -335,7 +317,7 @@ const UpdateInventory = (props) => {
       );
       setLoader(false);
       setWooComProducts(items.filter((ele) => ele !== null));
-      setNotFoundProducts(tempNotFoundProducts);
+      // setNotFoundProducts(tempNotFoundProducts);
     }
 
     async function getPosProducts() {
@@ -350,7 +332,7 @@ const UpdateInventory = (props) => {
                 row.barcode
               );
               console.log("fetched pos data", res);
-              const { SKU, UPC, ITEMNAME, TOTALQTY } = res[0];
+              const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
               return {
                 ...row,
                 COST: row.cp,
@@ -363,8 +345,9 @@ const UpdateInventory = (props) => {
                 itemNo: row.itemNo,
                 isNew: false,
                 BUYASCASE: 1,
-                CASEUNITS: row.qty.toString(),
+                CASEUNITS: row.pieces.toString(),
                 CASECOST: row.unitPrice.toString(),
+                DEPNAME,
               };
             } catch (error) {
               hasErrorOccured = true;
@@ -379,8 +362,9 @@ const UpdateInventory = (props) => {
                 itemNo: row.itemNo,
                 isNew: true,
                 BUYASCASE: 1,
-                CASEUNITS: row.qty.toString(),
+                CASEUNITS: row.pieces.toString(),
                 CASECOST: row.unitPrice.toString(),
+                DEPNAME: "",
               };
             }
           })
