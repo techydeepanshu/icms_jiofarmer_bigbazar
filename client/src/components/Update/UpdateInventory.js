@@ -260,18 +260,18 @@ const UpdateInventory = (props) => {
             Price: PRICE,
             TotalQty: TOTALQTY,
           };
-          // if (isNew) {
-          //   const response = await inventoryService.CreateDBProduct(data);
-          //   console.log("Created new product", response);
-          // } else {
-          //   const response = await inventoryService.UpdateDBProduct({
-          //     count: parseInt(product.qty) * parseInt(product.pieces),
-          //     UPC,
-          //   });
-          //   console.log("updated existing product", response);
-          // }
+          if (isNew) {
+            const response = await inventoryService.CreateDBProduct(data);
+            console.log("Created new product", response);
+          } else {
+            const response = await inventoryService.UpdateDBProduct({
+              count: parseInt(product.qty) * parseInt(product.pieces),
+              UPC,
+            });
+            console.log("updated existing product", response);
+          }
 
-          // console.log("res from POS", res);
+          console.log("res from POS", res);
           return true;
         } catch (error) {
           console.log(error);

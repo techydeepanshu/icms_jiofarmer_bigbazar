@@ -10,7 +10,7 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-const isPOSProduction = false
+const isPOSProduction = true;
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");
 const { getDBInvoiceName } = require("./mapInvoiceName");
@@ -54,7 +54,7 @@ app.get("/api/product", validateLogin, (req, res) => {
   const invoice = getDBInvoiceName(req.query["invoiceName"]);
   let options = {
     method: "GET",
-    url: `http://54.234.86.83:3001/invoice/${invoice}`,
+    url: `http://3.91.159.202:3001/invoice/${invoice}`,
     json: true,
   };
   function callback(error, response, body) {
@@ -181,7 +181,7 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
 app.get("/api/sync", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http://54.234.86.83:3001/pos/api/sync",
+    url: "http://3.91.159.202:3001/pos/api/sync",
     json: true,
   };
   function callback(error, response, body) {
@@ -229,7 +229,7 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const { invoiceName, itemName, value } = data;
   let options = {
     method: "PUT",
-    url: `http://54.234.86.83:3001/invoice/${getDBInvoiceName(
+    url: `http://3.91.159.202:3001/invoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -251,7 +251,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://54.234.86.83:3001/notfound",
+    url: "http://3.91.159.202:3001/notfound",
     body: data,
     json: true,
   };
@@ -270,7 +270,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
 app.get("/api/invoice/pos", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http://54.234.86.83:3001/pos",
+    url: "http://3.91.159.202:3001/pos",
     json: true,
   };
   function callback(error, response, body) {
@@ -289,7 +289,7 @@ app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://54.234.86.83:3001/pos",
+    url: "http://3.91.159.202:3001/pos",
     body: data,
     json: true,
   };
@@ -307,11 +307,11 @@ app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
 
 app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   const data = req.body;
-  console.log("body data", data)
+  console.log("body data", data);
   let options = {
     method: "PUT",
-    url: `http://54.234.86.83:3001/pos/${data.UPC}/inv`,
-    body: {count: data.count},
+    url: `http://3.91.159.202:3001/pos/${data.UPC}/inv`,
+    body: { count: data.count },
     json: true,
   };
   function callback(error, response, body) {
