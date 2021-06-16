@@ -14,6 +14,7 @@ import firebase from "../../firebase";
 import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { InventoryService } from "../../services/InventoryService";
+import Checkbox from "@material-ui/core/Checkbox";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
@@ -34,7 +35,7 @@ const DisplayData = (props) => {
     "POS SKU",
     "Qty Shipped",
     "ITEM NO",
-    "DESCRPTION",
+    "DESCRIPTION",
     "Units in  Case",
     "Case cost",
     "Extended Price",
@@ -101,16 +102,6 @@ const DisplayData = (props) => {
           }}
         >
           {key.toUpperCase()}
-          {/* {key.includes("Mark") ? (
-            <TextField
-              type={"number"}
-              variant="outlined"
-              onChange={(e) => {
-                setMarkup(e.target.value);
-              }}
-              style={{ width: 80 }}
-            />
-          ) : null} */}
         </th>
       );
     });
@@ -179,11 +170,6 @@ const DisplayData = (props) => {
                 }}
                 style={{ width: 100 }}
               />
-              {/* <span className={styles.tooltip}>
-                The extended price for this is {element.extendedPrice} but
-                quantity shipped is {element.qty} is this a free item? Please
-                eneter the unit price manually.
-              </span> */}
             </td>
             <td>
               <Autocomplete
@@ -235,6 +221,13 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.markup}</td>
+            <td>
+              <Checkbox
+                checked={!element.show}
+                onChange={(e) => handleChange(index, "show", e.target.value)}
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            </td>
             <td>
               <Button
                 text={element.show ? "Delete" : "Undo"}
