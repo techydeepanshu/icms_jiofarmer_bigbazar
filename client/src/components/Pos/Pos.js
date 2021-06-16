@@ -227,7 +227,7 @@ const POS = () => {
                   </CCol>
                 </CRow>
                 <CFormGroup>
-                  <CLabel htmlFor="description">Description</CLabel>
+                  <CLabel htmlFor="description">Invoice Description</CLabel>
                   <CInput
                     type="text"
                     name="description"
