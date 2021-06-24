@@ -73,12 +73,12 @@ export const auth = (email, password ) => {
                 // console.log(response);
                 loginService.authenticate({userId, email})
                     .then(res => {
-                        const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
+                        const expirationDate = new Date(new Date().getTime() + 43200 * 1000);
                         localStorage.setItem("token", res.token);
                         localStorage.setItem("expirationDate", expirationDate);
                         localStorage.setItem("userId", userId);
                         dispatch(authSuccess(res.token, userId));
-                        dispatch(logout(3600));
+                        dispatch(logout(43200));
                     })
                     .catch(err => {
                         dispatch(authFail(err.error));

@@ -12,7 +12,7 @@ module.exports = {
   */
   // Token signing options
   const signOptions = {
-    expiresIn:  "1h",
+    expiresIn:  "12h",
     algorithm:  "RS256"
   };
   return jwt.sign(payload, privateKEY, signOptions);
@@ -30,7 +30,7 @@ verifyToken: (token) => {
       // issuer:  $Option.issuer,
       // subject:  $Option.subject,
       // audience:  $Option.audience,
-      expiresIn:  "1h",
+      expiresIn:  "12h",
       algorithm:  ["RS256"]
   };
    try{
