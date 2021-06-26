@@ -131,7 +131,7 @@ const DisplayData = (props) => {
             <td>{index + 1}</td>
             <td className={styles.element}>
               <TextField
-                type="number"
+                type="tel"
                 value={element.barcode}
                 id="outlined-secondary"
                 variant="outlined"
@@ -161,7 +161,7 @@ const DisplayData = (props) => {
             <td>{element.posSku}</td>
             <td>
               <TextField
-                type="number"
+                type="tel"
                 value={element.qty}
                 id="outlined-secondary"
                 variant="outlined"
@@ -192,7 +192,7 @@ const DisplayData = (props) => {
             <td>{element.pieces}</td>
             <td>
               <TextField
-                type="number"
+                type="tel"
                 value={element.unitPrice}
                 variant="outlined"
                 onChange={(e) => {
@@ -211,7 +211,7 @@ const DisplayData = (props) => {
             <td>{element.cp}</td>
             <td>
               <TextField
-                type="number"
+                type="tel"
                 value={element.sp}
                 variant="outlined"
                 onChange={(e) => {
@@ -598,6 +598,7 @@ const DisplayData = (props) => {
           newInventoryData={inventoryData}
           header={header}
           goBack={setPushToInventory}
+          invoice={props.selectedInvoice}
         />
       ) : (
         renderTableData()

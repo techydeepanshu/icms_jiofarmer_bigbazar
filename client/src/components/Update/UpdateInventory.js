@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router";
-import firebase from "../../firebase";
 import { InventoryService } from "../../services/InventoryService";
 import Button from "../../UI/Button";
 import Spinner from "../../UI/Spinner/Spinner";
@@ -11,13 +10,10 @@ const UpdateInventory = (props) => {
     props.newInventoryData
   );
   const [posProducts, setPosProducts] = useState([]);
-  // const [notFoundProducts, setNotFoundProducts] = useState([]);
-  // const [inventory, setInventory] = useState([]);
   const [redirect, setRedirect] = useState(false);
   const [loader, setLoader] = useState(true);
   const [wooComProducts, setWooComProducts] = useState([]);
   const inventoryService = new InventoryService();
-  // const tempNotFoundProducts = [];
 
   const renderTableHeader = () => {
     return header.map((key, index) => {
@@ -37,23 +33,9 @@ const UpdateInventory = (props) => {
   };
   const renderTableData = () => {
     let rows = newInventoryData.map((element, index) => {
-      // let isNotFound =
-      //   notFoundProducts.filter((val) => val.itemNo === element.itemNo).length >
-      //   0;
-      // let isAddedToQueue =
-      //   notFoundProducts.filter(
-      //     (val) => val.itemNo === element.itemNo && val.isQueued
-      //   ).length > 0;
       return (
         <tr
           key={index}
-          // style={
-          //   isAddedToQueue
-          //     ? { background: "green" }
-          //     : isNotFound
-          //     ? { background: "red" }
-          //     : null
-          // }
         >
           <td>{index + 1}</td>
           <td>{element.barcode}</td>
@@ -67,16 +49,6 @@ const UpdateInventory = (props) => {
           <td>{element.cp}</td>
           <td>{element.sp}</td>
           <td>{element.markup}</td>
-          {/* <td>
-            {isNotFound && !isAddedToQueue && (
-              <Button
-                text={"Add to queue"}
-                color="btn btn-info"
-                type="submit"
-                onClick={() => pushToFirebase(element)}
-              />
-            )}
-          </td> */}
         </tr>
       );
     });
@@ -107,7 +79,7 @@ const UpdateInventory = (props) => {
       </div>
     );
   };
-  /**Incomplete push inventory function*/
+
   const pushInventoryDetails = async () => {
     setLoader(true);
     let data = newInventoryData.map((element) => {
@@ -224,6 +196,7 @@ const UpdateInventory = (props) => {
             CASECOST,
             SKU,
             DEPNAME,
+            itemNo
           } = product;
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
@@ -242,13 +215,15 @@ const UpdateInventory = (props) => {
               ISFOODSTAMP: 1,
               ISWEIGHTED: 0,
               ISTAXABLE: 1,
-              VENDORNAME: "",
-              VENDORCODE: "",
+              VENDORNAME: props.invoice,
+              VENDORCODE: itemNo,
               VENDORCOST: "",
               ISNEWITEM: isNew ? 1 : 0,
               BUYASCASE,
               CASEUNITS,
               CASECOST,
+              COMPANYNAME: props.invoice,
+              PRODUCTCODE: itemNo,
             })
           );
           console.log("updated pos data", res);
