@@ -539,7 +539,7 @@ export const optionData={
     body:[1,1,1,1,[0,/ [0-9]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1],
     notAllowed:/[`~!@#\$%^&=:/;""'<>*?,\*]/gi
   },
-  "vdyas":{
+  "vidyas":{
     regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","description","unitPrice","extendedPrice"],
     body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
