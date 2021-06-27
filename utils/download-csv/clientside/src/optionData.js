@@ -629,4 +629,300 @@ export const optionData={
     body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+
+  //
+  // "pure-ghee":{
+  //   regex:/^[0-9-]+ .+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  // },
+  // "arya-international":{
+  //   regex:/^[A-Z-0-9]+ .+$/,
+  //   header:["qty","description"],
+  //   body:[1,[0,/$/]],
+  //   notAllowed:/[`~!@#\$%^&=:();""'<>*?,\*]/gi
+  // },
+  // "katzman-produce":{
+  //   regex:/^[0-9\.]+ .+ [A-Z]+$/,
+  //   header:["qty","description","origin"],
+  //   body:[1,[0,/ [A-Z]+$/],1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },
+  // "soko-packaging":{
+  //   regex:/^[0-9]+ [0-9A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/[0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },
+  // "dava-west-indian":{
+  //   regex:/^[A-Za-z A-Za-z A-Za-z]+ .+ [0-9]+ [0-9\.]+ [0-9 x 0-9 a-zA-Z]+ [0-9\.]+$/,
+  //   header:["itemNo","description","qty","unitPrice","size","extendedPrice"],
+  //   body:[3,[0,/ [0-9]+ [A-Z A-Z 0-9\.]+ [0-9 x 0-9 a-zA-Z]+ [0-9\.]+$/],1,1,4,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },
+  // "uyt-imports-nyc":{
+  //   regex:/^[0-9]+ [A-Z-0-9]+ .+ [0-9]+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["sno","sku","particular","pack","pcs","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/[0-9]+ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "hja-sales-corp":{
+  //   regex:/^[0-9]+ [0-9]+ [0-9 0-9A-Z\.]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["itemNo","qty","pack","description","unitPrice","extendedPrice"],
+  //   body:[1,1,2,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "raja-food-vegetables":{
+  //   regex:/^[0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["mpn","description","qty","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "himalaya-international":{
+  //   regex:/^[A-Za-z A-Za-z 0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
+  //   body:[3,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "hellenic-treasures":{
+  //   regex:/^[0-9/0-9/0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["date","description","qty","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },
+  // "k&s-wholesale":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "los-olivos-ltd":{
+  //   regex:/^[0-9-A-Z0-9]+ .+ [0-9]+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["item","description","qty","unit","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "sirob-imports-inc":{
+  //   regex:/^[0-9\.]+ [0-9\.]+ [0-9\.]+ [A-Z-A-Z-0-9]+ .+ [0-9\.]+ [A-Z]+ [0-9\.]+$/,
+  //   header:["qtyOrdered","qty","bio","itemNo","description","unitPrice","unit","extendedPrice"],
+  //   body:[1,1,1,1,[0,/ [0-9\.]+ [A-Z]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "az-metro-distribution":{
+  //   regex:/^[0-9]+ [0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["cases","code","description","upc","unitPrice","discount","deposit","tax","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "trading-corp":{
+  //   regex:/^[A-Z0-9-A-Z0-9a-z]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["item","description","qty","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "nassau":{
+  //   regex:/^[0-9]+ [A-Z]+ [0-9]+ [0-9]+ .+ [0-9\.]+ [A-Z]+ [0-9\.]+$/,
+  //   header:["qtyOrdered","unit","qty","itemNo","description","unitPrice","priceUnit","extendedPrice"],
+  //   body:[1,1,1,1,[0,/ [0-9\.]+ [A-Z]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "lucky-Traders":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qtY","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "tropicana":{
+  //   regex:/^.+ [0-9]+ [0-9. /a-z]+$/,
+  //   header:["description","qty","unitPrice"],
+  //   body:[[0,/[0-9]+ [0-9. /a-z]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },
+  // "karison-food-Snacks":{
+  //   regex:/^.+ [0-9\.]+ [0-9\.]+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["name","unitPrice","oz","case","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9\.]+ [0-9\.]+ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "m-sy-marketing":{
+  //   regex:/^[A-Z A-Z 0-9a-z]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["activity","description","qty","unitPrice","extendedPrice"],
+  //   body:[3,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "concept-food-US":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "good-luck-int":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["cases","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "preferred-beverage-dist":{
+  //   regex:/^[0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "grace-lafe":{
+  //   regex:/^[0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["upc","itemNo","description","unitPrice","discount","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "tuscan":{
+  //   regex:/^[0-9 A-Z A-Z A-Z A-Z-0-9]+ .+ [0-9]+ [0-9\. A-Za-z]+ [0-9\.]+$/,
+  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
+  //   body:[7,[0,/ [0-9]+ [0-9\. A-Za-z]+ [0-9\.]+$/],1,2,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },// not complete
+  // "meenaxi-Enterprise":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "sa-distribution":{
+  //   regex:/^[0-9]+ [A-Z A-Z A-Z A-Z 0-9 A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,6,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "triboro-wholesale":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "kadakia-international-group":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "samar-trading-corp":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "apna-bazar":{
+  //   regex:/^[A-Z-A-Z]+ .+ [0-9]+ [0-9\.]+ [0-9\.T]+$/,
+  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  // },//not complete
+  // "aroma-flavor":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "northeast-banana":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  // },
+  // "karison-food-snacks2":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "lezza-food":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "hamd-distribution":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "baawarchi":{
+  //   regex:/^.+ [A-Z0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","itemNo","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[A-Z0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "mfried-store-fixture-inc":{
+  //   regex:/^[0-9]+ [A-Z0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "gurme":{
+  //   regex:/^[0-9]+ [A-Z0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "crown-of-east":{
+  //   regex:/^.+ [A-Z]+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","um","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[A-Z]+ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "jcw-importandexport":{
+  //   regex:/^[0-9]+ [0-9A-Z-]+ .+ [0-9\.]+ [0-9\.T]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.T]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "guru-nanak":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "valente-yeast-inc":{
+  //   regex:/^[0-9]+ [0-9]+ [0-9]+ [A-Z]+ [A-Z]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["mfgId","qtyOrdered","qty","um","brand","Description","itemNo","unitPrice","extendedPrice"],
+  //   body:[1,1,1,1,1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "online-mr-inc":{
+  //   regex:/^[0-9]+ [0-9A-Z A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,2,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "business-international":{
+  //   regex:/^[0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "bhavani-fruit-vegetables":{
+  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "best-cakes-distribution":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "musco-food-corporation":{
+  //   regex:/^[0-9]+ [A-Z A-Z]+ .+ [0-9/A-Z]+ [0-9\.]+ [0-9\.]+ [A-Z]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["id","brand","description","pack","qtyOrdered","qty","um","unitPrice","casePrice","extendedPrice"],
+  //   body:[1,2,[0,/ [0-9/A-Z]+ [0-9\.]+ [0-9\.]+ [A-Z]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
+  // "nirav-india-groceries":{
+  //   regex:/^.+ [0-9\. A-Z]+ [0-9\.]+ [0-9\.]+$/,
+  //   header:["description","qty","unitPrice","extendedPrice"],
+  //   body:[[0,/[0-9\. A-Z]+ [0-9\.]+ [0-9\.]+$/],2,1,1],
+  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  // },
 }
