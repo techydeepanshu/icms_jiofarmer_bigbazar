@@ -512,7 +512,7 @@ const DisplayData = (props) => {
           products = convertToUpperCase(products);
 
           console.log("OCERDATa", ocrData);
-          console.log(products);
+          //console.log(products);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
