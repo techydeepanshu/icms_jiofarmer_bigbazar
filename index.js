@@ -227,6 +227,7 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const data = req.body;
   const { invoiceName, itemName, value } = data;
+  console.log(data,"Mongo PUT Request Data");
   let options = {
     method: "PUT",
     url: `http://3.91.159.202:3001/invoice/${getDBInvoiceName(
