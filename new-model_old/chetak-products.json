@@ -1,0 +1,2822 @@
+{
+  "CAS DRM01": {
+    "Item": "CAS DRM01",
+    "Description": "Deep Rea Soak&BoilKalaChana (12)",
+    "Quantity": "12",
+    "Price": "21.8",
+    "sku": "",
+    "POS": "DEEP TEA",
+    "Barcode": "011433153218",
+    "PosSKU": "5314"
+  },
+  "CAS DDL2": {
+    "Item": "CAS DDL2",
+    "Description": "Deep Dai Dahi Lowfat 2lb (8)",
+    "Quantity": "8",
+    "Price": "17.36",
+    "sku": "Deep-Dai-Dahi-Lowfat-21b-(8)",
+    "POS": "DEEP ARVI",
+    "Barcode": "011433159999",
+    "PosSKU": "4836"
+  },
+  "CAS DDL5": {
+    "Item": "CAS DDL5",
+    "Description": "Deep Dai Dahi Lowfat 5lb (6)",
+    "Quantity": "6",
+    "Price": "30.66",
+    "sku": "Deep-Dai-Dahi-Lowfat-51b-(6)",
+    "POS": "DEEP ARVI",
+    "Barcode": "011433159999",
+    "PosSKU": "4836"
+  },
+  "CAS DDW2": {
+    "Item": "CAS DDW2",
+    "Description": "Deep Dai Dahi Whl milk 2lb (8)",
+    "Quantity": "8",
+    "Price": "17.36",
+    "sku": "Deep-Dai-Dahi-Whl-milk-21b-(8)",
+    "POS": "WHOLE MILK",
+    "Barcode": "8716200478205",
+    "PosSKU": "15429"
+  },
+  "CAS DDW5": {
+    "Item": "CAS DDW5",
+    "Description": "Deep Dai Dahi Whlemlk 5lb (6)",
+    "Quantity": "6",
+    "Price": "30.66",
+    "sku": "Deep-Dai-Dahi-Whlemlk-51b-(6)",
+    "POS": "DEEP ARVI",
+    "Barcode": "011433159999",
+    "PosSKU": "4836"
+  },
+  "CAS DB21": {
+    "Item": "CAS DB21",
+    "Description": "Deep Dai Raw Paneer 12oz. (20)",
+    "Quantity": "20",
+    "Price": "63.95",
+    "sku": "Deep-Dai-Raw-Paneer-12oz.-(20)",
+    "POS": "DEEP PANEER RAW",
+    "Barcode": "011433134811",
+    "PosSKU": "5183"
+  },
+  "CAS DB22": {
+    "Item": "CAS DB22",
+    "Description": "Deep Dai Raw Paneer 2.5 lbs (10)",
+    "Quantity": "10",
+    "Price": "104.75",
+    "sku": "Deep-Dai-Raw-Paneer-2.5-lbs-(10)",
+    "POS": "DEEP PANEER RAW",
+    "Barcode": "011433134811",
+    "PosSKU": "5183"
+  },
+  "CAS AM43": {
+    "Item": "CAS AM43",
+    "Description": "Amul cheese Block 2.2lb (12)",
+    "Quantity": "12",
+    "Price": "123.26",
+    "sku": "Amul-cheese-Block-2.2lb-(12)",
+    "POS": "AMUL CHEESE BLOCK  SG264...",
+    "Barcode": "8901262020060",
+    "PosSKU": "1017"
+  },
+  "CAS RP2N": {
+    "Item": "CAS RP2N",
+    "Description": "Deep Dry Raw Peanut 4lb (10)",
+    "Quantity": "10",
+    "Price": "53.2",
+    "sku": "Deep-Dry-Raw-Peanut-41b-(10)",
+    "POS": "RAW PEANUTS",
+    "Barcode": "1018",
+    "PosSKU": "16606"
+  },
+  "CAS TCEPZ": {
+    "Item": "CAS TCEPZ",
+    "Description": "Deep Ind EggplntNaanPiza9oz (12)",
+    "Quantity": "12",
+    "Price": "23.46",
+    "sku": "Deep-Ind-EggplntNaanPiza9oz-(12)",
+    "POS": "DEEP ROASTED EGGPLANT NAAN PIZZA",
+    "Barcode": "011433131087",
+    "PosSKU": "5253"
+  },
+  "CAS ISMJT": {
+    "Item": "CAS ISMJT",
+    "Description": "Deep Ind Smsa jlpnchse 36 (5)",
+    "Quantity": "5",
+    "Price": "41.91",
+    "sku": "Deep-Ind-Smsa-jlpnchse-36-(5)",
+    "POS": "DEEP MAIDA ",
+    "Barcode": "011433158312",
+    "PosSKU": "4820"
+  },
+  "CAS 162": {
+    "Item": "CAS 162",
+    "Description": "Deep Sna Papadi 12.3oz (12)",
+    "Quantity": "12",
+    "Price": "21.84",
+    "sku": "Deep-Sna-Papadi-12.3oz-(12)",
+    "POS": "SOAN PAPDI",
+    "Barcode": "8904063205001",
+    "PosSKU": "8214"
+  },
+  "CAS USB": {
+    "Item": "CAS USB",
+    "Description": "Deep Sou Sambhar 10oz. (12)",
+    "Quantity": "12",
+    "Price": "44.01",
+    "sku": "Deep-Sou-Sambhar-10oz.-(12)",
+    "POS": "UDUPI SAMBHAR",
+    "Barcode": "011433150231",
+    "PosSKU": "20661"
+  },
+  "CAS M27": {
+    "Item": "CAS M27",
+    "Description": "Maharani Elayada 14.loz (12)",
+    "Quantity": "12",
+    "Price": "17",
+    "sku": "Maharani-Elayada-14.loz-(12)",
+    "POS": "MAHARANIS CHOICE ELAYADA M27",
+    "Barcode": "5340400000",
+    "PosSKU": "53404"
+  },
+  "CAS M18": {
+    "Item": "CAS M18",
+    "Description": "Maharani Grated Coconut14.1 (24)",
+    "Quantity": "24",
+    "Price": "26.51",
+    "sku": "Maharani-Grated-Coconut14.1-(24)",
+    "POS": "GRATED COCONUT",
+    "Barcode": "075627131130",
+    "PosSKU": "24973"
+  },
+  "CAS M2": {
+    "Item": "CAS M2",
+    "Description": "Maharani Idiyappam14.loz (12)",
+    "Quantity": "12",
+    "Price": "50.26",
+    "sku": "Maharani-Idiyappam14.loz-(12)",
+    "POS": "MAHARANIS  CHOICE IDIYAPPAM",
+    "Barcode": "8906047695129",
+    "PosSKU": "11972"
+  },
+  "CAS M3": {
+    "Item": "CAS M3",
+    "Description": "Maharani Masala Dosa 14.loz(12)",
+    "Quantity": "12",
+    "Price": "20.15",
+    "sku": "Maharani-Masala-Dosa-14.loz(12)",
+    "POS": "MAHARANIS  CHOICE MASALA DOSA  M3",
+    "Barcode": "8906047695068",
+    "PosSKU": "11973"
+  },
+  "CAS M1": {
+    "Item": "CAS M1",
+    "Description": "Maharani Porotta Malabar12.3 (30)",
+    "Quantity": "30",
+    "Price": "21.24",
+    "sku": "Maharani-Porotta-Malabar12.3-(30)",
+    "POS": "MAHARANIS MALABAR POROTTA  M1",
+    "Barcode": "8906047695013",
+    "PosSKU": "11971"
+  },
+  "CAS M24": {
+    "Item": "CAS M24",
+    "Description": "Maharani Veg. Cutlet 10.6oz (12)",
+    "Quantity": "12",
+    "Price": "49.8",
+    "sku": "Maharani-Veg.-Cutlet-10.6oz-(12)",
+    "POS": "MAHARANIS CHOICE VEG CUTLET",
+    "Barcode": "8906047695280",
+    "PosSKU": "11980"
+  },
+  "CAS ML17": {
+    "Item": "CAS ML17",
+    "Description": "Mirch Ma Aloo Puri 15.75oz (12)",
+    "Quantity": "12",
+    "Price": "26.48",
+    "sku": "Mirch-Ma-Aloo-Puri-15.75oz-(12)",
+    "POS": "MIRCH MASALA DAL PURI",
+    "Barcode": "011433134484",
+    "PosSKU": "13153"
+  },
+  "CAS ML16": {
+    "Item": "CAS ML16",
+    "Description": "Mirch Ma Dal Puri 15.775oz (12)",
+    "Quantity": "12",
+    "Price": "20.88",
+    "sku": "Mirch-Ma-Dal-Puri-15.775oz-(12)",
+    "POS": "MIRCH MASALA DAL PURI",
+    "Barcode": "011433134484",
+    "PosSKU": "13153"
+  },
+  "CAS ML25": {
+    "Item": "CAS ML25",
+    "Description": "Mirch Ma WholeWheatRoti30pc (6)",
+    "Quantity": "6",
+    "Price": "34.52",
+    "sku": "Mirch-Ma-WholeWheatRoti30pc-(6)",
+    "POS": "MCVITIES WHOLEWHEAT MARIE",
+    "Barcode": "8906033741618",
+    "PosSKU": "12649"
+  },
+  "CAS RCC": {
+    "Item": "CAS RCC",
+    "Description": "Mirch Ma MM Chhole Chatpate (12)",
+    "Quantity": "12",
+    "Price": "18.68",
+    "sku": "Mirch-Ma-MM-Chhole-Chatpate-(12)",
+    "POS": "CHAT PATS",
+    "Barcode": "7232462912390",
+    "PosSKU": "32848"
+  },
+  "CAS SF06": {
+    "Item": "CAS SF06",
+    "Description": "Sujata F Methi Paratha 5P (24)",
+    "Quantity": "24",
+    "Price": "32.62",
+    "sku": "Sujata-F-Methi-Paratha-5P-(24)",
+    "POS": "SUJATA ATTA",
+    "Barcode": "1950",
+    "PosSKU": "18560"
+  },
+  "CAS SF09": {
+    "Item": "CAS SF09",
+    "Description": "Sujata F Plain Paratha 24P (6)",
+    "Quantity": "6",
+    "Price": "27.24",
+    "sku": "Sujata-F-Plain-Paratha-24P-(6)",
+    "POS": "PLAIN PARATHA",
+    "Barcode": "9556587988107",
+    "PosSKU": "10000"
+  },
+  "CAS SF12": {
+    "Item": "CAS SF12",
+    "Description": "Sujata F Tawa Chapati 30P (12)",
+    "Quantity": "12",
+    "Price": "47.04",
+    "sku": "Sujata-F-Tawa-Chapati-30P-(12)",
+    "POS": "SUJATA TAWA CHAPATI 12 PC",
+    "Barcode": "871950001153",
+    "PosSKU": "18580"
+  },
+  "CAS TCST": {
+    "Item": "CAS TCST",
+    "Description": "Tandoor 8 chkn Samosa 7 oz (12)",
+    "Quantity": "12",
+    "Price": "41.33",
+    "sku": "Tandoor-8-chkn-Samosa-7-oz-(12)",
+    "POS": "TANDOOR CHEF CHICKEN SAMOSA",
+    "Barcode": "011433131605",
+    "PosSKU": "19508"
+  },
+  "CAS TCC": {
+    "Item": "CAS TCC",
+    "Description": "Tandoor Chkn Curry 10oz. (12)",
+    "Quantity": "12",
+    "Price": "45",
+    "sku": "Tandoor-Chkn-Curry-10oz.-(12)",
+    "POS": "TANDOOR CHEF CHICKEN CURRY",
+    "Barcode": "O11433061124",
+    "PosSKU": "19506"
+  },
+  "CAS GIVMB": {
+    "Item": "CAS GIVMB",
+    "Description": "Tandoor Veg.Msl.Burger10oz (12)",
+    "Quantity": "12",
+    "Price": "30.08",
+    "sku": "Tandoor-Veg.Msl.Burger10oz-(12)",
+    "POS": "MOMO VEG",
+    "Barcode": "967990",
+    "PosSKU": "13319"
+  },
+  "CAS 24UID": {
+    "Item": "CAS 24UID",
+    "Description": "Udupi Fr F.P.Idli 24 Pcs (8)",
+    "Quantity": "8",
+    "Price": "38.2",
+    "sku": "Udupi-Fr-F.P.Idli-24-Pcs-(8)",
+    "POS": "UDUPI NIPPAT",
+    "Barcode": "011433158138",
+    "PosSKU": "51662"
+  },
+  "CAS IUMV": {
+    "Item": "CAS IUMV",
+    "Description": "Udupi Fr F.P.Menduvada 24 Pcs (8)",
+    "Quantity": "8",
+    "Price": "37.34",
+    "sku": "Udupi-Fr-F.P.Menduvada-24-Pcs-(8)",
+    "POS": "MEDU VADA",
+    "Barcode": "8904063256812",
+    "PosSKU": "4678"
+  },
+  "CAS UMD": {
+    "Item": "CAS UMD",
+    "Description": "Udupi Fr Masala Dosa 4pc (12)",
+    "Quantity": "12",
+    "Price": "22.55",
+    "sku": "Udupi-Fr-Masala-Dosa-4pc-(12)",
+    "POS": "UDUPI  AMLA PICKLE",
+    "Barcode": "011433157063",
+    "PosSKU": "20608"
+  },
+  "CAS UTT": {
+    "Item": "CAS UTT",
+    "Description": "Udupi Fr Onion Uttapam 4Pc (12)",
+    "Quantity": "12",
+    "Price": "22.53",
+    "sku": "Udupi-Fr-Onion-Uttapam-4Pc-(12)",
+    "POS": "UDUPI ONION UTTAPAM 4 PCS",
+    "Barcode": "011433150484",
+    "PosSKU": "20653"
+  },
+  "CAS URM": {
+    "Item": "CAS URM",
+    "Description": "Udupi Fr OnionRavaMasalaDoc (12)",
+    "Quantity": "12",
+    "Price": "22.55",
+    "sku": "Udupi-Fr-OnionRavaMasalaDoc-(12)",
+    "POS": "FRIED ONION",
+    "Barcode": "966680",
+    "PosSKU": "35899"
+  },
+  "CAS UTR": {
+    "Item": "CAS UTR",
+    "Description": "Udupi Fr Tamrind Rice 9oz. (12)",
+    "Quantity": "12",
+    "Price": "18.67",
+    "sku": "Udupi-Fr-Tamrind-Rice-9oz.-(12)",
+    "POS": "UDUPI TAMARIND RICE",
+    "Barcode": "011433150194",
+    "PosSKU": "20663"
+  },
+  "CAS UP16": {
+    "Item": "CAS UP16",
+    "Description": "Upvas RajgaroWhole14.loz (20)",
+    "Quantity": "20",
+    "Price": "32.08",
+    "sku": "Upvas-RajgaroWhole14.loz-(20)",
+    "POS": "RAJGARO FLOUR",
+    "Barcode": "024433001236",
+    "PosSKU": "46716"
+  },
+  "CAS F89": {
+    "Item": "CAS F89",
+    "Description": "Upvas SingodaFlour28.2oz (10)",
+    "Quantity": "10",
+    "Price": "25.48",
+    "sku": "Upvas-SingodaFlour28.2oz-(10)",
+    "POS": "DEEP UPVAS SINGODA FLOUR",
+    "Barcode": "011433153607",
+    "PosSKU": "5342"
+  },
+  "CAS UP11": {
+    "Item": "CAS UP11",
+    "Description": "Upvas Upvas Moraiyo 14oz (20)",
+    "Quantity": "20",
+    "Price": "24.38",
+    "sku": "Upvas-Upvas-Moraiyo-14oz-(20)",
+    "POS": "DEEP UPVAS MORAIYO FLOUR",
+    "Barcode": "011433153690",
+    "PosSKU": "5337"
+  },
+  "CAS UP12": {
+    "Item": "CAS UP12",
+    "Description": "Upvas Upvas Moraiyo 28oz (10)",
+    "Quantity": "10",
+    "Price": "19.43",
+    "sku": "Upvas-Upvas-Moraiyo-28oz-(10)",
+    "POS": "DEEP UPVAS MORAIYO FLOUR",
+    "Barcode": "011433153690",
+    "PosSKU": "5337"
+  },
+  "CAS UP13": {
+    "Item": "CAS UP13",
+    "Description": "Upvas UpvasMoraiyoFlr14o (20)",
+    "Quantity": "20",
+    "Price": "21.63",
+    "sku": "Upvas-UpvasMoraiyoFlr14o-(20)",
+    "POS": "NIRAV MORAIYO",
+    "Barcode": "024433001731",
+    "PosSKU": "44021"
+  },
+  "CAS UP17": {
+    "Item": "CAS UP17",
+    "Description": "Upvas UpvasRajgaro28.2oz (10)",
+    "Quantity": "10",
+    "Price": "19.43",
+    "sku": "Upvas-UpvasRajgaro28.2oz-(10)",
+    "POS": "ABC PASTA",
+    "Barcode": "660550003175",
+    "PosSKU": "442"
+  },
+  "CAS UP14": {
+    "Item": "CAS UP14",
+    "Description": "Upvas UpvasRajgaroFlr14o (20)",
+    "Quantity": "20",
+    "Price": "21.63",
+    "sku": "Upvas-UpvasRajgaroFlr14o-(20)",
+    "POS": "ABC PASTA",
+    "Barcode": "660550003175",
+    "PosSKU": "442"
+  },
+  "CAS UP15": {
+    "Item": "CAS UP15",
+    "Description": "Upvas UpvasRajgaroFlr28o (10)",
+    "Quantity": "10",
+    "Price": "18.88",
+    "sku": "Upvas-UpvasRajgaroFlr28o-(10)",
+    "POS": "ABC PASTA",
+    "Barcode": "660550003175",
+    "PosSKU": "442"
+  },
+  "CAS 123S": {
+    "Item": "CAS 123S",
+    "Description": "Bansi Bhel PuriKit14.loz (16)",
+    "Quantity": "16",
+    "Price": "46.38",
+    "sku": "Bansi-Bhel-PuriKit14.loz-(16)",
+    "POS": "BANSI PURI FOR BHEL   121S",
+    "Barcode": "011433157919",
+    "PosSKU": "1909"
+  },
+  "CAS HSMJ": {
+    "Item": "CAS HSMJ",
+    "Description": "Deep Fro 8JlpnoChs Smsa 7oz (12)",
+    "Quantity": "12",
+    "Price": "27.77",
+    "sku": "Deep-Fro-8JlpnoChs-Smsa-7oz-(12)",
+    "POS": "DEEP  ROTI",
+    "Barcode": "011433051118",
+    "PosSKU": "33994"
+  },
+  "CAS EBM": {
+    "Item": "CAS EBM",
+    "Description": "Deep Fro Bhindi Masala 10oz (12)",
+    "Quantity": "12",
+    "Price": "26.49",
+    "sku": "Deep-Fro-Bhindi-Masala-10oz-(12)",
+    "POS": "DEEP BOONDI",
+    "Barcode": "011433021258",
+    "PosSKU": "4864"
+  },
+  "CAS ECH": {
+    "Item": "CAS ECH",
+    "Description": "Deep Fro Chhole 10oz (12)",
+    "Quantity": "12",
+    "Price": "26.49",
+    "sku": "Deep-Fro-Chhole-10oz-(12)",
+    "POS": "DEEP CHHOLE",
+    "Barcode": "011433031370",
+    "PosSKU": "4885"
+  },
+  "CAS HVSI": {
+    "Item": "CAS HVSI",
+    "Description": "Deep Fro Cktl. SpringRol135P (24)",
+    "Quantity": "24",
+    "Price": "67.13",
+    "sku": "Deep-Fro-Cktl.-SpringRol135P-(24)",
+    "POS": "DEEP  ROTI",
+    "Barcode": "011433051118",
+    "PosSKU": "33994"
+  },
+  "CAS I5P": {
+    "Item": "CAS I5P",
+    "Description": "Deep Fro Ckt1PotatoSmsa50pc (24)",
+    "Quantity": "24",
+    "Price": "52.74",
+    "sku": "Deep-Fro-Ckt1PotatoSmsa50pc-(24)",
+    "POS": "POTATOES PACK",
+    "Barcode": "033383536507",
+    "PosSKU": "46091"
+  },
+  "CAS SDK": {
+    "Item": "CAS SDK",
+    "Description": "Deep Fro Dal Makhani 10 oz. (12)",
+    "Quantity": "12",
+    "Price": "18.68",
+    "sku": "Deep-Fro-Dal-Makhani-10-oz.-(12)",
+    "POS": "DEEP AMLA",
+    "Barcode": "011433159869",
+    "PosSKU": "4833"
+  },
+  "CAS BR27": {
+    "Item": "CAS BR27",
+    "Description": "Deep Fro Deep ChoralFafda7oz (24)",
+    "Quantity": "24",
+    "Price": "28.91",
+    "sku": "Deep-Fro-DeepChoralFafda7oz-(24)",
+    "POS": "DEEP AMLA",
+    "Barcode": "011433159869",
+    "PosSKU": "4833"
+  },
+  "CAS JPS": {
+    "Item": "CAS JPS",
+    "Description": "Deep Fro Jumbo Punjbi 8pc (8)",
+    "Quantity": "8",
+    "Price": "33.44",
+    "sku": "Deep-Fro-Jumbo-Punjbi-8pc-(8)",
+    "POS": "JUMBO PUNJABI SAMOSA 25 PC",
+    "Barcode": "749088800385",
+    "PosSKU": "9723"
+  },
+  "CAS IJPS": {
+    "Item": "CAS IJPS",
+    "Description": "Deep Fro Jumbo Samosa 15pc (4)",
+    "Quantity": "4",
+    "Price": "26.77",
+    "sku": "Deep-Fro-Jumbo-Samosa-15pc-(4)",
+    "POS": "SAWERA JUMBO SAMOSA 25 PCS",
+    "Barcode": "723246283111",
+    "PosSKU": "17455"
+  },
+  "CAS EMK": {
+    "Item": "CAS EMK",
+    "Description": "Deep Fro Malai Kofta 10oz (12)",
+    "Quantity": "12",
+    "Price": "41.36",
+    "sku": "Deep-Fro-Malai-Kofta-10oz-(12)",
+    "POS": "DEEP  ROTI",
+    "Barcode": "011433051118",
+    "PosSKU": "33994"
+  },
+  "CAS EMP": {
+    "Item": "CAS EMP",
+    "Description": "Deep Fro Mutter Paneer 10oz (12)",
+    "Quantity": "12",
+    "Price": "34.17",
+    "sku": "Deep-Fro-Mutter-Paneer-10oz-(12)",
+    "POS": "MTR MUTTER PANEER",
+    "Barcode": "840965001663",
+    "PosSKU": "13598"
+  },
+  "CAS DF13": {
+    "Item": "CAS DF13",
+    "Description": "Deep Fro Onion Pakora 10oz (24)",
+    "Quantity": "24",
+    "Price": "42.15",
+    "sku": "Deep-Fro-Onion-Pakora-10oz-Z(24)",
+    "POS": "FRIED ONION",
+    "Barcode": "966680",
+    "PosSKU": "35899"
+  },
+  "CAS EPM": {
+    "Item": "CAS EPM",
+    "Description": "Deep Fro Paneer Makhani10oz (12)",
+    "Quantity": "12",
+    "Price": "30.99",
+    "sku": "",
+    "POS": "MTR PANEER MAKHANI",
+    "Barcode": "840965000741",
+    "PosSKU": "13606"
+  },
+  "CAS ISMVT": {
+    "Item": "CAS ISMVT",
+    "Description": "Deep Fro Prty Smsa Veg 36pc (5)",
+    "Quantity": "5",
+    "Price": "44.11",
+    "sku": "Deep-Fro-Prty-Smsa-Veg-36pc-(5)",
+    "POS": "DEEP  ROTI",
+    "Barcode": "011433051118",
+    "PosSKU": "33994"
+  },
+  "CAS DF12": {
+    "Item": "CAS DF12",
+    "Description": "Deep Fro Spinach Pakora 10oz (24)",
+    "Quantity": "24",
+    "Price": "42.15",
+    "sku": "Deep-Fro-Spinach-Pakora-10oz-(24)",
+    "POS": "RED SPINACH",
+    "Barcode": "3366",
+    "PosSKU": "47046"
+  },
+  "CAS EUN": {
+    "Item": "CAS EUN",
+    "Description": "Deep Fro Undhiu 10 oz. (12)",
+    "Quantity": "12",
+    "Price": "26.49",
+    "sku": "Deep-Fro-Undhiu-10-oz.-(12)",
+    "POS": "DEEP  ROTI",
+    "Barcode": "011433051118",
+    "PosSKU": "33994"
+  },
+  "CAS VMB16": {
+    "Item": "CAS VMB16",
+    "Description": "Deep Fro Veg. MasalaBurgerFP (8)",
+    "Quantity": "8",
+    "Price": "67.96",
+    "sku": "Deep-Fro-Veg.-MasalaBurgerFP-(8)",
+    "POS": "MASALA BOX",
+    "Barcode": "3824",
+    "PosSKU": "41977"
+  },
+  "CAS DIQ35": {
+    "Item": "CAS DIQ35",
+    "Description": "Deep IQF Arvi 120z (24)",
+    "Quantity": "24",
+    "Price": "30.9",
+    "sku": "Deep-IQF-Arvi-120z-(24)",
+    "POS": "DEEP ARVI",
+    "Barcode": "011433159999",
+    "PosSKU": "4836"
+  },
+  "CAS DIQ11": {
+    "Item": "CAS DIQ11",
+    "Description": "Deep IQF Baby Bhindi 12oz (24)",
+    "Quantity": "24",
+    "Price": "26.58",
+    "sku": "Deep-IQF-Baby-Bhindi-12oz-(24)",
+    "POS": "DEEP BABY BHINDI",
+    "Barcode": "011433115339",
+    "PosSKU": "4840"
+  },
+  "CAS DIQ12": {
+    "Item": "CAS DIQ12",
+    "Description": "Deep IQF Bhindi Cut 12oz (24)",
+    "Quantity": "24",
+    "Price": "27.9",
+    "sku": "Deep-IQF-Bhindi-Cut-12oz-(24)",
+    "POS": "DEEP BHINDI CUT",
+    "Barcode": "011433117562",
+    "PosSKU": "4857"
+  },
+  "CAS DIQ36": {
+    "Item": "CAS DIQ36",
+    "Description": "Deep IQF Chauri 120z (24)",
+    "Quantity": "24",
+    "Price": "31.92",
+    "sku": "Deep-IQF-Chauri-120z-(24)",
+    "POS": "DEEP CHAURI",
+    "Barcode": "011433159982",
+    "PosSKU": "4882"
+  },
+  "CAS DIQ13": {
+    "Item": "CAS DIQ13",
+    "Description": "Deep IQF Chikoo Slices12oz (24)",
+    "Quantity": "24",
+    "Price": "37.86",
+    "sku": "Deep-IQF-Chikoo-Slices12oz-(24)",
+    "POS": "DEEP CHIKOO SLICES",
+    "Barcode": "011433117555",
+    "PosSKU": "4888"
+  },
+  "CAS DIQ77": {
+    "Item": "CAS DIQ77",
+    "Description": "Deep IQF Coconut Slices 120z (24)",
+    "Quantity": "24",
+    "Price": "46.38",
+    "sku": "Deep-IQF-Coconut-Slices-120z-(24)",
+    "POS": "DEEP COCONUT MILK",
+    "Barcode": "011433155564",
+    "PosSKU": "4907"
+  },
+  "CAS DIQ14": {
+    "Item": "CAS DIQ14",
+    "Description": "Deep IQF Drumsticks 120z (24)",
+    "Quantity": "24",
+    "Price": "29.22",
+    "sku": "Deep-IQF-Drumsticks-120z-(24)",
+    "POS": "DEEP DRUMSTICKS",
+    "Barcode": "011433115353",
+    "PosSKU": "4956"
+  },
+  "CAS DIQ99": {
+    "Item": "CAS DIQ99",
+    "Description": "Deep IQF Fro. Mango Pulp14.1 (24)",
+    "Quantity": "24",
+    "Price": "40.54",
+    "sku": "Deep-IQF-Fro.-Mango-Pulp14.1-(24)",
+    "POS": "LAFE MANGO PULP",
+    "Barcode": "023545002537",
+    "PosSKU": "10867"
+  },
+  "CAS DIQ63": {
+    "Item": "CAS DIQ63",
+    "Description": "Deep IQF Green Peas 2lb (12)",
+    "Quantity": "12",
+    "Price": "31.92",
+    "sku": "Deep-IQF-Green-Peas-21b-(12)",
+    "POS": "DOVE GREEN",
+    "Barcode": "8717644386163",
+    "PosSKU": "34836"
+  },
+  "CAS DIQ62": {
+    "Item": "CAS DIQ62",
+    "Description": "Deep IQF Green Peas 3.85lb (6)",
+    "Quantity": "6",
+    "Price": "28.17",
+    "sku": "Deep-IQF-Green-Peas-3.85lb-(6)",
+    "POS": "DOVE GREEN",
+    "Barcode": "8717644386163",
+    "PosSKU": "34836"
+  },
+  "CAS DIQ98": {
+    "Item": "CAS DIQ98",
+    "Description": "Deep IQF GreenMango12oz (24)",
+    "Quantity": "24",
+    "Price": "35.83",
+    "sku": "Deep-IQF-GreenMango12oz-(24)",
+    "POS": "GREEN MANGO",
+    "Barcode": "2028",
+    "PosSKU": "7677"
+  },
+  "CAS DIQ97": {
+    "Item": "CAS DIQ97",
+    "Description": "Deep IQF Mango Pulp 30oz (12)",
+    "Quantity": "12",
+    "Price": "41.14",
+    "sku": "Deep-IQF-Mango-Pulp-30oz-(12)",
+    "POS": "DEEP DRIED MANGO",
+    "Barcode": "011433131285",
+    "PosSKU": "34034"
+  },
+  "CAS DIQ96": {
+    "Item": "CAS DIQ96",
+    "Description": "Deep IQF Mango Slices 12oz (24)",
+    "Quantity": "24",
+    "Price": "58.25",
+    "sku": "Deep-IQF-Mango-Slices-12oz-(24)",
+    "POS": "DEEP DRIED MANGO",
+    "Barcode": "011433131285",
+    "PosSKU": "34034"
+  },
+  "CAS DIQ72": {
+    "Item": "CAS DIQ72",
+    "Description": "Deep IQF Methi Chopped 10oz (24)",
+    "Quantity": "24",
+    "Price": "41.09",
+    "sku": "Deep-IQF-Methi-Chopped-10oz-(24)",
+    "POS": "METHI ROTI",
+    "Barcode": "3889",
+    "PosSKU": "28538"
+  },
+  "CAS DIQ67": {
+    "Item": "CAS DIQ67",
+    "Description": "Deep IQF Peas & Carrot 2lb (12)",
+    "Quantity": "12",
+    "Price": "27.74",
+    "sku": "Deep-IQF-Peas-Carrot-21b-(12)",
+    "POS": "DEEP CARROT PICKLE",
+    "Barcode": "011433159753",
+    "PosSKU": "4869"
+  },
+  "CAS DIQ24": {
+    "Item": "CAS DIQ24",
+    "Description": "Deep IQF Punjabi Tinda12oz (24)",
+    "Quantity": "24",
+    "Price": "29.22",
+    "sku": "Deep-IQF-Punjabi-Tinda12oz-(24)",
+    "POS": "PUNJABI TINDA",
+    "Barcode": "8989",
+    "PosSKU": "16179"
+  },
+  "CAS DIQ42": {
+    "Item": "CAS DIQ42",
+    "Description": "Deep IQF ShreddedCoconut12o (24)",
+    "Quantity": "24",
+    "Price": "43.74",
+    "sku": "Deep-IQF-ShreddedCoconut12o-(24)",
+    "POS": "COCONUT OIL",
+    "Barcode": "665244047701",
+    "PosSKU": "4172"
+  },
+  "CAS DIQ41": {
+    "Item": "CAS DIQ41",
+    "Description": "Deep IQF ShreddedCoconut12o (12)",
+    "Quantity": "12",
+    "Price": "43.21",
+    "sku": "Deep-IQF-ShreddedCoconut12o-(12)",
+    "POS": "COCONUT OIL",
+    "Barcode": "665244047701",
+    "PosSKU": "4172"
+  },
+  "CAS DIQ27": {
+    "Item": "CAS DIQ27",
+    "Description": "Deep IQF Suran 120z (24)",
+    "Quantity": "24",
+    "Price": "26.58",
+    "sku": "Deep-IQF-Suran-120z-(24)",
+    "POS": "DEEP FANSI",
+    "Barcode": "011433159890",
+    "PosSKU": "4966"
+  },
+  "CAS F97": {
+    "Item": "CAS F97",
+    "Description": "Deep Flo MultiGrainFlour201 (2)",
+    "Quantity": "2",
+    "Price": "25.5",
+    "sku": "Deep-Flo-MultiGrainFlour201-(2)",
+    "POS": "DEEP MULTIGRAIN FLOUR",
+    "Barcode": "011433153676",
+    "PosSKU": "5151"
+  },
+  "CAS F26": {
+    "Item": "CAS F26",
+    "Description": "Deep Flo Ragi Flour 4Lbs (10)",
+    "Quantity": "10",
+    "Price": "35.4",
+    "sku": "Deep-Flo-Ragi-Flour-4Lbs-(10)",
+    "POS": "LAXMI RAGGI FLOUR",
+    "Barcode": "723246121468",
+    "PosSKU": "40895"
+  },
+  "CAS F47": {
+    "Item": "CAS F47",
+    "Description": "Deep Flo Rice Flour 2lb(20)",
+    "Quantity": "20",
+    "Price": "24.6",
+    "sku": "Deep-Flo-Rice-Flour-21b(20)",
+    "POS": "LAXMI RICE FLOUR",
+    "Barcode": "723246121192",
+    "PosSKU": "11187"
+  },
+  "CAS F48L": {
+    "Item": "CAS F48L",
+    "Description": "Deep Flo Rice Flour 8lb (5)",
+    "Quantity": "5",
+    "Price": "25.15",
+    "sku": "Deep-Flo-Rice-Flour-81b-(5)",
+    "POS": "LAXMI RICE FLOUR",
+    "Barcode": "723246121192",
+    "PosSKU": "11187"
+  },
+  "CAS F78": {
+    "Item": "CAS F78",
+    "Description": "Deep Flo Roasted UpmaMix4 lb (10)",
+    "Quantity": "10",
+    "Price": "34.4",
+    "sku": "Deep-Flo-Roasted-UpmaMix4-lb-(10)",
+    "POS": "ROASTED UPMA MIX",
+    "Barcode": "011433156592",
+    "PosSKU": "5255"
+  },
+  "CAS F49": {
+    "Item": "CAS F49",
+    "Description": "Deep Flo Sooji CorseFlr 2lb(20)",
+    "Quantity": "20",
+    "Price": "25",
+    "sku": "Deep-Flo-Sooji-CorseFlr-21b(20)",
+    "POS": "ROYAL SOOJI",
+    "Barcode": "745042004226",
+    "PosSKU": "47539"
+  },
+  "CAS F52": {
+    "Item": "CAS F52",
+    "Description": "Deep Flo Sooji CorseFlr 4lb (10)",
+    "Quantity": "10",
+    "Price": "25.7",
+    "sku": "Deep-Flo-Sooji-CorseFlr-4lb-(10)",
+    "POS": "ROYAL SOOJI",
+    "Barcode": "745042004226",
+    "PosSKU": "47539"
+  },
+  "CAS G10": {
+    "Item": "CAS G10",
+    "Description": "Deep Ghe Makhan Ghee 64 oz (6)",
+    "Quantity": "6",
+    "Price": "142.14",
+    "sku": "Deep-Ghe-Makhan-Ghee-64-oz-(6)",
+    "POS": "DEEP SEV",
+    "Barcode": "011433021357",
+    "PosSKU": "5267"
+  },
+  "CAS G9": {
+    "Item": "CAS G9",
+    "Description": "Deep Ghe Makhan Ghee 8 oz (12)",
+    "Quantity": "12",
+    "Price": "39.66",
+    "sku": "Deep-Ghe-Makhan-Ghee-8-oz-(12)",
+    "POS": "DEEP SEV",
+    "Barcode": "011433021357",
+    "PosSKU": "5267"
+  },
+  "CAS 137": {
+    "Item": "CAS 137",
+    "Description": "Deep Kha cholafali Khakhr6.3 (32)",
+    "Quantity": "32",
+    "Price": "32.77",
+    "sku": "Deep-Kha-cholafali-Khakhr6.3-(32)",
+    "POS": "DEEP CHORAFALI KHAKHARA",
+    "Barcode": "011433155717",
+    "PosSKU": "4891"
+  },
+  "CAS 122": {
+    "Item": "CAS 122",
+    "Description": "Deep Kha Dbl.Methi.Msla 7oz (32)",
+    "Quantity": "32",
+    "Price": "32.77",
+    "sku": "Deep-Kha-Dbl.Methi.Msla-7oz-(32)",
+    "POS": "DEEP  METHI KHARI",
+    "Barcode": "0011433156356",
+    "PosSKU": "4814"
+  },
+  "CAS 114": {
+    "Item": "CAS 114",
+    "Description": "Deep Kha Jeera Khakhra 7oz. (32)",
+    "Quantity": "32",
+    "Price": "32.78",
+    "sku": "Deep-Kha-Jeera-Khakhra-7oz.-(32)",
+    "POS": "KHAKHRA JEERA",
+    "Barcode": "723246292106",
+    "PosSKU": "7006"
+  },
+  "CAS 113": {
+    "Item": "CAS 113",
+    "Description": "Deep Kha Masala Khakhara 7oz (32)",
+    "Quantity": "32",
+    "Price": "32.78",
+    "sku": "Deep-Kha-Masala-Khakhara-7oz-(32)",
+    "POS": "MASALA KHARI",
+    "Barcode": "011433156042",
+    "PosSKU": "5104"
+  },
+  "CAS 111": {
+    "Item": "CAS 111",
+    "Description": "Deep Kha Methi Khakhra 7oz. (32)",
+    "Quantity": "32",
+    "Price": "32.78",
+    "sku": "Deep-Kha-Methi-Khakhra-7oz.-(32)",
+    "POS": "METHI KHAKHRA",
+    "Barcode": "723246292137",
+    "PosSKU": "7012"
+  },
+  "CAS 112": {
+    "Item": "CAS 112",
+    "Description": "Deep Kha OriginalKhakhra7oz (32)",
+    "Quantity": "32",
+    "Price": "32.78",
+    "sku": "Deep-Kha-OriginalKhakhra7oz-(32)",
+    "POS": "DEEP ORIGINAL KHARI",
+    "Barcode": "011433156370",
+    "PosSKU": "5172"
+  },
+  "CAS 138": {
+    "Item": "CAS 138",
+    "Description": "Deep Kha Pizzakhakhara6.302 (32)",
+    "Quantity": "32",
+    "Price": "32.77",
+    "sku": "Deep-Kha-Pizzakhakhara6.302-(32)",
+    "POS": "DEEP BAJRI DHEBRA KHAKHARA",
+    "Barcode": "011433153348",
+    "PosSKU": "4842"
+  },
+  "CAS BS43": {
+    "Item": "CAS BS43",
+    "Description": "Deep Kha Twist.org.Khari7oz (24)",
+    "Quantity": "24",
+    "Price": "30.59",
+    "sku": "Deep-Kha-Twist.org.Khari7oz-(24)",
+    "POS": "DEEP KAMAR KAS",
+    "Barcode": "011433114578",
+    "PosSKU": "5056"
+  },
+  "TRY P77L": {
+    "Item": "TRY P77L",
+    "Description": "Deep PasTandoori Paste 25.5o (12)",
+    "Quantity": "12",
+    "Price": "37.15",
+    "sku": "Deep-PasTandoori-Paste-25.5o-(12)",
+    "POS": "AHMED TANDOORI PASTE",
+    "Barcode": "054529007019",
+    "PosSKU": "686"
+  },
+  "TRY P81": {
+    "Item": "TRY P81",
+    "Description": "Deep Pas Vindaloo Paste 10oz (12)",
+    "Quantity": "12",
+    "Price": "24.68",
+    "sku": "Deep-Pas-Vindaloo-Paste-10oz-(12)",
+    "POS": "DEEP VINDALOO PASTE",
+    "Barcode": "011433114004",
+    "PosSKU": "5360"
+  },
+  "TRY P36": {
+    "Item": "TRY P36",
+    "Description": "Deep Pic Chundo 300z (12)",
+    "Quantity": "12",
+    "Price": "42.35",
+    "sku": "Deep-Pic-Chundo-300z-(12)",
+    "POS": "DEEP CHUNDO",
+    "Barcode": "011433113892",
+    "PosSKU": "4892"
+  },
+  "TRY P49": {
+    "Item": "TRY P49",
+    "Description": "Deep Pic Gorkeri 12oz (12)",
+    "Quantity": "12",
+    "Price": "21.45",
+    "sku": "Deep-Pic-Gorkeri-12oz-(12)",
+    "POS": "DEEP GORKERI MANGO PICKLE",
+    "Barcode": "011433113946",
+    "PosSKU": "4991"
+  },
+  "TRY P37": {
+    "Item": "TRY P37",
+    "Description": "Deep Pic Gorkeri 300z (12)",
+    "Quantity": "12",
+    "Price": "42.35",
+    "sku": "Deep-Pic-Gorkeri-300z-(12)",
+    "POS": "DEER     GUR",
+    "Barcode": "4040",
+    "PosSKU": "34161"
+  },
+  "TRY P34": {
+    "Item": "TRY P34",
+    "Description": "Deep Pic Green Chilli 24.7oz (12)",
+    "Quantity": "12",
+    "Price": "42.31",
+    "sku": "Deep-Pic-Green-Chilli-24.7oz-(12)",
+    "POS": "DEEP GREEN CHILLIES",
+    "Barcode": "011433157827",
+    "PosSKU": "5000"
+  },
+  "TRY P35": {
+    "Item": "TRY P35",
+    "Description": "Deep Pic Hot Lime Pkle 260z (12)",
+    "Quantity": "12",
+    "Price": "42.32",
+    "sku": "Deep-Pic-Hot-Lime-Pkle-260z-(12)",
+    "POS": "DEEP HOT LIME PICKLE",
+    "Barcode": "011433113977",
+    "PosSKU": "5021"
+  },
+  "TRY P66": {
+    "Item": "TRY P66",
+    "Description": "Deep Pic HotMangoPkl 26 oz. (12)",
+    "Quantity": "12",
+    "Price": "42.32",
+    "sku": "Deep-Pic-HotMangoPkl-26-oz.-(12)",
+    "POS": "DEEP KHAMAN",
+    "Barcode": "011433031257",
+    "PosSKU": "34070"
+  },
+  "CAS 84": {
+    "Item": "CAS 84",
+    "Description": "Deep Sna All in One 12oz (15)",
+    "Quantity": "15",
+    "Price": "24.12",
+    "sku": "Deep-Sna-All-in-One-12oz-(15)",
+    "POS": "DEEP ALL IN ONE",
+    "Barcode": "011433152167",
+    "PosSKU": "4819"
+  },
+  "CAS 25": {
+    "Item": "CAS 25",
+    "Description": "Deep Sna Bhel Mix 12 oz. (12)",
+    "Quantity": "12",
+    "Price": "30.01",
+    "sku": "Deep-Sna-Bhel-Mix-12-oz.-(12)",
+    "POS": "DEEP BHEL MIX",
+    "Barcode": "011433021319",
+    "PosSKU": "4856"
+  },
+  "CAS 41": {
+    "Item": "CAS 41",
+    "Description": "Deep Sna Boondi 14.1oz. (12)",
+    "Quantity": "12",
+    "Price": "30.11",
+    "sku": "Deep-Sna-Boondi-14.1oz.-(12)",
+    "POS": "DEEP BOONDI",
+    "Barcode": "011433021258",
+    "PosSKU": "4864"
+  },
+  "CAS DTB": {
+    "Item": "CAS DTB",
+    "Description": "Deep Sna Deep Total Bhel3.5 (24)",
+    "Quantity": "24",
+    "Price": "25.25",
+    "sku": "Deep-Sna-Deep-Total-Bhel3.5-(24)",
+    "POS": "DEEP BHEL MIX",
+    "Barcode": "011433021319",
+    "PosSKU": "4856"
+  },
+  "CAS 57": {
+    "Item": "CAS 57",
+    "Description": "Deep Sna Ganthiya 14.1oz (12)",
+    "Quantity": "12",
+    "Price": "30.11",
+    "sku": "Deep-Sna-Ganthiya-14.1oz-(12)",
+    "POS": "DEEP GAATHIYA",
+    "Barcode": "011433021333",
+    "PosSKU": "4973"
+  },
+  "CAS 11": {
+    "Item": "CAS 11",
+    "Description": "Deep Sna Hot Mix 12oz. (20)",
+    "Quantity": "20",
+    "Price": "55.79",
+    "sku": "Deep-Sna-Hot-Mix-12oz.-(20)",
+    "POS": "DEEP HOT MIX",
+    "Barcode": "011433133029",
+    "PosSKU": "5024"
+  },
+  "CAS 50": {
+    "Item": "CAS 50",
+    "Description": "Deep Sna HotMix-x hot 12oz (20)",
+    "Quantity": "20",
+    "Price": "55.75",
+    "sku": "Deep-Sna-HotMix-x-hot-12oz-(20)",
+    "POS": "DEEP HOT MIX  X  HOT",
+    "Barcode": "011433021111",
+    "PosSKU": "5025"
+  },
+  "CAS 103": {
+    "Item": "CAS 103",
+    "Description": "Deep Sna Jhal Muri 100z (15)",
+    "Quantity": "15",
+    "Price": "23.19",
+    "sku": "Deep-Sna-Jhal-Muri-100z-(15)",
+    "POS": "DEEP JHALMURI",
+    "Barcode": "011433161503",
+    "PosSKU": "5042"
+  },
+  "CAS 86": {
+    "Item": "CAS 86",
+    "Description": "Deep Sna Kaju Mix 12oz (15)",
+    "Quantity": "15",
+    "Price": "30.87",
+    "sku": "Deep-Sna-Kaju-Mix-12oz-(15)",
+    "POS": "DEEP KAJU MIX",
+    "Barcode": "011433152204",
+    "PosSKU": "5051"
+  },
+  "CAS 91": {
+    "Item": "CAS 91",
+    "Description": "Deep Sna Masala Boondi 10oz (15)",
+    "Quantity": "15",
+    "Price": "24.09",
+    "sku": "Deep-Sna-Masala-Boondi-10oz-(15)",
+    "POS": "DEEP BOONDI",
+    "Barcode": "011433021258",
+    "PosSKU": "4864"
+  },
+  "CAS 58": {
+    "Item": "CAS 58",
+    "Description": "Deep Sna Papadi 14.1oz (12)",
+    "Quantity": "12",
+    "Price": "30.11",
+    "sku": "Deep-Sna-Papadi-14.1oz-(12)",
+    "POS": "SOAN PAPDI",
+    "Barcode": "8904063205001",
+    "PosSKU": "8214"
+  },
+  "CAS 92": {
+    "Item": "CAS 92",
+    "Description": "Deep Sna Plain Boondi 12oz (15)",
+    "Quantity": "15",
+    "Price": "24.12",
+    "sku": "Deep-Sna-Plain-Boondi-12oz-(15)",
+    "POS": "DEEP BOONDI",
+    "Barcode": "011433021258",
+    "PosSKU": "4864"
+  },
+  "CAS 99": {
+    "Item": "CAS 99",
+    "Description": "Deep Sna Ratlami Sev 12oz (15)",
+    "Quantity": "15",
+    "Price": "26.82",
+    "sku": "Deep-Sna-Ratlami-Sev-12oz-(15)",
+    "POS": "RATLAMI SEV",
+    "Barcode": "808550100030",
+    "PosSKU": "2804"
+  },
+  "CAS 60": {
+    "Item": "CAS 60",
+    "Description": "Deep Sna Sev Regular 12 oz (12)",
+    "Quantity": "12",
+    "Price": "30.09",
+    "sku": "Deep-Sna-Sev-Regular-12-oz-(12)",
+    "POS": "JOY REGULAR SEV",
+    "Barcode": "680617709499",
+    "PosSKU": "38862"
+  },
+  "CAS K36": {
+    "Item": "CAS K36",
+    "Description": "Bansi Kolh.Jaggery 10Lb (4)",
+    "Quantity": "4",
+    "Price": "24.6",
+    "sku": "Bansi-Kolh.Jaggery-10Lb-(4)",
+    "POS": "BANSI JAGGERY",
+    "Barcode": "011433120203",
+    "PosSKU": "27969"
+  },
+  "CAS P18": {
+    "Item": "CAS P18",
+    "Description": "Bansi Kurmura Ladoo 3.5oz (50)",
+    "Quantity": "50",
+    "Price": "36.11",
+    "sku": "Bansi-Kurmura-Ladoo-3.5oz-(50)",
+    "POS": "BANSI KURMURA LADOO",
+    "Barcode": "011433157889",
+    "PosSKU": "27977"
+  },
+  "CAS MH1": {
+    "Item": "CAS MH1",
+    "Description": "Bansi Phool Makhana 7oz (20)",
+    "Quantity": "20",
+    "Price": "72.69",
+    "sku": "Bansi-Phool-Makhana-7oz-(20)",
+    "POS": "BANSI PHOOL MAKHANA",
+    "Barcode": "011433158718",
+    "PosSKU": "1901"
+  },
+  "CAS G144L": {
+    "Item": "CAS G144L",
+    "Description": "Bansi Poha Thick 4lb(10)",
+    "Quantity": "10",
+    "Price": "34.5",
+    "sku": "Bansi-Poha-Thick-4lb(10)",
+    "POS": "POHA THICK",
+    "Barcode": "963820",
+    "PosSKU": "45978"
+  },
+  "CAS G53": {
+    "Item": "CAS G53",
+    "Description": "Bansi Rst. Gulabichana14 (20)",
+    "Quantity": "20",
+    "Price": "38.78",
+    "sku": "Bansi-Rst.-Gulabichana14-(20)",
+    "POS": "ROASTED CHANA",
+    "Barcode": "793585018385",
+    "PosSKU": "18259"
+  },
+  "CAS T69": {
+    "Item": "CAS T69",
+    "Description": "Boost Boost Powder 15.75 (24)",
+    "Quantity": "24",
+    "Price": "119.04",
+    "sku": "Boost-Boost-Powder-15.75-(24)",
+    "POS": "BOOST 200G",
+    "Barcode": "8901571000265",
+    "PosSKU": "31752"
+  },
+  "CAS K38N": {
+    "Item": "CAS K38N",
+    "Description": "Britanni Bourbon 3.5oz (30)",
+    "Quantity": "30",
+    "Price": "12.66",
+    "sku": "Britanni-Bourbon-3.5oz-(30)",
+    "POS": "BRITANNIA BOURBON ORIGINAL",
+    "Barcode": "8901063136441",
+    "PosSKU": "3159"
+  },
+  "CAS K38L": {
+    "Item": "CAS K38L",
+    "Description": "Britanni Bourbon 6.9 oz (24)",
+    "Quantity": "24",
+    "Price": "17.15",
+    "sku": "Britanni-Bourbon-6.9-oz-(24)",
+    "POS": "BRITANNIA BOURBON ORIGINAL",
+    "Barcode": "8901063136441",
+    "PosSKU": "3159"
+  },
+  "CAS BN121": {
+    "Item": "CAS BN121",
+    "Description": "Britanni Bourbon Cappuccino (24)",
+    "Quantity": "24",
+    "Price": "8.45",
+    "sku": "Britanni-Bourbon-Cappuccino-(24)",
+    "POS": "BRITANIA BOURBON CAPPUCCINO",
+    "Barcode": "6291007908169",
+    "PosSKU": "31931"
+  },
+  "CAS BN113": {
+    "Item": "CAS BN113",
+    "Description": "Britanni Chocolush 2.64oz (24)",
+    "Quantity": "24",
+    "Price": "17.32",
+    "sku": "Britanni-Chocolush-2.64oz-(24)",
+    "POS": "BRITANNIA PURE MAGIC CHOCOLUSH",
+    "Barcode": "8901063151543",
+    "PosSKU": "3201"
+  },
+  "CAS BN14": {
+    "Item": "CAS BN14",
+    "Description": "Britanni Digestive 14.11 oz (12)",
+    "Quantity": "12",
+    "Price": "19.31",
+    "sku": "Britanni-Digestive-14.11-oz-(12)",
+    "POS": "BRITANIA DIGESTIVE ORIGINAL",
+    "Barcode": "8901063151024",
+    "PosSKU": "3137"
+  },
+  "CAS BN71": {
+    "Item": "CAS BN71",
+    "Description": "Britanni Fifty Fifty 2.2oz (48)",
+    "Quantity": "48",
+    "Price": "11.09",
+    "sku": "Britanni-Fifty-Fifty-2.2oz-(48)",
+    "POS": "BRITANIA  FIFTY FIFTY",
+    "Barcode": "6291007901092",
+    "PosSKU": "31922"
+  },
+  "CAS R53P": {
+    "Item": "CAS R53P",
+    "Description": "Britanni GDPistaAlmond2.63o (48)",
+    "Quantity": "48",
+    "Price": "18.32",
+    "sku": "Britanni-GDPistaAlmond2.63o-(48)",
+    "POS": "LOOSE ALMOND",
+    "Barcode": "91111",
+    "PosSKU": "11658"
+  },
+  "CAS K46P": {
+    "Item": "CAS K46P",
+    "Description": "Britanni Good day Cashew2.6 (48)",
+    "Quantity": "48",
+    "Price": "18.32",
+    "sku": "Britanni-Good-day-Cashew2.6-(48)",
+    "POS": "GOOD DAY",
+    "Barcode": "6291007901030",
+    "PosSKU": "7376"
+  },
+  "CAS K39": {
+    "Item": "CAS K39",
+    "Description": "Britanni Little Hearts 2.64 oz (72)",
+    "Quantity": "72",
+    "Price": "33.96",
+    "sku": "Britanni-Little-Hearts-2.64-oz-(72)",
+    "POS": "BRITANNIA LITTLE HEARTS",
+    "Barcode": "8901063136250",
+    "PosSKU": "3181"
+  },
+  "CAS K40S": {
+    "Item": "CAS K40S",
+    "Description": "Britanni Marie Gold 3.1oz (60)",
+    "Quantity": "60",
+    "Price": "16.92",
+    "sku": "Britanni-Marie-Gold-3.1oz-(60)",
+    "POS": "BRITANNIA MARIE GOLD",
+    "Barcode": "8901063023901",
+    "PosSKU": "3182"
+  },
+  "CAS K40": {
+    "Item": "CAS K40",
+    "Description": "Britanni Marie Gold 5.29oz (60)",
+    "Quantity": "60",
+    "Price": "28.33",
+    "sku": "Britanni-Marie-Gold-FP-(10)",
+    "POS": "BRITANNIA MARIE GOLD",
+    "Barcode": "8901063023901",
+    "PosSKU": "3182"
+  },
+  "CAS BN119": {
+    "Item": "CAS BN119",
+    "Description": "Britanni Marie Gold FP (10)",
+    "Quantity": "10",
+    "Price": "19.13",
+    "sku": "Britanni-Marie-Gold-FP-(10)",
+    "POS": "BRITANNIA MARIA GOLD",
+    "Barcode": "8901063013018",
+    "PosSKU": "31965"
+  },
+  "CAS BN25": {
+    "Item": "CAS BN25",
+    "Description": "Britanni Milk Bikis 3.17oz (24)",
+    "Quantity": "24",
+    "Price": "7.73",
+    "sku": "Britanni-Milk-Bikis-3.17oz-(24)",
+    "POS": "BRITANNIA MILK BIKIS",
+    "Barcode": "8901063136434",
+    "PosSKU": "3188"
+  },
+  "CAS K47S": {
+    "Item": "CAS K47S",
+    "Description": "Britanni Nice Time 2.8oz (30)",
+    "Quantity": "30",
+    "Price": "10.56",
+    "sku": "Britanni-Nice-Time-2.8oz-(30)",
+    "POS": "BRITANNIA NICE TIME",
+    "Barcode": "8901063136687",
+    "PosSKU": "3192"
+  },
+  "CAS BN12": {
+    "Item": "CAS BN12",
+    "Description": "Britanni Nutri.5 Grain8.7oz (18)",
+    "Quantity": "18",
+    "Price": "27.08",
+    "sku": "Britanni-Nutri.5-Grain8.7oz-(18)",
+    "POS": "BRITANNIA NUTRI 5 GRAIN",
+    "Barcode": "6291007905564",
+    "PosSKU": "3196"
+  },
+  "CAS BN69": {
+    "Item": "CAS BN69",
+    "Description": "Britanni Punjabi Cookies 21.9 (8)",
+    "Quantity": "8",
+    "Price": "21.47",
+    "sku": "Britanni-Punjabi-Cookies-21.9-(8)",
+    "POS": "BRITANIA PUNJABI COOKIES",
+    "Barcode": "6291007906035",
+    "PosSKU": "3148"
+  },
+  "CAS BG4": {
+    "Item": "CAS BG4",
+    "Description": "Britanni Pure Cow Ghee 500 M1 (24)",
+    "Quantity": "24",
+    "Price": "135.86",
+    "sku": "Britanni-Pure-Cow-Ghee-500-M1-(24)",
+    "POS": "COW GHEE",
+    "Barcode": "8904109465284",
+    "PosSKU": "15329"
+  },
+  "CAS BN112": {
+    "Item": "CAS BN112",
+    "Description": "Britanni Tiger Glucose FP (5)",
+    "Quantity": "5",
+    "Price": "7.07",
+    "sku": "Britanni-Tiger-Glucose-FP-(5)",
+    "POS": "GLUCOSE D",
+    "Barcode": "8901207006913",
+    "PosSKU": "7203"
+  },
+  "CAS BN114": {
+    "Item": "CAS BN114",
+    "Description": "Britanni Time Pass 1.4oz (40)",
+    "Quantity": "40",
+    "Price": "7.04",
+    "sku": "Britanni-Time-Pass-1.4oz-(40)",
+    "POS": "BRITANNIA TIME PASS",
+    "Barcode": "6291007906479",
+    "PosSKU": "3207"
+  },
+  "CAS BN27": {
+    "Item": "CAS BN27",
+    "Description": "Britanni Wafer Caramel 6.2 oz (24)",
+    "Quantity": "24",
+    "Price": "33.69",
+    "sku": "Britanni-Wafer-Caramel-6.2-oz-(24)",
+    "POS": "M AND M CARAMEL",
+    "Barcode": "04014407",
+    "PosSKU": "11823"
+  },
+  "CAS BN72M": {
+    "Item": "CAS BN72M",
+    "Description": "Britanni Wheat Rusk 21.51oz (12)",
+    "Quantity": "12",
+    "Price": "26.16",
+    "sku": "Britanni-Wheat-Rusk-21.51oz-(12)",
+    "POS": "BRITANNIA WHEAT RUSK BN7 2M",
+    "Barcode": "8901063151567",
+    "PosSKU": "3217"
+  },
+  "CAS Q22": {
+    "Item": "CAS Q22",
+    "Description": "Complan Complan Choco.17.5 (30)",
+    "Quantity": "30",
+    "Price": "165.33",
+    "sku": "Complan-Complan-Choco.17.5-(30)",
+    "POS": "COMPLAN CHOCOLATE",
+    "Barcode": "8901542001932",
+    "PosSKU": "4261"
+  },
+  "CAS BS23": {
+    "Item": "CAS BS23",
+    "Description": "Deep Panipuri 4 Oz. (16)",
+    "Quantity": "16",
+    "Price": "31.24",
+    "sku": "Deep-Panipuri-4-Oz.-(16)",
+    "POS": "PANI PURI",
+    "Barcode": "068656002052",
+    "PosSKU": "15005"
+  },
+  "CAS F24S": {
+    "Item": "CAS F24S",
+    "Description": "Deep Flo AllPurpF1Maida2 (20)",
+    "Quantity": "20",
+    "Price": "26.8",
+    "sku": "Deep-Flo-AllPurpF1Maida2-(20)",
+    "POS": "DEEP MAIDA FLOUR",
+    "Barcode": "0011433153089",
+    "PosSKU": "5089"
+  },
+  "CAS F24L": {
+    "Item": "CAS F24L",
+    "Description": "Deep Flo All Purp F1 Maida 4 (10)",
+    "Quantity": "10",
+    "Price": "25.7",
+    "sku": "Deep-Flo-All-Purp-F1-Maida-4-(10)",
+    "POS": "DEEP MAIDA FLOUR",
+    "Barcode": "0011433153089",
+    "PosSKU": "5089"
+  },
+  "CAS F35L": {
+    "Item": "CAS F35L",
+    "Description": "Deep Flo Besan 8 lb (5)",
+    "Quantity": "5",
+    "Price": "40",
+    "sku": "Deep-Flo-Besan-8-lb-(5)",
+    "POS": "DEEP BESAN",
+    "Barcode": "011433156141",
+    "PosSKU": "4849"
+  },
+  "CAS F73": {
+    "Item": "CAS F73",
+    "Description": "Deep Flo Crackwheat (Kansar) (10)",
+    "Quantity": "10",
+    "Price": "22.4",
+    "sku": "Deep-Flo-Crackwheat-(Kansar)-(10)",
+    "POS": "DEEP FADA KANSAR",
+    "Barcode": "011433158237",
+    "PosSKU": "4962"
+  },
+  "CAS F72": {
+    "Item": "CAS F72",
+    "Description": "Deep Flo Crackedwheat (Fada) (10)",
+    "Quantity": "10",
+    "Price": "22.4",
+    "sku": "Deep-Flo-Crackedwheat-(Fada)-(10)",
+    "POS": "DEEP FAFDA",
+    "Barcode": "011433150583",
+    "PosSKU": "4964"
+  },
+  "CAS F95": {
+    "Item": "CAS F95",
+    "Description": "Deep Flo MultiGrainFlour 101(4)",
+    "Quantity": "4",
+    "Price": "30",
+    "sku": "Deep-Flo-MultiGrainFlour-101(4)",
+    "POS": "DEEP MULTIGRAIN FLOUR",
+    "Barcode": "011433153676",
+    "PosSKU": "5151"
+  },
+  "CAS 11M": {
+    "Item": "CAS 11M",
+    "Description": "Mirch Ma Punjabi Mx-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Punjabi-Mx-MM-12oz-(15)",
+    "POS": "MIRCH MASALA PUNJABI MIX",
+    "Barcode": "011433061452",
+    "PosSKU": "13185"
+  },
+  "CAS 17M": {
+    "Item": "CAS 17M",
+    "Description": "Mirch Ma Ratlami SevMM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Ratlami-SevMM-12oz-(15)",
+    "POS": "RATLAMI SEV",
+    "Barcode": "808550100030",
+    "PosSKU": "2804"
+  },
+  "CAS 76M": {
+    "Item": "CAS 76M",
+    "Description": "Mirch Ma SandwichBhakrwd10o (15)",
+    "Quantity": "15",
+    "Price": "26.04",
+    "sku": "Mirch-Ma-SandwichBhakrwd10o-(15)",
+    "POS": "CHOC SANDWICH",
+    "Barcode": "9556439890374",
+    "PosSKU": "62718"
+  },
+  "CAS 25M": {
+    "Item": "CAS 25M",
+    "Description": "Mirch Ma Sev-MM 12 oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Sev-MM-12-oz-(15)",
+    "POS": "MIRCH MASALA LAHSUN SEV",
+    "Barcode": "011433158039",
+    "PosSKU": "13163"
+  },
+  "CAS 23M": {
+    "Item": "CAS 23M",
+    "Description": "Mirch Ma ThickSevHE-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-ThickSevHE-MM-12oz-(15)",
+    "POS": "POHA THICK",
+    "Barcode": "963820",
+    "PosSKU": "45978"
+  },
+  "CAS 16M": {
+    "Item": "CAS 16M",
+    "Description": "Mirch Ma Thin Sev-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Thin-Sev-MM-12oz-(15)",
+    "POS": "THICK SEV",
+    "Barcode": "051179975026",
+    "PosSKU": "9389"
+  },
+  "CAS 33M": {
+    "Item": "CAS 33M",
+    "Description": "Mirch Ma Tikha GathiaHot 12 (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Tikha-GathiaHot-12-(15)",
+    "POS": "MIRCH MASALA  TIKHA GANTHIA HOT",
+    "Barcode": "011433115711",
+    "PosSKU": "13140"
+  },
+  "CAS QT16": {
+    "Item": "CAS QT16",
+    "Description": "Quik Tea Masala Chai 17 oz (10)",
+    "Quantity": "10",
+    "Price": "55.11",
+    "sku": "Quik-Tea-Masala-Chai-17-oz-(10)",
+    "POS": "QUIK TEA",
+    "Barcode": "840839100799",
+    "PosSKU": "16304"
+  },
+  "CAS QT15": {
+    "Item": "CAS QT15",
+    "Description": "Quik Tea Masala Chai 8.5 oz (10)",
+    "Quantity": "10",
+    "Price": "30.05",
+    "sku": "Quik-Tea-Masala-Chai-8.5-oz-(10)",
+    "POS": "QUIK TEA",
+    "Barcode": "840839100799",
+    "PosSKU": "16304"
+  },
+  "CAS QT41": {
+    "Item": "CAS QT41",
+    "Description": "Quik Tea Uns. Lemongras 5.6(10)",
+    "Quantity": "10",
+    "Price": "30.04",
+    "sku": "Quik-Tea-Uns.-Lemongras-5.6(10)",
+    "POS": "QUIK TEA",
+    "Barcode": "840839100799",
+    "PosSKU": "16304"
+  },
+  "CAS QT26": {
+    "Item": "CAS QT26",
+    "Description": "Quik Tea Unsweet. Crd. Cha5.6 (10)",
+    "Quantity": "10",
+    "Price": "30.04",
+    "sku": "Quik-Tea-Unsweet.-Crd.-Cha5.6-(10)",
+    "POS": "QUIK TEA",
+    "Barcode": "840839100799",
+    "PosSKU": "16304"
+  },
+  "BAG G2": {
+    "Item": "BAG G2",
+    "Description": "Royal Basmatirice10lb (1)",
+    "Quantity": "1",
+    "Price": "11.1",
+    "sku": "Royal-Basmatirice101b-(1)",
+    "POS": "BROWN BASMATIRICE",
+    "Barcode": "962980",
+    "PosSKU": "3255"
+  },
+  "CAS K72L": {
+    "Item": "CAS K72L",
+    "Description": "Udupi Jaggery Pwd 2lb (10)",
+    "Quantity": "10",
+    "Price": "32.7",
+    "sku": "Udupi-Jaggery-Pwd-21b-(10)",
+    "POS": "KVL JAGGERY",
+    "Barcode": "643864550344",
+    "PosSKU": "40440"
+  },
+  "CAS K49": {
+    "Item": "CAS K49",
+    "Description": "Udupi Jaggery Square 2lb (20)",
+    "Quantity": "20",
+    "Price": "54.8",
+    "sku": "Udupi-Jaggery-Square-2lb-(20)",
+    "POS": "UDUPI JAGGERY SQUARE",
+    "Barcode": "011433115612",
+    "PosSKU": "20631"
+  },
+  "CAS K68": {
+    "Item": "CAS K68",
+    "Description": "Udupi MysoreMurmural0.50 (24)",
+    "Quantity": "24",
+    "Price": "40.25",
+    "sku": "Udupi-MysoreMurmural0.50-(24)",
+    "POS": "UDUPI MURUKULA",
+    "Barcode": "011433158169",
+    "PosSKU": "51661"
+  },
+  "CAS F27": {
+    "Item": "CAS F27",
+    "Description": "Udupi Fl Ragi Flour 2 lb (20)",
+    "Quantity": "20",
+    "Price": "42.2",
+    "sku": "Udupi-Fl-Ragi-Flour-2-lb-(20)",
+    "POS": "MAYIL RAGI FLOUR",
+    "Barcode": "8906005620668",
+    "PosSKU": "12564"
+  },
+  "CAS 42UT": {
+    "Item": "CAS 42UT",
+    "Description": "Udupi Pi MangoCutPckl10.5oz (12)",
+    "Quantity": "12",
+    "Price": "13.28",
+    "sku": "Udupi-Pi-MangoCutPckl10.5oz-(12)",
+    "POS": "UDUPI OM PUDI",
+    "Barcode": "011433158145",
+    "PosSKU": "20651"
+  },
+  "CAS 66UT": {
+    "Item": "CAS 66UT",
+    "Description": "Udupi Pi Red Chilli Pkl10.5 (12)",
+    "Quantity": "12",
+    "Price": "13.28",
+    "sku": "Udupi-Pi-Red-Chilli-Pkl10.5-(12)",
+    "POS": "UDUPI  RED CHILLI PICKLE",
+    "Barcode": "011433157094",
+    "PosSKU": "20613"
+  },
+  "CAS UP18": {
+    "Item": "CAS UP18",
+    "Description": "Upvas Upvas  Sabudana 1lb (20)",
+    "Quantity": "20",
+    "Price": "22.2",
+    "sku": "Upvas-Upvas-Sabudana-11b-(20)",
+    "POS": "SABUDANA 1 LBS",
+    "Barcode": "962710",
+    "PosSKU": "47704"
+  },
+  "CAS UP19": {
+    "Item": "CAS UP19",
+    "Description": "Upvas Upvas  Sabudana 2lb (20)",
+    "Quantity": "20",
+    "Price": "43.3",
+    "sku": "Upvas-Upvas-Sabudana-21b-(20)",
+    "POS": "SABUDANA 1 LBS",
+    "Barcode": "962710",
+    "PosSKU": "47704"
+  },
+  "BAG V78": {
+    "Item": "BAG V78",
+    "Description": "Sujata F Atta Multigrain20L (2)",
+    "Quantity": "2",
+    "Price": "42.3",
+    "sku": "Sujata-F-Atta-Multigrain20L-(2)",
+    "POS": "SUJATA MULTIGRAIN  ATTA",
+    "Barcode": "871950000514",
+    "PosSKU": "18573"
+  },
+  "BAG V57": {
+    "Item": "BAG V57",
+    "Description": "Sujata F Chakki Atta 20Lb (2)",
+    "Quantity": "2",
+    "Price": "21.4",
+    "sku": "Sujata-F-Chakki-Atta-20Lb-(2)",
+    "POS": "ELITE CHAKKI ATTA",
+    "Barcode": "8906007240062",
+    "PosSKU": "6218"
+  },
+  "BAG V28": {
+    "Item": "BAG V28",
+    "Description": "Sujata F Gold Atta 20lb (2)",
+    "Quantity": "2",
+    "Price": "29.4",
+    "sku": "Sujata-F-Gold-Atta-20lb-(2)",
+    "POS": "GOLD OIL",
+    "Barcode": "8901088017398",
+    "PosSKU": "17277"
+  },
+  "PK T22T": {
+    "Item": "PK T22T",
+    "Description": "Bansi Aam Pappad 7 oz (10)",
+    "Quantity": "10",
+    "Price": "9.04",
+    "sku": "Bansi-Aam-Pappad-7-oz-(10)",
+    "POS": "BANSI MAIZE POHA",
+    "Barcode": "011433156349",
+    "PosSKU": "1886"
+  },
+  "PK P16": {
+    "Item": "PK P16",
+    "Description": "Bansi Rajgira Chikki 3.5 (48)",
+    "Quantity": "48",
+    "Price": "31.79",
+    "sku": "Bansi-Rajgira-Chikki-3.5-(48)",
+    "POS": "BANSI RAJGIRA CHIKKI   P16",
+    "Barcode": "011433120548",
+    "PosSKU": "1910"
+  },
+  "PK P17": {
+    "Item": "PK P17",
+    "Description": "Bansi Rajgira Ladoo 7oz. (25)",
+    "Quantity": "25",
+    "Price": "27.61",
+    "sku": "Bansi-Rajgira-Ladoo-7oz.-(25)",
+    "POS": "BANSI RAJGIRA LADOO    P17",
+    "Barcode": "011433120555",
+    "PosSKU": "1911"
+  },
+  "PK MW45": {
+    "Item": "PK MW45",
+    "Description": "Chandan Pan Angoori 4.4 oz (8)",
+    "Quantity": "8",
+    "Price": "28.18",
+    "sku": "Chandan-Pan-Angoori-4.4-oz-(8)",
+    "POS": "CHANDAN PAN ANGOORI",
+    "Barcode": "8904018631510",
+    "PosSKU": "3745"
+  },
+  "PK S33": {
+    "Item": "PK S33",
+    "Description": "LG LG Hing 3.5oz (10)",
+    "Quantity": "10",
+    "Price": "24.82",
+    "sku": "LG-LG-Hing-3.5oz-(10)",
+    "POS": "LG HING ASAFOETIDA POWDER",
+    "Barcode": "840222000170",
+    "PosSKU": "11465"
+  },
+  "PK K23": {
+    "Item": "PK K23",
+    "Description": "MDH Kasuri Methi 3.5(6)",
+    "Quantity": "6",
+    "Price": "11.89",
+    "sku": "MDH-Kasuri-Methi-3.5(6)",
+    "POS": "MDH R PURE KASURI METHI",
+    "Barcode": "8906028553981",
+    "PosSKU": "42368"
+  },
+  "PK S24": {
+    "Item": "PK S24",
+    "Description": "Vandevi Vandevi-Hing1.75oz (10)",
+    "Quantity": "10",
+    "Price": "8.81",
+    "sku": "Vandevi-Vandevi-Hing1.75oz-(10)",
+    "POS": "VANDEVI HING",
+    "Barcode": "8906003910143",
+    "PosSKU": "21005"
+  },
+  "CAS AM42": {
+    "Item": "CAS AM42",
+    "Description": "Amul cheese 8 Chiplets (30)",
+    "Quantity": "30",
+    "Price": "82.62",
+    "sku": "Amul-cheese-8-Chiplets-(30)",
+    "POS": "AMUL CHEESE 8 CHIPLET",
+    "Barcode": "8901262020039",
+    "PosSKU": "1016"
+  },
+  "CAS 61": {
+    "Item": "CAS 61",
+    "Description": "Deep Sna Sev Thin 12 oz (12)",
+    "Quantity": "12",
+    "Price": "30.09",
+    "sku": "Deep-Sna-Sev-Thin-12-oz-(12)",
+    "POS": "DEEP SOYA SEV",
+    "Barcode": "011433152778",
+    "PosSKU": "34140"
+  },
+  "CAS DTB14": {
+    "Item": "CAS DTB14",
+    "Description": "Deep Sna Total Bhel FP 14oz (12)",
+    "Quantity": "12",
+    "Price": "32.51",
+    "sku": "Deep-Sna-Total-Bhel-FP-14oz-(12)",
+    "POS": "DEEP BHEL MIX",
+    "Barcode": "011433021319",
+    "PosSKU": "4856"
+  },
+  "CAS S18": {
+    "Item": "CAS S18",
+    "Description": "Deep Spi Cor-Cumin Pwd 14oz (20)",
+    "Quantity": "20",
+    "Price": "44.19",
+    "sku": "Deep-Spi-Cor-Cumin-Pwd-14oz-(20)",
+    "POS": "DEEP CUMIN POWDER",
+    "Barcode": "011433073165",
+    "PosSKU": "4929"
+  },
+  "CAS S14": {
+    "Item": "CAS S14",
+    "Description": "Deep Spi Corianderpdr14oz (20)",
+    "Quantity": "20",
+    "Price": "30.99",
+    "sku": "Deep-Spi-Corianderpdr14oz-(20)",
+    "POS": "CORIANDER SEEDS",
+    "Barcode": "793283753502",
+    "PosSKU": "19961"
+  },
+  "CAS S16": {
+    "Item": "CAS S16",
+    "Description": "Deep Spi Cumin Pwd 14oz(20)",
+    "Quantity": "20",
+    "Price": "52.99",
+    "sku": "Deep-Spi-Cumin-Pwd-14oz(20)",
+    "POS": "DEEP CUMIN POWDER",
+    "Barcode": "011433073165",
+    "PosSKU": "4929"
+  },
+  "CAS S15": {
+    "Item": "CAS S15",
+    "Description": "Deep Spi Cumin Seeds 140z (20)",
+    "Quantity": "20",
+    "Price": "49.79",
+    "sku": "Deep-Spi-Cumin-Seeds-140z-(20)",
+    "POS": "DEEP CUMIN SEEDS",
+    "Barcode": "011433073158",
+    "PosSKU": "4932"
+  },
+  "CAS S81": {
+    "Item": "CAS S81",
+    "Description": "Deep Spi Dill Seeds 7 oz (20)",
+    "Quantity": "20",
+    "Price": "19.89",
+    "sku": "Deep-Spi-Dill-Seeds-7-oz-(20)",
+    "POS": "SWAD DILL SEEDS",
+    "Barcode": "051179319806",
+    "PosSKU": "19076"
+  },
+  "CAS S25": {
+    "Item": "CAS S25",
+    "Description": "Deep Spi Garam Masala 14 oz (20)",
+    "Quantity": "20",
+    "Price": "66.2",
+    "sku": "Deep-Spi-Garam-Masala-14-oz-(20)",
+    "POS": "GARAM MASALA",
+    "Barcode": "011433071253",
+    "PosSKU": "4974"
+  },
+  "CAS S167": {
+    "Item": "CAS S167",
+    "Description": "Deep Spi KSHMIRIChiliPD14oz (20)",
+    "Quantity": "20",
+    "Price": "55.18",
+    "sku": "Deep-Spi-KSHMIRIChiliPD14oz-(20)",
+    "POS": "DEEP SEV",
+    "Barcode": "011433021357",
+    "PosSKU": "5267"
+  },
+  "CAS S73": {
+    "Item": "CAS S73",
+    "Description": "Deep Spi Methi Bhardo 7 oz (20)",
+    "Quantity": "20",
+    "Price": "24.29",
+    "sku": "Deep-Spi-Methi-Bhardo-7-oz-(20)",
+    "POS": "DEEP METHI BHARDO",
+    "Barcode": "011433116008",
+    "PosSKU": "34089"
+  },
+  "CAS S32": {
+    "Item": "CAS S32",
+    "Description": "Deep Spi Red Chili Crush7oz (20)",
+    "Quantity": "20",
+    "Price": "27.69",
+    "sku": "Deep-Spi-Red-Chili-Crush7oz-(20)",
+    "POS": "CHILLI CRUSHED",
+    "Barcode": "965260",
+    "PosSKU": "32951"
+  },
+  "CAS S30": {
+    "Item": "CAS S30",
+    "Description": "Deep Spi Red Chili X Hot7oz (20)",
+    "Quantity": "20",
+    "Price": "19.89",
+    "sku": "Deep-Spi-Red-Chili-X-Hot7oz-(20)",
+    "POS": "DEEP HOT CHIPS",
+    "Barcode": "011433021166",
+    "PosSKU": "34060"
+  },
+  "CAS S78": {
+    "Item": "CAS S78",
+    "Description": "Deep Spi Sesame Sds.Wshd7oz (20)",
+    "Quantity": "20",
+    "Price": "22.09",
+    "sku": "",
+    "POS": "DEEP SESAME SEEDS",
+    "Barcode": "011433158978",
+    "PosSKU": "5265"
+  },
+  "CAS S80": {
+    "Item": "CAS S80",
+    "Description": "Deep Spi Sesame Seeds Ntr. 7o (20)",
+    "Quantity": "20",
+    "Price": "19.89",
+    "sku": "Deep-Spi-Sesame-Sds.Wshd7oz-(20)",
+    "POS": "DEEP SESAME SEEDS NATURAL",
+    "Barcode": "011433112734",
+    "PosSKU": "5266"
+  },
+  "CAS S64": {
+    "Item": "CAS S64",
+    "Description": "Deep Spi Whole Chilli 3.5oz (30)",
+    "Quantity": "30",
+    "Price": "24.98",
+    "sku": "Deep-Spi-Whole-Chilli-3.5oz-(30)",
+    "POS": "DEER CHILLI WHOLE LONG S6",
+    "Barcode": "714760810990",
+    "PosSKU": "34186"
+  },
+  "CAS CW1": {
+    "Item": "CAS CW1",
+    "Description": "Deep Generic DrywholeCoconut22L (1)",
+    "Quantity": "1",
+    "Price": "75.02",
+    "sku": "Deep-Generic-DrywholeCoconut22L-(1)",
+    "POS": "GREEN COCONUT",
+    "Barcode": "99959",
+    "PosSKU": "7662"
+  },
+  "CAS T53": {
+    "Item": "CAS T53",
+    "Description": "Horlicks Horlicks Plain17.5 (24)",
+    "Quantity": "24",
+    "Price": "105.81",
+    "sku": "Horlicks-Horlicks-Plain17.5-(24)",
+    "POS": "HORLICKS PLAIN",
+    "Barcode": "8901571001354",
+    "PosSKU": "8895"
+  },
+  "CAS T53L": {
+    "Item": "CAS T53L",
+    "Description": "Horlicks Horlicks Plain2.2L (12)",
+    "Quantity": "12",
+    "Price": "99.26",
+    "sku": "Horlicks-Horlicks-Plain2.2L-(12)",
+    "POS": "HORLICKS PLAIN",
+    "Barcode": "8901571001354",
+    "PosSKU": "8895"
+  },
+  "CAS T66": {
+    "Item": "CAS T66",
+    "Description": "Horlicks HorlicksChoco.17.5 (24)",
+    "Quantity": "24",
+    "Price": "113.78",
+    "sku": "Horlicks-HorlicksChoco.17.5-(24)",
+    "POS": "HORLICKS ORIGINAL",
+    "Barcode": "5060113917652",
+    "PosSKU": "8893"
+  },
+  "CAS 55M": {
+    "Item": "CAS 55M",
+    "Description": "Mirch Ma Agra DalMoth 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Agra-DalMoth-12oz-(15)",
+    "POS": "MIRCH MASALA AGRA DAL MOOTH",
+    "Barcode": "011433158015",
+    "PosSKU": "13142"
+  },
+  "CAS 54M": {
+    "Item": "CAS 54M",
+    "Description": "Mirch Ma Aloo Bhujia 12 oz. (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Aloo-Bhujia-12-oz.-(15)",
+    "POS": "ALOO BHUJIA",
+    "Barcode": "8901414000056",
+    "PosSKU": "2533"
+  },
+  "CAS 20M": {
+    "Item": "CAS 20M",
+    "Description": "Mirch Ma Bhadran Moong 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Bhadran-Moong-12oz-(15)",
+    "POS": "MIRCH MASALA  BHADRAN MOONG",
+    "Barcode": "011433061278",
+    "PosSKU": "13129"
+  },
+  "CAS 31M": {
+    "Item": "CAS 31M",
+    "Description": "Mirch Ma Bombay Bh-Puri12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Bombay-Bh-Puri12oz-(15)",
+    "POS": "MIRCH MASALA  BOMBAY BHEL PURI",
+    "Barcode": "011433115728",
+    "PosSKU": "13130"
+  },
+  "CAS 13M": {
+    "Item": "CAS 13M",
+    "Description": "Mirch Ma Boondi - MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Boondi---MM-12oz-(15)",
+    "POS": "MAYA BOONDI",
+    "Barcode": "020843160075",
+    "PosSKU": "42070"
+  },
+  "CAS 29M": {
+    "Item": "CAS 29M",
+    "Description": "Mirch Ma Channa - MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "26.36",
+    "sku": "Mirch-Ma-Channa---MM-12oz-(15)",
+    "POS": "CHANNA DAL",
+    "Barcode": "200000705008",
+    "PosSKU": "3753"
+  },
+  "CAS 28M": {
+    "Item": "CAS 28M",
+    "Description": "Mirch Ma Channadal-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Channadal-MM-12oz-(15)",
+    "POS": "CHANNA DAL",
+    "Barcode": "200000705008",
+    "PosSKU": "3753"
+  },
+  "CAS 12M": {
+    "Item": "CAS 12M",
+    "Description": "Mirch Ma Chevda Mix-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Chevda-Mix-MM-12oz-(15)",
+    "POS": "MIRCH MASALA  CHEVDA MIX",
+    "Barcode": "011433061490",
+    "PosSKU": "13132"
+  },
+  "CAS 26M": {
+    "Item": "CAS 26M",
+    "Description": "Mirch Ma Chuckry-Stcksmm120 (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Chuckry-Stcksmm120-(15)",
+    "POS": "MIRCH MASALA CHUKRY STICKS",
+    "Barcode": "011433112482",
+    "PosSKU": "13150"
+  },
+  "CAS 27M": {
+    "Item": "CAS 27M",
+    "Description": "Mirch Ma Corn Chvda -MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Corn-Chvda--MM-12oz-(15)",
+    "POS": "CORN CHEWDA",
+    "Barcode": "808550100078",
+    "PosSKU": "2787"
+  },
+  "CAS 19M": {
+    "Item": "CAS 19M",
+    "Description": "Mirch Ma Dal Muth 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Dal-Muth-12oz-(15)",
+    "POS": "MIRCH MASALA  DAL MOTH",
+    "Barcode": "011433061193",
+    "PosSKU": "13134"
+  },
+  "CAS 15M": {
+    "Item": "CAS 15M",
+    "Description": "Mirch Ma Ganthiya-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Ganthiya-MM-12oz-(15)",
+    "POS": "MIRCH MASALA  GANTHIA",
+    "Barcode": "011433061476",
+    "PosSKU": "13135"
+  },
+  "CAS 21M": {
+    "Item": "CAS 21M",
+    "Description": "Mirch Ma GreenVatana-MM12oz (15)",
+    "Quantity": "15",
+    "Price": "26.36",
+    "sku": "Mirch-Ma-GreenVatana-MM12oz-(15)",
+    "POS": "GREEN TEA",
+    "Barcode": "799745281774",
+    "PosSKU": "7697"
+  },
+  "CAS 59M": {
+    "Item": "CAS 59M",
+    "Description": "Mirch Ma Khatta Mitha 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Khatta-Mitha-12oz-(15)",
+    "POS": "MIRCH MASALA KHATTA MITHA",
+    "Barcode": "011433153560",
+    "PosSKU": "42780"
+  },
+  "CAS 32M": {
+    "Item": "CAS 32M",
+    "Description": "Mirch Ma Madras Mix 12oz (15)",
+    "Quantity": "15",
+    "Price": "26.36",
+    "sku": "Mirch-Ma-Madras-Mix-12oz-(15)",
+    "POS": "MADRAS MIX",
+    "Barcode": "808550100177",
+    "PosSKU": "2796"
+  },
+  "CAS 73M": {
+    "Item": "CAS 73M",
+    "Description": "Mirch Ma Methi Puri 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.32",
+    "sku": "Mirch-Ma-Methi-Puri-12oz-(15)",
+    "POS": "MTR ALU METHI",
+    "Barcode": "840965001533",
+    "PosSKU": "13551"
+  },
+  "CAS 22M": {
+    "Item": "CAS 22M",
+    "Description": "Mirch Ma Moong Dal-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Moong-Dal-MM-12oz-(15)",
+    "POS": "AL AMIRA",
+    "Barcode": "5285002390242",
+    "PosSKU": "27147"
+  },
+  "CAS 78M": {
+    "Item": "CAS 78M",
+    "Description": "Mirch Ma Nylon Thin Sev 2402 (12)",
+    "Quantity": "12",
+    "Price": "29.1",
+    "sku": "Mirch-Ma-Nylon-Thin-Sev-2402-(12)",
+    "POS": "NYLON THIN SEV",
+    "Barcode": "011433152099",
+    "PosSKU": "13177"
+  },
+  "CAS 14M": {
+    "Item": "CAS 14M",
+    "Description": "Mirch Ma Papadi-MM 12oz (15)",
+    "Quantity": "15",
+    "Price": "25.31",
+    "sku": "Mirch-Ma-Papadi-MM-12oz-(15)",
+    "POS": "ZP KITCHEN 115 MM",
+    "Barcode": "6933445184865",
+    "PosSKU": "53336"
+  },
+  "CAS 57M": {
+    "Item": "CAS 57M",
+    "Description": "Mirch Ma Peanut Bhujia 12oz (15)",
+    "Quantity": "15",
+    "Price": "26.36",
+    "sku": "Mirch-Ma-Peanut-Bhujia-12oz-(15)",
+    "POS": "MIRCH MASALA PEANUT BHUJIA",
+    "Barcode": "011433153577",
+    "PosSKU": "42786"
+  },
+  "CAS AM20": {
+    "Item": "CAS AM20",
+    "Description": "Amul Chees Slice 7oz(30)",
+    "Quantity": "30",
+    "Price": "74.50",
+    "sku": "Amul-Chees-Slice-7oz(30)",
+    "POS": "AMUL CHEESE SLICES",
+    "Barcode": "656846570490",
+    "PosSKU": "1021"
+  },
+  "CAS BHT": {
+    "Item": "CAS BHT",
+    "Description": "Bhagwati HMStyle Thepla 90z(24)",
+    "Quantity": "24",
+    "Price": "30.14",
+    "sku": "Bhagwati-HMStyle-Thepla-90z(24)",
+    "POS": "BHAGWATIS METHI THEPLA",
+    "Barcode": "011433160070",
+    "PosSKU": "2270"
+  },
+  "CAS BMT": {
+    "Item": "CAS BMT",
+    "Description": "Bhagwati Muthia 12 oz. (24)",
+    "Quantity": "24",
+    "Price": "36.19",
+    "sku": "Bhagwati-Muthia-12-oz.-(24)",
+    "POS": "BHAGWATI MUTHIA",
+    "Barcode": "011433150750",
+    "PosSKU": "2265"
+  },
+  "CAS S23": {
+    "Item": "CAS S23",
+    "Description": "Deep Milk-Maya Powdl4oz(10)",
+    "Quantity": "10",
+    "Price": "46.30",
+    "sku": "Deep-Milk-Maya-Powdl4oz(10)",
+    "POS": "DEEP MILK MAVA POWDER",
+    "Barcode": "011433071246",
+    "PosSKU": "5125"
+  },
+  "CAS BR11": {
+    "Item": "CAS BR11",
+    "Description": "Deep Bre Aloo Paratha 4 pc(24)",
+    "Quantity": "24",
+    "Price": "37.40",
+    "sku": "Deep-Bre-Aloo-Paratha-4-pc(24)",
+    "POS": "DEEP PATRA",
+    "Barcode": "011433115384",
+    "PosSKU": "5194"
+  },
+  "CAS BR34": {
+    "Item": "CAS BR34",
+    "Description": "Deep Bre Coriander Kulcha4p(18)",
+    "Quantity": "18",
+    "Price": "23.48",
+    "sku": "Deep-Bre-Coriander-Kulcha4p(18)",
+    "POS": "DEEP CORIANDER KULCHA",
+    "Barcode": "011433150989",
+    "PosSKU": "4913"
+  },
+  "CAS BR38": {
+    "Item": "CAS BR38",
+    "Description": "Deep Bre F.P.GarlicNaanl2Pc(8)",
+    "Quantity": "8",
+    "Price": "34.16",
+    "sku": "Deep-Bre-F.P.GarlicNaanl2Pc(8)",
+    "POS": "GARLIC NAAN",
+    "Barcode": "011433161282",
+    "PosSKU": "4978"
+  },
+  "CAS BR31": {
+    "Item": "CAS BR31",
+    "Description": "Deep Bre FmlyPk 20pcParatha(8)",
+    "Quantity": "8",
+    "Price": "43.35",
+    "sku": "Deep-Bre-FmlyPk-20pcParatha(8)",
+    "POS": "ALU PARATHA",
+    "Barcode": "3327",
+    "PosSKU": "27298"
+  },
+  "CAS BR12": {
+    "Item": "CAS BR12",
+    "Description": "Deep Bre LachchaParathal20z(24)",
+    "Quantity": "24",
+    "Price": "34.74",
+    "sku": "Deep-Bre-LachchaParathal20z(24)",
+    "POS": "DEEP LACHCHA PARATHA",
+    "Barcode": "011433161909",
+    "PosSKU": "67092"
+  },
+  "CAS BR15": {
+    "Item": "CAS BR15",
+    "Description": "Deep Bre Methi Paratha 5 pc(24)",
+    "Quantity": "24",
+    "Price": "34.76",
+    "sku": "Deep-Bre-Methi-Paratha-5-pc(24)",
+    "POS": "DEEP METHI PARATHA",
+    "Barcode": "011433150033",
+    "PosSKU": "5121"
+  },
+  "CAS BR33": {
+    "Item": "CAS BR33",
+    "Description": "Deep Bre Paneer Kulcha 4pc(18)",
+    "Quantity": "18",
+    "Price": "32.50",
+    "sku": "Deep-Bre-Paneer-Kulcha-4pc(18)",
+    "POS": "DEEP PANEER KULCHA",
+    "Barcode": "011433150996",
+    "PosSKU": "5180"
+  },
+  "CAS BR21": {
+    "Item": "CAS BR21",
+    "Description": "Deep Bre Tandoori Roti 5pc(24)",
+    "Quantity": "24",
+    "Price": "42.37",
+    "sku": "Deep-Bre-Tandoori-Roti-5pc(24)",
+    "POS": "TANDOORI ROTI",
+    "Barcode": "894559000402",
+    "PosSKU": "13052"
+  },
+  "CAS FC14": {
+    "Item": "CAS FC14",
+    "Description": "Deep Chu Mrd.Tmato.ChtylOoz(12)",
+    "Quantity": "12",
+    "Price": "21.67",
+    "sku": "Deep-Chu-Mrd.Tmato.ChtylOoz(12)",
+    "POS": "DEEP CHAURI",
+    "Barcode": "011433159982",
+    "PosSKU": "4882"
+  },
+  "CAS CSMJ": {
+    "Item": "CAS CSMJ",
+    "Description": "Deep Fro 24 Jlpno ChsSmsa(8)",
+    "Quantity": "8",
+    "Price": "47.24",
+    "sku": "Deep-Fro-24-Jlpno-ChsSmsa(8)",
+    "POS": "DEEP AMLA",
+    "Barcode": "011433159869",
+    "PosSKU": "4833"
+  },
+  "CAS CSPZ": {
+    "Item": "CAS CSPZ",
+    "Description": "Deep Fro 24 Pizza Smsa(8)",
+    "Quantity": "8",
+    "Price": "47.24",
+    "sku": "Deep-Fro-24-Pizza-Smsa(8)",
+    "POS": "DEEP FAMOUS PIZZA",
+    "Barcode": "011433131957",
+    "PosSKU": "34040"
+  },
+  "CAS HDV": {
+    "Item": "CAS HDV",
+    "Description": "Deep Fro Dahi Vada 10pc(12)",
+    "Quantity": "12",
+    "Price": "21.07",
+    "sku": "Deep-Fro-Dahi-Vada-10pc(12)",
+    "POS": "DEEP BASA FOR DAHI VADA",
+    "Barcode": "011433161947",
+    "PosSKU": "67090"
+  },
+  "CAS DDSC": {
+    "Item": "CAS DDSC",
+    "Description": "Deep Fro DelSamo.w/Chtny.24(12)",
+    "Quantity": "12",
+    "Price": "56.40",
+    "sku": "Deep-Fro-DelSamo.w/Chtny.24(12)",
+    "POS": "DEEP SALSA",
+    "Barcode": "011433134132",
+    "PosSKU": "34128"
+  },
+  "CAS 30HDV": {
+    "Item": "CAS 30HDV",
+    "Description": "Deep Fro FP Dahi Vada 30pcs(8)",
+    "Quantity": "8",
+    "Price": "36.13",
+    "sku": "Deep-Fro-FP-Dahi-Vada-30pcs(8)",
+    "POS": "DEEP ARVI",
+    "Barcode": "011433159999",
+    "PosSKU": "4836"
+  },
+  "CAS DIQ37": {
+    "Item": "CAS DIQ37",
+    "Description": "Deep IQF Bhindi Cut 24oz(12)",
+    "Quantity": "12",
+    "Price": "26.38",
+    "sku": "Deep-IQF-Bhindi-Cut-24oz(12)",
+    "POS": "DEEP BHINDI CUT",
+    "Barcode": "011433117562",
+    "PosSKU": "4857"
+  },
+  "CAS DIQ16": {
+    "Item": "CAS DIQ16",
+    "Description": "Deep IQF Guvar Frozen 12oz(24)",
+    "Quantity": "24",
+    "Price": "33.18",
+    "sku": "Deep-IQF-Guvar-Frozen-12oz(24)-",
+    "POS": "GUVAR BEANS",
+    "Barcode": "2061",
+    "PosSKU": "7829"
+  },
+  "CAS DIQ19": {
+    "Item": "CAS DIQ19",
+    "Description": "Deep IQF Methi Blocks 12oz(24)",
+    "Quantity": "24",
+    "Price": "39.78",
+    "sku": "Deep-IQF-Methi-Blocks-12oz(24)-",
+    "POS": "METHI ROTI",
+    "Barcode": "3889",
+    "PosSKU": "28538"
+  },
+  "CAS DIQ25": {
+    "Item": "CAS DIQ25",
+    "Description": "Deep IQF Ratalu 120z(24)",
+    "Quantity": "24",
+    "Price": "46.38",
+    "sku": "Deep-IQF-Ratalu-120z(24)",
+    "POS": "DEEP MIXED VEGETABLE PARATHA 4 PCS",
+    "Barcode": "011433150927",
+    "PosSKU": "5130"
+  },
+  "CAS DIQ47": {
+    "Item": "CAS DIQ47",
+    "Description": "Deep IQF Red Baby Onionl2oz(24)",
+    "Quantity": "24",
+    "Price": "30.42",
+    "sku": "Deep-IQF-Red-Baby-Onionl2oz(24)-",
+    "POS": "DEER FRIED ONION",
+    "Barcode": "714760020610",
+    "PosSKU": "5435"
+  },
+  "CAS DIQ21": {
+    "Item": "CAS DIQ21",
+    "Description": "Deep IQF Sambhar Mix 12 oz(24)",
+    "Quantity": "24",
+    "Price": "30.18",
+    "sku": "Deep-IQF-Sambhar-Mix-12-oz(24)-",
+    "POS": "DEEP SAMBHAR MIX   DIQ21",
+    "Barcode": "011433153171",
+    "PosSKU": "5260"
+  },
+  "CAS DIQ29": {
+    "Item": "CAS DIQ29",
+    "Description": "Deep IQF SurtiPapdiLilval2o(24)",
+    "Quantity": "24",
+    "Price": "37.62",
+    "sku": "Deep-IQF-SurtiPapdiLilval2o(24)",
+    "POS": "DESI PAPDI",
+    "Barcode": "8001",
+    "PosSKU": "5578"
+  },
+  "CAS DIQ46": {
+    "Item": "CAS DIQ46",
+    "Description": "Deep IQF Tandaljo 12oz(24)",
+    "Quantity": "24",
+    "Price": "30.90",
+    "sku": "Deep-IQF-Tandaljo-12oz(24)-",
+    "POS": "DEEP HANDVA FLOUR",
+    "Barcode": "011433113786",
+    "PosSKU": "5011"
+  },
+  "CAS DIQ38": {
+    "Item": "CAS DIQ38",
+    "Description": "Deep IQF Tindora 24oz(12)",
+    "Quantity": "12",
+    "Price": "28.02",
+    "sku": "Deep-IQF-Tindora-24oz(12)",
+    "POS": "DEEP PREMIUM TINDORA",
+    "Barcode": "011433151474",
+    "PosSKU": "5215"
+  },
+  "CAS DIQ26": {
+    "Item": "CAS DIQ26",
+    "Description": "Deep IQF Tuver Lilva 24 Oz(12)",
+    "Quantity": "12",
+    "Price": "38.86",
+    "sku": "Deep-IQF-Tuver-Lilva-24-Oz(12)",
+    "POS": "VADILAL TUVER LILVA",
+    "Barcode": "8901777002667",
+    "PosSKU": "20986"
+  },
+  "CAS DIQ61": {
+    "Item": "CAS DIQ61",
+    "Description": "Deep IQF Wtr Chestnut Singoda(24)",
+    "Quantity": "24",
+    "Price": "52.97",
+    "sku": "Deep-IQF-Wtr-Chestnut-Singoda(24)-",
+    "POS": "DEEP SINGODA COOKED",
+    "Barcode": "011433153126",
+    "PosSKU": "5271"
+  },
+  "CAS 161": {
+    "Item": "CAS 161",
+    "Description": "Deep Sna Fafda 12.3oz(12)",
+    "Quantity": "12",
+    "Price": "44.01",
+    "sku": "Deep-Sna-Fafda-12.3oz(12)-",
+    "POS": "DEEP FAFDA",
+    "Barcode": "011433150583",
+    "PosSKU": "4964"
+  },
+  "CAS 155": {
+    "Item": "CAS 155",
+    "Description": "Deep Sna MasalaPapadi 8.80z(12)",
+    "Quantity": "12",
+    "Price": "43.99",
+    "sku": "Deep-Sna-MasalaPapadi-8.80z(12)",
+    "POS": "DEEP MASALA PAPADI",
+    "Barcode": "0011433162296",
+    "PosSKU": "67389"
+  },
+  "CAS UMM": {
+    "Item": "CAS UMM",
+    "Description": "Deep Sou MysorMasalaDosa4pc(12)",
+    "Quantity": "12",
+    "Price": "22.55",
+    "sku": "Deep-Sou-MysorMasalaDosa4pc(12)",
+    "POS": "DEEP MORAIYO",
+    "Barcode": "011433153713",
+    "PosSKU": "5147"
+  },
+  "CAS M15": {
+    "Item": "CAS M15",
+    "Description": "Maharani Parippuvada 10.6oz(12)",
+    "Quantity": "12",
+    "Price": "24.78",
+    "sku": "Maharani-Parippuvada-10.6oz(12)",
+    "POS": "MAHARANIS CHOICE PARIPPUVADA",
+    "Barcode": "2900377000109",
+    "PosSKU": "28370"
+  },
+  "CAS AM69": {
+    "Item": "CAS AM69",
+    "Description": "Amul Masti BM 33.81floz(12)",
+    "Quantity": "12",
+    "Price": "21.86",
+    "sku": "Amul-Masti-BM-33.81floz(12)",
+    "POS": "AMUL MASTI BUTTER MILK",
+    "Barcode": "8901262200233",
+    "PosSKU": "1035"
+  },
+  "CAS L43": {
+    "Item": "CAS L43",
+    "Description": "Bansi MahabalesChana14.1(24)",
+    "Quantity": "24",
+    "Price": "53.01",
+    "sku": "Bansi-MahabalesChana14.1(24)",
+    "POS": "BANSI MUNAKA",
+    "Barcode": "011433154215",
+    "PosSKU": "27988"
+  },
+  "CAS G28": {
+    "Item": "CAS G28",
+    "Description": "Bansi Roasted Channa 7oz(20)",
+    "Quantity": "20",
+    "Price": "22.10",
+    "sku": "Bansi-Roasted-Channa-7oz(20)",
+    "POS": "BANSI ROASTED SALTED CHANNA G21",
+    "Barcode": "011433110709",
+    "PosSKU": "1930"
+  },
+  "CAS G27": {
+    "Item": "CAS G27",
+    "Description": "Bansi RoastedChana14.1oz(20)",
+    "Quantity": "20",
+    "Price": "44.19",
+    "sku": "Bansi-RoastedChana14.1oz(20)",
+    "POS": "BANSI SOOJI",
+    "Barcode": "011433119092",
+    "PosSKU": "30812"
+  },
+  "CAS G51": {
+    "Item": "CAS G51",
+    "Description": "Bansi Rst MslaChanal4oz(20)",
+    "Quantity": "20",
+    "Price": "38.78",
+    "sku": "Bansi-Rst-MslaChanal4oz(20)",
+    "POS": "CHANA JOR",
+    "Barcode": "8906073088292",
+    "PosSKU": "55482"
+  },
+  "CAS G52": {
+    "Item": "CAS G52",
+    "Description": "Bansi Rst.GulabiChana7oz(20)",
+    "Quantity": "20",
+    "Price": "22.08",
+    "sku": "Bansi-Rst.GulabiChana7oz(20)",
+    "POS": "JOY CHANA",
+    "Barcode": "680617709130",
+    "PosSKU": "38809"
+  },
+  "CAS G46": {
+    "Item": "CAS G46",
+    "Description": "Bansi RstdSaltVatana 14oz(20)",
+    "Quantity": "20",
+    "Price": "44.18",
+    "sku": "Bansi-RstdSaltVatana-14oz(20)",
+    "POS": "BANSI ROASTED SALTED VATANA",
+    "Barcode": "011433152655",
+    "PosSKU": "1932"
+  },
+  "CAS K38S": {
+    "Item": "CAS K38S",
+    "Description": "Britanni Bourbon 13.7oz(24)",
+    "Quantity": "24",
+    "Price": "34.78",
+    "sku": "Britanni-Bourbon-13.7oz(24)",
+    "POS": "BRITANNIA BOURBON ORIGINAL",
+    "Barcode": "8901063136441",
+    "PosSKU": "3159"
+  },
+  "CAS BN76L": {
+    "Item": "CAS BN76L",
+    "Description": "Britanni Bourbon 27.5(8)",
+    "Quantity": "8",
+    "Price": "23.54",
+    "sku": "Britanni-Bourbon-27.5(8)",
+    "POS": "BRITANNIA BOURBON",
+    "Barcode": "8901063136328",
+    "PosSKU": "3157"
+  },
+  "CAS BN13": {
+    "Item": "CAS BN13",
+    "Description": "Britanni Digestive 7.900z(24)",
+    "Quantity": "24",
+    "Price": "24.12",
+    "sku": "Britanni-Digestive-7.900z(24)",
+    "POS": "BRITANNIA DIGESTIVE BLACK SEED BISCUIT",
+    "Barcode": "6291007909562",
+    "PosSKU": "3165"
+  },
+  "CAS BN71L": {
+    "Item": "CAS BN71L",
+    "Description": "Britanni Fifty Fifty FP(8)",
+    "Quantity": "8",
+    "Price": "10.06",
+    "sku": "Britanni-Fifty-Fifty-FP(8)",
+    "POS": "BRITANIA  FIFTY FIFTY",
+    "Barcode": "6291007901092",
+    "PosSKU": "31922"
+  },
+  "CAS R53S": {
+    "Item": "CAS R53S",
+    "Description": "Britanni GD PistaBadam2.6oz(48)",
+    "Quantity": "48",
+    "Price": "21.70",
+    "sku": "Britanni-GD-PistaBadam2.6oz(48)",
+    "POS": "BRITANNIA GOOD DAY PISTA ALMD",
+    "Barcode": "8901063136106",
+    "PosSKU": "3178"
+  },
+  "CAS K4OS": {
+    "Item": "CAS K4OS",
+    "Description": "Britanni Marie Gold 3.1oz(60)",
+    "Quantity": "60",
+    "Price": "16.92",
+    "sku": "Britanni-Marie-Gold-3.1oz(60)",
+    "POS": "BRITANNIA MARIE GOLD",
+    "Barcode": "8901063023901",
+    "PosSKU": "3182"
+  },
+  "CAS B137S": {
+    "Item": "CAS B137S",
+    "Description": "Britanni Oats Almond&Milk(48)",
+    "Quantity": "48",
+    "Price": "24.56",
+    "sku": "Britanni-Oats-Almondamp;Milk(48)",
+    "POS": "BRITANNIA NURTI OATS ALMOND N MILK",
+    "Barcode": "8901063151963",
+    "PosSKU": "3194"
+  },
+  "CAS B136S": {
+    "Item": "CAS B136S",
+    "Description": "Britanni Oats Chocol&Almond(48)",
+    "Quantity": "48",
+    "Price": "24.56",
+    "sku": "Britanni-Oats-Chocolamp;Almond(48)",
+    "POS": "BRITANNIA NURTI OATS CHOCOLATE N ALMOND",
+    "Barcode": "8901063165601",
+    "PosSKU": "3195"
+  },
+  "CAS B138S": {
+    "Item": "CAS B138S",
+    "Description": "Britanni Oats Orange 2.60z(48)",
+    "Quantity": "48",
+    "Price": "24.56",
+    "sku": "Britanni-Oats-Orange-2.60z(48)",
+    "POS": "BRITANNIA MASTI ORANGE",
+    "Barcode": "8901063031081",
+    "PosSKU": "31970"
+  },
+  "CAS BN64": {
+    "Item": "CAS BN64",
+    "Description": "Britanni TreatOrange4.230z(24)",
+    "Quantity": "24",
+    "Price": "10.86",
+    "sku": "Britanni-TreatOrange4.230z(24)",
+    "POS": "BRITANNIA TREAT",
+    "Barcode": "6291007905991",
+    "PosSKU": "3210"
+  },
+  "CAS BN65": {
+    "Item": "CAS BN65",
+    "Description": "Britanni TreatPineapple4.23(24)",
+    "Quantity": "24",
+    "Price": "10.86",
+    "sku": "Britanni-TreatPineapple4.23(24)",
+    "POS": "BRITANNIA TREAT",
+    "Barcode": "6291007905991",
+    "PosSKU": "3210"
+  },
+  "CAS BN18": {
+    "Item": "CAS BN18",
+    "Description": "Britanni Wafer Hazelnut 6.2(24)",
+    "Quantity": "24",
+    "Price": "30.81",
+    "sku": "Britanni-Wafer-Hazelnut-6.2(24)",
+    "POS": "BRITANNIA HAZELNUT WAFER",
+    "Barcode": "8901063151031",
+    "PosSKU": "3180"
+  },
+  "CAS CBH": {
+    "Item": "CAS CBH",
+    "Description": "Chitale Bakarwadi 7oz(20)",
+    "Quantity": "20",
+    "Price": "35.69",
+    "sku": "Chitale-Bakarwadi-7oz(20)",
+    "POS": "CHEDDAS SMALL BAKARWADI",
+    "Barcode": "8904071701090",
+    "PosSKU": "32887"
+  },
+  "CAS BS45": {
+    "Item": "CAS BS45",
+    "Description": "Deep SurtiJeeraBis14.1o(20)",
+    "Quantity": "20",
+    "Price": "44.18",
+    "sku": "Deep-SurtiJeeraBis14.1o(20)",
+    "POS": "DEEP SURAN",
+    "Barcode": "011433115407",
+    "PosSKU": "5294"
+  },
+  "CAS F35": {
+    "Item": "CAS F35",
+    "Description": "Deep Flo Besan 4lb(10)",
+    "Quantity": "10",
+    "Price": "40.00",
+    "sku": "Deep-Flo-Besan-4lb(10)",
+    "POS": "DEEP BESAN",
+    "Barcode": "011433156141",
+    "PosSKU": "4849"
+  },
+  "CAS F28": {
+    "Item": "CAS F28",
+    "Description": "Deep Flo Maida 8lb(5)",
+    "Quantity": "5",
+    "Price": "22.95",
+    "sku": "Deep-Flo-Maida-8lb(5)",
+    "POS": "DEEP MAIDA FLOUR",
+    "Barcode": "0011433153089",
+    "PosSKU": "5089"
+  },
+  "CAS F33": {
+    "Item": "CAS F33",
+    "Description": "Deep Flo Moong Flour 2lb(20)",
+    "Quantity": "20",
+    "Price": "66.00",
+    "sku": "Deep-Flo-Moong-Flour-2lb(20)",
+    "POS": "LAXMI MOONG FLOUR",
+    "Barcode": "723246121147",
+    "PosSKU": "40853"
+  },
+  "CAS F56": {
+    "Item": "CAS F56",
+    "Description": "Deep Flo Besan Flour 2 lbs(20)",
+    "Quantity": "20",
+    "Price": "43.40",
+    "sku": "Deep-Flo-Besan-Flour-2-lbs(20)",
+    "POS": "DEEP BESAN",
+    "Barcode": "011433156141",
+    "PosSKU": "4849"
+  }
+}

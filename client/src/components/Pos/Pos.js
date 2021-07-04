@@ -100,7 +100,7 @@ const POS = () => {
     const data = {
       invoiceName: state.invoice,
       itemName: state.item,
-      value: { POS: state.pos, Barcode: state.barcode, PosSKU: state.posSku },
+      value: { POS: state.pos, Barcode: state.barcode, PosSKU: state.posSku, isReviewed: "true" },
     };
     debugger;
     setLoader(true);
