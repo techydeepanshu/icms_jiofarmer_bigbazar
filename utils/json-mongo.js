@@ -18,6 +18,7 @@ mongoose
   .connect("mongodb://verveuser:vervebot123@3.91.159.202/vervedb")
   .then((res) => console.log("success"))
   .catch((err) => console.log(err));
+
 const dir = "../";
 fs.readdir(dir + "new-model/", function (err, files) {
   files.forEach(function (file) {
