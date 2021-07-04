@@ -41,7 +41,7 @@ const DisplayData = (props) => {
     "Extended Price",
     "Unit Cost ",
     "Unit Price",
-    "Mark up (%)",
+    "Mark up (%)"
   ];
 
   const addRow = () => {
@@ -153,9 +153,10 @@ const DisplayData = (props) => {
                   }
                 />
               </IconButton>
-              <div className={styles.tooltip}>
+              <div className={element.isReviewed === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
                 <p>POS Product- {element.posName}</p>
                 <p>UPC- {element.barcode}</p>
+                <p>Size- {element.size}</p>
               </div>
             </td>
             <td>{element.posSku}</td>
@@ -494,6 +495,7 @@ const DisplayData = (props) => {
       const products = await tesseractService.GetProductDetails(
         props.selectedInvoice
       );
+      console.log(props.selectedInvoice);
       return products;
     }
     fetchOCRData().then((ocrData) => {
@@ -510,6 +512,7 @@ const DisplayData = (props) => {
           products = convertToUpperCase(products);
 
           console.log("OCERDATa", ocrData);
+          console.log(products);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
@@ -543,6 +546,11 @@ const DisplayData = (props) => {
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].PosSKU
                 : "";
+            row.isReviewed = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
+            row.size = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
+            console.log("isReviewed" + row.isReviewed + "quantity" + row.quantity);
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode

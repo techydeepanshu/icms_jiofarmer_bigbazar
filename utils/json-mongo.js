@@ -11,12 +11,14 @@ const schemaOfProduct = new Schema({
   POS: String,
   Barcode: String,
   PosSKU: String,
+  isReviewed: { type: String, default: "false"},
+  Size: String
 });
 mongoose
   .connect("mongodb://verveuser:vervebot123@3.91.159.202/vervedb")
   .then((res) => console.log("success"))
   .catch((err) => console.log(err));
-const dir = "/home/dell/v/a/";
+const dir = "../";
 fs.readdir(dir + "new-model/", function (err, files) {
   files.forEach(function (file) {
     let name = file;

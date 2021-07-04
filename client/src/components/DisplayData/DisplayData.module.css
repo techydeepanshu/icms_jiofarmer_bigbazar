@@ -115,6 +115,16 @@
   opacity: 1;
   background-color: rgb(231, 230, 162);
 }
+.tooltipIsReviewed {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 3px;
+    border: 1px solid rgb(61, 59, 59);
+    opacity: 1;
+    background-color: violet;
+  }
 .element {
     position: relative;
     flex-direction: row;
@@ -128,6 +138,13 @@
   opacity: 1;
 
 }
+.element:hover .tooltipIsReviewed{
+    display: block;
+    position: relative;
+    /* width: 300; */
+    opacity: 1;
+  
+  }
 .free{
     background-color: tan;
 }
