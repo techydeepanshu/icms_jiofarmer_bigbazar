@@ -157,7 +157,7 @@ const DisplayData = (props) => {
                 <p>POS Product- {element.posName}</p>
                 <p>UPC- {element.barcode}</p>
                 <p>Size- {element.size}</p>
-                <p>Department- {element.department}</p>
+                <p>Department - {element.department}</p>
                 {/* <p>Unit Cost- {element.cost}</p> */}
                 <p>Unit Price- {element.sellingPrice}</p>
               </div>
