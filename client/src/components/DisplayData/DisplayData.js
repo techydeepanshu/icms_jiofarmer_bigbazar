@@ -18,6 +18,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
+  
   const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
