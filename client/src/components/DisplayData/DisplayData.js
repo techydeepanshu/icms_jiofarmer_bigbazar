@@ -157,6 +157,9 @@ const DisplayData = (props) => {
                 <p>POS Product- {element.posName}</p>
                 <p>UPC- {element.barcode}</p>
                 <p>Size- {element.size}</p>
+                <p>Department- {element.department}</p>
+                {/* <p>Unit Cost- {element.cost}</p> */}
+                <p>Unit Price- {element.sellingPrice}</p>
               </div>
             </td>
             <td>{element.posSku}</td>
@@ -512,7 +515,7 @@ const DisplayData = (props) => {
           products = convertToUpperCase(products);
 
           console.log("OCERDATa", ocrData);
-          //console.log(products);
+          console.log(products);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
@@ -550,7 +553,13 @@ const DisplayData = (props) => {
               products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
             row.size = 
               products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
-            console.log("isReviewed" + row.isReviewed + "quantity" + row.quantity);
+            row.department = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
+            row.cost = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+            row.sellingPrice = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+            console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode

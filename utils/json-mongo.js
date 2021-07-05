@@ -12,7 +12,9 @@ const schemaOfProduct = new Schema({
   Barcode: String,
   PosSKU: String,
   isReviewed: { type: String, default: "false"},
-  Size: String
+  Size: String,
+  SellingPrice: String,
+  Department: String
 });
 mongoose
   .connect("mongodb://verveuser:vervebot123@3.91.159.202/vervedb")
