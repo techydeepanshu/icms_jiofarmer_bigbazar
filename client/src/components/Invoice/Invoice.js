@@ -84,6 +84,9 @@ const Invoice = (props) => {
   };
 
   const displaySelectFile = () => {
+    const numOfCollections = dropdownOptions.length;
+    console.log(numOfCollections)
+    const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
     return (
       <div className={styles.main}>
         <Autocomplete
@@ -100,7 +103,7 @@ const Invoice = (props) => {
           style={{ width: 300 }}
           autoHighlight
           renderInput={(params) => (
-            <TextField {...params} label="Select invoice" variant="outlined" />
+            <TextField {...params} label={dropdownLabel} variant="outlined" />
           )}
         />
         <div className={styles.file_upload}>

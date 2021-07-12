@@ -158,7 +158,7 @@ const DisplayData = (props) => {
                 <p>UPC- {element.barcode}</p>
                 <p>Size- {element.size}</p>
                 <p>Department - {element.department}</p>
-                {/* <p>Unit Cost- {element.cost}</p> */}
+                <p>Unit Cost- {element.cost}</p> 
                 <p>Unit Price- {element.sellingPrice}</p>
               </div>
             </td>
@@ -556,7 +556,7 @@ const DisplayData = (props) => {
             row.department = 
               products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
             row.cost = 
-              products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+              products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
             row.sellingPrice = 
               products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
             console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);

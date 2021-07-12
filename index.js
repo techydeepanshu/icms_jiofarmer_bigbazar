@@ -70,15 +70,20 @@ app.get("/api/product", validateLogin, (req, res) => {
 });
 
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
-  const type = req.query["type"];
+  /* const type = req.query["type"]; */
+  const type = "pos";
   const dirname = type === "queue" ? "/csv/Export.csv" : "/csv/Hicksville.csv";
   const newProcess = spawn("python", [
     "./script.py",
     req.query["name"],
-    10,
+    10000,
     dirName + dirname,
   ]);
+
   let result = newProcess.stdout.toString().trim();
+  console.log(result.split('$$$').length);
+  
+  
   result = result.split("$$$");
   let data = [];
   for (let i = 0; i < result.length; i++) {

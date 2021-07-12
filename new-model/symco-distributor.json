@@ -1,0 +1,30 @@
+{
+    "DARBAA": {
+        "Item": "DARBAA",
+        "Description": "DARBAAR PREMIUM BASAMTI RICE 10LBSX4",
+        "Quantity": 4,
+        "Price": 32,
+        "sku": "DARBAAR-PREMIUM-BASAMTI-RICE-10LBSX4-",
+        "POS": "DARBAR PREMIUM BASMATI RICE",
+        "Barcode": "8971889409210",
+        "PosSKU": "66970",
+        "Size": "10 LB ..",
+        "SellingPrice": "10.99",
+        "Department": "RICE",
+        "SellerCost": "8.0"
+    },
+    "DARBBA": {
+        "Item": "DARBBA",
+        "Description": "DARBBAR SUPER KERNAL BASMATI 10LBSX4",
+        "Quantity": 4,
+        "Price": 26,
+        "sku": "DARBBAR-SUPER-KERNAL-BASMATI-10LBSX4-",
+        "POS": "21 BASMATI RICE",
+        "Barcode": "812392020029",
+        "PosSKU": "4",
+        "Size": "10 LB",
+        "SellingPrice": "5.99",
+        "Department": "RICE",
+        "SellerCost": "0.0"
+    }
+}

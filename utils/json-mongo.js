@@ -14,7 +14,8 @@ const schemaOfProduct = new Schema({
   isReviewed: { type: String, default: "false"},
   Size: String,
   SellingPrice: String,
-  Department: String
+  Department: String,
+  SellerCost: String,
 });
 mongoose
   .connect("mongodb://verveuser:vervebot123@3.91.159.202/vervedb")

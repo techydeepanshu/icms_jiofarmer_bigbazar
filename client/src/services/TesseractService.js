@@ -17,6 +17,7 @@ export class TesseractService {
 
     async GetOCRData(filename) {
         var res = await Axios.post(appendURL+`/api/ocr`, { data: {filename} });
+        console.log(res);
         return res.data
     }
 }

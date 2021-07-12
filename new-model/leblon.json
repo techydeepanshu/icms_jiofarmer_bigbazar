@@ -1,0 +1,72 @@
+{
+    "22": {
+        "Item": 22,
+        "Description": "LUPITA - COTIJA MOLIDA 14 OZ 12/14 oz",
+        "Quantity": 12,
+        "Price": 50,
+        "sku": "LUPITA---COTIJA-MOLIDA-14-OZ-12/14-oz-",
+        "POS": "LUPITA COTIJA MOLIDA",
+        "Barcode": "819753000232",
+        "PosSKU": "11771",
+        "Size": "14 OZ.",
+        "SellingPrice": "4.99",
+        "Department": "DAIRY",
+        "SellerCost": "3.5"
+    },
+    "91": {
+        "Item": 91,
+        "Description": "EL SALVADOR - CREMA JAR 12/14 oz",
+        "Quantity": 12,
+        "Price": 33.6,
+        "sku": "EL-SALVADOR---CREMA-JAR-12/14-oz-",
+        "POS": "CREMA SALVADORENA PURA LECHE",
+        "Barcode": "819753001734",
+        "PosSKU": "4349",
+        "Size": "908 GM",
+        "SellingPrice": "5.99",
+        "Department": "DAIRY",
+        "SellerCost": "4.5"
+    },
+    "161": {
+        "Item": 161,
+        "Description": "QUAIL EGGS 40 PACK 40/18 eggs",
+        "Quantity": 40,
+        "Price": 80,
+        "sku": "QUAIL-EGGS-40-PACK-40/18-eggs-",
+        "POS": "SUNSHINE FARMS QUAIL EGGS",
+        "Barcode": "804879605140",
+        "PosSKU": "49535",
+        "Size": "5 7 OZ",
+        "SellingPrice": "3.99",
+        "Department": "GROCERY",
+        "SellerCost": "2.0"
+    },
+    "207": {
+        "Item": 207,
+        "Description": "EL SALVADOR - QUESO RALLADO PUPUSAS 12/16 oz",
+        "Quantity": 12,
+        "Price": 61,
+        "sku": "EL-SALVADOR---QUESO-RALLADO-PUPUSAS-12/16-oz-",
+        "POS": "QUESO RALLDO PARA PUPUSAS MELTI CH",
+        "Barcode": "819753001673",
+        "PosSKU": "16258",
+        "Size": "16 OZ",
+        "SellingPrice": "4.99",
+        "Department": "DAIRY",
+        "SellerCost": "3.75"
+    },
+    "258": {
+        "Item": 258,
+        "Description": "DUCK EGGS 24 PACK 24/6 eggs",
+        "Quantity": 24,
+        "Price": 91,
+        "sku": "DUCK-EGGS-24-PACK-24/6-eggs-",
+        "POS": "DUCK EGG",
+        "Barcode": "698264005000",
+        "PosSKU": "5974",
+        "Size": "6 pcs",
+        "SellingPrice": "4.49",
+        "Department": "GROCERY",
+        "SellerCost": "2.99"
+    }
+}

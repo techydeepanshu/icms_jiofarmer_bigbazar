@@ -48,6 +48,10 @@ const invoiceSchema = new Schema({
   POS: String,
   Barcode: String,
   PosSKU: String,
+  isReviewed: { type: String, default: "false" },
+  SellingPrice: String,
+  Department: String,
+  SellerCost: String,
 });
 const notFoundSchema = new Schema({
   Item: String,
