@@ -1,0 +1,16 @@
+{
+    "BUK / OF": {
+        "Item": "BUK / OF",
+        "Description": "BUSHEL KIRBIES",
+        "Quantity": 1,
+        "Price": 36,
+        "Sku": "BUSHEL-KIRBIES-",
+        "POS": "HELLO KITTY",
+        "Barcode": "852923002483",
+        "PosSKU": "37703",
+        "Size": "nan",
+        "SellingPrice": "1.79",
+        "Department": "READY TO EAT",
+        "SellerCost": "0.0"
+    }
+}

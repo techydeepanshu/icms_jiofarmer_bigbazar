@@ -88,12 +88,31 @@ const POS = () => {
         const filter = res.result.map((element) => {
           let obj = { ...element };
           obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          console.log(obj);
           return obj;
+          
         });
         setFuzzSuggestion(filter);
       })
       .catch((err) => console.log(err));
   };
+
+  const changeDropdown = () => {
+    api
+      .GetFuzz("", "pos")
+      .then((res) => {
+        const filter = res.result.map((element) => {
+          let obj = { ...element };
+          obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          console.log(obj);
+          return obj;
+          
+        });
+        setFuzzSuggestion(filter);
+      })
+      .catch((err) => console.log(err));
+  };
+
   const addProduct = () => {
     console.log(selectedItemNo);
     setShowModal(!showModal);
@@ -102,7 +121,7 @@ const POS = () => {
       itemName: state.item,
       value: { POS: state.pos, Barcode: state.barcode, PosSKU: state.posSku, isReviewed: "true" },
     };
-    debugger;
+    
     setLoader(true);
     inventoryService
       .UpdateProductFields(data)
@@ -279,6 +298,18 @@ const POS = () => {
           </CContainer>
         </CModalBody>
         <CModalFooter>
+        {/* <button onClick={() => changeDropdown()} 
+          style={{backgroundColor: "green",
+          border: "none",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          textDecoration: "none",
+          display: "inline-block",
+          fontSize: "14px",
+          align: "left"}} >
+            Change Dropdown
+          </button> */}
           <CButton color="primary" onClick={() => addProduct()}>
             Add
           </CButton>{" "}

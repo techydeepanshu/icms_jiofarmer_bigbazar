@@ -39,6 +39,7 @@ for i in range(0,len(arr)):
     json_object[x]["Size"]=xx[13]
     json_object[x]["SellingPrice"]=xx[15]
     json_object[x]["Department"]=xx[11]
+    json_object[x]["SellerCost"]=xx[7]
     print(xx[i])
   with open('../new-model/'+arr[i], "w") as outfile:
     json.dump(json_object, outfile,indent=4)

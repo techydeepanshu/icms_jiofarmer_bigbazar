@@ -27,13 +27,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "advancefoods",
   },
-  {
+  /* {
     value: "Aliments",
     slug: "aliments",
     jsonName: "aliments.json",
     emptyColumn: false,
     databaseName: "aliments",
-  },
+  }, */
   {
     value: "Amtrade",
     slug: "amtrade",
@@ -69,7 +69,7 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "barakacolds",
   },
-  {
+  /* {
     value: "Barlett dairy",
     slug: "bartlett-dairy",
     jsonName: "barlett.json",
@@ -82,7 +82,7 @@ export const dropdownOptions = [
     jsonName: "baroody.json",
     emptyColumn: true,
     databaseName: "baroodies",
-  },
+  }, */
   // {value:'',slug:'',jsonName:'bartlett.json',emptyColumn:false,databaseName:'bartletts'},
   {
     value: "Bedessee",
@@ -107,7 +107,7 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "daras",
   },
-  {
+  /* {
     value: "Dawn food",
     slug: "dawn-food",
     jsonName: "dawn-food.json",
@@ -120,7 +120,7 @@ export const dropdownOptions = [
     jsonName: "delight-distrubution.json",
     emptyColumn: false,
     databaseName: "delightdistrubutions",
-  },
+  }, */
   {
     value: "Delight foods",
     slug: "delight-food",
@@ -184,13 +184,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "hellenics",
   },
-  {
+  /* {
     value: "Hill top farms",
     slug: "hill-top-farms",
     jsonName: "hill-top-farms.json",
     emptyColumn: false,
     databaseName: "hilltopfarms",
-  },
+  }, */
   {
     value: "House of spices",
     slug: "house-of-spices",
@@ -212,13 +212,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "indianspicetradings",
   },
-  {
+  /* {
     value: "I sifol",
     slug: "i-sifol",
     jsonName: "I-sifol-llc.json",
     emptyColumn: false,
     databaseName: "isifolllcs",
-  },
+  }, */
   {
     value: "Jaan distributors",
     slug: "jaan-distributors",
@@ -226,13 +226,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "jaandists",
   },
-  {
+  /* {
     value: "Jalaram produce",
     slug: "jalaram-produce",
     jsonName: "jalaram.json",
     emptyColumn: false,
     databaseName: "jalarams",
-  },
+  }, */
   {
     value: "JCW imports",
     slug: "jcw-import-and-export",
@@ -248,13 +248,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "joygourmetfoods",
   },
-  {
+  /* {
     value: "Katzman",
     slug: "katzam-foods",
     jsonName: "katzman.json",
     emptyColumn: false,
     databaseName: "katzman",
-  },
+  }, */
   {
     value: "KM Distribution",
     slug: "km-distribution-usa",
@@ -319,13 +319,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "melicecreams",
   },
-  {
+  /* {
     value: "Moda food",
     slug: "moda-food",
     jsonName: "moda-food-ny.json",
     emptyColumn: false,
     databaseName: "modafoodnies",
-  },
+  }, */
   {
     value: "Mr pickle",
     slug: "mr-pickle",
@@ -404,13 +404,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "pexcos",
   },
-  {
+  /* {
     value: "PGL trade",
     slug: "pgl-trade",
     jsonName: "pgl-trade.json",
     emptyColumn: false,
     databaseName: "pgltrades",
-  },
+  }, */
   {
     value: "Preferred beverage",
     slug: "referred-beverage",
@@ -425,13 +425,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "priyafoodsusas",
   },
-  {
+  /* {
     value: "Produce n More",
     slug: "produce-n-more",
     jsonName: "produce-n-more.json",
     emptyColumn: false,
     databaseName: "producenmores",
-  },
+  }, */
   // {value:'',slug:'',jsonName:'pure-ghee.json',emptyColumn:false,databaseName:'pureghees'},
   {
     value: "Putul distributors",
@@ -447,13 +447,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "radheyfoods",
   },
-  {
+  /* {
     value: "Raja foods",
     slug: "raja-foods",
     jsonName: "raja-foods.json",
     emptyColumn: false,
     databaseName: "rajafoods",
-  },
+  }, */
   {
     value: "Rane music",
     slug: "ranemusic",
@@ -461,22 +461,22 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "ranemusics",
   },
-  {
+  /* {
     value: "Rite source corp",
     slug: "ritesource-corp",
     jsonName: "rite-source-corp.json",
     emptyColumn: false,
     databaseName: "ritesourcecorps",
-  },
+  }, */
   // {value:'',slug:'',jsonName:'rite-source.json',emptyColumn:false,databaseName:'ritesources'},
   // {value:'',slug:'',jsonName:'riya.json',emptyColumn:false,databaseName:'riyas'},
-  {
+  /* {
     value: "Rollin dairy",
     slug: "rollin-dairy",
     jsonName: "rollin-diary.json",
     emptyColumn: false,
     databaseName: "rollindiaries",
-  },
+  }, */
   {
     value: "Ron foods",
     slug: "ron-foods",
@@ -485,13 +485,13 @@ export const dropdownOptions = [
     databaseName: "ronfoods",
   },
   // {value:'',slug:'',jsonName:'ron.json',emptyColumn:false,databaseName:'rons'},
-  {
+  /* {
     value: "Sankaj",
     slug: "sankaj",
     jsonName: "sankaj.json",
     emptyColumn: false,
     databaseName: "sankajs",
-  },
+  }, */
   {
     value: "Sea mark",
     slug: "sea-mark",
@@ -499,13 +499,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "seamarks",
   },
-  {
+  /* {
     value: "Shakti group",
     slug: "shakti-group-usa",
     jsonName: "shakti.json",
     emptyColumn: false,
     databaseName: "shaktis",
-  },
+  }, */
   {
     value: "Shata traders",
     slug: "shata-traders",
@@ -513,13 +513,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "shatas",
   },
-  {
+  /* {
     value: "Shine foods",
     slug: "shine-foods",
     jsonName: "shine.json",
     emptyColumn: false,
     databaseName: "shines",
-  },
+  }, */
   {
     value: "Shreeji",
     slug: "shreeji",
@@ -528,20 +528,20 @@ export const dropdownOptions = [
     databaseName: "shreejis",
   },
   // {value:'',slug:'',jsonName:'singh-and-singh.json',emptyColumn:false,databaseName:'singhandsinghs'},
-  {
+  /* {
     value: "Slaughter house",
     slug: "slaughter-house",
     jsonName: "slaughter-house.json",
     emptyColumn: false,
     databaseName: "slaughterhouses",
-  },
-  {
+  }, */
+  /* {
     value: "Spicy sense",
     slug: "spicy-sense",
     jsonName: "spicy-sense.json",
     emptyColumn: false,
     databaseName: "spicysenses",
-  },
+  }, */
   {
     value: "Spicy world",
     slug: "spicy-world",
@@ -549,13 +549,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "spicyworlds",
   },
-  {
+  /* {
     value: "Surati",
     slug: "surati",
     jsonName: "surati.json",
     emptyColumn: false,
     databaseName: "suratis",
-  },
+  }, */
   {
     value: "Symco distributor",
     slug: "symco-distributor",
@@ -570,13 +570,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "temins",
   },
-  {
+  /* {
     value: "Turkana food",
     slug: "turkana-food",
     jsonName: "turkana.json",
     emptyColumn: false,
     databaseName: "turkanas",
-  },
+  }, */
   {
     value: "Two brother wholesale",
     slug: "two-brother-wholesale",
@@ -591,13 +591,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "uniqueimporters",
   },
-  {
+  /* {
     value: "US gourmet",
     slug: "us-gourmet-food",
     jsonName: "us-gourmet-food.json",
     emptyColumn: false,
     databaseName: "usgourmetfoods",
-  },
+  }, */
   {
     value: "USA Halal",
     slug: "usa-halal-foods",
@@ -605,20 +605,20 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "usahalals",
   },
-  {
+  /* {
     value: "Vadilal",
     slug: "vadilal",
     jsonName: "vadilal.json",
     emptyColumn: false,
     databaseName: "vadilals",
-  },
-  {
+  }, */
+  /* {
     value: "Vibrant enterprise",
     slug: "vibrant-enterprise",
     jsonName: "vibrant.json",
     emptyColumn: false,
     databaseName: "vibrants",
-  },
+  }, */
   {
     value: "Vidyas",
     slug: "vidyas",
@@ -626,13 +626,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "vidyas",
   },
-  {
+  /* {
     value: "Vijay home foods",
     slug: "vijay-food",
     jsonName: "vijay-home-foods.json",
     emptyColumn: false,
     databaseName: "vijayhomefoods",
-  },
+  }, */
   {
     value: "Vintage food",
     slug: "vintage-food",

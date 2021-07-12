@@ -1,0 +1,44 @@
+{
+    "101": {
+        "Item": 101,
+        "Description": "I YOUNG WHOLE CHICKEN (GRAY OR RED)",
+        "Quantity": 1,
+        "Price": 2.79,
+        "sku": "I-YOUNG-WHOLE-CHICKEN-(GRAY-OR-RED)-",
+        "POS": "CHICKEN LEG",
+        "Barcode": "200157",
+        "PosSKU": "3897",
+        "Size": "nan",
+        "SellingPrice": "2.29",
+        "Department": "MEAT",
+        "SellerCost": "0.0"
+    },
+    "105": {
+        "Item": 105,
+        "Description": "15 YOUNG WHOLE CHICKEN FO",
+        "Quantity": 1,
+        "Price": 1.69,
+        "sku": "15-YOUNG-WHOLE-CHICKEN-FO-",
+        "POS": "CHICKEN WINGS",
+        "Barcode": "200031",
+        "PosSKU": "3913",
+        "Size": "nan",
+        "SellingPrice": "3.49",
+        "Department": "MEAT",
+        "SellerCost": "0.0"
+    },
+    "114": {
+        "Item": 114,
+        "Description": "5 BONELESS BREAST",
+        "Quantity": 1,
+        "Price": 45,
+        "sku": "5-BONELESS-BREAST-",
+        "POS": "VEAL BONELESS",
+        "Barcode": "200162",
+        "PosSKU": "21103",
+        "Size": "nan",
+        "SellingPrice": "9.99",
+        "Department": "MEAT",
+        "SellerCost": "0.0"
+    }
+}
