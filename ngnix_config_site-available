@@ -1,0 +1,30 @@
+This file has domain details connected to particular domain we have to change domain accordingly.
+we have to use for sure the root directory, location / and its config, location /server/ and its config rest are depend upon domain details.
+
+server{
+listen 80;
+server_name vervebot.org;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 443 ssl;
+server_name vervebot.org;
+ssl on;
+ssl_certificate /etc/letsencrypt/live/vervebot.org/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/vervebot.org/privkey.pem;
+root /home/ubuntu/inventory-management/client/build;
+index index.html;
+
+location / {
+try_files $uri /index.html;
+}
+location /server/ {
+proxy_pass http://127.0.0.1:5000/;
+client_max_body_size 10M;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection 'upgrade';
+proxy_set_header Host $host;
+proxy_cache_bypass $http_upgrade;
+}
+}

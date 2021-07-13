@@ -274,6 +274,20 @@ app.get("/api/invoice/pos", validateLogin, function (req, res) {
   let options = {
     method: "GET",
     url: "http://3.91.159.202:3001/pos",
+    //url: "https://dataservices.sypramsoftware.com/api/Product/GetSoldItemList",
+    /* headers: isPOSProduction
+    ? {
+        Authorization: "Basic",
+        UserId: "lRRqlkYefuV=",
+        Password: "lRRqlkYefuV6jJ==",
+        Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
+        ACCEPT: "application/json"
+      }
+    : {
+        UserId: "MeCHHkZ9",
+        Password: "tdypsA =",
+        Pin: "lqBZghxJgaVE",
+      }, */
     json: true,
   };
   function callback(error, response, body) {
