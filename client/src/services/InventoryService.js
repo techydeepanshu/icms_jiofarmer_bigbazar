@@ -72,6 +72,7 @@ export class InventoryService {
 
   async getInitialSyncedData() {
     const res = await Axios.get(appendURL + "/api/invoice/pos");
+    console.log(res);
     return res.data;
   }
 }

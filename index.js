@@ -70,8 +70,7 @@ app.get("/api/product", validateLogin, (req, res) => {
 });
 
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
-  /* const type = req.query["type"]; */
-  const type = "pos";
+  const type = req.query["type"];
   const dirname = type === "queue" ? "/csv/Export.csv" : "/csv/Hicksville.csv";
   const newProcess = spawn("python", [
     "./script.py",
@@ -80,11 +79,9 @@ app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
     dirName + dirname,
   ]);
 
-  let result = newProcess.stdout.toString().trim();
-  console.log(result.split('$$$').length);
-  
-  
+  let result = newProcess.stdout.toString().trim();  
   result = result.split("$$$");
+  
   let data = [];
   for (let i = 0; i < result.length; i++) {
     let s = result[i].split("@@@");
@@ -277,6 +274,20 @@ app.get("/api/invoice/pos", validateLogin, function (req, res) {
   let options = {
     method: "GET",
     url: "http://3.91.159.202:3001/pos",
+    //url: "https://dataservices.sypramsoftware.com/api/Product/GetSoldItemList",
+    /* headers: isPOSProduction
+    ? {
+        Authorization: "Basic",
+        UserId: "lRRqlkYefuV=",
+        Password: "lRRqlkYefuV6jJ==",
+        Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
+        ACCEPT: "application/json"
+      }
+    : {
+        UserId: "MeCHHkZ9",
+        Password: "tdypsA =",
+        Pin: "lqBZghxJgaVE",
+      }, */
     json: true,
   };
   function callback(error, response, body) {
