@@ -13,6 +13,7 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import { Box, Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
+import Axios from "axios";
 
 const columns = [
   { id: "upc", label: "UPC" },
@@ -23,6 +24,7 @@ const columns = [
   { id: "currentStockQuantity", label: "Current Stock Quantity" },
   { id: "posSoldQuantity", label: "POS Sold Quantity" },
   { id: "wordpressSoldQty", label: "Wordpress Sold Qty." },
+  { id: "OnHand", label: "On Hand"},
 ];
 
 const useStyles = makeStyles({
@@ -58,6 +60,8 @@ export default function StickyHeadTable() {
   const [products, setProducts] = React.useState([]);
   const [loader, setLoader] = React.useState(true);
   const [searchVal, setSearchVal] = React.useState("");
+  const [startDate, setStartDate] = React.useState("20-July-2021");
+  const [endDate, setEndDate] = React.useState("22-July-2021");
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -67,6 +71,72 @@ export default function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const changeDateFormat = (date) => {
+    let defaultDate = new Date(date);
+    let month = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"][defaultDate.getMonth()];
+    let formattedDate = defaultDate.getDate()+"-"+month+"-"+defaultDate.getFullYear();
+    return formattedDate;
+  }
+
+  const onGo = () => {
+    console.log(startDate);
+    console.log(endDate);
+    const options = {
+      method: "GET",
+      headers:{
+        UserId: "lRRqlkYefuV=",
+        Password: "lRRqlkYefuV6jJ==",
+        Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
+        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
+      },
+      body:{
+        STARTDATE: startDate,
+        ENDDATE: endDate
+      },
+      json: true,
+    }    
+    const dateObj = {startDate: startDate, endDate: endDate};
+    try {
+      setLoader(true);
+      const res = Axios.get("https://dataservices.sypramsoftware.com/api/Product/GetSoldItemList",options)
+                    .then(response => {return response});
+      const data = res.map((item) => {
+        const {
+          UPC,
+          SKU,
+          //ItemName,
+          ITEMNAME,
+          //Price,
+          PRICEPERUNIT,
+          Cost,
+          TotalQty,
+          //soldQty,
+          QuantitySold,
+          wordpressSoldQty,
+          OnHand
+        } = item;
+        return {
+          upc: UPC,
+          itemName: ITEMNAME,
+          cost: Cost,
+          price: PRICEPERUNIT,
+          sku: SKU,
+          currentStockQuantity: TotalQty,
+          posSoldQuantity: QuantitySold,
+          wordpressSoldQty,
+          OnHand: OnHand
+        };
+      });
+
+      setProducts(data);
+    } catch (error) {
+      alert("Couldn't sync inventory", error);
+    } finally {
+      setLoader(false);
+    }
+  }
 
   const getProducts = async () => {
     try {
@@ -112,22 +182,27 @@ export default function StickyHeadTable() {
           const {
             UPC,
             SKU,
-            ItemName,
-            Price,
+            //ItemName,
+            ITEMNAME,
+            //Price,
+            PRICEPERUNIT,
             Cost,
             TotalQty,
-            soldQty,
+            //soldQty,
+            QuantitySold,
             wordpressSoldQty,
+            OnHand
           } = item;
           return {
             upc: UPC,
-            itemName: ItemName,
+            itemName: ITEMNAME,
             cost: Cost,
-            price: Price,
+            price: PRICEPERUNIT,
             sku: SKU,
             currentStockQuantity: TotalQty,
-            posSoldQuantity: soldQty,
+            posSoldQuantity: QuantitySold,
             wordpressSoldQty,
+            OnHand: OnHand
           };
         });
 
@@ -138,6 +213,7 @@ export default function StickyHeadTable() {
         setLoader(false);
       }
     }
+    console.log(startDate, endDate);
     getInitialSyncedData();
   }, []);
 
@@ -154,6 +230,41 @@ export default function StickyHeadTable() {
           style={{ marginLeft: 20 }}
           onChange={(e) => setSearchVal(e.target.value)}
         />
+        <TextField
+          id="date"
+          label="Start Date"
+          type="date"
+          value={startDate}
+          style={{ marginLeft: 20 }}          
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(event) => setStartDate(event.target.value)}          
+        />
+        <TextField
+          id="date"
+          label="End Date"
+          type="date"
+          value={endDate}
+          style={{ marginLeft: 20 }}          
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(event) => setEndDate(event.target.value)}
+        />
+        <button  style={{backgroundColor: "green",
+          border: "none",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          textDecoration: "none",
+          display: "inline-block",
+          fontSize: "14px",
+          align: "left",
+          marginLeft: 20}}
+          onClick={() => onGo()}>
+            Go!
+          </button>
 
         <Box style={{ flexGrow: 1 }} />
         <CCol sm="1">

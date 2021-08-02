@@ -52,6 +52,7 @@ const invoiceSchema = new Schema({
   SellingPrice: String,
   Department: String,
   SellerCost: String,
+  Size: String,
 });
 const notFoundSchema = new Schema({
   Item: String,
@@ -64,6 +65,16 @@ const notFoundSchema = new Schema({
   InvoiceName: String,
 });
 let notFound = mongoose.model("notfounds", notFoundSchema);
+
+const scanInvoiceDataSchema  = new Schema({
+  InvoiceName: String,
+  InvoiceNumber: String,
+  InvoiceDate: String,
+  InvoicePage: String,
+  InvoiceData: { type: Array, default: []},
+})
+let scanInvoiceData = mongoose.model("scaninvoicedatas", scanInvoiceDataSchema);
+
 function convertArrayOfObjectIntoObject(arr) {
   let obj = {};
   for (let i = 0; i < arr.length; i++) obj[arr[i].Item] = arr[i];
@@ -80,6 +91,7 @@ app.get("/invoice/:name", (req, res) => {
   });
 });
 app.put("/invoice/:name/:Item", (req, res) => {
+  console.log(req.body);
   let invoice = mongoose.model(req.params.name, invoiceSchema);
   invoice.findOne({ Item: req.params.Item }, (err, x) => {
     if (err) res.json("Some error occured");
@@ -107,6 +119,22 @@ app.post("/notfound", (req, res) => {
     else res.json("Product created successfully");
   });
 });
+
+//added by Parikshit.
+app.get("/scaninvoicedata", (req, res) => {
+  scanInvoiceData.find({}, { _id: 0, __v: 0 }, (err, x) => {
+    if (err) res.json("Some error occured");
+    else res.json(x);
+  });
+});
+app.post("/scaninvoicedata", (req, res) => {
+  let obj = req.body;
+  scanInvoiceData.insertMany([obj], (err, o) => {
+    if (err) res.json("Some error occured");
+    else res.json("Product created successfully");
+  });
+});
+
 app.get("/pos", (req, res) => {
   pos.find({}, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");

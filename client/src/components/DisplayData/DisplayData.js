@@ -16,9 +16,12 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { InventoryService } from "../../services/InventoryService";
 import Checkbox from "@material-ui/core/Checkbox";
 
+import { Api } from "../../services/Api";
+import HicksData from "./Hicksville.json";
+
 let emptyColumnList = [];
 const DisplayData = (props) => {
-  
+  const api = new Api();
   const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);
   const [productDetails, setProductDetails] = useState([]);
@@ -29,6 +32,31 @@ const DisplayData = (props) => {
   const [reviewItems, setReviewItems] = useState([]);
   const tesseractService = new TesseractService();
   const inventoryService = new InventoryService();
+  let hicksvilleData = [];
+  let flag = 0;
+  const scanInvoiceData = 
+    {
+      InvoiceName: props.selectedInvoice,
+      InvoiceDate: "",
+      InvoiceNumber: "",
+      InvoicePage: "",
+      InvoiceData: []
+    }
+  
+    const [showPosState, setShowPosState] = useState({
+      item: "",
+      quantity: "",
+      description: "",
+      price: "",
+      pos: "",
+      barcode: "",
+      posSku: "",
+      invoice: "",
+      size: "",
+      department: "",
+      unitCost: "",
+      unitPrice: ""
+    });
 
   const header = [
     "Serial No.",
@@ -36,6 +64,7 @@ const DisplayData = (props) => {
     "POS SKU",
     "Qty Shipped",
     "ITEM NO",
+    "Show POS",
     "DESCRIPTION",
     "Units in  Case",
     "Case cost",
@@ -44,6 +73,55 @@ const DisplayData = (props) => {
     "Unit Price",
     "Mark up (%)"
   ];
+
+  // added by parikshit.
+  const saveInvoiceData = async () => {
+    const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
+    console.log(showPosState);
+    console.log(resScnInvDta);
+  }
+
+  const hicksvilleDropdown = (data) => {
+    let productsString = "";
+    for(let i=0;i<data.length;i++){
+      productsString = productsString + data[i].name + '$$$';
+    } 
+    let result = productsString.split("$$$");
+  
+    let newData = [];
+    for (let i = 0; i < result.length; i++) {
+      let s = result[i].split("@@@");
+      let obj =
+        {
+          sku: s[0] === "nan" ? null : s[0],
+          upc: s[1] === "nan" ? null : s[1],
+          altupc1: s[2] === "nan" ? null : s[2],
+          altupc2: s[3] === "nan" ? null : s[3],
+          name: s[4] === "nan" ? null : s[4],
+          vintage: s[5] === "nan" ? null : s[5],
+          totalQty: s[6] === "nan" ? null : s[6],
+          cost: s[7] === "nan" ? null : s[7],
+          pricea: s[8] === "nan" ? null : s[8],
+          priceb: s[9] === "nan" ? null : s[9],
+          pricec: s[10] === "nan" ? null : s[10],
+          department: s[11] === "nan" ? null : s[11],
+          salePrice: s[12] === "nan" ? null : s[12],
+          size: s[13] === "nan" ? null : s[13],
+          pack: s[14] === "nan" ? null : s[14],
+          price: s[15] === "nan" ? null : s[15],
+        }
+      newData.push(obj);
+    }
+    const filter = newData.map((element) => {
+      let obj = { ...element };
+      obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}`;
+      //console.log(obj);
+      return obj;
+      
+    });
+    hicksvilleData = filter;
+      console.log(hicksvilleData);
+  }
 
   const addRow = () => {
     let tempTableData = [...tableData];
@@ -57,6 +135,7 @@ const DisplayData = (props) => {
       markup: 0,
       sp: 0,
       show: true,
+      showPOS: ""
     });
     emptyColumnList.push(tempTableData.length - 1);
     setEmptyColumn(emptyColumnList);
@@ -110,7 +189,10 @@ const DisplayData = (props) => {
 
   const renderTableData = () => {
     if (tableData) {
+      console.log(tableData);
+      hicksvilleDropdown(HicksData);
       let rows = tableData.map((element, index) => {
+        //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
         let isEmpty =
           element.qty === "" ||
           element.itemNo === "" ||
@@ -155,12 +237,12 @@ const DisplayData = (props) => {
                 />
               </IconButton>
               <div className={element.isReviewed === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
-                <p>POS Product- {element.posName}</p>
-                <p>UPC- {element.barcode}</p>
-                <p>Size- {element.size}</p>
-                <p>Department - {element.department}</p>
-                <p>Unit Cost- {element.cost}</p> 
-                <p>Unit Price- {element.sellingPrice}</p>
+                <p>POS Product- {flag ? showPosState.pos : element.posName }</p>
+                <p>UPC- {flag ? showPosState.barcode : element.barcode}</p>
+                <p>Size- {flag ? showPosState.size : element.size}</p>
+                <p>Department - {flag ? showPosState.department : element.department}</p>
+                <p>Unit Cost- {flag ? showPosState.unitCost : element.cost}</p> 
+                <p>Unit Price- {flag ? showPosState.unitPrice : element.sellingPrice}</p>
               </div>
             </td>
             <td>{element.posSku}</td>
@@ -188,6 +270,40 @@ const DisplayData = (props) => {
                 options={itemNoDropdown}
                 getOptionLabel={(option) => option}
                 style={{ width: 200 }}
+                renderInput={(params) => (
+                  <TextField {...params} variant="outlined" />
+                )}
+              />
+            </td>
+            <td>
+              <Autocomplete
+                value={flag ? showPosState.item :element.itemNo }
+                onChange={(event, newValue) => {
+                  if (newValue) {
+                    let newState = { ...showPosState };
+                    console.log(newValue);
+                    // newState.item = newValue.name;
+                    newState.item = element.itemNo
+                    newState.description = newValue.name;
+                    newState.barcode = newValue.upc;
+                    newState.pos = newValue.name;
+                    newState.posSku = newValue.sku;
+                    newState.size = newValue.size;
+                    newState.department = newValue.department;
+                    newState.unitCost = newValue.cost;
+                    newState.unitPrice = newValue.price;
+                    setShowPosState(newState);
+                    flag = 1;
+                    console.log(newValue);
+                    console.log(newState);
+                    
+                  }
+                }}
+                id="combo-box"
+                // options={element.fuzzSuggestion}
+                options={hicksvilleData}
+                getOptionLabel={(option) => option.label ?? element.itemNo}
+                style={{ width: 400 }}
                 renderInput={(params) => (
                   <TextField {...params} variant="outlined" />
                 )}
@@ -267,6 +383,12 @@ const DisplayData = (props) => {
               color="btn btn-info"
               type="submit"
               onClick={pushInventoryDetails}
+            />
+            <Button
+              text="Save Invoice Data"
+              color="btn btn-info"
+              type="submit"
+              onClick={saveInvoiceData}
             />
             <Button
               text="Re upload"
@@ -350,6 +472,15 @@ const DisplayData = (props) => {
     setPushToInventory(true);
   };
 
+  //For preventing creation of new level in firebase.
+ /*  const forbiddeChars = "/";
+  escape(forbiddeChars);
+  encodeURI(forbiddeChars);
+  encodeURIComponent(forbiddeChars); */
+  
+  
+  
+  
   const addForReview = async (item, index) => {
     const data = {
       barcode: item.barcode,
@@ -363,7 +494,8 @@ const DisplayData = (props) => {
     tempReviewItems.push(index);
     setReviewItems(tempReviewItems);
     try {
-      firebase.database().ref("/review").child(`${item.itemNo}`).set(data);
+      console.log(item.itemNo)
+      firebase.database().ref("/review").child(`${item.itemNo.replace('/',"SlasH")}`).set(data);
       let tempTableData = [...tableData];
       tempTableData[index]["isForReview"] = true;
       setTableData(tempTableData);
@@ -483,7 +615,20 @@ const DisplayData = (props) => {
       const ocrData = await Promise.all(
         props.filename.map(async (file) => {
           try {
+            //console.log("FILENAME" + props.filename);
             const res = await tesseractService.GetOCRData(file);
+            console.log("ocrData from TSRCTsrvc goes to chooseFilter");
+            console.log(res.body);
+            let invDate = res.body[1]["2"]["1"];
+            let invNo = res.body[1]["2"]["2"];
+            let invPage = res.body[1]["2"]["3"];
+            scanInvoiceData.InvoiceDate = invDate;
+            scanInvoiceData.InvoiceNumber = invNo;
+            scanInvoiceData.InvoicePage = invPage;
+            //console.log(invDate);
+            //console.log(invNo);
+            //console.log(invPage);
+            //console.log(scanInvoiceData);
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
             console.log("error fetching descripton", error);
@@ -495,11 +640,12 @@ const DisplayData = (props) => {
       ocrData.forEach((data) => (newData = [...newData, ...data]));
       return newData;
     }
+
     async function invoiceData() {
       const products = await tesseractService.GetProductDetails(
         props.selectedInvoice
       );
-      console.log(props.selectedInvoice);
+      //console.log(props.selectedInvoice);
       return products;
     }
     fetchOCRData().then((ocrData) => {
@@ -514,9 +660,12 @@ const DisplayData = (props) => {
             return newObj;
           }
           products = convertToUpperCase(products);
-
-          console.log("OCERDATa", ocrData);
+          let invData = { InvoiceData: ocrData};
+          scanInvoiceData.InvoiceData = ocrData;
+          //console.log(resScnInvDta);
+          //console.log("OCERDATa", ocrData);
           //console.log(products);
+          console.log(scanInvoiceData);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
@@ -560,7 +709,7 @@ const DisplayData = (props) => {
               products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
             row.sellingPrice = 
               products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
-            console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+            //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;
             // const barcode = products.Barcode
@@ -592,7 +741,7 @@ const DisplayData = (props) => {
                 parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
               ).toFixed(0);
             }
-            return { ...row, sp, cp };
+          return { ...row, sp, cp };
           });
           setLoader(false);
           setTableData(table.filter((data) => data !== null));

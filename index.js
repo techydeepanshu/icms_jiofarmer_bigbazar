@@ -10,6 +10,7 @@ const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
+
 const isPOSProduction = true;
 const { sign } = require("./authenticate");
 const { validateLogin } = require("./middlewares/requireLogin");
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // for parsing multipart/form-data
 app.use(upload.single("file"));
+
 
 app.post("/api/upload-image", validateLogin, (req, res) => {
   let uid = req.headers["user-key"];
@@ -186,8 +188,25 @@ app.get("/api/sync", validateLogin, function (req, res) {
     url: "http://3.91.159.202:3001/pos/api/sync",
     json: true,
   };
+  //console.log("INDEXJS");
+  /* let options = {
+    method: "GET",
+    url:  "https://dataservices.sypramsoftware.com/api/Product/GetSoldItemList",
+    json: true,
+    headers:{
+      UserId: "lRRqlkYefuV=",
+      Password: "lRRqlkYefuV6jJ==",
+      Pin: "qzOUsBmZFgMDlwGtrgYypxUz"
+    },
+    body:{
+      STARTDATE: "20-July-2021",
+      ENDDATE: "22-July-2021"
+    },
+  }; */
   function callback(error, response, body) {
     // console.log(body);
+    console.log(response);
+    console.log("BODY",body);
     res.send(body);
   }
   request(options, callback);
@@ -229,7 +248,8 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const data = req.body;
   const { invoiceName, itemName, value } = data;
-  console.log(data,"Mongo PUT Request Data");
+  console.log("Item name",itemName);
+  /* console.log(data,"Mongo PUT Request Data"); */
   let options = {
     method: "PUT",
     url: `http://3.91.159.202:3001/invoice/${getDBInvoiceName(
@@ -270,24 +290,37 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   request(options, callback);
 });
 
+//added by Parikshit.
+app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
+  const data = req.body;
+  //console.log(data);
+  let options = {
+    method: "POST",
+    url: "http://3.91.159.202:3001/scaninvoicedata",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
 app.get("/api/invoice/pos", validateLogin, function (req, res) {
+  console.log(req.body);
+  const dates = req.body;
+  const startDate = dates.startDate;
+  const endDate = dates.endDate
+  console.log(dates);
   let options = {
     method: "GET",
     url: "http://3.91.159.202:3001/pos",
-    //url: "https://dataservices.sypramsoftware.com/api/Product/GetSoldItemList",
-    /* headers: isPOSProduction
-    ? {
-        Authorization: "Basic",
-        UserId: "lRRqlkYefuV=",
-        Password: "lRRqlkYefuV6jJ==",
-        Pin: "qzOUsBmZFgMDlwGtrgYypxUz",
-        ACCEPT: "application/json"
-      }
-    : {
-        UserId: "MeCHHkZ9",
-        Password: "tdypsA =",
-        Pin: "lqBZghxJgaVE",
-      }, */
     json: true,
   };
   function callback(error, response, body) {

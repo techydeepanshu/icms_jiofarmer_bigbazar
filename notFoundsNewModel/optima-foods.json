@@ -1,0 +1,41 @@
+{
+    "120466": {
+        "Item": 120466,
+        "Description": "BEANS ORGANIC MEDIUM",
+        "Price": 69.45,
+        "Quantity": 1,
+        "POS": "BRADS ORGANIC WW MEDIUM SHELLS",
+        "Barcode": "681170016208",
+        "PosSKU": "3023",
+        "Size": "454 GM ..",
+        "SellingPrice": "1.99",
+        "Department": "PASTA AND SPAGATTI",
+        "SellerCost": "1.33"
+    },
+    "220209": {
+        "Item": 220209,
+        "Description": "FETA FRENCH - SMALL",
+        "Price": 73.3,
+        "Quantity": 1,
+        "POS": "FRENCH BEANS",
+        "Barcode": "033383810010",
+        "PosSKU": "6664",
+        "Size": "1 LB",
+        "SellingPrice": "3.49",
+        "Department": "VEG N FRUITS",
+        "SellerCost": "0.0"
+    },
+    "990321": {
+        "Item": 990321,
+        "Description": "TAHINI WHOLE WHEAT MACEDONIAN",
+        "Price": 63.2,
+        "Quantity": 1,
+        "POS": "MACEDONIAN TAHINI",
+        "Barcode": "807036508001",
+        "PosSKU": "11844",
+        "Size": "300GM",
+        "SellingPrice": "3.99",
+        "Department": "GROCERY",
+        "SellerCost": "2.87"
+    }
+}

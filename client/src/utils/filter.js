@@ -1,10 +1,14 @@
 export const applyFilter=(arr,options)=>{
+  //console.log("IN APPLY FILTER data");
+  //console.log(arr);
+  //console.log(options);
   let result=[];
   for(let i=0;i<arr.length;i++){
     let data=arr[i];
     for(var prop in data){
       if (Object.prototype.hasOwnProperty.call(data,prop)){
         let str=convertRowToString(data[prop]);
+        //console.log(str);
         str=str.replace(options.notAllowed, '');
         str=str.replace(/ +(?= )/g,'');
         str=str.trimStart();
@@ -29,11 +33,14 @@ export const applyFilter=(arr,options)=>{
             str=str.trimEnd();
             obj[options.header[j]]=x.toUpperCase();
           }
+          //console.log(obj);
           result.push(obj);
         }
       }
     }
   }
+  //console.log("IN APPLY FILTER");
+  //console.log(result);
   return result;
 }
 const convertRowToString=(obj)=>{
@@ -50,6 +57,7 @@ const convertRowToString=(obj)=>{
   return str;
 }
 export const emptyColumn=(arr)=>{
+  //console.log("IN EMPTY CLOUMN");
   let data=[];
   for(let i=0;i<arr.length;i++){
     let obj={};
@@ -69,6 +77,8 @@ export const emptyColumn=(arr)=>{
         obj[prop]=o;
       }
     }
+    //console.log("EMPTY COLUMN" + obj);
+    //console.log("EMPTY COLUMN" + data);
     data.push(obj);
   }
   return data;

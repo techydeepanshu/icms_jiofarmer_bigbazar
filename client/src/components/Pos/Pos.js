@@ -23,6 +23,7 @@ import firebase from "../../firebase";
 import Spinner from "../../UI/Spinner/Spinner";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { TextField } from "@material-ui/core";
+import { stat } from "fs";
 const POS = () => {
   const inventoryService = new InventoryService();
   const api = new Api();
@@ -44,6 +45,10 @@ const POS = () => {
     barcode: "",
     posSku: "",
     invoice: "",
+    size: "",
+    department: "",
+    unitCost: "",
+    unitPrice: ""
   });
   const handleChange = (key, val) => {
     setState({
@@ -59,6 +64,7 @@ const POS = () => {
     ref.on("value", (snapshot) => {
       if (snapshot.val()) {
         const data = Object.values(snapshot.val());
+        console.log(data);
         setQueue(data);
         setLoader(false);
       }
@@ -80,30 +86,67 @@ const POS = () => {
       barcode: o.barcode,
       posSku: o.posSku || "",
       invoice: o.invoiceName,
+      size: "loading...",
+      department: "loading...",
+      unitCost: "loading...",
+      unitPrice: "loading..."
+
     };
     setState(newState);
+
+    let prdctSize;
+    let fuzzwuzzResult;
+    let dprtmnt;
+    let untCst;
+    let untPrce;
     api
       .GetFuzz(o.description, "pos")
       .then((res) => {
+        fuzzwuzzResult = res.result;
         const filter = res.result.map((element) => {
           let obj = { ...element };
-          obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}`;
           console.log(obj);
           return obj;
           
         });
+        
+        for(let i=0;i<fuzzwuzzResult.length;i++){
+          if(o.posSku == fuzzwuzzResult[i].sku){
+            prdctSize = fuzzwuzzResult[i].size !== null ? fuzzwuzzResult[i].size : "NOT AVAILABLE";
+            dprtmnt = fuzzwuzzResult[i].department !== null ? fuzzwuzzResult[i].department : "NOT AVAILABLE";
+            untCst = fuzzwuzzResult[i].cost !== null ? fuzzwuzzResult[i].cost : "NOT AVAILABLE";
+            untPrce = fuzzwuzzResult[i].price !== null ? fuzzwuzzResult[i].price : "NOT AVAILABLE";
+            break;
+          }
+        }
+        console.log(dprtmnt + untCst + untPrce+"$"+prdctSize);
+       
+        newState = {
+          item: o.itemNo,
+          description: o.description,
+          pos: o.posName,
+          barcode: o.barcode,
+          posSku: o.posSku || "",
+          invoice: o.invoiceName,
+          size: prdctSize,
+          department: dprtmnt,
+          unitCost: untCst,
+          unitPrice: untPrce,
+        };
+        setState(newState);
         setFuzzSuggestion(filter);
       })
       .catch((err) => console.log(err));
   };
 
-  const changeDropdown = () => {
+  /* const changeDropdown = () => {
     api
       .GetFuzz("", "pos")
       .then((res) => {
         const filter = res.result.map((element) => {
           let obj = { ...element };
-          obj.label = `${element.name}- ${element.price}- ${element.upc}`;
+          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size} }`;
           console.log(obj);
           return obj;
           
@@ -112,14 +155,23 @@ const POS = () => {
       })
       .catch((err) => console.log(err));
   };
-
+ */
   const addProduct = () => {
     console.log(selectedItemNo);
     setShowModal(!showModal);
+    console.log(state);
     const data = {
       invoiceName: state.invoice,
       itemName: state.item,
-      value: { POS: state.pos, Barcode: state.barcode, PosSKU: state.posSku, isReviewed: "true" },
+      value: { POS: state.pos, 
+        Barcode: state.barcode, 
+        PosSKU: state.posSku, 
+        isReviewed: "true",
+        Size: state.size, 
+        Department: state.department,
+        SellerCost: state.unitCost,
+        SellingPrice: state.unitPrice
+      },
     };
     
     setLoader(true);
@@ -205,7 +257,14 @@ const POS = () => {
                         newState.barcode = newValue.upc;
                         newState.pos = newValue.name;
                         newState.posSku = newValue.sku;
+                        newState.size = newValue.size;
+                        newState.department = newValue.department;
+                        newState.unitCost = newValue.cost;
+                        newState.unitPrice = newValue.price;
                         setState(newState);
+                        console.log(newValue);
+                        console.log(newState);
+                        console.log(state);
                       }
                     }}
                     id="combo-box"
@@ -221,7 +280,8 @@ const POS = () => {
                   <CCol sm="6">
                     <CFormGroup>
                       <CLabel htmlFor="type">Barcode</CLabel>
-                      <CInput
+                      <CInput 
+                        disabled
                         type="text"
                         name="type"
                         value={state.barcode}
@@ -235,6 +295,7 @@ const POS = () => {
                     <CFormGroup>
                       <CLabel htmlFor="short_description">POS SKU</CLabel>
                       <CInput
+                        disabled
                         type="text"
                         name="short_description"
                         value={state.posSku}
@@ -248,6 +309,7 @@ const POS = () => {
                 <CFormGroup>
                   <CLabel htmlFor="description">Invoice Description</CLabel>
                   <CInput
+                    disabled
                     type="text"
                     name="description"
                     value={state.description}
@@ -259,11 +321,60 @@ const POS = () => {
                 <CFormGroup>
                   <CLabel htmlFor="regular_price">POS Name</CLabel>
                   <CInput
+                    disabled
                     type="text"
                     name="regular_price"
                     value={state.pos}
                     onChange={(event) =>
                       handleChange("pos", event.target.value)
+                    }
+                  />
+                </CFormGroup>
+                <CFormGroup>
+                  <CLabel htmlFor="size">POS Size</CLabel>
+                  <CInput
+                    disabled
+                    type="text"
+                    name="size"
+                    value={state.size}
+                    onChange={(event) =>
+                      handleChange("size", event.target.value)
+                    }
+                  />
+                </CFormGroup>
+                <CFormGroup>
+                  <CLabel htmlFor="department">Department</CLabel>
+                  <CInput
+                    disabled
+                    type="text"
+                    name="department"
+                    value={state.department}
+                    onChange={(event) =>
+                      handleChange("department", event.target.value)
+                    }
+                  />
+                </CFormGroup>
+                <CFormGroup>
+                  <CLabel htmlFor="unitPrice">POS Unit Price</CLabel>
+                  <CInput
+                    disabled
+                    type="text"
+                    name="unitPrice"
+                    value={state.unitPrice}
+                    onChange={(event) =>
+                      handleChange("unitPrice", event.target.value)
+                    }
+                  />
+                </CFormGroup>
+                <CFormGroup>
+                  <CLabel htmlFor="unitCost">POS Unit Cost</CLabel>
+                  <CInput
+                    disabled
+                    type="text"
+                    name="unitCost"
+                    value={state.unitCost}
+                    onChange={(event) =>
+                      handleChange("unitCost", event.target.value)
                     }
                   />
                 </CFormGroup>

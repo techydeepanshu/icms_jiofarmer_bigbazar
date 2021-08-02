@@ -1,0 +1,566 @@
+{
+  "3": {
+    "Item": 3,
+    "Description": "LS\" RAW SHRIMP PDTO (51/60) 2LB*5",
+    "Quantity": 5,
+    "Price": 55
+  },
+  "5": {
+    "Item": 5,
+    "Description": "LS\" TILAPIA FILLETS (9/11) 10LB",
+    "Quantity": 9,
+    "Price": 32
+  },
+  "LS\" CKD SHRIMP (91/110) 2LB*5": {
+    "Item": "LS\" CKD SHRIMP (91/110) 2LB*5",
+    "Description": "LS\" CKD SHRIMP (91/110) 2LB*5",
+    "Quantity": 5,
+    "Price": 65
+  },
+  "SWAI FILLET 5/7OZ IVP 10*2LB": {
+    "Item": "SWAI FILLET 5/7OZ IVP 10*2LB",
+    "Description": "SWAI FILLET 5/7OZ IVP 10*2LB",
+    "Quantity": 10,
+    "Price": 70
+  },
+  "EMP BRPB20": {
+    "Item": "EMP BRPB20",
+    "Description": "EMPRESS\" BASMATI RICE (XTRA LONG) PARBOILED 20 LBS*2",
+    "Quantity": 2,
+    "Price": 32
+  },
+  "RP DBR": {
+    "Item": "RP DBR",
+    "Description": "RICE PLUS\" BASMATI RICE (SUITABLE FOR DIABETIC) 10 LBS *4",
+    "Quantity": 4,
+    "Price": 42
+  },
+  "NM SMR": {
+    "Item": "NM SMR",
+    "Description": "NELMANI\" SONA MASOORI RICE 20LBS*2",
+    "Quantity": 2,
+    "Price": 24
+  },
+  "SF JFC": {
+    "Item": "SF JFC",
+    "Description": "SF\" JACKFRUIT CHIPS 200GM*36 (delivered)",
+    "Quantity": 36,
+    "Price": 81
+  },
+  "SF DT4": {
+    "Item": "SF DT4",
+    "Description": "SF\" DRIED TAPIOCA 4LBS*5",
+    "Quantity": 5,
+    "Price": 35
+  },
+  "SF RC4": {
+    "Item": "SF RC4",
+    "Description": "SF\" RED CHORI 4LB*10",
+    "Quantity": 10,
+    "Price": 52
+  },
+  "SF RC2": {
+    "Item": "SF RC2",
+    "Description": "SF\" RED COHRI 2LBS*20",
+    "Quantity": 20,
+    "Price": 52
+  },
+  "GW SFO2": {
+    "Item": "GW SFO2",
+    "Description": "GOLD WINNER\" SUNFLOWER OIL 2LTR*6",
+    "Quantity": 6,
+    "Price": 21
+  },
+  "SF MRFTK": {
+    "Item": "SF MRFTK",
+    "Description": "MATTA RICE FLAKES (THICK) 500GM*20 - B.BOX",
+    "Quantity": 20,
+    "Price": 25
+  },
+  "SF MRFTN": {
+    "Item": "SF MRFTN",
+    "Description": "SF\" MATTA RICE FLAKES ( THIN) 500GM*20",
+    "Quantity": 20,
+    "Price": 31.5
+  },
+  "SF WRF": {
+    "Item": "SF WRF",
+    "Description": "SF\" WHITE RICE FLAKES 400GM*24",
+    "Quantity": 24,
+    "Price": 31.2
+  },
+  "RT CH": {
+    "Item": "RT CH",
+    "Description": "REAL TREAT\" CHANACHUR 400GM*34",
+    "Quantity": 34,
+    "Price": 66.3
+  },
+  "SFF MPF": {
+    "Item": "SFF MPF",
+    "Description": "SFF\" MALABAR PAROTTA FAM PACK 2LB*10",
+    "Quantity": 10,
+    "Price": 31.5
+  },
+  "SFF RPHC": {
+    "Item": "SFF RPHC",
+    "Description": "SFF\" RESTAURANT PAROTTA HALF CKD 4LBS*10",
+    "Quantity": 10,
+    "Price": 59.5
+  },
+  "SFF GJFR": {
+    "Item": "SFF GJFR",
+    "Description": "SFF\" GREEN JACKFRUIT RAW 454GM*25",
+    "Quantity": 25,
+    "Price": 66.25
+  },
+  "SFF KA": {
+    "Item": "SFF KA",
+    "Description": "SFF\" KUMBILAPPAM 454GM*22 TOTAL FROZEN : 8 CASES",
+    "Quantity": 22,
+    "Price": 57.2
+  },
+  "SSF ISW": {
+    "Item": "SSF ISW",
+    "Description": "INDIAN SARDINE WHOLE 2LBS*12",
+    "Quantity": 12,
+    "Price": 59.4
+  },
+  "SSF IBAPR": {
+    "Item": "SSF IBAPR",
+    "Description": "INDIAN BIG ANCHOVY (P/R) 2LBS*12",
+    "Quantity": 12,
+    "Price": 78
+  },
+  "SSF IMPR": {
+    "Item": "SSF IMPR",
+    "Description": "INDIAN MACKEREL(P/R) 2LB*12",
+    "Quantity": 12,
+    "Price": 86.4
+  },
+  "SSF IBP": {
+    "Item": "SSF IBP",
+    "Description": "INDIAN BLACK POMFRET (1000/2000) 22LBS",
+    "Quantity": 1,
+    "Price": 77
+  },
+  "SSF IKSPR": {
+    "Item": "SSF IKSPR",
+    "Description": "INDIAN KELLIMEEN SMALL (P/R) 2LB*12 FROZEN FISH : 11 CASES",
+    "Quantity": 12,
+    "Price": 86.4
+  },
+  "SF TD55": {
+    "Item": "SF TD55",
+    "Description": "SF\" TOOR DAL 55LBS",
+    "Quantity": 1,
+    "Price": 46
+  },
+  "SF CD55": {
+    "Item": "SF CD55",
+    "Description": "SF\" CHANA DAL 55LBS",
+    "Quantity": 1,
+    "Price": 35
+  },
+  "SF MD2": {
+    "Item": "SF MD2",
+    "Description": "SF\"MUNG DAL 2LB*20 mascur Dul",
+    "Quantity": 20,
+    "Price": 55
+  },
+  "SF KC55": {
+    "Item": "SF KC55",
+    "Description": "SF\" KALA CHANA 55LBS",
+    "Quantity": 1,
+    "Price": 35.75
+  },
+  "SF MDM55": {
+    "Item": "SF MDM55",
+    "Description": "SF\" MUNG DAL MEDIUM 55LBS",
+    "Quantity": 1,
+    "Price": 49
+  },
+  "RT KMH340": {
+    "Item": "RT KMH340",
+    "Description": "REAL TREAT\" KERALA MIXTURE HOT 340GM*24",
+    "Quantity": 24,
+    "Price": 50.4
+  },
+  "RT KMH800": {
+    "Item": "RT KMH800",
+    "Description": "REAL TREAT\" KERALA MIXTURE HOT 800GM*14",
+    "Quantity": 14,
+    "Price": 73.5
+  },
+  "SF AC": {
+    "Item": "SF AC",
+    "Description": "SF\" ACHAPPAM 200GM*24",
+    "Quantity": 24,
+    "Price": 36
+  },
+  "SF PCIC": {
+    "Item": "SF PCIC",
+    "Description": "SF\" PLANTAIN CHIPS IN COC OIL 340GM *24",
+    "Quantity": 24,
+    "Price": 78
+  },
+  "SF PC340": {
+    "Item": "SF PC340",
+    "Description": "SF\" PLANTAIN CHIPS 340GM*24",
+    "Quantity": 24,
+    "Price": 66
+  },
+  "SF PC7": {
+    "Item": "SF PC7",
+    "Description": "SF\" PLANTAIN CHIPS 710GM*12",
+    "Quantity": 12,
+    "Price": 66
+  },
+  "SF RMPP": {
+    "Item": "SF RMPP",
+    "Description": "SF\" RICE MURUKU PLAIN 200GM*24 (POUCH)",
+    "Quantity": 24,
+    "Price": 32.4
+  },
+  "SF RMSP": {
+    "Item": "SF RMSP",
+    "Description": "SF RICE MURUKU SPICY 200GM*24 (POUCH) RT",
+    "Quantity": 24,
+    "Price": 32.4
+  },
+  "SF RR": {
+    "Item": "SF RR",
+    "Description": "SF\" ROASTED RAVA 1KG*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF FM2": {
+    "Item": "SF FM2",
+    "Description": "SF\" FINGER MILLET PARBOILED (RAGI WHOLE) 2LBS*12",
+    "Quantity": 12,
+    "Price": 36
+  },
+  "SF FM4": {
+    "Item": "SF FM4",
+    "Description": "SF\" FINGER MILLET PARBOILED (RAGI WHOLE) 4LBS*6",
+    "Quantity": 6,
+    "Price": 34.5
+  },
+  "SF FMF2": {
+    "Item": "SF FMF2",
+    "Description": "SF\" FINGER MILLET FLOUR (RAGI) 2LBS*12",
+    "Quantity": 12,
+    "Price": 37.8
+  },
+  "SF PR400": {
+    "Item": "SF PR400",
+    "Description": "SF\" PUFFED RICE (MURI) 400GM*18",
+    "Quantity": 18,
+    "Price": 23.4
+  },
+  "SD DPB": {
+    "Item": "SD DPB",
+    "Description": "SUN-DRY\" DRIED PRAWNS BIG H/L 75GM*40",
+    "Quantity": 40,
+    "Price": 144
+  },
+  "SD DSB": {
+    "Item": "SD DSB",
+    "Description": "SUN-DRY\" DRIED SILVER BELLY 100GM*40",
+    "Quantity": 40,
+    "Price": 118
+  },
+  "SF DPR": {
+    "Item": "SF DPR",
+    "Description": "SF\" DRIED PRAWNS ROASTED 100GM*24",
+    "Quantity": 24,
+    "Price": 94.8
+  },
+  "SF DAR": {
+    "Item": "SF DAR",
+    "Description": "SF\" DRIED ANCHOVY ROAST 100GM*24",
+    "Quantity": 24,
+    "Price": 78
+  },
+  "SSF IGAPR": {
+    "Item": "SSF IGAPR",
+    "Description": "INDIAN GREY ANCHOVY (P/R) 2LBS*12",
+    "Quantity": 12,
+    "Price": 67.2
+  },
+  "SSF IKPR": {
+    "Item": "SSF IKPR",
+    "Description": "INDIAN KOLAN (KATHIRAN) BIG (P/R) 2LBS*12",
+    "Quantity": 12,
+    "Price": 78
+  },
+  "SF VPR": {
+    "Item": "SF VPR",
+    "Description": "SF\" VADUKAPULI PICKLE RED 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF MVP": {
+    "Item": "SF MVP",
+    "Description": "SF\" MIXED VEG PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF IPP": {
+    "Item": "SF IPP",
+    "Description": "SF\" IRUMPAM PULI PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF BGP": {
+    "Item": "SF BGP",
+    "Description": "SF BITTER GOURD PICKLE 400GM* 12",
+    "Quantity": 12,
+    "Price": 1.79
+  },
+  "GW SFO1": {
+    "Item": "GW SFO1",
+    "Description": "GOLD WINNER\" SUNFLOWER OIL 1LTR * 10",
+    "Quantity": 10,
+    "Price": 20
+  },
+  "ECO OWC": {
+    "Item": "ECO OWC",
+    "Description": "ECONUTRENA\" ORGANIC WHITE COCONUT OIL 950ML*3",
+    "Quantity": 3,
+    "Price": 27
+  },
+  "SF AA": {
+    "Item": "SF AA",
+    "Description": "AMBIKA APPALAM NO.3 225GM*60",
+    "Quantity": 60,
+    "Price": 75
+  },
+  "SF KMH340": {
+    "Item": "SF KMH340",
+    "Description": "SF\" KERALA MIXTURE HOT 340GM*30",
+    "Quantity": 30,
+    "Price": 61.5
+  },
+  "SF KMM340": {
+    "Item": "SF KMM340",
+    "Description": "SF\" KERALA MIXTURE MILD 340G*30",
+    "Quantity": 30,
+    "Price": 61.5
+  },
+  "SF KMH800": {
+    "Item": "SF KMH800",
+    "Description": "SF\" KERALA MIXTURE HOT 800GM*14",
+    "Quantity": 14,
+    "Price": 63
+  },
+  "SF TC20022": {
+    "Item": "SF TC20022",
+    "Description": "SF\" TAPIOCA CHIPS 200GM*22",
+    "Quantity": 22,
+    "Price": 31.2
+  },
+  "SF RPC": {
+    "Item": "SF RPC",
+    "Description": "SF\" RIPE PLANTAIN CHIPS 200GM*24",
+    "Quantity": 24,
+    "Price": 42
+  },
+  "SF RYC400": {
+    "Item": "SF RYC400",
+    "Description": "SF\" ROASTED YELLOW CHANA (PET BTL) 400GM*28",
+    "Quantity": 28,
+    "Price": 49
+  },
+  "SF PV": {
+    "Item": "SF PV",
+    "Description": "SF\" PAKKA VADA 200GM*24",
+    "Quantity": 24,
+    "Price": 31.2
+  },
+  "SF KS": {
+    "Item": "SF KS",
+    "Description": "SF\" KARASEV 200GM*24",
+    "Quantity": 24,
+    "Price": 31.2
+  },
+  "SF AP": {
+    "Item": "SF AP",
+    "Description": "SF\" AVALOSE PODI 340GM*18",
+    "Quantity": 18,
+    "Price": 40.5
+  },
+  "SF GBW": {
+    "Item": "SF GBW",
+    "Description": "SF\" GINGELLY BALL WHITE 200GM124BTL",
+    "Quantity": 124,
+    "Price": 36
+  },
+  "SF GBB": {
+    "Item": "SF GBB",
+    "Description": "SE\" -GINGELLY BALL BLACK 200GM* 24 HTA'T BTL",
+    "Quantity": 24,
+    "Price": 36
+  },
+  "SF PB": {
+    "Item": "SF PB",
+    "Description": "SE\" PEANUT BALL 24 BTL",
+    "Quantity": 24,
+    "Price": 36
+  },
+  "SF DJFS24": {
+    "Item": "SF DJFS24",
+    "Description": "SF\" DRIED JACKFRUIT SLICES 340GM*24",
+    "Quantity": 24,
+    "Price": 94.8
+  },
+  "SF DGJF": {
+    "Item": "SF DGJF",
+    "Description": "SF\" DRIED GREEN JACKFRUIT FLOUR 340G*24",
+    "Quantity": 24,
+    "Price": 99.6
+  },
+  "SF DCC": {
+    "Item": "SF DCC",
+    "Description": "SF\" DRIED CURD CHILLY 100GM*20",
+    "Quantity": 20,
+    "Price": 25
+  },
+  "SF DM": {
+    "Item": "SF DM",
+    "Description": "SF\" DRIED MANGO 200GM118",
+    "Quantity": 118,
+    "Price": 56.7
+  },
+  "SF DB25": {
+    "Item": "SF DB25",
+    "Description": "SF\" DRIED BITTERGOURD 200GM*25",
+    "Quantity": 25,
+    "Price": 75
+  },
+  "SF PJ": {
+    "Item": "SF PJ",
+    "Description": "SF\" PALM JAGGERY 400GM*25",
+    "Quantity": 25,
+    "Price": 73.75
+  },
+  "SF PCA": {
+    "Item": "SF PCA",
+    "Description": "SF\" PALM CANDY 200GM*30",
+    "Quantity": 30,
+    "Price": 67.5
+  },
+  "SF MJ": {
+    "Item": "SF MJ",
+    "Description": "SF\" MARAYOOR JAGGERY 2LB*20",
+    "Quantity": 20,
+    "Price": 57
+  },
+  "SF MJP": {
+    "Item": "SF MJP",
+    "Description": "SF\" MARAYOOR JAGGERY POWDER 2LBS *18",
+    "Quantity": 18,
+    "Price": 53.1
+  },
+  "SF DT2": {
+    "Item": "SF DT2",
+    "Description": "SF\" DRIED TAPIOCA 2LB*11",
+    "Quantity": 11,
+    "Price": 38.5
+  },
+  "SE1C": {
+    "Item": "SE1C",
+    "Description": "SF\" IDLI COOKER 1'6RCS",
+    "Quantity": 1,
+    "Price": 125.7
+  },
+  "SE,PC": {
+    "Item": "SE,PC",
+    "Description": "SF\" PRESSURE COOKER (BUTTER FLY) 5LTR",
+    "Quantity": 1,
+    "Price": 45
+  },
+  "SE WEC": {
+    "Item": "SE WEC",
+    "Description": "SF\" WOODEN EASY CHAIR $2",
+    "Quantity": 1,
+    "Price": 145
+  },
+  "SF DCWT": {
+    "Item": "SF DCWT",
+    "Description": "SP DRY CHILLA WHOLE LONG (TEJA) 106GM*40",
+    "Quantity": 40,
+    "Price": -38
+  },
+  "SF RDCC": {
+    "Item": "SF RDCC",
+    "Description": "SF\" ROASTED DRY CHILLY CHUTNEY 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF PCC": {
+    "Item": "SF PCC",
+    "Description": "SF\" PRAWN CHILLI CHUTNEY 400GM*12",
+    "Quantity": 12,
+    "Price": 46.2
+  },
+  "SF FP": {
+    "Item": "SF FP",
+    "Description": "SF\" FISH PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 51
+  },
+  "SF PP": {
+    "Item": "SF PP",
+    "Description": "SF\" PRAWN PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 51
+  },
+  "SF KMC": {
+    "Item": "SF KMC",
+    "Description": "SF\" KANTHARI MANGO CHAMMANTHI 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF CMP": {
+    "Item": "SF CMP",
+    "Description": "SF\" CUT MANGO PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF KMP": {
+    "Item": "SF KMP",
+    "Description": "SF\" KADUMANGO PICKLE 400GM*12",
+    "Quantity": 12,
+    "Price": 27
+  },
+  "SF CPR": {
+    "Item": "SF CPR",
+    "Description": "SF\" CLAY POT RED (MUNCHATTY) 10\", 9\", 8\"(3 NOS)",
+    "Quantity": 3,
+    "Price": 15
+  },
+  "SF CPB1098": {
+    "Item": "SF CPB1098",
+    "Description": "SF\" CLAY POT BLACK (MUNCHATTY) 10\", 9\", 8\"(3 NOS)",
+    "Quantity": 3,
+    "Price": 18
+  },
+  "SF CPB8N": {
+    "Item": "SF CPB8N",
+    "Description": "SF\" CLAY POT BLACK 9 . (8 NOS)",
+    "Quantity": 8,
+    "Price": 15
+  },
+  "SF CPWP": {
+    "Item": "SF CPWP",
+    "Description": "SF\" CLAY WATER POT (KOOJA) 2LTR (2 NOS)",
+    "Quantity": 2,
+    "Price": 20
+  },
+  "SF UG55": {
+    "Item": "SF UG55",
+    "Description": "SF\" URAD GOTTA 55 LB",
+    "Quantity": 1,
+    "Price": 57.75
+  }
+}

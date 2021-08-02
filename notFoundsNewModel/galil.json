@@ -1,0 +1,41 @@
+{
+    "131-006": {
+        "Item": "131-006",
+        "Description": "GALIL TEA CAMOMILE",
+        "Quantity": 1,
+        "Price": 13.2,
+        "POS": "GALIL CAMOMILE TEA",
+        "Barcode": "794711002261",
+        "PosSKU": "6815",
+        "Size": "20 PCS",
+        "SellingPrice": "2.49",
+        "Department": "COFFEE N TEA",
+        "SellerCost": "1.67"
+    },
+    "153-008": {
+        "Item": "153-008",
+        "Description": "PISTACHIOS LEMON- LARGE",
+        "Quantity": 1,
+        "Price": 165,
+        "POS": "LEMON BAG",
+        "Barcode": "2156",
+        "PosSKU": "11450",
+        "Size": "EA",
+        "SellingPrice": "2.99",
+        "Department": "VEG N FRUITS",
+        "SellerCost": "0.0"
+    },
+    "151-007": {
+        "Item": "151-007",
+        "Description": "GALIL GROUND CORIANDER- JUG",
+        "Quantity": 1,
+        "Price": 18,
+        "POS": "YORUK BRAND GROUND GARLIC",
+        "Barcode": "6525",
+        "PosSKU": "21741",
+        "Size": "0 25 Lb",
+        "SellingPrice": "1.99",
+        "Department": "SPICES",
+        "SellerCost": "1.25"
+    }
+}

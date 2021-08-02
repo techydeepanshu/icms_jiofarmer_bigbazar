@@ -1,0 +1,28 @@
+{
+    "SQUID PICKLE 200 GRM ON": {
+        "Item": "SQUID PICKLE 200 GRM ON",
+        "Description": "SQUID PICKLE 200 GRM ON",
+        "Price": 3.49,
+        "Quantity": 1,
+        "POS": "LEMON PICKLES",
+        "Barcode": "890023009643",
+        "PosSKU": "41039",
+        "Size": "14OZ",
+        "SellingPrice": "2.99",
+        "Department": "MISCELLANEOUS",
+        "SellerCost": "0.0"
+    },
+    "KLNG FISH MOLHO N": {
+        "Item": "KLNG FISH MOLHO N",
+        "Description": "KLNG FISH MOLHO N",
+        "Price": 3.49,
+        "Quantity": 1,
+        "POS": "KING FISH",
+        "Barcode": "3875",
+        "PosSKU": "10288",
+        "Size": "LB",
+        "SellingPrice": "6.99",
+        "Department": "KITCHEN ITEMS",
+        "SellerCost": "3.49"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "SDA20": {
+        "Item": "SDA20",
+        "Description": "SWARNA DURUM ATTA 20LB",
+        "Price": 7.5,
+        "Quantity": 1,
+        "POS": "SWARNA DURUM ATTA",
+        "Barcode": "873106006203",
+        "PosSKU": "19340",
+        "Size": "20 LB",
+        "SellingPrice": "9.99",
+        "Department": "ATTA",
+        "SellerCost": "7.5"
+    }
+}

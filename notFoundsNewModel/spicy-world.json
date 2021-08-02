@@ -1,0 +1,93 @@
+{
+    "RATANO1": {
+        "Item": "RATANO1",
+        "Description": "RAJAH TANDORI MASALA 100G PK",
+        "Price": 22.5,
+        "Quantity": 1,
+        "POS": "RAJAH TANDOORI MASALA",
+        "Barcode": "5015821147020",
+        "PosSKU": "16420",
+        "Size": "100 GM",
+        "SellingPrice": "3.79",
+        "Department": "SPICES",
+        "SellerCost": "2.75"
+    },
+    "MCG": {
+        "Item": "MCG",
+        "Description": "IN01 MCV GINGER NUTS 250G",
+        "Price": 54,
+        "Quantity": 1,
+        "POS": "MCVITIES GINGER NUTS",
+        "Barcode": "5000168164045",
+        "PosSKU": "12643",
+        "Size": "250 GM",
+        "SellingPrice": "2.99",
+        "Department": "COOKIES AND CAKES",
+        "SellerCost": "2.25"
+    },
+    "JIWHE02": {
+        "Item": "JIWHE02",
+        "Description": "JIVA ORG. WHEAT (ATTA) FLOUR 20LB",
+        "Price": 23,
+        "Quantity": 1,
+        "POS": "JIVA ORG WHEAT FLOUR",
+        "Barcode": "692991704465",
+        "PosSKU": "9511",
+        "Size": "10 LB ..",
+        "SellingPrice": "7.99",
+        "Department": "ATTA",
+        "SellerCost": "5.99"
+    },
+    "JIMET02": {
+        "Item": "JIMET02",
+        "Description": "JIVA ORG. METHI POWDER 7OZ",
+        "Price": 33.6,
+        "Quantity": 1,
+        "POS": "JIVA ORG COCONUT MILK POWDER JICOC10",
+        "Barcode": "692991710251",
+        "PosSKU": "9464",
+        "Size": "150 GM ..",
+        "SellingPrice": "3.49",
+        "Department": "GROCERY",
+        "SellerCost": "2.5"
+    },
+    "NIMILO3": {
+        "Item": "NIMILO3",
+        "Description": "NIDO MILK POWDER HOLLAND 1800G",
+        "Price": 156,
+        "Quantity": 1,
+        "POS": "ONION POWDER",
+        "Barcode": "964560",
+        "PosSKU": "44683",
+        "Size": "0 90 LB",
+        "SellingPrice": "3.99",
+        "Department": "ATTA",
+        "SellerCost": "0.0"
+    },
+    "HESALO1": {
+        "Item": "HESALO1",
+        "Description": "HEINZ SALAD CREAM 285G GLASS",
+        "Price": 33,
+        "Quantity": 1,
+        "POS": "HEINZ SALAD CREAM",
+        "Barcode": "50457632",
+        "PosSKU": "8396",
+        "Size": "285 GM .",
+        "SellingPrice": "3.49",
+        "Department": "SAUCES",
+        "SellerCost": "2.5"
+    },
+    "PEMILO4": {
+        "Item": "PEMILO4",
+        "Description": "PEAK EVAP MILK 410G",
+        "Price": 84.48,
+        "Quantity": 1,
+        "POS": "PEAK EVAPORATED MILK",
+        "Barcode": "8716200635783",
+        "PosSKU": "15424",
+        "Size": "2.5 KG ..",
+        "SellingPrice": "38.99",
+        "Department": "GROCERY",
+        "SellerCost": "32.0"
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "INDIGO POWDER 100 G": {
+        "Item": "INDIGO POWDER 100 G",
+        "Description": "INDIGO POWDER 100 G",
+        "Price": 1.25,
+        "Quantity": 1,
+        "POS": "CLASSIC INDIGO POWDER",
+        "Barcode": "7115835805676",
+        "PosSKU": "4084",
+        "Size": "100 GM",
+        "SellingPrice": "1.99",
+        "Department": "HBA",
+        "SellerCost": "1.25"
+    },
+    "POTATO CHIP FRYUM": {
+        "Item": "POTATO CHIP FRYUM",
+        "Description": "POTATO CHIP FRYUM",
+        "Price": 2,
+        "Quantity": 1,
+        "POS": "SUPER POTOTO CHIPS FRYMS",
+        "Barcode": "6154995892592",
+        "PosSKU": "18733",
+        "Size": "200 GM.",
+        "SellingPrice": "2.49",
+        "Department": "GROCERY",
+        "SellerCost": "1.85"
+    },
+    "DOZEN RAKHI RETU 7/20/19 ALP": {
+        "Item": "DOZEN RAKHI RETU 7/20/19 ALP",
+        "Description": "DOZEN RAKHI RETU 7/20/19 ALP",
+        "Price": 4.75,
+        "Quantity": 1,
+        "POS": "CUPS 7 OZ",
+        "Barcode": "041594071007",
+        "PosSKU": "4426",
+        "Size": "100 PS",
+        "SellingPrice": "1.99",
+        "Department": "GROCERY",
+        "SellerCost": "1.99"
+    },
+    "CHILLA MIX ATTA": {
+        "Item": "CHILLA MIX ATTA",
+        "Description": "CHILLA MIX ATTA",
+        "Price": 2.25,
+        "Quantity": 1,
+        "POS": "A1 CHIPS",
+        "Barcode": "8904123527029",
+        "PosSKU": "28950",
+        "Size": "nan",
+        "SellingPrice": "1.79",
+        "Department": "SNACKS",
+        "SellerCost": "0.0"
+    },
+    "APPLE MURABBA": {
+        "Item": "APPLE MURABBA",
+        "Description": "APPLE MURABBA",
+        "Price": 4.25,
+        "Quantity": 1,
+        "POS": "PIP PACHRANGA APPLE MURABBA",
+        "Barcode": "8906040910410",
+        "PosSKU": "15746",
+        "Size": "800 GM ..",
+        "SellingPrice": "3.99",
+        "Department": "PICKLE N PASTE",
+        "SellerCost": "3.0"
+    }
+}

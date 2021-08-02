@@ -1,0 +1,28 @@
+{
+    "1": {
+        "Item": 1,
+        "Description": "961528 FRESH GMT-CROUTON-MULTGRN PARM CAESAR-50Z-PK12 -",
+        "Price": 17.4,
+        "Quantity": 12,
+        "POS": "FRESH CORN",
+        "Barcode": "2635",
+        "PosSKU": "6684",
+        "Size": "1 PCS",
+        "SellingPrice": "0.5",
+        "Department": "VEG N FRUITS",
+        "SellerCost": "0.0"
+    },
+    "39": {
+        "Item": 39,
+        "Description": "924287 LOACKER-QUADRATINI - BAG- LEMON- - 8. . 820Z-PK6 UPC 0 7658000493 6",
+        "Price": 21.42,
+        "Quantity": 6,
+        "POS": "LEMON BAG",
+        "Barcode": "2156",
+        "PosSKU": "11450",
+        "Size": "EA",
+        "SellingPrice": "2.99",
+        "Department": "VEG N FRUITS",
+        "SellerCost": "0.0"
+    }
+}

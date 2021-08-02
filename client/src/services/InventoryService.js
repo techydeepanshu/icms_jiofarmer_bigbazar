@@ -38,6 +38,7 @@ export class InventoryService {
   }
   async SyncInventory() {
     const res = await Axios.get(appendURL + "/api/sync");
+    console.log(res.data);
     return res.data;
   }
   async UpdateProductFields(data) {
@@ -45,6 +46,7 @@ export class InventoryService {
      ***** data format
      * data = {invoiceName: "chetak", itemName:"CAS 123", value:{"Description": "jnckwc", "Price": "44"}}
      */
+     console.log(data);
     const res = await Axios.put(
       appendURL + "/api/invoice/product/update",
       data
@@ -61,6 +63,13 @@ export class InventoryService {
     return res.data;
   }
 
+  async CreateScanInvoiceData(data){
+    //console.log("IN INVENTORY SERVICE");
+    //console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/scaninvoicedata", data);
+    return res.data;
+  }
+
   async UpdateDBProduct(data) {
     const res = await Axios.put(appendURL + "/api/invoice/pos/update", data);
     return res.data;
@@ -70,8 +79,10 @@ export class InventoryService {
     return res.data;
   }
 
-  async getInitialSyncedData() {
-    const res = await Axios.get(appendURL + "/api/invoice/pos");
+  async getInitialSyncedData(dateObj) {
+    console.log("In inventory service");
+    console.log(dateObj);
+    const res = await Axios.get(appendURL + "/api/invoice/pos",dateObj);
     console.log(res);
     return res.data;
   }

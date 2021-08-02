@@ -1,0 +1,15 @@
+{
+    "SPORT5": {
+        "Item": "SPORT5",
+        "Description": "DISCO POWDER FOR CARROM BOARD (12)",
+        "Price": 15,
+        "Quantity": 12,
+        "POS": "CUTTING BOARD",
+        "Barcode": "506900",
+        "PosSKU": "33596",
+        "Size": "1 Q",
+        "SellingPrice": "4.99",
+        "Department": "GROCERY",
+        "SellerCost": "4.99"
+    }
+}
