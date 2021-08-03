@@ -15,7 +15,8 @@ import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { InventoryService } from "../../services/InventoryService";
 import Checkbox from "@material-ui/core/Checkbox";
-
+ 
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { Api } from "../../services/Api";
 import HicksData from "./Hicksville.json";
 
@@ -31,32 +32,6 @@ const DisplayData = (props) => {
   const [loader, setLoader] = useState(true);
   const [reviewItems, setReviewItems] = useState([]);
   const tesseractService = new TesseractService();
-  const inventoryService = new InventoryService();
-  let hicksvilleData = [];
-  let flag = 0;
-  const scanInvoiceData = 
-    {
-      InvoiceName: props.selectedInvoice,
-      InvoiceDate: "",
-      InvoiceNumber: "",
-      InvoicePage: "",
-      InvoiceData: []
-    }
-  
-    const [showPosState, setShowPosState] = useState({
-      item: "",
-      quantity: "",
-      description: "",
-      price: "",
-      pos: "",
-      barcode: "",
-      posSku: "",
-      invoice: "",
-      size: "",
-      department: "",
-      unitCost: "",
-      unitPrice: ""
-    });
 
   const header = [
     "Serial No.",
@@ -64,7 +39,7 @@ const DisplayData = (props) => {
     "POS SKU",
     "Qty Shipped",
     "ITEM NO",
-    "Show POS",
+    "Link Product",
     "DESCRIPTION",
     "Units in  Case",
     "Case cost",
@@ -74,10 +49,39 @@ const DisplayData = (props) => {
     "Mark up (%)"
   ];
 
+  //added by Parikshit.
+  const inventoryService = new InventoryService();
+  let hicksvilleData = [];
+  const [flag, setFlag]  = useState(0);
+  const [showPosIndex, setShowPosIndex] = useState(-1);
+  const [disabled, setDisabled] = useState(true);
+  const scanInvoiceData = 
+    {
+      InvoiceName: props.selectedInvoice,
+      InvoiceDate: "",
+      InvoiceNumber: "",
+      InvoicePage: "",
+      InvoiceData: []
+    };
+  
+  const [showPosState, setShowPosState] = useState({
+    item: "",
+    quantity: "",
+    description: "",
+    price: "",
+    pos: "",
+    barcode: "",
+    posSku: "",
+    invoice: "",
+    size: "",
+    department: "",
+    unitCost: "",
+    unitPrice: "",
+  });
+
   // added by parikshit.
   const saveInvoiceData = async () => {
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
-    console.log(showPosState);
     console.log(resScnInvDta);
   }
 
@@ -121,6 +125,40 @@ const DisplayData = (props) => {
     });
     hicksvilleData = filter;
       console.log(hicksvilleData);
+  }
+
+  const updateItem = (props) => {
+    console.log(showPosState);
+    const data = {
+      invoiceName: props.selectedInvoice,
+      itemName: showPosState.item,
+      value: { 
+        POS: showPosState.pos, 
+        Barcode: showPosState.barcode, 
+        PosSKU: showPosState.posSku, 
+        isReviewed: "true",
+        Size: showPosState.size, 
+        Department: showPosState.department,
+        //SellerCost: showPosState.unitCost,
+        SellingPrice: showPosState.unitPrice
+      },
+    };
+
+    inventoryService
+    .UpdateProductFields(data)
+    .then((res) => {
+      if (!res) {
+        throw new Error("Product not created")
+      }
+      console.log(res);
+      alert("Successfully updated fields");
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Some error occuured in creating product");
+    })
+    .finally(() => setLoader(false));
+
   }
 
   const addRow = () => {
@@ -188,9 +226,12 @@ const DisplayData = (props) => {
   };
 
   const renderTableData = () => {
+    hicksvilleDropdown(HicksData);
+
     if (tableData) {
       console.log(tableData);
-      hicksvilleDropdown(HicksData);
+      console.log(showPosIndex);
+      
       let rows = tableData.map((element, index) => {
         //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
         let isEmpty =
@@ -205,6 +246,7 @@ const DisplayData = (props) => {
           emptyColumnList = [...new Set(emptyColumn)];
         }
         let isFree = element.qty != 0 && element.extendedPrice === "0.00";
+
         return (
           <tr
             key={index}
@@ -215,7 +257,7 @@ const DisplayData = (props) => {
             <td className={styles.element}>
               <TextField
                 type="tel"
-                value={element.barcode}
+                value={showPosIndex === index ? showPosState.barcode : element.barcode}
                 id="outlined-secondary"
                 variant="outlined"
                 onChange={(e) => {
@@ -226,26 +268,47 @@ const DisplayData = (props) => {
               <IconButton
                 color="primary"
                 aria-label="add to review"
-                onClick={() => addForReview(element, index)}
+                // onClick={() => addForReview(element, index)}
               >
-                <AddShoppingCartIcon
+                <InfoOutlinedIcon
                   style={
                     reviewItems.includes(index)
                       ? { backgroundColor: "green" }
                       : null
                   }
-                />
+                /> 
+                {/* <AddShoppingCartIcon
+                  style={
+                    reviewItems.includes(index)
+                      ? { backgroundColor: "green" }
+                      : null
+                  }
+                /> */}
               </IconButton>
               <div className={element.isReviewed === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
-                <p>POS Product- {flag ? showPosState.pos : element.posName }</p>
-                <p>UPC- {flag ? showPosState.barcode : element.barcode}</p>
-                <p>Size- {flag ? showPosState.size : element.size}</p>
-                <p>Department - {flag ? showPosState.department : element.department}</p>
-                <p>Unit Cost- {flag ? showPosState.unitCost : element.cost}</p> 
-                <p>Unit Price- {flag ? showPosState.unitPrice : element.sellingPrice}</p>
+                <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
+                {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
+                <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
+                <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
+                <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
+                <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
+                <div >
+                <button onClick={() => updateItem(props)} disabled={showPosIndex === index ? false : true}
+                  style={{backgroundColor: "green",
+                  border: "none",
+                  color: "white",
+                  padding: "4px 8px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  fontSize: "14px",
+                  align: "left"}} >
+                  Update Item
+                </button>
+                </div> 
               </div>
             </td>
-            <td>{element.posSku}</td>
+            <td>{showPosIndex === index ? showPosState.posSku : element.posSku}</td>
             <td>
               <TextField
                 type="tel"
@@ -277,11 +340,11 @@ const DisplayData = (props) => {
             </td>
             <td>
               <Autocomplete
-                value={flag ? showPosState.item :element.itemNo }
+                value={showPosIndex  === index ? showPosState.item : element.itemNo }
                 onChange={(event, newValue) => {
                   if (newValue) {
                     let newState = { ...showPosState };
-                    console.log(newValue);
+                    //console.log(newValue);
                     // newState.item = newValue.name;
                     newState.item = element.itemNo
                     newState.description = newValue.name;
@@ -293,9 +356,13 @@ const DisplayData = (props) => {
                     newState.unitCost = newValue.cost;
                     newState.unitPrice = newValue.price;
                     setShowPosState(newState);
-                    flag = 1;
-                    console.log(newValue);
+                    setShowPosIndex(index);
+                    //setDisabled(false);
+                    //updateOnHoverDetails(index);
+                    //setShowPosIndex(index);
+                    // console.log(newValue);
                     console.log(newState);
+                    //console.log(showPosState);
                     
                   }
                 }}
