@@ -19,6 +19,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { Api } from "../../services/Api";
 import HicksData from "./Hicksville.json";
+import { CContainer, CModalHeader, CCol, CFormGroup, CInput, CButton, CLabel, CModal, CModalBody, CModalFooter, CRow } from "@coreui/react";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
@@ -40,6 +41,7 @@ const DisplayData = (props) => {
     "Qty Shipped",
     "ITEM NO",
     "Link Product",
+    "Update Item",
     "DESCRIPTION",
     "Units in  Case",
     "Case cost",
@@ -52,17 +54,27 @@ const DisplayData = (props) => {
   //added by Parikshit.
   const inventoryService = new InventoryService();
   let hicksvilleData = [];
-  const [flag, setFlag]  = useState(0);
+  let saveInvoiceFlag  = 1;
   const [showPosIndex, setShowPosIndex] = useState(-1);
   const [disabled, setDisabled] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [invoiceNo, setInvoiceNo] = useState("");
+  const [date, setDate] = useState("");
+  const [ocrProducts, setOcrProducts] = useState([]); 
+  const [invDate, setInvDate] = useState("");
+  const [invNo, setInvNo] = useState("");
+  const [invPage, setInvPage] = useState("");
   const scanInvoiceData = 
     {
       InvoiceName: props.selectedInvoice,
       InvoiceDate: "",
       InvoiceNumber: "",
       InvoicePage: "",
-      InvoiceData: []
-    };
+      InvoiceData: [],
+      SavedDate: "",
+      SavedInvoiceNo: ""
+    }
+    
   
   const [showPosState, setShowPosState] = useState({
     item: "",
@@ -78,12 +90,47 @@ const DisplayData = (props) => {
     unitCost: "",
     unitPrice: "",
   });
+  let modalBody;
 
   // added by parikshit.
   const saveInvoiceData = async () => {
+    toggleModal();
+    console.log(invDate);
+    console.log(invNo);
+    console.log(invPage);
+    console.log(ocrProducts);
+   
+      scanInvoiceData.InvoiceName = props.selectedInvoice;
+      scanInvoiceData.InvoiceDate = invDate;
+      scanInvoiceData.InvoiceNumber = invNo;
+      scanInvoiceData.InvoicePage = invPage;
+      scanInvoiceData.InvoiceData = ocrProducts;
+
+    
+    // setScanInvoiceData(data);
+    console.log(scanInvoiceData);
+    scanInvoiceData.SavedDate = date;
+    scanInvoiceData.SavedInvoiceNo = invoiceNo;
+    console.log(scanInvoiceData);
+    const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
+    console.log(resScnInvDta);
+  };
+
+  const sendInvoiceData = async () => {
+    console.log(scanInvoiceData);
+    scanInvoiceData.SavedDate = date;
+    scanInvoiceData.SavedInvoiceNo = invoiceNo;
+    console.log(scanInvoiceData)
+    alert("CHECK!!!!");
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
     console.log(resScnInvDta);
   }
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+    // setDate("");
+    // setInvNo("");
+  };
 
   const hicksvilleDropdown = (data) => {
     let productsString = "";
@@ -124,11 +171,12 @@ const DisplayData = (props) => {
       
     });
     hicksvilleData = filter;
-      console.log(hicksvilleData);
+      // console.log(hicksvilleData);
   }
 
+
   const updateItem = (props) => {
-    console.log(showPosState);
+    //console.log(showPosState);
     const data = {
       invoiceName: props.selectedInvoice,
       itemName: showPosState.item,
@@ -230,7 +278,8 @@ const DisplayData = (props) => {
 
     if (tableData) {
       console.log(tableData);
-      console.log(showPosIndex);
+
+      // console.log(showPosIndex);
       
       let rows = tableData.map((element, index) => {
         //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
@@ -376,6 +425,16 @@ const DisplayData = (props) => {
                 )}
               />
             </td>
+            <td>
+            <Button disabled={showPosIndex === index ? false : true}
+                text="Update Item"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => updateItem(props)}
+                style={{ width: 120 }}
+              />
+                  
+            </td>
             <td>{element.description}</td>
             <td>{element.pieces}</td>
             <td>
@@ -455,7 +514,7 @@ const DisplayData = (props) => {
               text="Save Invoice Data"
               color="btn btn-info"
               type="submit"
-              onClick={saveInvoiceData}
+              onClick={toggleModal}
             />
             <Button
               text="Re upload"
@@ -482,8 +541,8 @@ const DisplayData = (props) => {
         tempTable.push(rowData);
       }
     });
-    console.log("notFoundItems", notFoundItems);
-    console.log("final table data", tempTable);
+    // console.log("notFoundItems", notFoundItems);
+    // console.log("final table data", tempTable);
 
     if (emptyColumn.length !== 0) {
       /**api to push  to not found list*/
@@ -561,7 +620,7 @@ const DisplayData = (props) => {
     tempReviewItems.push(index);
     setReviewItems(tempReviewItems);
     try {
-      console.log(item.itemNo)
+      // console.log(item.itemNo)
       firebase.database().ref("/review").child(`${item.itemNo.replace('/',"SlasH")}`).set(data);
       let tempTableData = [...tableData];
       tempTableData[index]["isForReview"] = true;
@@ -674,6 +733,9 @@ const DisplayData = (props) => {
   };
 
   useEffect(() => {
+    
+
+
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
       // return chetak();
@@ -686,16 +748,21 @@ const DisplayData = (props) => {
             const res = await tesseractService.GetOCRData(file);
             console.log("ocrData from TSRCTsrvc goes to chooseFilter");
             console.log(res.body);
-            let invDate = res.body[1]["2"]["1"];
-            let invNo = res.body[1]["2"]["2"];
-            let invPage = res.body[1]["2"]["3"];
-            scanInvoiceData.InvoiceDate = invDate;
-            scanInvoiceData.InvoiceNumber = invNo;
-            scanInvoiceData.InvoicePage = invPage;
+            
+              // scanInvoiceData.InvoiceDate = res.body[1]["2"]["1"];
+              // scanInvoiceData.InvoiceNumber = res.body[1]["2"]["2"];
+              // scanInvoiceData.InvoicePage = res.body[1]["2"]["3"];
+              setInvDate(res.body[1]["2"]["1"]);
+              setInvNo(res.body[1]["2"]["2"]);
+              setInvPage(res.body[1]["2"]["3"]);
+              // setScanInvoiceData({InvoiceDate: invDate, InvoiceNumber: invNo, InvoicePage: invPage});
+            
+            console.log(scanInvoiceData);
+            
             //console.log(invDate);
             //console.log(invNo);
             //console.log(invPage);
-            //console.log(scanInvoiceData);
+            // console.log(scanInvoiceData);
             return chooseFilter(props.selectedInvoice, res.body);
           } catch (error) {
             console.log("error fetching descripton", error);
@@ -727,12 +794,16 @@ const DisplayData = (props) => {
             return newObj;
           }
           products = convertToUpperCase(products);
-          let invData = { InvoiceData: ocrData};
-          scanInvoiceData.InvoiceData = ocrData;
+          
+          // scanInvoiceData.InvoiceData = ocrData;
+          setOcrProducts(ocrData);
+          
+          console.log(scanInvoiceData);
+          // scanInvoiceData.InvoiceData = ocrData;
           //console.log(resScnInvDta);
           //console.log("OCERDATa", ocrData);
           //console.log(products);
-          console.log(scanInvoiceData);
+          //console.log(scanInvoiceData);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
@@ -837,6 +908,44 @@ const DisplayData = (props) => {
       ) : (
         renderTableData()
       )}
+
+<CModal show={showModal} onClose={toggleModal}>
+        <CModalHeader closeButton>Save Invoice Data</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="invoiceNo">Invoice No.</CLabel>
+                  <CInput
+                    type="text"
+                    name="invoiceNo"
+                    value={invoiceNo}
+                    onChange={(event) => setInvoiceNo(event.target.value)}
+                    />
+                  <CLabel htmlFor="date">Date</CLabel>
+                  <CInput
+                    type="date"
+                    name="date"
+                    value={date}
+                    onChange={(event) => setDate(event.target.value)}
+                    />
+                  
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={saveInvoiceData}>
+            Save Invoice
+          </CButton>{" "}
+          <CButton color="secondary" onClick={toggleModal}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal>
+      );
     </div>
   );
 };

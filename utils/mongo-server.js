@@ -72,6 +72,8 @@ const scanInvoiceDataSchema  = new Schema({
   InvoiceDate: String,
   InvoicePage: String,
   InvoiceData: { type: Array, default: []},
+  SavedDate: String,
+  SavedInvoiceNo: String 
 })
 let scanInvoiceData = mongoose.model("scaninvoicedatas", scanInvoiceDataSchema);
 
@@ -121,8 +123,8 @@ app.post("/notfound", (req, res) => {
 });
 
 //added by Parikshit.
-app.get("/scaninvoicedata", (req, res) => {
-  scanInvoiceData.find({}, { _id: 0, __v: 0 }, (err, x) => {
+app.get("/getsaveinvoicedata/:invoice", (req, res) => {
+  scanInvoiceData.find({InvoiceName: req.params.invoice, InvoiceDate: req.params.date}, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
     else res.json(x);
   });
