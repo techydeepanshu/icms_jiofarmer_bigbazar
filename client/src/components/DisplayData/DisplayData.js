@@ -112,7 +112,6 @@ const DisplayData = (props) => {
     scanInvoiceData.SavedDate = date;
     scanInvoiceData.SavedInvoiceNo = invoiceNo;
     console.log(scanInvoiceData);
-    alert("CHECK!!!!");
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
     console.log(resScnInvDta);
   };
