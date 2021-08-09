@@ -71,6 +71,29 @@ app.get("/api/product", validateLogin, (req, res) => {
   request(options, callback);
 });
 
+//added by Parikshit.
+app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
+  const invoice = req.query["invoiceName"];
+  const date = req.query["date"];
+  console.log("1" + date + "1");
+  let options = {
+    method: "GET",
+    url: `http://3.91.159.202:3001/getsaveinvoicedata/${invoice}`,
+    // body: {invoice: invoice, date: date },
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
   const type = req.query["type"];
   const dirname = type === "queue" ? "/csv/Export.csv" : "/csv/Hicksville.csv";
