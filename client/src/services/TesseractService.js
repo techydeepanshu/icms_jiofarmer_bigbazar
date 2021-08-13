@@ -21,9 +21,9 @@ export class TesseractService {
         return res.data
     }
 
-    async GetSavedInvoiceData(invoiceName, date) {
+    async GetSavedInvoiceData(invoiceName, invoiceNo, date) {
         console.log("IN TESSERACT SERVICE");
-        var res = await Axios.get(appendURL + "/api/invoice/getsaveinvoicedata/", {params:{ invoiceName: invoiceName, date: date}});
+        var res = await Axios.get(appendURL + "/api/invoice/getsaveinvoicedata/", {params:{ invoiceName: invoiceName, invoiceNo: invoiceNo,date: date}});
         console.log(res);
         return res.data;
     }
