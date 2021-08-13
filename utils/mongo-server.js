@@ -68,9 +68,6 @@ let notFound = mongoose.model("notfounds", notFoundSchema);
 
 const scanInvoiceDataSchema  = new Schema({
   InvoiceName: String,
-  InvoiceNumber: String,
-  InvoiceDate: String,
-  InvoicePage: String,
   InvoiceData: { type: Array, default: []},
   SavedDate: String,
   SavedInvoiceNo: String 
@@ -124,12 +121,13 @@ app.post("/notfound", (req, res) => {
 
 //added by Parikshit.
 app.get("/getsaveinvoicedata/:invoice", (req, res) => {
-  scanInvoiceData.find({InvoiceName: req.params.invoice, InvoiceDate: req.params.date}, { _id: 0, __v: 0 }, (err, x) => {
+  scanInvoiceData.find({InvoiceName: req.body.invoice, SavedInvoiceNo: req.body.invoiceNo, SavedDate: req.body.date}, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
     else res.json(x);
   });
 });
 app.post("/scaninvoicedata", (req, res) => {
+  let invoiceNo = req.body.data.SavedInvoiceNo;
   let obj = req.body;
   scanInvoiceData.insertMany([obj], (err, o) => {
     if (err) res.json("Some error occured");

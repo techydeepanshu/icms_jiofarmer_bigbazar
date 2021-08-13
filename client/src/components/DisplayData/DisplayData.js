@@ -752,9 +752,9 @@ const DisplayData = (props) => {
               // scanInvoiceData.InvoiceDate = res.body[1]["2"]["1"];
               // scanInvoiceData.InvoiceNumber = res.body[1]["2"]["2"];
               // scanInvoiceData.InvoicePage = res.body[1]["2"]["3"];
-              setInvDate(res.body[1]["2"]["1"]);
-              setInvNo(res.body[1]["2"]["2"]);
-              setInvPage(res.body[1]["2"]["3"]);
+              // setInvDate(res.body[1]["2"]["1"]);
+              // setInvNo(res.body[1]["2"]["2"]);
+              // setInvPage(res.body[1]["2"]["3"]);
               // setScanInvoiceData({InvoiceDate: invDate, InvoiceNumber: invNo, InvoicePage: invPage});
             
             console.log(scanInvoiceData);
@@ -794,7 +794,7 @@ const DisplayData = (props) => {
             return newObj;
           }
           products = convertToUpperCase(products);
-          
+          console.log(products);
           // scanInvoiceData.InvoiceData = ocrData;
           setOcrProducts(ocrData);
           

@@ -74,12 +74,13 @@ app.get("/api/product", validateLogin, (req, res) => {
 //added by Parikshit.
 app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
   const invoice = req.query["invoiceName"];
+  const invoiceNo = req.query["invoiceNo"];
   const date = req.query["date"];
   console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/getsaveinvoicedata/${invoice}`,
-    // body: {invoice: invoice, date: date },
+    url: `http://3.91.159.202:3001/getsaveinvoicedata/`,
+    body: {invoice: invoice, invoiceNo: invoiceNo, date: date },
     json: true,
   };
   function callback(error, response, body) {
@@ -270,8 +271,9 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const data = req.body;
+  console.log(data);
   const { invoiceName, itemName, value } = data;
-  console.log("Item name",itemName);
+  // console.log("Item name",itemName);
   /* console.log(data,"Mongo PUT Request Data"); */
   let options = {
     method: "PUT",
@@ -316,7 +318,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
 //added by Parikshit.
 app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
   const data = req.body;
-  //console.log(data);
+  console.log(data);
   let options = {
     method: "POST",
     url: "http://3.91.159.202:3001/scaninvoicedata",
