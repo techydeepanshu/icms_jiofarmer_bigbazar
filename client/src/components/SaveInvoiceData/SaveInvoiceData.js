@@ -84,7 +84,9 @@ const SaveInvoiceData = () => {
         "Extended Price",
         "Unit Cost ",
         "Unit Price",
-        "Mark up (%)"
+        "Mark up (%)",
+        "Tick to Delete",
+        "Serial No.(2)"
     ];
 
     const [showPosState, setShowPosState] = useState({
@@ -194,11 +196,11 @@ const SaveInvoiceData = () => {
                 cp = sp;
               }
               if (products[row.itemNo] !== undefined) {
-                if (+row.unitPrice > +products[row.itemNo].Price) {
+                if (sp > +products[row.itemNo].SellerCost) {
                   row["priceIncrease"] = 1;
-                } else if (+row.unitPrice < +products[row.itemNo].Price) {
+                } else if (sp < +products[row.itemNo].SellerCost) {
                   row["priceIncrease"] = -1;
-                } else if (+row.unitPrice == +products[row.itemNo].Price) {
+                } else if (sp == +products[row.itemNo].SellerCost) {
                   row["priceIncrease"] = 0;
                 }
               } else {
@@ -268,7 +270,7 @@ const SaveInvoiceData = () => {
         }
         const filter = newData.map((element) => {
           let obj = { ...element };
-          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}`;
+          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}-${element.cost}`;
           //console.log(obj);
           return obj; 
         });
@@ -577,14 +579,15 @@ const SaveInvoiceData = () => {
                     inputProps={{ "aria-label": "primary checkbox" }}
                   />
                 </td>
-                <td>
+                <td>{index + 1}</td>
+                {/* <td>
                   <Button
                     text={element.show ? "Delete" : "Undo"}
                     color="btn btn-info"
                     type="submit"
                     onClick={() => deleteRow(index)}
                   />
-                </td>
+                </td> */}
               </tr>
             );
           });
@@ -797,136 +800,136 @@ const SaveInvoiceData = () => {
 
 
         /**Fetch the data from the aws textract for the image */
-        async function fetchOCRData() {
-          // return chetak();
+        // async function fetchOCRData() {
+        //   // return chetak();
     
-          setLoader(true);
-          const ocrData = [];
+        //   setLoader(true);
+        //   const ocrData = [];
 
 
 
-          let newData = [];
-          ocrData.forEach((data) => (newData = [...newData, ...data]));
-          return newData;
-        }
+        //   let newData = [];
+        //   ocrData.forEach((data) => (newData = [...newData, ...data]));
+        //   return newData;
+        // }
     
-        async function invoiceData() {
-          const products = await tesseractService.GetProductDetails(
-            invoice
-          );
-          //console.log(props.selectedInvoice);
-          return products;
-        }
+        // async function invoiceData() {
+        //   const products = await tesseractService.GetProductDetails(
+        //     invoice
+        //   );
+        //   //console.log(props.selectedInvoice);
+        //   return products;
+        // }
 
-        fetchOCRData().then((ocrData) => {
-          invoiceData()
-            .then((products) => {
-              /**post processing the table data after returning from filter */
-              function convertToUpperCase(obj) {
-                let newObj = {};
-                for (let key in obj) {
-                  newObj[key.toUpperCase()] = obj[key];
-                }
-                return newObj;
-              }
-              products = convertToUpperCase(products);
-              console.log(products);
-              // scanInvoiceData.InvoiceData = ocrData;
-            //   setOcrProducts(ocrData);
+        // fetchOCRData().then((ocrData) => {
+        //   invoiceData()
+        //     .then((products) => {
+        //       /**post processing the table data after returning from filter */
+        //       function convertToUpperCase(obj) {
+        //         let newObj = {};
+        //         for (let key in obj) {
+        //           newObj[key.toUpperCase()] = obj[key];
+        //         }
+        //         return newObj;
+        //       }
+        //       products = convertToUpperCase(products);
+        //       console.log(products);
+        //       // scanInvoiceData.InvoiceData = ocrData;
+        //     //   setOcrProducts(ocrData);
               
-            //   console.log(scanInvoiceData);
-              // scanInvoiceData.InvoiceData = ocrData;
-              //console.log(resScnInvDta);
-              //console.log("OCERDATa", ocrData);
-              //console.log(products);
-              //console.log(scanInvoiceData);
-              let table = ocrData.map((row) => {
-                /**For invoices which dont have item no, set description as item no */
-                if (row.itemNo === undefined) {
-                  row.itemNo = row.description.trim().toUpperCase();
-                }
-                row.itemNo = row.itemNo.toString().toUpperCase();
+        //     //   console.log(scanInvoiceData);
+        //       // scanInvoiceData.InvoiceData = ocrData;
+        //       //console.log(resScnInvDta);
+        //       //console.log("OCERDATa", ocrData);
+        //       //console.log(products);
+        //       //console.log(scanInvoiceData);
+        //       let table = ocrData.map((row) => {
+        //         /**For invoices which dont have item no, set description as item no */
+        //         if (row.itemNo === undefined) {
+        //           row.itemNo = row.description.trim().toUpperCase();
+        //         }
+        //         row.itemNo = row.itemNo.toString().toUpperCase();
     
-                row.description =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].Description
-                    : row.description;
-                row.pieces =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].Quantity
-                    : 0;
-                row.sku =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].sku
-                    : "";
-                row.barcode =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].Barcode
-                    : "";
-                row.posName =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].POS
-                    : "";
-                row.markup = 0;
-                row.show = true;
-                row.posSku =
-                  products[row.itemNo] !== undefined
-                    ? products[row.itemNo].PosSKU
-                    : "";
-                row.isReviewed = 
-                  products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
-                row.size = 
-                  products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
-                row.department = 
-                  products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
-                row.cost = 
-                  products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
-                row.sellingPrice = 
-                  products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
-                //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
-                let sp = 0;
-                let cp = 0;
-                // const barcode = products.Barcode
-                if (parseInt(row.pieces)) {
-                  sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
-                    2
-                  );
-                  cp = sp;
-                }
-                if (products[row.itemNo] !== undefined) {
-                  if (+row.unitPrice > +products[row.itemNo].Price) {
-                    row["priceIncrease"] = 1;
-                  } else if (+row.unitPrice < +products[row.itemNo].Price) {
-                    row["priceIncrease"] = -1;
-                  } else if (+row.unitPrice == +products[row.itemNo].Price) {
-                    row["priceIncrease"] = 0;
-                  }
-                } else {
-                  row["priceIncrease"] = 0;
-                }
+        //         row.description =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].Description
+        //             : row.description;
+        //         row.pieces =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].Quantity
+        //             : 0;
+        //         row.sku =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].sku
+        //             : "";
+        //         row.barcode =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].Barcode
+        //             : "";
+        //         row.posName =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].POS
+        //             : "";
+        //         row.markup = 0;
+        //         row.show = true;
+        //         row.posSku =
+        //           products[row.itemNo] !== undefined
+        //             ? products[row.itemNo].PosSKU
+        //             : "";
+        //         row.isReviewed = 
+        //           products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
+        //         row.size = 
+        //           products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
+        //         row.department = 
+        //           products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
+        //         row.cost = 
+        //           products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
+        //         row.sellingPrice = 
+        //           products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+        //         //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+        //         let sp = 0;
+        //         let cp = 0;
+        //         // const barcode = products.Barcode
+        //         if (parseInt(row.pieces)) {
+        //           sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+        //             2
+        //           );
+        //           cp = sp;
+        //         }
+        //         if (products[row.itemNo] !== undefined) {
+        //           if (+row.unitPrice > +products[row.itemNo].Price) {
+        //             row["priceIncrease"] = 1;
+        //           } else if (+row.unitPrice < +products[row.itemNo].Price) {
+        //             row["priceIncrease"] = -1;
+        //           } else if (+row.unitPrice == +products[row.itemNo].Price) {
+        //             row["priceIncrease"] = 0;
+        //           }
+        //         } else {
+        //           row["priceIncrease"] = 0;
+        //         }
     
-                /**filter out the rows for which qty shipped & extendedPrice is zero */
-                if (row.qty == "0" && row.extendedPrice === "0.00") {
-                  return null;
-                }
-                /**Calulate qty for which qty is not read/scanned by textract */
-                if (!row.qty) {
-                  row.qty = (
-                    parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
-                  ).toFixed(0);
-                }
-              return { ...row, sp, cp };
-              });
-              setLoader(false);
-              setTableData(table.filter((data) => data !== null));
-              setItemNoDropdown(Object.keys(products));
-              setProductDetails(products);
-            })
-            .catch((err) => {
-              console.log("error on mapping ocrdata", err)
-              setLoader(false);
-            });
-        });
+        //         /**filter out the rows for which qty shipped & extendedPrice is zero */
+        //         if (row.qty == "0" && row.extendedPrice === "0.00") {
+        //           return null;
+        //         }
+        //         /**Calulate qty for which qty is not read/scanned by textract */
+        //         if (!row.qty) {
+        //           row.qty = (
+        //             parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+        //           ).toFixed(0);
+        //         }
+        //       return { ...row, sp, cp };
+        //       });
+        //       setLoader(false);
+        //       setTableData(table.filter((data) => data !== null));
+        //       setItemNoDropdown(Object.keys(products));
+        //       setProductDetails(products);
+        //     })
+        //     .catch((err) => {
+        //       console.log("error on mapping ocrdata", err)
+        //       setLoader(false);
+        //     });
+        // });
     }, []);
 
     

@@ -48,7 +48,9 @@ const DisplayData = (props) => {
     "Extended Price",
     "Unit Cost ",
     "Unit Price",
-    "Mark up (%)"
+    "Mark up (%)",
+    "Tick to delete",
+    "Serial No.(2)"
   ];
 
   //added by Parikshit.
@@ -64,6 +66,12 @@ const DisplayData = (props) => {
   const [invDate, setInvDate] = useState("");
   const [invNo, setInvNo] = useState("");
   const [invPage, setInvPage] = useState("");
+  const [stateUpdated, setStateUpdated] = useState("false");
+  const [costInc, setCostInc] = useState("false");
+  const [costDec, setCostDec] = useState("false");
+  const [unitCost, setUnitCost] = useState("");
+
+  
   const scanInvoiceData = 
     {
       InvoiceName: props.selectedInvoice,
@@ -95,10 +103,10 @@ const DisplayData = (props) => {
   // added by parikshit.
   const saveInvoiceData = async () => {
     toggleModal();
-    console.log(invDate);
-    console.log(invNo);
-    console.log(invPage);
-    console.log(ocrProducts);
+    // console.log(invDate);
+    // console.log(invNo);
+    // console.log(invPage);
+    // console.log(ocrProducts);
    
       scanInvoiceData.InvoiceName = props.selectedInvoice;
       scanInvoiceData.InvoiceDate = invDate;
@@ -108,22 +116,22 @@ const DisplayData = (props) => {
 
     
     // setScanInvoiceData(data);
-    console.log(scanInvoiceData);
+    // console.log(scanInvoiceData);
     scanInvoiceData.SavedDate = date;
     scanInvoiceData.SavedInvoiceNo = invoiceNo;
-    console.log(scanInvoiceData);
+    // console.log(scanInvoiceData);
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
-    console.log(resScnInvDta);
+    // console.log(resScnInvDta);
   };
 
   const sendInvoiceData = async () => {
-    console.log(scanInvoiceData);
+    // console.log(scanInvoiceData);
     scanInvoiceData.SavedDate = date;
     scanInvoiceData.SavedInvoiceNo = invoiceNo;
-    console.log(scanInvoiceData)
+    // console.log(scanInvoiceData)
     alert("CHECK!!!!");
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
-    console.log(resScnInvDta);
+    // console.log(resScnInvDta);
   }
 
   const toggleModal = () => {
@@ -165,7 +173,7 @@ const DisplayData = (props) => {
     }
     const filter = newData.map((element) => {
       let obj = { ...element };
-      obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}`;
+      obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}- ${element.cost}`;
       //console.log(obj);
       return obj;
       
@@ -175,7 +183,7 @@ const DisplayData = (props) => {
   }
 
 
-  const updateItem = (props) => {
+  const updateItem = (props, ocrCost) => {
     //console.log(showPosState);
     const data = {
       invoiceName: props.selectedInvoice,
@@ -187,7 +195,7 @@ const DisplayData = (props) => {
         isReviewed: "true",
         Size: showPosState.size, 
         Department: showPosState.department,
-        //SellerCost: showPosState.unitCost,
+        SellerCost: showPosState.unitCost,
         SellingPrice: showPosState.unitPrice
       },
     };
@@ -200,12 +208,25 @@ const DisplayData = (props) => {
       }
       console.log(res);
       alert("Successfully updated fields");
+      setStateUpdated(true);
     })
     .catch((err) => {
       console.log(err);
       alert("Some error occuured in creating product");
     })
-    .finally(() => setLoader(false));
+    .finally(() => { setLoader(false);
+                   setStateUpdated("true");
+                  //  console.log(ocrCost);
+                  //  console.log(unitCost);
+                   if(ocrCost>unitCost){
+                     setCostInc("true");
+                     setCostDec("");
+                   }
+                   if(ocrCost<unitCost){
+                     setCostDec("true");
+                     setCostInc("");
+                   }
+            });
 
   }
 
@@ -275,9 +296,10 @@ const DisplayData = (props) => {
 
   const renderTableData = () => {
     hicksvilleDropdown(HicksData);
+    // console.log(stateUpdated);
 
     if (tableData) {
-      console.log(tableData);
+      // console.log(tableData);
 
       // console.log(showPosIndex);
       
@@ -334,7 +356,7 @@ const DisplayData = (props) => {
                   }
                 /> */}
               </IconButton>
-              <div className={element.isReviewed === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
+              <div className={element.isReviewed  === "true" || (showPosIndex === index && stateUpdated === "true") ? styles.tooltipIsReviewed: styles.tooltip} >
                 <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
                 {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
                 <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
@@ -342,7 +364,8 @@ const DisplayData = (props) => {
                 <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                 <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
                 <div >
-                <button onClick={() => updateItem(props)} disabled={showPosIndex === index ? false : true}
+                <button onClick={() => updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(
+                2))} disabled={showPosIndex === index ? false : true}
                   style={{backgroundColor: "green",
                   border: "none",
                   color: "white",
@@ -406,11 +429,12 @@ const DisplayData = (props) => {
                     newState.unitPrice = newValue.price;
                     setShowPosState(newState);
                     setShowPosIndex(index);
+                    setUnitCost(newValue.cost);
                     //setDisabled(false);
                     //updateOnHoverDetails(index);
                     //setShowPosIndex(index);
                     // console.log(newValue);
-                    console.log(newState);
+                    // console.log(newState);
                     //console.log(showPosState);
                     
                   }
@@ -445,12 +469,18 @@ const DisplayData = (props) => {
                 onChange={(e) => {
                   handleChange(index, "unitPrice", e.target.value);
                 }}
-                style={
-                  element.priceIncrease === 1
-                    ? { backgroundColor: "#1a8cff", width: 100 }
-                    : element.priceIncrease === -1
-                    ? { backgroundColor: "#ffb31a", width: 100 }
-                    : { width: 100 }
+                style={ 
+                  // element.priceIncrease === 1 
+                  //   ? { backgroundColor: "#1a8cff", width: 100 }
+                  //   : element.priceIncrease === -1 
+                  //   ? { backgroundColor: "#ffb31a", width: 100 }
+                  //   : { width: 100 }
+                  showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                  : element.priceIncrease === 1 
+                      ? { backgroundColor: "#1a8cff", width: 100 }
+                      : element.priceIncrease === -1 
+                      ? { backgroundColor: "#ffb31a", width: 100 }
+                      : { width: 100 }
                 }
               />
             </td>
@@ -475,14 +505,15 @@ const DisplayData = (props) => {
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
             </td>
-            <td>
+            <td>{index + 1}</td>
+            {/* <td>
               <Button
                 text={element.show ? "Delete" : "Undo"}
                 color="btn btn-info"
                 type="submit"
                 onClick={() => deleteRow(index)}
               />
-            </td>
+            </td> */}
           </tr>
         );
       });
@@ -747,7 +778,7 @@ const DisplayData = (props) => {
             //console.log("FILENAME" + props.filename);
             const res = await tesseractService.GetOCRData(file);
             console.log("ocrData from TSRCTsrvc goes to chooseFilter");
-            console.log(res.body);
+            // console.log(res.body);
             
               // scanInvoiceData.InvoiceDate = res.body[1]["2"]["1"];
               // scanInvoiceData.InvoiceNumber = res.body[1]["2"]["2"];
@@ -757,7 +788,7 @@ const DisplayData = (props) => {
               // setInvPage(res.body[1]["2"]["3"]);
               // setScanInvoiceData({InvoiceDate: invDate, InvoiceNumber: invNo, InvoicePage: invPage});
             
-            console.log(scanInvoiceData);
+            // console.log(scanInvoiceData);
             
             //console.log(invDate);
             //console.log(invNo);
@@ -794,11 +825,11 @@ const DisplayData = (props) => {
             return newObj;
           }
           products = convertToUpperCase(products);
-          console.log(products);
+          // console.log(products);
           // scanInvoiceData.InvoiceData = ocrData;
           setOcrProducts(ocrData);
           
-          console.log(scanInvoiceData);
+          // console.log(ocrData);
           // scanInvoiceData.InvoiceData = ocrData;
           //console.log(resScnInvDta);
           //console.log("OCERDATa", ocrData);
@@ -858,11 +889,20 @@ const DisplayData = (props) => {
               cp = sp;
             }
             if (products[row.itemNo] !== undefined) {
-              if (+row.unitPrice > +products[row.itemNo].Price) {
+              // console.log(sp);
+              // console.log(products[row.itemNo].SellerCost);
+              // if (+row.unitPrice > +products[row.itemNo].SellerCost) {
+              //   row["priceIncrease"] = 1;
+              // } else if (+row.unitPrice < +products[row.itemNo].SellerCost) {
+              //   row["priceIncrease"] = -1;
+              // } else if (+row.unitPrice == +products[row.itemNo].SellerCost) {
+              //   row["priceIncrease"] = 0;
+              // }
+              if (sp> +products[row.itemNo].SellerCost) {
                 row["priceIncrease"] = 1;
-              } else if (+row.unitPrice < +products[row.itemNo].Price) {
+              } else if (+sp < +products[row.itemNo].SellerCost) {
                 row["priceIncrease"] = -1;
-              } else if (+row.unitPrice == +products[row.itemNo].Price) {
+              } else if (+sp == +products[row.itemNo].SellerCost) {
                 row["priceIncrease"] = 0;
               }
             } else {
