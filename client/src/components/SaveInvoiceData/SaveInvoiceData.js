@@ -70,6 +70,10 @@ const SaveInvoiceData = () => {
     const [showPosIndex, setShowPosIndex] = useState(-1);
     const inventoryService = new InventoryService();
     const [showModal, setShowModal] = useState(false);
+    const [stateUpdated, setStateUpdated] = useState("false");
+    const [costInc, setCostInc] = useState("false");
+    const [costDec, setCostDec] = useState("false");
+    const [unitCost, setUnitCost] = useState("");
     const header = [
         "Serial No.",
         "Barcode",
@@ -278,7 +282,7 @@ const SaveInvoiceData = () => {
           // console.log(hicksvilleData);
     }
 
-    const updateItem = () => {
+    const updateItem = (ocrCost) => {
         //console.log(showPosState);
         const data = {
           invoiceName: invoice.slug,
@@ -308,7 +312,20 @@ const SaveInvoiceData = () => {
           console.log(err);
           alert("Some error occuured in creating product");
         })
-        .finally(() => setLoader(false));
+        .finally(() => { 
+          setLoader(false)
+          setStateUpdated("true");
+          //  console.log(ocrCost);
+          //  console.log(unitCost);
+           if(ocrCost>unitCost){
+             setCostInc("true");
+             setCostDec("");
+           }
+           if(ocrCost<unitCost){
+             setCostDec("true");
+             setCostInc("");
+           }
+        });
     
     }
 
@@ -438,7 +455,7 @@ const SaveInvoiceData = () => {
                       }
                     /> */}
                   </IconButton>
-                  <div className={element.isReviewed === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
+                  <div className={element.isReviewed  === "true" || (showPosIndex === index && stateUpdated === "true") ? styles.tooltipIsReviewed: styles.tooltip} >
                     <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
                     {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
                     <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
@@ -446,7 +463,7 @@ const SaveInvoiceData = () => {
                     <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                     <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
                     <div >
-                    <button onClick={() => updateItem()} disabled={showPosIndex === index ? false : true}
+                    <button onClick={() => updateItem((parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))} disabled={showPosIndex === index ? false : true}
                       style={{backgroundColor: "green",
                       border: "none",
                       color: "white",
@@ -510,6 +527,8 @@ const SaveInvoiceData = () => {
                         newState.unitPrice = newValue.price;
                         setShowPosState(newState);
                         setShowPosIndex(index);
+                        setUnitCost(newValue.cost);
+                        setStateUpdated("");
                         //setDisabled(false);
                         //updateOnHoverDetails(index);
                         //setShowPosIndex(index);
@@ -550,11 +569,17 @@ const SaveInvoiceData = () => {
                       handleChange(index, "unitPrice", e.target.value);
                     }}
                     style={
-                      element.priceIncrease === 1
-                        ? { backgroundColor: "#1a8cff", width: 100 }
-                        : element.priceIncrease === -1
-                        ? { backgroundColor: "#ffb31a", width: 100 }
-                        : { width: 100 }
+                      // element.priceIncrease === 1
+                      //   ? { backgroundColor: "#1a8cff", width: 100 }
+                      //   : element.priceIncrease === -1
+                      //   ? { backgroundColor: "#ffb31a", width: 100 }
+                      //   : { width: 100 }
+                      showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                        : element.priceIncrease === 1 
+                            ? { backgroundColor: "#1a8cff", width: 100 }
+                            : element.priceIncrease === -1 
+                            ? { backgroundColor: "#ffb31a", width: 100 }
+                            : { width: 100 }
                     }
                   />
                 </td>

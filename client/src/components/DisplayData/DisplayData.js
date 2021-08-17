@@ -364,8 +364,8 @@ const DisplayData = (props) => {
                 <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                 <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
                 <div >
-                <button onClick={() => updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(
-                2))} disabled={showPosIndex === index ? false : true}
+                <button onClick={() => updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))} 
+                  disabled={showPosIndex === index ? false : true}
                   style={{backgroundColor: "green",
                   border: "none",
                   color: "white",
