@@ -30,6 +30,7 @@ export class InventoryService {
     return response.data;
   }
   async UpdatePOSProducts(data) {
+    console.log(data);
     const res = await Axios.post(
       appendURL + "/api/pos/Product/ManageItem",
       data
@@ -46,7 +47,7 @@ export class InventoryService {
      ***** data format
      * data = {invoiceName: "chetak", itemName:"CAS 123", value:{"Description": "jnckwc", "Price": "44"}}
      */
-     console.log(data);
+    //  console.log(data);
     const res = await Axios.put(
       appendURL + "/api/invoice/product/update",
       data

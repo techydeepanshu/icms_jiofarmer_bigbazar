@@ -181,6 +181,7 @@ const UpdateInventory = (props) => {
 
   const pushToPOS = async (products) => {
     setLoader(true);
+    console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
         try {
