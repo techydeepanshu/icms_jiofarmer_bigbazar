@@ -74,6 +74,7 @@ const SaveInvoiceData = () => {
     const [costInc, setCostInc] = useState("false");
     const [costDec, setCostDec] = useState("false");
     const [unitCost, setUnitCost] = useState("");
+    const [posProducts, setPosProducts] = useState([]);
     const header = [
         "Serial No.",
         "Barcode",
@@ -107,6 +108,202 @@ const SaveInvoiceData = () => {
         unitCost: "",
         unitPrice: "",
     });
+
+    const pushSingleItemToInventory = async (index) =>{
+      console.log(index);
+  
+      const pushInventoryDetails2 =  (data2) => {
+        let items = [];
+  
+        async function getPosProducts() {
+          setLoader(true);
+          let hasErrorOccured = false;
+          console.log(products);
+           items = 
+            products
+              .map( (row) => {
+                try {
+                  const res =  inventoryService.GetPOSProductDetails(
+                    row.barcode
+                  );
+                  console.log("fetched pos data", res);
+                  const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
+                  return {
+                    ...row,
+                    COST: row.cp,
+                    PRICE: row.sp,
+                    SKU,
+                    UPC,
+                    ITEMNAME,
+                    TOTALQTY:
+                      parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+                    itemNo: row.itemNo,
+                    isNew: false,
+                    BUYASCASE: 1,
+                    CASEUNITS: row.pieces.toString(),
+                    CASECOST: row.unitPrice.toString(),
+                    DEPNAME,
+                  };
+                } catch (error) {
+                  hasErrorOccured = true;
+                  return {
+                    ...row,
+                    COST: row.cp,
+                    PRICE: row.sp,
+                    SKU: row.posSku,
+                    UPC: row.barcode,
+                    ITEMNAME: row.description,
+                    TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                    itemNo: row.itemNo,
+                    isNew: true,
+                    BUYASCASE: 1,
+                    CASEUNITS: row.pieces.toString(),
+                    CASECOST: row.unitPrice.toString(),
+                    DEPNAME: "",
+                  };
+                }
+              })
+          
+          if (hasErrorOccured) {
+            alert("Couldn't fetch some data from POS");
+          }
+          setLoader(false);
+          console.log(items);
+          setPosProducts(items);
+        }
+        getPosProducts();
+  
+        console.log(posProducts);
+        pushToPOS(items);
+    
+        setLoader(false);
+        // if (itemsNotPushed.length === 0) {
+        window.alert("Inventory updated successfully");
+        // } else {
+        //   window.alert("Inventory not updated");
+        // }
+      };
+      
+    
+      const pushToPOS = async (products) => {
+        setLoader(true);
+        console.log(products);
+        const responses = await Promise.all(
+          products.map(async (product) => {
+            try {
+              const {
+                COST,
+                PRICE,
+                UPC,
+                TOTALQTY,
+                isNew,
+                ITEMNAME,
+                BUYASCASE,
+                CASEUNITS,
+                CASECOST,
+                SKU,
+                DEPNAME,
+                itemNo
+              } = product;
+              const res = await inventoryService.UpdatePOSProducts(
+                JSON.stringify({
+                  UPC,
+                  ITEMNAME,
+                  DESCRIPTION: "",
+                  PRICE,
+                  COST,
+                  QTY: TOTALQTY,
+                  SIZE: "",
+                  PACK: "",
+                  REPLACEQTY: 1,
+                  DEPARTMENT: DEPNAME,
+                  CATEGORY: "",
+                  SUBCATEGORY: "",
+                  ISFOODSTAMP: 1,
+                  ISWEIGHTED: 0,
+                  ISTAXABLE: 1,
+                  VENDORNAME: invoice.slug,
+                  VENDORCODE: itemNo,
+                  VENDORCOST: "",
+                  ISNEWITEM: isNew ? 1 : 0,
+                  BUYASCASE,
+                  CASEUNITS,
+                  CASECOST,
+                  COMPANYNAME: invoice.slug,
+                  PRODUCTCODE: itemNo,
+                })
+              );
+              console.log("updated pos data", res);
+              const data = {
+                UPC,
+                SKU,
+                Cost: COST,
+                ItemName: ITEMNAME,
+                Price: PRICE,
+                TotalQty: TOTALQTY,
+              };
+              if (isNew) {
+                const response = await inventoryService.CreateDBProduct(data);
+                console.log("Created new product", response);
+              } else {
+                const response = await inventoryService.UpdateDBProduct({
+                  count: parseInt(product.qty) * parseInt(product.pieces),
+                  UPC,
+                });
+                console.log("updated existing product", response);
+              }
+    
+              console.log("res from POS", res);
+              return true;
+            } catch (error) {
+              console.log(error);
+              return null;
+            }
+          })
+        );
+        setLoader(false);
+      };
+      const tempTable = [];
+      const products = [];
+      console.log(tableData);
+      console.log(tableData[index]);
+      products.push(tableData[index]);
+      console.log(products);
+      
+      products.forEach((element, index) => {
+        if (
+          !emptyColumn.includes(index) &&
+          element.show === true
+        ) {
+          let rowData = { index: index + 1, ...element };
+          tempTable.push(rowData);
+        }
+      });
+      console.log(tempTable)
+      const priceIncreasedProducts = tempTable.filter(
+        (product) => product.priceIncrease !== 0
+      );
+      setLoader(true);
+      console.log(priceIncreasedProducts);
+      const res = await Promise.all(
+        priceIncreasedProducts.map(async (product) => {
+          try {
+            const data = {
+              invoiceName: invoice.slug,
+              itemName: product.itemNo,
+              value: { Price: product.unitPrice },
+            };
+            console.log(data)
+            await inventoryService.UpdateProductFields(data);
+          } catch (error) {
+            console.log(`couldn't update price for product ${product.itemNo}`);
+          }
+        })
+      );
+      setLoader(false);
+      // setInventoryData(mergeDuplicates(tempTable));
+      pushInventoryDetails2(tempTable);
+    }
 
     const fetchSavedData = async() => {
         const data =  await tesseractService.GetSavedInvoiceData(invoice.slug, invoiceNo, date);
@@ -549,11 +746,11 @@ const SaveInvoiceData = () => {
                   />
                 </td>
                 <td>
-                <Button disabled={showPosIndex === index ? false : true}
+                <Button 
                     text="Update Item"
                     color="btn btn-info"
                     type="submit"
-                    onClick={() => updateItem()}
+                    onClick={() => pushSingleItemToInventory(index)}
                     style={{ width: 120 }}
                   />
                       

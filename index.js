@@ -76,7 +76,7 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
   const invoice = req.query["invoiceName"];
   const invoiceNo = req.query["invoiceNo"];
   const date = req.query["date"];
-  console.log("1" + date + "1");
+  // console.log("1" + date + "1");
   let options = {
     method: "GET",
     url: `http://3.91.159.202:3001/getsaveinvoicedata/`,
@@ -200,7 +200,7 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
     json: true,
   };
   function callback(error, response, body) {
-    console.log(body);
+    // console.log(body);
     res.send(body);
   }
   request(options, callback);
@@ -239,6 +239,7 @@ app.get("/api/sync", validateLogin, function (req, res) {
 /**create/update product on POS */
 app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
   const data = req.body;
+  console.log(data);
 
   let options = {
     method: "POST",
@@ -271,7 +272,7 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const data = req.body;
-  console.log(data);
+  // console.log(data);
   const { invoiceName, itemName, value } = data;
   // console.log("Item name",itemName);
   /* console.log(data,"Mongo PUT Request Data"); */
@@ -318,7 +319,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
 //added by Parikshit.
 app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
   const data = req.body;
-  console.log(data);
+  // console.log(data);
   let options = {
     method: "POST",
     url: "http://3.91.159.202:3001/scaninvoicedata",
@@ -338,11 +339,11 @@ app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
 });
 
 app.get("/api/invoice/pos", validateLogin, function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   const dates = req.body;
   const startDate = dates.startDate;
   const endDate = dates.endDate
-  console.log(dates);
+  // console.log(dates);
   let options = {
     method: "GET",
     url: "http://3.91.159.202:3001/pos",
@@ -382,7 +383,7 @@ app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
 
 app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   const data = req.body;
-  console.log("body data", data);
+  // console.log("body data", data);
   let options = {
     method: "PUT",
     url: `http://3.91.159.202:3001/pos/${data.UPC}/inv`,
@@ -391,7 +392,7 @@ app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   };
   function callback(error, response, body) {
     const status = response.statusCode;
-    console.log(error, body);
+    // console.log(error, body);
     if (error === null) {
       res.status(status).send(body);
     } else {

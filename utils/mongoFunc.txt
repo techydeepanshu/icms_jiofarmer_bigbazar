@@ -1,0 +1,21 @@
+//Following function to remove duplicate objects ina collection.
+
+db.<collection name>.aggregate([
+ {
+     "$group": {
+         _id: {Item: "$Item"},
+         dups: { $addToSet: "$_id" } ,
+         count: { $sum : 1 }
+     }
+ },
+ {
+     "$match": {
+         count: { "$gt": 1 }
+     }
+ }
+]).forEach(function(doc) {
+   doc.dups.shift();
+   db.<collection name>.remove({
+       _id: {$in: doc.dups}
+   });
+})
