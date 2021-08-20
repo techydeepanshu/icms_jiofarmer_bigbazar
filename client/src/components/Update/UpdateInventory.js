@@ -5,7 +5,7 @@ import Button from "../../UI/Button";
 import Spinner from "../../UI/Spinner/Spinner";
 
 const UpdateInventory = (props) => {
-  const header = props.header;
+  // const header = props.header;
   const [newInventoryData, setNewInventoryData] = useState(
     props.newInventoryData
   );
@@ -14,6 +14,20 @@ const UpdateInventory = (props) => {
   const [loader, setLoader] = useState(true);
   const [wooComProducts, setWooComProducts] = useState([]);
   const inventoryService = new InventoryService();
+  const header = [
+    "Serial No.",
+    "Barcode",
+    "POS SKU",
+    "Qty Shipped",
+    "ITEM NO",
+    "DESCRIPTION",
+    "Units in  Case",
+    "Case cost",
+    "Extended Price",
+    "Unit Cost ",
+    "Unit Price",
+    "Mark up (%)"
+  ];
 
   const renderTableHeader = () => {
     return header.map((key, index) => {
