@@ -41,7 +41,7 @@ const DisplayData = (props) => {
     "Qty Shipped",
     "ITEM NO",
     "Link Product",
-    "Update Item",
+    
     "DESCRIPTION",
     "Units in  Case",
     "Case cost",
@@ -50,6 +50,7 @@ const DisplayData = (props) => {
     "Unit Price",
     "Mark up (%)",
     "Tick to delete",
+    "Update POS",
     "Serial No.(2)"
   ];
 
@@ -70,7 +71,9 @@ const DisplayData = (props) => {
   const [costInc, setCostInc] = useState("false");
   const [costDec, setCostDec] = useState("false");
   const [unitCost, setUnitCost] = useState("");
-  const [posProducts, setPosProducts] = useState([]);
+  let posProducts = []
+  let wooComProducts = [];
+  let singleItemData = [];
 
   
   const scanInvoiceData = 
@@ -231,83 +234,143 @@ const DisplayData = (props) => {
 
   }
 
-  const pushSingleItemToInventory = async (index) =>{
-    console.log(index);
+//***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
 
-    const pushInventoryDetails2 =  (data2) => {
-      let items = [];
-
-      async function getPosProducts() {
-        setLoader(true);
-        let hasErrorOccured = false;
-        console.log(products);
-         items = 
-          products
-            .map( (row) => {
-              try {
-                const res =  inventoryService.GetPOSProductDetails(
-                  row.barcode
-                );
-                console.log("fetched pos data", res);
-                const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
-                return {
-                  ...row,
-                  COST: row.cp,
-                  PRICE: row.sp,
-                  SKU,
-                  UPC,
-                  ITEMNAME,
-                  TOTALQTY:
-                    parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
-                  itemNo: row.itemNo,
-                  isNew: false,
-                  BUYASCASE: 1,
-                  CASEUNITS: row.pieces.toString(),
-                  CASECOST: row.unitPrice.toString(),
-                  DEPNAME,
-                };
-              } catch (error) {
-                hasErrorOccured = true;
-                return {
-                  ...row,
-                  COST: row.cp,
-                  PRICE: row.sp,
-                  SKU: row.posSku,
-                  UPC: row.barcode,
-                  ITEMNAME: row.description,
-                  TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
-                  itemNo: row.itemNo,
-                  isNew: true,
-                  BUYASCASE: 1,
-                  CASEUNITS: row.pieces.toString(),
-                  CASECOST: row.unitPrice.toString(),
-                  DEPNAME: "",
-                };
-              }
-            })
-        
-        if (hasErrorOccured) {
-          alert("Couldn't fetch some data from POS");
-        }
-        setLoader(false);
-        console.log(items);
-        setPosProducts(items);
-      }
-      getPosProducts();
-
-      console.log(posProducts);
-      pushToPOS(items);
-  
+    //Function to fetch wooCom Prpducts.
+    async function getProducts() {
+      console.log("IN WOOCOM PRODUCTS");
+      const items = await Promise.all(
+        singleItemData.map(async (row) => {
+          console.log(row.barcode);
+          try {
+            const res = await inventoryService.GetProductDetails(row.barcode);
+            console.log(res);
+            const {
+              id,
+              name,
+              regular_price,
+              price,
+              sku,
+              slug,
+              stock_quantity,
+              sale_price,
+            } = res[0];
+            return {
+              id,
+              name,
+              regular_price,
+              price,
+              sku,
+              slug,
+              stock_quantity,
+              sale_price,
+              itemNo: row.itemNo,
+            };
+          } catch (error) {
+            // tempNotFoundProducts.push(row);
+            console.log("Couldn't fetch product from woodpress.", row.itemNo);
+            return null;
+          }
+        })
+      );
       setLoader(false);
-      // if (itemsNotPushed.length === 0) {
-      window.alert("Inventory updated successfully");
-      // } else {
-      //   window.alert("Inventory not updated");
-      // }
+      console.log(items);
+      wooComProducts = items;
+      // setWooComProducts(items.filter((ele) => ele !== null));
+      // setNotFoundProducts(tempNotFoundProducts);
+    }
+
+    //function to fetch POS products.
+    async function getPosProducts() {
+      console.log("IN POS PRODUCTS");
+      setLoader(true);
+      let hasErrorOccured = false;
+      const items = await Promise.all(
+        singleItemData
+          .map(async (row) => {
+            console.log(row.barcode);
+            try {
+              const res = await inventoryService.GetPOSProductDetails(
+                row.barcode
+              );
+              console.log("fetched pos data", res);
+              const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU,
+                UPC,
+                ITEMNAME,
+                TOTALQTY:
+                  parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+                itemNo: row.itemNo,
+                isNew: false,
+                BUYASCASE: 1,
+                CASEUNITS: row.pieces.toString(),
+                CASECOST: row.unitPrice.toString(),
+                DEPNAME,
+              };
+            } catch (error) {
+              hasErrorOccured = true;
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU: row.posSku,
+                UPC: row.barcode,
+                ITEMNAME: row.description,
+                TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                itemNo: row.itemNo,
+                isNew: true,
+                BUYASCASE: 1,
+                CASEUNITS: row.pieces.toString(),
+                CASECOST: row.unitPrice.toString(),
+                DEPNAME: "",
+              };
+            }
+          })
+      );
+      if (hasErrorOccured) {
+        alert("Couldn't fetch some data from POS");
+      }
+      setLoader(false);
+      console.log(items);
+      posProducts = items;
+      console.log(posProducts);
+      // setPosProducts(items.filter((ele) => ele !== null));
+    }
+
+    //PUSH TO WOOCOM.
+    const pushToWoocom = async (products) => {
+      setLoader(true);
+      const responses = await Promise.all(
+        products.map(async (product) => {
+          try {
+            const res = await inventoryService.UpdateProductDetails(product.id, {
+              regular_price: product.regular_price,
+              stock_quantity: product.stock_quantity,
+            });
+            const { id, name, regular_price, stock_quantity } = res;
+            return {
+              id,
+              name,
+              regular_price,
+              stock_quantity,
+              itemNo: product.itemNo,
+            };
+          } catch (error) {
+            console.log(error);
+            alert("Couldn't update product on website.");
+            return null;
+          }
+        })
+      );
+      setLoader(false);
     };
-    
-  
-    const pushToPOS = async (products) => {
+
+     //PUSH TO POS.
+     const pushToPOS = async (products) => {
       setLoader(true);
       console.log(products);
       const responses = await Promise.all(
@@ -385,28 +448,148 @@ const DisplayData = (props) => {
       );
       setLoader(false);
     };
-    const tempTable = [];
-    const products = [];
-    console.log(tableData);
-    console.log(tableData[index]);
-    products.push(tableData[index]);
-    console.log(products);
+
+    const pushInventoryDetails2 = async () => {
+      console.log(posProducts);
+      setLoader(true);
+      let data = singleItemData.map((element) => {
+        return {
+          item: element.itemNo,
+          qty: parseInt(element.qty) * parseInt(element.pieces),
+          cp: element.unitPrice,
+          markup: element.markup,
+          sp: element.sp,
+          description: element.description,
+        };
+      });
+  
+      var duplicates = {};
+      for (var i = 0; i < data.length; i++) {
+        if (duplicates.hasOwnProperty(data[i].item)) {
+          duplicates[data[i].item].push(i);
+        } else if (data.lastIndexOf(data[i].item) !== i) {
+          duplicates[data[i].item] = [i];
+        }
+      }
+  
+      let tempData = Object.values(duplicates).filter((ele) => ele.length > 1);
+      if (tempData.length > 0) {
+        tempData.forEach((index) => {
+          let temp = 0;
+          index.forEach((val) => {
+            if (data[val]) {
+              // console.log("data[val]", data[val]);
+              temp += data[val].qty;
+              if (temp - data[val].qty !== 0) {
+                data[val] = null;
+              }
+            }
+          });
+          data[index[0]].qty = temp;
+        });
+      }
+      data = data.filter((ele) => ele !== null);
+  
+      /**
+       * add the fileds of  data from the woocom & ocr
+      */
+     console.log(wooComProducts.length);
+      if(wooComProducts[0] != null){
+        let updatedWoocomProducts = data
+          .map((product, index) => {
+            /**find index of the item in fetched woocom product list */
+            const wooIndex = wooComProducts.findIndex(
+              (wooProduct) => product.item === wooProduct.itemNo
+            );
+            if (wooIndex !== -1) {
+              /**get the qty & other fileds of the woocom product */
+              let { id, stock_quantity } = wooComProducts[wooIndex];
+              stock_quantity += product.qty;
+              const regular_price = product.sp;
+              return { id, regular_price, stock_quantity, itemNo: product.item };
+            }
+            return null;
+          })
+          .filter((item) => item !== null);
+
+        console.log(updatedWoocomProducts); 
+        await pushToWoocom(updatedWoocomProducts);
+        }
+      await pushToPOS(posProducts);
+  
+      // setLoader(false);
+      // if (itemsNotPushed.length === 0) {
+      window.alert("Inventory updated successfully");
+      // setRedirect(true);
+      // } else {
+      //   window.alert("Inventory not updated");
+      // }
+    };
+
+    function toConsoleState() {
+      console.log(wooComProducts);
+      console.log(posProducts);
+      console.log(singleItemData);
+    }
+
+  const pushSingleItemToInventory = async (index) =>{
     
-    products.forEach((element, index) => {
+    
+    console.log(tableData);
+    const product = [];
+    const notFoundItems = emptyColumn.map((i) => tableData[i]);
+    const tempTable = [];
+    product.push(tableData[index]);
+    console.log(product);
+    
+    product.forEach((element, index) => {
       if (
         !emptyColumn.includes(index) &&
-        element.show === true
+        element.show === true &&
+        element["isForReview"] != true
       ) {
         let rowData = { index: index + 1, ...element };
         tempTable.push(rowData);
       }
     });
-    console.log(tempTable)
+    // console.log("notFoundItems", notFoundItems);
+    console.log(tempTable);
+
+    if (emptyColumn.length !== 0) {
+      /**api to push  to not found list*/
+      setLoader(true);
+      const responses = await Promise.all(
+        notFoundItems.map(async (product) => {
+          try {
+            const data = {
+              Item: product.itemNo,
+              Description: product.description,
+              Quantity: product.qty,
+              Price: product.unitPrice,
+              sku: product.sku,
+              Barcode: product.barcode,
+              PosSKU: product.posSku,
+              InvoiceName: props.selectedInvoice,
+            };
+            await inventoryService.CreateNotFoundItems(data);
+            return true;
+          } catch (error) {
+            console.log(
+              "Couldn't create not found product",
+              product.description,
+              { error }
+            );
+            alert("Couldn't create product on website.");
+            return null;
+          }
+        })
+      );
+      setLoader(false);
+    }
     const priceIncreasedProducts = tempTable.filter(
       (product) => product.priceIncrease !== 0
     );
     setLoader(true);
-    console.log(priceIncreasedProducts);
     const res = await Promise.all(
       priceIncreasedProducts.map(async (product) => {
         try {
@@ -423,9 +606,18 @@ const DisplayData = (props) => {
       })
     );
     setLoader(false);
-    // setInventoryData(mergeDuplicates(tempTable));
-    pushInventoryDetails2(tempTable);
+    console.log(tempTable);
+    singleItemData = tempTable;
+    // setPushToInventory(true);
+    console.log(singleItemData);
+
+    await getProducts();
+    await getPosProducts();
+    await pushInventoryDetails2();
+    toConsoleState();
+    
   }
+//***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
 
   const addRow = () => {
     let tempTableData = [...tableData];
@@ -646,16 +838,7 @@ const DisplayData = (props) => {
                 )}
               />
             </td>
-            <td>
-            <Button 
-                text="Update Item"
-                color="btn btn-info"
-                type="submit"
-                onClick={() => pushSingleItemToInventory(index)}
-                style={{ width: 120 }}
-              />
-                  
-            </td>
+            
             <td>{element.description}</td>
             <td>{element.pieces}</td>
             <td>
@@ -701,6 +884,16 @@ const DisplayData = (props) => {
                 onChange={(e) => handleChange(index, "show", e.target.value)}
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
+            </td>
+            <td>
+            <Button 
+                text="Update POS"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => pushSingleItemToInventory(index)}
+                style={{ width: 120 }}
+              />
+                  
             </td>
             <td>{index + 1}</td>
             {/* <td>
@@ -829,12 +1022,6 @@ const DisplayData = (props) => {
     setPushToInventory(true);
     
   };
-
-  //For preventing creation of new level in firebase.
- /*  const forbiddeChars = "/";
-  escape(forbiddeChars);
-  encodeURI(forbiddeChars);
-  encodeURIComponent(forbiddeChars); */
   
   
   
