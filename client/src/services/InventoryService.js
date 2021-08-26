@@ -70,6 +70,14 @@ export class InventoryService {
     const res = await Axios.post(appendURL + "/api/invoice/scaninvoicedata", data);
     return res.data;
   }
+  async UpdateInvoiceData(invoiceName, invoiceNo, date, itemNo) {
+    console.log(invoiceName);
+    console.log(invoiceNo);
+    console.log(itemNo);
+    console.log(date);
+    const res = await Axios.post(appendURL + "/api/invoice/updateinvoicedata", {params:{ invoiceName: invoiceName, invoiceNo: invoiceNo,date: date, itemNo: itemNo}});
+    return res.data;
+  }
 
   async UpdateDBProduct(data) {
     const res = await Axios.put(appendURL + "/api/invoice/pos/update", data);

@@ -74,10 +74,13 @@ const SaveInvoiceData = () => {
     const [costInc, setCostInc] = useState("false");
     const [costDec, setCostDec] = useState("false");
     const [unitCost, setUnitCost] = useState("");
+    const [isUpdated, setIsUpdated] = useState("false");
+    const [updateIndex, setUpdateIndex] = useState(-1);
     // const [posProducts, setPosProducts] = useState([]);
     let posProducts = []
     let wooComProducts = [];
     let singleItemData = [];
+    let itemNo = "";
     const header = [
         "Serial No.",
         "Barcode",
@@ -420,6 +423,8 @@ const SaveInvoiceData = () => {
     const tempTable = [];
     product.push(tableData[index]);
     console.log(product);
+    product.isUpdated = "true";
+    itemNo = product.itemNo;
     
     product.forEach((element, index) => {
       if (
@@ -479,21 +484,33 @@ const SaveInvoiceData = () => {
           };
           console.log(data)
           await inventoryService.UpdateProductFields(data);
+          const updateItemData = {
+
+          }
+          
         } catch (error) {
           console.log(`couldn't update price for product ${product.itemNo}`);
         }
       })
     );
     setLoader(false);
-    console.log(tempTable);
+    // console.log(tempTable);
+    tempTable[0].isUpdated = "true";
     singleItemData = tempTable;
     // setPushToInventory(true);
     console.log(singleItemData);
+    
+
 
     await getProducts();
     await getPosProducts();
     await pushInventoryDetails2();
     toConsoleState();
+    setIsUpdated("true");
+    setUpdateIndex(index);
+    console.log(singleItemData);
+    console.log(singleItemData.itemNo);
+    await inventoryService.UpdateInvoiceData(invoice.slug, invoiceNo, date, singleItemData[0].itemNo); 
     
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
@@ -643,22 +660,38 @@ const SaveInvoiceData = () => {
           let s = result[i].split("@@@");
           let obj =
             {
-              sku: s[0] === "nan" ? null : s[0],
-              upc: s[1] === "nan" ? null : s[1],
-              altupc1: s[2] === "nan" ? null : s[2],
-              altupc2: s[3] === "nan" ? null : s[3],
-              name: s[4] === "nan" ? null : s[4],
-              vintage: s[5] === "nan" ? null : s[5],
-              totalQty: s[6] === "nan" ? null : s[6],
-              cost: s[7] === "nan" ? null : s[7],
-              pricea: s[8] === "nan" ? null : s[8],
-              priceb: s[9] === "nan" ? null : s[9],
-              pricec: s[10] === "nan" ? null : s[10],
-              department: s[11] === "nan" ? null : s[11],
-              salePrice: s[12] === "nan" ? null : s[12],
-              size: s[13] === "nan" ? null : s[13],
-              pack: s[14] === "nan" ? null : s[14],
-              price: s[15] === "nan" ? null : s[15],
+              // sku: s[0] === "nan" ? null : s[0],
+              // upc: s[1] === "nan" ? null : s[1],
+              // altupc1: s[2] === "nan" ? null : s[2],
+              // altupc2: s[3] === "nan" ? null : s[3],
+              // name: s[4] === "nan" ? null : s[4],
+              // vintage: s[5] === "nan" ? null : s[5],
+              // totalQty: s[6] === "nan" ? null : s[6],
+              // cost: s[7] === "nan" ? null : s[7],
+              // pricea: s[8] === "nan" ? null : s[8],
+              // priceb: s[9] === "nan" ? null : s[9],
+              // pricec: s[10] === "nan" ? null : s[10],
+              // department: s[11] === "nan" ? null : s[11],
+              // salePrice: s[12] === "nan" ? null : s[12],
+              // size: s[13] === "nan" ? null : s[13],
+              // pack: s[14] === "nan" ? null : s[14],
+              // price: s[15] === "nan" ? null : s[15],
+              sku: s[1] === "nan" ? null : s[1],
+              upc: s[0] === "nan" ? null : s[0],
+              altupc1: s[14] === "nan" ? null : s[14],
+              altupc2: s[15] === "nan" ? null : s[15],
+              name: s[2] === "nan" ? null : s[2],
+              vintage: s[8] === "nan" ? null : s[8],
+              totalQty: s[13] === "nan" ? null : s[13],
+              cost: s[4] === "nan" ? null : s[4],
+              pricea: s[10] === "nan" ? null : s[10],
+              priceb: s[11] === "nan" ? null : s[11],
+              pricec: s[12] === "nan" ? null : s[12],
+              department: s[9] === "nan" ? null : s[9],
+              salePrice: s[5] === "nan" ? null : s[5],
+              size: s[6] === "nan" ? null : s[6],
+              pack: s[7] === "nan" ? null : s[7],
+              price: s[3] === "nan" ? null : s[3],
             }
           newData.push(obj);
         }
@@ -791,6 +824,7 @@ const SaveInvoiceData = () => {
           console.log(tableData);
     
           // console.log(showPosIndex);
+          console.log(tableData[0]);
           
           let rows = tableData.map((element, index) => {
             //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
@@ -806,12 +840,15 @@ const SaveInvoiceData = () => {
               emptyColumnList = [...new Set(emptyColumn)];
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
+            console.log(element.isUpdated);
     
             return (
               <tr
                 key={index}
                 className={isEmpty ? styles.red : isFree ? styles.free : null}
-                style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
+                // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
+                style={element.isUpdated === "true" || (isUpdated === "true" && updateIndex === index) ? {backgroundColor: "lightBlue"}
+                  : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
                 <td className={styles.element}>
