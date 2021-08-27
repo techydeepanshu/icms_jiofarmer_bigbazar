@@ -20,6 +20,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { Api } from "../../services/Api";
 import HicksData from "./Hicksville.json";
 import { CContainer, CModalHeader, CCol, CFormGroup, CInput, CButton, CLabel, CModal, CModalBody, CModalFooter, CRow } from "@coreui/react";
+import { lightBlue } from "@material-ui/core/colors";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
@@ -71,6 +72,8 @@ const DisplayData = (props) => {
   const [costInc, setCostInc] = useState("false");
   const [costDec, setCostDec] = useState("false");
   const [unitCost, setUnitCost] = useState("");
+  const [isUpdated, setIsUpdated] = useState("false");
+  const [updateIndex, setUpdateIndex] = useState(-1);
   let posProducts = []
   let wooComProducts = [];
   let singleItemData = [];
@@ -111,6 +114,8 @@ const DisplayData = (props) => {
     // console.log(invNo);
     // console.log(invPage);
     // console.log(ocrProducts);
+    ocrProducts.map((product) => { product.isUpdated = "false"});
+    console.log(ocrProducts);
    
       scanInvoiceData.InvoiceName = props.selectedInvoice;
       scanInvoiceData.InvoiceDate = invDate;
@@ -156,22 +161,22 @@ const DisplayData = (props) => {
       let s = result[i].split("@@@");
       let obj =
         {
-          sku: s[0] === "nan" ? null : s[0],
-          upc: s[1] === "nan" ? null : s[1],
-          altupc1: s[2] === "nan" ? null : s[2],
-          altupc2: s[3] === "nan" ? null : s[3],
-          name: s[4] === "nan" ? null : s[4],
-          vintage: s[5] === "nan" ? null : s[5],
-          totalQty: s[6] === "nan" ? null : s[6],
-          cost: s[7] === "nan" ? null : s[7],
-          pricea: s[8] === "nan" ? null : s[8],
-          priceb: s[9] === "nan" ? null : s[9],
-          pricec: s[10] === "nan" ? null : s[10],
-          department: s[11] === "nan" ? null : s[11],
-          salePrice: s[12] === "nan" ? null : s[12],
-          size: s[13] === "nan" ? null : s[13],
-          pack: s[14] === "nan" ? null : s[14],
-          price: s[15] === "nan" ? null : s[15],
+          sku: s[1] === "nan" ? null : s[1],
+          upc: s[0] === "nan" ? null : s[0],
+          altupc1: s[14] === "nan" ? null : s[14],
+          altupc2: s[15] === "nan" ? null : s[15],
+          name: s[2] === "nan" ? null : s[2],
+          vintage: s[8] === "nan" ? null : s[8],
+          totalQty: s[13] === "nan" ? null : s[13],
+          cost: s[4] === "nan" ? null : s[4],
+          pricea: s[10] === "nan" ? null : s[10],
+          priceb: s[11] === "nan" ? null : s[11],
+          pricec: s[12] === "nan" ? null : s[12],
+          department: s[9] === "nan" ? null : s[9],
+          salePrice: s[5] === "nan" ? null : s[5],
+          size: s[6] === "nan" ? null : s[6],
+          pack: s[7] === "nan" ? null : s[7],
+          price: s[3] === "nan" ? null : s[3],
         }
       newData.push(obj);
     }
@@ -596,7 +601,7 @@ const DisplayData = (props) => {
           const data = {
             invoiceName: props.selectedInvoice,
             itemName: product.itemNo,
-            value: { Price: product.unitPrice },
+            value: { Price: product.unitPrice},
           };
           console.log(data)
           await inventoryService.UpdateProductFields(data);
@@ -615,6 +620,8 @@ const DisplayData = (props) => {
     await getPosProducts();
     await pushInventoryDetails2();
     toConsoleState();
+    setIsUpdated("true");
+    setUpdateIndex(index);
     
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
@@ -641,7 +648,7 @@ const DisplayData = (props) => {
     let tempTableData = [...tableData];
     // console.log(emptyColumnList.length, "before");
     if (tableData[index]["show"]) {
-      if (window.confirm("Delete the item?")) {
+      if (1) {
         tempTableData[index]["show"] = false;
         const i = emptyColumnList.indexOf(index);
         if (i > -1) {
@@ -711,7 +718,9 @@ const DisplayData = (props) => {
           <tr
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
-            style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
+            style={isUpdated === "true" ? updateIndex === index ? {backgroundColor: "lightBlue"} : {}
+                  : element.show ? { opacity: "1" } : { opacity: "0.4" }}
+            
           >
             <td>{index + 1}</td>
             <td className={styles.element}>
@@ -878,11 +887,19 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.markup}</td>
-            <td>
+            {/* <td>
               <Checkbox
                 checked={!element.show}
                 onChange={(e) => handleChange(index, "show", e.target.value)}
                 inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            </td> */}
+             <td>
+              <Button
+                text={element.show ? "Delete" : "Undo"}
+                color="btn btn-info"
+                type="submit"
+                onClick={() => deleteRow(index)}
               />
             </td>
             <td>
@@ -1052,15 +1069,21 @@ const DisplayData = (props) => {
   };
 
   const handleChange = async (row, key, value) => {
+    console.log(row);
+    console.log(key);
+    console.log(value);
+    console.log(emptyColumn);
     let tempTableData = [...tableData];
     tempTableData[row][key] = value;
     const { itemNo } = tempTableData[row];
+    console.log(tempTableData[row]);
     if (
       tempTableData[row]["qty"] !== "" &&
       tempTableData[row]["itemNo"] !== "" &&
       tempTableData[row]["unitPrice"] !== ""
     ) {
       const index = emptyColumnList.indexOf(row);
+      console.log(index);
       if (index > -1) {
         emptyColumnList.splice(index, 1);
       }

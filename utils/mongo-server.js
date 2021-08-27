@@ -53,6 +53,7 @@ const invoiceSchema = new Schema({
   Department: String,
   SellerCost: String,
   Size: String,
+  isUpdated: { type: String, default: "false" },
 });
 const notFoundSchema = new Schema({
   Item: String,
@@ -134,6 +135,17 @@ app.post("/scaninvoicedata", (req, res) => {
     else res.json("Product created successfully");
   });
 });
+
+app.post("/updateinvoicedata", (req, res) => {
+  let invoice = req.body.invoice;
+  let invoiceNo = req.body.invoiceNo;
+  let date = req.body.date;
+  let itemNo = req.body.itemNo
+  scanInvoiceData.updateOne({InvoiceName: invoice, SavedInvoiceNo: invoiceNo, SavedDate: date, "InvoiceData.itemNo": itemNo },
+                            {$set: {"InvoiceData.$.isUpdated": "true"} },
+                            { _id: 0, __v: 0 },
+                            (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  });
 
 app.get("/pos", (req, res) => {
   pos.find({}, { _id: 0, __v: 0 }, (err, x) => {
