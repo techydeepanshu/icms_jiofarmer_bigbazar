@@ -79,7 +79,15 @@ export class InventoryService {
     return res.data;
   }
 
+  async UpdateDBafterPosUpdate(data){
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/updatedbafterposupdate", data);
+    console.log(res);
+
+  }
+
   async UpdateDBProduct(data) {
+    console.log(data);
     const res = await Axios.put(appendURL + "/api/invoice/pos/update", data);
     return res.data;
   }
