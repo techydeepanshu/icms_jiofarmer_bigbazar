@@ -74,6 +74,12 @@ const DisplayData = (props) => {
   const [unitCost, setUnitCost] = useState("");
   const [isUpdated, setIsUpdated] = useState("false");
   const [updateIndex, setUpdateIndex] = useState(-1);
+  const [notFounds, setNotFounds] = useState("false");
+  const [unitsInCase, setUnitsInCase] = useState("");
+  const [price, setPrice] = useState("");
+  const [redState, setRedState] = useState("false");
+  const selectedInvoice = props.selectedInvoice;
+  let showModal1 = false; 
   let posProducts = []
   let wooComProducts = [];
   let singleItemData = [];
@@ -192,7 +198,7 @@ const DisplayData = (props) => {
   }
 
 
-  const updateItem = (props, ocrCost) => {
+  const updateItem = (ocrCost) => {
     //console.log(showPosState);
     const data = {
       invoiceName: props.selectedInvoice,
@@ -204,7 +210,7 @@ const DisplayData = (props) => {
         isReviewed: "true",
         Size: showPosState.size, 
         Department: showPosState.department,
-        SellerCost: showPosState.unitCost,
+        //SellerCost: showPosState.unitCost,
         SellingPrice: showPosState.unitPrice
       },
     };
@@ -217,27 +223,27 @@ const DisplayData = (props) => {
       }
       console.log(res);
       alert("Successfully updated fields");
-      setStateUpdated(true);
     })
     .catch((err) => {
       console.log(err);
       alert("Some error occuured in creating product");
     })
-    .finally(() => { setLoader(false);
-                   setStateUpdated("true");
-                  //  console.log(ocrCost);
-                  //  console.log(unitCost);
-                   if(ocrCost>unitCost){
-                     setCostInc("true");
-                     setCostDec("");
-                   }
-                   if(ocrCost<unitCost){
-                     setCostDec("true");
-                     setCostInc("");
-                   }
-            });
+    .finally(() => { 
+      setLoader(false)
+      setStateUpdated("true");
+      //  console.log(ocrCost);
+      //  console.log(unitCost);
+       if(ocrCost>unitCost){
+         setCostInc("true");
+         setCostDec("");
+       }
+       if(ocrCost<unitCost){
+         setCostDec("true");
+         setCostInc("");
+       }
+    });
 
-  }
+}
 
 //***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
 
@@ -676,15 +682,15 @@ const DisplayData = (props) => {
   const renderTableHeader = () => {
     return header.map((key, index) => {
       return (
-        <th
-          key={index}
-          style={{
-            position: "sticky",
-            top: "70px",
-            background: "grey",
-          }}
-        >
-          {key.toUpperCase()}
+          <th
+            key={index}
+            style={{
+              position: "sticky",
+              top: "70px",
+              background: "grey",
+            }}
+          >
+            {key.toUpperCase()}
         </th>
       );
     });
@@ -695,7 +701,7 @@ const DisplayData = (props) => {
     // console.log(stateUpdated);
 
     if (tableData) {
-      // console.log(tableData);
+      console.log(tableData);
 
       // console.log(showPosIndex);
       
@@ -762,7 +768,14 @@ const DisplayData = (props) => {
                 <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                 <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
                 <div >
-                <button onClick={() => updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))} 
+                <button onClick={ () => {
+                            if(notFounds === "true"){
+                              toggleModal();
+                            }else{
+                              updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
+                            }
+                          }
+                        } 
                   disabled={showPosIndex === index ? false : true}
                   style={{backgroundColor: "green",
                   border: "none",
@@ -814,10 +827,10 @@ const DisplayData = (props) => {
                 onChange={(event, newValue) => {
                   if (newValue) {
                     let newState = { ...showPosState };
-                    //console.log(newValue);
+                    console.log(newValue);
                     // newState.item = newValue.name;
                     newState.item = element.itemNo
-                    newState.description = newValue.name;
+                    newState.description = element.description;
                     newState.barcode = newValue.upc;
                     newState.pos = newValue.name;
                     newState.posSku = newValue.sku;
@@ -828,6 +841,9 @@ const DisplayData = (props) => {
                     setShowPosState(newState);
                     setShowPosIndex(index);
                     setUnitCost(newValue.cost);
+                    if(isEmpty){
+                      setNotFounds("true");
+                    }
                     //setDisabled(false);
                     //updateOnHoverDetails(index);
                     //setShowPosIndex(index);
@@ -926,6 +942,20 @@ const DisplayData = (props) => {
       });
       return (
         <div style={{ marginTop: "70px" }}>
+          <div className={styles.divRow} style={{ marginTop: "80px" }}>
+            <Button
+              text="Save Invoice Data"
+              color="btn btn-info"
+              type="submit"
+              onClick={toggleModal}
+            />
+            <Button
+              text="Re upload"
+              color="btn btn-info"
+              type="submit"
+              onClick={() => window.location.reload()}
+            />
+          </div>
           <table className="table table-hover table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
@@ -1189,7 +1219,9 @@ const DisplayData = (props) => {
             //console.log("FILENAME" + props.filename);
             const res = await tesseractService.GetOCRData(file);
             console.log("ocrData from TSRCTsrvc goes to chooseFilter");
-            // console.log(res.body);
+            
+            console.log("OCR");
+            console.log(res.body);
             
               // scanInvoiceData.InvoiceDate = res.body[1]["2"]["1"];
               // scanInvoiceData.InvoiceNumber = res.body[1]["2"]["2"];
@@ -1225,6 +1257,7 @@ const DisplayData = (props) => {
       return products;
     }
     fetchOCRData().then((ocrData) => {
+      console.log(ocrData);
       invoiceData()
         .then((products) => {
           /**post processing the table data after returning from filter */
@@ -1236,11 +1269,13 @@ const DisplayData = (props) => {
             return newObj;
           }
           products = convertToUpperCase(products);
-          // console.log(products);
+          console.log(products);
           // scanInvoiceData.InvoiceData = ocrData;
           setOcrProducts(ocrData);
           
-          // console.log(ocrData);
+          console.log("OCR Data");
+          console.log(ocrData);
+          
           // scanInvoiceData.InvoiceData = ocrData;
           //console.log(resScnInvDta);
           //console.log("OCERDATa", ocrData);
@@ -1348,7 +1383,12 @@ const DisplayData = (props) => {
     return <Spinner />;
   }
   return (
+   
+
+      
+    
     <div className="container-fluid">
+    
       {pushToInventory ? (
         <UpdateInventory
           newInventoryData={inventoryData}
@@ -1360,7 +1400,7 @@ const DisplayData = (props) => {
         renderTableData()
       )}
 
-<CModal show={showModal} onClose={toggleModal}>
+      <CModal show={showModal} onClose={toggleModal}>
         <CModalHeader closeButton>Save Invoice Data</CModalHeader>
         <CModalBody>
           <CContainer fluid>
@@ -1396,7 +1436,47 @@ const DisplayData = (props) => {
           </CButton>
         </CModalFooter>
       </CModal>
-      );
+
+      {/* <CModal show={showModal} onClose={toggleModal}>
+        <CModalHeader closeButton>Add Red Products</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="invoiceNo">Units In Case</CLabel>
+                  <CInput
+                    type="text"
+                    name="unitsInCase"
+                    value={unitsInCase}
+                    onChange={(event) => setUnitsInCase(event.target.value)}
+                    />
+                  <CLabel htmlFor="date">Price</CLabel>
+                  <CInput
+                    type="text"
+                    name="price"
+                    value={price}
+                    onChange={(event) => setPrice(event.target.value)}
+                    />
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={updateItem}>
+            ADD
+          </CButton>{" "}
+          <CButton color="secondary" onClick={toggleModal}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal> */}
+      
+      
+      
+      
+    );
     </div>
   );
 };

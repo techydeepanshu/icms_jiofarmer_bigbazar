@@ -94,8 +94,26 @@ app.put("/invoice/:name/:Item", (req, res) => {
   console.log(req.body);
   let invoice = mongoose.model(req.params.name, invoiceSchema);
   invoice.findOne({ Item: req.params.Item }, (err, x) => {
-    if (err) res.json("Some error occured");
-    else if (x === null) res.json(null);
+    if (err) {
+      let obj = req.body;
+      obj["Item"] = req.params.Item;
+      obj["Description"] = req.params.name;
+      invoice.insertOne(obj, (err, x) => {
+        if(err) res.json("Some error occured.");
+        else res.json("Product created Successfully.");
+      });
+    }
+    else if (x === null) {
+      let obj = req.body;
+         obj["Item"] = req.params.Item;
+         obj["Description"] = req.params.Item;  
+        console.re.log(obj);
+          invoice.insertMany( obj, (err, x) => {
+            if(err) res.json("Some error occured.");
+            else res.json("Product created Successfully.");
+          });
+
+    }
     else {
       let obj = req.body;
       obj["Item"] = req.params.Item;
@@ -146,6 +164,17 @@ app.post("/updateinvoicedata", (req, res) => {
                             { _id: 0, __v: 0 },
                             (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   });
+
+  app.post("/updatedbafterposupdate", (req, res) => {
+    console.log(req.body);
+    let invoice = mongoose.model(req.body.data.invoice, invoiceSchema);
+    invoice.updateOne({Item: req.body.item},
+                      {SellingPrice: req.body.price, SellerCost: req.body.cost},
+                      { _id: 0, __v: 0 },
+    (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  
+  });
+
 
 app.get("/pos", (req, res) => {
   pos.find({}, { _id: 0, __v: 0 }, (err, x) => {

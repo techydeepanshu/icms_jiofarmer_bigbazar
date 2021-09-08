@@ -18,6 +18,7 @@ import Button from "../../UI/Button";
 import styles from "../DisplayData/DisplayData.module.css";
 import IconButton from "@material-ui/core/IconButton";
 import UpdateInventory from "../Update/UpdateInventory";
+import Spinner from "../../UI/Spinner/Spinner";
 
 const useStyles = makeStyles({
         root: {
@@ -65,7 +66,7 @@ const SaveInvoiceData = () => {
     const [pushToInventory, setPushToInventory] = useState(false);
     const [inventoryData, setInventoryData] = useState([]);
     const [itemNoDropdown, setItemNoDropdown] = useState([]);
-    const [loader, setLoader] = useState(true);
+    const [loader, setLoader] = useState(false);
     const [reviewItems, setReviewItems] = useState([]);
     const [showPosIndex, setShowPosIndex] = useState(-1);
     const inventoryService = new InventoryService();
@@ -76,11 +77,17 @@ const SaveInvoiceData = () => {
     const [unitCost, setUnitCost] = useState("");
     const [isUpdated, setIsUpdated] = useState("false");
     const [updateIndex, setUpdateIndex] = useState(-1);
-    // const [posProducts, setPosProducts] = useState([]);
     let posProducts = []
     let wooComProducts = [];
     let singleItemData = [];
     let itemNo = "";
+    // const [posProducts, setPosProducts] = useState([]);
+
+    const [notFounds, setNotFounds] = useState("false");
+    const [unitsInCase, setUnitsInCase] = useState("");
+    const [price, setPrice] = useState("");
+    const [redState, setRedState] = useState("true");
+    
     const header = [
         "Serial No.",
         "Barcode",
@@ -399,7 +406,7 @@ const SaveInvoiceData = () => {
         }
       await pushToPOS(posProducts);
   
-      // setLoader(false);
+      setLoader(false);
       // if (itemsNotPushed.length === 0) {
       window.alert("Inventory updated successfully");
       // setRedirect(true);
@@ -484,9 +491,7 @@ const SaveInvoiceData = () => {
           };
           console.log(data)
           await inventoryService.UpdateProductFields(data);
-          const updateItemData = {
-
-          }
+          
           
         } catch (error) {
           console.log(`couldn't update price for product ${product.itemNo}`);
@@ -511,6 +516,17 @@ const SaveInvoiceData = () => {
     console.log(singleItemData);
     console.log(singleItemData.itemNo);
     await inventoryService.UpdateInvoiceData(invoice.slug, invoiceNo, date, singleItemData[0].itemNo); 
+
+    //Update unit cost n price in db, after update POS.
+    let data1 = {
+      cost: singleItemData[0].cp,
+      price: singleItemData[0].sp,
+      item: singleItemData[0].itemNo,
+      invoice: invoice.slug
+    }
+    await inventoryService.UpdateDBafterPosUpdate(data1);
+    setProductsInTable();
+
     
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
@@ -518,11 +534,16 @@ const SaveInvoiceData = () => {
     const fetchSavedData = async() => {
         const data =  await tesseractService.GetSavedInvoiceData(invoice.slug, invoiceNo, date);
         console.log(data);
-        console.log(data[0].InvoiceData);
-        return data[0].InvoiceData;
+        if(data.length === 0) {
+          alert("INvoice doesnt Exist!!");
+        }else return data[0].InvoiceData;
+        // console.log(data);
+        // console.log(data[0].InvoiceData);
+        
     };
 
     const setProductsInTable = () => {
+      setLoader(true);
       async function invoiceData() {
         const products = await tesseractService.GetProductDetails(
           invoice.slug
@@ -596,6 +617,8 @@ const SaveInvoiceData = () => {
                 products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
               row.sellingPrice = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+                row.price = 
+                products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
               //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
               let sp = 0;
               let cp = 0;
@@ -705,7 +728,7 @@ const SaveInvoiceData = () => {
           // console.log(hicksvilleData);
     }
 
-    const updateItem = (ocrCost) => {
+    const updateItemOld = (ocrCost) => {
         //console.log(showPosState);
         const data = {
           invoiceName: invoice.slug,
@@ -750,6 +773,84 @@ const SaveInvoiceData = () => {
            }
         });
     
+    }
+
+    const updateItem = (props, ocrCost) => {
+      let data;
+      //console.log(showPosState);
+      if(notFounds === "true"){
+        // console.log(props.selectedInvoice);
+        console.log("notfoundstrue");
+        data = {
+          invoiceName: invoice.slug,
+          itemName: showPosState.item,
+          value: { 
+            POS: showPosState.pos, 
+            Barcode: showPosState.barcode, 
+            PosSKU: showPosState.posSku, 
+            isReviewed: "true",
+            Description: showPosState.description,
+            Size: showPosState.size, 
+            Department: showPosState.department,
+            SellerCost: showPosState.unitCost,
+            SellingPrice: showPosState.unitPrice,
+            Quantity: unitsInCase,
+            Price: price
+          },
+        };
+  
+        toggleModal();
+      
+      }else{
+        data = {
+          invoiceName: props.selectedInvoice,
+          itemName: showPosState.item,
+          value: { 
+            POS: showPosState.pos, 
+            Barcode: showPosState.barcode, 
+            PosSKU: showPosState.posSku, 
+            isReviewed: "true",
+            Size: showPosState.size, 
+            Department: showPosState.department,
+            SellerCost: showPosState.unitCost,
+            SellingPrice: showPosState.unitPrice
+          },
+        };
+      }
+  
+      console.log(data)
+      inventoryService
+      .UpdateProductFields(data)
+      .then((res) => {
+        if (!res) {
+          throw new Error("Product not created")
+        }
+        console.log(res);
+        alert("Successfully updated fields");
+        setStateUpdated(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Some error occuured in creating product");
+      })
+      .finally(() => { setLoader(false);
+                     setStateUpdated("true");
+                    //  console.log(ocrCost);
+                    //  console.log(unitCost);
+                    if(ocrCost>unitCost){
+                      setCostInc("true");
+                      setCostDec("");
+                    }
+                    if(ocrCost<unitCost){
+                      setCostDec("true");
+                      setCostInc("");
+                    }
+                    if(notFounds === "true"){
+                      setNotFounds("false");
+                      setProductsInTable(); 
+                    }
+              });
+  
     }
 
     const addRow = () => {
@@ -824,7 +925,7 @@ const SaveInvoiceData = () => {
           console.log(tableData);
     
           // console.log(showPosIndex);
-          console.log(tableData[0]);
+          // console.log(tableData[0]);
           
           let rows = tableData.map((element, index) => {
             //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
@@ -840,14 +941,14 @@ const SaveInvoiceData = () => {
               emptyColumnList = [...new Set(emptyColumn)];
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
-            console.log(element.isUpdated);
+            // console.log(element.isUpdated);
     
             return (
               <tr
                 key={index}
                 className={isEmpty ? styles.red : isFree ? styles.free : null}
                 // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
-                style={element.isUpdated === "true" || (isUpdated === "true" && updateIndex === index) ? {backgroundColor: "lightBlue"}
+                style={element.isUpdated === "true" || (isUpdated === "true" && updateIndex === index) ? {backgroundColor: "lightGreen"}
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
@@ -889,8 +990,16 @@ const SaveInvoiceData = () => {
                     <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
                     <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                     <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
+                    <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p>
                     <div >
-                    <button onClick={() => updateItem((parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))} disabled={showPosIndex === index ? false : true}
+                    <button onClick={() => {
+                            if(notFounds === "true"){
+                              toggleModal();
+                            }else{
+                              updateItem(invoice.slug, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
+                            }
+                          } } 
+                      disabled={showPosIndex === index ? false : true}
                       style={{backgroundColor: "green",
                       border: "none",
                       color: "white",
@@ -956,6 +1065,10 @@ const SaveInvoiceData = () => {
                         setShowPosIndex(index);
                         setUnitCost(newValue.cost);
                         setStateUpdated("");
+                        if(isEmpty){
+                          setNotFounds("true");
+                          setRedState("false");
+                        }
                         //setDisabled(false);
                         //updateOnHoverDetails(index);
                         //setShowPosIndex(index);
@@ -1015,13 +1128,21 @@ const SaveInvoiceData = () => {
                   />
                 </td>
                 <td>{element.markup}</td>
-                <td>
+                {/* <td>
                   <Checkbox
                     checked={!element.show}
                     onChange={(e) => handleChange(index, "show", e.target.value)}
                     inputProps={{ "aria-label": "primary checkbox" }}
                   />
-                </td>
+                </td> */}
+                <td>
+              <Button
+                text={element.show ? "Delete" : "Undo"}
+                color="btn btn-info"
+                type="submit"
+                onClick={() => deleteRow(index)}
+              />
+            </td>
                 <td>
                 <Button 
                     text="Update POS"
@@ -1386,7 +1507,9 @@ const SaveInvoiceData = () => {
     }, []);
 
     
-
+    if (loader) {
+      return <Spinner />;
+    }
     return(
         <div className="container-fluid">
             <Paper className={classes.root}>
@@ -1452,6 +1575,42 @@ const SaveInvoiceData = () => {
             ) : (
             renderTableData()
             )}
+
+            <CModal show={showModal} onClose={toggleModal}>
+        <CModalHeader closeButton>Add Red Products</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="invoiceNo">Units In Case</CLabel>
+                  <CInput
+                    type="text"
+                    name="unitsInCase"
+                    value={unitsInCase}
+                    onChange={(event) => setUnitsInCase(event.target.value)}
+                    />
+                  <CLabel htmlFor="date">Price</CLabel>
+                  <CInput
+                    type="text"
+                    name="price"
+                    value={price}
+                    onChange={(event) => setPrice(event.target.value)}
+                    />
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={updateItem}>
+            ADD
+          </CButton>{" "}
+          <CButton color="secondary" onClick={toggleModal}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal>
         </div>
 
     );

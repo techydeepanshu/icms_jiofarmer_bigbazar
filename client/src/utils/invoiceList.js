@@ -999,13 +999,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "usgourmetfoods",
   }, */
-  /* {
+  {
     value: "USA Halal",
     slug: "usa-halal-foods",
     jsonName: "usa-halal.json",
     emptyColumn: false,
     databaseName: "usahalals",
-  }, */
+  }, 
   /* {
     value: "Vadilal",
     slug: "vadilal",

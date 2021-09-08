@@ -124,6 +124,36 @@ app.post("/api/invoice/updateinvoicedata", validateLogin, (req, res) => {
   request(options, callback);
 });
 
+app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
+  // console.log(req.body);
+  const data = {
+    cost: req.body.cost,
+    price: req.body.price,
+    item: req.body.item,
+    invoice: getDBInvoiceName(req.body.invoice)
+  };
+  console.log(data);
+  let options = {
+    method: "POST",
+    url: `http://3.91.159.202:3001/updatedbafterposupdate/`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+
+
+
 app.get("/api/fuzzwuzz", validateLogin, (req, res) => {
   const type = req.query["type"];
   const dirname = type === "queue" ? "/csv/Export.csv" : "/csv/Hicksville.csv";
@@ -206,7 +236,7 @@ app.post("/api/ocr", validateLogin, function (req, res) {
 
 app.get("/api/getPOSProduct", validateLogin, function (req, res) {
   const upc = req.query["upc"];
-  const itemName = req.query["iteName"];
+  const itemName = req.query["itemName"];
 
   let options = {
     method: "GET",
@@ -301,10 +331,10 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const data = req.body;
-  // console.log(data);
+  console.log(data);
   const { invoiceName, itemName, value } = data;
-  // console.log("Item name",itemName);
-  /* console.log(data,"Mongo PUT Request Data"); */
+  console.log("Item name",itemName);
+  console.log(data,"Mongo PUT Request Data"); 
   let options = {
     method: "PUT",
     url: `http://3.91.159.202:3001/invoice/${getDBInvoiceName(

@@ -31,6 +31,9 @@ let options = {
   json: true,
 };
 function callback(error, response, body) {
+  console.log(error);
+  console.log(response);
+  console.log(body);
   let data=body.Data;
   csvWriter.writeRecords(data).then(()=> console.log('Success'));
 }
