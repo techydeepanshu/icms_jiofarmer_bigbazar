@@ -87,6 +87,7 @@ const SaveInvoiceData = () => {
     const [unitsInCase, setUnitsInCase] = useState("");
     const [price, setPrice] = useState("");
     const [redState, setRedState] = useState("true");
+    let updateSku = "";
     
     const header = [
         "Serial No.",
@@ -182,24 +183,39 @@ const SaveInvoiceData = () => {
               const res = await inventoryService.GetPOSProductDetails(
                 row.barcode
               );
+              if(!Array.isArray(res)){
+                alert("API not working");
+                return;
+              }
               console.log("fetched pos data", res);
               const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
-              return {
-                ...row,
-                COST: row.cp,
-                PRICE: row.sp,
-                SKU,
-                UPC,
-                ITEMNAME,
-                TOTALQTY:
-                  parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
-                itemNo: row.itemNo,
-                isNew: false,
-                BUYASCASE: 1,
-                CASEUNITS: row.pieces.toString(),
-                CASECOST: row.unitPrice.toString(),
-                DEPNAME,
-              };
+              console.log(SKU);
+              console.log(updateSku);
+              if(SKU == updateSku){
+                console.log(SKU);
+                console.log(updateSku);
+                return {
+                  ...row,
+                  COST: row.cp,
+                  PRICE: row.sp,
+                  SKU,
+                  UPC,
+                  ITEMNAME,
+                  TOTALQTY:
+                    parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+                  itemNo: row.itemNo,
+                  isNew: false,
+                  BUYASCASE: 1,
+                  CASEUNITS: row.pieces.toString(),
+                  CASECOST: row.unitPrice.toString(),
+                  DEPNAME,
+                };
+              } else {
+                alert("SKU mismatch!!");
+              }
+
+              
+              
             } catch (error) {
               hasErrorOccured = true;
               return {
@@ -505,28 +521,36 @@ const SaveInvoiceData = () => {
     // setPushToInventory(true);
     console.log(singleItemData);
     
+    updateSku = singleItemData[0].posSku;
 
 
     await getProducts();
     await getPosProducts();
-    await pushInventoryDetails2();
-    toConsoleState();
-    setIsUpdated("true");
-    setUpdateIndex(index);
-    console.log(singleItemData);
-    console.log(singleItemData.itemNo);
-    await inventoryService.UpdateInvoiceData(invoice.slug, invoiceNo, date, singleItemData[0].itemNo); 
+    console.log(posProducts);
+    if(posProducts[0] != undefined ){
+      await pushInventoryDetails2();
+      toConsoleState();
+      setIsUpdated("true");
+      setUpdateIndex(index);
+      console.log(singleItemData);
+      console.log(singleItemData.itemNo);
+      await inventoryService.UpdateInvoiceData(invoice.slug, invoiceNo, date, singleItemData[0].itemNo); 
 
-    //Update unit cost n price in db, after update POS.
-    let data1 = {
-      cost: singleItemData[0].cp,
-      price: singleItemData[0].sp,
-      item: singleItemData[0].itemNo,
-      invoice: invoice.slug
+      //Update unit cost n price in db, after update POS.
+      let data1 = {
+        cost: singleItemData[0].cp,
+        price: singleItemData[0].sp,
+        item: singleItemData[0].itemNo,
+        invoice: invoice.slug
+      }
+      await inventoryService.UpdateDBafterPosUpdate(data1);
+      setProductsInTable();
+    } else {
+      alert("POS not updated!!");
+      setProductsInTable();
     }
-    await inventoryService.UpdateDBafterPosUpdate(data1);
-    setProductsInTable();
 
+    
     
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
@@ -720,7 +744,7 @@ const SaveInvoiceData = () => {
         }
         const filter = newData.map((element) => {
           let obj = { ...element };
-          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}-${element.cost}`;
+          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}-${element.cost}-${element.sku}`;
           //console.log(obj);
           return obj; 
         });
@@ -803,7 +827,7 @@ const SaveInvoiceData = () => {
       
       }else{
         data = {
-          invoiceName: props.selectedInvoice,
+          invoiceName: invoice.slug,
           itemName: showPosState.item,
           value: { 
             POS: showPosState.pos, 
