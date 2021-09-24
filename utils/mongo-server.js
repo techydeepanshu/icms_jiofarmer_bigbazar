@@ -75,6 +75,13 @@ const scanInvoiceDataSchema  = new Schema({
 })
 let scanInvoiceData = mongoose.model("scaninvoicedatas", scanInvoiceDataSchema);
 
+const hicksvilleSchema = new Schema({
+  SavedDate: String,
+  FetchDate: String,
+  List: Array
+});
+let hicksvilleData = mongoose.model("Hicksvilles", hicksvilleSchema);
+
 function convertArrayOfObjectIntoObject(arr) {
   let obj = {};
   for (let i = 0; i < arr.length; i++) obj[arr[i].Item] = arr[i];
@@ -145,6 +152,16 @@ app.get("/getsaveinvoicedata/:invoice", (req, res) => {
     else res.json(x);
   });
 });
+
+app.get("/gethicksvilledata/", (req, res) => {
+  
+  hicksvilleData.find({SavedDate: req.body.saveDate, FetchDate: req.body.fetchDate}, { _id: 0, __v: 0 }, (err, x) => {
+    if (err) res.json("Some error occured");
+    else res.json(x);
+  });
+});
+
+//added by parikshit.
 app.post("/scaninvoicedata", (req, res) => {
   let invoiceNo = req.body.data.SavedInvoiceNo;
   let obj = req.body;
@@ -154,6 +171,7 @@ app.post("/scaninvoicedata", (req, res) => {
   });
 });
 
+//added by parikshit.
 app.post("/updateinvoicedata", (req, res) => {
   let invoice = req.body.invoice;
   let invoiceNo = req.body.invoiceNo;
@@ -165,11 +183,45 @@ app.post("/updateinvoicedata", (req, res) => {
                             (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   });
 
+//added by parikshit.
+app.post("/reverseposupdate", (req, res) => {
+  let invoice = req.body.invoice;
+  let invoiceNo = req.body.invoiceNo;
+  let date = req.body.date;
+  let itemNo = req.body.itemNo
+  scanInvoiceData.updateOne({InvoiceName: invoice, SavedInvoiceNo: invoiceNo, SavedDate: date, "InvoiceData.itemNo": itemNo },
+                            {$set: {"InvoiceData.$.isUpdated": "false"} },
+                            { _id: 0, __v: 0 },
+                            (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  });
+
+  //added by parikshit.
   app.post("/updatedbafterposupdate", (req, res) => {
     console.log(req.body);
     let invoice = mongoose.model(req.body.data.invoice, invoiceSchema);
     invoice.updateOne({Item: req.body.item},
                       {SellingPrice: req.body.price, SellerCost: req.body.cost},
+                      { _id: 0, __v: 0 },
+    (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  
+  });
+  // added by parikshit.
+  app.post("/reverseupdate", (req, res) => {
+    console.log(req.body);
+    let invoice = mongoose.model(req.body.invoice, invoiceSchema);
+    invoice.updateOne({Item: req.body.itemNo},
+                      {isReviewed: "false"},
+                      { _id: 0, __v: 0 },
+    (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  
+  });
+
+  // added by parikshit.
+  app.post("/linkmanually", (req, res) => {
+    console.log(req.body);
+    let invoice = mongoose.model(req.body.invoice, invoiceSchema);
+    invoice.updateOne({Item: req.body.itemNo},
+                      {isReviewed: "true"},
                       { _id: 0, __v: 0 },
     (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   
