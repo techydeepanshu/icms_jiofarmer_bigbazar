@@ -91,21 +91,25 @@ const SaveInvoiceData = () => {
     
     const header = [
         "Serial No.",
+        // "Details",
         "Barcode",
         "POS SKU",
         "Qty Shipped",
+        "Units in  Case",
+        "Case cost",
+        "Extended Price",
+        "Unit Cost(invoice) ",
         "ITEM NO",
         "Link Product",
         
         "DESCRIPTION",
-        "Units in  Case",
-        "Case cost",
-        "Extended Price",
+       
         "Unit Cost ",
         "Unit Price",
         "Mark up (%)",
         "Tick to Delete",
         "Update POS",
+        "Reverse POS Update",
         "Serial No.(2)"
     ];
 
@@ -183,6 +187,7 @@ const SaveInvoiceData = () => {
               const res = await inventoryService.GetPOSProductDetails(
                 row.barcode
               );
+              console.log(res);
               if(!Array.isArray(res)){
                 alert("API not working");
                 return;
@@ -312,9 +317,9 @@ const SaveInvoiceData = () => {
                 ISFOODSTAMP: 1,
                 ISWEIGHTED: 0,
                 ISTAXABLE: 1,
-                VENDORNAME: invoice.slug,
-                VENDORCODE: itemNo,
-                VENDORCOST: "",
+                // VENDORNAME: invoice.slug,
+                // VENDORCODE: itemNo,
+                // VENDORCOST: "",
                 ISNEWITEM: isNew ? 1 : 0,
                 BUYASCASE,
                 CASEUNITS,
@@ -332,6 +337,7 @@ const SaveInvoiceData = () => {
               Price: PRICE,
               TotalQty: TOTALQTY,
             };
+            //not needed as of now, parikshit.
             if (isNew) {
               const response = await inventoryService.CreateDBProduct(data);
               console.log("Created new product", response);
@@ -438,6 +444,8 @@ const SaveInvoiceData = () => {
     }
 
   const pushSingleItemToInventory = async (index) =>{
+    console.log(index);	
+    setShowPosIndex(-1);
     
     
     console.log(tableData);
@@ -543,6 +551,7 @@ const SaveInvoiceData = () => {
         item: singleItemData[0].itemNo,
         invoice: invoice.slug
       }
+      console.log(data1)
       await inventoryService.UpdateDBafterPosUpdate(data1);
       setProductsInTable();
     } else {
@@ -554,6 +563,58 @@ const SaveInvoiceData = () => {
     
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
+
+    const reverseUpdate = async(index) => {
+      console.log(index);
+      console.log(tableData);
+      console.log(tableData[index]);
+      let item = tableData[index];
+      let data = {
+        invoice: invoice.slug,
+        itemNo: item.itemNo,
+      }
+      const result = await inventoryService.reverseUpdate(data);
+      console.log(result);
+      if(result.ok == 1){
+        setProductsInTable();
+      }else {
+        alert("Some error occured in updation");
+      }
+    }
+    
+
+    const reversePOSUpdate = async(index) => {
+      console.log(index);
+      console.log(tableData);
+      console.log(tableData[index]);
+      let item = tableData[index];
+      const result = await inventoryService.reversePOSUpdate(invoice.slug, invoiceNo, date, item.itemNo);
+      if(result.ok == 1){
+        setProductsInTable();
+      }else {
+        alert("Some error occured in updation");
+      }
+
+    }
+
+    const linkManually = async(index) => {
+      console.log(index);
+      console.log(tableData);
+      console.log(tableData[index]);
+      let item = tableData[index];
+      let data = {
+        invoice: invoice.slug,
+        itemNo: item.itemNo,
+      }
+      const result = await inventoryService.linkManually(data);
+      console.log(result);
+      if(result.ok == 1){
+        setProductsInTable();
+      }else {
+        alert("Some error occured in updation");
+      }
+
+    }
 
     const fetchSavedData = async() => {
         const data =  await tesseractService.GetSavedInvoiceData(invoice.slug, invoiceNo, date);
@@ -695,7 +756,11 @@ const SaveInvoiceData = () => {
         // setInvNo("");
       };
     
-    const hicksvilleDropdown = (data) => {
+    const hicksvilleDropdown = async (data) => {
+      // const data = await inventoryService.getHicksvilleData();
+      console.log(data);
+
+
         let productsString = "";
         for(let i=0;i<data.length;i++){
           productsString = productsString + data[i].name + '$$$';
@@ -744,7 +809,7 @@ const SaveInvoiceData = () => {
         }
         const filter = newData.map((element) => {
           let obj = { ...element };
-          obj.label = `${element.name}- ${element.price}- ${element.upc} - ${element.size}-${element.cost}-${element.sku}`;
+          obj.label = `${element.name}--${element.price}--${element.upc}--${element.size}--${element.cost}--${element.sku}`;
           //console.log(obj);
           return obj; 
         });
@@ -871,8 +936,8 @@ const SaveInvoiceData = () => {
                     }
                     if(notFounds === "true"){
                       setNotFounds("false");
-                      setProductsInTable(); 
                     }
+                    setProductsInTable(); 
               });
   
     }
@@ -976,6 +1041,18 @@ const SaveInvoiceData = () => {
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
+                {/* <td>
+                  <TextField
+                    type="tel"
+                    value={element.details}
+                    id="outlined-secondary"
+                    variant="outlined"
+                    onChange={(e) => {
+                      handleChange(index, "details", e.target.value);
+                    }}
+                    style={{ width: 100 }}
+                  />
+                </td> */}
                 <td className={styles.element}>
                   <TextField
                     type="tel"
@@ -1014,7 +1091,7 @@ const SaveInvoiceData = () => {
                     <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
                     <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                     <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
-                    <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p>
+                    {/* <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p> */}
                     <div >
                     <button onClick={() => {
                             if(notFounds === "true"){
@@ -1036,6 +1113,38 @@ const SaveInvoiceData = () => {
                       Update Item
                     </button>
                     </div> 
+                    <br />
+                    <div>
+                    <button onClick={()=> linkManually(index)} 
+                      // disabled={showPosIndex === index ? false : true}
+                      style={{backgroundColor: "blue",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left"}} >
+                      Link Manually
+                    </button>
+                    </div>
+                    <br />
+                    <div>
+                    <button onClick={()=> reverseUpdate(index)} 
+                      // disabled={showPosIndex === index ? false : true}
+                      style={{backgroundColor: "red",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left"}} >
+                      Reverse Update
+                    </button>
+                    </div>
                   </div>
                 </td>
                 <td>{showPosIndex === index ? showPosState.posSku : element.posSku}</td>
@@ -1051,6 +1160,32 @@ const SaveInvoiceData = () => {
                     style={{ width: 100 }}
                   />
                 </td>
+                <td>{element.pieces}</td>
+                <td>
+                  <TextField
+                    type="tel"
+                    value={element.unitPrice}
+                    variant="outlined"
+                    onChange={(e) => {
+                      handleChange(index, "unitPrice", e.target.value);
+                    }}
+                    style={
+                      element.priceIncrease === 1
+                        ? { backgroundColor: "#1a8cff", width: 100 }
+                        : element.priceIncrease === -1
+                        ? { backgroundColor: "#ffb31a", width: 100 }
+                        : { width: 100 }
+                      // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                      //   : element.priceIncrease === 1 
+                      //       ? { backgroundColor: "#1a8cff", width: 100 }
+                      //       : element.priceIncrease === -1 
+                      //       ? { backgroundColor: "#ffb31a", width: 100 }
+                      //       : { width: 100 }
+                    }
+                  />
+                </td>
+                <td>{element.extendedPrice}</td>
+                <td>{element.cp}</td>
                 <td>
                   <Autocomplete
                     value={element.itemNo}
@@ -1114,31 +1249,7 @@ const SaveInvoiceData = () => {
                 </td>
                 
                 <td>{element.description}</td>
-                <td>{element.pieces}</td>
-                <td>
-                  <TextField
-                    type="tel"
-                    value={element.unitPrice}
-                    variant="outlined"
-                    onChange={(e) => {
-                      handleChange(index, "unitPrice", e.target.value);
-                    }}
-                    style={
-                      // element.priceIncrease === 1
-                      //   ? { backgroundColor: "#1a8cff", width: 100 }
-                      //   : element.priceIncrease === -1
-                      //   ? { backgroundColor: "#ffb31a", width: 100 }
-                      //   : { width: 100 }
-                      showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
-                        : element.priceIncrease === 1 
-                            ? { backgroundColor: "#1a8cff", width: 100 }
-                            : element.priceIncrease === -1 
-                            ? { backgroundColor: "#ffb31a", width: 100 }
-                            : { width: 100 }
-                    }
-                  />
-                </td>
-                <td>{element.extendedPrice}</td>
+                
                 <td>{element.cp}</td>
                 <td>
                   <TextField
@@ -1174,6 +1285,15 @@ const SaveInvoiceData = () => {
                     type="submit"
                     onClick={() => pushSingleItemToInventory(index)}
                     style={{ width: 120 }}
+                  />
+                      
+                </td>
+                <td>
+                <Button 
+                    text="Reverse POS"
+                    type="submit"
+                    onClick={() => reversePOSUpdate(index)}
+                    style={{ width: 120, backgroundColor: "red", color: "white" }}
                   />
                       
                 </td>
@@ -1394,6 +1514,7 @@ const SaveInvoiceData = () => {
     };
 
     useEffect(() => {
+      // hicksvilleDropdown();
     
 
 
@@ -1614,7 +1735,7 @@ const SaveInvoiceData = () => {
                     value={unitsInCase}
                     onChange={(event) => setUnitsInCase(event.target.value)}
                     />
-                  <CLabel htmlFor="date">Price</CLabel>
+                  <CLabel htmlFor="date">Case Cost</CLabel>
                   <CInput
                     type="text"
                     name="price"
