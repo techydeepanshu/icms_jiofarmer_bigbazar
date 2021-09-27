@@ -88,24 +88,29 @@ const Invoice = (props) => {
     console.log(numOfCollections)
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
     return (
-      <div className={styles.main}>
-        <Autocomplete
-          value={selectedDropdown}
-          onChange={(event, newValue) => {
-            // console.log("new value", newValue)
-            if (newValue) {
-              setSelectedDropdown(newValue);
-            }
-          }}
-          id="combo-box"
-          options={dropdownOptions}
-          getOptionLabel={(option) => option.value}
-          style={{ width: 300 }}
-          autoHighlight
-          renderInput={(params) => (
-            <TextField {...params} label={dropdownLabel} variant="outlined" />
-          )}
-        />
+      
+      <div className={styles.main} >
+        <br />
+          <div style={{marginTop: "5px"}}>
+          <Autocomplete
+            value={selectedDropdown}
+            onChange={(event, newValue) => {
+              // console.log("new value", newValue)
+              if (newValue) {
+                setSelectedDropdown(newValue);
+              }
+            }}
+            id="combo-box"
+            options={dropdownOptions}
+            getOptionLabel={(option) => option.value}
+            style={{ width: 300 }}
+            autoHighlight
+            renderInput={(params) => (
+              <TextField {...params} label={dropdownLabel} variant="outlined" />
+            )}
+          />
+          </div>
+          <br />
         <div className={styles.file_upload}>
           <div className={styles.Filter}>
             <input

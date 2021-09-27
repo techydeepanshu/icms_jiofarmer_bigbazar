@@ -57,7 +57,7 @@ const SaveInvoiceData = () => {
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
 
     //Following for display data functionalities.
-    let hicksvilleData = [];
+    const [hicksvilleData, setHicksvilleData] = useState([]);
     let saveInvoiceFlag  = 1;
     const api = new Api();
     const [tableData, setTableData] = useState([]);
@@ -95,14 +95,13 @@ const SaveInvoiceData = () => {
         "Barcode",
         "POS SKU",
         "Qty Shipped",
-        "Units in  Case",
-        "Case cost",
-        "Extended Price",
-        "Unit Cost(invoice) ",
         "ITEM NO",
         "Link Product",
         
         "DESCRIPTION",
+        "Units in  Case",
+        "Case cost",
+        "Extended Price",
        
         "Unit Cost ",
         "Unit Price",
@@ -757,7 +756,8 @@ const SaveInvoiceData = () => {
       };
     
     const hicksvilleDropdown = async (data) => {
-      // const data = await inventoryService.getHicksvilleData();
+      // const res = await inventoryService.getHicksvilleData();
+      // const data = res[0].List;
       console.log(data);
 
 
@@ -813,7 +813,7 @@ const SaveInvoiceData = () => {
           //console.log(obj);
           return obj; 
         });
-        hicksvilleData = filter;
+        setHicksvilleData(filter);
           // console.log(hicksvilleData);
     }
 
@@ -1008,7 +1008,7 @@ const SaveInvoiceData = () => {
     };
 
     const renderTableData = () => {
-        hicksvilleDropdown(HicksData);
+        // hicksvilleDropdown(HicksData);
     
         if (tableData) {
           console.log(tableData);
@@ -1160,32 +1160,6 @@ const SaveInvoiceData = () => {
                     style={{ width: 100 }}
                   />
                 </td>
-                <td>{element.pieces}</td>
-                <td>
-                  <TextField
-                    type="tel"
-                    value={element.unitPrice}
-                    variant="outlined"
-                    onChange={(e) => {
-                      handleChange(index, "unitPrice", e.target.value);
-                    }}
-                    style={
-                      element.priceIncrease === 1
-                        ? { backgroundColor: "#1a8cff", width: 100 }
-                        : element.priceIncrease === -1
-                        ? { backgroundColor: "#ffb31a", width: 100 }
-                        : { width: 100 }
-                      // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
-                      //   : element.priceIncrease === 1 
-                      //       ? { backgroundColor: "#1a8cff", width: 100 }
-                      //       : element.priceIncrease === -1 
-                      //       ? { backgroundColor: "#ffb31a", width: 100 }
-                      //       : { width: 100 }
-                    }
-                  />
-                </td>
-                <td>{element.extendedPrice}</td>
-                <td>{element.cp}</td>
                 <td>
                   <Autocomplete
                     value={element.itemNo}
@@ -1206,7 +1180,14 @@ const SaveInvoiceData = () => {
                 <td>
                   <Autocomplete
                     value={showPosIndex  === index ? showPosState.item : element.itemNo }
+                    // onInputChange={(event, value) => {
+                    //   console.log("ON INPUT CHANGE");
+                    //   console.log(event.target.value);
+                    //   console.log(value);
+                    // }}
                     onChange={(event, newValue) => {
+                      // console.log(event.target.value);
+                      // console.log(newValue);
                       if (newValue) {
                         let newState = { ...showPosState };
                         //console.log(newValue);
@@ -1249,7 +1230,31 @@ const SaveInvoiceData = () => {
                 </td>
                 
                 <td>{element.description}</td>
-                
+                <td>{element.pieces}</td>
+                <td>
+                  <TextField
+                    type="tel"
+                    value={element.unitPrice}
+                    variant="outlined"
+                    onChange={(e) => {
+                      handleChange(index, "unitPrice", e.target.value);
+                    }}
+                    style={
+                      element.priceIncrease === 1
+                        ? { backgroundColor: "#1a8cff", width: 100 }
+                        : element.priceIncrease === -1
+                        ? { backgroundColor: "#ffb31a", width: 100 }
+                        : { width: 100 }
+                      // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                      //   : element.priceIncrease === 1 
+                      //       ? { backgroundColor: "#1a8cff", width: 100 }
+                      //       : element.priceIncrease === -1 
+                      //       ? { backgroundColor: "#ffb31a", width: 100 }
+                      //       : { width: 100 }
+                    }
+                  />
+                </td>
+                <td>{element.extendedPrice}</td>
                 <td>{element.cp}</td>
                 <td>
                   <TextField
@@ -1515,6 +1520,8 @@ const SaveInvoiceData = () => {
 
     useEffect(() => {
       // hicksvilleDropdown();
+      // hicksvilleDropdown();
+      hicksvilleDropdown(HicksData);
     
 
 
@@ -1709,6 +1716,26 @@ const SaveInvoiceData = () => {
                     </button>
                 </Grid>
             </Paper>
+            <div>
+              {/* <ul style={{listStyleType: "none"}}>
+                <li style={{display: "flex",
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor: "green",
+                    borderRadius: "50%"}}></li>
+                <li style={{display: "flex",
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor: "green",
+                    borderRadius: "50%"}}></li>
+                <li style={{display: "flex",
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor: "green",
+                    borderRadius: "50%"}}></li>
+              </ul> */}
+              
+            </div>
         
             {pushToInventory ? (
             <UpdateInventory

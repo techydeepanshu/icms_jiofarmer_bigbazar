@@ -740,7 +740,7 @@ const DisplayData = (props) => {
                 }}
                 style={{ width: 150 }}
               />
-              <IconButton
+              {/* <IconButton
                 color="primary"
                 aria-label="add to review"
                 // onClick={() => addForReview(element, index)}
@@ -752,17 +752,10 @@ const DisplayData = (props) => {
                       : null
                   }
                 /> 
-                {/* <AddShoppingCartIcon
-                  style={
-                    reviewItems.includes(index)
-                      ? { backgroundColor: "green" }
-                      : null
-                  }
-                /> */}
               </IconButton>
               <div className={element.isReviewed  === "true" || (showPosIndex === index && stateUpdated === "true") ? styles.tooltipIsReviewed: styles.tooltip} >
                 <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
-                {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
+                <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p>
                 <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
                 <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
                 <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
@@ -789,7 +782,7 @@ const DisplayData = (props) => {
                   Update Item
                 </button>
                 </div> 
-              </div>
+              </div> */}
             </td>
             <td>{showPosIndex === index ? showPosState.posSku : element.posSku}</td>
             <td>
