@@ -19,6 +19,8 @@ import styles from "../DisplayData/DisplayData.module.css";
 import IconButton from "@material-ui/core/IconButton";
 import UpdateInventory from "../Update/UpdateInventory";
 import Spinner from "../../UI/Spinner/Spinner";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const useStyles = makeStyles({
         root: {
@@ -88,10 +90,16 @@ const SaveInvoiceData = () => {
     const [price, setPrice] = useState("");
     const [redState, setRedState] = useState("true");
     let updateSku = "";
+    const [searchVal, setSearchVal] = useState("");
+    const [options, setOptions] = useState([]);
+    const [detailsModal, setDetailsModal] = useState(false);
+    const [invoiceOptions, setInvoiceOptions] = useState([]);
+    const [details, setDetails] = useState("");
+    const [detailsIndex, setDetailsIndex] = useState(-1);
     
     const header = [
         "Serial No.",
-        // "Details",
+        "Add Details",
         "Barcode",
         "POS SKU",
         "Qty Shipped",
@@ -563,6 +571,46 @@ const SaveInvoiceData = () => {
   }
 //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
 
+  const saveDetails = async () => {
+    console.log(detailsIndex);
+    console.log(details);
+    const item = tableData[detailsIndex];
+    console.log(item);
+    const data = {
+      invoice: invoice.slug,
+      itemNo: item.itemNo,
+      details: details
+    }
+    const res = await inventoryService.saveDetails(data);
+    console.log(res);
+    if(res === "s"){
+      alert("Details added successfully");
+      setDetails("");
+      setDetailsIndex(-1);
+      toggleModal("details");
+      setProductsInTable();
+    }else {
+      alert("Some error Occured.");
+      setDetailsIndex(-1);
+      setDetails("");
+      toggleModal("details");
+    }
+
+  }
+
+  const getInvoices = async (invoice) => {
+    console.log(invoice);
+    const res = await inventoryService.getSavedInvoices(invoice);
+    console.log(res);
+    let array = [];
+    res.map(item => {
+      array.push(item.SavedInvoiceNo);
+    })
+    console.log(array);
+    setInvoiceOptions(array);
+
+  }
+
     const reverseUpdate = async(index) => {
       console.log(index);
       console.log(tableData);
@@ -701,8 +749,10 @@ const SaveInvoiceData = () => {
                 products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
               row.sellingPrice = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
-                row.price = 
+              row.price = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+              row.details = 
+                products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
               //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
               let sp = 0;
               let cp = 0;
@@ -749,15 +799,19 @@ const SaveInvoiceData = () => {
       });
     }
 
-    const toggleModal = () => {
+    const toggleModal = (x) => {
+      if(x == "notfounds"){
         setShowModal(!showModal);
+      }else {
+        setDetailsModal(!detailsModal);
+      }
         // setDate("");
         // setInvNo("");
       };
     
-    const hicksvilleDropdown = async (data) => {
-      // const res = await inventoryService.getHicksvilleData();
-      // const data = res[0].List;
+    const hicksvilleDropdown = async () => {
+      const res = await inventoryService.getHicksvilleData();
+      const data = res[0].List;
       console.log(data);
 
 
@@ -814,7 +868,22 @@ const SaveInvoiceData = () => {
           return obj; 
         });
         setHicksvilleData(filter);
-          // console.log(hicksvilleData);
+    }
+
+    const searchDropdown = (target, value) =>  {
+      console.log(target);
+      console.log(value);
+      const options  = hicksvilleData.filter((item) => {
+        if(item.name){
+          let name = item.name;
+          name = name.toLowerCase();
+          return name.search(value) != -1;
+
+        }
+      })
+      console.log(options);
+      setOptions(options);
+
     }
 
     const updateItemOld = (ocrCost) => {
@@ -1041,6 +1110,18 @@ const SaveInvoiceData = () => {
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
+                <td className={styles.element}>
+                  <IconButton onClick={() => {
+                    toggleModal("details");
+                    setDetailsIndex(index);
+                    }}>
+                      <AddCircleIcon />
+                    </IconButton>
+                    <div className={styles.tooltip}>
+                      <p>Details- {element.details}</p>
+                    </div>
+                    
+                </td>
                 {/* <td>
                   <TextField
                     type="tel"
@@ -1095,7 +1176,7 @@ const SaveInvoiceData = () => {
                     <div >
                     <button onClick={() => {
                             if(notFounds === "true"){
-                              toggleModal();
+                              toggleModal("notfounds");
                             }else{
                               updateItem(invoice.slug, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
                             }
@@ -1180,17 +1261,18 @@ const SaveInvoiceData = () => {
                 <td>
                   <Autocomplete
                     value={showPosIndex  === index ? showPosState.item : element.itemNo }
-                    // onInputChange={(event, value) => {
-                    //   console.log("ON INPUT CHANGE");
-                    //   console.log(event.target.value);
-                    //   console.log(value);
-                    // }}
+                    onInputChange={(event, value) => {
+                      console.log("ON INPUT CHANGE");
+                      // console.log(event.target.value);
+                      // console.log(value);
+                      searchDropdown(event, value);
+                    }}
                     onChange={(event, newValue) => {
                       // console.log(event.target.value);
                       // console.log(newValue);
                       if (newValue) {
                         let newState = { ...showPosState };
-                        //console.log(newValue);
+                        console.log(newValue);
                         // newState.item = newValue.name;
                         newState.item = element.itemNo
                         newState.description = newValue.name;
@@ -1220,7 +1302,7 @@ const SaveInvoiceData = () => {
                     }}
                     id="combo-box"
                     // options={element.fuzzSuggestion}
-                    options={hicksvilleData}
+                    options={options}
                     getOptionLabel={(option) => option.label ?? element.itemNo}
                     style={{ width: 400 }}
                     renderInput={(params) => (
@@ -1521,7 +1603,7 @@ const SaveInvoiceData = () => {
     useEffect(() => {
       // hicksvilleDropdown();
       // hicksvilleDropdown();
-      hicksvilleDropdown(HicksData);
+      hicksvilleDropdown();
     
 
 
@@ -1658,7 +1740,6 @@ const SaveInvoiceData = () => {
         // });
     }, []);
 
-    
     if (loader) {
       return <Spinner />;
     }
@@ -1673,16 +1754,35 @@ const SaveInvoiceData = () => {
                             if (newValue) {
                             setInvoice(newValue);
                             }
+                            getInvoices(newValue);
                         }}
                         id="combo-box"
                         options={dropdownOptions}
                         getOptionLabel={(option) => option.value}
-                        style={{ width: 300 }}
+                        style={{ width: 250 }}
                         autoHighlight
                         renderInput={(params) => (
                             <TextField {...params} label={dropdownLabel} variant="outlined" />
                         )}
                     />
+                    {/* <Autocomplete
+                        value={invoiceNo}
+                        onChange={(event, newValue) => {
+                            // console.log("new value", newValue)
+                            if (newValue) {
+                            setInvoiceNo(newValue);
+                            }
+                        }}
+                        id="combo-box"
+                        options={invoiceOptions}
+                        getOptionLabel={(option) => option.value}
+                        style={{ width: 200 }}
+                        autoHighlight
+                        renderInput={(params) => (
+                            <TextField {...params} label="Invoice No." variant="outlined" />
+                        )}
+                    /> */}
+                    
                     <TextField
                         label="Invoice No."
                         variant="outlined"
@@ -1748,7 +1848,7 @@ const SaveInvoiceData = () => {
             renderTableData()
             )}
 
-            <CModal show={showModal} onClose={toggleModal}>
+            <CModal show={showModal} onClose={() => toggleModal("notfounds")}>
         <CModalHeader closeButton>Add Red Products</CModalHeader>
         <CModalBody>
           <CContainer fluid>
@@ -1778,11 +1878,46 @@ const SaveInvoiceData = () => {
           <CButton color="primary" onClick={updateItem}>
             ADD
           </CButton>{" "}
-          <CButton color="secondary" onClick={toggleModal}>
+          <CButton color="secondary" onClick={() => toggleModal("notfounds")}>
             Cancel
           </CButton>
         </CModalFooter>
       </CModal>
+
+
+      <CModal show={detailsModal} onClose={() => toggleModal("details")}>
+        <CModalHeader closeButton>Add Details</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="invoiceNo">Add Details</CLabel>
+                  <TextareaAutosize
+                    aria-label="empty textarea"
+                    placeholder="add details"
+                    // minRows={4}
+                    // maxRows={10}
+                    style={{ width: 400, height: 100 }}
+                    onChange={(event) => setDetails(event.target.value)}
+                  />
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={saveDetails}>
+            ADD
+          </CButton>{" "}
+          <CButton color="secondary" onClick={() => toggleModal("details")}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal>
+
+
+
         </div>
 
     );

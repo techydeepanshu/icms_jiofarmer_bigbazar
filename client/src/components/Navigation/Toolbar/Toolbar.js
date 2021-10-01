@@ -14,7 +14,9 @@ class Toolbar extends Component {
                 </nav>
                 <div>
                 {/* <p style={{fontSize: "8px"}}><strong>Colors and Description</strong></p> */}
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid container 
+                // rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                >
  
  
                     <Grid item xs={6}>

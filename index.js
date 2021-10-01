@@ -122,6 +122,29 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
 });
 
 //added by Parikshit.
+app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
+  const invoice = req.query;
+  
+  console.log(invoice);
+  let options = {
+    method: "GET",
+    url: `http://3.91.159.202:3001/getsavedinvoices/`,
+    body: {invoice: invoice},
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+//added by Parikshit.
 app.post("/api/invoice/updateinvoicedata", validateLogin, (req, res) => {
   console.log(req.body.params.invoiceName);
   const invoice = req.body.params.invoiceName;
@@ -190,6 +213,32 @@ app.post("/api/invoice/reverseupdate", validateLogin, (req, res) => {
   let options = {
     method: "POST",
     url: `http://3.91.159.202:3001/reverseupdate/`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+//added by Parikshit.
+app.post("/api/invoice/savedetails", validateLogin, (req, res) => {
+  console.log(req.body);
+  let data = req.body;
+  data.invoice = getDBInvoiceName(data.invoice);
+  console.log(data);
+
+
+  let options = {
+    method: "POST",
+    url: `http://3.91.159.202:3001/savedetails/`,
     body: data,
     json: true,
   };
@@ -485,7 +534,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
 //added by Parikshit.
 app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
   const data = req.body;
-  // console.log(data);
+  console.log(data);
   let options = {
     method: "POST",
     url: "http://3.91.159.202:3001/scaninvoicedata",
