@@ -136,7 +136,14 @@ const DisplayData = (props) => {
     scanInvoiceData.SavedInvoiceNo = invoiceNo;
     // console.log(scanInvoiceData);
     const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
-    // console.log(resScnInvDta);
+    console.log(resScnInvDta);
+    if(resScnInvDta === "exist") {
+      alert("Invoice with same no. and date already exists, change either of the 2 values");
+      toggleModal();
+    }else {
+      alert("Invoice Saved Successfully");
+
+    }
   };
 
   const sendInvoiceData = async () => {

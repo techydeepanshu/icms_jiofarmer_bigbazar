@@ -54,6 +54,7 @@ const invoiceSchema = new Schema({
   SellerCost: String,
   Size: String,
   isUpdated: { type: String, default: "false" },
+  Details: String
 });
 const notFoundSchema = new Schema({
   Item: String,
@@ -153,6 +154,15 @@ app.get("/getsaveinvoicedata/:invoice", (req, res) => {
   });
 });
 
+//added by Parikshit.
+app.get("/getsavedinvoices/", (req, res) => {
+  console.log(req.body);
+  scanInvoiceData.find({InvoiceName: req.body.invoice}, { _id: 0, __v: 0 }, (err, x) => {
+    if (err) res.json("Some error occured");
+    else res.json(x);
+  });
+});
+
 app.get("/gethicksvilledata/", (req, res) => {
   
   hicksvilleData.find({SavedDate: req.body.saveDate, FetchDate: req.body.fetchDate}, { _id: 0, __v: 0 }, (err, x) => {
@@ -161,14 +171,35 @@ app.get("/gethicksvilledata/", (req, res) => {
   });
 });
 
-//added by parikshit.
-app.post("/scaninvoicedata", (req, res) => {
-  let invoiceNo = req.body.data.SavedInvoiceNo;
+app.post("/scaninvoicedat", (req, res) => {
   let obj = req.body;
+let invoiceNo = req.body.SavedInvoiceNo;
+console.log(invoiceNo);
   scanInvoiceData.insertMany([obj], (err, o) => {
     if (err) res.json("Some error occured");
     else res.json("Product created successfully");
   });
+});
+
+//added by parikshit.
+app.post("/scaninvoicedata", (req, res) => {
+  let name = req.body.InvoiceName;
+  let invoiceNo = req.body.SavedInvoiceNo;
+  let date = req.body.SavedDate;
+  let obj = req.body;
+  scanInvoiceData.find({InvoiceName: name, SavedInvoiceNo: invoiceNo, SavedDate: date}, (err, o) => {
+    if (err) {res.json("Some error occured");}
+    else if (o === null) {
+      scanInvoiceData.insertMany([obj], (err, o) => {
+        if (err) res.json("Some error occured");
+        else res.json("Product created successfully");
+      });
+    }
+    else {
+      res.json("Invoice with same no. and date already exists, change either of the 2 values")
+    }
+  });
+  
 });
 
 //added by parikshit.
@@ -215,6 +246,19 @@ app.post("/reverseposupdate", (req, res) => {
     (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   
   });
+
+  // added by parikshit.
+  app.post("/savedetails", (req, res) => {
+    console.log(req.body);
+    let invoice = mongoose.model(req.body.invoice, invoiceSchema);
+    invoice.updateOne({Item: req.body.itemNo},
+                      {Details: req.body.details},
+                      { _id: 0, __v: 0 },
+    (err, x) => { if (err) res.json("Some error occured"); else res.json("success");})
+  
+  });
+
+
 
   // added by parikshit.
   app.post("/linkmanually", (req, res) => {
