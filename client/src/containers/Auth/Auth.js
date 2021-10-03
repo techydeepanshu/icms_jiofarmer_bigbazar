@@ -5,6 +5,7 @@ import { auth } from '../../store/action/actionAuth';
 import LoginPage from '../../UI/LoginPage'
 import Spinner from '../../UI/Spinner/Spinner';
 
+
 class Auth extends Component {
     state = {
         username: "",

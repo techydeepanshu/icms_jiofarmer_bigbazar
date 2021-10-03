@@ -76,6 +76,25 @@ const scanInvoiceDataSchema  = new Schema({
 })
 let scanInvoiceData = mongoose.model("scaninvoicedatas", scanInvoiceDataSchema);
 
+const logItemSchema = new Schema({
+  Description: String,
+  PosName: String,
+  SKU: String,
+  Barcode: String,
+  InvoiceName: String,
+  ItemCode: String,
+  LinkingDate: String,
+  PersonName: String,
+  Size: String,
+  UnitCost: String,
+  UnitPrice: String,
+  InvoiceNo: String,
+  InvoiceDate: String,
+  Department: String,
+
+});
+let logItemData = mongoose.model("linkinglogs", logItemSchema);
+
 const hicksvilleSchema = new Schema({
   SavedDate: String,
   FetchDate: String,
@@ -173,9 +192,17 @@ app.get("/gethicksvilledata/", (req, res) => {
 
 app.post("/scaninvoicedat", (req, res) => {
   let obj = req.body;
-let invoiceNo = req.body.SavedInvoiceNo;
+  console.log(obj);
 console.log(invoiceNo);
-  scanInvoiceData.insertMany([obj], (err, o) => {
+  logItemData.insertMany([obj], (err, o) => {
+    if (err) res.json("Some error occured");
+    else res.json("Product created successfully");
+  });
+});
+
+app.post("/generatelog", (req, res) => {
+  let obj = req.body;
+  logItemData.insertMany([obj], (err, o) => {
     if (err) res.json("Some error occured");
     else res.json("Product created successfully");
   });

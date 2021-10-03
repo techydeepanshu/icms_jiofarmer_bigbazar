@@ -22,6 +22,9 @@ import Spinner from "../../UI/Spinner/Spinner";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
+import firebase from "firebase/app";
+import "firebase/auth";
+
 const useStyles = makeStyles({
         root: {
         width: "100%",
@@ -96,6 +99,8 @@ const SaveInvoiceData = () => {
     const [invoiceOptions, setInvoiceOptions] = useState([]);
     const [details, setDetails] = useState("");
     const [detailsIndex, setDetailsIndex] = useState(-1);
+    const [userEmail, setUserEmail] = useState("");
+    const [todayDate, setTodayDate] = useState("");
     
     const header = [
         "Serial No.",
@@ -649,17 +654,43 @@ const SaveInvoiceData = () => {
       console.log(tableData);
       console.log(tableData[index]);
       let item = tableData[index];
+      console.log(item)
       let data = {
         invoice: invoice.slug,
         itemNo: item.itemNo,
       }
       const result = await inventoryService.linkManually(data);
       console.log(result);
-      if(result.ok == 1){
+
+      let logState = {
+        Description: item.description,
+        PosName: item.posName,
+        SKU: item.posSku,
+        Barcode: item.barcode,
+        InvoiceName: invoice.slug,
+        ItemCode: item.itemNo,
+        LinkingDate: todayDate,
+        PersonName: userEmail,
+        Size: item.size,
+        UnitCost: item.cost,
+        UnitPrice: item.sellingPrice,
+        InvoiceNo: invoiceNo,
+        InvoiceDate: date,
+        Department: item.department,
+      }
+
+      console.log(logState);
+      const logResult = await inventoryService.linkManuallyLog(logState);
+      console.log(logResult);
+      
+      
+      if(result.statusText == "OK"){
         setProductsInTable();
       }else {
         alert("Some error occured in updation");
+        setProductsInTable();
       }
+
 
     }
 
@@ -809,9 +840,9 @@ const SaveInvoiceData = () => {
         // setInvNo("");
       };
     
-    const hicksvilleDropdown = async () => {
-      const res = await inventoryService.getHicksvilleData();
-      const data = res[0].List;
+    const hicksvilleDropdown = async (data) => {
+      // const res = await inventoryService.getHicksvilleData();
+      // const data = res[0].List;
       console.log(data);
 
 
@@ -886,52 +917,52 @@ const SaveInvoiceData = () => {
 
     }
 
-    const updateItemOld = (ocrCost) => {
-        //console.log(showPosState);
-        const data = {
-          invoiceName: invoice.slug,
-          itemName: showPosState.item,
-          value: { 
-            POS: showPosState.pos, 
-            Barcode: showPosState.barcode, 
-            PosSKU: showPosState.posSku, 
-            isReviewed: "true",
-            Size: showPosState.size, 
-            Department: showPosState.department,
-            //SellerCost: showPosState.unitCost,
-            SellingPrice: showPosState.unitPrice
-          },
-        };
+    // const updateItemOld = (ocrCost) => {
+    //     //console.log(showPosState);
+    //     const data = {
+    //       invoiceName: invoice.slug,
+    //       itemName: showPosState.item,
+    //       value: { 
+    //         POS: showPosState.pos, 
+    //         Barcode: showPosState.barcode, 
+    //         PosSKU: showPosState.posSku, 
+    //         isReviewed: "true",
+    //         Size: showPosState.size, 
+    //         Department: showPosState.department,
+    //         //SellerCost: showPosState.unitCost,
+    //         SellingPrice: showPosState.unitPrice
+    //       },
+    //     };
     
-        inventoryService
-        .UpdateProductFields(data)
-        .then((res) => {
-          if (!res) {
-            throw new Error("Product not created")
-          }
-          console.log(res);
-          alert("Successfully updated fields");
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("Some error occuured in creating product");
-        })
-        .finally(() => { 
-          setLoader(false)
-          setStateUpdated("true");
-          //  console.log(ocrCost);
-          //  console.log(unitCost);
-           if(ocrCost>unitCost){
-             setCostInc("true");
-             setCostDec("");
-           }
-           if(ocrCost<unitCost){
-             setCostDec("true");
-             setCostInc("");
-           }
-        });
+    //     inventoryService
+    //     .UpdateProductFields(data)
+    //     .then((res) => {
+    //       if (!res) {
+    //         throw new Error("Product not created")
+    //       }
+    //       console.log(res);
+    //       alert("Successfully updated fields");
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       alert("Some error occuured in creating product");
+    //     })
+    //     .finally(() => { 
+    //       setLoader(false)
+    //       setStateUpdated("true");
+    //       //  console.log(ocrCost);
+    //       //  console.log(unitCost);
+    //        if(ocrCost>unitCost){
+    //          setCostInc("true");
+    //          setCostDec("");
+    //        }
+    //        if(ocrCost<unitCost){
+    //          setCostDec("true");
+    //          setCostInc("");
+    //        }
+    //     });
     
-    }
+    // }
 
     const updateItem = (props, ocrCost) => {
       let data;
@@ -957,7 +988,7 @@ const SaveInvoiceData = () => {
           },
         };
   
-        toggleModal();
+        toggleModal("notfounds");
       
       }else{
         data = {
@@ -991,7 +1022,7 @@ const SaveInvoiceData = () => {
         console.log(err);
         alert("Some error occuured in creating product");
       })
-      .finally(() => { setLoader(false);
+      .finally(async () => { setLoader(false);
                      setStateUpdated("true");
                     //  console.log(ocrCost);
                     //  console.log(unitCost);
@@ -1005,9 +1036,30 @@ const SaveInvoiceData = () => {
                     }
                     if(notFounds === "true"){
                       setNotFounds("false");
+                      setUnitsInCase("");
+                      setPrice("");
                     }
+                    console.log(userEmail);
+                    const description = tableData[showPosIndex].description;
+                    console.log(description);
+                    console.log(todayDate);
+                    console.log(date);
+                    console.log(invoiceNo);
+                    const logState = data;
+                    delete logState.value.isReviewed;
+                    logState.Description = description;
+                    logState.PersonName = userEmail;
+                    logState.LinkingDate = todayDate;
+                    logState.InvoiceDate = date;
+                    logState.InvoiceNo = invoiceNo;
+                    console.log(logState);
+                    
+
+                    const res = await inventoryService.generateLog(logState);
+                    console.log(res);
                     setProductsInTable(); 
               });
+      
   
     }
 
@@ -1603,7 +1655,22 @@ const SaveInvoiceData = () => {
     useEffect(() => {
       // hicksvilleDropdown();
       // hicksvilleDropdown();
-      hicksvilleDropdown();
+      const curDate = new Date();
+      console.log(curDate);
+      let date = curDate.getFullYear()+ "-" + (curDate.getMonth()+1) +"-"+ curDate.getDate();
+      console.log(date);
+      setTodayDate(date);
+      hicksvilleDropdown(HicksData);
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          setUserEmail(user.email);
+            console.log('This is the user: ', user)
+            console.log('This is the user: ', user.email);
+        } else {
+            // No user is signed in.
+            console.log('There is no logged in user');
+        }
+    });
     
 
 
