@@ -140,6 +140,19 @@ export class InventoryService {
     return res.data;
   }
 
+  async generateLog(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/generatelog", data);
+    return res;
+
+  }
+
+  async linkManuallyLog(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL+ "/api/invoice/linkmanuallylog", data);
+    return res;
+  }
+
   async reverseUpdate(data) {
     console.log(data);
 
