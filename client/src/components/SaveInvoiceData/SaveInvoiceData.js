@@ -56,10 +56,15 @@ const SaveInvoiceData = () => {
     const tesseractService = new TesseractService();
     const classes = useStyles();
     const [date, setDate] = useState("");
-    const [invoice, setInvoice] = useState(dropdownOptions[0]);
+    const [invoice, setInvoice] = useState({});
     const [invoiceNo, setInvoiceNo] = useState("");
     const numOfCollections = dropdownOptions.length;
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
+    const [inv, setInv] = useState("");
+    const [ num, setNum] = useState("");
+    const [day, setDay] = useState("");
+
+    
 
     //Following for display data functionalities.
     const [hicksvilleData, setHicksvilleData] = useState([]);
@@ -101,6 +106,16 @@ const SaveInvoiceData = () => {
     const [detailsIndex, setDetailsIndex] = useState(-1);
     const [userEmail, setUserEmail] = useState("");
     const [todayDate, setTodayDate] = useState("");
+    const [openInvoice, setOpenInvoice] = useState(false);
+
+    const invoiceHeader = [
+      "Sr.No.",
+      "Invoice",
+      "Invoice No.",
+      "Invoice Date",
+      "Open Invoice"
+    ]
+
     
     const header = [
         "Serial No.",
@@ -603,16 +618,17 @@ const SaveInvoiceData = () => {
 
   }
 
-  const getInvoices = async (invoice) => {
+  const getInvoices = async () => {
+    setOpenInvoice(false);
     console.log(invoice);
     const res = await inventoryService.getSavedInvoices(invoice);
     console.log(res);
-    let array = [];
-    res.map(item => {
-      array.push(item.SavedInvoiceNo);
-    })
-    console.log(array);
-    setInvoiceOptions(array);
+    // let array = [];
+    // res.map(item => {
+    //   array.push(item.SavedInvoiceNo);
+    // })
+    console.log(res);
+    setInvoiceOptions(res);
 
   }
 
@@ -656,7 +672,7 @@ const SaveInvoiceData = () => {
       let item = tableData[index];
       console.log(item)
       let data = {
-        invoice: invoice.slug,
+        invoice: inv,
         itemNo: item.itemNo,
       }
       const result = await inventoryService.linkManually(data);
@@ -667,15 +683,15 @@ const SaveInvoiceData = () => {
         PosName: item.posName,
         SKU: item.posSku,
         Barcode: item.barcode,
-        InvoiceName: invoice.slug,
+        InvoiceName: inv,
         ItemCode: item.itemNo,
         LinkingDate: todayDate,
         PersonName: userEmail,
         Size: item.size,
         UnitCost: item.cost,
         UnitPrice: item.sellingPrice,
-        InvoiceNo: invoiceNo,
-        InvoiceDate: date,
+        InvoiceNo: num,
+        InvoiceDate: day,
         Department: item.department,
       }
 
@@ -686,19 +702,21 @@ const SaveInvoiceData = () => {
       
       if(result.statusText == "OK"){
         setProductsInTable();
+        // setProductsInTableNew(inv, num, day);
       }else {
         alert("Some error occured in updation");
         setProductsInTable();
+        // setProductsInTableNew(inv, num, day);
       }
 
 
     }
 
-    const fetchSavedData = async() => {
-        const data =  await tesseractService.GetSavedInvoiceData(invoice.slug, invoiceNo, date);
+    const fetchSavedData = async(invoice = inv, no = num, date = day) => {
+        const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
         console.log(data);
         if(data.length === 0) {
-          alert("INvoice doesnt Exist!!");
+          alert("Invoice doesnt Exist!!");
         }else return data[0].InvoiceData;
         // console.log(data);
         // console.log(data[0].InvoiceData);
@@ -709,7 +727,8 @@ const SaveInvoiceData = () => {
       setLoader(true);
       async function invoiceData() {
         const products = await tesseractService.GetProductDetails(
-          invoice.slug
+          // invoice.slug
+          inv
         );
         //console.log(props.selectedInvoice);
         return products;
@@ -908,8 +927,9 @@ const SaveInvoiceData = () => {
         if(item.name){
           let name = item.name;
           name = name.toLowerCase();
+          value = value.toLowerCase();
+          // console.log(name)
           return name.search(value) != -1;
-
         }
       })
       console.log(options);
@@ -917,52 +937,52 @@ const SaveInvoiceData = () => {
 
     }
 
-    // const updateItemOld = (ocrCost) => {
-    //     //console.log(showPosState);
-    //     const data = {
-    //       invoiceName: invoice.slug,
-    //       itemName: showPosState.item,
-    //       value: { 
-    //         POS: showPosState.pos, 
-    //         Barcode: showPosState.barcode, 
-    //         PosSKU: showPosState.posSku, 
-    //         isReviewed: "true",
-    //         Size: showPosState.size, 
-    //         Department: showPosState.department,
-    //         //SellerCost: showPosState.unitCost,
-    //         SellingPrice: showPosState.unitPrice
-    //       },
-    //     };
+    const updateItemOld = (ocrCost) => {
+        //console.log(showPosState);
+        const data = {
+          invoiceName: invoice.slug,
+          itemName: showPosState.item,
+          value: { 
+            POS: showPosState.pos, 
+            Barcode: showPosState.barcode, 
+            PosSKU: showPosState.posSku, 
+            isReviewed: "true",
+            Size: showPosState.size, 
+            Department: showPosState.department,
+            //SellerCost: showPosState.unitCost,
+            SellingPrice: showPosState.unitPrice
+          },
+        };
     
-    //     inventoryService
-    //     .UpdateProductFields(data)
-    //     .then((res) => {
-    //       if (!res) {
-    //         throw new Error("Product not created")
-    //       }
-    //       console.log(res);
-    //       alert("Successfully updated fields");
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       alert("Some error occuured in creating product");
-    //     })
-    //     .finally(() => { 
-    //       setLoader(false)
-    //       setStateUpdated("true");
-    //       //  console.log(ocrCost);
-    //       //  console.log(unitCost);
-    //        if(ocrCost>unitCost){
-    //          setCostInc("true");
-    //          setCostDec("");
-    //        }
-    //        if(ocrCost<unitCost){
-    //          setCostDec("true");
-    //          setCostInc("");
-    //        }
-    //     });
+        inventoryService
+        .UpdateProductFields(data)
+        .then((res) => {
+          if (!res) {
+            throw new Error("Product not created")
+          }
+          console.log(res);
+          alert("Successfully updated fields");
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("Some error occuured in creating product");
+        })
+        .finally(() => { 
+          setLoader(false)
+          setStateUpdated("true");
+          //  console.log(ocrCost);
+          //  console.log(unitCost);
+           if(ocrCost>unitCost){
+             setCostInc("true");
+             setCostDec("");
+           }
+           if(ocrCost<unitCost){
+             setCostDec("true");
+             setCostInc("");
+           }
+        });
     
-    // }
+    }
 
     const updateItem = (props, ocrCost) => {
       let data;
@@ -971,7 +991,7 @@ const SaveInvoiceData = () => {
         // console.log(props.selectedInvoice);
         console.log("notfoundstrue");
         data = {
-          invoiceName: invoice.slug,
+          invoiceName: inv,
           itemName: showPosState.item,
           value: { 
             POS: showPosState.pos, 
@@ -992,7 +1012,7 @@ const SaveInvoiceData = () => {
       
       }else{
         data = {
-          invoiceName: invoice.slug,
+          invoiceName: inv,
           itemName: showPosState.item,
           value: { 
             POS: showPosState.pos, 
@@ -1043,15 +1063,15 @@ const SaveInvoiceData = () => {
                     const description = tableData[showPosIndex].description;
                     console.log(description);
                     console.log(todayDate);
-                    console.log(date);
-                    console.log(invoiceNo);
+                    console.log(day);
+                    console.log(num);
                     const logState = data;
                     delete logState.value.isReviewed;
                     logState.Description = description;
                     logState.PersonName = userEmail;
                     logState.LinkingDate = todayDate;
-                    logState.InvoiceDate = date;
-                    logState.InvoiceNo = invoiceNo;
+                    logState.InvoiceDate = day;
+                    logState.InvoiceNo = num;
                     console.log(logState);
                     
 
@@ -1110,6 +1130,200 @@ const SaveInvoiceData = () => {
         setTableData(tempTableData);
         setEmptyColumn(emptyColumnList);
     };
+
+    const renderInvoiceHeader = () => {
+      return invoiceHeader.map((key, index) => {
+        return (
+          <th
+            key={index}
+            style={{
+              position: "sticky",
+              top: "70px",
+              background: "grey",
+            }}
+          >
+            {key.toUpperCase()}
+          </th>
+        );
+      });
+   };
+
+   const setProductsInTableNew = (index) => {
+    console.log(index);
+    setOpenInvoice(true);
+    console.log(invoiceOptions[index]);
+    let invoice = invoiceOptions[index].InvoiceName;
+    setInv(invoice);
+    let date =  invoiceOptions[index].SavedDate;
+    setDay(date);
+    let no = invoiceOptions[index].SavedInvoiceNo;
+    setNum(no);
+    setLoader(true);
+    async function invoiceData() {
+      const products = await tesseractService.GetProductDetails(
+        invoice
+      );
+      //console.log(props.selectedInvoice);
+      return products;
+    }
+
+    fetchSavedData(invoice, no, date).then((ocrData) => {
+      invoiceData()
+        .then((products) => {
+          /**post processing the table data after returning from filter */
+          function convertToUpperCase(obj) {
+            let newObj = {};
+            for (let key in obj) {
+              newObj[key.toUpperCase()] = obj[key];
+            }
+            return newObj;
+          }
+          products = convertToUpperCase(products);
+          console.log(products);
+          // scanInvoiceData.InvoiceData = ocrData;
+        //   setOcrProducts(ocrData);
+          
+        //   console.log(scanInvoiceData);
+          // scanInvoiceData.InvoiceData = ocrData;
+          //console.log(resScnInvDta);
+          //console.log("OCERDATa", ocrData);
+          //console.log(products);
+          //console.log(scanInvoiceData);
+          let table = ocrData.map((row) => {
+            /**For invoices which dont have item no, set description as item no */
+            if (row.itemNo === undefined) {
+              row.itemNo = row.description.trim().toUpperCase();
+            }
+            row.itemNo = row.itemNo.toString().toUpperCase();
+
+            row.description =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Description
+                : row.description;
+            row.pieces =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Quantity
+                : 0;
+            row.sku =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].sku
+                : "";
+            row.barcode =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].Barcode
+                : "";
+            row.posName =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].POS
+                : "";
+            row.markup = 0;
+            row.show = true;
+            row.posSku =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].PosSKU
+                : "";
+            row.isReviewed = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
+            row.size = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
+            row.department = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
+            row.cost = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
+            row.sellingPrice = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+            row.price = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+            row.details = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
+            //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+            let sp = 0;
+            let cp = 0;
+            // const barcode = products.Barcode
+            if (parseInt(row.pieces)) {
+              sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+                2
+              );
+              cp = sp;
+            }
+            if (products[row.itemNo] !== undefined) {
+              if (sp > +products[row.itemNo].SellerCost) {
+                row["priceIncrease"] = 1;
+              } else if (sp < +products[row.itemNo].SellerCost) {
+                row["priceIncrease"] = -1;
+              } else if (sp == +products[row.itemNo].SellerCost) {
+                row["priceIncrease"] = 0;
+              }
+            } else {
+              row["priceIncrease"] = 0;
+            }
+
+            /**filter out the rows for which qty shipped & extendedPrice is zero */
+            if (row.qty == "0" && row.extendedPrice === "0.00") {
+              return null;
+            }
+            /**Calulate qty for which qty is not read/scanned by textract */
+            if (!row.qty) {
+              row.qty = (
+                parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+              ).toFixed(0);
+            }
+          return { ...row, sp, cp };
+          });
+          setLoader(false);
+          setTableData(table.filter((data) => data !== null));
+          setItemNoDropdown(Object.keys(products));
+          setProductDetails(products);
+        })
+        .catch((err) => {
+          console.log("error on mapping ocrdata", err)
+          setLoader(false);
+        });
+    });
+  }
+
+   const renderInvoiceTable = () => {   
+    const invoiceList = invoiceOptions.map((element, index) => {
+      return (
+        <tr key={index}>
+          <td>{index+1}</td>
+          <td>{element.InvoiceName}</td>
+          <td>{element.SavedInvoiceNo}</td>
+          <td>{element.SavedDate}</td>
+          <td>
+            <button 
+              style={{
+                backgroundColor: "#4CAF50",
+                border: "none",
+                color: "white",
+                padding: "15px 32px",
+                textAlign: "center",
+                textDecoration: "none",
+                display: "inline-block",
+                fontSize: "12px",
+                margin: "4px 2px",
+                cursor: "pointer"
+              }}
+              onClick={() => {
+                setProductsInTableNew(index)
+              }}
+            >Show Invoice
+            </button>
+          </td>
+        </tr>
+        );
+      })
+    return (
+      <div style={{ marginTop: "70px" }}>
+        <table className="table table-hover table-responsive-sm">
+          <tbody>
+            <tr>{renderInvoiceHeader()}</tr>
+            {invoiceList}
+          </tbody>
+        </table>
+      </div>
+    );     
+  }
 
     const renderTableHeader = () => {
         return header.map((key, index) => {
@@ -1315,6 +1529,8 @@ const SaveInvoiceData = () => {
                     value={showPosIndex  === index ? showPosState.item : element.itemNo }
                     onInputChange={(event, value) => {
                       console.log("ON INPUT CHANGE");
+                      // event.toLowerCase();
+                      // value.toLowerCase();
                       // console.log(event.target.value);
                       // console.log(value);
                       searchDropdown(event, value);
@@ -1821,7 +2037,7 @@ const SaveInvoiceData = () => {
                             if (newValue) {
                             setInvoice(newValue);
                             }
-                            getInvoices(newValue);
+                            // getInvoices(newValue);
                         }}
                         id="combo-box"
                         options={dropdownOptions}
@@ -1850,7 +2066,7 @@ const SaveInvoiceData = () => {
                         )}
                     /> */}
                     
-                    <TextField
+                    {/* <TextField
                         label="Invoice No."
                         variant="outlined"
                         value={invoiceNo}
@@ -1867,7 +2083,7 @@ const SaveInvoiceData = () => {
                             shrink: true,
                         }}
                         onChange={(event) => setDate(event.target.value)}          
-                    />
+                    /> */}
                     <button  style={{backgroundColor: "green",
                         border: "none",
                         color: "white",
@@ -1878,31 +2094,13 @@ const SaveInvoiceData = () => {
                         fontSize: "14px",
                         align: "left",
                         marginLeft: 20}}
-                        onClick={setProductsInTable}>
+                        // onClick={setProductsInTable}
+                        onClick={getInvoices}
+                        >
                             Fetch Invoice Data
                     </button>
                 </Grid>
             </Paper>
-            <div>
-              {/* <ul style={{listStyleType: "none"}}>
-                <li style={{display: "flex",
-                    width: "20px",
-                    height: "20px",
-                    backgroundColor: "green",
-                    borderRadius: "50%"}}></li>
-                <li style={{display: "flex",
-                    width: "20px",
-                    height: "20px",
-                    backgroundColor: "green",
-                    borderRadius: "50%"}}></li>
-                <li style={{display: "flex",
-                    width: "20px",
-                    height: "20px",
-                    backgroundColor: "green",
-                    borderRadius: "50%"}}></li>
-              </ul> */}
-              
-            </div>
         
             {pushToInventory ? (
             <UpdateInventory
@@ -1911,10 +2109,8 @@ const SaveInvoiceData = () => {
                 goBack={setPushToInventory}
                 invoice={invoice}
             />
-            ) : (
-            renderTableData()
+            ) : ( openInvoice ? renderTableData() : renderInvoiceTable() 
             )}
-
             <CModal show={showModal} onClose={() => toggleModal("notfounds")}>
         <CModalHeader closeButton>Add Red Products</CModalHeader>
         <CModalBody>
@@ -1951,8 +2147,7 @@ const SaveInvoiceData = () => {
         </CModalFooter>
       </CModal>
 
-
-      <CModal show={detailsModal} onClose={() => toggleModal("details")}>
+            <CModal show={detailsModal} onClose={() => toggleModal("details")}>
         <CModalHeader closeButton>Add Details</CModalHeader>
         <CModalBody>
           <CContainer fluid>
