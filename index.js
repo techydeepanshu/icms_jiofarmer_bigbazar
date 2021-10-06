@@ -73,16 +73,18 @@ app.get("/api/product", validateLogin, (req, res) => {
 
 //added by Parikshit.
 app.get("/api/invoice/gethicksvilledata", validateLogin, (req, res) => {
-  const saveDate = "24/09/2021";
-  const fetchDate = "24/09/2021";
+  const saveDate = "05/10/2021";
+  const fetchDate = "05/10/2021";
+  const input = req.query.input;
   console.log("IN INDEX");
+  console.log(req.query);
   // const invoiceNo = req.query["invoiceNo"];
   // const date = req.query["date"];
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
     url: `http://3.91.159.202:3001/gethicksvilledata/`,
-    body: {saveDate: saveDate, fetchDate: fetchDate},
+    body: {saveDate: saveDate, fetchDate: fetchDate, string: input },
     json: true,
   };
   function callback(error, response, body) {
@@ -239,6 +241,32 @@ app.post("/api/invoice/savedetails", validateLogin, (req, res) => {
   let options = {
     method: "POST",
     url: `http://3.91.159.202:3001/savedetails/`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+//added by Parikshit.
+app.post("/api/invoice/linkingcorrect", validateLogin, (req, res) => {
+  console.log(req.body);
+  let data = req.body;
+  data.invoice = getDBInvoiceName(data.invoice);
+  console.log(data);
+
+
+  let options = {
+    method: "POST",
+    url: `http://3.91.159.202:3001/linkingcorrect/`,
     body: data,
     json: true,
   };
@@ -574,6 +602,9 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
     InvoiceNo: data.InvoiceNo,
     InvoiceDate: data.InvoiceDate,
     Department: data.value.Department,
+    CostIncrease: data.CostIncrease,
+    CostDecrease: data.CostDecrease,
+    CostSame: data.CostSame
   };
 
 

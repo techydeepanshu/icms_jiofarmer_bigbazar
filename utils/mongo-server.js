@@ -54,7 +54,8 @@ const invoiceSchema = new Schema({
   SellerCost: String,
   Size: String,
   isUpdated: { type: String, default: "false" },
-  Details: String
+  Details: String,
+  LinkingCorrect: String,
 });
 const notFoundSchema = new Schema({
   Item: String,
@@ -91,6 +92,9 @@ const logItemSchema = new Schema({
   InvoiceNo: String,
   InvoiceDate: String,
   Department: String,
+  CostIncrease: String,
+  CostDecrease: String,
+  CostSame: String
 
 });
 let logItemData = mongoose.model("linkinglogs", logItemSchema);
@@ -184,7 +188,8 @@ app.get("/getsavedinvoices/", (req, res) => {
 
 app.get("/gethicksvilledata/", (req, res) => {
   
-  hicksvilleData.find({SavedDate: req.body.saveDate, FetchDate: req.body.fetchDate}, { _id: 0, __v: 0 }, (err, x) => {
+  hicksvilleData.find({SavedDate: req.body.saveDate, FetchDate: req.body.fetchDate, "List.name": { "$regex": req.body.string, "$options": "i" }
+                      }, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
     else res.json(x);
   });
@@ -286,6 +291,15 @@ app.post("/reverseposupdate", (req, res) => {
   });
 
 
+  app.post("/linkingcorrect", (req, res) => {
+    console.log(req.body);
+    let invoice = mongoose.model(req.body.invoice, invoiceSchema);
+    invoice.updateOne({Item: req.body.itemNo},
+                      {LinkingCorrect: "true"},
+                      { _id: 0, __v: 0 },
+    (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  
+  });
 
   // added by parikshit.
   app.post("/linkmanually", (req, res) => {

@@ -20,10 +20,12 @@ import IconButton from "@material-ui/core/IconButton";
 import UpdateInventory from "../Update/UpdateInventory";
 import Spinner from "../../UI/Spinner/Spinner";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import CancelIcon from '@material-ui/icons/Cancel';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 import firebase from "firebase/app";
 import "firebase/auth";
+import Cancel from "@material-ui/icons/Cancel";
 
 const useStyles = makeStyles({
         root: {
@@ -137,6 +139,7 @@ const SaveInvoiceData = () => {
         "Tick to Delete",
         "Update POS",
         "Reverse POS Update",
+        "NO LINKING",
         "Serial No.(2)"
     ];
 
@@ -665,6 +668,28 @@ const SaveInvoiceData = () => {
 
     }
 
+    const linkingCorrect = async (index) => {
+      console.log(index);
+      console.log(tableData);
+      console.log(tableData[index]);
+      let item = tableData[index];
+      console.log(item)
+      let data = {
+        invoice: inv,
+        itemNo: item.itemNo,
+      }
+      console.log(data);
+      const res = await inventoryService.linkingCorrect(data);
+      console.log(res);
+      if(res.statusText == "OK") {
+        alert("SUCCESS");
+        setProductsInTable();
+      }else {
+        alert("Some error occured");
+        setProductsInTable();
+      }
+    }
+
     const linkManually = async(index) => {
       console.log(index);
       console.log(tableData);
@@ -693,6 +718,10 @@ const SaveInvoiceData = () => {
         InvoiceNo: num,
         InvoiceDate: day,
         Department: item.department,
+        CostIncrease: item.priceIncrease == 1 ? "YES" : "",
+        CostDecrease: item.priceIncrease == -1 ? "YES" : "",
+        CostSame: item.priceIncrease == 0 ? "YES" : ""
+
       }
 
       console.log(logState);
@@ -763,10 +792,10 @@ const SaveInvoiceData = () => {
               }
               row.itemNo = row.itemNo.toString().toUpperCase();
   
-              row.description =
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].Description
-                  : row.description;
+              row.description = row.description;
+                // products[row.itemNo] !== undefined
+                //   ? products[row.itemNo].Description
+                //   : row.description;
               row.pieces =
                 products[row.itemNo] !== undefined
                   ? products[row.itemNo].Quantity
@@ -803,6 +832,8 @@ const SaveInvoiceData = () => {
                 products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
               row.details = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
+              row.linkingCorrect = 
+                products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
               //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
               let sp = 0;
               let cp = 0;
@@ -858,11 +889,79 @@ const SaveInvoiceData = () => {
         // setDate("");
         // setInvNo("");
       };
-    
+
     const hicksvilleDropdown = async (data) => {
-      // const res = await inventoryService.getHicksvilleData();
-      // const data = res[0].List;
-      console.log(data);
+          // const res = await inventoryService.getHicksvilleData(value);
+          // const data = res[0].List;
+          console.log(data);
+  
+  
+          let productsString = "";
+          for(let i=0;i<data.length;i++){
+            productsString = productsString + data[i].name + '$$$';
+          } 
+          let result = productsString.split("$$$");
+        
+          let newData = [];
+          for (let i = 0; i < result.length; i++) {
+            let s = result[i].split("@@@");
+            let obj =
+              {
+                // sku: s[0] === "nan" ? null : s[0],
+                // upc: s[1] === "nan" ? null : s[1],
+                // altupc1: s[2] === "nan" ? null : s[2],
+                // altupc2: s[3] === "nan" ? null : s[3],
+                // name: s[4] === "nan" ? null : s[4],
+                // vintage: s[5] === "nan" ? null : s[5],
+                // totalQty: s[6] === "nan" ? null : s[6],
+                // cost: s[7] === "nan" ? null : s[7],
+                // pricea: s[8] === "nan" ? null : s[8],
+                // priceb: s[9] === "nan" ? null : s[9],
+                // pricec: s[10] === "nan" ? null : s[10],
+                // department: s[11] === "nan" ? null : s[11],
+                // salePrice: s[12] === "nan" ? null : s[12],
+                // size: s[13] === "nan" ? null : s[13],
+                // pack: s[14] === "nan" ? null : s[14],
+                // price: s[15] === "nan" ? null : s[15],
+                sku: s[1] === "nan" ? null : s[1],
+                upc: s[0] === "nan" ? null : s[0],
+                altupc1: s[14] === "nan" ? null : s[14],
+                altupc2: s[15] === "nan" ? null : s[15],
+                name: s[2] === "nan" ? null : s[2],
+                vintage: s[8] === "nan" ? null : s[8],
+                totalQty: s[13] === "nan" ? null : s[13],
+                cost: s[4] === "nan" ? null : s[4],
+                pricea: s[10] === "nan" ? null : s[10],
+                priceb: s[11] === "nan" ? null : s[11],
+                pricec: s[12] === "nan" ? null : s[12],
+                department: s[9] === "nan" ? null : s[9],
+                salePrice: s[5] === "nan" ? null : s[5],
+                size: s[6] === "nan" ? null : s[6],
+                pack: s[7] === "nan" ? null : s[7],
+                price: s[3] === "nan" ? null : s[3],
+              }
+            newData.push(obj);
+          }
+          const filter = newData.map((element) => {
+            let obj = { ...element };
+            obj.label = `${element.name}--${element.price}--${element.upc}--${element.size}--${element.cost}--${element.sku}`;
+            //console.log(obj);
+            return obj; 
+          });
+          setHicksvilleData(filter);
+        
+      }
+    
+    const hicksvilleDropdownNew = async (event, value, index) => {
+      console.log(event);
+      console.log(value);
+      console.log(value.length);
+      console.log(tableData[index].itemNo);
+
+      if(value != null && value.length>=4 && value != tableData[index].itemNo){
+        const res = await inventoryService.getHicksvilleData(value);
+        const data = res[0].List;
+        console.log(data);
 
 
         let productsString = "";
@@ -918,6 +1017,7 @@ const SaveInvoiceData = () => {
           return obj; 
         });
         setHicksvilleData(filter);
+      }
     }
 
     const searchDropdown = (target, value) =>  {
@@ -1004,7 +1104,8 @@ const SaveInvoiceData = () => {
             SellerCost: showPosState.unitCost,
             SellingPrice: showPosState.unitPrice,
             Quantity: unitsInCase,
-            Price: price
+            Price: price,
+            LinkingCorrect: "true"
           },
         };
   
@@ -1022,7 +1123,8 @@ const SaveInvoiceData = () => {
             Size: showPosState.size, 
             Department: showPosState.department,
             SellerCost: showPosState.unitCost,
-            SellingPrice: showPosState.unitPrice
+            SellingPrice: showPosState.unitPrice,
+            LinkingCorrect: "true"
           },
         };
       }
@@ -1061,6 +1163,12 @@ const SaveInvoiceData = () => {
                     }
                     console.log(userEmail);
                     const description = tableData[showPosIndex].description;
+                    const costChange = tableData[showPosIndex].priceIncrease;
+                    let a = "", b = "", c = "";
+                    if(costChange == 1) a = "YES";
+                    if(costChange == -1) b = "YES";
+                    if(costChange == 0) c = "YES"
+                    console.log(costChange);
                     console.log(description);
                     console.log(todayDate);
                     console.log(day);
@@ -1072,6 +1180,9 @@ const SaveInvoiceData = () => {
                     logState.LinkingDate = todayDate;
                     logState.InvoiceDate = day;
                     logState.InvoiceNo = num;
+                    logState.CostIncrease = a;                     
+                    logState.CostDecrease = b; 
+                    logState.CostSame = c;                   
                     console.log(logState);
                     
 
@@ -1196,10 +1307,10 @@ const SaveInvoiceData = () => {
             }
             row.itemNo = row.itemNo.toString().toUpperCase();
 
-            row.description =
-              products[row.itemNo] !== undefined
-                ? products[row.itemNo].Description
-                : row.description;
+            row.description = row.description;
+              // products[row.itemNo] !== undefined
+              //   ? products[row.itemNo].Description
+              //   : row.description;
             row.pieces =
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].Quantity
@@ -1236,6 +1347,8 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
             row.details = 
               products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
+            row.linkingCorrect = 
+              products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;
@@ -1372,7 +1485,7 @@ const SaveInvoiceData = () => {
                 key={index}
                 className={isEmpty ? styles.red : isFree ? styles.free : null}
                 // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
-                style={element.isUpdated === "true" || (isUpdated === "true" && updateIndex === index) ? {backgroundColor: "lightGreen"}
+                style={element.linkingCorrect == "false" ? {backgroundColor: "orange"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
@@ -1534,6 +1647,7 @@ const SaveInvoiceData = () => {
                       // console.log(event.target.value);
                       // console.log(value);
                       searchDropdown(event, value);
+                      // searchDropdown(event, value);
                     }}
                     onChange={(event, newValue) => {
                       // console.log(event.target.value);
@@ -1651,6 +1765,11 @@ const SaveInvoiceData = () => {
                     style={{ width: 120, backgroundColor: "red", color: "white" }}
                   />
                       
+                </td>
+                <td className={styles.element}>
+                  <IconButton onClick={() => linkingCorrect(index)}>
+                    <Cancel/>
+                  </IconButton>
                 </td>
                 <td>{index + 1}</td>
                 {/* <td>
