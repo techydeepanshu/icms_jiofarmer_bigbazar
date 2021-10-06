@@ -1288,10 +1288,10 @@ const DisplayData = (props) => {
             }
             row.itemNo = row.itemNo.toString().toUpperCase();
 
-            row.description =
-              products[row.itemNo] !== undefined
-                ? products[row.itemNo].Description
-                : row.description;
+            row.description = row.description;
+              // products[row.itemNo] !== undefined
+              //   ? products[row.itemNo].Description
+              //   : row.description;
             row.pieces =
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].Quantity

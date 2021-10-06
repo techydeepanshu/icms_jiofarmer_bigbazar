@@ -101,6 +101,14 @@ export class InventoryService {
     const res = await Axios.post(appendURL + "/api/invoice/reverseposupdate", {params:{ invoiceName: invoiceName, invoiceNo: invoiceNo,date: date, itemNo: itemNo}});
     return res.data;
   }
+  
+  async linkingCorrect(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL+ "/api/invoice/linkingcorrect", data);
+    return res;
+  }
+
+
   async linkManually(data) {
     console.log(data);
 
@@ -108,9 +116,9 @@ export class InventoryService {
     return res;
   }
 
-  async getHicksvilleData() {
+  async getHicksvilleData(value) {
     console.log("in inventory for hicks data");
-    const res = await Axios.get(appendURL + "/api/invoice/gethicksvilledata");
+    const res = await Axios.get(appendURL + "/api/invoice/gethicksvilledata", {params: {input: value}});
     return res.data;
   }
 
