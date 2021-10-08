@@ -17,6 +17,7 @@
   "author": "alekh",
   "license": "ISC",
   "dependencies": {
+    "@material/circular-progress": "^13.0.0",
     "@mui/icons-material": "^5.0.1",
     "aws-textract-helper": "^1.0.0-beta.5",
     "child_process": "^1.0.2",
