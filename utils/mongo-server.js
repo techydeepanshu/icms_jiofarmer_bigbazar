@@ -100,9 +100,7 @@ const logItemSchema = new Schema({
 let logItemData = mongoose.model("linkinglogs", logItemSchema);
 
 const hicksvilleSchema = new Schema({
-  SavedDate: String,
-  FetchDate: String,
-  List: Array
+  
 });
 let hicksvilleData = mongoose.model("Hicksvilles", hicksvilleSchema);
 
@@ -188,7 +186,7 @@ app.get("/getsavedinvoices/", (req, res) => {
 
 app.get("/gethicksvilledata/", (req, res) => {
   
-  hicksvilleData.find({SavedDate: req.body.saveDate, FetchDate: req.body.fetchDate, "List.name": { "$regex": req.body.string, "$options": "i" }
+  hicksvilleData.find({name : { "$regex": req.body.string, "$options": "i" }
                       }, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
     else res.json(x);

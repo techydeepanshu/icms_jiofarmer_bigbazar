@@ -26,6 +26,10 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import firebase from "firebase/app";
 import "firebase/auth";
 import Cancel from "@material-ui/icons/Cancel";
+// import CircularProgress from '@material/circular-progress';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loading from 'react-loader-spinner';
+
 
 const useStyles = makeStyles({
         root: {
@@ -109,6 +113,9 @@ const SaveInvoiceData = () => {
     const [userEmail, setUserEmail] = useState("");
     const [todayDate, setTodayDate] = useState("");
     const [openInvoice, setOpenInvoice] = useState(false);
+    const[dropdownLoader, setDropdownLoader] = useState(false);
+    const [fetchingOptions, setFetchingOptions] = useState(false);
+    const [dropdownIndex, setDropwdownIndex] = useState(-1);
 
     const invoiceHeader = [
       "Sr.No.",
@@ -957,10 +964,15 @@ const SaveInvoiceData = () => {
       console.log(value);
       console.log(value.length);
       console.log(tableData[index].itemNo);
+      setDropwdownIndex(index);
+      setOptions([]);
 
-      if(value != null && value.length>=4 && value != tableData[index].itemNo){
-        const res = await inventoryService.getHicksvilleData(value);
-        const data = res[0].List;
+      if(!isNaN(value) && value.length>0 && value != tableData[index].itemNo){
+        console.log("number");
+        // setDropdownLoader(true);
+        setFetchingOptions(true);
+        const res = await inventoryService.getHicksvilleData(value.toUpperCase());
+        const data = res;
         console.log(data);
 
 
@@ -1017,7 +1029,77 @@ const SaveInvoiceData = () => {
           return obj; 
         });
         setHicksvilleData(filter);
+        setOptions(filter);
+
       }
+
+      if(isNaN(value) && value != null && value.length>=4 && value != tableData[index].itemNo){
+        console.log("string");
+        // setDropdownLoader(true);
+        setFetchingOptions(true);
+        const res = await inventoryService.getHicksvilleData(value.toUpperCase());
+        const data = res;
+        console.log(data);
+
+
+        let productsString = "";
+        for(let i=0;i<data.length;i++){
+          productsString = productsString + data[i].name + '$$$';
+        } 
+        let result = productsString.split("$$$");
+      
+        let newData = [];
+        for (let i = 0; i < result.length; i++) {
+          let s = result[i].split("@@@");
+          let obj =
+            {
+              // sku: s[0] === "nan" ? null : s[0],
+              // upc: s[1] === "nan" ? null : s[1],
+              // altupc1: s[2] === "nan" ? null : s[2],
+              // altupc2: s[3] === "nan" ? null : s[3],
+              // name: s[4] === "nan" ? null : s[4],
+              // vintage: s[5] === "nan" ? null : s[5],
+              // totalQty: s[6] === "nan" ? null : s[6],
+              // cost: s[7] === "nan" ? null : s[7],
+              // pricea: s[8] === "nan" ? null : s[8],
+              // priceb: s[9] === "nan" ? null : s[9],
+              // pricec: s[10] === "nan" ? null : s[10],
+              // department: s[11] === "nan" ? null : s[11],
+              // salePrice: s[12] === "nan" ? null : s[12],
+              // size: s[13] === "nan" ? null : s[13],
+              // pack: s[14] === "nan" ? null : s[14],
+              // price: s[15] === "nan" ? null : s[15],
+              sku: s[1] === "nan" ? null : s[1],
+              upc: s[0] === "nan" ? null : s[0],
+              altupc1: s[14] === "nan" ? null : s[14],
+              altupc2: s[15] === "nan" ? null : s[15],
+              name: s[2] === "nan" ? null : s[2],
+              vintage: s[8] === "nan" ? null : s[8],
+              totalQty: s[13] === "nan" ? null : s[13],
+              cost: s[4] === "nan" ? null : s[4],
+              pricea: s[10] === "nan" ? null : s[10],
+              priceb: s[11] === "nan" ? null : s[11],
+              pricec: s[12] === "nan" ? null : s[12],
+              department: s[9] === "nan" ? null : s[9],
+              salePrice: s[5] === "nan" ? null : s[5],
+              size: s[6] === "nan" ? null : s[6],
+              pack: s[7] === "nan" ? null : s[7],
+              price: s[3] === "nan" ? null : s[3],
+            }
+          newData.push(obj);
+        }
+        const filter = newData.map((element) => {
+          let obj = { ...element };
+          if(element.itemNo != "undefined"){
+          obj.label = `${element.name}--${element.price}--${element.upc}--${element.size}--${element.cost}--${element.sku}`;
+          }
+          //console.log(obj);
+          return obj; 
+        });
+        setHicksvilleData(filter);
+        setOptions(filter);
+      }
+      setFetchingOptions(false);
     }
 
     const searchDropdown = (target, value) =>  {
@@ -1034,6 +1116,7 @@ const SaveInvoiceData = () => {
       })
       console.log(options);
       setOptions(options);
+      setFetchingOptions(false);
 
     }
 
@@ -1638,16 +1721,23 @@ const SaveInvoiceData = () => {
                   />
                 </td>
                 <td>
+                {/* {dropdownIndex == index ? fetchingOptions ? <Loading type="ThreeDots" height={40} width={40} /> : null : null} */}
                   <Autocomplete
                     value={showPosIndex  === index ? showPosState.item : element.itemNo }
+                    loading={true}
                     onInputChange={(event, value) => {
                       console.log("ON INPUT CHANGE");
                       // event.toLowerCase();
                       // value.toLowerCase();
                       // console.log(event.target.value);
                       // console.log(value);
-                      searchDropdown(event, value);
                       // searchDropdown(event, value);
+                      // setOptions([]);
+                      setTimeout(()=> {
+                        hicksvilleDropdownNew(event, value, index);
+
+                      }, 1500);
+                      // hicksvilleDropdownNew(event, value, index);
                     }}
                     onChange={(event, newValue) => {
                       // console.log(event.target.value);
@@ -1685,7 +1775,9 @@ const SaveInvoiceData = () => {
                     id="combo-box"
                     // options={element.fuzzSuggestion}
                     options={options}
+                    // getOptionLabel={option => option.label}
                     getOptionLabel={(option) => option.label ?? element.itemNo}
+                    // getOptionLabel={(option) => dropdownLoader ? <Spinner /> : option.label}
                     style={{ width: 400 }}
                     renderInput={(params) => (
                       <TextField {...params} variant="outlined" />
@@ -1855,7 +1947,7 @@ const SaveInvoiceData = () => {
                   sku: product.sku,
                   Barcode: product.barcode,
                   PosSKU: product.posSku,
-                  InvoiceName: invoice,
+                  InvoiceName: invoice.slug,
                 };
                 await inventoryService.CreateNotFoundItems(data);
                 return true;
@@ -1995,7 +2087,7 @@ const SaveInvoiceData = () => {
       let date = curDate.getFullYear()+ "-" + (curDate.getMonth()+1) +"-"+ curDate.getDate();
       console.log(date);
       setTodayDate(date);
-      hicksvilleDropdown(HicksData);
+      // hicksvilleDropdown(HicksData);
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           setUserEmail(user.email);
@@ -2146,6 +2238,7 @@ const SaveInvoiceData = () => {
       return <Spinner />;
     }
     return(
+
         <div className="container-fluid">
             <Paper className={classes.root}>
                 <Grid style={{ display: "flex" }}>

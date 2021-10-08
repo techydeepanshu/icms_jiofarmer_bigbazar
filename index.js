@@ -78,18 +78,23 @@ app.get("/api/invoice/gethicksvilledata", validateLogin, (req, res) => {
   const input = req.query.input;
   console.log("IN INDEX");
   console.log(req.query);
+
   // const invoiceNo = req.query["invoiceNo"];
   // const date = req.query["date"];
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
     url: `http://3.91.159.202:3001/gethicksvilledata/`,
-    body: {saveDate: saveDate, fetchDate: fetchDate, string: input },
+    body: {string: input },
     json: true,
   };
   function callback(error, response, body) {
+    // console.log(response);
+    // console.log(body);
+    // const result = body[0].List.filter(item => item.name.search(req.query.input) != -1)
     const status = response.statusCode;
     // console.log(error, body);
+    // console.log(result);
     if (error === null) {
       res.status(status).send(body);
     } else {
