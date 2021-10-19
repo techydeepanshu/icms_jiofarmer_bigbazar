@@ -89,6 +89,7 @@ const logItemSchema = new Schema({
   Size: String,
   UnitCost: String,
   UnitPrice: String,
+  InvoiceUnitCost: String,
   InvoiceNo: String,
   InvoiceDate: String,
   Department: String,
@@ -304,7 +305,7 @@ app.post("/reverseposupdate", (req, res) => {
     console.log(req.body);
     let invoice = mongoose.model(req.body.invoice, invoiceSchema);
     invoice.updateOne({Item: req.body.itemNo},
-                      {isReviewed: "true"},
+                      {isReviewed: "true", LinkingCorrect: "true"},
                       { _id: 0, __v: 0 },
     (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   

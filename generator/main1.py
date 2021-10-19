@@ -2,13 +2,13 @@ import nltk
 import re
 import pandas as pd
 from nltk.stem.porter import PorterStemmer
-dataset=pd.read_csv('/home/dell/v/a/csv/Maharaja_Hicksville.csv',delimiter=',')
+dataset=pd.read_csv('../csv/Maharaja_Hicksville.csv',delimiter=',')
 y=dataset.iloc[:,0:].values
 z=[]
 for i in range(0,len(y)):
-  if y[i][4].find('E+') == -1:
+  if y[i][2].find('E+') == -1:
     ps=PorterStemmer()
-    s=re.sub('[^a-zA-Z]',' ',y[i][4])
+    s=re.sub('[^a-zA-Z]',' ',y[i][2])
     s=s.lower()
     s=s.split()
     s=set(s)
@@ -22,4 +22,4 @@ for i in range(0,len(y)):
       x=x+"@@@"+str(y[i][j])
     z.append([s,x])
 csv= pd.DataFrame(z,columns=['val','name'])
-csv.to_csv('/home/dell/v/a/csv/Hicksville.csv')
+csv.to_csv('../csv/Hicksville.csv')

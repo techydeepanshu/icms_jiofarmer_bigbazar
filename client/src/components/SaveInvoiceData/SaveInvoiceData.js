@@ -22,13 +22,14 @@ import Spinner from "../../UI/Spinner/Spinner";
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import  CircularProgress from "@material-ui/core/CircularProgress";
 
 import firebase from "firebase/app";
 import "firebase/auth";
 import Cancel from "@material-ui/icons/Cancel";
 // import CircularProgress from '@material/circular-progress';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loading from 'react-loader-spinner';
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+// import Loading from 'react-loader-spinner';
 
 
 const useStyles = makeStyles({
@@ -69,6 +70,7 @@ const SaveInvoiceData = () => {
     const [inv, setInv] = useState("");
     const [ num, setNum] = useState("");
     const [day, setDay] = useState("");
+    const [apiLoader, setApiLoader] = useState(false);
 
     
 
@@ -481,6 +483,7 @@ const SaveInvoiceData = () => {
     }
 
   const pushSingleItemToInventory = async (index) =>{
+    setApiLoader(true);
     console.log(index);	
     setShowPosIndex(-1);
     
@@ -579,7 +582,7 @@ const SaveInvoiceData = () => {
       setUpdateIndex(index);
       console.log(singleItemData);
       console.log(singleItemData.itemNo);
-      await inventoryService.UpdateInvoiceData(invoice.slug, invoiceNo, date, singleItemData[0].itemNo); 
+      await inventoryService.UpdateInvoiceData(inv, num, day, singleItemData[0].itemNo); 
 
       //Update unit cost n price in db, after update POS.
       let data1 = {
@@ -595,6 +598,7 @@ const SaveInvoiceData = () => {
       alert("POS not updated!!");
       setProductsInTable();
     }
+    setApiLoader(false);
 
     
     
@@ -629,6 +633,7 @@ const SaveInvoiceData = () => {
   }
 
   const getInvoices = async () => {
+    setApiLoader(true);
     setOpenInvoice(false);
     console.log(invoice);
     const res = await inventoryService.getSavedInvoices(invoice);
@@ -639,6 +644,8 @@ const SaveInvoiceData = () => {
     // })
     console.log(res);
     setInvoiceOptions(res);
+    
+    setApiLoader(false);
 
   }
 
@@ -666,7 +673,7 @@ const SaveInvoiceData = () => {
       console.log(tableData);
       console.log(tableData[index]);
       let item = tableData[index];
-      const result = await inventoryService.reversePOSUpdate(invoice.slug, invoiceNo, date, item.itemNo);
+      const result = await inventoryService.reversePOSUpdate(inv, num, day, item.itemNo);
       if(result.ok == 1){
         setProductsInTable();
       }else {
@@ -690,6 +697,31 @@ const SaveInvoiceData = () => {
       console.log(res);
       if(res.statusText == "OK") {
         alert("SUCCESS");
+        let logState = {
+          Description: item.description,
+          PosName: item.posName,
+          SKU: item.posSku,
+          Barcode: item.barcode,
+          InvoiceName: inv,
+          ItemCode: item.itemNo,
+          LinkingDate: todayDate,
+          PersonName: userEmail,
+          Size: item.size,
+          UnitCost: item.cost,
+          UnitPrice: item.sellingPrice,
+          InvoiceNo: num,
+          InvoiceDate: day,
+          Department: item.department,
+          InvoiceUnitCost: item.cp,
+          CostIncrease: item.priceIncrease == 1 ? "YES" : "",
+          CostDecrease: item.priceIncrease == -1 ? "YES" : "",
+          CostSame: item.priceIncrease == 0 ? "YES" : "",
+          Unidentified: "YES"  
+        }
+        const res = await inventoryService.UnidentifiedLog(logState);
+        console.log(res);
+
+
         setProductsInTable();
       }else {
         alert("Some error occured");
@@ -725,6 +757,7 @@ const SaveInvoiceData = () => {
         InvoiceNo: num,
         InvoiceDate: day,
         Department: item.department,
+        InvoiceUnitCost: item.cp,
         CostIncrease: item.priceIncrease == 1 ? "YES" : "",
         CostDecrease: item.priceIncrease == -1 ? "YES" : "",
         CostSame: item.priceIncrease == 0 ? "YES" : ""
@@ -1245,6 +1278,7 @@ const SaveInvoiceData = () => {
                       setPrice("");
                     }
                     console.log(userEmail);
+                    console.log(tableData[showPosIndex]);
                     const description = tableData[showPosIndex].description;
                     const costChange = tableData[showPosIndex].priceIncrease;
                     let a = "", b = "", c = "";
@@ -1265,7 +1299,8 @@ const SaveInvoiceData = () => {
                     logState.InvoiceNo = num;
                     logState.CostIncrease = a;                     
                     logState.CostDecrease = b; 
-                    logState.CostSame = c;                   
+                    logState.CostSame = c;
+                    logState.InvoiceUnitCost = tableData[showPosIndex].cp;                   
                     console.log(logState);
                     
 
@@ -1510,7 +1545,7 @@ const SaveInvoiceData = () => {
         );
       })
     return (
-      <div style={{ marginTop: "70px" }}>
+      <div style={{ marginTop: "35px" }}>
         <table className="table table-hover table-responsive-sm">
           <tbody>
             <tr>{renderInvoiceHeader()}</tr>
@@ -1627,7 +1662,7 @@ const SaveInvoiceData = () => {
                       }
                     /> */}
                   </IconButton>
-                  <div className={element.isReviewed  === "true" || (showPosIndex === index && stateUpdated === "true") ? styles.tooltipIsReviewed: styles.tooltip} >
+                  <div className={element.isReviewed  === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
                     <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
                     {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
                     <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
@@ -1733,10 +1768,12 @@ const SaveInvoiceData = () => {
                       // console.log(value);
                       // searchDropdown(event, value);
                       // setOptions([]);
-                      setTimeout(()=> {
-                        hicksvilleDropdownNew(event, value, index);
+                      if(event != null){
+                        setTimeout(()=> {
+                          hicksvilleDropdownNew(event, value, index);
 
-                      }, 1500);
+                        }, 1500);
+                      }
                       // hicksvilleDropdownNew(event, value, index);
                     }}
                     onChange={(event, newValue) => {
@@ -1876,7 +1913,7 @@ const SaveInvoiceData = () => {
             );
           });
           return (
-            <div style={{ marginTop: "70px" }}>
+            <div style={{ marginTop: "35px" }}>
               <table className="table table-hover table-responsive-sm">
                 <tbody>
                   <tr>{renderTableHeader()}</tr>
@@ -1982,6 +2019,7 @@ const SaveInvoiceData = () => {
             }
           })
         );
+        console.log(priceIncreasedProducts.length);
         setLoader(false);
         setInventoryData(mergeDuplicates(tempTable));
         setPushToInventory(true);
@@ -2237,6 +2275,14 @@ const SaveInvoiceData = () => {
     if (loader) {
       return <Spinner />;
     }
+    if(apiLoader){
+      return (
+      <div style={{marginTop: "100px", marginLeft: "700px"}}>
+        <CircularProgress />
+      </div>
+      ); 
+      
+    }
     return(
 
         <div className="container-fluid">
@@ -2313,6 +2359,10 @@ const SaveInvoiceData = () => {
                     </button>
                 </Grid>
             </Paper>
+
+            {openInvoice ? (<div><div><p>Invoice No.-- {num}</p></div><div><p>Invoice Date -- {day}</p></div></div>) : null}
+
+            {/* { apiLoader ? <CircularProgress /> : null} */}
         
             {pushToInventory ? (
             <UpdateInventory

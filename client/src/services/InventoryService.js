@@ -167,4 +167,10 @@ export class InventoryService {
     const res = await Axios.post(appendURL + "/api/invoice/reverseupdate", data);
     return res.data;
   }
+
+  async UnidentifiedLog(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/unidentifiedlog", data);
+    return res;
+  }
 }

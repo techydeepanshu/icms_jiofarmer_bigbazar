@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import Grid from '@material-ui/core/grid'
+import Grid from '@material-ui/core/Grid'
 
 import NavigationItems from '../NavigationItems/NavigationItems'
 import styles from './Toolbar.module.css'

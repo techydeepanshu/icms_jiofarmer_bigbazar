@@ -709,12 +709,12 @@ export const optionData={
   //   body:[1,1,1,1,[0,/ [0-9\.]+ [A-Z]+ [0-9\.]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
-  // "az-metro-distribution":{
-  //   regex:/^[0-9]+ [0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
-  //   header:["cases","code","description","upc","unitPrice","discount","deposit","tax","extendedPrice"],
-  //   body:[1,1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
-  // },
+  "az-metro-distribution":{
+    regex:/^[0-9]+ [0-9]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/,
+    header:["cases","code","description","upc","unitPrice","discount","deposit","tax","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
   // "trading-corp":{
   //   regex:/^[A-Z0-9-A-Z0-9a-z]+ .+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
   //   header:["item","description","qty","unitPrice","extendedPrice"],

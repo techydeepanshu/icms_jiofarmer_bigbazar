@@ -854,6 +854,7 @@ const DisplayData = (props) => {
                   }
                 }}
                 id="combo-box"
+                disabled
                 // options={element.fuzzSuggestion}
                 options={hicksvilleData}
                 getOptionLabel={(option) => option.label ?? element.itemNo}

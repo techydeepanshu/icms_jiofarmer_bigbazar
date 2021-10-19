@@ -591,6 +591,7 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
   let data = req.body;
   data.InvoiceName = data.invoiceName;
   data.ItemCode = data.itemName;
+  console.log(data);
 
   let logData = {
     Description: data.Description,
@@ -609,7 +610,8 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
     Department: data.value.Department,
     CostIncrease: data.CostIncrease,
     CostDecrease: data.CostDecrease,
-    CostSame: data.CostSame
+    CostSame: data.CostSame,
+    InvoiceUnitcost: data.InvoiceUnitCost, 
   };
 
 
@@ -634,6 +636,27 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
 
 //added by Parikshit.
 app.post("/api/invoice/linkmanuallylog", validateLogin, function (req, res) {
+  const data = req.body;
+  console.log(data);
+  let options = {
+    method: "POST",
+    url: "http://3.91.159.202:3001/generatelog",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.post("/api/invoice/unidentifiedlog", validateLogin, function (req, res) {
   const data = req.body;
   console.log(data);
   let options = {
