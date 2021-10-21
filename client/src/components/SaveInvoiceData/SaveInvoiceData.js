@@ -130,10 +130,10 @@ const SaveInvoiceData = () => {
     
     const header = [
         "Serial No.",
-        "Add Details",
         "Barcode",
         "POS SKU",
-        "Qty Shipped",
+        "Qty Shipped",,
+        "Unit Cost",
         "ITEM NO",
         "Link Product",
         
@@ -142,9 +142,9 @@ const SaveInvoiceData = () => {
         "Case cost",
         "Extended Price",
        
-        "Unit Cost ",
         "Unit Price",
         "Mark up (%)",
+        "Add Details",
         "Tick to Delete",
         "Update POS",
         "Reverse POS Update",
@@ -1607,18 +1607,7 @@ const SaveInvoiceData = () => {
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
-                <td className={styles.element}>
-                  <IconButton onClick={() => {
-                    toggleModal("details");
-                    setDetailsIndex(index);
-                    }}>
-                      <AddCircleIcon />
-                    </IconButton>
-                    <div className={styles.tooltip}>
-                      <p>Details- {element.details}</p>
-                    </div>
-                    
-                </td>
+               
                 {/* <td>
                   <TextField
                     type="tel"
@@ -1738,6 +1727,7 @@ const SaveInvoiceData = () => {
                     style={{ width: 100 }}
                   />
                 </td>
+                <td>{element.cp}</td>
                 <td>
                   <Autocomplete
                     value={element.itemNo}
@@ -1848,7 +1838,7 @@ const SaveInvoiceData = () => {
                   />
                 </td>
                 <td>{element.extendedPrice}</td>
-                <td>{element.cp}</td>
+                
                 <td>
                   <TextField
                     type="tel"
@@ -1868,6 +1858,21 @@ const SaveInvoiceData = () => {
                     inputProps={{ "aria-label": "primary checkbox" }}
                   />
                 </td> */}
+
+                  <td className={styles.element}>
+                  <IconButton onClick={() => {
+                    toggleModal("details");
+                    setDetailsIndex(index);
+                    }}>
+                      <AddCircleIcon />
+                    </IconButton>
+                    <div className={styles.tooltip}>
+                      <p>Details- {element.details}</p>
+                    </div>
+                    
+                </td>
+
+
                 <td>
               <Button
                 text={element.show ? "Delete" : "Undo"}

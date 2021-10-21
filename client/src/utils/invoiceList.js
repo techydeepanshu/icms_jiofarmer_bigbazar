@@ -943,13 +943,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "spicysenses",
   // }, 
-  {
-    value: "Spicy world",
-    slug: "spicy-world",
-    jsonName: "spicy-world.json",
-    emptyColumn: false,
-    databaseName: "spicyworlds",
-  },
+  // {
+  //   value: "Spicy world",
+  //   slug: "spicy-world",
+  //   jsonName: "spicy-world.json",
+  //   emptyColumn: false,
+  //   databaseName: "spicyworlds",
+  // },
   // {
   //   value: "Surati",
   //   slug: "surati",
@@ -1034,12 +1034,12 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "vijayhomefoods",
   // }, 
-  {
-    value: "Vintage food",
-    slug: "vintage-food",
-    jsonName: "vintage.json",
-    emptyColumn: false,
-    databaseName: "vintages",
-  },
+  // {
+  //   value: "Vintage food",
+  //   slug: "vintage-food",
+  //   jsonName: "vintage.json",
+  //   emptyColumn: false,
+  //   databaseName: "vintages",
+  // },
   // {value:'',slug:'',jsonName:'wave-ron-foods.json',emptyColumn:false,databaseName:'waveronfoods'}
 ];
