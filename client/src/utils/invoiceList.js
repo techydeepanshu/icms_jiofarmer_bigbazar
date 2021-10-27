@@ -805,13 +805,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "rajafoods",
   // }, 
-  {
-    value: "Rane music",
-    slug: "ranemusic",
-    jsonName: "rane-music.json",
-    emptyColumn: false,
-    databaseName: "ranemusics",
-  },
+  // {
+  //   value: "Rane music",
+  //   slug: "ranemusic",
+  //   jsonName: "rane-music.json",
+  //   emptyColumn: false,
+  //   databaseName: "ranemusics",
+  // },
   // {
   //   value: "Rite source corp",
   //   slug: "ritesource-corp",

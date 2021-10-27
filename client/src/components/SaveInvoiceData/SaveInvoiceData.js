@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import { dropdownOptions } from "../../utils/invoiceList";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -30,6 +30,8 @@ import Cancel from "@material-ui/icons/Cancel";
 // import CircularProgress from '@material/circular-progress';
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // import Loading from 'react-loader-spinner';
+
+import { useSelector} from "react-redux";
 
 
 const useStyles = makeStyles({
@@ -67,10 +69,16 @@ const SaveInvoiceData = () => {
     const [invoiceNo, setInvoiceNo] = useState("");
     const numOfCollections = dropdownOptions.length;
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
-    const [inv, setInv] = useState("");
-    const [ num, setNum] = useState("");
-    const [day, setDay] = useState("");
-    const [apiLoader, setApiLoader] = useState(false);
+    // const [inv, setInv] = useState("");
+    const inv = useSelector(state => state.openInvoice.inv);
+    // const [ num, setNum] = useState("");
+    const num = useSelector(state => state.openInvoice.num);
+    // const [day, setDay] = useState("");
+    const day = useSelector(state => state.openInvoice.day);
+    // const [apiLoader, setApiLoader] = useState(false);
+
+    const apiLoader = useSelector(state => state.loaders.apiLoader)
+    const dispatch = useDispatch();
 
     
 
@@ -84,12 +92,15 @@ const SaveInvoiceData = () => {
     const [pushToInventory, setPushToInventory] = useState(false);
     const [inventoryData, setInventoryData] = useState([]);
     const [itemNoDropdown, setItemNoDropdown] = useState([]);
-    const [loader, setLoader] = useState(false);
+    
+    // const [loader, setLoader] = useState(false);
+    const loader = useSelector(state => state.loaders.loader);
+
     const [reviewItems, setReviewItems] = useState([]);
     const [showPosIndex, setShowPosIndex] = useState(-1);
     const inventoryService = new InventoryService();
     const [showModal, setShowModal] = useState(false);
-    const [stateUpdated, setStateUpdated] = useState("false");
+    // const [stateUpdated, setStateUpdated] = useState("false");
     const [costInc, setCostInc] = useState("false");
     const [costDec, setCostDec] = useState("false");
     const [unitCost, setUnitCost] = useState("");
@@ -101,9 +112,15 @@ const SaveInvoiceData = () => {
     let itemNo = "";
     // const [posProducts, setPosProducts] = useState([]);
 
-    const [notFounds, setNotFounds] = useState("false");
-    const [unitsInCase, setUnitsInCase] = useState("");
-    const [price, setPrice] = useState("");
+    // const [notFounds, setNotFounds] = useState("false");
+    const notFounds = useSelector(state => state.redItems.notFounds);
+
+    // const [unitsInCase, setUnitsInCase] = useState("");
+    const unitsInCase = useSelector(state => state.redItems.unitsInCase);
+
+    // const [price, setPrice] = useState("");
+    const price = useSelector(state => state.redItems.price);
+
     const [redState, setRedState] = useState("true");
     let updateSku = "";
     const [searchVal, setSearchVal] = useState("");
@@ -112,9 +129,17 @@ const SaveInvoiceData = () => {
     const [invoiceOptions, setInvoiceOptions] = useState([]);
     const [details, setDetails] = useState("");
     const [detailsIndex, setDetailsIndex] = useState(-1);
-    const [userEmail, setUserEmail] = useState("");
-    const [todayDate, setTodayDate] = useState("");
-    const [openInvoice, setOpenInvoice] = useState(false);
+
+    // const [userEmail, setUserEmail] = useState("");
+    const userEmail = useSelector(state => state.userDetails.userEmail);
+    
+    // const [todayDate, setTodayDate] = useState("");
+    const todayDate = useSelector(state => state.userDetails.todayDate);
+
+    
+    // const [openInvoice, setOpenInvoice] = useState(false);
+    const openInvoice = useSelector(state => state.openInvoice.openInvoice);
+
     const[dropdownLoader, setDropdownLoader] = useState(false);
     const [fetchingOptions, setFetchingOptions] = useState(false);
     const [dropdownIndex, setDropwdownIndex] = useState(-1);
@@ -152,20 +177,21 @@ const SaveInvoiceData = () => {
         "Serial No.(2)"
     ];
 
-    const [showPosState, setShowPosState] = useState({
-        item: "",
-        quantity: "",
-        description: "",
-        price: "",
-        pos: "",
-        barcode: "",
-        posSku: "",
-        invoice: "",
-        size: "",
-        department: "",
-        unitCost: "",
-        unitPrice: "",
-    });
+    const showPosState = useSelector(state => state.showPosState);
+    // const [showPosState, setShowPosState] = useState({
+    //     item: "",
+    //     quantity: "",
+    //     description: "",
+    //     price: "",
+    //     pos: "",
+    //     barcode: "",
+    //     posSku: "",
+    //     invoice: "",
+    //     size: "",
+    //     department: "",
+    //     unitCost: "",
+    //     unitPrice: "",
+    // });
 
 //***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
 
@@ -206,7 +232,8 @@ const SaveInvoiceData = () => {
           }
         })
       );
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
       console.log(items);
       wooComProducts = items;
       // setWooComProducts(items.filter((ele) => ele !== null));
@@ -216,7 +243,8 @@ const SaveInvoiceData = () => {
     //function to fetch POS products.
     async function getPosProducts() {
       console.log("IN POS PRODUCTS");
-      setLoader(true);
+      // setLoader(true);
+      dispatch({type: "LOADER"});
       let hasErrorOccured = false;
       const items = await Promise.all(
         singleItemData
@@ -283,7 +311,8 @@ const SaveInvoiceData = () => {
       if (hasErrorOccured) {
         alert("Couldn't fetch some data from POS");
       }
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
       console.log(items);
       posProducts = items;
       console.log(posProducts);
@@ -292,7 +321,8 @@ const SaveInvoiceData = () => {
 
     //PUSH TO WOOCOM.
     const pushToWoocom = async (products) => {
-      setLoader(true);
+      // setLoader(true);
+      dispatch({type: "LOADER"});
       const responses = await Promise.all(
         products.map(async (product) => {
           try {
@@ -315,12 +345,14 @@ const SaveInvoiceData = () => {
           }
         })
       );
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
     };
 
      //PUSH TO POS.
      const pushToPOS = async (products) => {
-      setLoader(true);
+      // setLoader(true);
+      dispatch({type: "LOADER"});
       console.log(products);
       const responses = await Promise.all(
         products.map(async (product) => {
@@ -396,12 +428,13 @@ const SaveInvoiceData = () => {
           }
         })
       );
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
     };
 
     const pushInventoryDetails2 = async () => {
       console.log(posProducts);
-      setLoader(true);
+      // setLoader(true);
       let data = singleItemData.map((element) => {
         return {
           item: element.itemNo,
@@ -467,7 +500,8 @@ const SaveInvoiceData = () => {
         }
       await pushToPOS(posProducts);
   
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
       // if (itemsNotPushed.length === 0) {
       window.alert("Inventory updated successfully");
       // setRedirect(true);
@@ -483,7 +517,8 @@ const SaveInvoiceData = () => {
     }
 
   const pushSingleItemToInventory = async (index) =>{
-    setApiLoader(true);
+    // setApiLoader(true);
+    dispatch({type: "API_LOADER"});
     console.log(index);	
     setShowPosIndex(-1);
     
@@ -512,7 +547,8 @@ const SaveInvoiceData = () => {
 
     if (emptyColumn.length !== 0) {
       /**api to push  to not found list*/
-      setLoader(true);
+      // setLoader(true);
+      dispatch({type: "LOADER"});
       const responses = await Promise.all(
         notFoundItems.map(async (product) => {
           try {
@@ -539,12 +575,14 @@ const SaveInvoiceData = () => {
           }
         })
       );
-      setLoader(false);
+      // setLoader(false);
+      dispatch({type: "LOADER"});
     }
     const priceIncreasedProducts = tempTable.filter(
       (product) => product.priceIncrease !== 0
     );
-    setLoader(true);
+    // setLoader(true);
+    dispatch({type: "LOADER"});
     const res = await Promise.all(
       priceIncreasedProducts.map(async (product) => {
         try {
@@ -562,7 +600,8 @@ const SaveInvoiceData = () => {
         }
       })
     );
-    setLoader(false);
+    // setLoader(false);
+    dispatch({type: "LOADER"});
     // console.log(tempTable);
     tempTable[0].isUpdated = "true";
     singleItemData = tempTable;
@@ -598,7 +637,8 @@ const SaveInvoiceData = () => {
       alert("POS not updated!!");
       setProductsInTable();
     }
-    setApiLoader(false);
+    // setApiLoader(false);
+    dispatch({type: "API_LOADER"});
 
     
     
@@ -633,8 +673,10 @@ const SaveInvoiceData = () => {
   }
 
   const getInvoices = async () => {
-    setApiLoader(true);
-    setOpenInvoice(false);
+    // setApiLoader(true);
+    dispatch({type: "API_LOADER"})
+    // setOpenInvoice(false);
+    dispatch({type: "OPEN_INVOICE", data: false})
     console.log(invoice);
     const res = await inventoryService.getSavedInvoices(invoice);
     console.log(res);
@@ -645,7 +687,8 @@ const SaveInvoiceData = () => {
     console.log(res);
     setInvoiceOptions(res);
     
-    setApiLoader(false);
+    // setApiLoader(false);
+    dispatch({type: "API_LOADER"})
 
   }
 
@@ -712,7 +755,7 @@ const SaveInvoiceData = () => {
           InvoiceNo: num,
           InvoiceDate: day,
           Department: item.department,
-          InvoiceUnitCost: item.cp,
+          InvUnitCost: item.cp,
           CostIncrease: item.priceIncrease == 1 ? "YES" : "",
           CostDecrease: item.priceIncrease == -1 ? "YES" : "",
           CostSame: item.priceIncrease == 0 ? "YES" : "",
@@ -757,7 +800,7 @@ const SaveInvoiceData = () => {
         InvoiceNo: num,
         InvoiceDate: day,
         Department: item.department,
-        InvoiceUnitCost: item.cp,
+        InvUnitCost: item.cp,
         CostIncrease: item.priceIncrease == 1 ? "YES" : "",
         CostDecrease: item.priceIncrease == -1 ? "YES" : "",
         CostSame: item.priceIncrease == 0 ? "YES" : ""
@@ -793,7 +836,8 @@ const SaveInvoiceData = () => {
     };
 
     const setProductsInTable = () => {
-      setLoader(true);
+      // setLoader(true);
+      dispatch({type: "LOADER"});
       async function invoiceData() {
         const products = await tesseractService.GetProductDetails(
           // invoice.slug
@@ -908,14 +952,17 @@ const SaveInvoiceData = () => {
               }
             return { ...row, sp, cp };
             });
-            setLoader(false);
+            // setLoader(false);
+            dispatch({type: "LOADER"});
+
             setTableData(table.filter((data) => data !== null));
             setItemNoDropdown(Object.keys(products));
             setProductDetails(products);
           })
           .catch((err) => {
             console.log("error on mapping ocrdata", err)
-            setLoader(false);
+            // setLoader(false);
+            dispatch({type: "LOADER"});
           });
       });
     }
@@ -1184,8 +1231,10 @@ const SaveInvoiceData = () => {
           alert("Some error occuured in creating product");
         })
         .finally(() => { 
-          setLoader(false)
-          setStateUpdated("true");
+          // setLoader(false)
+          dispatch({type: "LOADER"});
+          
+          // setStateUpdated("true");
           //  console.log(ocrCost);
           //  console.log(unitCost);
            if(ocrCost>unitCost){
@@ -1254,14 +1303,16 @@ const SaveInvoiceData = () => {
         }
         console.log(res);
         alert("Successfully updated fields");
-        setStateUpdated(true);
+        // setStateUpdated(true);
       })
       .catch((err) => {
         console.log(err);
         alert("Some error occuured in creating product");
       })
-      .finally(async () => { setLoader(false);
-                     setStateUpdated("true");
+      .finally(async () => { 
+                      // setLoader(false);
+                      // dispatch({type: "LOADER"});
+                    //  setStateUpdated("true");
                     //  console.log(ocrCost);
                     //  console.log(unitCost);
                     if(ocrCost>unitCost){
@@ -1273,9 +1324,13 @@ const SaveInvoiceData = () => {
                       setCostInc("");
                     }
                     if(notFounds === "true"){
-                      setNotFounds("false");
-                      setUnitsInCase("");
-                      setPrice("");
+                      // setNotFounds("false");
+                      dispatch({type: "NOT_FOUNDS", data: "false"})
+                      // setUnitsInCase("");
+                      dispatch({type: "UNITS_IN_CASE", data: ""})
+                      // setPrice("");
+                      dispatch({type: "PRICE", data: ""})
+
                     }
                     console.log(userEmail);
                     console.log(tableData[showPosIndex]);
@@ -1379,15 +1434,20 @@ const SaveInvoiceData = () => {
 
    const setProductsInTableNew = (index) => {
     console.log(index);
-    setOpenInvoice(true);
+    // setOpenInvoice(true);
+    dispatch({type: "OPEN_INVOICE", data: true})
     console.log(invoiceOptions[index]);
     let invoice = invoiceOptions[index].InvoiceName;
-    setInv(invoice);
+    // setInv(invoice);
+    dispatch({type: "SET_INV", data: invoice})
     let date =  invoiceOptions[index].SavedDate;
-    setDay(date);
+    // setDay(date);
+    dispatch({type: "SET_DAY", data: date})
     let no = invoiceOptions[index].SavedInvoiceNo;
-    setNum(no);
-    setLoader(true);
+    // setNum(no);
+    dispatch({type: "SET_NUM", data: no})
+    // setLoader(true);
+    dispatch({type: "LOADER"});
     async function invoiceData() {
       const products = await tesseractService.GetProductDetails(
         invoice
@@ -1501,14 +1561,17 @@ const SaveInvoiceData = () => {
             }
           return { ...row, sp, cp };
           });
-          setLoader(false);
+          // setLoader(false);
+          dispatch({type: "LOADER"});
+
           setTableData(table.filter((data) => data !== null));
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
         })
         .catch((err) => {
           console.log("error on mapping ocrdata", err)
-          setLoader(false);
+          // setLoader(false);
+          dispatch({type: "LOADER"});
         });
     });
   }
@@ -1637,11 +1700,7 @@ const SaveInvoiceData = () => {
                     // onClick={() => addForReview(element, index)}
                   >
                     <InfoOutlinedIcon
-                      style={
-                        reviewItems.includes(index)
-                          ? { backgroundColor: "green" }
-                          : null
-                      }
+                      style={element.isReviewed  === "true" ? {fill: "red"} : null}
                     /> 
                     {/* <AddShoppingCartIcon
                       style={
@@ -1782,12 +1841,15 @@ const SaveInvoiceData = () => {
                         newState.department = newValue.department;
                         newState.unitCost = newValue.cost;
                         newState.unitPrice = newValue.price;
-                        setShowPosState(newState);
+                        // setShowPosState(newState);
+                        dispatch({type: "SET_POS_STATE", data: newState})
                         setShowPosIndex(index);
                         setUnitCost(newValue.cost);
-                        setStateUpdated("");
+                        // setStateUpdated("");
                         if(isEmpty){
-                          setNotFounds("true");
+                          // setNotFounds("true");
+                          dispatch({type: "NOT_FOUNDS", data: "true"})
+
                           setRedState("false");
                         }
                         //setDisabled(false);
@@ -1977,7 +2039,8 @@ const SaveInvoiceData = () => {
     
         if (emptyColumn.length !== 0) {
           /**api to push  to not found list*/
-          setLoader(true);
+          // setLoader(true);
+          dispatch({type: "LOADER"});
           const responses = await Promise.all(
             notFoundItems.map(async (product) => {
               try {
@@ -2004,12 +2067,14 @@ const SaveInvoiceData = () => {
               }
             })
           );
-          setLoader(false);
+          // setLoader(false);
+          dispatch({type: "LOADER"});
         }
         const priceIncreasedProducts = tempTable.filter(
           (product) => product.priceIncrease !== 0
         );
-        setLoader(true);
+        // setLoader(true);
+        dispatch({type: "LOADER"});
         const res = await Promise.all(
           priceIncreasedProducts.map(async (product) => {
             try {
@@ -2025,7 +2090,9 @@ const SaveInvoiceData = () => {
           })
         );
         console.log(priceIncreasedProducts.length);
-        setLoader(false);
+        // setLoader(false);
+        dispatch({type: "LOADER"});
+
         setInventoryData(mergeDuplicates(tempTable));
         setPushToInventory(true);
     };
@@ -2129,11 +2196,13 @@ const SaveInvoiceData = () => {
       console.log(curDate);
       let date = curDate.getFullYear()+ "-" + (curDate.getMonth()+1) +"-"+ curDate.getDate();
       console.log(date);
-      setTodayDate(date);
+      // setTodayDate(date);
+      dispatch({type: "TODAY_DATE", data: date});
       // hicksvilleDropdown(HicksData);
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          setUserEmail(user.email);
+          // setUserEmail(user.email);
+          dispatch({type: "EMAIL", data: user.email})
             console.log('This is the user: ', user)
             console.log('This is the user: ', user.email);
         } else {
@@ -2277,6 +2346,10 @@ const SaveInvoiceData = () => {
         // });
     }, []);
 
+    console.log(apiLoader);
+    console.log(showPosState);
+    console.log(inv, num, day);
+    console.log(notFounds, unitsInCase, price);
     if (loader) {
       return <Spinner />;
     }
@@ -2285,8 +2358,7 @@ const SaveInvoiceData = () => {
       <div style={{marginTop: "100px", marginLeft: "700px"}}>
         <CircularProgress />
       </div>
-      ); 
-      
+      );       
     }
     return(
 
@@ -2390,14 +2462,20 @@ const SaveInvoiceData = () => {
                     type="text"
                     name="unitsInCase"
                     value={unitsInCase}
-                    onChange={(event) => setUnitsInCase(event.target.value)}
+                    onChange={(event) => {
+                      // setUnitsInCase(event.target.value)
+                      dispatch({type: "UNITS_IN_CASE", data: event.target.value})
+                    }}
                     />
                   <CLabel htmlFor="date">Case Cost</CLabel>
                   <CInput
                     type="text"
                     name="price"
                     value={price}
-                    onChange={(event) => setPrice(event.target.value)}
+                    onChange={(event) => {
+                      // setPrice(event.target.value)
+                      dispatch({type: "PRICE", data: event.target.value})
+                    }}
                     />
                 </CFormGroup>
               </CCol>

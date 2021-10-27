@@ -591,7 +591,9 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
   let data = req.body;
   data.InvoiceName = data.invoiceName;
   data.ItemCode = data.itemName;
-  console.log(data);
+  console.log("UPDATE LOG",data);
+  let invoiceCost = data.InvoiceUnitCost;
+  console.log("Invoice Cost", invoiceCost)
 
   let logData = {
     Description: data.Description,
@@ -611,7 +613,8 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
     CostIncrease: data.CostIncrease,
     CostDecrease: data.CostDecrease,
     CostSame: data.CostSame,
-    InvoiceUnitcost: data.InvoiceUnitCost, 
+    InvUnitCost: data.InvoiceUnitCost
+    // InvoiceUnitcost: data.InvoiceUnitCost
   };
 
 
