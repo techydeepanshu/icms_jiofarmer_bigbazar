@@ -739,7 +739,9 @@ const SaveInvoiceData = () => {
       const res = await inventoryService.linkingCorrect(data);
       console.log(res);
       if(res.statusText == "OK") {
-        alert("SUCCESS");
+        
+        const costChange = item.cp - item.cost;
+        
         let logState = {
           Description: item.description,
           PosName: item.posName,
@@ -756,15 +758,14 @@ const SaveInvoiceData = () => {
           InvoiceDate: day,
           Department: item.department,
           InvUnitCost: item.cp,
-          CostIncrease: item.priceIncrease == 1 ? "YES" : "",
-          CostDecrease: item.priceIncrease == -1 ? "YES" : "",
-          CostSame: item.priceIncrease == 0 ? "YES" : "",
+          CostIncrease: costChange > 0 ? "YES" : "",
+          CostDecrease: costChange < 0 ? "YES" : "",
+          CostSame: costChange == 0 ? "YES" : "",
           Unidentified: "YES"  
         }
         const res = await inventoryService.UnidentifiedLog(logState);
         console.log(res);
-
-
+        alert("SUCCESS");
         setProductsInTable();
       }else {
         alert("Some error occured");
@@ -784,6 +785,7 @@ const SaveInvoiceData = () => {
       }
       const result = await inventoryService.linkManually(data);
       console.log(result);
+      const costChange = item.cp - item.cost;
 
       let logState = {
         Description: item.description,
@@ -801,9 +803,9 @@ const SaveInvoiceData = () => {
         InvoiceDate: day,
         Department: item.department,
         InvUnitCost: item.cp,
-        CostIncrease: item.priceIncrease == 1 ? "YES" : "",
-        CostDecrease: item.priceIncrease == -1 ? "YES" : "",
-        CostSame: item.priceIncrease == 0 ? "YES" : ""
+        CostIncrease: costChange > 0 ? "YES" : "",
+        CostDecrease: costChange < 0 ? "YES" : "",
+        CostSame: costChange == 0 ? "YES" : ""
 
       }
 
@@ -1335,10 +1337,11 @@ const SaveInvoiceData = () => {
                     console.log(userEmail);
                     console.log(tableData[showPosIndex]);
                     const description = tableData[showPosIndex].description;
-                    const costChange = tableData[showPosIndex].priceIncrease;
+                    const costChange = tableData[showPosIndex].cp - data.value.SellerCost;
+                    console.log(costChange);
                     let a = "", b = "", c = "";
-                    if(costChange == 1) a = "YES";
-                    if(costChange == -1) b = "YES";
+                    if(costChange > 0) a = "YES";
+                    if(costChange < 0) b = "YES";
                     if(costChange == 0) c = "YES"
                     console.log(costChange);
                     console.log(description);
@@ -1660,6 +1663,9 @@ const SaveInvoiceData = () => {
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
             // console.log(element.isUpdated);
+            console.log(element);
+            let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
+            
     
             return (
               <tr
@@ -1715,6 +1721,7 @@ const SaveInvoiceData = () => {
                     {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
                     <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
                     <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
+                    <p>Margin(%) - {margin.toFixed(2)}</p>
                     <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
                     <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
                     {/* <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p> */}
