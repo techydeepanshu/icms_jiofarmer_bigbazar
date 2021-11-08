@@ -100,6 +100,20 @@ const logItemSchema = new Schema({
 });
 let logItemData = mongoose.model("linkinglogs", logItemSchema);
 
+const handwrittenInvoiceSchema = new Schema({
+  InvoiceName: String,
+  ItemName: String,
+  POS: String,
+  PosSKU: String,
+  Size: String,
+  Department: String,
+  SellerCost: String,
+  SellingPrice: String,
+  NewUnitCost: String,
+  NewUnitPrice: String,
+});
+let handwrittenLog = mongoose.model("handwrittenlogs", handwrittenInvoiceSchema); 
+
 const hicksvilleSchema = new Schema({
   
 });
@@ -206,7 +220,15 @@ console.log(invoiceNo);
 
 app.post("/generatelog", (req, res) => {
   let obj = req.body;
-  logItemData.insertMany([obj], (err, o) => {
+  handwrittenLog.insertMany([obj], (err, o) => {
+    if (err) res.json("Some error occured");
+    else res.json("Product created successfully");
+  });
+});
+
+app.post("/handwrittenlogs", (req, res) => {
+  let obj = req.body;
+  handwrittenLog.insertMany([obj], (err, o) => {
     if (err) res.json("Some error occured");
     else res.json("Product created successfully");
   });
