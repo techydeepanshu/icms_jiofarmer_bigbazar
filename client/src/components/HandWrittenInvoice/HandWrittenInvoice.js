@@ -49,7 +49,7 @@ const useStyles = makeStyles({
       },
 });
 
-const HandWrittenInvoice = () => {
+const HandwrittenInvoice = () => {
     const numOfCollections = dropdownOptions.length;
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
     const [invoice, setInvoice] = useState("");
@@ -75,6 +75,12 @@ const HandWrittenInvoice = () => {
         newUnitCost: "",
         newUnitPrice: ""
     });
+
+    let posProducts = []
+    let wooComProducts = [];
+    let singleItemData = [];
+    let updateSku = "";
+
 
     const toggleModal = () => {
       console.log(posProduct);
@@ -306,6 +312,7 @@ const HandWrittenInvoice = () => {
                         // setUnitCost(newValue.cost);
                         // setStateUpdated("");
                         setPosProduct(newState);
+                        singleItemData = []
                         
                         //setDisabled(false);
                         //updateOnHoverDetails(index);
@@ -468,4 +475,4 @@ const HandWrittenInvoice = () => {
     )
 }
 
-export default HandWrittenInvoice;
+export default HandwrittenInvoice;

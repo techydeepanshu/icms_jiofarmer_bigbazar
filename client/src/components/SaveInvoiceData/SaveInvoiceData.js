@@ -37,7 +37,8 @@ import { useSelector} from "react-redux";
 const useStyles = makeStyles({
         root: {
         width: "100%",
-        paddingTop: 50,
+        // paddingTop: 50,
+        // height: "125px"
         },
         container: {
             maxHeight: "80vh",
@@ -193,7 +194,7 @@ const SaveInvoiceData = () => {
     //     unitPrice: "",
     // });
 
-//***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
+  //***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
 
     //Function to fetch wooCom Prpducts.
     async function getProducts() {
@@ -349,8 +350,8 @@ const SaveInvoiceData = () => {
       dispatch({type: "LOADER"});
     };
 
-     //PUSH TO POS.
-     const pushToPOS = async (products) => {
+    //PUSH TO POS.
+    const pushToPOS = async (products) => {
       // setLoader(true);
       dispatch({type: "LOADER"});
       console.log(products);
@@ -643,8 +644,8 @@ const SaveInvoiceData = () => {
     
     
   }
-//***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
-
+  //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
+ 
   const saveDetails = async () => {
     console.log(detailsIndex);
     console.log(details);
@@ -741,10 +742,11 @@ const SaveInvoiceData = () => {
       if(res.statusText == "OK") {
         
         const costChange = item.cp - item.cost;
+        const invError = item.cp >= 3*item.cost ? "YES" : "";
         
         let logState = {
-          Description: item.description,
-          PosName: item.posName,
+          InvoiceDescription: item.description,
+          PosDescription: item.posName,
           SKU: item.posSku,
           Barcode: item.barcode,
           InvoiceName: inv,
@@ -752,16 +754,17 @@ const SaveInvoiceData = () => {
           LinkingDate: todayDate,
           PersonName: userEmail,
           Size: item.size,
-          UnitCost: item.cost,
-          UnitPrice: item.sellingPrice,
+          PosUnitCost: item.cost,
+          PosUnitPrice: item.sellingPrice,
           InvoiceNo: num,
           InvoiceDate: day,
           Department: item.department,
           InvUnitCost: item.cp,
-          CostIncrease: costChange > 0 ? "YES" : "",
-          CostDecrease: costChange < 0 ? "YES" : "",
-          CostSame: costChange == 0 ? "YES" : "",
-          Unidentified: "YES"  
+          CostIncrease: "",
+          CostDecrease: "",
+          CostSame:  "",
+          Unidentified: "YES",
+          InvError: invError  
         }
         const res = await inventoryService.UnidentifiedLog(logState);
         console.log(res);
@@ -785,11 +788,21 @@ const SaveInvoiceData = () => {
       }
       const result = await inventoryService.linkManually(data);
       console.log(result);
-      const costChange = item.cp - item.cost;
 
+      //Update unit cost from excel.
+      const skuData = {sku: item.posSku};
+      const res = await inventoryService.fetchProductFromPosList(skuData);
+      console.log(res); 
+
+
+
+      //Log Generate.
+      const costChange = item.cp - item.cost;
+      const invError = item.cp >= 3*item.cost ? "YES" : "";
+      console.log(invError);
       let logState = {
-        Description: item.description,
-        PosName: item.posName,
+        InvoiceDescription: item.description,
+        PosDescription: item.posName,
         SKU: item.posSku,
         Barcode: item.barcode,
         InvoiceName: inv,
@@ -797,21 +810,22 @@ const SaveInvoiceData = () => {
         LinkingDate: todayDate,
         PersonName: userEmail,
         Size: item.size,
-        UnitCost: item.cost,
-        UnitPrice: item.sellingPrice,
+        PosUnitCost: item.cost,
+        PosUnitPrice: item.sellingPrice,
         InvoiceNo: num,
         InvoiceDate: day,
         Department: item.department,
         InvUnitCost: item.cp,
-        CostIncrease: costChange > 0 ? "YES" : "",
-        CostDecrease: costChange < 0 ? "YES" : "",
-        CostSame: costChange == 0 ? "YES" : ""
-
+        CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
+        CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
+        CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
+        InvError: invError
       }
-
       console.log(logState);
       const logResult = await inventoryService.linkManuallyLog(logState);
       console.log(logResult);
+      
+      
       
       
       if(result.statusText == "OK"){
@@ -822,7 +836,6 @@ const SaveInvoiceData = () => {
         setProductsInTable();
         // setProductsInTableNew(inv, num, day);
       }
-
 
     }
 
@@ -1337,12 +1350,16 @@ const SaveInvoiceData = () => {
                     console.log(userEmail);
                     console.log(tableData[showPosIndex]);
                     const description = tableData[showPosIndex].description;
+                    
+                    //Cost chnage and invoice error handling logic.
                     const costChange = tableData[showPosIndex].cp - data.value.SellerCost;
                     console.log(costChange);
                     let a = "", b = "", c = "";
-                    if(costChange > 0) a = "YES";
-                    if(costChange < 0) b = "YES";
-                    if(costChange == 0) c = "YES"
+                    const invError = tableData[showPosIndex].cp >= 3*tableData[showPosIndex].cost ? "YES" : "";
+                    a = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
+                    b = invError == "YES" ? "" : costChange < 0 ? "YES" : ""; 
+                    c = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
+
                     console.log(costChange);
                     console.log(description);
                     console.log(todayDate);
@@ -1358,7 +1375,8 @@ const SaveInvoiceData = () => {
                     logState.CostIncrease = a;                     
                     logState.CostDecrease = b; 
                     logState.CostSame = c;
-                    logState.InvoiceUnitCost = tableData[showPosIndex].cp;                   
+                    logState.InvoiceUnitCost = tableData[showPosIndex].cp;
+                    logState.InvError = invError;                   
                     console.log(logState);
                     
 
@@ -2370,26 +2388,27 @@ const SaveInvoiceData = () => {
     return(
 
         <div className="container-fluid">
+          <br />
             <Paper className={classes.root}>
                 <Grid style={{ display: "flex" }}>
-                    <Autocomplete
-                        value={invoice}
-                        onChange={(event, newValue) => {
-                            // console.log("new value", newValue)
-                            if (newValue) {
-                            setInvoice(newValue);
-                            }
-                            // getInvoices(newValue);
-                        }}
-                        id="combo-box"
-                        options={dropdownOptions}
-                        getOptionLabel={(option) => option.value}
-                        style={{ width: 250 }}
-                        autoHighlight
-                        renderInput={(params) => (
-                            <TextField {...params} label={dropdownLabel} variant="outlined" />
-                        )}
-                    />
+                  <Autocomplete
+                      value={invoice}
+                      onChange={(event, newValue) => {
+                          // console.log("new value", newValue)
+                          if (newValue) {
+                          setInvoice(newValue);
+                          }
+                          // getInvoices(newValue);
+                      }}
+                      id="combo-box"
+                      options={dropdownOptions}
+                      getOptionLabel={(option) => option.value}
+                      style={{ width: 250 }}
+                      autoHighlight
+                      renderInput={(params) => (
+                          <TextField {...params} label={dropdownLabel} variant="outlined" />
+                      )}
+                  />
                     {/* <Autocomplete
                         value={invoiceNo}
                         onChange={(event, newValue) => {
@@ -2426,27 +2445,101 @@ const SaveInvoiceData = () => {
                         }}
                         onChange={(event) => setDate(event.target.value)}          
                     /> */}
-                    <button  style={{backgroundColor: "green",
-                        border: "none",
-                        color: "white",
-                        padding: "4px 8px",
-                        textAlign: "center",
-                        textDecoration: "none",
-                        display: "inline-block",
-                        fontSize: "14px",
-                        align: "left",
-                        marginLeft: 20}}
-                        // onClick={setProductsInTable}
-                        onClick={getInvoices}
-                        >
-                            Fetch Invoice Data
-                    </button>
-                </Grid>
+                  <button  style={{backgroundColor: "green",
+                      height: "50px",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left",
+                      marginLeft: 20}}
+                      // onClick={setProductsInTable}
+                      onClick={getInvoices}
+                      >
+                          Fetch Invoice Data
+                  </button>
+
+                  <div style={{marginLeft: "20px"}}>
+                  <table>
+                  <tbody>
+                      <tr style={{height: "21px"}}> 
+                      <td style={{display: "flex",
+                          width: "20px",
+                          height: "20px",
+                          backgroundColor: "rgb(238,129,237)",
+                          borderRadius: "50%",
+                          }}></td>
+                          {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                      <td style={{height: "21px"}}><p >Product has been linked(on hovering).</p></td>
+                      </tr>
+                      <tr style={{height: "21px"}}> 
+                      <td style={{display: "flex",
+                          width: "20px",
+                          height: "20px",
+                          backgroundColor: "rgb(144,238,143)",
+                          borderRadius: "50%",
+                          }}></td>
+                          {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                      <td style={{height: "21px"}}><p >Product has been updated on POS.</p></td>
+                      </tr>
+                      <tr style={{height: "21px"}}> 
+                      <td style={{display: "flex",
+                          width: "20px",
+                          height: "20px",
+                          backgroundColor: "gb(231, 230, 162)",
+                          borderRadius: "50%",
+                          }}></td>
+                          {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                      <td style={{height: "21px"}}><p >Product has not been linked(on hovering).</p></td>
+                      </tr>
+                      </tbody>
+              </table>
+              </div>
+              <div style={{marginLeft: "20px"}}>
+              <table>
+              <tbody>
+                  <tr style={{height: "21px"}}> 
+                  <td style={{display: "flex",
+                      width: "20px",
+                      height: "20px",
+                      backgroundColor: "rgb(210,180,140)",
+                      borderRadius: "50%",
+                      }}></td>
+                      {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                  <td style={{height: "21px"}}><p >Product is free.</p></td>
+                  </tr>
+                  <tr style={{height: "21px"}}> 
+                  <td style={{display: "flex",
+                      width: "20px",
+                      height: "20px",
+                      backgroundColor: "rgb(24,140,255)",
+                      borderRadius: "50%",
+                      }}></td>
+                      {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                  <td style={{height: "21px"}}><p >Invoice Unit Cost is greater </p></td>
+                  </tr>
+                  <tr style={{height: "21px"}}> 
+                  <td style={{display: "flex",
+                      width: "20px",
+                      height: "20px",
+                      backgroundColor: "rgb(255,179,26)",
+                      borderRadius: "50%",
+                      }}></td>
+                      {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                  <td style={{height: "21px"}}><p >Invoice Unit Cost is lesser.</p></td>
+                  </tr>
+                  </tbody>
+          </table>
+          </div>
+        </Grid>
+
             </Paper>
 
             {openInvoice ? (<div><div><p>Invoice No.-- {num}</p></div><div><p>Invoice Date -- {day}</p></div></div>) : null}
 
-            {/* { apiLoader ? <CircularProgress /> : null} */}
         
             {pushToInventory ? (
             <UpdateInventory
