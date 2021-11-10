@@ -596,8 +596,8 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
   console.log("Invoice Cost", invoiceCost)
 
   let logData = {
-    Description: data.Description,
-    PosName: data.value.POS,
+    InvoiceDescription: data.Description,
+    PosDescription: data.value.POS,
     SKU: data.value.PosSKU,
     Barcode: data.value.Barcode,
     InvoiceName: data.invoiceName,
@@ -605,15 +605,16 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
     LinkingDate: data.LinkingDate,
     PersonName: data.PersonName,
     Size: data.value.Size,
-    UnitCost: data.value.SellerCost,
-    UnitPrice: data.value.SellingPrice,
+    PosUnitCost: data.value.SellerCost,
+    PosUnitPrice: data.value.SellingPrice,
     InvoiceNo: data.InvoiceNo,
     InvoiceDate: data.InvoiceDate,
     Department: data.value.Department,
     CostIncrease: data.CostIncrease,
     CostDecrease: data.CostDecrease,
     CostSame: data.CostSame,
-    InvUnitCost: data.InvoiceUnitCost
+    InvUnitCost: data.InvoiceUnitCost,
+    InvError: data.invError
     // InvoiceUnitcost: data.InvoiceUnitCost
   };
 

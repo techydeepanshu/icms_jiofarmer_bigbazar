@@ -790,9 +790,9 @@ const SaveInvoiceData = () => {
       console.log(result);
 
       //Update unit cost from excel.
-      const skuData = {sku: item.posSku};
-      const res = await inventoryService.fetchProductFromPosList(skuData);
-      console.log(res); 
+      // const skuData = {sku: item.posSku};
+      // const res = await inventoryService.fetchProductFromPosList(skuData);
+      // console.log(res); 
 
 
 
