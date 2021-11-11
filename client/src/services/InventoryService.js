@@ -182,7 +182,7 @@ export class InventoryService {
 
   async fetchProductFromPosList(data) {
     console.log(data);
-    const res = await Axios.post(appendURL + "/api/invoice/fetchproductfromposlist", data);
+    const res = await Axios.get(appendURL + "/api/invoice/fetchproductfromposlist", data);
     return res.data;
   }
 }

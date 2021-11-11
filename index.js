@@ -129,6 +129,29 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
 });
 
 //added by Parikshit.
+app.get("/api/invoice/fetchproductfromposlist", validateLogin, (req, res) => {
+  const data = req.query;
+  
+  console.log(req.query);
+  let options = {
+    method: "GET",
+    url: `http://3.91.159.202:3001/fetchproductfromposlist/`,
+    body: {data: data},
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  // request(options, callback);
+});
+
+//added by Parikshit.
 app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
   const invoice = req.query;
   

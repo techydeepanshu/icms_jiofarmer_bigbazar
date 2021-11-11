@@ -1261,6 +1261,8 @@ const DisplayData = (props) => {
       console.log(ocrData);
       invoiceData()
         .then((products) => {
+          console.log("OCR DAATA");
+          console.log(ocrData);
           /**post processing the table data after returning from filter */
           function convertToUpperCase(obj) {
             let newObj = {};

@@ -686,7 +686,7 @@ const SaveInvoiceData = () => {
     //   array.push(item.SavedInvoiceNo);
     // })
     console.log(res);
-    setInvoiceOptions(res);
+    setInvoiceOptions(res.reverse());
     
     // setApiLoader(false);
     dispatch({type: "API_LOADER"})
@@ -1690,7 +1690,7 @@ const SaveInvoiceData = () => {
                 key={index}
                 className={isEmpty ? styles.red : isFree ? styles.free : null}
                 // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
-                style={element.linkingCorrect == "false" ? {backgroundColor: "orange"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
+                style={element.linkingCorrect == "false" ? {backgroundColor: "pink"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
                 <td>{index + 1}</td>
@@ -2489,8 +2489,9 @@ const SaveInvoiceData = () => {
                       <td style={{display: "flex",
                           width: "20px",
                           height: "20px",
-                          backgroundColor: "gb(231, 230, 162)",
+                          backgroundColor: "rgb(231, 230, 162)",
                           borderRadius: "50%",
+                          // border: "1px solid"
                           }}></td>
                           {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
                       <td style={{height: "21px"}}><p >Product has not been linked(on hovering).</p></td>
@@ -2530,6 +2531,23 @@ const SaveInvoiceData = () => {
                       }}></td>
                       {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
                   <td style={{height: "21px"}}><p >Invoice Unit Cost is lesser.</p></td>
+                  </tr>
+                  </tbody>
+          </table>
+          </div>
+
+          <div style={{marginLeft: "20px"}}>
+              <table>
+              <tbody>
+                  <tr style={{height: "21px"}}> 
+                  <td style={{display: "flex",
+                      width: "20px",
+                      height: "20px",
+                      backgroundColor: "pink",
+                      borderRadius: "50%",
+                      }}></td>
+                      {/* <td style={{width: "0.25px", height: "0.25px", margin: "0px 0px 0px 0px"}}></td> */}
+                  <td style={{height: "21px"}}><p >Product unidentified in POS.</p></td>
                   </tr>
                   </tbody>
           </table>
