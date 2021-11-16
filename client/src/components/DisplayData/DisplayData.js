@@ -866,7 +866,18 @@ const DisplayData = (props) => {
             </td>
             
             <td>{element.description}</td>
-            <td>{element.pieces}</td>
+            {/* <td>{element.pieces}</td> */}
+            <td>
+              <TextField
+                type="tel"
+                value={element.pieces}
+                variant="outlined"
+                onChange={(e) => {
+                  handleChange(index, "pieces", e.target.value);
+                }}
+                style={{ width: 100 }}
+              />
+            </td>
             <td>
               <TextField
                 type="tel"
@@ -891,7 +902,18 @@ const DisplayData = (props) => {
               />
             </td>
             <td>{element.extendedPrice}</td>
-            <td>{element.cp}</td>
+            {/* <td>{element.cp}</td> */}
+            <td>
+              <TextField
+                type="tel"
+                value={element.cp}
+                variant="outlined"
+                onChange={(e) => {
+                  handleChange(index, "cp", e.target.value);
+                }}
+                style={{ width: 100 }}
+              />
+            </td>
             <td>
               <TextField
                 type="tel"
@@ -1132,7 +1154,7 @@ const DisplayData = (props) => {
       tempTableData[row]["posSku"] = productDetails[value].PosSKU;
     }
 
-    if (key === "unitPrice" || key === "sp" || key === "itemNo") {
+    if (key === "unitPrice" || key === "sp" || key === "itemNo" || key === "pieces") {
       let cp = parseFloat(tempTableData[row]["cp"]);
       let sp = parseFloat(tempTableData[row]["sp"]);
       let markup = ((sp - cp) / cp) * 100;
@@ -1145,6 +1167,8 @@ const DisplayData = (props) => {
       // }
       tempTableData[row]["markup"] = isNaN(markup) ? 0 : markup.toFixed(2);
       tempTableData[row]["cp"] = isNaN(cost) ? 0 : cost.toFixed(2);
+      console.log("PIECES");
+      tempTableData[row]["pieces"] = value;
     }
 
     if (key === "qty" || key === "unitPrice") {

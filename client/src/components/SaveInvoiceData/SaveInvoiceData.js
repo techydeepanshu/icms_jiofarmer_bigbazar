@@ -633,6 +633,36 @@ const SaveInvoiceData = () => {
       }
       console.log(data1)
       await inventoryService.UpdateDBafterPosUpdate(data1);
+
+      //Log Generate.
+      console.log("PRODUCTT");
+      console.log(singleItemData);
+      const log = {
+        InvoiceName: invoice.slug,
+        InvoiceDate: day,
+        ItemNo: singleItemData[0].itemNo,
+        InvoiceDescription: singleItemData[0].description,
+        PosDescription: singleItemData[0].posName,
+        OldUnitCost: singleItemData[0].cost,
+        OldUnitPrice: singleItemData[0].sellingPrice,
+        OldMargin: singleItemData[0].margin.toFixed(2).toString(),
+        NewUnitCost: singleItemData[0].cp,
+        NewUnitPrice: singleItemData[0].sp,
+        NewMargin:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
+        UpdateDate: todayDate,
+        Person: userEmail,
+        TimeStamp: new Date().toTimeString().split(" ")[0], 
+      }
+      console.log(log);
+
+      const logUpdate = await inventoryService.posLogs(log);
+      console.log(logUpdate)
+
+
+
+
+
+
       setProductsInTable();
     } else {
       alert("POS not updated!!");
@@ -933,6 +963,7 @@ const SaveInvoiceData = () => {
                 products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
               row.linkingCorrect = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
+              row.margin = ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100;
               //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
               let sp = 0;
               let cp = 0;
@@ -1548,6 +1579,7 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
             row.linkingCorrect = 
               products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
+            row.margin = ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100;
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;

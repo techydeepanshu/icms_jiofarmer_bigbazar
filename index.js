@@ -684,6 +684,28 @@ app.post("/api/invoice/linkmanuallylog", validateLogin, function (req, res) {
 });
 
 //added by Parikshit.
+app.post("/api/invoice/poslogs", validateLogin, function (req, res) {
+  const data = req.body;
+  console.log(data);
+  let options = {
+    method: "POST",
+    url: "http://3.91.159.202:3001/generateposlog",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+//added by Parikshit.
 app.post("/api/invoice/handwrittenlogs", validateLogin, function (req, res) {
   const data = req.body;
   console.log(data);

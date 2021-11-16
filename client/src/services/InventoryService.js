@@ -185,4 +185,10 @@ export class InventoryService {
     const res = await Axios.get(appendURL + "/api/invoice/fetchproductfromposlist", data);
     return res.data;
   }
+
+  async posLogs(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/poslogs", data)
+    return res.data;
+  }
 }
