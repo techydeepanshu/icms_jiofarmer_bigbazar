@@ -643,15 +643,18 @@ const SaveInvoiceData = () => {
         ItemNo: singleItemData[0].itemNo,
         InvoiceDescription: singleItemData[0].description,
         PosDescription: singleItemData[0].posName,
-        OldUnitCost: singleItemData[0].cost,
-        OldUnitPrice: singleItemData[0].sellingPrice,
-        OldMargin: singleItemData[0].margin.toFixed(2).toString(),
-        NewUnitCost: singleItemData[0].cp,
-        NewUnitPrice: singleItemData[0].sp,
-        NewMargin:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
+        PosUnitCost: singleItemData[0].cost,
+        PosUnitPrice: singleItemData[0].sellingPrice,
+        OldMarkup: singleItemData[0].margin.toFixed(2).toString(),
+        InvUnitCost: singleItemData[0].cp,
+        InvUnitPrice: singleItemData[0].sp,
+        NewMarkup:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
         UpdateDate: todayDate,
         Person: userEmail,
         TimeStamp: new Date().toTimeString().split(" ")[0], 
+        InvCaseCost: singleItemData[0].unitPrice,
+        InvUnitsInCase: singleItemData[0].pieces,
+        SKU: singleItemData[0].posSku
       }
       console.log(log);
 
@@ -925,7 +928,7 @@ const SaveInvoiceData = () => {
                 // products[row.itemNo] !== undefined
                 //   ? products[row.itemNo].Description
                 //   : row.description;
-              row.pieces =
+              row.pieces = 
                 products[row.itemNo] !== undefined
                   ? products[row.itemNo].Quantity
                   : 0;
@@ -963,7 +966,7 @@ const SaveInvoiceData = () => {
                 products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
               row.linkingCorrect = 
                 products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
-              row.margin = ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100;
+              row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
               //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
               let sp = 0;
               let cp = 0;
@@ -1579,7 +1582,7 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
             row.linkingCorrect = 
               products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
-            row.margin = ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100;
+            row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;

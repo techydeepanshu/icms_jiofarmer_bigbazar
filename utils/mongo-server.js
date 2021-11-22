@@ -106,15 +106,18 @@ const posLogItemSchema = new Schema({
   ItemNo: String,
   InvoiceDescription: String,
   PosDescription: String,
-  OldUnitCost: String,
-  OldUnitPrice: String,
-  OldMargin: String,
-  NewUnitCost: String,
-  NewUnitPrice: String,
-  NewMargin: String,
+  PosUnitCost: String,
+  PosUnitPrice: String,
+  OldMarkup: String,
+  InvUnitCost: String,
+  InvUnitPrice: String,
+  NewMarkup: String,
   UpdateDate: String,
   Person: String,
   TimeStamp: String,
+  HandWritten: {type: String, default: ""},
+  InvCaseCost: String,
+  InvUnitsInCase: String
 })
 const posLogModel = mongoose.model("poslogs", posLogItemSchema);
 

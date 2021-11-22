@@ -55,13 +55,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "annsecostores",
   },
-  // {
-  //   value: "Gurme Guru",
-  //   slug: "gurme-guru",
-  //   jsonName: "gurme-guru.json",
-  //   emptyColumn: true,
-  //   databaseName: "gurmeguru",
-  // },
+  {
+    value: "Gurme Guru",
+    slug: "gurme-guru",
+    jsonName: "gurme-guru.json",
+    emptyColumn: true,
+    databaseName: "gurmeguru",
+  },
   // {
   //   value: "Katzman Produce",
   //   slug: "katzman-produce",
@@ -213,13 +213,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "familyfives",
   // }, 
-  // {
-  //   value: "Gaint Farm",
-  //   slug: "gaint-farm",
-  //   jsonName: "gaint-farm.json",
-  //   emptyColumn: true,
-  //   databaseName: "gaint-farm",
-  // }, 
+  {
+    value: "Gaint Farm",
+    slug: "gaint-farm",
+    jsonName: "gaint-farm.json",
+    emptyColumn: true,
+    databaseName: "gaintfarms",
+  }, 
   // {
   //   value: "Hellenic Treasures",
   //   slug: "hellenic-treasures",
@@ -311,13 +311,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "azmetrodistribution",
   // }, 
-  // {
-  //   value: "Duty Free Produce",
-  //   slug: "duty-free-produce",
-  //   jsonName: "chetak-products.json",
-  //   emptyColumn: false,
-  //   databaseName: "chetakproducts",
-  // },
+  {
+    value: "Duty Free Produce",
+    slug: "duty-free-produce",
+    jsonName: "duty-free-produce.json",
+    emptyColumn: false,
+    databaseName: "dutyfreeproduces",
+  },
   // {
   //   value: "Farmers Choice Dairy",
   //   slug: "farmers-choice-dairy",

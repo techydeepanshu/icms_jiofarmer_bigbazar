@@ -136,6 +136,13 @@ const InvoiceMapping = [
     databaseName: "dsasnacks",
   },
   {
+    value: "Duty Free Produce",
+    slug: "duty-free-produce",
+    jsonName: "duty-free-produce.json",
+    emptyColumn: false,
+    databaseName: "dutyfreeproduces",
+  },
+  {
     value: "East end",
     slug: "east-end",
     jsonName: "east-end.json",
