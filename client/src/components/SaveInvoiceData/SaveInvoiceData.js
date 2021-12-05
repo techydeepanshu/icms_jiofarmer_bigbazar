@@ -678,6 +678,34 @@ const SaveInvoiceData = () => {
     
   }
   //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
+
+  const updateUnits = async (index) => {
+    const item = tableData[index];
+    console.log(item);
+    const data = {
+      invoiceName: inv,
+      itemName: item.itemNo,
+      value: {
+        Quantity: item.pieces
+      }
+    }
+    inventoryService
+    .UpdateProductFields(data)
+    .then((res) => {
+      if (!res) {
+        throw new Error("Product not updated")
+      }
+      console.log(res);
+      alert("Successfully updated fields");
+      // setStateUpdated(true);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Some error occuured in creating product");
+    })
+    .finally(setProductsInTable());
+    // console.log(res);
+  }
  
   const saveDetails = async () => {
     console.log(detailsIndex);
@@ -1716,7 +1744,7 @@ const SaveInvoiceData = () => {
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
             // console.log(element.isUpdated);
-            console.log(element);
+            // console.log(element);
             let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
             
     
@@ -1935,7 +1963,30 @@ const SaveInvoiceData = () => {
                 </td>
                 
                 <td>{element.description}</td>
-                <td>{element.pieces}</td>
+                {/* <td>{element.pieces}</td> */}
+                <td>
+                  <TextField
+                    type="tel"
+                    value={element.pieces}
+                    variant="outlined"
+                    onChange={(e) => {
+                      handleChange(index, "pieces", e.target.value);
+                    }}
+                    style={{ width: 100 }}
+                  />
+                  <button onClick={() => {updateUnits(index)}} style={{
+                    backgroundColor: "#008CBA",
+                    border: "none",
+                    color: "white",
+                    padding: "5px 16px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "inline-block",
+                    fontSize: "10px",
+                    margin: "4px 2px",
+                    cursor: "pointer",
+                  }}>Update Units</button> 
+                </td>
                 <td>
                   <TextField
                     type="tel"
@@ -2426,6 +2477,7 @@ const SaveInvoiceData = () => {
           <br />
             <Paper className={classes.root}>
                 <Grid style={{ display: "flex" }}>
+                
                   <Autocomplete
                       value={invoice}
                       onChange={(event, newValue) => {

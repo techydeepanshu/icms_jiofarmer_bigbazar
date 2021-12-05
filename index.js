@@ -76,8 +76,8 @@ app.get("/api/invoice/gethicksvilledata", validateLogin, (req, res) => {
   const saveDate = "05/10/2021";
   const fetchDate = "05/10/2021";
   const input = req.query.input;
-  console.log("IN INDEX");
-  console.log(req.query);
+  // console.log("IN INDEX");
+  // console.log(req.query);
 
   // const invoiceNo = req.query["invoiceNo"];
   // const date = req.query["date"];
@@ -114,6 +114,31 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
     method: "GET",
     url: `http://3.91.159.202:3001/getsaveinvoicedata/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date },
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+app.get("/api/invoice/getitemhandwritten", validateLogin, (req, res) => {
+  // console.log(req);
+  const data = req.query;
+  console.log(data);
+  let invoice = getDBInvoiceName(data.slug);
+  console.log(invoice);
+  // console.log("1" + date + "1");
+  let options = {
+    method: "GET",
+    url: `http://3.91.159.202:3001/getitemhandwritten/`,
+    body: data,
     json: true,
   };
   function callback(error, response, body) {
@@ -542,6 +567,7 @@ app.post("/api/pos/Product/ManageItem", validateLogin, function (req, res) {
 });
 
 app.put("/api/invoice/product/update", validateLogin, function (req, res) {
+  
   const data = req.body;
   console.log(data);
   const { invoiceName, itemName, value } = data;

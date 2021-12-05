@@ -191,4 +191,10 @@ export class InventoryService {
     const res = await Axios.post(appendURL + "/api/invoice/poslogs", data)
     return res.data;
   }
+
+  async getItemForHandwrittenInvoice(data) {
+    console.log(data);
+    const res = await Axios.get(appendURL + "/api/invoice/getitemhandwritten", {params: data});
+    return res.data;
+  }
 }

@@ -28,6 +28,13 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import { useSelector, useDispatch } from "react-redux";
+import { TesseractService } from "../../services/TesseractService";
+import Button from "../../UI/Button";
+import styles from "../DisplayData/DisplayData.module.css";
+import IconButton from "@material-ui/core/IconButton";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import Cancel from "@material-ui/icons/Cancel";
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
 const useStyles = makeStyles({
     root: {
@@ -55,10 +62,17 @@ const useStyles = makeStyles({
 });
 
 const HandwrittenInvoice = () => {
+    // const [loader, setLoader] = useState();
+    const tesseractService = new TesseractService();
+    const [tableData, setTableData] = useState([]);
+    const [productDetails, setProductDetails] = useState([]);
+    const [itemNoDropdown, setItemNoDropdown] = useState([]);
+
     const dispatch = useDispatch();
     const numOfCollections = dropdownOptions.length;
     const dropdownLabel = "Select Invoice("+   numOfCollections   + ")";
-    const [invoice, setInvoice] = useState("");
+    // const [invoice, setInvoice] = useState("");
+    let invoice = "";
     const classes = useStyles();
     const inventoryService = new InventoryService();
     const [options, setOptions] = useState([]);
@@ -74,6 +88,18 @@ const HandwrittenInvoice = () => {
 
     const [newUnitCost, setNewUnitCost] = useState("");
     const [newUnitPrice, setNewUnitPrice] = useState("");
+
+    const [showPosIndex, setShowPosIndex] = useState(-1);
+    const showPosState = useSelector(state => state.showPosState);
+    const notFounds = useSelector(state => state.redItems.notFounds);
+
+    const [detailsModal, setDetailsModal] = useState(false);
+    const [details, setDetails] = useState("");
+    const [detailsIndex, setDetailsIndex] = useState(-1);
+    const [unitCost, setUnitCost] = useState("");
+    const [redState, setRedState] = useState("true");
+
+    
     
     const [posProduct, setPosProduct] = useState({
       isReviewed: "",
@@ -98,6 +124,30 @@ const HandwrittenInvoice = () => {
     let singleItemData = [];
     let updateSku = "";
     let itemNo = "";
+
+    const header = [
+      "Serial No.",
+      "Barcode",
+      "POS SKU",
+      "Qty Shipped",,
+      "Unit Cost",
+      "ITEM NO",
+      "Link Product",
+      
+      "DESCRIPTION",
+      "Units in  Case",
+      "Case cost",
+      "Extended Price",
+     
+      "Unit Price",
+      "Mark up (%)",
+      "Add Details",
+      // "Tick to Delete",
+      "Update POS",
+      // "Reverse POS Update",
+      "NO LINKING",
+      "Serial No.(2)"
+  ];
 
 //*********************************************************************POS UPDATE STARTS******************************************* */    
 
@@ -502,10 +552,616 @@ const HandwrittenInvoice = () => {
     
   }
 //*********************************************************************POS UPDATE ENDS******************************************* */
+  const reverseUpdate = async(index) => {
+  console.log(index);
+  console.log(tableData);
+  console.log(tableData[index]);
+  let item = tableData[index];
+  let data = {
+    invoice: invoice.slug,
+    itemNo: item.itemNo,
+  }
+  const result = await inventoryService.reverseUpdate(data);
+  console.log(result);
+  if(result.ok == 1){
+    setProductsInTable();
+  }else {
+    alert("Some error occured in updation");
+  }
+    }
 
+  const linkManually = async(index) => {
+  console.log(index);
+  console.log(tableData);
+  console.log(tableData[index]);
+  let item = tableData[index];
+  console.log(item)
+  let data = {
+    invoice: invoice.slug,
+    itemNo: item.itemNo,
+  }
+  const result = await inventoryService.linkManually(data);
+  console.log(result);
+
+  //Update unit cost from excel.
+  // const skuData = {sku: item.posSku};
+  // const res = await inventoryService.fetchProductFromPosList(skuData);
+  // console.log(res); 
+
+
+
+  //Log Generate.
+  const costChange = item.cp - item.cost;
+  const invError = item.cp >= 3*item.cost ? "YES" : "";
+  console.log(invError);
+  let logState = {
+    InvoiceDescription: item.description,
+    PosDescription: item.posName,
+    SKU: item.posSku,
+    Barcode: item.barcode,
+    InvoiceName: invoice.slug,
+    ItemCode: item.itemNo,
+    LinkingDate: todayDate,
+    PersonName: userEmail,
+    Size: item.size,
+    PosUnitCost: item.cost,
+    PosUnitPrice: item.sellingPrice,
+    // InvoiceNo: num,
+    // InvoiceDate: day,
+    Department: item.department,
+    InvUnitCost: item.cp,
+    CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
+    CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
+    CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
+    InvError: invError
+  }
+  console.log(logState);
+  const logResult = await inventoryService.linkManuallyLog(logState);
+  console.log(logResult);
+  
+  
+  
+  
+  if(result.statusText == "OK"){
+    setProductsInTable();
+    // setProductsInTableNew(inv, num, day);
+  }else {
+    alert("Some error occured in updation");
+    setProductsInTable();
+    // setProductsInTableNew(inv, num, day);
+  }
+
+    }
+
+  const updateUnits = async (index) => {
+    const item = tableData[index];
+    console.log(item);
+    const data = {
+      invoiceName: invoice.slug,
+      itemName: item.itemNo,
+      value: {
+        Quantity: item.pieces
+      }
+    }
+    inventoryService
+    .UpdateProductFields(data)
+    .then((res) => {
+      if (!res) {
+        throw new Error("Product not updated")
+      }
+      console.log(res);
+      alert("Successfully updated fields");
+      // setStateUpdated(true);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Some error occuured in creating product");
+    })
+    .finally(setProductsInTable());
+    // console.log(res);
+    }
+
+  const linkingCorrect = async (index) => {
+      console.log(index);
+      console.log(tableData);
+      console.log(tableData[index]);
+      let item = tableData[index];
+      console.log(item)
+      let data = {
+        invoice: invoice.slug,
+        itemNo: item.itemNo,
+      }
+      console.log(data);
+      const res = await inventoryService.linkingCorrect(data);
+      console.log(res);
+      if(res.statusText == "OK") {
+        
+        const costChange = item.cp - item.cost;
+        const invError = item.cp >= 3*item.cost ? "YES" : "";
+        
+        let logState = {
+          InvoiceDescription: item.description,
+          PosDescription: item.posName,
+          SKU: item.posSku,
+          Barcode: item.barcode,
+          InvoiceName: invoice.slug,
+          ItemCode: item.itemNo,
+          LinkingDate: todayDate,
+          PersonName: userEmail,
+          Size: item.size,
+          PosUnitCost: item.cost,
+          PosUnitPrice: item.sellingPrice,
+          // InvoiceNo: num,
+          // InvoiceDate: day,
+          Department: item.department,
+          InvUnitCost: item.cp,
+          CostIncrease: "",
+          CostDecrease: "",
+          CostSame:  "",
+          Unidentified: "YES",
+          InvError: invError  
+        }
+        const res = await inventoryService.UnidentifiedLog(logState);
+        console.log(res);
+        alert("SUCCESS");
+        setProductsInTable();
+      }else {
+        alert("Some error occured");
+        setProductsInTable();
+      }
+    }
+
+  // const reversePOSUpdate = async(index) => {
+  //   console.log(index);
+  //   console.log(tableData);
+  //   console.log(tableData[index]);
+  //   let item = tableData[index];
+  //   const result = await inventoryService.reversePOSUpdate(inv, num, day, item.itemNo);
+  //   if(result.ok == 1){
+  //     setProductsInTable();
+  //   }else {
+  //     alert("Some error occured in updation");
+  //   }
+
+  // }
+
+  
+ 
+
+  const renderTableHeader = () => {
+  return header.map((key, index) => {
+    return (
+      <th
+        key={index}
+        style={{
+          position: "sticky",
+          top: "70px",
+          background: "grey",
+        }}
+      >
+        {key.toUpperCase()}
+      </th>
+    );
+  });
+    };
+
+    const renderTableData = () => {
+      // hicksvilleDropdown(HicksData);
+  
+      if (tableData) {
+        console.log(tableData);
+  
+        // console.log(showPosIndex);
+        // console.log(tableData[0]);
+        
+        let rows = tableData.map((element, index) => {
+          //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
+          // let isEmpty =
+          //   element.qty === "" ||
+          //   element.itemNo === "" ||
+          //   !element.pieces ||
+          //   isNaN(element.unitPrice) ||
+          //   element.unitPrice === "" ||
+          //   isNaN(element.extendedPrice);
+          let isEmpty = false;
+          // if (isEmpty && element.show) {
+          //   let emptyColumn = [...emptyColumnList, index];
+          //   emptyColumnList = [...new Set(emptyColumn)];
+          // }
+          // let isFree = element.qty != 0 && element.extendedPrice === "0.00";
+          // console.log(element.isUpdated);
+          console.log(element);
+          let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
+          
+  
+          return (
+            <tr
+              key={index}
+              className={isEmpty ? styles.red : null}
+              // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
+              style={element.linkingCorrect == "false" ? {backgroundColor: "pink"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
+                : element.show ? { opacity: "1" } : { opacity: "0.4" }}
+            >
+              <td>{index + 1}</td>
+             
+              {/* <td>
+                <TextField
+                  type="tel"
+                  value={element.details}
+                  id="outlined-secondary"
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "details", e.target.value);
+                  }}
+                  style={{ width: 100 }}
+                />
+              </td> */}
+              <td className={styles.element}>
+                <TextField
+                  type="tel"
+                  value={showPosIndex === index ? showPosState.barcode : element.barcode}
+                  id="outlined-secondary"
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "barcode", e.target.value);
+                  }}
+                  style={{ width: 150 }}
+                />
+                <IconButton
+                  color="primary"
+                  aria-label="add to review"
+                  // onClick={() => addForReview(element, index)}
+                >
+                  <InfoOutlinedIcon
+                    style={element.isReviewed  === "true" ? {fill: "red"} : null}
+                  /> 
+                  {/* <AddShoppingCartIcon
+                    style={
+                      reviewItems.includes(index)
+                        ? { backgroundColor: "green" }
+                        : null
+                    }
+                  /> */}
+                </IconButton>
+                <div className={element.isReviewed  === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
+                  <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
+                  {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
+                  <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
+                  <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
+                  <p>Margin(%) - {margin.toFixed(2)}</p>
+                  <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
+                  <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
+                  {/* <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p> */}
+                  <div >
+                  <button onClick={() => {
+                          if(notFounds === "true"){
+                            toggleModal("notfounds");
+                          }else{
+                            updateItem(invoice.slug, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
+                          }
+                        } } 
+                    disabled={showPosIndex === index ? false : true}
+                    style={{backgroundColor: "green",
+                    border: "none",
+                    color: "white",
+                    padding: "4px 8px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "inline-block",
+                    fontSize: "14px",
+                    align: "left"}} >
+                    Update Item
+                  </button>
+                  </div> 
+                  <br />
+                  <div>
+                  <button onClick={()=> linkManually(index)} 
+                    // disabled={showPosIndex === index ? false : true}
+                    style={{backgroundColor: "blue",
+                    border: "none",
+                    color: "white",
+                    padding: "4px 8px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "inline-block",
+                    fontSize: "14px",
+                    align: "left"}} >
+                    Link Manually
+                  </button>
+                  </div>
+                  <br />
+                  <div>
+                  <button onClick={()=> reverseUpdate(index)} 
+                    // disabled={showPosIndex === index ? false : true}
+                    style={{backgroundColor: "red",
+                    border: "none",
+                    color: "white",
+                    padding: "4px 8px",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    display: "inline-block",
+                    fontSize: "14px",
+                    align: "left"}} >
+                    Reverse Update
+                  </button>
+                  </div>
+                </div>
+              </td>
+              <td>{showPosIndex === index ? showPosState.posSku : element.posSku}</td>
+              <td>
+                <TextField
+                  type="tel"
+                  value={element.qty}
+                  id="outlined-secondary"
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "qty", e.target.value);
+                  }}
+                  style={{ width: 100 }}
+                />
+              </td>
+              <td>{element.cp}</td>
+              <td>
+                <Autocomplete
+                  value={element.itemNo}
+                  onChange={(event, newValue) => {
+                    if (newValue) {
+                      handleChange(index, "itemNo", newValue);
+                    }
+                  }}
+                  id="combo-box"
+                  options={itemNoDropdown}
+                  getOptionLabel={(option) => option}
+                  style={{ width: 200 }}
+                  renderInput={(params) => (
+                    <TextField {...params} variant="outlined" />
+                  )}
+                />
+              </td>
+              <td>
+              {/* {dropdownIndex == index ? fetchingOptions ? <Loading type="ThreeDots" height={40} width={40} /> : null : null} */}
+                <Autocomplete
+                  value={showPosIndex  === index ? showPosState.item : element.itemNo }
+                  loading={true}
+                  onInputChange={(event, value) => {
+                    console.log("ON INPUT CHANGE");
+                    // event.toLowerCase();
+                    // value.toLowerCase();
+                    // console.log(event.target.value);
+                    // console.log(value);
+                    // searchDropdown(event, value);
+                    // setOptions([]);
+                    if(event != null){
+                      setTimeout(()=> {
+                        hicksvilleDropdownNew(event, value, index);
+
+                      }, 1500);
+                    }
+                    // hicksvilleDropdownNew(event, value, index);
+                  }}
+                  onChange={(event, newValue) => {
+                    // console.log(event.target.value);
+                    // console.log(newValue);
+                    if (newValue) {
+                      let newState = { ...showPosState };
+                      console.log(newValue);
+                      // newState.item = newValue.name;
+                      newState.item = element.itemNo
+                      newState.description = newValue.name;
+                      newState.barcode = newValue.upc;
+                      newState.pos = newValue.name;
+                      newState.posSku = newValue.sku;
+                      newState.size = newValue.size;
+                      newState.department = newValue.department;
+                      newState.unitCost = newValue.cost;
+                      newState.unitPrice = newValue.price;
+                      // setShowPosState(newState);
+                      dispatch({type: "SET_POS_STATE", data: newState})
+                      setShowPosIndex(index);
+                      setUnitCost(newValue.cost);
+                      // setStateUpdated("");
+                      if(isEmpty){
+                        // setNotFounds("true");
+                        dispatch({type: "NOT_FOUNDS", data: "true"})
+
+                        setRedState("false");
+                      }
+                      //setDisabled(false);
+                      //updateOnHoverDetails(index);
+                      //setShowPosIndex(index);
+                      // console.log(newValue);
+                      console.log(newState);
+                      //console.log(showPosState);
+                      
+                    }
+                  }}
+                  id="combo-box"
+                  // options={element.fuzzSuggestion}
+                  options={options}
+                  // getOptionLabel={option => option.label}
+                  getOptionLabel={(option) => option.label ?? element.itemNo}
+                  // getOptionLabel={(option) => dropdownLoader ? <Spinner /> : option.label}
+                  style={{ width: 400 }}
+                  renderInput={(params) => (
+                    <TextField {...params} variant="outlined" />
+                  )}
+                />
+              </td>
+              
+              <td>{element.description}</td>
+              {/* <td>{element.pieces}</td> */}
+              <td>
+                <TextField
+                  type="tel"
+                  value={element.pieces}
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "pieces", e.target.value);
+                  }}
+                  style={{ width: 100 }}
+                />
+                <button onClick={() => {updateUnits(index)}} style={{
+                  backgroundColor: "#008CBA",
+                  border: "none",
+                  color: "white",
+                  padding: "5px 16px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  fontSize: "10px",
+                  margin: "4px 2px",
+                  cursor: "pointer",
+                }}>Update Units</button> 
+              </td>
+              <td>
+                <TextField
+                  type="tel"
+                  value={element.unitPrice}
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "unitPrice", e.target.value);
+                  }}
+                  style={
+                    element.priceIncrease === 1
+                      ? { backgroundColor: "#1a8cff", width: 100 }
+                      : element.priceIncrease === -1
+                      ? { backgroundColor: "#ffb31a", width: 100 }
+                      : { width: 100 }
+                    // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                    //   : element.priceIncrease === 1 
+                    //       ? { backgroundColor: "#1a8cff", width: 100 }
+                    //       : element.priceIncrease === -1 
+                    //       ? { backgroundColor: "#ffb31a", width: 100 }
+                    //       : { width: 100 }
+                  }
+                />
+              </td>
+              <td>{element.extendedPrice}</td>
+              
+              <td>
+                <TextField
+                  type="tel"
+                  value={element.sp}
+                  variant="outlined"
+                  onChange={(e) => {
+                    handleChange(index, "sp", e.target.value);
+                  }}
+                  style={{ width: 100 }}
+                />
+              </td>
+              <td>{element.markup}</td>
+              {/* <td>
+                <Checkbox
+                  checked={!element.show}
+                  onChange={(e) => handleChange(index, "show", e.target.value)}
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
+              </td> */}
+
+                <td className={styles.element}>
+                <IconButton onClick={() => {
+                  toggleModal("details");
+                  setDetailsIndex(index);
+                  }}>
+                    <AddCircleIcon />
+                  </IconButton>
+                  <div className={styles.tooltip}>
+                    <p>Details- {element.details}</p>
+                  </div>
+                  
+              </td>
+
+
+              <td>
+            {/* <Button
+              text={element.show ? "Delete" : "Undo"}
+              color="btn btn-info"
+              type="submit"
+              onClick={() => deleteRow(index)}
+            /> */}
+          </td>
+              <td>
+              <Button 
+                  text="Update POS"
+                  color="btn btn-info"
+                  type="submit"
+                  onClick={() => pushSingleItemToInventory(index)}
+                  style={{ width: 120 }}
+                />
+                    
+              </td>
+              {/* <td>
+              <Button 
+                  text="Reverse POS"
+                  type="submit"
+                  onClick={() => reversePOSUpdate(index)}
+                  style={{ width: 120, backgroundColor: "red", color: "white" }}
+                />
+                    
+              </td> */}
+              <td className={styles.element}>
+                <IconButton onClick={() => linkingCorrect(index)}>
+                  <Cancel/>
+                </IconButton>
+              </td>
+              <td>{index + 1}</td>
+              {/* <td>
+                <Button
+                  text={element.show ? "Delete" : "Undo"}
+                  color="btn btn-info"
+                  type="submit"
+                  onClick={() => deleteRow(index)}
+                />
+              </td> */}
+            </tr>
+          );
+        });
+        return (
+          <div style={{ marginTop: "35px" }}>
+            <table className="table table-hover table-responsive-sm">
+              <tbody>
+                <tr>{renderTableHeader()}</tr>
+                {rows}
+                <tr>
+                  <td>
+                    {/* <Button
+                      text="Add cell"
+                      color="btn btn-info"
+                      onClick={addRow}
+                    /> */}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div className={styles.divRow}>
+              {/* <Button
+                text="Update Inventory"
+                color="btn btn-info"
+                type="submit"
+                onClick={pushInventoryDetails}
+              /> */}
+              {/* <Button
+                text="Save Invoice Data"
+                color="btn btn-info"
+                type="submit"
+                onClick={toggleModal}
+              /> */}
+              {/* <Button
+                text="Re upload"
+                color="btn btn-info"
+                type="submit"
+                onClick={() => window.location.reload()}
+              /> */}
+            </div>
+          </div>
+        );
+      }
+  };
 
   const updateItem = async () => {
+    console.log(invoice);
     const data = {
+  
       invoiceName: invoice.slug,
       itemName: itemName,
       value: {
@@ -531,6 +1187,16 @@ const HandwrittenInvoice = () => {
 
   }
 
+  const getItems = async () => {
+    // const data = {
+    //   invoice: invoice.slug,
+    // }
+    const data = invoice;
+    console.log(data);
+    const res = await inventoryService.getItemForHandwrittenInvoice(data);
+    console.log(res);
+    return res;
+  }
 
   const toggleModal = () => {
     console.log(posProduct);
@@ -682,6 +1348,158 @@ const HandwrittenInvoice = () => {
     }
   }
 
+  const setProductsInTable = () => {
+    // setLoader(true);
+    dispatch({type: "LOADER"});
+    async function invoiceData() {
+      const products = await tesseractService.GetProductDetails(
+        invoice.slug
+        // inv
+      );
+      console.log(products);
+      //console.log(props.selectedInvoice);
+      return products;
+    }
+      // invoiceData()
+      getItems()  
+      .then((products) => {
+          /**post processing the table data after returning from filter */
+          // function convertToUpperCase(obj) {
+          //   let newObj = {};
+          //   for (let key in obj) {
+          //     newObj[key.toUpperCase()] = obj[key];
+          //   }
+          //   return newObj;
+          // }
+          // products = convertToUpperCase(products);
+          console.log(products);
+          // scanInvoiceData.InvoiceData = ocrData;
+        //   setOcrProducts(ocrData);
+          
+        //   console.log(scanInvoiceData);
+          // scanInvoiceData.InvoiceData = ocrData;
+          //console.log(resScnInvDta);
+          //console.log("OCERDATa", ocrData);
+          //console.log(products);
+          //console.log(scanInvoiceData);
+          let table = products.map((row) => {
+            /**For invoices which dont have item no, set description as item no */
+            if (row.itemNo === undefined) {
+              // row.itemNo = row.description.trim().toUpperCase();
+              // row.itemNo = row.Description.trim().toUpperCase();
+              row.itemNo = row.Description.trim();
+            }
+            // row.itemNo = row.itemNo.toString().toUpperCase();
+            // row.itemNo = row.Item.toString().toUpperCase();
+            row.itemNo = row.Item.toString();
+
+            row.description = row.Description;
+              // products[row.itemNo] !== undefined
+              //   ? products[row.itemNo].Description
+              //   : row.description;
+            row.pieces = row.Quantity; 
+              // products[row.Item] !== undefined
+              //   ? products[row.Item].Quantity
+              //   : 0;
+            row.sku = row.sku
+              // products[row.Item] !== undefined
+              //   ? products[row.Item].sku
+              //   : "";
+            row.barcode = row.Barcode;
+              // products[row.Item] !== undefined
+              //   ? products[row.Item].Barcode
+              //   : "";
+            row.posName = row.POS
+              // products[row.Item] !== undefined
+              //   ? products[row.Item].POS
+              //   : "";
+            row.markup = 0;
+            row.show = true;
+            row.posSku = row.PosSKU
+              // products[row.Item] !== undefined
+              //   ? products[row.Item].PosSKU
+              //   : "";
+            row.isReviewed = row.isReviewed 
+              // products[row.Item] !== undefined ? products[row.Item].isReviewed : "" ;
+            row.size = row.Size
+              // products[row.Item] !== undefined ? products[row.Item].Size : "";
+            row.department = row.Department 
+              // products[row.Item] !== undefined ? products[row.Item].Department : "";
+            row.cost = row.SellerCost 
+              // products[row.Item] !== undefined ? products[row.Item].SellerCost : "";
+            row.sellingPrice = row.SellingPrice 
+              // products[row.Item] !== undefined ? products[row.Item].SellingPrice : "";
+            row.price = row.Price 
+              // products[row.Item] !== undefined ? products[row.Item].Price : "";
+            row.details = row.Details 
+              // products[row.Item] !== undefined ? products[row.Item].Details : "";
+            row.linkingCorrect = row.linkingCorrect; 
+              // products[row.Item] !== undefined ? products[row.Item].LinkingCorrect : "";
+            // row.margin = products[row.Item] !== undefined ? ((products[row.Item].SellingPrice - products[row.Item].SellerCost)/ products[row.Item].SellerCost)*100 : "";
+            row.margin = row.Item !== undefined ? ((row.SellingPrice - row.SellerCost)/ row.SellerCost)*100 : "";
+            //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+            let sp = 0;
+            let cp = 0;
+            // const barcode = products.Barcode
+            // if (parseInt(row.pieces)) {
+            //   sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+            //     2
+            //   );
+            //   cp = sp;
+            // }
+            row.cp = "";
+            row.sp = "";
+            if (row.Item !== undefined) {
+              if (sp > row.SellerCost) {
+                row["priceIncrease"] = 1;
+              } else if (sp < +row.SellerCost) {
+                row["priceIncrease"] = -1;
+              } else if (sp == +row.SellerCost) {
+                row["priceIncrease"] = 0;
+              }
+            } else {
+              row["priceIncrease"] = 0;
+            }
+            // if (products[row.Item] !== undefined) {
+            //   if (sp > +products[row.Item].SellerCost) {
+            //     row["priceIncrease"] = 1;
+            //   } else if (sp < +products[row.Item].SellerCost) {
+            //     row["priceIncrease"] = -1;
+            //   } else if (sp == +products[row.Item].SellerCost) {
+            //     row["priceIncrease"] = 0;
+            //   }
+            // } else {
+            //   row["priceIncrease"] = 0;
+            // }
+            row.qty = "";
+            row.extendedPrice = "";
+            /**filter out the rows for which qty shipped & extendedPrice is zero */
+            if (row.qty == "0" && row.extendedPrice === "0.00") {
+              return null;
+            }
+            /**Calulate qty for which qty is not read/scanned by textract */
+            // if (!row.qty) {
+            //   row.qty = (
+            //     parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+            //   ).toFixed(0);
+            // }
+          return { ...row, sp, cp };
+          });
+          // setLoader(false);
+          dispatch({type: "LOADER"});
+
+          setTableData(table.filter((data) => data !== null));
+          setItemNoDropdown(Object.keys(products));
+          setProductDetails(products);
+        })
+        .catch((err) => {
+          console.log("error on mapping ocrdata", err)
+          // setLoader(false);
+          dispatch({type: "LOADER"});
+        });
+    
+  }
+
   useEffect(() => {
 
     const curDate = new Date();
@@ -701,6 +1519,7 @@ const HandwrittenInvoice = () => {
         console.log('There is no logged in user');
       }
     });
+    
 
   },[]);
     
@@ -709,30 +1528,35 @@ const HandwrittenInvoice = () => {
       <div className="container-fluid">
           <Paper className={classes.root}>
               <Grid style={{ display: "flex" }}>
-                  <ul>
-                  <li>
+                  {/* <ul>
+                  <li> */}
                   <Autocomplete
                       value={invoice}
                       onChange={(event, newValue) => {
                           console.log("new value", newValue)
                           if (newValue) {
-                          setInvoice(newValue);
+                            console.log(newValue);
+                          // setInvoice(newValue);
+                          // setTimeout(()=> {}, 1000);
+                          invoice = newValue;
+                          console.log(invoice);
+                          setProductsInTable();
                           }
                           // getInvoices(newValue);
                       }}
                       id="combo-box"
                       options={dropdownOptions}
                       getOptionLabel={(option) => option.value}
-                      style={{ width: 250 }}
+                      style={{ width: 200 }}
                       autoHighlight
                       renderInput={(params) => (
                           <TextField {...params} label={dropdownLabel} variant="outlined" />
                       )}
                   />
-                </li>
+                {/* </li> */}
                 <br />
 
-                <li>
+                {/* <li> */}
                 <TextField
                       label="Item Name"
                       variant="outlined"
@@ -743,9 +1567,9 @@ const HandwrittenInvoice = () => {
                         }
                       }
                   />
-                </li>
+                {/* </li> */}
                 <br />
-              <li>
+              {/* <li> */}
               <Autocomplete
                   value={posProduct.POS}
                   loading={true}
@@ -786,16 +1610,19 @@ const HandwrittenInvoice = () => {
                       // setShowPosIndex(index);
                       // setUnitCost(newValue.cost);
                       // setStateUpdated("");
+
                       setPosProduct(newState);
-                      singleItemData = []
-                      
+                      singleItemData = [];
+
+
+
                       //setDisabled(false);
                       //updateOnHoverDetails(index);
                       //setShowPosIndex(index);
                       // console.log(newValue);
                       console.log(newState);
                       //console.log(showPosState);
-                      toggleModal();
+                      // toggleModal();
                       
                     }
                   }}
@@ -810,10 +1637,32 @@ const HandwrittenInvoice = () => {
                     <TextField {...params} label="POS Product" variant="outlined" />
                   )}
                 />
-                </li >
-                </ul>
+                <button  style={{backgroundColor: "green",
+                      height: "50px",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left",
+                      marginLeft: 20}}
+                      // onClick={setProductsInTable}
+                      onClick={toggleModal}
+                      >
+                          Add New Product
+                </button>
+                {/* </li >
+                </ul> */}
                   </Grid>
           </Paper>
+          <p>Invoice-- {invoice}</p>
+          
+
+          <div>{renderTableData()}</div>
+
+
 
           <CModal show={showModal} onClose={toggleModal}>
       <CModalHeader closeButton>{modalLabel}</CModalHeader>
