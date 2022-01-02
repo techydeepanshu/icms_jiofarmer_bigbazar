@@ -83,7 +83,6 @@ export class InventoryService {
     console.log(data);
     const res = await Axios.post(appendURL + "/api/invoice/updatedbafterposupdate", data);
     console.log(res);
-
   }
 
   async saveDetails(data) {

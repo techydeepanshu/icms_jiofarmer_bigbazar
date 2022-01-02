@@ -178,6 +178,11 @@ const SaveInvoiceData = () => {
         "Serial No.(2)"
     ];
 
+    const itemNoDescription = [
+      "advance-foods",
+      "family-five"
+    ];
+
     const showPosState = useSelector(state => state.showPosState);
     // const [showPosState, setShowPosState] = useState({
     //     item: "",
@@ -228,7 +233,9 @@ const SaveInvoiceData = () => {
             };
           } catch (error) {
             // tempNotFoundProducts.push(row);
-            console.log("Couldn't fetch product from woodpress.", row.itemNo);
+
+            // Commented on 13th Dec 2021.
+            // console.log("Couldn't fetch product from wordpress.", row.itemNo);
             return null;
           }
         })
@@ -239,6 +246,136 @@ const SaveInvoiceData = () => {
       wooComProducts = items;
       // setWooComProducts(items.filter((ele) => ele !== null));
       // setNotFoundProducts(tempNotFoundProducts);
+    }
+
+    async function getPosProductsLinkManually(index) {
+
+      console.log("tabledata in getPosProductsLinkManually",tableData);
+
+      // dispatch({type: "LOADER"});
+      const res = await inventoryService.GetPOSProductDetails(tableData[index].barcode);
+
+      console.log("res is: ", res);
+
+      if(!Array.isArray(res)){
+        alert("API not working");
+        return;
+      }
+
+      // SET ITEMNAME...
+      let codeOrSku = "";
+      console.log("res[0].ITEMNAME.indexOf("-")" ,res[0].ITEMNAME.indexOf("-"));
+      let itemName = res[0].ITEMNAME;
+
+      if(res[0].ITEMNAME.indexOf("-") < 0){
+        let itemNoPresent;
+        for(let i = 0; i<itemNoDescription.length; i++){
+          if(itemNoDescription[i] === invoice.slug){
+            itemNoPresent = false;
+            break;
+          }else {
+            itemNoPresent = true;
+            break;
+          }
+        }
+
+        console.log("itemNoPresent",itemNoPresent);
+        if(itemNoPresent){
+          codeOrSku = tableData[index].itemNo;
+        }else{
+          codeOrSku = "SKU" + " " + tableData[index].posSku; 
+        }
+        itemName = res[0].ITEMNAME + " " + "-" + " " + codeOrSku;
+
+      // Do the API Call to update on syprum system.
+      const update = await inventoryService.UpdatePOSProducts(
+        JSON.stringify({
+          UPC: tableData[index].barcode,
+          ITEMNAME: itemName,
+          DESCRIPTION: "",
+          PRICE: res[0].PRICE,
+          COST: res[0].COST,
+          QTY: res[0].TOTALQTY,
+          SIZE: "",
+          PACK: "",
+          REPLACEQTY: 1,
+          DEPARTMENT: res[0].DEPNAME,
+          CATEGORY: "",
+          SUBCATEGORY: "",
+          ISFOODSTAMP: 1,
+          ISWEIGHTED: 0,
+          ISTAXABLE: 1,
+          VENDORNAME: invoice.slug,
+          VENDORCODE: tableData[index].itemNo,
+          VENDORCOST: "",
+          ISNEWITEM: 0,
+          BUYASCASE: 1,
+          CASEUNITS: tableData[index].pieces,
+          CASECOST: (tableData[index].price / tableData[index].qty),
+          COMPANYNAME: invoice.slug,
+          PRODUCTCODE: tableData[index].itemNo,
+          MODELNUM: userEmail.slice(0,4) + " " + new Date().toLocaleDateString(),
+          VINTAGE: "ICMS",
+        })
+      );
+
+      console.log("Helloooooooooooooooooooooooooo update api call", update);
+      
+      console.log("update api call", update[0].COST);
+      console.log("update api call", update[0].PRICE);
+      console.log("update api call", update[0].ITEMNAME);
+      console.log("update api call", update[0].VENDORCODE);
+      console.log("update api call", invoice.slug);
+      let data1 = {
+        cost: update[0].COST,
+        price: update[0].PRICE,
+        item: update[0].VENDORCODE,
+        itemName:update[0].ITEMNAME,
+        invoice: invoice.slug
+      }
+      
+      // console.log("I am posProducts.ITEMNAME from updatedb after Pos",posProducts[0].ITEMNAME)
+
+      await inventoryService.UpdateDBafterPosUpdate(data1);
+      }
+
+      // const update = await inventoryService.UpdatePOSProducts(
+      //   JSON.stringify({
+      //     UPC,
+      //     ITEMNAME: itemName,
+      //     DESCRIPTION: "",
+      //     PRICE: res.PRICE,
+      //     COST: res.COST,
+      //     QTY: res.TOTALQTY,
+      //     SIZE: "",
+      //     PACK: "",
+      //     REPLACEQTY: 1,
+      //     DEPARTMENT: res.DEPNAME,
+      //     CATEGORY: "",
+      //     SUBCATEGORY: "",
+      //     ISFOODSTAMP: 1,
+      //     ISWEIGHTED: 0,
+      //     ISTAXABLE: 1,
+      //     VENDORNAME: invoice.slug,
+      //     VENDORCODE: itemNo,
+      //     VENDORCOST: "",
+      //     ISNEWITEM: 0,
+      //     BUYASCASE,
+      //     CASEUNITS,
+      //     CASECOST,
+      //     COMPANYNAME: invoice.slug,
+      //     PRODUCTCODE: itemNo,
+      //     MODELNUM: userEmail.slice(0,4) + " " + new Date().toLocaleDateString(),
+      //     VINTAGE: "ICMS",
+      //   })
+      // );
+
+      // if(tableData[index].posSku === res.SKU) {
+      //     console.log("SKU is same");
+      //     dispatch({type: "LOADER"});
+      //   }
+      
+
     }
 
     //function to fetch POS products.
@@ -255,7 +392,6 @@ const SaveInvoiceData = () => {
               const res = await inventoryService.GetPOSProductDetails(
                 row.barcode
               );
-              console.log(res);
               if(!Array.isArray(res)){
                 alert("API not working");
                 return;
@@ -316,7 +452,7 @@ const SaveInvoiceData = () => {
       dispatch({type: "LOADER"});
       console.log(items);
       posProducts = items;
-      console.log(posProducts);
+      console.log("posProducts array is: ",posProducts);
       // setPosProducts(items.filter((ele) => ele !== null));
     }
 
@@ -354,9 +490,12 @@ const SaveInvoiceData = () => {
     const pushToPOS = async (products) => {
       // setLoader(true);
       dispatch({type: "LOADER"});
-      console.log(products);
+      console.log("products values are: ",products);
+
+
       const responses = await Promise.all(
         products.map(async (product) => {
+          
           try {
             const {
               COST,
@@ -372,10 +511,38 @@ const SaveInvoiceData = () => {
               DEPNAME,
               itemNo
             } = product;
+
+            // SET ITEMNAME... 
+            let codeOrSku = "";
+            console.log(product.itemNo)
+            console.log(ITEMNAME.indexOf("-"));
+            let itemName = ITEMNAME;
+
+            if(ITEMNAME.indexOf("-") < 0){
+              let itemNoPresent;
+              for(let i = 0; i<itemNoDescription.length; i++){
+                console.log(invoice.slug)
+                if(itemNoDescription[i] === invoice.slug){
+                  itemNoPresent = false;
+                  break;
+                }else {
+                  itemNoPresent = true;
+                  break;
+                }
+              }
+              console.log(itemNoPresent);
+              if(itemNoPresent){
+                codeOrSku = product.itemNo;
+              }else{
+                codeOrSku = "SKU" + " " + product.posSku 
+              }
+              itemName = ITEMNAME + " " + "-" + " " + codeOrSku;
+            }
+
             const res = await inventoryService.UpdatePOSProducts(
               JSON.stringify({
                 UPC,
-                ITEMNAME,
+                ITEMNAME: itemName,
                 DESCRIPTION: "",
                 PRICE,
                 COST,
@@ -389,15 +556,17 @@ const SaveInvoiceData = () => {
                 ISFOODSTAMP: 1,
                 ISWEIGHTED: 0,
                 ISTAXABLE: 1,
-                // VENDORNAME: invoice.slug,
-                // VENDORCODE: itemNo,
-                // VENDORCOST: "",
+                VENDORNAME: invoice.slug,
+                VENDORCODE: itemNo,
+                VENDORCOST: "",
                 ISNEWITEM: isNew ? 1 : 0,
                 BUYASCASE,
                 CASEUNITS,
                 CASECOST,
                 COMPANYNAME: invoice.slug,
                 PRODUCTCODE: itemNo,
+                MODELNUM: userEmail.slice(0,4) + " " + new Date().toLocaleDateString(),
+                VINTAGE: "ICMS",
               })
             );
             console.log("updated pos data", res);
@@ -518,12 +687,15 @@ const SaveInvoiceData = () => {
     }
 
   const pushSingleItemToInventory = async (index) =>{
+
     // setApiLoader(true);
     dispatch({type: "API_LOADER"});
-    console.log(index);	
+    // console.log(index);	
+    
+    // Setting State
     setShowPosIndex(-1);
     
-    
+    // tableData also a state
     console.log(tableData);
     const product = [];
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
@@ -547,7 +719,7 @@ const SaveInvoiceData = () => {
     console.log(tempTable);
 
     if (emptyColumn.length !== 0) {
-      /**api to push  to not found list*/
+      /** API to push  to not found list */
       // setLoader(true);
       dispatch({type: "LOADER"});
       const responses = await Promise.all(
@@ -579,6 +751,7 @@ const SaveInvoiceData = () => {
       // setLoader(false);
       dispatch({type: "LOADER"});
     }
+
     const priceIncreasedProducts = tempTable.filter(
       (product) => product.priceIncrease !== 0
     );
@@ -629,11 +802,15 @@ const SaveInvoiceData = () => {
         cost: singleItemData[0].cp,
         price: singleItemData[0].sp,
         item: singleItemData[0].itemNo,
+        itemName:posProducts[0].ITEMNAME,
         invoice: invoice.slug
       }
-      console.log(data1)
-      await inventoryService.UpdateDBafterPosUpdate(data1);
+      await getPosProducts();
+      console.log("I am data from updatedb after Pos",data1)
+      console.log("I am posProducts.ITEMNAME from updatedb after Pos",posProducts[0].ITEMNAME)
 
+      await inventoryService.UpdateDBafterPosUpdate(data1);
+      
       //Log Generate.
       console.log("PRODUCTT");
       console.log(singleItemData);
@@ -657,16 +834,10 @@ const SaveInvoiceData = () => {
         SKU: singleItemData[0].posSku
       }
       console.log(log);
-
       const logUpdate = await inventoryService.posLogs(log);
       console.log(logUpdate)
-
-
-
-
-
-
       setProductsInTable();
+
     } else {
       alert("POS not updated!!");
       setProductsInTable();
@@ -837,16 +1008,31 @@ const SaveInvoiceData = () => {
       }
     }
 
+    // const linkManuallyNew = async(index) => {
+    //   console.log(index);
+      
+    //   console.log("tabledata in linkManually",tableData);
+    //   console.log(tableData[index]);
+
+    //   let item = tableData[index];
+    //   console.log("item in link manually", item);
+
+    //   await getPosProductsLinkManually(index);
+
+    // }
+
     const linkManually = async(index) => {
       console.log(index);
-      console.log(tableData);
+      console.log("tabledata in linkManually",tableData);
       console.log(tableData[index]);
       let item = tableData[index];
       console.log(item)
+
       let data = {
         invoice: inv,
         itemNo: item.itemNo,
       }
+
       const result = await inventoryService.linkManually(data);
       console.log(result);
 
@@ -898,6 +1084,8 @@ const SaveInvoiceData = () => {
         // setProductsInTableNew(inv, num, day);
       }
 
+      await getPosProductsLinkManually(index);
+
     }
 
     const fetchSavedData = async(invoice = inv, no = num, date = day) => {
@@ -942,11 +1130,13 @@ const SaveInvoiceData = () => {
           //   console.log(scanInvoiceData);
             // scanInvoiceData.InvoiceData = ocrData;
             //console.log(resScnInvDta);
-            //console.log("OCERDATa", ocrData);
+            console.log("OCERDATa", ocrData);
             //console.log(products);
             //console.log(scanInvoiceData);
             let table = ocrData.map((row) => {
               /**For invoices which dont have item no, set description as item no */
+              // row.itemNoPresent = row.itemNo === undefined ? false : true; 
+              
               if (row.itemNo === undefined) {
                 row.itemNo = row.description.trim().toUpperCase();
               }
@@ -1558,11 +1748,12 @@ const SaveInvoiceData = () => {
         //   console.log(scanInvoiceData);
           // scanInvoiceData.InvoiceData = ocrData;
           //console.log(resScnInvDta);
-          //console.log("OCERDATa", ocrData);
+          console.log("OCERDATa", ocrData);
           //console.log(products);
           //console.log(scanInvoiceData);
           let table = ocrData.map((row) => {
             /**For invoices which dont have item no, set description as item no */
+            row.itemNoPresent = row.itemNo === undefined ? false : true; 
             if (row.itemNo === undefined) {
               row.itemNo = row.description.trim().toUpperCase();
             }
@@ -1756,7 +1947,7 @@ const SaveInvoiceData = () => {
                 style={element.linkingCorrect == "false" ? {backgroundColor: "pink"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
                   : element.show ? { opacity: "1" } : { opacity: "0.4" }}
               >
-                <td>{index + 1}</td>
+                <td> {index + 1} </td>
                
                 {/* <td>
                   <TextField

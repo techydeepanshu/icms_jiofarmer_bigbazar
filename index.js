@@ -56,7 +56,7 @@ app.get("/api/product", validateLogin, (req, res) => {
   const invoice = getDBInvoiceName(req.query["invoiceName"]);
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/invoice/${invoice}`,
+    url: `http://34.202.27.217:3001/invoice/${invoice}`,
     json: true,
   };
   function callback(error, response, body) {
@@ -84,7 +84,7 @@ app.get("/api/invoice/gethicksvilledata", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/gethicksvilledata/`,
+    url: `http://34.202.27.217:3001/gethicksvilledata/`,
     body: {string: input },
     json: true,
   };
@@ -112,7 +112,7 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/getsaveinvoicedata/`,
+    url: `http://34.202.27.217:3001/getsaveinvoicedata/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date },
     json: true,
   };
@@ -137,7 +137,7 @@ app.get("/api/invoice/getitemhandwritten", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/getitemhandwritten/`,
+    url: `http://34.202.27.217:3001/getitemhandwritten/`,
     body: data,
     json: true,
   };
@@ -160,7 +160,7 @@ app.get("/api/invoice/fetchproductfromposlist", validateLogin, (req, res) => {
   console.log(req.query);
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/fetchproductfromposlist/`,
+    url: `http://34.202.27.217:3001/fetchproductfromposlist/`,
     body: {data: data},
     json: true,
   };
@@ -183,7 +183,7 @@ app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
   console.log(invoice);
   let options = {
     method: "GET",
-    url: `http://3.91.159.202:3001/getsavedinvoices/`,
+    url: `http://34.202.27.217:3001/getsavedinvoices/`,
     body: {invoice: invoice},
     json: true,
   };
@@ -212,7 +212,7 @@ app.post("/api/invoice/updateinvoicedata", validateLogin, (req, res) => {
   console.log(date);
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/updateinvoicedata/`,
+    url: `http://34.202.27.217:3001/updateinvoicedata/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
@@ -241,7 +241,7 @@ app.post("/api/invoice/reverseposupdate", validateLogin, (req, res) => {
   console.log(date);
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/reverseposupdate/`,
+    url: `http://34.202.27.217:3001/reverseposupdate/`,
     body: { invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
@@ -267,7 +267,7 @@ app.post("/api/invoice/reverseupdate", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/reverseupdate/`,
+    url: `http://34.202.27.217:3001/reverseupdate/`,
     body: data,
     json: true,
   };
@@ -293,7 +293,7 @@ app.post("/api/invoice/savedetails", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/savedetails/`,
+    url: `http://34.202.27.217:3001/savedetails/`,
     body: data,
     json: true,
   };
@@ -319,7 +319,7 @@ app.post("/api/invoice/linkingcorrect", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/linkingcorrect/`,
+    url: `http://34.202.27.217:3001/linkingcorrect/`,
     body: data,
     json: true,
   };
@@ -345,7 +345,7 @@ app.post("/api/invoice/linkmanually", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/linkmanually/`,
+    url: `http://34.202.27.217:3001/linkmanually/`,
     body: data,
     json: true,
   };
@@ -367,12 +367,13 @@ app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
     cost: req.body.cost,
     price: req.body.price,
     item: req.body.item,
+    itemName:req.body.itemName,
     invoice: getDBInvoiceName(req.body.invoice)
   };
   console.log(data);
   let options = {
     method: "POST",
-    url: `http://3.91.159.202:3001/updatedbafterposupdate/`,
+    url: `http://34.202.27.217:3001/updatedbafterposupdate/`,
     body: data,
     json: true,
   };
@@ -505,7 +506,7 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
 app.get("/api/sync", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http://3.91.159.202:3001/pos/api/sync",
+    url: "http://34.202.27.217:3001/pos/api/sync",
     json: true,
   };
   //console.log("INDEXJS");
@@ -576,7 +577,7 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   console.log(getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://3.91.159.202:3001/invoice/${getDBInvoiceName(
+    url: `http://34.202.27.217:3001/invoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -598,7 +599,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/notfound",
+    url: "http://34.202.27.217:3001/notfound",
     body: data,
     json: true,
   };
@@ -620,7 +621,7 @@ app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/scaninvoicedata",
+    url: "http://34.202.27.217:3001/scaninvoicedata",
     body: data,
     json: true,
   };
@@ -672,7 +673,7 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
   console.log(logData);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/generatelog",
+    url: "http://34.202.27.217:3001/generatelog",
     body: logData,
     json: true,
   };
@@ -694,7 +695,7 @@ app.post("/api/invoice/linkmanuallylog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/generatelog",
+    url: "http://34.202.27.217:3001/generatelog",
     body: data,
     json: true,
   };
@@ -716,7 +717,7 @@ app.post("/api/invoice/poslogs", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/generateposlog",
+    url: "http://34.202.27.217:3001/generateposlog",
     body: data,
     json: true,
   };
@@ -738,7 +739,7 @@ app.post("/api/invoice/handwrittenlogs", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/handwrittenlogs",
+    url: "http://34.202.27.217:3001/handwrittenlogs",
     body: data,
     json: true,
   };
@@ -759,7 +760,7 @@ app.post("/api/invoice/unidentifiedlog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/generatelog",
+    url: "http://34.202.27.217:3001/generatelog",
     body: data,
     json: true,
   };
@@ -785,7 +786,7 @@ app.get("/api/invoice/pos", validateLogin, function (req, res) {
   // console.log(dates);
   let options = {
     method: "GET",
-    url: "http://3.91.159.202:3001/pos",
+    url: "http://34.202.27.217:3001/pos",
     json: true,
   };
   function callback(error, response, body) {
@@ -804,7 +805,7 @@ app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://3.91.159.202:3001/pos",
+    url: "http://34.202.27.217:3001/pos",
     body: data,
     json: true,
   };
@@ -825,7 +826,7 @@ app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   // console.log("body data", data);
   let options = {
     method: "PUT",
-    url: `http://3.91.159.202:3001/pos/${data.UPC}/inv`,
+    url: `http://34.202.27.217:3001/pos/${data.UPC}/inv`,
     body: { count: data.count },
     json: true,
   };
