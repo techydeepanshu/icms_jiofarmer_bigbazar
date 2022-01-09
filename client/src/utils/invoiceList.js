@@ -1034,12 +1034,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "vijayhomefoods",
   // }, 
-  // {
-  //   value: "Vintage food",
-  //   slug: "vintage-food",
-  //   jsonName: "vintage.json",
-  //   emptyColumn: false,
-  //   databaseName: "vintages",
-  // },
+  // added by sahil on 9 dec 2022
+  {
+    value: "Vintage food",
+    slug: "vintage-food",
+    jsonName: "vintage.json",
+    emptyColumn: false,
+    databaseName: "vintages",
+  },
   // {value:'',slug:'',jsonName:'wave-ron-foods.json',emptyColumn:false,databaseName:'waveronfoods'}
 ];

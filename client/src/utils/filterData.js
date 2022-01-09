@@ -5,7 +5,7 @@ import {dropdownOptions} from "./invoiceList";
 export const chooseFilter = (invoiceName, data) => {
   console.log("IN CHOOSE FILTER");
   console.log(invoiceName);
-  console.log(data);
+  console.log("sahil_data",data);
 
   const newData=emptyColumn(data);
   
