@@ -13,13 +13,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "aahubarahs",
   // }, 
-  // {
-  //   value: "Adelman foods",
-  //   slug: "adelman-foods",
-  //   jsonName: "adelaman-food.json",
-  //   emptyColumn: false,
-  //   databaseName: "adelamanfoods",
-  // },
+  {
+    value: "Adelman foods",
+    slug: "adelman-foods",
+    jsonName: "adelaman-food.json",
+    emptyColumn: false,
+    databaseName: "adelamanfoods",
+  },
   {
     value: "Advance Foods",
     slug: "advance-foods",
@@ -27,27 +27,33 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "advancefoods",
   },
-  // {
-  //   value: "Aliments",
-  //   slug: "aliments",
-  //   jsonName: "aliments.json",
-  //   emptyColumn: false,
-  //   databaseName: "aliments",
-  // }, 
-  // {
-  //   value: "Amtrade",
-  //   slug: "amtrade",
-  //   jsonName: "amtrade.json",
-  //   emptyColumn: false,
-  //   databaseName: "amtrades",
-  // }, 
-  // {
-  //   value: "Anmol distributors",
-  //   slug: "anmol-distributors",
-  //   jsonName: "anmol-distribution.json",
-  //   emptyColumn: false,
-  //   databaseName: "anmoldistributions",
-  // },
+
+  // Added by Deepanshu on 09-01-2022
+  {
+    value: "Aliments",
+    slug: "aliments",
+    jsonName: "aliments.json",
+    emptyColumn: true,
+    databaseName: "aliments",
+  }, 
+
+    // Added by Deepanshu on 09-01-2022
+  {
+    value: "Amtrade",
+    slug: "amtrade",
+    jsonName: "amtrade.json",
+    emptyColumn: false,
+    databaseName: "amtrades",
+  }, 
+
+    // Added by Deepanshu on 09-01-2022
+  {
+    value: "Anmol distributors",
+    slug: "anmol-distributors",
+    jsonName: "anmol-distribution.json",
+    emptyColumn: false,
+    databaseName: "anmoldistributions",
+  },
   {
     value: "Anns eco store",
     slug: "anns-eco-store",
@@ -63,7 +69,7 @@ export const dropdownOptions = [
     databaseName: "gurmeguru",
   },
   // {
-  //   value: "Katzman Produce",
+    // value: "Katzman Produce",
   //   slug: "katzman-produce",
   //   jsonName: "katzman-produce.json",
   //   emptyColumn: false,
@@ -97,13 +103,15 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "sokopackaging",
   // },
-  // {
-  //   value: "Babco foods",
-  //   slug: "babco-foods",
-  //   jsonName: "babco.json",
-  //   emptyColumn: false,
-  //   databaseName: "babcos",
-  // }, 
+
+    // Added by Deepanshu on 09-01-2022
+  {
+    value: "Babco foods",
+    slug: "babco-foods",
+    jsonName: "babco.json",
+    emptyColumn: false,
+    databaseName: "babcos",
+  }, 
   // {
   //   value: "Karison Foods",
   //   slug: "karison-foods",
@@ -111,13 +119,15 @@ export const dropdownOptions = [
   //   emptyColumn: true,
   //   databaseName: "karisonfoods",
   // }, 
-  // {
-  //   value: "Baraka cold",
-  //   slug: "baraka-cold",
-  //   jsonName: "baraka-cold.json",
-  //   emptyColumn: false,
-  //   databaseName: "barakacolds",
-  // },
+
+  // Added by Deepanshu on 09-01-2022
+  {
+    value: "Baraka cold",
+    slug: "baraka-cold",
+    jsonName: "baraka-cold.json",
+    emptyColumn: false,
+    databaseName: "barakacolds",
+  },
   // {
   //   value: "Barlett dairy",
   //   slug: "bartlett-dairy",
@@ -125,21 +135,23 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "barletts",
   // },
-  // {
-  //   value: "Baroody",
-  //   slug: "baroody",
-  //   jsonName: "baroody.json",
-  //   emptyColumn: true,
-  //   databaseName: "baroodies",
-  // }, 
+
+  // Added by Deepanshu on 09-01-2022
+  {
+    value: "Baroody",
+    slug: "baroody",
+    jsonName: "baroody.json",
+    emptyColumn: true,
+    databaseName: "baroodies",
+  }, 
 // {value:'',slug:'',jsonName:'bartlett.json',emptyColumn:false,databaseName:'bartletts'},
-  // {
-  //   value: "Bedessee",
-  //   slug: "bedessee",
-  //   jsonName: "bedessee.json",
-  //   emptyColumn: false,
-  //   databaseName: "bedessees",
-  // },
+  {
+    value: "Bedessee",
+    slug: "bedessee",
+    jsonName: "bedessee.json",
+    emptyColumn: false,
+    databaseName: "bedessees",
+  },
   // {value:'',slug:'',jsonName:'Best-food-1.json',emptyColumn:false,databaseName:'bestfood1'},
   {
     value: "Best Foods",
@@ -928,7 +940,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "shreejis",
   // }, 
-  // {value:'',slug:'',jsonName:'singh-and-singh.json',emptyColumn:false,databaseName:'singhandsinghs'},
+//   {
+//         value:'Singh-and-singh',
+//         slug:'singh-and-singh',
+//         jsonName:'singh-and-singh.json',
+//         emptyColumn:false,
+//         databaseName:'singhandsingh'
+// },
   // {
   //   value: "Slaughter house",
   //   slug: "slaughter-house",
@@ -1034,7 +1052,6 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "vijayhomefoods",
   // }, 
-  // added by sahil on 9 dec 2022
   {
     value: "Vintage food",
     slug: "vintage-food",
