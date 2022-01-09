@@ -353,6 +353,12 @@ export const optionData={
     body:[1,2,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },//use empty column
+  "singh-and-singh":{
+    regex:/^[0-9]+ [A-Z]+ [A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/[A-Z]+( )?-( )? .+/],[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },
   "sea-mark":{
     regex:/^[0-9]+ [0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","itemNo","description","extra","unitPrice","extendedPrice"],
@@ -473,23 +479,35 @@ export const optionData={
     body:[1,1,[0,/ [A-Z]+ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
+  // "aliments":{
+  //   regex:/^.+ [0-9]+ [0-9]+\.[0-9]+ [a-z]+ [0-9]+\.[0-9]+$/,
+  //   header:["description","qty","unitPrice","extra","extendedPrice"],
+  //   body:[[0,/ [0-9]+ [0-9]+\.[0-9]+ [a-z]+ [0-9]+\.[0-9]+$/],1,1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
+  // },
   "aliments":{
-    regex:/^.+ [0-9]+ [0-9]+\.[0-9]+ [a-z]+ [0-9]+\.[0-9]+$/,
-    header:["description","qty","unitPrice","extra","extendedPrice"],
-    body:[[0,/ [0-9]+ [0-9]+\.[0-9]+ [a-z]+ [0-9]+\.[0-9]+$/],1,1,1,1],
+    regex:/^[A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","qty","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
-  },
+  },// use emptyColumn true
   "bartlett-dairy":{
     regex:/^[0-9]+ .+ [0-9]+ [0-9]+ [0-9]+\.[0-9]+$/,
     header:["itemNo","description","case","unitPrice","extendedPrice"],
     body:[1,[0,/ [0-9]+ [0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
   },
+  // "amtrade":{
+  //   regex:/^[0-9]+ [A-Z]+ [A-Z0-9]+ [A-Z ]+ .+ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["qty","ctn","extra","type","description","size","unitPrice","extendedPrice"],
+  //   body:[1,1,1,2,[0,/ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
+  // },
   "amtrade":{
-    regex:/^[0-9]+ [A-Z]+ [A-Z0-9]+ [A-Z ]+ .+ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-    header:["qty","ctn","extra","type","description","size","unitPrice","extendedPrice"],
-    body:[1,1,1,2,[0,/ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
-    notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
+    regex:/^[0-9]+ [A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
   "dara-food":{
     regex:/^[0-9]+ .+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
@@ -510,8 +528,8 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=:/;'<>?,\*]/gi
   },
   "babco-foods":{
-    regex:/^[0-9]+\.[0-9]+ [A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-    header:["qty","sku","description","unitPrice","extendedPrice"],
+    regex:/^[0-9]+\.[0-9]+ [A-Z0-9(\.)?]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
     body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
@@ -649,12 +667,12 @@ export const optionData={
   //   body:[1,[0,/ [A-Z]+$/],1],
   //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
   // },
-  // "soko-packaging":{
-  //   regex:/^[0-9]+ [0-9A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
-  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
-  //   body:[1,1,[0,/[0-9\.]+ [0-9\.]+$/],1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
-  // },
+  "soko-packaging":{
+    regex:/^[0-9]+ [0-9A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/[0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  },
   // "dava-west-indian":{
   //   regex:/^[A-Za-z A-Za-z A-Za-z]+ .+ [0-9]+ [0-9\.]+ [0-9 x 0-9 a-zA-Z]+ [0-9\.]+$/,
   //   header:["itemNo","description","qty","unitPrice","size","extendedPrice"],
