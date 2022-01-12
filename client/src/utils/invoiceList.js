@@ -6,13 +6,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "chetakproducts",
   },
-  // {
-  //   value: "Aahubarah USA",
-  //   slug: "aahubarah-usa",
-  //   jsonName: "aahubarah.json",
-  //   emptyColumn: false,
-  //   databaseName: "aahubarahs",
-  // }, 
+  {
+    value: "Aahubarah USA",
+    slug: "aahubarah-usa",
+    jsonName: "aahubarah.json",
+    emptyColumn: false,
+    databaseName: "aahubarahs",
+  }, 
   {
     value: "Adelman foods",
     slug: "adelman-foods",
@@ -46,7 +46,7 @@ export const dropdownOptions = [
     databaseName: "amtrades",
   }, 
 
-    // Added by Deepanshu on 09-01-2022
+  // Added by Deepanshu on 09-01-2022
   {
     value: "Anmol distributors",
     slug: "anmol-distributors",
@@ -145,13 +145,13 @@ export const dropdownOptions = [
     databaseName: "baroodies",
   }, 
 // {value:'',slug:'',jsonName:'bartlett.json',emptyColumn:false,databaseName:'bartletts'},
-  {
-    value: "Bedessee",
-    slug: "bedessee",
-    jsonName: "bedessee.json",
-    emptyColumn: false,
-    databaseName: "bedessees",
-  },
+  // {
+  //   value: "Bedessee",
+  //   slug: "bedessee",
+  //   jsonName: "bedessee.json",
+  //   emptyColumn: false,
+  //   databaseName: "bedessees",
+  // },
   // {value:'',slug:'',jsonName:'Best-food-1.json',emptyColumn:false,databaseName:'bestfood1'},
   {
     value: "Best Foods",
@@ -168,21 +168,21 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "daras",
   }, 
-  // {
-  //   value: "Dawn food",
-  //   slug: "dawn-food",
-  //   jsonName: "dawn-food.json",
-  //   emptyColumn: false,
-  //   databaseName: "dawnfoods",
-  // },
+  {
+    value: "Dawn food",
+    slug: "dawn-food",
+    jsonName: "dawn-food.json",
+    emptyColumn: false,
+    databaseName: "dawnfoods",
+  },
   
-  // {
-  //   value: "Delight distribution",
-  //   slug: "delight-distribution",
-  //   jsonName: "delight-distrubution.json",
-  //   emptyColumn: false,
-  //   databaseName: "delightdistrubutions",
-  // }, 
+  {
+    value: "Delight distribution",
+    slug: "delight-distribution",
+    jsonName: "delight-distrubution.json",
+    emptyColumn: false,
+    databaseName: "delightdistrubutions",
+  }, 
   // {
   //   value: "HJA Sales Corp",
   //   slug: "hja-sales-corp",
@@ -197,13 +197,13 @@ export const dropdownOptions = [
     emptyColumn: true,
     databaseName: "delightfoods",
   },
-  // {
-  //   value: "Dsa snacks",
-  //   slug: "dsa-snacks",
-  //   jsonName: "dsa-snacks.json",
-  //   emptyColumn: false,
-  //   databaseName: "dsasnacks",
-  // }, 
+  {
+    value: "Dsa snacks",
+    slug: "dsa-snacks",
+    jsonName: "dsa-snacks.json",
+    emptyColumn: false,
+    databaseName: "dsasnacks",
+  }, 
   {
     value: "East end",
     slug: "east-end",
@@ -211,13 +211,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "eastends",
   },
-  // {
-  //   value: "Empire food importers",
-  //   slug: "empire-food-importers",
-  //   jsonName: "empire-food-importers.json",
-  //   emptyColumn: false,
-  //   databaseName: "empirefoodimporters",
-  // },
+  {
+    value: "Empire food importers",
+    slug: "empire-food-importers",
+    jsonName: "empire-food-importers.json",
+    emptyColumn: false,
+    databaseName: "empirefoodimporters",
+  },
   {
     value: "Family five",
     slug: "family-five",
@@ -253,13 +253,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "muscofoodcorporation",
   // },
-  // {
-  //   value: "Goyal group",
-  //   slug: "goyal-group",
-  //   jsonName: "goyal-grp.json",
-  //   emptyColumn: true,
-  //   databaseName: "goyalgrps",
-  // },
+  {
+    value: "Goyal group",
+    slug: "goyal-group",
+    jsonName: "goyal-grp.json",
+    emptyColumn: false,
+    databaseName: "goyalgrps",
+  },
   // {
   //   value: "Grocer mill",
   //   slug: "grocer-mill",
@@ -267,13 +267,13 @@ export const dropdownOptions = [
   //   emptyColumn: true,
   //   databaseName: "grocermills",
   // },
-  // {
-  //   value: "Hellenic",
-  //   slug: "hellenic",
-  //   jsonName: "hellenic.json",
-  //   emptyColumn: false,
-  //   databaseName: "hellenics",
-  // }, 
+  {
+    value: "Hellenic",
+    slug: "hellenic",
+    jsonName: "hellenic.json",
+    emptyColumn: false,
+    databaseName: "hellenics",
+  }, 
   // {
   //   value: "Hellenic Treasures",
   //   slug: "hellenic-treasures",
@@ -337,13 +337,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "farmerschoicedairy",
   // }, 
-  // {
-  //   value: "Hill top farms",
-  //   slug: "hill-top-farms",
-  //   jsonName: "hill-top-farms.json",
-  //   emptyColumn: false,
-  //   databaseName: "hilltopfarms",
-  // }, 
+  {
+    value: "Hill top farms",
+    slug: "hill-top-farms",
+    jsonName: "hill-top-farms.json",
+    emptyColumn: false,
+    databaseName: "hilltopfarms",
+  }, 
   {
     value: "House of spices",
     slug: "house-of-spices",
@@ -400,27 +400,27 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "tradingcorp",
   // }, 
-  // {
-  //   value: "Indian spice trading",
-  //   slug: "indian-spice-trading",
-  //   jsonName: "indian-spice-trading.json",
-  //   emptyColumn: true,
-  //   databaseName: "indianspicetradings",
-  // }, 
-  // {
-  //   value: "I sifol",
-  //   slug: "i-sifol",
-  //   jsonName: "I-sifol-llc.json",
-  //   emptyColumn: false,
-  //   databaseName: "isifolllcs",
-  // }, 
-  // {
-  //   value: "Jaan distributors",
-  //   slug: "jaan-distributors",
-  //   jsonName: "jaan-dist.json",
-  //   emptyColumn: false,
-  //   databaseName: "jaandists",
-  // }, 
+  {
+    value: "Indian spice trading",
+    slug: "indian-spice-trading",
+    jsonName: "indian-spice-trading.json",
+    emptyColumn: true,
+    databaseName: "indianspicetradings",
+  }, 
+  {
+    value: "I sifol",
+    slug: "i-sifol",
+    jsonName: "I-sifol-llc.json",
+    emptyColumn: false,
+    databaseName: "isifolllcs",
+  }, 
+  {
+    value: "Jaan distributors",
+    slug: "jaan-distributors",
+    jsonName: "jaan-dist.json",
+    emptyColumn: false,
+    databaseName: "jaandists",
+  }, 
   // {
   //   value: "Jalaram produce",
   //   slug: "jalaram-produce",
@@ -904,13 +904,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "shaktis",
   // }, 
-  // {
-  //   value: "Shata traders",
-  //   slug: "shata-traders",
-  //   jsonName: "shata.json",
-  //   emptyColumn: true,
-  //   databaseName: "shatas",
-  // }, 
+  {
+    value: "Shata traders",
+    slug: "shata-traders",
+    jsonName: "shata.json",
+    emptyColumn: true,
+    databaseName: "shatas",
+  }, 
   // {  
   //   value: "Himalaya International",
   //   slug: "himalaya-international",
@@ -940,13 +940,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "shreejis",
   // }, 
-//   {
-//         value:'Singh-and-singh',
-//         slug:'singh-and-singh',
-//         jsonName:'singh-and-singh.json',
-//         emptyColumn:false,
-//         databaseName:'singhandsingh'
-// },
+  {
+        value:'Singh-and-singh',
+        slug:'singh-and-singh',
+        jsonName:'singh-and-singh.json',
+        emptyColumn:false,
+        databaseName:'singhandsingh'
+},
   // {
   //   value: "Slaughter house",
   //   slug: "slaughter-house",
@@ -1039,7 +1039,7 @@ export const dropdownOptions = [
   //   databaseName: "vibrants",
   // }, 
   // {
-  //   value: "Vidyas",
+  //   value: "Vdyas",
   //   slug: "vidyas",
   //   jsonName: "vidyas.json",
   //   emptyColumn: false,
