@@ -1038,13 +1038,13 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "vibrants",
   // }, 
-  // {
-  //   value: "Vdyas",
-  //   slug: "vidyas",
-  //   jsonName: "vidyas.json",
-  //   emptyColumn: false,
-  //   databaseName: "vidyas",
-  // },
+  {
+    value: "Vdyas",
+    slug: "vidyas",
+    jsonName: "vidyas.json",
+    emptyColumn: false,
+    databaseName: "vidyas",
+  },
   // {
   //   value: "Vijay home foods",
   //   slug: "vijay-food",
