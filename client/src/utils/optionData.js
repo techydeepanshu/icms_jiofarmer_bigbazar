@@ -449,8 +449,15 @@ export const optionData={
     body:[1,[0,/ [A-Z0-9]+ [0-9]+\.[0-9]+ [0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
+  // ogininal
+  // "radhey-food":{
+  //   regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["qty","description","unitPrice","extendedPrice"],
+  //   body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  // },
   "radhey-food":{
-    regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    regex:/^[0-9]+ .+ [0-9]+\.[0-9]\[0-9]+\.[0-9]+$/,
     header:["qty","description","unitPrice","extendedPrice"],
     body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
