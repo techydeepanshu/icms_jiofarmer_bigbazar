@@ -675,12 +675,12 @@ export const optionData={
   //   body:[1,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   // },
-  // "arya-international":{
-  //   regex:/^[A-Z-0-9]+ .+$/,
-  //   header:["qty","description"],
-  //   body:[1,[0,/$/]],
-  //   notAllowed:/[`~!@#\$%^&=:();""'<>*?,\*]/gi
-  // },
+  "arya-international":{
+    regex:/^[A-Z-0-9]+ .+$/,
+    header:["qty","description"],
+    body:[1,[0,/$/]],
+    notAllowed:/[`~!@#\$%^&=:();""'<>*?,\*]/gi
+  },
   // "katzman-produce":{
   //   regex:/^[0-9\.]+ .+ [A-Z]+$/,
   //   header:["qty","description","origin"],
@@ -860,7 +860,7 @@ export const optionData={
   //   header:["description","qty","unitPrice","extendedPrice"],
   //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
-  // },
+  // },not working properly
   // "northeast-banana":{
   //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
   //   header:["qty","description","unitPrice","extendedPrice"],
