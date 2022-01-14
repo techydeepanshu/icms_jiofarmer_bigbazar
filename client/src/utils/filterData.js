@@ -1,6 +1,7 @@
 import { applyFilter,emptyColumn } from "./filter";
 import { krishnaFoods } from "./invoice-filters/krishna-foods";
 import { aahubarahUsa } from "./invoice-filters/aahubarah-usa";
+import { meenaxiEnterprise } from "./invoice-filters/meenaxi-enterprise";
 import { optionData } from "./optionData";
 import {dropdownOptions} from "./invoiceList";
 export const chooseFilter = (invoiceName, data) => {
@@ -26,6 +27,9 @@ export const chooseFilter = (invoiceName, data) => {
       
       console.log("dropdownOption [i]",dropdownOptions[i]);
       console.log("dropdownOptions[i].emptyColumn",dropdownOptions[i].emptyColumn);
+
+      // function added by Deepanshu
+      if(invoiceName==="meenaxi-enterprise") return meenaxiEnterprise(dropdownOptions[i].emptyColumn?newData:data, optionData[dropdownOptions[i].slug]);
       if(invoiceName==="aahubarah-usa") return aahubarahUsa(dropdownOptions[i].emptyColumn?newData:data, optionData[dropdownOptions[i].slug]);
       
       return applyFilter(dropdownOptions[i].emptyColumn?newData:data, optionData[dropdownOptions[i].slug]);
