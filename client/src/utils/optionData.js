@@ -526,8 +526,8 @@ export const optionData={
   // },
   "amtrade":{
     regex:/^[0-9]+ [A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-    header:["qty","ctn","itemNo","description","unitPrice","extendedPrice"],
-    body:[1,1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
   "dara-food":{

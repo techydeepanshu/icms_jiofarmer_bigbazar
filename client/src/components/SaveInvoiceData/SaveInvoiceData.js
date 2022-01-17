@@ -180,7 +180,8 @@ const SaveInvoiceData = () => {
 
     const itemNoDescription = [
       "advance-foods",
-      "family-five"
+      "family-five",
+      "moda-food"
     ];
 
     const showPosState = useSelector(state => state.showPosState);
@@ -287,6 +288,7 @@ const SaveInvoiceData = () => {
         }
         itemName = res[0].ITEMNAME + " " + "-" + " " + codeOrSku;
 
+        
       // Do the API Call to update on syprum system.
       const update = await inventoryService.UpdatePOSProducts(
         JSON.stringify({
@@ -690,20 +692,23 @@ const SaveInvoiceData = () => {
 
     // setApiLoader(true);
     dispatch({type: "API_LOADER"});
-    // console.log(index);	
+    console.log("pI_index : ",index);	
     
     // Setting State
     setShowPosIndex(-1);
     
     // tableData also a state
-    console.log(tableData);
+    console.log("pI_tableData : ",tableData);
     const product = [];
+    console.log("pI_emptyColumn : ",emptyColumn);
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
+    console.log("pI_notFoundItems : ",notFoundItems);
     const tempTable = [];
     product.push(tableData[index]);
     console.log(product);
     product.isUpdated = "true";
     itemNo = product.itemNo;
+    console.log("pI_product : ",product);
     
     product.forEach((element, index) => {
       if (
@@ -716,7 +721,7 @@ const SaveInvoiceData = () => {
       }
     });
     // console.log("notFoundItems", notFoundItems);
-    console.log(tempTable);
+    console.log("pI_tempTable",tempTable);
 
     if (emptyColumn.length !== 0) {
       /** API to push  to not found list */
@@ -735,6 +740,7 @@ const SaveInvoiceData = () => {
               PosSKU: product.posSku,
               InvoiceName: invoice.slug,
             };
+            console.log("pI_data : ",data);
             await inventoryService.CreateNotFoundItems(data);
             return true;
           } catch (error) {
@@ -755,6 +761,7 @@ const SaveInvoiceData = () => {
     const priceIncreasedProducts = tempTable.filter(
       (product) => product.priceIncrease !== 0
     );
+    console.log("pI_priceIncreasedProducts : ",priceIncreasedProducts);
     // setLoader(true);
     dispatch({type: "LOADER"});
     const res = await Promise.all(
@@ -765,7 +772,7 @@ const SaveInvoiceData = () => {
             itemName: product.itemNo,
             value: { Price: product.unitPrice },
           };
-          console.log(data)
+          console.log("pI_data",data)
           await inventoryService.UpdateProductFields(data);
           
           
@@ -777,24 +784,26 @@ const SaveInvoiceData = () => {
     // setLoader(false);
     dispatch({type: "LOADER"});
     // console.log(tempTable);
+    console.log("pI_tempTable",tempTable);
     tempTable[0].isUpdated = "true";
+    console.log("pI_tempTable",tempTable);
     singleItemData = tempTable;
     // setPushToInventory(true);
-    console.log(singleItemData);
+    console.log("pI_singleItemData : ",singleItemData);
     
     updateSku = singleItemData[0].posSku;
 
 
     await getProducts();
     await getPosProducts();
-    console.log(posProducts);
+    console.log("pI_posProducts : ",posProducts);
     if(posProducts[0] != undefined ){
       await pushInventoryDetails2();
       toConsoleState();
       setIsUpdated("true");
       setUpdateIndex(index);
-      console.log(singleItemData);
-      console.log(singleItemData.itemNo);
+      console.log("pI_singleItemData : ",singleItemData);
+      console.log("pI_singleItemData.itemNo : ",singleItemData.itemNo);
       await inventoryService.UpdateInvoiceData(inv, num, day, singleItemData[0].itemNo); 
 
       //Update unit cost n price in db, after update POS.
@@ -813,7 +822,7 @@ const SaveInvoiceData = () => {
       
       //Log Generate.
       console.log("PRODUCTT");
-      console.log(singleItemData);
+      console.log("pI_singleItemData : ",singleItemData);
       const log = {
         InvoiceName: invoice.slug,
         InvoiceDate: day,
@@ -833,9 +842,9 @@ const SaveInvoiceData = () => {
         InvUnitsInCase: singleItemData[0].pieces,
         SKU: singleItemData[0].posSku
       }
-      console.log(log);
+      console.log("pI_log : ",log);
       const logUpdate = await inventoryService.posLogs(log);
-      console.log(logUpdate)
+      console.log("pI_logUpdate : ",logUpdate)
       setProductsInTable();
 
     } else {
