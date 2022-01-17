@@ -821,20 +821,20 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "rajafoods",
   // }, 
-  // {
-  //   value: "Rane music",
-  //   slug: "ranemusic",
-  //   jsonName: "rane-music.json",
-  //   emptyColumn: false,
-  //   databaseName: "ranemusics",
-  // },
-  // {
-  //   value: "Rite source corp",
-  //   slug: "ritesource-corp",
-  //   jsonName: "rite-source-corp.json",
-  //   emptyColumn: false,
-  //   databaseName: "ritesourcecorps",
-  // }, 
+  {
+    value: "Rane music",
+    slug: "ranemusic",
+    jsonName: "rane-music.json",
+    emptyColumn: false,
+    databaseName: "ranemusics",
+  },
+  {
+    value: "Rite source corp",
+    slug: "ritesource-corp",
+    jsonName: "rite-source-corp.json",
+    emptyColumn: false,
+    databaseName: "ritesourcecorps",
+  }, 
   // {value:'',slug:'',jsonName:'rite-source.json',emptyColumn:false,databaseName:'ritesources'},
   // {value:'',slug:'',jsonName:'riya.json',emptyColumn:false,databaseName:'riyas'},
   // {
@@ -851,21 +851,21 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "aryainternational",
   // }, 
-  // {
-  //   value: "Ron foods",
-  //   slug: "ron-foods",
-  //   jsonName: "ron-foods.json",
-  //   emptyColumn: false,
-  //   databaseName: "ronfoods",
-  // },
+  {
+    value: "Ron foods",
+    slug: "ron-foods",
+    jsonName: "ron-foods.json",
+    emptyColumn: false,
+    databaseName: "ronfoods",
+  },
   // {
   //   value: "Kadakia International Group",
   //   slug: "kadakia-international-group",
   //   jsonName: "kadakia-international-group.json",
   //   emptyColumn: false,
   //   databaseName: "kadakiainternationalgroup",
-  // }, 
-  // {
+  // }, // database not found 
+  //  {
   //   value: "Samar Trading Corp",
   //   slug: "samar-trading-corp",
   //   jsonName: "samar-trading-corp.json",
@@ -885,22 +885,24 @@ export const dropdownOptions = [
   //   jsonName: "apna-bazar.json",
   //   emptyColumn: false,
   //   databaseName: "apnabazar",
-  // }, 
+  // }, // not complete in regex .
   // {value:'',slug:'',jsonName:'ron.json',emptyColumn:false,databaseName:'rons'},
-  // {
-  //   value: "Sankaj",
-  //   slug: "sankaj",
-  //   jsonName: "sankaj.json",
-  //   emptyColumn: false,
-  //   databaseName: "sankajs",
-  // }, 
-  // {
-  //   value: "Sea mark",
-  //   slug: "sea-mark",
-  //   jsonName: "seamark.json",
-  //   emptyColumn: false,
-  //   databaseName: "seamarks",
-  // }, 
+  {
+    value: "Sankaj",
+    slug: "sankaj",
+    jsonName: "sankaj.json",
+    emptyColumn: false,
+    databaseName: "sankajs",
+  }, 
+  {
+    value: "Sea mark",
+    slug: "sea-mark",
+    jsonName: "seamark.json",
+    emptyColumn: false,
+    databaseName: "seamarks",
+  }, 
+ // On 14 jan 2020 down to up ⬆︎ by sahil 
+
   // {
   //   value: "Shakti group",
   //   slug: "shakti-group-usa",
@@ -923,20 +925,20 @@ export const dropdownOptions = [
   //   databaseName: "himalayainternational",
   // }, 
   
-  // {
-  //   value: "Shine foods",
-  //   slug: "shine-foods",
-  //   jsonName: "shine.json",
-  //   emptyColumn: false,
-  //   databaseName: "shines",
-  // }, 
-  // {
-  //   value: "Shreeji Jay",
-  //   slug: "shreeji-jay",
-  //   jsonName: "shreeji-jay.json",
-  //   emptyColumn: false,
-  //   databaseName: "shreejijay",
-  // }, 
+  {
+    value: "Shine foods",
+    slug: "shine-foods",
+    jsonName: "shine.json",
+    emptyColumn: false,
+    databaseName: "shines",
+  }, 
+  {
+    value: "Shreeji Jay/Shreeji  ",
+    slug: "shreeji-jay",
+    jsonName: "shreeji-jay.json",
+    emptyColumn: false,
+    databaseName: "shreejijay",
+  }, 
   // {
   //   value: "Shreeji",
   //   slug: "shreeji",
@@ -958,20 +960,22 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "slaughterhouses",
   // }, 
-  // {
-  //   value: "Spicy sense",
-  //   slug: "spicy-sense",
-  //   jsonName: "spicy-sense.json",
-  //   emptyColumn: false,
-  //   databaseName: "spicysenses",
-  // }, 
-  // {
-  //   value: "Spicy world",
-  //   slug: "spicy-world",
-  //   jsonName: "spicy-world.json",
-  //   emptyColumn: false,
-  //   databaseName: "spicyworlds",
-  // },
+  {
+    value: "Spicy sense",
+    slug: "spicy-sense",
+    jsonName: "spicy-sense.json",
+    emptyColumn: false,
+    databaseName: "spicysenses",
+  }, 
+  {
+    value: "Spicy world",
+    slug: "spicy-world",
+    jsonName: "spicy-world.json",
+    emptyColumn: false,
+    databaseName: "spicyworlds",
+  },
+
+  // On 13 jan 2020 down to up ⬆︎ by sahil 
   {
     value: "Surati",
     slug: "surati",

@@ -861,7 +861,7 @@ export const optionData={
   //   header:["description","qty","unitPrice","extendedPrice"],
   //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
-  // },
+  // },not working properly
   // "northeast-banana":{
   //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
   //   header:["qty","description","unitPrice","extendedPrice"],
