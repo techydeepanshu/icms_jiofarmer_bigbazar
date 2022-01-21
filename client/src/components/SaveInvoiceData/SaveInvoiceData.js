@@ -519,7 +519,7 @@ const SaveInvoiceData = () => {
             console.log(product.itemNo)
             console.log(ITEMNAME.indexOf("-"));
             let itemName = ITEMNAME;
-
+            console.log("pushToPos_ITEMNAME : ",ITEMNAME);
             if(ITEMNAME.indexOf("-") < 0){
               let itemNoPresent;
               for(let i = 0; i<itemNoDescription.length; i++){
@@ -919,7 +919,7 @@ const SaveInvoiceData = () => {
     dispatch({type: "API_LOADER"})
     // setOpenInvoice(false);
     dispatch({type: "OPEN_INVOICE", data: false})
-    console.log(invoice);
+    console.log("gI_invoice : ",invoice);
     const res = await inventoryService.getSavedInvoices(invoice);
     console.log(res);
     // let array = [];
@@ -1099,7 +1099,7 @@ const SaveInvoiceData = () => {
 
     const fetchSavedData = async(invoice = inv, no = num, date = day) => {
         const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
-        console.log(data);
+        console.log("fetchSavedData_data : ",data);
         if(data.length === 0) {
           alert("Invoice doesnt Exist!!");
         }else return data[0].InvoiceData;
@@ -1120,127 +1120,130 @@ const SaveInvoiceData = () => {
         return products;
       }
 
-      fetchSavedData().then((ocrData) => {
-        invoiceData()
-          .then((products) => {
-            /**post processing the table data after returning from filter */
-            function convertToUpperCase(obj) {
-              let newObj = {};
-              for (let key in obj) {
-                newObj[key.toUpperCase()] = obj[key];
-              }
-              return newObj;
-            }
-            products = convertToUpperCase(products);
-            console.log(products);
-            // scanInvoiceData.InvoiceData = ocrData;
-          //   setOcrProducts(ocrData);
+      // fetchSavedData().then((ocrData) => {
+      //   console.log("fetchSavedData_ocrData : ",ocrData);
+      //   invoiceData()
+      //     .then((products) => {
+      //       console.log("fetchSavedData_invoice_products : ",products);
+      //       /**post processing the table data after returning from filter */
+      //       function convertToUpperCase(obj) {
+      //         let newObj = {};
+      //         for (let key in obj) {
+      //           newObj[key.toUpperCase()] = obj[key];
+      //         }
+      //         return newObj;
+      //       }
+      //       products = convertToUpperCase(products);
+      //       console.log(products);
+      //       // scanInvoiceData.InvoiceData = ocrData;
+      //     //   setOcrProducts(ocrData);
             
-          //   console.log(scanInvoiceData);
-            // scanInvoiceData.InvoiceData = ocrData;
-            //console.log(resScnInvDta);
-            console.log("OCERDATa", ocrData);
-            //console.log(products);
-            //console.log(scanInvoiceData);
-            let table = ocrData.map((row) => {
-              /**For invoices which dont have item no, set description as item no */
-              // row.itemNoPresent = row.itemNo === undefined ? false : true; 
+      //     //   console.log(scanInvoiceData);
+      //       // scanInvoiceData.InvoiceData = ocrData;
+      //       //console.log(resScnInvDta);
+      //       console.log("OCERDATa", ocrData);
+      //       //console.log(products);
+      //       //console.log(scanInvoiceData);
+      //       let table = ocrData.map((row) => {
+      //         /**For invoices which dont have item no, set description as item no */
+      //         // row.itemNoPresent = row.itemNo === undefined ? false : true; 
               
-              if (row.itemNo === undefined) {
-                row.itemNo = row.description.trim().toUpperCase();
-              }
-              row.itemNo = row.itemNo.toString().toUpperCase();
+      //         if (row.itemNo === undefined) {
+      //           row.itemNo = row.description.trim().toUpperCase();
+      //         }
+      //         row.itemNo = row.itemNo.toString().toUpperCase();
   
-              row.description = row.description;
-                // products[row.itemNo] !== undefined
-                //   ? products[row.itemNo].Description
-                //   : row.description;
-              row.pieces = 
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].Quantity
-                  : 0;
-              row.sku =
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].sku
-                  : "";
-              row.barcode =
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].Barcode
-                  : "";
-              row.posName =
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].POS
-                  : "";
-              row.markup = 0;
-              row.show = true;
-              row.posSku =
-                products[row.itemNo] !== undefined
-                  ? products[row.itemNo].PosSKU
-                  : "";
-              row.isReviewed = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
-              row.size = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
-              row.department = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
-              row.cost = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
-              row.sellingPrice = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
-              row.price = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
-              row.details = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
-              row.linkingCorrect = 
-                products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
-              row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
-              //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
-              let sp = 0;
-              let cp = 0;
-              // const barcode = products.Barcode
-              if (parseInt(row.pieces)) {
-                sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
-                  2
-                );
-                cp = sp;
-              }
-              if (products[row.itemNo] !== undefined) {
-                if (sp > +products[row.itemNo].SellerCost) {
-                  row["priceIncrease"] = 1;
-                } else if (sp < +products[row.itemNo].SellerCost) {
-                  row["priceIncrease"] = -1;
-                } else if (sp == +products[row.itemNo].SellerCost) {
-                  row["priceIncrease"] = 0;
-                }
-              } else {
-                row["priceIncrease"] = 0;
-              }
+      //         row.description = row.description;
+      //           // products[row.itemNo] !== undefined
+      //           //   ? products[row.itemNo].Description
+      //           //   : row.description;
+      //         row.pieces = 
+      //           products[row.itemNo] !== undefined
+      //             ? products[row.itemNo].Quantity
+      //             : 0;
+      //         row.sku =
+      //           products[row.itemNo] !== undefined
+      //             ? products[row.itemNo].sku
+      //             : "";
+      //         row.barcode =
+      //           products[row.itemNo] !== undefined
+      //             ? products[row.itemNo].Barcode
+      //             : "";
+      //         row.posName =
+      //           products[row.itemNo] !== undefined
+      //             ? products[row.itemNo].POS
+      //             : "";
+      //         row.markup = 0;
+      //         row.show = true;
+      //         row.posSku =
+      //           products[row.itemNo] !== undefined
+      //             ? products[row.itemNo].PosSKU
+      //             : "";
+      //         row.isReviewed = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
+      //         row.size = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
+      //         row.department = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
+      //         row.cost = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
+      //         row.sellingPrice = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+      //         row.price = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+      //         row.details = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
+      //         row.linkingCorrect = 
+      //           products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
+      //         row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
+      //         //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+      //         let sp = 0;
+      //         let cp = 0;
+      //         // const barcode = products.Barcode
+      //         if (parseInt(row.pieces)) {
+      //           sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+      //             2
+      //           );
+      //           cp = sp;
+      //         }
+      //         if (products[row.itemNo] !== undefined) {
+      //           if (sp > +products[row.itemNo].SellerCost) {
+      //             row["priceIncrease"] = 1;
+      //           } else if (sp < +products[row.itemNo].SellerCost) {
+      //             row["priceIncrease"] = -1;
+      //           } else if (sp == +products[row.itemNo].SellerCost) {
+      //             row["priceIncrease"] = 0;
+      //           }
+      //         } else {
+      //           row["priceIncrease"] = 0;
+      //         }
   
-              /**filter out the rows for which qty shipped & extendedPrice is zero */
-              if (row.qty == "0" && row.extendedPrice === "0.00") {
-                return null;
-              }
-              /**Calulate qty for which qty is not read/scanned by textract */
-              if (!row.qty) {
-                row.qty = (
-                  parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
-                ).toFixed(0);
-              }
-            return { ...row, sp, cp };
-            });
-            // setLoader(false);
-            dispatch({type: "LOADER"});
+      //         /**filter out the rows for which qty shipped & extendedPrice is zero */
+      //         if (row.qty == "0" && row.extendedPrice === "0.00") {
+      //           return null;
+      //         }
+      //         /**Calulate qty for which qty is not read/scanned by textract */
+      //         if (!row.qty) {
+      //           row.qty = (
+      //             parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+      //           ).toFixed(0);
+      //         }
+      //       return { ...row, sp, cp };
+      //       });
+      //       // setLoader(false);
+      //       dispatch({type: "LOADER"});
 
-            setTableData(table.filter((data) => data !== null));
-            setItemNoDropdown(Object.keys(products));
-            setProductDetails(products);
-          })
-          .catch((err) => {
-            console.log("error on mapping ocrdata", err)
-            // setLoader(false);
-            dispatch({type: "LOADER"});
-          });
-      });
+      //       setTableData(table.filter((data) => data !== null));
+      //       console.log("setProductsInTable_tableData : ",tableData);
+      //       setItemNoDropdown(Object.keys(products));
+      //       setProductDetails(products);
+      //     })
+      //     .catch((err) => {
+      //       console.log("error on mapping ocrdata", err)
+      //       // setLoader(false);
+      //       dispatch({type: "LOADER"});
+      //     });
+      // });
     }
 
     const toggleModal = (x) => {
@@ -1527,6 +1530,8 @@ const SaveInvoiceData = () => {
 
     const updateItem = (props, ocrCost) => {
       let data;
+      console.log("updateItem_showPosState : ",showPosState);
+      console.log("updateItem_notFounds : ",notFounds);
       //console.log(showPosState);
       if(notFounds === "true"){
         // console.log(props.selectedInvoice);
@@ -1570,7 +1575,7 @@ const SaveInvoiceData = () => {
         };
       }
   
-      console.log(data)
+      console.log("updateItem_data : ",data)
       inventoryService
       .UpdateProductFields(data)
       .then((res) => {
@@ -1666,6 +1671,7 @@ const SaveInvoiceData = () => {
         emptyColumnList.push(tempTableData.length - 1);
         setEmptyColumn(emptyColumnList);
         setTableData(tempTableData);
+        console.log("addRow_tableData : ",tableData);
     };
     const deleteRow = (index) => {
         let tempTableData = [...tableData];
@@ -1694,6 +1700,7 @@ const SaveInvoiceData = () => {
           }
         }
         setTableData(tempTableData);
+        console.log("deleteRow_tableData : ",tableData);
         setEmptyColumn(emptyColumnList);
     };
 
@@ -1739,8 +1746,10 @@ const SaveInvoiceData = () => {
     }
 
     fetchSavedData(invoice, no, date).then((ocrData) => {
+      console.log("fetchSavedData_ocrData : ",ocrData);
       invoiceData()
         .then((products) => {
+          console.log("fetchSavedData_products : ",products);
           /**post processing the table data after returning from filter */
           function convertToUpperCase(obj) {
             let newObj = {};
@@ -1849,6 +1858,7 @@ const SaveInvoiceData = () => {
           dispatch({type: "LOADER"});
 
           setTableData(table.filter((data) => data !== null));
+          console.log("fetchSavedData_tableData : ",tableData);
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
         })
@@ -1922,10 +1932,10 @@ const SaveInvoiceData = () => {
 
     const renderTableData = () => {
         // hicksvilleDropdown(HicksData);
-    
+        console.log("renderTableData_tableData : ",tableData);
         if (tableData) {
           console.log(tableData);
-    
+          console.log("renderTableData_showPosState : ",showPosState);
           // console.log(showPosIndex);
           // console.log(tableData[0]);
           
@@ -1944,7 +1954,7 @@ const SaveInvoiceData = () => {
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
             // console.log(element.isUpdated);
-            // console.log(element);
+            console.log("renderTableData_element : ",element);
             let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
             
     
@@ -2480,6 +2490,7 @@ const SaveInvoiceData = () => {
           tempTableData[row]["barcode"] = value;
         }
         setTableData(tempTableData);
+        console.log("handleChange_tableData : ",tableData);
     };
 
     const mergeDuplicates = (a) => {

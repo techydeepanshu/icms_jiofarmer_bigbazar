@@ -24,6 +24,7 @@ import { lightBlue } from "@material-ui/core/colors";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
+  console.log("DisplayData_props : ",props);
   const api = new Api();
   const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);

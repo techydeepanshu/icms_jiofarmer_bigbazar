@@ -99,7 +99,18 @@ const HandwrittenInvoice = () => {
     const [unitCost, setUnitCost] = useState("");
     const [redState, setRedState] = useState("true");
 
-    
+    // ************** Added by Deepanshu *****************
+    // const [inv, setInv] = useState("");
+    const inv = useSelector(state => state.openInvoice.inv);
+    // const [ num, setNum] = useState("");
+    const num = useSelector(state => state.openInvoice.num);
+    // const [day, setDay] = useState("");
+    const day = useSelector(state => state.openInvoice.day);
+
+    const [invoiceNo, setInvoiceNo] = useState("");
+    const [date, setDate] = useState("");
+    const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0]);
+    // ************** Added by Deepanshu *****************
     
     const [posProduct, setPosProduct] = useState({
       isReviewed: "",
@@ -1159,10 +1170,13 @@ const HandwrittenInvoice = () => {
   };
 
   const updateItem = async () => {
-    console.log(invoice);
+    console.log("updateItem_selectedDropdown : ",selectedDropdown);
+    console.log("updateItem_InvoiceNo : ",invoiceNo);
+    console.log("updateItem_date : ",date);
+    console.log("updateItem_itemName : ",itemName);
     const data = {
   
-      invoiceName: invoice.slug,
+      invoiceName: selectedDropdown.slug,
       itemName: itemName,
       value: {
         isReviewed: "true",
@@ -1181,8 +1195,8 @@ const HandwrittenInvoice = () => {
     }
     console.log(data)
 
-    const result = await inventoryService.UpdateProductFields(data);
-    console.log(result);
+    // const result = await inventoryService.UpdateProductFields(data);
+    // console.log(result);
 
 
   }
@@ -1500,6 +1514,153 @@ const HandwrittenInvoice = () => {
     
   }
 
+  // ************* Add by Deepanshu *****************
+  // const fetchSavedData = async(invoice = inv, no = num, date = day) => {
+  //   const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
+  //   console.log("fetchSavedData_data : ",data);
+  //   if(data.length === 0) {
+  //     alert("Invoice doesnt Exist!!");
+  //   }else return data[0].InvoiceData;
+  //   // console.log(data);
+  //   // console.log(data[0].InvoiceData);
+    
+  // };
+
+  async function invoiceData() {
+    const products = await tesseractService.GetProductDetails(
+      invoice
+    );
+    //console.log(props.selectedInvoice);
+    return products;
+  }
+
+  const no = "2022-01-21";
+  // fetchSavedData(invoice, no, date).then((ocrData) => {
+  //   console.log("fetchSavedData_ocrData : ",ocrData);
+  //   invoiceData()
+  //     .then((products) => {
+  //       console.log("fetchSavedData_products : ",products);
+  //       /**post processing the table data after returning from filter */
+  //       function convertToUpperCase(obj) {
+  //         let newObj = {};
+  //         for (let key in obj) {
+  //           newObj[key.toUpperCase()] = obj[key];
+  //         }
+  //         return newObj;
+  //       }
+  //       products = convertToUpperCase(products);
+  //       console.log(products);
+  //       // scanInvoiceData.InvoiceData = ocrData;
+  //     //   setOcrProducts(ocrData);
+        
+  //     //   console.log(scanInvoiceData);
+  //       // scanInvoiceData.InvoiceData = ocrData;
+  //       //console.log(resScnInvDta);
+  //       console.log("OCERDATa", ocrData);
+  //       //console.log(products);
+  //       //console.log(scanInvoiceData);
+  //       let table = ocrData.map((row) => {
+  //         /**For invoices which dont have item no, set description as item no */
+  //         row.itemNoPresent = row.itemNo === undefined ? false : true; 
+  //         if (row.itemNo === undefined) {
+  //           row.itemNo = row.description.trim().toUpperCase();
+  //         }
+  //         row.itemNo = row.itemNo.toString().toUpperCase();
+
+  //         row.description = row.description;
+  //           // products[row.itemNo] !== undefined
+  //           //   ? products[row.itemNo].Description
+  //           //   : row.description;
+  //         row.pieces =
+  //           products[row.itemNo] !== undefined
+  //             ? products[row.itemNo].Quantity
+  //             : 0;
+  //         row.sku =
+  //           products[row.itemNo] !== undefined
+  //             ? products[row.itemNo].sku
+  //             : "";
+  //         row.barcode =
+  //           products[row.itemNo] !== undefined
+  //             ? products[row.itemNo].Barcode
+  //             : "";
+  //         row.posName =
+  //           products[row.itemNo] !== undefined
+  //             ? products[row.itemNo].POS
+  //             : "";
+  //         row.markup = 0;
+  //         row.show = true;
+  //         row.posSku =
+  //           products[row.itemNo] !== undefined
+  //             ? products[row.itemNo].PosSKU
+  //             : "";
+  //         row.isReviewed = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
+  //         row.size = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
+  //         row.department = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
+  //         row.cost = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
+  //         row.sellingPrice = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+  //         row.price = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
+  //         row.details = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
+  //         row.linkingCorrect = 
+  //           products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
+  //         row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
+  //         //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
+  //         let sp = 0;
+  //         let cp = 0;
+  //         // const barcode = products.Barcode
+  //         if (parseInt(row.pieces)) {
+  //           sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
+  //             2
+  //           );
+  //           cp = sp;
+  //         }
+  //         if (products[row.itemNo] !== undefined) {
+  //           if (sp > +products[row.itemNo].SellerCost) {
+  //             row["priceIncrease"] = 1;
+  //           } else if (sp < +products[row.itemNo].SellerCost) {
+  //             row["priceIncrease"] = -1;
+  //           } else if (sp == +products[row.itemNo].SellerCost) {
+  //             row["priceIncrease"] = 0;
+  //           }
+  //         } else {
+  //           row["priceIncrease"] = 0;
+  //         }
+
+  //         /**filter out the rows for which qty shipped & extendedPrice is zero */
+  //         if (row.qty == "0" && row.extendedPrice === "0.00") {
+  //           return null;
+  //         }
+  //         /**Calulate qty for which qty is not read/scanned by textract */
+  //         if (!row.qty) {
+  //           row.qty = (
+  //             parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+  //           ).toFixed(0);
+  //         }
+  //       return { ...row, sp, cp };
+  //       });
+  //       // setLoader(false);
+  //       dispatch({type: "LOADER"});
+
+  //       setTableData(table.filter((data) => data !== null));
+  //       console.log("fetchSavedData_tableData : ",tableData);
+  //       setItemNoDropdown(Object.keys(products));
+  //       setProductDetails(products);
+  //     })
+  //     .catch((err) => {
+  //       console.log("error on mapping ocrdata", err)
+  //       // setLoader(false);
+  //       dispatch({type: "LOADER"});
+  //     });
+  // });
+
+
+  // ************* Add by Deepanshu *****************
   useEffect(() => {
 
     const curDate = new Date();
@@ -1531,16 +1692,17 @@ const HandwrittenInvoice = () => {
                   {/* <ul>
                   <li> */}
                   <Autocomplete
-                      value={invoice}
+                      value={selectedDropdown}
                       onChange={(event, newValue) => {
-                          console.log("new value", newValue)
+                          console.log("newValue", newValue)
                           if (newValue) {
                             console.log(newValue);
+                            setSelectedDropdown(newValue);
                           // setInvoice(newValue);
                           // setTimeout(()=> {}, 1000);
-                          invoice = newValue;
-                          console.log(invoice);
-                          setProductsInTable();
+                          // invoice = newValue;
+                          // console.log(invoice);
+                          // setProductsInTable();
                           }
                           // getInvoices(newValue);
                       }}
@@ -1567,6 +1729,31 @@ const HandwrittenInvoice = () => {
                         }
                       }
                   />
+                  <TextField
+                    label="Inoive No."
+                    variant="outlined"
+                    type="text"
+                    name="invoiceNo"
+                    value={invoiceNo}
+                    onChange={(event) => {
+                      setInvoiceNo(event.target.value);
+                      console.log("setInvoiceNo_inoiceNo : ",invoiceNo);
+                    }
+                  }
+                    />
+                  
+                  <TextField
+                    
+                    variant="outlined"
+                    type="date"
+                    name="date"
+                    value={date}
+                    onChange={(event) => {
+                      setDate(event.target.value);
+                      console.log("setDate_date : ",date);
+                    }
+                  }
+                    />
                 {/* </li> */}
                 <br />
               {/* <li> */}
