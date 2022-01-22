@@ -1041,7 +1041,7 @@ const SaveInvoiceData = () => {
         invoice: inv,
         itemNo: item.itemNo,
       }
-
+      console.log("linkManually_data : ",data);
       const result = await inventoryService.linkManually(data);
       console.log(result);
 
@@ -1099,7 +1099,7 @@ const SaveInvoiceData = () => {
 
     const fetchSavedData = async(invoice = inv, no = num, date = day) => {
         const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
-        console.log("fetchSavedData_data : ",data);
+        console.log("fatchSavedData_data : ",data);
         if(data.length === 0) {
           alert("Invoice doesnt Exist!!");
         }else return data[0].InvoiceData;
