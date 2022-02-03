@@ -3,7 +3,9 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import { Box, Grid } from "@material-ui/core";
-import { dropdownOptions } from "../../utils/invoiceList";
+// import { dropdownOptions } from "../../utils/invoiceList";
+import { handwrittenInvoiceList } from "./HandWrittenInvoiceList";
+
 import { makeStyles } from "@material-ui/core/styles";
 import { InventoryService } from "../../services/InventoryService";
 import {
@@ -66,12 +68,12 @@ const useStyles = makeStyles({
 const HandwrittenInvoice = () => {
   // const [loader, setLoader] = useState();
   const tesseractService = new TesseractService();
-  const [tableData, setTableData] = useState([]);
+
   const [productDetails, setProductDetails] = useState([]);
   const [itemNoDropdown, setItemNoDropdown] = useState([]);
 
   const dispatch = useDispatch();
-  const numOfCollections = dropdownOptions.length;
+  const numOfCollections = handwrittenInvoiceList.length;
   const dropdownLabel = "Select Invoice(" + numOfCollections + ")";
   // const [invoice, setInvoice] = useState("");
   let invoice = "";
@@ -86,10 +88,11 @@ const HandwrittenInvoice = () => {
 
   const [itemName, setItemName] = useState("");
   const [unitsInCase, setUnitsInCase] = useState("");
-  const [caseCost, setCaseCost] = useState("");
+  const [caseCost, setCaseCost] = useState();
 
   const [newUnitCost, setNewUnitCost] = useState("");
   const [newUnitPrice, setNewUnitPrice] = useState("");
+  const [prevNewUnitPrice, setPrevNewUnitPrice] = useState("");
 
   const [showPosIndex, setShowPosIndex] = useState(-1);
   // const showPosState = useSelector(state => state.showPosState);
@@ -110,8 +113,11 @@ const HandwrittenInvoice = () => {
   const day = useSelector((state) => state.openInvoice.day);
 
   const [invoiceNo, setInvoiceNo] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState();
+  const [extendedPrice, setExtendedPrice] = useState("");
   const [date, setDate] = useState("");
-  const [selectedDropdown, setSelectedDropdown] = useState(dropdownOptions[0]);
+  const [selectedDropdown, setSelectedDropdown] = useState();
   const [notFound, setNotFound] = useState("false");
   const [showPosState, setShowPosState] = useState({
     item: "",
@@ -127,15 +133,72 @@ const HandwrittenInvoice = () => {
     unitCost: "",
     unitPrice: "",
   });
-
+  const [tableDataCopy, setTableDataCopy] = useState([]);
+  const [tableData, setTableData] = useState([
+    // {
+    //   barcode: "894559000389",
+    //   cost: "2.0",
+    //   cp: "3.75",
+    //   department: "ROTI AND NAAN",
+    //   description: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
+    //   details: undefined,
+    //   extendedPrice: "225.00",
+    //   isReviewed: "false",
+    //   isUpdated: "false",
+    //   itemNo: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
+    //   itemNoPresent: true,
+    //   linkingCorrect: "false",
+    //   margin: 49.500000000000014,
+    //   markup: 0,
+    //   pieces: "12",
+    //   posName: "TANDOORI NAAN 5 PC",
+    //   posSku: "13051",
+    //   price: "45",
+    //   priceIncrease: 1,
+    //   qty: "5",
+    //   sellingPrice: "2.99",
+    //   show: true,
+    //   size: "425 GM ..",
+    //   sku: undefined,
+    //   sp: "3.75",
+    //   unitPrice: "45.00",
+    // },
+    // {
+    //   barcode: "894559000389",
+    //   cost: "2.0",
+    //   cp: "3.75",
+    //   department: "ROTI AND NAAN",
+    //   description: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
+    //   details: undefined,
+    //   extendedPrice: "225.00",
+    //   isReviewed: "false",
+    //   isUpdated: "false",
+    //   itemNo: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
+    //   itemNoPresent: true,
+    //   linkingCorrect: "false",
+    //   margin: 49.500000000000014,
+    //   markup: 0,
+    //   pieces: "12",
+    //   posName: "TANDOORI NAAN 5 PC",
+    //   posSku: "13051",
+    //   price: "45",
+    //   priceIncrease: 1,
+    //   qty: "5",
+    //   sellingPrice: "2.99",
+    //   show: true,
+    //   size: "425 GM ..",
+    //   sku: undefined,
+    //   sp: "3.75",
+    //   unitPrice: "45.00",
+    // },
+  ]);
+  console.log("table_state_value : ", tableData);
   // ************** Added by Deepanshu *****************
 
   // function added by deepanshu
   const saveDetails = async () => {
     console.log("this is saveDetails");
   };
- 
-
 
   const [posProduct, setPosProduct] = useState({
     isReviewed: "",
@@ -158,6 +221,7 @@ const HandwrittenInvoice = () => {
   let posProducts = [];
   let wooComProducts = [];
   let singleItemData = [];
+  let gethandwrittenlog = [];
   let updateSku = "";
   let itemNo = "";
 
@@ -179,9 +243,9 @@ const HandwrittenInvoice = () => {
     "Unit Price",
     "Mark up (%)",
     "Add Details",
-    // "Tick to Delete",
+    "Tick to Delete",
     "Update POS",
-    // "Reverse POS Update",
+    "Reverse POS Update",
     "NO LINKING",
     "Serial No.(2)",
   ];
@@ -207,6 +271,15 @@ const HandwrittenInvoice = () => {
             stock_quantity,
             sale_price,
           } = res[0];
+          console.log("res[0]");
+          console.log("id : ", id);
+          console.log("name : ", name);
+          console.log("regular_price : ", regular_price);
+          console.log("price : ", price);
+          console.log("sku : ", sku);
+          console.log("slug : ", slug);
+          console.log("stock_quantity : ", stock_quantity);
+          console.log("sale_price : ", sale_price);
           return {
             id,
             name,
@@ -258,18 +331,19 @@ const HandwrittenInvoice = () => {
             console.log(updateSku);
             return {
               ...row,
-              COST: row.newUnitCost,
-              PRICE: row.newUnitPrice,
+              COST: row.cp,
+              // PRICE: newUnitPrice === "" ? row.sp : newUnitPrice,
+              PRICE: newUnitPrice === "" ? row.sellingPrice : newUnitPrice,
               SKU,
               UPC,
               ITEMNAME,
-              // TOTALQTY:
-              //   parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+              TOTALQTY:
+                parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
               itemNo: row.itemNo,
               isNew: false,
               BUYASCASE: 1,
-              // CASEUNITS: row.pieces.toString(),
-              // CASECOST: row.unitPrice.toString(),
+              CASEUNITS: row.pieces.toString(),
+              CASECOST: row.unitPrice.toString(),
               DEPNAME,
             };
           } else {
@@ -310,6 +384,7 @@ const HandwrittenInvoice = () => {
   const pushToWoocom = async (products) => {
     // setLoader(true);
     // dispatch({type: "LOADER"});
+    console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
         try {
@@ -332,6 +407,8 @@ const HandwrittenInvoice = () => {
         }
       })
     );
+
+    console.log("pushToWoocom_result : ", responses);
     // setLoader(false);
     // dispatch({type: "LOADER"});
   };
@@ -358,10 +435,39 @@ const HandwrittenInvoice = () => {
             DEPNAME,
             itemNo,
           } = product;
+          console.log("product : ", product);
+
+          // SET ITEMNAME...
+          let codeOrSku = "";
+          console.log(product.itemNo);
+          console.log(ITEMNAME.indexOf("-"));
+          let itemName = ITEMNAME;
+          console.log("pushToPos_ITEMNAME : ", ITEMNAME);
+          if (ITEMNAME.indexOf("-") < 0) {
+            let itemNoPresent;
+            for (let i = 0; i < handwrittenInvoiceList.length; i++) {
+              console.log(selectedDropdown.slug);
+              if (handwrittenInvoiceList[i].slug === selectedDropdown.slug) {
+                itemNoPresent = false;
+                break;
+              } else {
+                itemNoPresent = true;
+                break;
+              }
+            }
+            console.log(itemNoPresent);
+            // if (itemNoPresent) {
+            //   codeOrSku = product.itemNo;
+            // } else {
+              codeOrSku = "SKU" + " " + product.posSku;
+            // }
+            itemName = ITEMNAME + " " + "-" + " " + codeOrSku;
+          }
+
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
               UPC,
-              ITEMNAME,
+              ITEMNAME:itemName,
               DESCRIPTION: "",
               PRICE,
               COST,
@@ -375,15 +481,18 @@ const HandwrittenInvoice = () => {
               ISFOODSTAMP: 1,
               ISWEIGHTED: 0,
               ISTAXABLE: 1,
-              // VENDORNAME: invoice.slug,
-              // VENDORCODE: itemNo,
-              // VENDORCOST: "",
+              VENDORNAME: selectedDropdown.slug,
+              VENDORCODE: itemNo,
+              VENDORCOST: "",
               ISNEWITEM: isNew ? 1 : 0,
               BUYASCASE,
               CASEUNITS,
               CASECOST,
-              COMPANYNAME: invoice.slug,
+              COMPANYNAME: selectedDropdown.slug,
               PRODUCTCODE: itemNo,
+              MODELNUM:
+                userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
+              VINTAGE: "ICMS",
             })
           );
           console.log("updated pos data", res);
@@ -422,76 +531,88 @@ const HandwrittenInvoice = () => {
   const pushInventoryDetails2 = async () => {
     console.log(posProducts);
     // setLoader(true);
-    // let data = singleItemData.map((element) => {
-    //   return {
-    //     item: element.itemNo,
-    //     qty: parseInt(element.qty) * parseInt(element.pieces),
-    //     cp: element.unitPrice,
-    //     markup: element.markup,
-    //     sp: element.sp,
-    //     description: element.description,
-    //   };
-    // });
+    console.log(singleItemData);
+    let data = singleItemData.map((element) => {
+      return {
+        item: element.itemNo,
+        qty: parseInt(element.qty) * parseInt(element.pieces),
+        cp: element.unitPrice,
+        markup: element.markup,
+        sp: element.sellingPrice,
+        description: element.description,
+      };
+    });
 
-    // var duplicates = {};
-    // for (var i = 0; i < data.length; i++) {
-    //   if (duplicates.hasOwnProperty(data[i].item)) {
-    //     duplicates[data[i].item].push(i);
-    //   } else if (data.lastIndexOf(data[i].item) !== i) {
-    //     duplicates[data[i].item] = [i];
-    //   }
-    // }
+    console.log(data);
 
-    // let tempData = Object.values(duplicates).filter((ele) => ele.length > 1);
-    // if (tempData.length > 0) {
-    //   tempData.forEach((index) => {
-    //     let temp = 0;
-    //     index.forEach((val) => {
-    //       if (data[val]) {
-    //         // console.log("data[val]", data[val]);
-    //         temp += data[val].qty;
-    //         if (temp - data[val].qty !== 0) {
-    //           data[val] = null;
-    //         }
-    //       }
-    //     });
-    //     data[index[0]].qty = temp;
-    //   });
-    // }
-    // data = data.filter((ele) => ele !== null);
+    var duplicates = {};
+    for (var i = 0; i < data.length; i++) {
+      if (duplicates.hasOwnProperty(data[i].item)) {
+        console.log("true");
+        duplicates[data[i].item].push(i);
+      } else if (data.lastIndexOf(data[i].item) !== i) {
+        console.log("false");
+        console.log(data.lastIndexOf(data[i].item));
+        duplicates[data[i].item] = [i];
+      }
+    }
 
+    console.log(duplicates);
+
+    let tempData = Object.values(duplicates).filter((ele) => ele.length > 1);
+    console.log(tempData);
+    if (tempData.length > 0) {
+      tempData.forEach((index) => {
+        let temp = 0;
+        index.forEach((val) => {
+          if (data[val]) {
+            // console.log("data[val]", data[val]);
+            temp += data[val].qty;
+            if (temp - data[val].qty !== 0) {
+              data[val] = null;
+            }
+          }
+        });
+        data[index[0]].qty = temp;
+      });
+    }
+    console.log(data);
+    data = data.filter((ele) => ele !== null);
+    console.log(data);
     /**
      * add the fileds of  data from the woocom & ocr
      */
     console.log(wooComProducts.length);
-    // if(wooComProducts[0] != null){
-    //   let updatedWoocomProducts = data
-    //     .map((product, index) => {
-    //       /**find index of the item in fetched woocom product list */
-    //       const wooIndex = wooComProducts.findIndex(
-    //         (wooProduct) => product.item === wooProduct.itemNo
-    //       );
-    //       if (wooIndex !== -1) {
-    //         /**get the qty & other fileds of the woocom product */
-    //         let { id, stock_quantity } = wooComProducts[wooIndex];
-    //         stock_quantity += product.qty;
-    //         const regular_price = product.sp;
-    //         return { id, regular_price, stock_quantity, itemNo: product.item };
-    //       }
-    //       return null;
-    //     })
-    //     .filter((item) => item !== null);
+    console.log(wooComProducts);
+    if (wooComProducts[0] != null) {
+      let updatedWoocomProducts = data
+        .map((product, index) => {
+          /**find index of the item in fetched woocom product list */
+          const wooIndex = wooComProducts.findIndex(
+            (wooProduct) => product.item === wooProduct.itemNo
+          );
+          console.log("wooIndex : ", wooIndex);
+          if (wooIndex !== -1) {
+            /**get the qty & other fileds of the woocom product */
+            let { id, stock_quantity } = wooComProducts[wooIndex];
+            stock_quantity += product.qty;
+            const regular_price = product.sp;
+            return { id, regular_price, stock_quantity, itemNo: product.item };
+          }
+          return null;
+        })
+        .filter((item) => item !== null);
 
-    //   console.log(updatedWoocomProducts);
-    //   await pushToWoocom(updatedWoocomProducts);
-    //   }
+      await pushToWoocom(updatedWoocomProducts);
+    }
+
     await pushToPOS(posProducts);
 
     // setLoader(false);
     // dispatch({type: "LOADER"});
     // if (itemsNotPushed.length === 0) {
     window.alert("Inventory updated successfully");
-    // setRedirect(true);
+    // // setRedirect(true);
     // } else {
     //   window.alert("Inventory not updated");
     // }
@@ -507,7 +628,7 @@ const HandwrittenInvoice = () => {
     // setApiLoader(true);
     // dispatch({type: "API_LOADER"});
     const product = [];
-
+    console.log("posProduct : ", posProduct);
     const tempTable = [];
     product.push(posProduct);
     console.log(product);
@@ -517,11 +638,24 @@ const HandwrittenInvoice = () => {
     // setLoader(false);
     // dispatch({type: "LOADER"});
     // console.log(tempTable);
-    singleItemData = [posProduct];
-    singleItemData[0].isUpdated = "true";
+    // singleItemData = [posProduct];
+    // singleItemData[0].isUpdated = "true";
     // setPushToInventory(true);
-    console.log(singleItemData);
 
+    singleItemData = [tableData[index]];
+    console.log(singleItemData);
+    // const tempTable = [];
+    // product.forEach((element, index) => {
+    //   if (
+    //     !emptyColumn.includes(index) &&
+    //     element.show === true &&
+    //     element["isForReview"] != true
+    //   ) {
+    //     let rowData = { index: index + 1, ...element };
+    //     tempTable.push(rowData);
+    //   }
+    // });
+    // singleItemData=tempTable;
     updateSku = singleItemData[0].posSku;
 
     await getProducts();
@@ -532,63 +666,298 @@ const HandwrittenInvoice = () => {
       toConsoleState();
       console.log(singleItemData);
       console.log(singleItemData.itemNo);
-      // await inventoryService.UpdateInvoiceData(inv, num, day, singleItemData[0].itemNo);
+      // await inventoryService.UpdateInvoiceData(
+      //   inv,
+      //   num,
+      //   day,
+      //   singleItemData[0].itemNo
+      // );
 
       //Update unit cost n price in db, after update POS.
       let data1 = {
-        cost: singleItemData[0].newUnitCost,
-        price: singleItemData[0].newUnitPrice,
-        item: singleItemData[0].itemNo,
-        invoice: invoice.slug,
+        invoiceName: selectedDropdown.slug,
+        itemName: singleItemData[0].itemNo.toLowerCase(),
+        value: {
+          cost: singleItemData[0].cp,
+          sellingPrice: newUnitPrice,
+          isUpdated: "true",
+          isUpdatedDate:todayDate
+        },
       };
       console.log(data1);
-      await inventoryService.UpdateDBafterPosUpdate(data1);
+      await inventoryService.UpdateHandWrittenProductFields(data1);
 
       //Log Generate.
       console.log("PRODUCTT");
       console.log(singleItemData);
       const log = {
-        InvoiceName: invoice.slug,
+        InvoiceName: selectedDropdown.slug,
         InvoiceDate: "",
         ItemNo: singleItemData[0].itemNo,
         InvoiceDescription: singleItemData[0].description,
-        PosDescription: singleItemData[0].pos,
-        OldUnitCost: singleItemData[0].unitCost,
-        OldUnitPrice: singleItemData[0].unitPrice,
-        //OldMargin: singleItemData[0].margin.toFixed(2).toString(),
-        OldMargin: (
-          ((singleItemData[0].unitPrice - singleItemData[0].unitCost) /
-            singleItemData[0].unitCost) *
+        PosDescription: singleItemData[0].posName,
+        OldUnitCost: singleItemData[0].cost,
+        OldUnitPrice: prevNewUnitPrice,
+        // OldMarkup: singleItemData[0].margin.toFixed(2).toString(),
+        OldMarkup: (
+          ((prevNewUnitPrice - singleItemData[0].cost) /
+            singleItemData[0].cost) *
           100
         )
           .toFixed(2)
           .toString(),
-        NewUnitCost: singleItemData[0].newUnitCost,
-        NewUnitPrice: singleItemData[0].newUnitPrice,
-        //NewMargin:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
-        NewMargin: (
-          ((singleItemData[0].newUnitPrice - singleItemData[0].newUnitCost) /
-            singleItemData[0].newUnitCost) *
+
+        NewUnitCost: posProducts[0].COST,
+        NewUnitPrice: posProducts[0].PRICE,
+        // NewMarkup:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
+        NewMarkup: (
+          ((posProducts[0].PRICE - posProducts[0].COST) / posProducts[0].COST) *
           100
         )
           .toFixed(2)
           .toString(),
+
         UpdateDate: todayDate,
         Person: userEmail,
         TimeStamp: new Date().toTimeString().split(" ")[0],
+        InvCaseCost: singleItemData[0].unitPrice,
+        InvUnitsInCase: singleItemData[0].pieces,
         HandWritten: "YES",
+        SKU: singleItemData[0].posSku,
       };
       console.log(log);
 
-      const logUpdate = await inventoryService.posLogs(log);
+      const logUpdate = await inventoryService.handwrittenPosLogs(log);
       console.log(logUpdate);
+      setProductsInTableNew(selectedDropdown);
     } else {
       alert("POS not updated!!");
+      setProductsInTableNew(selectedDropdown);
     }
     // setApiLoader(false);
     // dispatch({type: "API_LOADER"});
   };
   //*********************************************************************POS UPDATE ENDS******************************************* */
+
+  async function gethandwrittenLogs(){
+    console.log("GET HANDWRITTEN LOG");
+    console.log(singleItemData);
+    const log = await Promise.all(
+      singleItemData.map(async (row)=>{
+        console.log(row.barcode);
+        const data = {
+          itemNo:row.itemNo,
+          invoicename:selectedDropdown.slug,
+          sku:row.posSku,
+          updatedate:row.isUpdatedDate
+        }
+        try{
+          const res = await inventoryService.gethandwrittenPosLogs(data);
+          console.log(res);
+          const {PosUnitCost,PosUnitPrice,NewUnitCost,NewUnitPrice} = res[0];
+          return {
+            PosUnitCost,PosUnitPrice,NewUnitCost,NewUnitPrice
+          }
+        }catch(error){
+          console.log(error);
+          alert("Previou Price Not Find");
+        }
+      })
+    )
+
+    gethandwrittenlog = log;
+    console.log(gethandwrittenlog);
+  }
+
+  const reversePushInventoryDetails2 = async () => {
+    console.log(posProducts);
+    // setLoader(true);
+    console.log(singleItemData);
+    let data = singleItemData.map((element) => {
+      return {
+        item: element.itemNo,
+        qty: parseInt(element.qty) * parseInt(element.pieces),
+        cp: element.unitPrice,
+        markup: element.markup,
+        sp: element.sp,
+        description: element.description,
+      };
+    });
+
+    console.log(data);
+
+    var duplicates = {};
+    for (var i = 0; i < data.length; i++) {
+      if (duplicates.hasOwnProperty(data[i].item)) {
+        console.log("true");
+        duplicates[data[i].item].push(i);
+      } else if (data.lastIndexOf(data[i].item) !== i) {
+        console.log("false");
+        console.log(data.lastIndexOf(data[i].item));
+        duplicates[data[i].item] = [i];
+      }
+    }
+
+    console.log(duplicates);
+
+    let tempData = Object.values(duplicates).filter((ele) => ele.length > 1);
+    console.log(tempData);
+    if (tempData.length > 0) {
+      tempData.forEach((index) => {
+        let temp = 0;
+        index.forEach((val) => {
+          if (data[val]) {
+            // console.log("data[val]", data[val]);
+            temp += data[val].qty;
+            if (temp - data[val].qty !== 0) {
+              data[val] = null;
+            }
+          }
+        });
+        data[index[0]].qty = temp;
+      });
+    }
+    console.log(data);
+    data = data.filter((ele) => ele !== null);
+    console.log(data);
+    /**
+     * add the fileds of  data from the woocom & ocr
+     */
+    console.log(wooComProducts.length);
+    console.log(wooComProducts);
+    if (wooComProducts[0] != null) {
+      let updatedWoocomProducts = data
+        .map((product, index) => {
+          /**find index of the item in fetched woocom product list */
+          const wooIndex = wooComProducts.findIndex(
+            (wooProduct) => product.item === wooProduct.itemNo
+          );
+          console.log("wooIndex : ", wooIndex);
+          if (wooIndex !== -1) {
+            /**get the qty & other fileds of the woocom product */
+            let { id, stock_quantity } = wooComProducts[wooIndex];
+            stock_quantity += product.qty;
+            const regular_price = product.sp;
+            return { id, regular_price, stock_quantity, itemNo: product.item };
+          }
+          return null;
+        })
+        .filter((item) => item !== null);
+
+      let updatedWoocomProducts2 = [{
+        ...updatedWoocomProducts[0],
+        regular_price:gethandwrittenlog[0].PosUnitPrice
+      }];
+      console.log(updatedWoocomProducts2);
+      await pushToWoocom(updatedWoocomProducts2);
+    }
+    let posProducts2 = [{
+      ...posProducts[0],
+      COST:gethandwrittenlog[0].PosUnitCost,
+      PRICE:gethandwrittenlog[0].PosUnitPrice
+    }]
+    await pushToPOS(posProducts2);
+
+    // setLoader(false);
+    // dispatch({type: "LOADER"});
+    // if (itemsNotPushed.length === 0) {
+    window.alert("Inventory updated successfully");
+    // // setRedirect(true);
+    // } else {
+    //   window.alert("Inventory not updated");
+    // }
+  };
+
+  const reversePOSUpdate = async (index) => {
+    console.log("reversePOSUpdate");
+    // const response = await inventoryService.gethandwrittenPosLogs();
+
+    singleItemData = [tableData[index]];
+    console.log(singleItemData);
+
+    updateSku = singleItemData[0].posSku;
+
+    // await gethandwrittenLogs();
+    // await getProducts();
+    await getPosProducts();
+    console.log(posProducts);
+
+    if (posProducts[0] != undefined) {
+      // await reversePushInventoryDetails2();
+      // toConsoleState();
+      // console.log(singleItemData);
+      // console.log(singleItemData.itemNo);
+      // await inventoryService.UpdateInvoiceData(
+      //   inv,
+      //   num,
+      //   day,
+      //   singleItemData[0].itemNo
+      // );
+
+      //Update unit cost n price in db, after update POS.
+      let data1 = {
+        invoiceName: selectedDropdown.slug,
+        itemName: singleItemData[0].itemNo.toLowerCase(),
+        value: {
+          // cost: gethandwrittenlog[0].PosUnitCost,
+          // sellingPrice: gethandwrittenlog[0].PosUnitPrice,
+          isUpdated: "false",
+          // isUpdatedDate:todayDate
+        },
+      };
+      console.log(data1);
+      await inventoryService.UpdateHandWrittenProductFields(data1);
+
+      //Log Generate.
+      console.log("PRODUCTT");
+      // console.log(singleItemData);
+      // const log = {
+      //   InvoiceName: selectedDropdown.slug,
+      //   InvoiceDate: "",
+      //   ItemNo: singleItemData[0].itemNo,
+      //   InvoiceDescription: singleItemData[0].description,
+      //   PosDescription: singleItemData[0].posName,
+      //   PosUnitCost: singleItemData[0].cost,
+      //   PosUnitPrice: singleItemData[0].sellingPrice,
+      //   // OldMarkup: singleItemData[0].margin.toFixed(2).toString(),
+      //   OldMarkup: (
+      //     ((singleItemData[0].sellingPrice - singleItemData[0].cost) /
+      //       singleItemData[0].cost) *
+      //     100
+      //   )
+      //     .toFixed(2)
+      //     .toString(),
+
+      //   NewUnitCost: posProducts[0].COST,
+      //   NewUnitPrice: posProducts[0].PRICE,
+      //   // NewMarkup:( ((singleItemData[0].sp- singleItemData[0].cp)/ singleItemData[0].cp)*100).toFixed(2).toString(),
+      //   NewMarkup: (
+      //     ((posProducts[0].PRICE - posProducts[0].COST) /
+      //       posProducts[0].COST) *
+      //     100
+      //   )
+      //     .toFixed(2)
+      //     .toString(),
+
+      //   UpdateDate: todayDate,
+      //   Person: userEmail,
+      //   TimeStamp: new Date().toTimeString().split(" ")[0],
+      //   InvCaseCost: singleItemData[0].unitPrice,
+      //   InvUnitsInCase: singleItemData[0].pieces,
+      //   HandWritten: "YES",
+      //   SKU: singleItemData[0].posSku,
+      // };
+      // console.log(log);
+
+      // const logUpdate = await inventoryService.handwrittenPosLogs(log);
+      // console.log(logUpdate);
+      setProductsInTableNew(selectedDropdown);
+    } else {
+      alert("POS not updated!!");
+      setProductsInTableNew(selectedDropdown);
+    }
+  };
+
   const reverseUpdate = async (index) => {
     console.log(index);
     console.log(tableData);
@@ -668,14 +1037,54 @@ const HandwrittenInvoice = () => {
     const item = tableData[index];
     console.log(item);
     const data = {
-      invoiceName: invoice.slug,
-      itemName: item.itemNo,
+      invoiceName: selectedDropdown.slug,
+      itemName: item.itemNo.toLowerCase(),
       value: {
-        Quantity: item.pieces,
+        pieces: item.pieces,
       },
     };
+
+    console.log("updateUnits_data : ", data);
     inventoryService
-      .UpdateProductFields(data)
+      .UpdateHandWrittenProductFields(data)
+      .then((res) => {
+        if (!res) {
+          throw new Error("Product not updated");
+        }
+        console.log(res);
+        alert("Successfully updated fields");
+        // setStateUpdated(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Some error occuured in creating product");
+      });
+    // .finally(setProductsInTable());
+    // console.log(res);
+  };
+
+  const updatePosDetails = async (index) => {
+    const item = tableData[index];
+    console.log(item);
+    const data = {
+      invoiceName: selectedDropdown.slug,
+      itemName: item.itemNo.toLowerCase(),
+      value: {
+        ...item,
+        barcode: posProduct.barcode,
+        department: posProduct.department,
+        posName: posProduct.pos,
+        posSku: posProduct.posSku,
+        size: posProduct.size,
+        sellingPrice: posProduct.sellingPrice,
+        cost: posProduct.sellerCost,
+        isUpdated: "false",
+      },
+    };
+
+    console.log("updatePosDetails : ", data);
+    inventoryService
+      .UpdateHandWrittenProductFields(data)
       .then((res) => {
         if (!res) {
           throw new Error("Product not updated");
@@ -688,7 +1097,10 @@ const HandwrittenInvoice = () => {
         console.log(err);
         alert("Some error occuured in creating product");
       })
-      .finally(setProductsInTable());
+      .finally(() => {
+        setProductsInTableNew(selectedDropdown);
+        // renderTableData();
+      });
     // console.log(res);
   };
 
@@ -772,518 +1184,22 @@ const HandwrittenInvoice = () => {
     });
   };
 
-  //   const renderTableData = () => {
-  //     // hicksvilleDropdown(HicksData);
-  //     const tableContant =[
-  //      {
-  //       barcode: "894559000389",
-  //       cost: "2.0",
-  //       cp: "3.75",
-  //       department: "ROTI AND NAAN",
-  //       description: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-  //       details: undefined,
-  //       extendedPrice: "225.00",
-  //       isReviewed: "false",
-  //       isUpdated: "false",
-  //       itemNo: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-  //       itemNoPresent: true,
-  //       linkingCorrect: "false",
-  //       margin: 49.500000000000014,
-  //       markup: 0,
-  //       pieces: "12",
-  //       posName: "TANDOORI NAAN 5 PC",
-  //       posSku: "13051",
-  //       price: "45",
-  //       priceIncrease: 1,
-  //       qty: "5",
-  //       sellingPrice: "2.99",
-  //       show: true,
-  //       size: "425 GM ..",
-  //       sku: undefined,
-  //       sp: "3.75",
-  //       unitPrice: "45.00"
-  //     }];
-  //     setTableData(tableContant);
-  //     console.log("renderTableData_tableData : ",tableData);
-  //     if (tableContant) {
-  //       console.log(tableData);
-
-  //       // console.log(showPosIndex);
-  //       // console.log(tableData[0]);
-
-  //       let rows = tableContant.map((element, index) => {
-  //         //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
-  //         let isEmpty =
-  //           element.qty === "" ||
-  //           element.itemNo === "" ||
-  //           !element.pieces ||
-  //           isNaN(element.unitPrice) ||
-  //           element.unitPrice === "" ||
-  //           isNaN(element.extendedPrice);
-  //         // let isEmpty = false;
-  //         // if (isEmpty && element.show) {
-  //         //   let emptyColumn = [...emptyColumnList, index];
-  //         //   emptyColumnList = [...new Set(emptyColumn)];
-  //         // }
-  //         let isFree = element.qty != 0 && element.extendedPrice === "0.00";
-  //         console.log(element.isUpdated);
-  //         console.log(element);
-  //         let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
-
-  //         return (
-  //           <tr
-  //             key={index}
-  //             className={isEmpty ? styles.red : null}
-  //             // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
-  //             style={element.linkingCorrect == "false" ? {backgroundColor: "pink"} : element.isUpdated === "true"  ? {backgroundColor: "lightGreen"}
-  //               : element.show ? { opacity: "1" } : { opacity: "0.4" }}
-  //           >
-  //             <td>{index + 1}</td>
-
-  //             {/* <td>
-  //               <TextField
-  //                 type="tel"
-  //                 value={element.details}
-  //                 id="outlined-secondary"
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "details", e.target.value);
-  //                 }}
-  //                 style={{ width: 100 }}
-  //               />
-  //             </td> */}
-  //             <td className={styles.element}>
-  //               <TextField
-  //                 type="tel"
-  //                 value={showPosIndex === index ? showPosState.barcode : element.barcode}
-  //                 id="outlined-secondary"
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "barcode", e.target.value);
-  //                 }}
-  //                 style={{ width: 150 }}
-  //               />
-  //               <IconButton
-  //                 color="primary"
-  //                 aria-label="add to review"
-  //                 // onClick={() => addForReview(element, index)}
-  //               >
-  //                 <InfoOutlinedIcon
-  //                   style={element.isReviewed  === "true" ? {fill: "red"} : null}
-  //                 />
-  //                 {/* <AddShoppingCartIcon
-  //                   style={
-  //                     reviewItems.includes(index)
-  //                       ? { backgroundColor: "green" }
-  //                       : null
-  //                   }
-  //                 /> */}
-  //               </IconButton>
-  //               <div className={element.isReviewed  === "true" ? styles.tooltipIsReviewed: styles.tooltip} >
-  //                 <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
-  //                 {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
-  //                 <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
-  //                 <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
-  //                 <p>Margin(%) - {margin.toFixed(2)}</p>
-  //                 <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p>
-  //                 <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
-  //                 {/* <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p> */}
-  //                 <div >
-  //                 <button onClick={() => {
-  //                         if(notFounds === "true"){
-  //                           toggleModal("notfounds");
-  //                         }else{
-  //                           updateItem(invoice.slug, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
-  //                         }
-  //                       } }
-  //                   disabled={showPosIndex === index ? false : true}
-  //                   style={{backgroundColor: "green",
-  //                   border: "none",
-  //                   color: "white",
-  //                   padding: "4px 8px",
-  //                   textAlign: "center",
-  //                   textDecoration: "none",
-  //                   display: "inline-block",
-  //                   fontSize: "14px",
-  //                   align: "left"}} >
-  //                   Update Item
-  //                 </button>
-  //                 </div>
-  //                 <br />
-  //                 <div>
-  //                 <button onClick={()=> linkManually(index)}
-  //                   // disabled={showPosIndex === index ? false : true}
-  //                   style={{backgroundColor: "blue",
-  //                   border: "none",
-  //                   color: "white",
-  //                   padding: "4px 8px",
-  //                   textAlign: "center",
-  //                   textDecoration: "none",
-  //                   display: "inline-block",
-  //                   fontSize: "14px",
-  //                   align: "left"}} >
-  //                   Link Manually
-  //                 </button>
-  //                 </div>
-  //                 <br />
-  //                 <div>
-  //                 <button onClick={()=> reverseUpdate(index)}
-  //                   // disabled={showPosIndex === index ? false : true}
-  //                   style={{backgroundColor: "red",
-  //                   border: "none",
-  //                   color: "white",
-  //                   padding: "4px 8px",
-  //                   textAlign: "center",
-  //                   textDecoration: "none",
-  //                   display: "inline-block",
-  //                   fontSize: "14px",
-  //                   align: "left"}} >
-  //                   Reverse Update
-  //                 </button>
-  //                 </div>
-  //               </div>
-  //             </td>
-  //             <td>{showPosIndex === index ? showPosState.posSku : element.posSku}</td>
-  //             <td>
-  //               <TextField
-  //                 type="tel"
-  //                 value={element.qty}
-  //                 id="outlined-secondary"
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "qty", e.target.value);
-  //                 }}
-  //                 style={{ width: 100 }}
-  //               />
-  //             </td>
-  //             <td>{element.cp}</td>
-  //             <td>
-  //               <Autocomplete
-  //                 value={element.itemNo}
-  //                 onChange={(event, newValue) => {
-  //                   if (newValue) {
-  //                     handleChange(index, "itemNo", newValue);
-  //                   }
-  //                 }}
-  //                 id="combo-box"
-  //                 options={itemNoDropdown}
-  //                 getOptionLabel={(option) => option}
-  //                 style={{ width: 200 }}
-  //                 renderInput={(params) => (
-  //                   <TextField {...params} variant="outlined" />
-  //                 )}
-  //               />
-  //             </td>
-  //             <td>
-  //             {/* {dropdownIndex == index ? fetchingOptions ? <Loading type="ThreeDots" height={40} width={40} /> : null : null} */}
-  //               <Autocomplete
-  //                 value={showPosIndex  === index ? showPosState.item : element.itemNo }
-  //                 loading={true}
-  //                 onInputChange={(event, value) => {
-  //                   console.log("ON INPUT CHANGE");
-  //                   // event.toLowerCase();
-  //                   // value.toLowerCase();
-  //                   // console.log(event.target.value);
-  //                   // console.log(value);
-  //                   // searchDropdown(event, value);
-  //                   // setOptions([]);
-  //                   if(event != null){
-  //                     setTimeout(()=> {
-  //                       hicksvilleDropdownNew(event, value, index);
-
-  //                     }, 1500);
-  //                   }
-  //                   // hicksvilleDropdownNew(event, value, index);
-  //                 }}
-  //                 onChange={(event, newValue) => {
-  //                   // console.log(event.target.value);
-  //                   // console.log(newValue);
-  //                   if (newValue) {
-  //                     let newState = { ...showPosState };
-  //                     console.log(newValue);
-  //                     // newState.item = newValue.name;
-  //                     newState.item = element.itemNo
-  //                     newState.description = newValue.name;
-  //                     newState.barcode = newValue.upc;
-  //                     newState.pos = newValue.name;
-  //                     newState.posSku = newValue.sku;
-  //                     newState.size = newValue.size;
-  //                     newState.department = newValue.department;
-  //                     newState.unitCost = newValue.cost;
-  //                     newState.unitPrice = newValue.price;
-  //                     // setShowPosState(newState);
-  //                     dispatch({type: "SET_POS_STATE", data: newState})
-  //                     setShowPosIndex(index);
-  //                     setUnitCost(newValue.cost);
-  //                     // setStateUpdated("");
-  //                     if(isEmpty){
-  //                       // setNotFounds("true");
-  //                       dispatch({type: "NOT_FOUNDS", data: "true"})
-
-  //                       setRedState("false");
-  //                     }
-  //                     //setDisabled(false);
-  //                     //updateOnHoverDetails(index);
-  //                     //setShowPosIndex(index);
-  //                     // console.log(newValue);
-  //                     console.log(newState);
-  //                     //console.log(showPosState);
-
-  //                   }
-  //                 }}
-  //                 id="combo-box"
-  //                 // options={element.fuzzSuggestion}
-  //                 options={options}
-  //                 // getOptionLabel={option => option.label}
-  //                 getOptionLabel={(option) => option.label ?? element.itemNo}
-  //                 // getOptionLabel={(option) => dropdownLoader ? <Spinner /> : option.label}
-  //                 style={{ width: 400 }}
-  //                 renderInput={(params) => (
-  //                   <TextField {...params} variant="outlined" />
-  //                 )}
-  //               />
-  //             </td>
-
-  //             <td>{element.description}</td>
-  //             {/* <td>{element.pieces}</td> */}
-  //             <td>
-  //               <TextField
-  //                 type="tel"
-  //                 value={element.pieces}
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "pieces", e.target.value);
-  //                 }}
-  //                 style={{ width: 100 }}
-  //               />
-  //               <button onClick={() => {updateUnits(index)}} style={{
-  //                 backgroundColor: "#008CBA",
-  //                 border: "none",
-  //                 color: "white",
-  //                 padding: "5px 16px",
-  //                 textAlign: "center",
-  //                 textDecoration: "none",
-  //                 display: "inline-block",
-  //                 fontSize: "10px",
-  //                 margin: "4px 2px",
-  //                 cursor: "pointer",
-  //               }}>Update Units</button>
-  //             </td>
-  //             <td>
-  //               <TextField
-  //                 type="tel"
-  //                 value={element.unitPrice}
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "unitPrice", e.target.value);
-  //                 }}
-  //                 style={
-  //                   element.priceIncrease === 1
-  //                     ? { backgroundColor: "#1a8cff", width: 100 }
-  //                     : element.priceIncrease === -1
-  //                     ? { backgroundColor: "#ffb31a", width: 100 }
-  //                     : { width: 100 }
-  //                   // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
-  //                   //   : element.priceIncrease === 1
-  //                   //       ? { backgroundColor: "#1a8cff", width: 100 }
-  //                   //       : element.priceIncrease === -1
-  //                   //       ? { backgroundColor: "#ffb31a", width: 100 }
-  //                   //       : { width: 100 }
-  //                 }
-  //               />
-  //             </td>
-  //             <td>{element.extendedPrice}</td>
-
-  //             <td>
-  //               <TextField
-  //                 type="tel"
-  //                 value={element.sp}
-  //                 variant="outlined"
-  //                 onChange={(e) => {
-  //                   handleChange(index, "sp", e.target.value);
-  //                 }}
-  //                 style={{ width: 100 }}
-  //               />
-  //             </td>
-  //             <td>{element.markup}</td>
-  //             {/* <td>
-  //               <Checkbox
-  //                 checked={!element.show}
-  //                 onChange={(e) => handleChange(index, "show", e.target.value)}
-  //                 inputProps={{ "aria-label": "primary checkbox" }}
-  //               />
-  //             </td> */}
-
-  //               <td className={styles.element}>
-  //               <IconButton onClick={() => {
-  //                 toggleModal("details");
-  //                 setDetailsIndex(index);
-  //                 }}>
-  //                   <AddCircleIcon />
-  //                 </IconButton>
-  //                 <div className={styles.tooltip}>
-  //                   <p>Details- {element.details}</p>
-  //                 </div>
-
-  //             </td>
-
-  //             <td>
-  //           {/* <Button
-  //             text={element.show ? "Delete" : "Undo"}
-  //             color="btn btn-info"
-  //             type="submit"
-  //             onClick={() => deleteRow(index)}
-  //           /> */}
-  //         </td>
-  //             <td>
-  //             <Button
-  //                 text="Update POS"
-  //                 color="btn btn-info"
-  //                 type="submit"
-  //                 onClick={() => pushSingleItemToInventory(index)}
-  //                 style={{ width: 120 }}
-  //               />
-
-  //             </td>
-  //             {/* <td>
-  //             <Button
-  //                 text="Reverse POS"
-  //                 type="submit"
-  //                 onClick={() => reversePOSUpdate(index)}
-  //                 style={{ width: 120, backgroundColor: "red", color: "white" }}
-  //               />
-
-  //             </td> */}
-  //             <td className={styles.element}>
-  //               <IconButton onClick={() => linkingCorrect(index)}>
-  //                 <Cancel/>
-  //               </IconButton>
-  //             </td>
-  //             <td>{index + 1}</td>
-  //             {/* <td>
-  //               <Button
-  //                 text={element.show ? "Delete" : "Undo"}
-  //                 color="btn btn-info"
-  //                 type="submit"
-  //                 onClick={() => deleteRow(index)}
-  //               />
-  //             </td> */}
-  //           </tr>
-  //         );
-  //       });
-  //       return (
-  //         <div style={{ marginTop: "35px" }}>
-  //           <table className="table table-hover table-responsive-sm">
-  //             <tbody>
-  //               <tr>{renderTableHeader()}</tr>
-  //               {rows}
-  //               <tr>
-  //                 <td>
-  //                   {/* <Button
-  //                     text="Add cell"
-  //                     color="btn btn-info"
-  //                     onClick={addRow}
-  //                   /> */}
-  //                 </td>
-  //               </tr>
-  //             </tbody>
-  //           </table>
-  //           <div className={styles.divRow}>
-  //             {/* <Button
-  //               text="Update Inventory"
-  //               color="btn btn-info"
-  //               type="submit"
-  //               onClick={pushInventoryDetails}
-  //             /> */}
-  //             {/* <Button
-  //               text="Save Invoice Data"
-  //               color="btn btn-info"
-  //               type="submit"
-  //               onClick={toggleModal}
-  //             /> */}
-  //             {/* <Button
-  //               text="Re upload"
-  //               color="btn btn-info"
-  //               type="submit"
-  //               onClick={() => window.location.reload()}
-  //             /> */}
-  //           </div>
-  //         </div>
-  //       );
-  //     }
-  // };
-
   const renderTableData = () => {
-    const tableContant = [
-      // {
-      //   barcode: "894559000389",
-      //   cost: "2.0",
-      //   cp: "3.75",
-      //   department: "ROTI AND NAAN",
-      //   description: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-      //   details: undefined,
-      //   extendedPrice: "225.00",
-      //   isReviewed: "false",
-      //   isUpdated: "false",
-      //   itemNo: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-      //   itemNoPresent: true,
-      //   linkingCorrect: "false",
-      //   margin: 49.500000000000014,
-      //   markup: 0,
-      //   pieces: "12",
-      //   posName: "TANDOORI NAAN 5 PC",
-      //   posSku: "13051",
-      //   price: "45",
-      //   priceIncrease: 1,
-      //   qty: "5",
-      //   sellingPrice: "2.99",
-      //   show: true,
-      //   size: "425 GM ..",
-      //   sku: undefined,
-      //   sp: "3.75",
-      //   unitPrice: "45.00",
-      // },
-      // {
-      //   barcode: "894559000389",
-      //   cost: "2.0",
-      //   cp: "3.75",
-      //   department: "ROTI AND NAAN",
-      //   description: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-      //   details: undefined,
-      //   extendedPrice: "225.00",
-      //   isReviewed: "false",
-      //   isUpdated: "false",
-      //   itemNo: "TAZA TANDOORI NAAN JUMBO 8PCS X12 4.99",
-      //   itemNoPresent: true,
-      //   linkingCorrect: "false",
-      //   margin: 49.500000000000014,
-      //   markup: 0,
-      //   pieces: "12",
-      //   posName: "TANDOORI NAAN 5 PC",
-      //   posSku: "13051",
-      //   price: "45",
-      //   priceIncrease: 1,
-      //   qty: "5",
-      //   sellingPrice: "2.99",
-      //   show: true,
-      //   size: "425 GM ..",
-      //   sku: undefined,
-      //   sp: "3.75",
-      //   unitPrice: "45.00",
-      // },
-    ];
+    // dispatch({type: "LOADER"});
     // setTableData(tableContant);
     console.log("renderTableData_tableData : ", tableData);
-    console.log("renderTableData_tableContant : ", tableContant);
+    // console.log("renderTableData_tableContant : ", tableContant);
     console.log("renderTableData_showPosState : ", showPosState);
-    // console.log(stateUpdated);
 
-    if (tableContant) {
-      // console.log(tableContant);
-
+    // hicksvilleDropdown(HicksData);
+    console.log("renderTableData_tableData : ", tableData);
+    if (tableData) {
+      console.log(tableData);
+      console.log("renderTableData_showPosState : ", showPosState);
       // console.log(showPosIndex);
+      // console.log(tableData[0]);
 
-      let rows = tableContant.map((element, index) => {
+      let rows = tableData.map((element, index) => {
         //fuzzwuzzSuggestion = getFuzzwuzzSuggestion(element.description);
         let isEmpty =
           element.qty === "" ||
@@ -1297,7 +1213,13 @@ const HandwrittenInvoice = () => {
         //   emptyColumnList = [...new Set(emptyColumn)];
         // }
         let isFree = element.qty != 0 && element.extendedPrice === "0.00";
+        // console.log(element.isUpdated);
+        console.log("renderTableData_element : ", element);
+        let margin =
+          ((element.sellingPrice - element.cost) / element.cost) * 100;
 
+        console.log("isEmpty : ", isEmpty);
+        console.log("isFree : ", isFree);
         const isUpdated = "true";
         const updateIndex = 1;
         const costInc = "true";
@@ -1309,6 +1231,8 @@ const HandwrittenInvoice = () => {
         const addRow = () => {
           console.log("addRow");
         };
+
+       
         const pushInventoryDetails = () => {
           console.log("pushInventoryDetails");
         };
@@ -1317,17 +1241,31 @@ const HandwrittenInvoice = () => {
           <tr
             key={index}
             className={isEmpty ? styles.red : isFree ? styles.free : null}
+            // style={element.show ? { opacity: "1" } : { opacity: "0.4" }}
             style={
-              isUpdated === "true"
-                ? updateIndex === index
-                  ? { backgroundColor: "lightBlue" }
-                  : {}
+              element.linkingCorrect == "false"
+                ? { backgroundColor: "pink" }
+                : element.isUpdated === "true"
+                ? { backgroundColor: "lightGreen" }
                 : element.show
                 ? { opacity: "1" }
                 : { opacity: "0.4" }
             }
           >
-            <td>{index + 1}</td>
+            <td> {index + 1} </td>
+
+            {/* <td>
+              <TextField
+                type="tel"
+                value={element.details}
+                id="outlined-secondary"
+                variant="outlined"
+                onChange={(e) => {
+                  handleChange(index, "details", e.target.value);
+                }}
+                style={{ width: 100 }}
+              />
+            </td> */}
             <td className={styles.element}>
               <TextField
                 type="tel"
@@ -1343,49 +1281,125 @@ const HandwrittenInvoice = () => {
                 }}
                 style={{ width: 150 }}
               />
-              {/* <IconButton
+              <IconButton
                 color="primary"
                 aria-label="add to review"
                 // onClick={() => addForReview(element, index)}
               >
                 <InfoOutlinedIcon
+                  style={element.isReviewed === "true" ? { fill: "red" } : null}
+                />
+                {/* <AddShoppingCartIcon
                   style={
                     reviewItems.includes(index)
                       ? { backgroundColor: "green" }
                       : null
                   }
-                /> 
+                /> */}
               </IconButton>
-              <div className={element.isReviewed  === "true" || (showPosIndex === index && stateUpdated === "true") ? styles.tooltipIsReviewed: styles.tooltip} >
-                <p>POS Product- {showPosIndex === index ? showPosState.pos : element.posName }</p>
-                <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p>
-                <p>Size- {showPosIndex === index ? showPosState.size : element.size}</p>
-                <p>Department - {showPosIndex === index ? showPosState.department : element.department}</p>
-                <p>Unit Cost- {showPosIndex === index ? showPosState.unitCost : element.cost}</p> 
-                <p>Unit Price- {showPosIndex === index ? showPosState.unitPrice : element.sellingPrice}</p>
-                <div >
-                <button onClick={ () => {
-                            if(notFounds === "true"){
-                              toggleModal();
-                            }else{
-                              updateItem(props, (parseFloat(element.unitPrice) / parseInt(element.pieces)).toFixed(2))
-                            }
-                          }
-                        } 
-                  disabled={showPosIndex === index ? false : true}
-                  style={{backgroundColor: "green",
-                  border: "none",
-                  color: "white",
-                  padding: "4px 8px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  fontSize: "14px",
-                  align: "left"}} >
-                  Update Item
-                </button>
-                </div> 
-              </div> */}
+              <div
+                className={
+                  element.isReviewed === "true"
+                    ? styles.tooltipIsReviewed
+                    : styles.tooltip
+                }
+              >
+                <p>
+                  POS Product-{" "}
+                  {showPosIndex === index ? showPosState.pos : element.posName}
+                </p>
+                {/* <p>UPC- {showPosIndex === index ? showPosState.barcode : element.barcode}</p> */}
+                <p>
+                  Size-{" "}
+                  {showPosIndex === index ? showPosState.size : element.size}
+                </p>
+                <p>
+                  Department -{" "}
+                  {showPosIndex === index
+                    ? showPosState.department
+                    : element.department}
+                </p>
+                {/*<p>Margin(%) - {margin.toFixed(2)}</p>*/}
+                <p>Margin(%) - {showPosIndex === index ? (((showPosState.sellingPrice - showPosState.sellerCost)/showPosState.sellerCost)*100).toFixed(2) : margin.toFixed(2)}</p>
+                <p>
+                  Unit Cost-{" "}
+                  {showPosIndex === index
+                    ? showPosState.sellerCost
+                    : element.cost}
+                </p>
+                <p>
+                  Unit Price-{" "}
+                  {showPosIndex === index
+                    ? showPosState.sellingPrice
+                    : element.sellingPrice}
+                </p>
+                {/* <p>Price- {showPosIndex === index ? showPosState.price : element.price}</p> */}
+                <div>
+                  <button
+                    onClick={() => {
+                      if (notFounds === "true") {
+                        toggleModal("notfounds");
+                      } else {
+                        updatePosDetails(index);
+                      }
+                    }}
+                    disabled={showPosIndex === index ? false : true}
+                    style={{
+                      backgroundColor: "green",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left",
+                    }}
+                  >
+                    Update Item
+                  </button>
+                </div>
+                <br />
+                <div>
+                  <button
+                    onClick={() => linkManually(index)}
+                    // disabled={showPosIndex === index ? false : true}
+                    style={{
+                      backgroundColor: "blue",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left",
+                    }}
+                  >
+                    Link Manually
+                  </button>
+                </div>
+                <br />
+                <div>
+                  <button
+                    onClick={() => reverseUpdate(index)}
+                    // disabled={showPosIndex === index ? false : true}
+                    style={{
+                      backgroundColor: "red",
+                      border: "none",
+                      color: "white",
+                      padding: "4px 8px",
+                      textAlign: "center",
+                      textDecoration: "none",
+                      display: "inline-block",
+                      fontSize: "14px",
+                      align: "left",
+                    }}
+                  >
+                    Reverse Update
+                  </button>
+                </div>
+              </div>
             </td>
             <td>
               {showPosIndex === index ? showPosState.posSku : element.posSku}
@@ -1402,6 +1416,7 @@ const HandwrittenInvoice = () => {
                 style={{ width: 100 }}
               />
             </td>
+            <td>{element.cp}</td>
             <td>
               <Autocomplete
                 value={element.itemNo}
@@ -1420,43 +1435,70 @@ const HandwrittenInvoice = () => {
               />
             </td>
             <td>
+              {/* {dropdownIndex == index ? fetchingOptions ? <Loading type="ThreeDots" height={40} width={40} /> : null : null} */}
               <Autocomplete
                 value={
                   showPosIndex === index ? showPosState.item : element.itemNo
                 }
+                loading={true}
+                onInputChange={(event, value) => {
+                  console.log("ON INPUT CHANGE");
+                  // event.toLowerCase();
+                  // value.toLowerCase();
+                  // console.log(event.target.value);
+                  // console.log(value);
+                  // searchDropdown(event, value);
+                  // setOptions([]);
+                  if (event != null) {
+                    setTimeout(() => {
+                      hicksvilleDropdownNew(event, value, index);
+                    }, 1500);
+                  }
+                  // hicksvilleDropdownNew(event, value, index);
+                }}
                 onChange={(event, newValue) => {
+                  // console.log(event.target.value);
+                  // console.log(newValue);
                   if (newValue) {
                     let newState = { ...showPosState };
                     console.log(newValue);
                     // newState.item = newValue.name;
                     newState.item = element.itemNo;
-                    newState.description = element.description;
+                    newState.description = newValue.name;
                     newState.barcode = newValue.upc;
                     newState.pos = newValue.name;
                     newState.posSku = newValue.sku;
                     newState.size = newValue.size;
                     newState.department = newValue.department;
-                    newState.unitCost = newValue.cost;
-                    newState.unitPrice = newValue.price;
-                    setShowPosState(newState);
+                    newState.sellerCost = newValue.cost;
+                    newState.sellingPrice = newValue.price;
+                    // setShowPosState(newState);
+                    dispatch({ type: "SET_POS_STATE", data: newState });
                     setShowPosIndex(index);
                     setUnitCost(newValue.cost);
+                    setPosProduct(newState);
+                    setShowPosState(newState);
+                    // setStateUpdated("");
                     if (isEmpty) {
-                      setNotFound("true");
+                      // setNotFounds("true");
+                      dispatch({ type: "NOT_FOUNDS", data: "true" });
+
+                      setRedState("false");
                     }
                     //setDisabled(false);
                     //updateOnHoverDetails(index);
                     //setShowPosIndex(index);
                     // console.log(newValue);
-                    // console.log(newState);
+                    console.log(newState);
                     //console.log(showPosState);
                   }
                 }}
                 id="combo-box"
-                disabled
                 // options={element.fuzzSuggestion}
-                options={hicksvilleData}
+                options={options}
+                // getOptionLabel={option => option.label}
                 getOptionLabel={(option) => option.label ?? element.itemNo}
+                // getOptionLabel={(option) => dropdownLoader ? <Spinner /> : option.label}
                 style={{ width: 400 }}
                 renderInput={(params) => (
                   <TextField {...params} variant="outlined" />
@@ -1476,6 +1518,25 @@ const HandwrittenInvoice = () => {
                 }}
                 style={{ width: 100 }}
               />
+              <button
+                onClick={() => {
+                  updateUnits(index);
+                }}
+                style={{
+                  backgroundColor: "#008CBA",
+                  border: "none",
+                  color: "white",
+                  padding: "5px 16px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  fontSize: "10px",
+                  margin: "4px 2px",
+                  cursor: "pointer",
+                }}
+              >
+                Update Units
+              </button>
             </td>
             <td>
               <TextField
@@ -1486,45 +1547,32 @@ const HandwrittenInvoice = () => {
                   handleChange(index, "unitPrice", e.target.value);
                 }}
                 style={
-                  // element.priceIncrease === 1
-                  //   ? { backgroundColor: "#1a8cff", width: 100 }
-                  //   : element.priceIncrease === -1
-                  //   ? { backgroundColor: "#ffb31a", width: 100 }
-                  //   : { width: 100 }
-                  showPosIndex === index
-                    ? costInc === "true"
-                      ? { backgroundColor: "#1a8cff", width: 100 }
-                      : costDec === "true"
-                      ? { backgroundColor: "#ffb31a", width: 100 }
-                      : { width: 100 }
-                    : element.priceIncrease === 1
+                  element.priceIncrease === 1
                     ? { backgroundColor: "#1a8cff", width: 100 }
                     : element.priceIncrease === -1
                     ? { backgroundColor: "#ffb31a", width: 100 }
                     : { width: 100 }
+                  // showPosIndex === index ? costInc==="true" ? { backgroundColor: "#1a8cff", width: 100 } : costDec==="true" ? { backgroundColor: "#ffb31a", width: 100 } : {width: 100}
+                  //   : element.priceIncrease === 1
+                  //       ? { backgroundColor: "#1a8cff", width: 100 }
+                  //       : element.priceIncrease === -1
+                  //       ? { backgroundColor: "#ffb31a", width: 100 }
+                  //       : { width: 100 }
                 }
               />
             </td>
             <td>{element.extendedPrice}</td>
-            {/* <td>{element.cp}</td> */}
+
             <td>
               <TextField
                 type="tel"
-                value={element.cp}
+                /*value={element.sp}*/
+                value={(showPosIndex === index
+                  ? showPosState.sellingPrice
+                  : element.sellingPrice)}
                 variant="outlined"
                 onChange={(e) => {
-                  handleChange(index, "cp", e.target.value);
-                }}
-                style={{ width: 100 }}
-              />
-            </td>
-            <td>
-              <TextField
-                type="tel"
-                value={element.sp}
-                variant="outlined"
-                onChange={(e) => {
-                  handleChange(index, "sp", e.target.value);
+                  handleChange(index, "sellingPrice", e.target.value);
                 }}
                 style={{ width: 100 }}
               />
@@ -1537,6 +1585,21 @@ const HandwrittenInvoice = () => {
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
             </td> */}
+
+            <td className={styles.element}>
+              <IconButton
+                onClick={() => {
+                  toggleModal("details");
+                  setDetailsIndex(index);
+                }}
+              >
+                <AddCircleIcon />
+              </IconButton>
+              <div className={styles.tooltip}>
+                <p>Details- {element.details}</p>
+              </div>
+            </td>
+
             <td>
               <Button
                 text={element.show ? "Delete" : "Undo"}
@@ -1550,9 +1613,26 @@ const HandwrittenInvoice = () => {
                 text="Update POS"
                 color="btn btn-info"
                 type="submit"
-                onClick={() => pushSingleItemToInventory(index)}
+                onClick={() => {
+                  if(window.confirm("Do You Want to Update Data in POS")){
+                    pushSingleItemToInventory(index)
+                  }
+                }}
                 style={{ width: 120 }}
               />
+            </td>
+            <td>
+              <Button
+                text="Reverse POS"
+                type="submit"
+                onClick={() => reversePOSUpdate(index)}
+                style={{ width: 120, backgroundColor: "red", color: "white" }}
+              />
+            </td>
+            <td className={styles.element}>
+              <IconButton onClick={() => linkingCorrect(index)}>
+                <Cancel />
+              </IconButton>
             </td>
             <td>{index + 1}</td>
             {/* <td>
@@ -1567,28 +1647,18 @@ const HandwrittenInvoice = () => {
         );
       });
       return (
-        <div style={{ marginTop: "70px" }}>
-          <div className={styles.divRow} style={{ marginTop: "80px" }}>
-            <Button
-              text="Save Invoice Data"
-              color="btn btn-info"
-              type="submit"
-              onClick={toggleModal}
-            />
-            <Button
-              text="Re upload"
-              color="btn btn-info"
-              type="submit"
-              onClick={() => window.location.reload()}
-            />
-          </div>
+        <div style={{ marginTop: "35px" }}>
           <table className="table table-hover table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
               <tr>
                 <td>
-                  <Button text="Add cell" color="btn btn-info" />
+                  <Button
+                    text="Add cell"
+                    color="btn btn-info"
+                    onClick={() => console.log("addRow")}
+                  />
                 </td>
               </tr>
             </tbody>
@@ -1598,13 +1668,14 @@ const HandwrittenInvoice = () => {
               text="Update Inventory"
               color="btn btn-info"
               type="submit"
+              onClick={() => console.log("addRow")}
             />
-            <Button
+            {/* <Button
               text="Save Invoice Data"
               color="btn btn-info"
               type="submit"
               onClick={toggleModal}
-            />
+            /> */}
             <Button
               text="Re upload"
               color="btn btn-info"
@@ -1617,62 +1688,91 @@ const HandwrittenInvoice = () => {
     }
   };
 
-  const updateItem = async () => {
+  const updateItem = async (index) => {
     console.log("updateItem_selectedDropdown : ", selectedDropdown);
-    console.log("updateItem_InvoiceNo : ", invoiceNo);
-    console.log("updateItem_date : ", date);
+    console.log("updateItem_posProduct : ", posProduct);
+    console.log("updateItem_tableData[index] : ", tableData[index]);
     console.log("updateItem_itemName : ", itemName);
     const data = {
       invoiceName: selectedDropdown.slug,
       itemName: itemName,
       value: {
+        barcode: posProduct.barcode,
+        department: posProduct.department,
+        posName: posProduct.pos,
+        posSku: posProduct.posSku,
+        size: posProduct.size,
+        cost: posProduct.sellerCost,
+        sellingPrice: posProduct.sellingPrice,
+        pieces: unitsInCase,
+        sellingCost: newUnitCost,
+        itemNo: itemName,
+        description: itemName,
+        price: caseCost === undefined ? price : caseCost,
+        sku: "",
+        details: "",
+        extendedPrice: (quantity * price).toFixed(2).toString(),
+        unitPrice: price,
+        isUpdated: "",
+        isUpdatedDate:"",
+        itemNoPresent: "",
+        linkingCorrect: "",
+        margin: "",
+        markup: "",
+        priceIncrease: "",
+        qty: quantity,
+        show: "",
         isReviewed: "true",
-        Item: itemName,
-        Quantity: unitsInCase,
-        Description: posProduct.Description,
-        Price: caseCost,
-        POS: posProduct.POS,
-        Barcode: posProduct.Barcode,
-        PosSKU: posProduct.PosSKU,
-        Size: posProduct.Size,
-        Department: posProduct.Department,
-        SellerCost: newUnitCost,
-        SellingPrice: newUnitPrice,
       },
     };
     console.log(data);
 
-    // const result = await inventoryService.UpdateProductFields(data);
-    // console.log(result);
-  };
-
-  const getItems = async () => {
-    // const data = {
-    //   invoice: invoice.slug,
-    // }
-    const data = invoice;
-    console.log(data);
-    const res = await inventoryService.getItemForHandwrittenInvoice(data);
-    console.log(res);
-    return res;
+    const result = await inventoryService.UpdateHandWrittenProductFields(data);
+    console.log(result);
+    setProductsInTableNew(selectedDropdown);
+    renderTableData();
   };
 
   const toggleModal = (x) => {
     console.log(posProduct);
     console.log(!showModal);
-    if(x === "showModal"){
+    if (x === "showModal") {
       setShowModal(!showModal);
-    }else{
-      setDetailsModal(!detailsModal);
+    } else {
+      setShowModal(!showModal);
+
+      // setDetailsModal(!detailsModal);
     }
-    
   };
 
-  const handleChange = (key, val) => {
-    setPosProduct({
-      ...posProduct,
-      [key]: val,
-    });
+  const handleChange = (index, key, val) => {
+    console.log("handleChange_key : ", key);
+    console.log("handleChange_val : ", val);
+    console.log("handleChange_index : ", index);
+    console.log("handleChange_setPosProduct : ", posProduct);
+    console.log("handleChange_tableData[index] : ", tableData[index]);
+    // setPosProduct({
+    //   ...posProduct,
+    //   [key]: val,
+    // });
+    // const tempData = [{...tableData[index], [key]:val }]
+
+    if (key === "sellingPrice") {
+      setNewUnitPrice(val);
+      setPrevNewUnitPrice(tableDataCopy[index].sellingPrice);
+      console.log("NewUnitPrice_value : ", val);
+      console.log("PrevNewUnitPrice_value : ", tableDataCopy[index].sellingPrice);
+    }
+
+    const tempTableData = {
+      ...tableData,
+      [index]: { ...tableData[index], [key]: val },
+    };
+    const propertyNames = Object.values(tempTableData);
+
+    console.log("propertyName : ", propertyNames);
+    console.log("handelChange_propertyNames[index] : ", propertyNames[index]);
+    setTableData(propertyNames);
   };
 
   const addProduct = () => {
@@ -1808,19 +1908,30 @@ const HandwrittenInvoice = () => {
     }
   };
 
+  const getItems = async () => {
+    // const data = {
+    //   invoice: invoice.slug,
+    // }
+    const data = selectedDropdown;
+    console.log(data);
+    const res = await inventoryService.getItemForHandwrittenInvoice(data);
+    console.log("getItems_res : ", res);
+    return res;
+  };
   const setProductsInTable = () => {
     // setLoader(true);
     dispatch({ type: "LOADER" });
+    // GetProductDetails function fetch data from invoice name collection
     async function invoiceData() {
       const products = await tesseractService.GetProductDetails(
-        invoice.slug
+        selectedDropdown.slug
         // inv
       );
-      console.log(products);
+      console.log("setProductsInTable_invoiceData() : ", products);
       //console.log(props.selectedInvoice);
       return products;
     }
-    // invoiceData()
+    invoiceData();
     getItems()
       .then((products) => {
         /**post processing the table data after returning from filter */
@@ -1832,7 +1943,7 @@ const HandwrittenInvoice = () => {
         //   return newObj;
         // }
         // products = convertToUpperCase(products);
-        console.log(products);
+        console.log("setProductsInTable_getItems() : ", products);
         // scanInvoiceData.InvoiceData = ocrData;
         //   setOcrProducts(ocrData);
 
@@ -1913,39 +2024,17 @@ const HandwrittenInvoice = () => {
           row.cp = "";
           row.sp = "";
           if (row.Item !== undefined) {
-            if (sp > row.SellerCost) {
+            if (sp > row.sellerCost) {
               row["priceIncrease"] = 1;
-            } else if (sp < +row.SellerCost) {
+            } else if (sp < +row.sellerCost) {
               row["priceIncrease"] = -1;
-            } else if (sp == +row.SellerCost) {
+            } else if (sp == +row.sellerCost) {
               row["priceIncrease"] = 0;
             }
           } else {
             row["priceIncrease"] = 0;
           }
-          // if (products[row.Item] !== undefined) {
-          //   if (sp > +products[row.Item].SellerCost) {
-          //     row["priceIncrease"] = 1;
-          //   } else if (sp < +products[row.Item].SellerCost) {
-          //     row["priceIncrease"] = -1;
-          //   } else if (sp == +products[row.Item].SellerCost) {
-          //     row["priceIncrease"] = 0;
-          //   }
-          // } else {
-          //   row["priceIncrease"] = 0;
-          // }
-          row.qty = "";
-          row.extendedPrice = "";
-          /**filter out the rows for which qty shipped & extendedPrice is zero */
-          if (row.qty == "0" && row.extendedPrice === "0.00") {
-            return null;
-          }
-          /**Calulate qty for which qty is not read/scanned by textract */
-          // if (!row.qty) {
-          //   row.qty = (
-          //     parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
-          //   ).toFixed(0);
-          // }
+
           return { ...row, sp, cp };
         });
         // setLoader(false);
@@ -1963,146 +2052,110 @@ const HandwrittenInvoice = () => {
   };
 
   // ************* Add by Deepanshu *****************
-  const fetchSavedData = async (invoice = inv, no = num, date = day) => {
-    const data = await tesseractService.GetSavedInvoiceData(invoice, no, date);
+  const fetchSavedData = async (invoice) => {
+    const data = await inventoryService.GethandwrittenLogs(invoice);
     console.log("fetchSavedData_data : ", data);
     if (data.length === 0) {
       alert("Invoice doesnt Exist!!");
-    } else return data[0].InvoiceData;
+    } else return data;
     // console.log(data);
     // console.log(data[0].InvoiceData);
   };
 
-  async function invoiceData() {
-    const products = await tesseractService.GetProductDetails(invoice);
-    //console.log(props.selectedInvoice);
-    return products;
-  }
-
   const no = "2022-01-21";
-  // fetchSavedData(invoice, no, date).then((ocrData) => {
-  //   console.log("fetchSavedData_ocrData : ",ocrData);
-  //   invoiceData()
-  //     .then((products) => {
-  //       console.log("fetchSavedData_products : ",products);
-  //       /**post processing the table data after returning from filter */
-  //       function convertToUpperCase(obj) {
-  //         let newObj = {};
-  //         for (let key in obj) {
-  //           newObj[key.toUpperCase()] = obj[key];
-  //         }
-  //         return newObj;
-  //       }
-  //       products = convertToUpperCase(products);
-  //       console.log(products);
-  //       // scanInvoiceData.InvoiceData = ocrData;
-  //     //   setOcrProducts(ocrData);
 
-  //     //   console.log(scanInvoiceData);
-  //       // scanInvoiceData.InvoiceData = ocrData;
-  //       //console.log(resScnInvDta);
-  //       console.log("OCERDATa", ocrData);
-  //       //console.log(products);
-  //       //console.log(scanInvoiceData);
-  //       let table = ocrData.map((row) => {
-  //         /**For invoices which dont have item no, set description as item no */
-  //         row.itemNoPresent = row.itemNo === undefined ? false : true;
-  //         if (row.itemNo === undefined) {
-  //           row.itemNo = row.description.trim().toUpperCase();
-  //         }
-  //         row.itemNo = row.itemNo.toString().toUpperCase();
+  const setProductsInTableNew = (currentInvoice) => {
+    // setOpenInvoice(true);
+    // dispatch({type: "OPEN_INVOICE", data: true})
+    // console.log(invoiceOptions[index]);
+    // let invoice = invoiceOptions[index].InvoiceName;
+    // // setInv(invoice);
+    // dispatch({type: "SET_INV", data: invoice})
+    // let date =  invoiceOptions[index].SavedDate;
+    // // setDay(date);
+    // dispatch({type: "SET_DAY", data: date})
+    // let no = invoiceOptions[index].SavedInvoiceNo;
+    // // setNum(no);
+    // dispatch({type: "SET_NUM", data: no})
+    // // setLoader(true);
+    // dispatch({type: "LOADER"});
 
-  //         row.description = row.description;
-  //           // products[row.itemNo] !== undefined
-  //           //   ? products[row.itemNo].Description
-  //           //   : row.description;
-  //         row.pieces =
-  //           products[row.itemNo] !== undefined
-  //             ? products[row.itemNo].Quantity
-  //             : 0;
-  //         row.sku =
-  //           products[row.itemNo] !== undefined
-  //             ? products[row.itemNo].sku
-  //             : "";
-  //         row.barcode =
-  //           products[row.itemNo] !== undefined
-  //             ? products[row.itemNo].Barcode
-  //             : "";
-  //         row.posName =
-  //           products[row.itemNo] !== undefined
-  //             ? products[row.itemNo].POS
-  //             : "";
-  //         row.markup = 0;
-  //         row.show = true;
-  //         row.posSku =
-  //           products[row.itemNo] !== undefined
-  //             ? products[row.itemNo].PosSKU
-  //             : "";
-  //         row.isReviewed =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].isReviewed : "" ;
-  //         row.size =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].Size : "";
-  //         row.department =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].Department : "";
-  //         row.cost =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
-  //         row.sellingPrice =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
-  //         row.price =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].Price : "";
-  //         row.details =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].Details : "";
-  //         row.linkingCorrect =
-  //           products[row.itemNo] !== undefined ? products[row.itemNo].LinkingCorrect : "";
-  //         row.margin = products[row.itemNo] !== undefined ? ((products[row.itemNo].SellingPrice - products[row.itemNo].SellerCost)/ products[row.itemNo].SellerCost)*100 : "";
-  //         //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
-  //         let sp = 0;
-  //         let cp = 0;
-  //         // const barcode = products.Barcode
-  //         if (parseInt(row.pieces)) {
-  //           sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(
-  //             2
-  //           );
-  //           cp = sp;
-  //         }
-  //         if (products[row.itemNo] !== undefined) {
-  //           if (sp > +products[row.itemNo].SellerCost) {
-  //             row["priceIncrease"] = 1;
-  //           } else if (sp < +products[row.itemNo].SellerCost) {
-  //             row["priceIncrease"] = -1;
-  //           } else if (sp == +products[row.itemNo].SellerCost) {
-  //             row["priceIncrease"] = 0;
-  //           }
-  //         } else {
-  //           row["priceIncrease"] = 0;
-  //         }
+    const invoice = currentInvoice;
+    // getProductDetails from their collection
+    console.log("setProductsInTableNew_invoice : ", invoice);
+    async function invoiceData() {
+      const resdata = await inventoryService.getItemForHandwrittenInvoice(
+        invoice
+      );
+      //console.log(props.selectedInvoice);
+      console.log("setProductsInTableNew_products : ", resdata);
+      return resdata;
+    }
 
-  //         /**filter out the rows for which qty shipped & extendedPrice is zero */
-  //         if (row.qty == "0" && row.extendedPrice === "0.00") {
-  //           return null;
-  //         }
-  //         /**Calulate qty for which qty is not read/scanned by textract */
-  //         if (!row.qty) {
-  //           row.qty = (
-  //             parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
-  //           ).toFixed(0);
-  //         }
-  //       return { ...row, sp, cp };
-  //       });
-  //       // setLoader(false);
-  //       dispatch({type: "LOADER"});
+    invoiceData()
+      .then((invData) => {
+        console.log("fetchSavedData_handwrittenInvoiceData : ", invData);
+        const table = invData.map((row) => {
+          row.itemNoPresent = row.itemNo === undefined ? false : true;
 
-  //       setTableData(table.filter((data) => data !== null));
-  //       console.log("fetchSavedData_tableData : ",tableData);
-  //       setItemNoDropdown(Object.keys(products));
-  //       setProductDetails(products);
-  //     })
-  //     .catch((err) => {
-  //       console.log("error on mapping ocrdata", err)
-  //       // setLoader(false);
-  //       dispatch({type: "LOADER"});
-  //     });
-  // });
+          if (row.itemNo === undefined) {
+            row.itemNo = row.description.trim().toUpperCase();
+          }
+
+          row.itemNo = row.itemNo.toString().toUpperCase();
+          row.description = row.description.toString().toUpperCase();
+
+          row.markup = 0;
+          row.show = true;
+
+          console.log("check here");
+          let sp = 0;
+          let cp = 0;
+          // const barcode = products.Barcode
+          if (parseInt(row.pieces)) {
+            sp = (parseFloat(row.unitPrice) / parseInt(row.pieces)).toFixed(2);
+            cp = sp;
+          }
+
+          if (row.itemNo !== undefined) {
+            if (sp > +row.cost) {
+              row.priceIncrease = 1;
+            } else if (sp < row.cost) {
+              row.priceIncrease = -1;
+            } else if (sp == +row.cost) {
+              row.priceIncrease = 0;
+            }
+          } else {
+            row.priceIncrease = 0;
+          }
+
+          /**filter out the rows for which qty shipped & extendedPrice is zero */
+          if (row.qty == "0" && row.extendedPrice === "0.00") {
+            return null;
+          }
+          /**Calulate qty for which qty is not read/scanned by textract */
+          if (!row.qty) {
+            row.qty = (
+              parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
+            ).toFixed(0);
+          }
+          row.margin =
+            row.itemNo !== undefined
+              ? ((row.SellingPrice - row.cost) / row.cost) * 100
+              : "";
+          return { ...row, sp, cp };
+        });
+
+        setTableData(table.filter((data) => data !== null));
+        setTableDataCopy(table.filter((data) => data !== null));
+        console.log("fetchSavedData_tableData : ", tableData);
+      })
+      .catch((err) => {
+        console.log("error on mapping ocrdata", err);
+        // setLoader(false);
+        // dispatch({type: "LOADER"});
+      });
+  };
 
   // ************* Add by Deepanshu *****************
   useEffect(() => {
@@ -2138,11 +2191,22 @@ const HandwrittenInvoice = () => {
                   <li> */}
           <Autocomplete
             value={selectedDropdown}
-            onChange={(event, newValue) => {
+            onChange={async (event, newValue) => {
               console.log("newValue", newValue);
               if (newValue) {
-                console.log(newValue);
+                console.log("setSelectedDropdown :", newValue);
                 setSelectedDropdown(newValue);
+                // const getInvoiceData = async(invoice)=>{
+                //   console.log("setSelectedDropdown_invoice :",invoice);
+                //   const resdata = await inventoryService.getItemForHandwrittenInvoice(
+                //     invoice
+                //   );
+                //   return resdata;
+                // }
+                // const restableData = await getInvoiceData(newValue)
+                // console.log("restableData : ",restableData);
+                // setTableData(restableData);
+                setProductsInTableNew(newValue);
                 // setInvoice(newValue);
                 // setTimeout(()=> {}, 1000);
                 // invoice = newValue;
@@ -2152,7 +2216,7 @@ const HandwrittenInvoice = () => {
               // getInvoices(newValue);
             }}
             id="combo-box"
-            options={dropdownOptions}
+            options={handwrittenInvoiceList}
             getOptionLabel={(option) => option.value}
             style={{ width: 200 }}
             autoHighlight
@@ -2167,32 +2231,46 @@ const HandwrittenInvoice = () => {
           <TextField
             label="Item Name"
             variant="outlined"
-            value={posProduct.Item}
+            value={itemName}
             onChange={(event) => {
-              handleChange("Item", event.target.value);
+              // handleChange("Item", event.target.value);
               setItemName(event.target.value);
             }}
           />
           <TextField
-            label="Inoive No."
+            label="Quantity"
             variant="outlined"
             type="text"
-            name="invoiceNo"
-            value={invoiceNo}
+            name="quantity"
+            value={quantity}
             onChange={(event) => {
-              setInvoiceNo(event.target.value);
-              console.log("setInvoiceNo_inoiceNo : ", invoiceNo);
+              // setInvoiceNo(event.target.value);
+              setQuantity(event.target.value);
+              console.log("setInvoiceNo_quantity : ", quantity);
             }}
           />
 
           <TextField
+            label="Price"
             variant="outlined"
-            type="date"
-            name="date"
-            value={date}
+            type="text"
+            name="price"
+            value={price}
             onChange={(event) => {
-              setDate(event.target.value);
-              console.log("setDate_date : ", date);
+              setPrice(event.target.value);
+              console.log("setInvoiceNo_price : ", price);
+            }}
+          />
+          <TextField
+            disabled
+            label="Extended Price"
+            variant="outlined"
+            type="text"
+            name="extendedprice"
+            value={(quantity * price).toFixed(2)}
+            onChange={(event) => {
+              setExtendedPrice(event.target.value);
+              console.log("setInvoiceNo_extendedprice : ", extendedPrice);
             }}
           />
           {/* </li> */}
@@ -2221,24 +2299,25 @@ const HandwrittenInvoice = () => {
               // console.log(newValue);
               if (newValue) {
                 let newState = { ...posProduct };
-                console.log(newValue);
-                newState.Item = itemName;
+                console.log("newValue : ", newValue);
+                newState.item = itemName;
                 newState.isReviewed = "true";
                 // newState.item = element.itemNo
-                newState.Description = newValue.name;
-                newState.Barcode = newValue.upc;
-                newState.POS = newValue.name;
-                newState.PosSKU = newValue.sku;
-                newState.Size = newValue.size;
-                newState.Department = newValue.department;
-                newState.SellerCost = newValue.cost;
-                newState.SellingPrice = newValue.price;
+                newState.description = newValue.name;
+                newState.barcode = newValue.upc;
+                newState.pos = newValue.name;
+                newState.posSku = newValue.sku;
+                newState.size = newValue.size;
+                newState.department = newValue.department;
+                newState.sellerCost = newValue.cost;
+                newState.sellingPrice = newValue.price;
                 // setShowPosState(newState);
                 // setShowPosIndex(index);
                 // setUnitCost(newValue.cost);
                 // setStateUpdated("");
 
                 setPosProduct(newState);
+                console.log("setPosProduct : ", newState);
                 singleItemData = [];
 
                 //setDisabled(false);
@@ -2276,7 +2355,7 @@ const HandwrittenInvoice = () => {
               marginLeft: 20,
             }}
             // onClick={setProductsInTable}
-            onClick={()=>toggleModal("showModal")}
+            onClick={() => toggleModal("showModal")}
           >
             Add New Product
           </button>
@@ -2284,7 +2363,9 @@ const HandwrittenInvoice = () => {
                 </ul> */}
         </Grid>
       </Paper>
-      <p>Invoice-- {invoice}</p>
+      <p>{`Invoice-- ${
+        selectedDropdown === undefined ? "" : selectedDropdown.value
+      }`}</p>
 
       <div>{renderTableData()}</div>
 
@@ -2302,9 +2383,9 @@ const HandwrittenInvoice = () => {
                         disabled
                         type="text"
                         name="type"
-                        value={posProduct.Barcode}
+                        value={posProduct.barcode}
                         onChange={(event) =>
-                          handleChange("Barcode", event.target.value)
+                          handleChange("barcode", event.target.value)
                         }
                       />
                     </CFormGroup>
@@ -2316,9 +2397,9 @@ const HandwrittenInvoice = () => {
                         disabled
                         type="text"
                         name="short_description"
-                        value={posProduct.PosSKU}
+                        value={posProduct.posSku}
                         onChange={(event) =>
-                          handleChange("PosSKU", event.target.value)
+                          handleChange("posSku", event.target.value)
                         }
                       />
                     </CFormGroup>
@@ -2330,9 +2411,9 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="regular_price"
-                    value={posProduct.POS}
+                    value={posProduct.pos}
                     onChange={(event) =>
-                      handleChange("POS", event.target.value)
+                      handleChange("pos", event.target.value)
                     }
                   />
                 </CFormGroup>
@@ -2342,9 +2423,9 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="size"
-                    value={posProduct.Size}
+                    value={posProduct.size}
                     onChange={(event) =>
-                      handleChange("Size", event.target.value)
+                      handleChange("size", event.target.value)
                     }
                   />
                 </CFormGroup>
@@ -2354,9 +2435,9 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="department"
-                    value={posProduct.Department}
+                    value={posProduct.department}
                     onChange={(event) =>
-                      handleChange("Department", event.target.value)
+                      handleChange("department", event.target.value)
                     }
                   />
                 </CFormGroup>
@@ -2374,7 +2455,7 @@ const HandwrittenInvoice = () => {
                   <CInput
                     type="text"
                     name="caseCost"
-                    value={caseCost}
+                    value={caseCost === undefined ? price : caseCost}
                     onChange={(event) => setCaseCost(event.target.value)}
                   />
                 </CFormGroup>
@@ -2384,7 +2465,7 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="unitPrice"
-                    value={posProduct.SellingPrice}
+                    value={posProduct.sellingPrice}
                     onChange={(event) =>
                       handleChange("SellingPrice", event.target.value)
                     }
@@ -2396,13 +2477,13 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="unitCost"
-                    value={posProduct.SellerCost}
+                    value={posProduct.sellerCost}
                     onChange={(event) =>
                       handleChange("SellerCost", event.target.value)
                     }
                   />
                 </CFormGroup>
-                <CFormGroup>
+                {/* <CFormGroup>
                   <CLabel htmlFor="newUnitCost">New POS Unit Cost</CLabel>
                   <CInput
                     type="text"
@@ -2419,14 +2500,20 @@ const HandwrittenInvoice = () => {
                     value={newUnitPrice}
                     onChange={(event) => setNewUnitPrice(event.target.value)}
                   />
-                </CFormGroup>
+                </CFormGroup>*/}
               </CCol>
             </CRow>
           </CContainer>
         </CModalBody>
         <CModalFooter>
           {/* <CButton color="primary" onClick={() => addProduct()}> */}
-          <CButton color="primary" onClick={() => updateItem()}>
+          <CButton
+            color="primary"
+            onClick={() => {
+              updateItem();
+              toggleModal("details");
+            }}
+          >
             Add
           </CButton>{" "}
           <CButton color="secondary" onClick={toggleModal}>
@@ -2435,45 +2522,39 @@ const HandwrittenInvoice = () => {
         </CModalFooter>
       </CModal>
 
-
       <CModal show={detailsModal} onClose={() => toggleModal("details")}>
-      <CModalHeader closeButton>Save Invoice Data</CModalHeader>
-      <CModalBody>
-        <CContainer fluid>
-          <CRow>
-            <CCol sm="6">
-              <CFormGroup>
-                <CLabel htmlFor="invoiceNo">Invoice No.</CLabel>
-                <CInput
-                  type="text"
-                  name="invoiceNo"
-                  value={invoiceNo}
-                  onChange={(event) => setInvoiceNo(event.target.value)}
+        <CModalHeader closeButton>Save Invoice Data</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="invoiceNo">Invoice No.</CLabel>
+                  <CInput
+                    type="text"
+                    name="invoiceNo"
+                    value={invoiceNo}
+                    onChange={(event) => setInvoiceNo(event.target.value)}
                   />
-                <CLabel htmlFor="date">Date</CLabel>
-                <CInput
-                  type="date"
-                  name="date"
-                  value={date}
-                  onChange={(event) => setDate(event.target.value)}
+                  <CLabel htmlFor="date">Date</CLabel>
+                  <CInput
+                    type="date"
+                    name="date"
+                    value={date}
+                    onChange={(event) => setDate(event.target.value)}
                   />
-                
-              </CFormGroup>
-            </CCol>
-          </CRow>
-        </CContainer>
-      </CModalBody>
-      <CModalFooter>
-        <CButton color="primary" >
-          Save Invoice
-        </CButton>{" "}
-        <CButton color="secondary" onClick={toggleModal}>
-          Cancel
-        </CButton>
-      </CModalFooter>
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary">Save Invoice</CButton>{" "}
+          <CButton color="secondary" onClick={toggleModal}>
+            Cancel
+          </CButton>
+        </CModalFooter>
       </CModal>
-
-
     </div>
   );
 };

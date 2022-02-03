@@ -55,6 +55,16 @@ export class InventoryService {
     return res.data;
   }
 
+  // added by Deepanshu
+  async UpdateHandWrittenProductFields(data) {
+
+    const res = await Axios.put(
+      appendURL + "/api/handwritteninvoice/product/update",
+      data
+    );
+    return res.data;
+  }
+
   async CreateNotFoundItems(data) {
     /**
      * data format
@@ -98,6 +108,13 @@ export class InventoryService {
     console.log(itemNo);
     console.log(date);
     const res = await Axios.post(appendURL + "/api/invoice/reverseposupdate", {params:{ invoiceName: invoiceName, invoiceNo: invoiceNo,date: date, itemNo: itemNo}});
+    return res.data;
+  }
+
+  async gethandwrittenPosLogs(data){
+    console.log("data : ",data);
+
+    const res = await Axios.get(appendURL + "/api/invoice/gethandwrittenposlogs",{params:{invoicename:data.invoicename,itemNo:data.itemNo,sku:data.sku,updatedate:data.updatedate}});
     return res.data;
   }
   
@@ -173,9 +190,17 @@ export class InventoryService {
     return res;
   }
 
-  async handwrittenLogs(data) {
+  async handwrittenPosLogs(data) {
     console.log(data);
-    const res = await Axios.post(appendURL + "/api/invoice/handwrittenlogs", data);
+    const res = await Axios.post(appendURL + "/api/invoice/handwrittenposlogs", data);
+    return res;
+  }
+  async GethandwrittenLogs(invName) {
+   const data = {
+      invoiceName:invName
+    }
+    console.log(data);
+    const res = await Axios.get(appendURL + "/api/invoice/gethandwrittenlogs", {params:data});
     return res;
   }
 
