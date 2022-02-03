@@ -9,6 +9,7 @@ export class TesseractService {
     }
 
     async GetProductDetails(invoiceName) {
+        console.log("invoiceName : ",invoiceName);
         var res = await Axios.get(appendURL+`/api/product/`, {
           params: { invoiceName: invoiceName },
         });

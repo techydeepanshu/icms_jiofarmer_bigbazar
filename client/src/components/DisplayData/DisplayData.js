@@ -1091,6 +1091,8 @@ const DisplayData = (props) => {
       })
     );
     setLoader(false);
+    console.log(tempTable);
+    console.log(mergeDuplicates(tempTable));
     setInventoryData(mergeDuplicates(tempTable));
     setPushToInventory(true);
     
@@ -1507,7 +1509,7 @@ const DisplayData = (props) => {
       
       
       
-    );
+    
     </div>
   );
 };

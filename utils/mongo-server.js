@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true }));
 mongoose
-  .connect("mongodb://verveuser:vervebot123@3.226.236.172/vervedb")
+  .connect("mongodb://verveuser:vervebot123@34.202.27.217/vervedb")
   .then((res) => console.log("success connecting to mongo"))
   .catch((err) => console.log(err));
 const Schema = mongoose.Schema;
@@ -57,6 +57,37 @@ const invoiceSchema = new Schema({
   Details: String,
   LinkingCorrect: String,
 });
+
+
+//added by Deepanshu
+const handwittenInvoiceSchema = new Schema({
+  barcode:String,
+  cost:String,
+  department:String,
+  description:String,
+  details:String,
+  extendedPrice:String,
+  isReviewed:String,
+  isUpdated:String,
+  isUpdatedDate:String,
+  itemNo:String,
+  itemNoPresent:String,
+  linkingCorrect:String,
+  margin:String,
+  markup:String,
+  pieces:String,
+  posName:String,
+  posSku:String,
+  price:String,
+  priceIncrease:String,
+  qty:String,
+  sellingPrice:String,
+  show:String,
+  size:String,
+  sku:String,
+  unitPrice:String,
+})
+
 const notFoundSchema = new Schema({
   Item: String,
   Description: String,
@@ -133,22 +164,41 @@ const posLogItemSchema = new Schema({
   InvUnitsInCase: String,
   SKU: String
 })
+
 const posLogModel = mongoose.model("poslogs", posLogItemSchema);
 
 
-const handwrittenInvoiceSchema = new Schema({
+const handwrittenInvoiceLogSchema = new Schema({
+  // InvoiceName: String,
+  // ItemName: String,
+  // POS: String,
+  // PosSKU: String,
+  // Size: String,
+  // Department: String,
+  // SellerCost: String,
+  // SellingPrice: String,
+  // NewUnitCost: String,
+  // NewUnitPrice: String,
   InvoiceName: String,
-  ItemName: String,
-  POS: String,
-  PosSKU: String,
-  Size: String,
-  Department: String,
-  SellerCost: String,
-  SellingPrice: String,
+  InvoiceDate: String,
+  ItemNo: String,
+  InvoiceDescription: String,
+  PosDescription: String,
+  OldUnitCost: String,
+  OldUnitPrice: String,
+  OldMarkup: String,
   NewUnitCost: String,
   NewUnitPrice: String,
+  NewMarkup: String,
+  UpdateDate: String,
+  Person: String,
+  TimeStamp: String,
+  HandWritten: {type: String, default: ""},
+  InvCaseCost: String,
+  InvUnitsInCase: String,
+  SKU: String
 });
-let handwrittenLog = mongoose.model("handwrittenlogs", handwrittenInvoiceSchema); 
+let handwrittenPosLog = mongoose.model("handwrittenposlogs", handwrittenInvoiceLogSchema); 
 
 
 
@@ -186,7 +236,7 @@ app.put("/invoice/:name/:Item", (req, res) => {
   let invoice = mongoose.model(req.params.name, invoiceSchema);
   console.log(invoice);
 console.log(req.params.Item);
-  invoice.findOne({ Item: req.params.Item }, (err, x) => {
+  invoice.findOne({ ItemNo: req.params.Item }, (err, x) => {
 	console.log("IN FINDONE");
 	console.log(err);
 	console.log(x);
@@ -212,6 +262,43 @@ console.log(req.params.Item);
     }
   });
 });
+
+
+// added by Deepanshu
+app.put("/handwritteninvoice/:name/:Item", (req, res) => {
+  let invoice = mongoose.model(req.params.name, handwittenInvoiceSchema);
+  console.log(invoice);
+console.log(req.params.Item);
+  invoice.findOne({ itemNo: req.params.Item }, (err, x) => {
+	console.log("IN FINDONE");
+	console.log(err);
+	console.log(x);
+    if (err) res.json("Some error occured")
+    else if (x === null){
+	let obj = req.body;
+         obj["itemNo"] = req.params.Item; 
+	console.log("OBJECT");
+	console.log(obj);
+          invoice.insertMany( obj, (err, x) => {
+            if(err) res.json("Some error occured.");
+            else res.json("Product created Successfully.");
+		 });
+}
+    else {
+	console.re.log("remote log test 3");
+      let obj = req.body;
+      obj["itemNo"] = req.params.Item;
+      invoice.updateOne({ itemNo: req.params.Item }, obj, (err, x) => {
+        if (err) res.json("Some error occured.");
+        else res.json("Product updated xxxxx");
+      });
+    }
+  });
+});
+
+
+
+
 app.get("/notfound", (req, res) => {
   notFound.find({}, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
@@ -232,7 +319,10 @@ app.get("/getsaveinvoicedata/", (req, res) => {
 	SavedDate: req.body.date
 	 }, { _id: 0, __v: 0 }, (err, x) => {
     if (err) res.json("Some error occured");
-    else res.json(x);
+    else {
+      // console.log("result data : ",x.InvoiceData);
+      res.json(x);
+    }
   });
 });
 
@@ -305,15 +395,49 @@ app.get("/gethicksvilledata/", (req, res) => {
 //});
 
 
-app.post("/handwrittenlogs", (req, res) => {
+app.post("/handwrittenposlogs", (req, res) => {
   let obj = req.body;
   console.log(req.body);
   console.log(obj);
-  handwrittenLog.insertMany([obj], (err, o) => {
+  handwrittenPosLog.insertMany([obj], (err, o) => {
     if (err) res.json("Some error occured");
     else res.json("Product created successfully");
   });
 });
+
+// added by Deepanshu
+app.get("/gethandwrittenlogs", (req, res) => {
+  let invoice = req.body.invoiceName;
+
+  handwrittenLog.find({InvoiceName:invoice}, (err, x) => {
+    if (err) res.json("Some error occured");
+    else res.json(x);
+  });
+});
+
+
+// added by Deepanshu
+app.get("/gethandwrittenposlog",(req,res)=>{
+  console.log("body : ",req.body);
+  // let invoicename = req.query.invoicename;
+  // let itemNo = req.query.itemNo;
+  // let sku = req.query.sku;
+  // let updatedate = req.query.query;
+  let invoicename = req.body.invoicename;
+  let itemNo = req.body.itemNo;
+  let sku = req.body.sku;
+  let updatedate = req.body.updatedate;
+
+  handwrittenPosLog.find({InvoiceName:invoicename,ItemNo:itemNo,SKU:sku,UpdateDate:updatedate},(err,data)=>{
+    if(err) res.json("Some error occured");
+    else if(data !== null){
+      res.json(data);
+    }
+    else{
+      res.json("data not found");
+    }
+  }).sort({TimeStamp:-1}).limit(1)
+})
 
 
 app.get("/gethicksvilledataold/", (req, res) => {
@@ -337,7 +461,7 @@ app.get("/gethicksvilledataold/", (req, res) => {
 
 app.get("/getitemhandwritten/", (req,res) => {
   console.log(req.body);
-  let invoice = mongoose.model(req.body.databaseName, invoiceSchema );
+  let invoice = mongoose.model(req.body.databaseName, handwittenInvoiceSchema );
   console.log(invoice);
  invoice.find({}, { _id:0, __v:0}, (err, x) => {
     if(err) res.json("Some error Occured");
@@ -376,7 +500,6 @@ app.post("/generateposlog", (req, res) => {
     else res.json("Product created successfully");
   });
 });
-
 
 
 app.post("/scaninvoicedata", (req, res) => {

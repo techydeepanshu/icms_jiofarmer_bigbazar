@@ -26,7 +26,7 @@ const UpdateInventory = (props) => {
     "Extended Price",
     "Unit Cost ",
     "Unit Price",
-    "Mark up (%)"
+    "Mark up (%)",
   ];
 
   const renderTableHeader = () => {
@@ -45,12 +45,11 @@ const UpdateInventory = (props) => {
       );
     });
   };
+
   const renderTableData = () => {
     let rows = newInventoryData.map((element, index) => {
       return (
-        <tr
-          key={index}
-        >
+        <tr key={index}>
           <td>{index + 1}</td>
           <td>{element.barcode}</td>
           <td>{element.posSku}</td>
@@ -95,6 +94,7 @@ const UpdateInventory = (props) => {
   };
 
   const pushInventoryDetails = async () => {
+    console.log("pushInventoryDetails");
     setLoader(true);
     let data = newInventoryData.map((element) => {
       return {
@@ -211,7 +211,7 @@ const UpdateInventory = (props) => {
             CASECOST,
             SKU,
             DEPNAME,
-            itemNo
+            itemNo,
           } = product;
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({

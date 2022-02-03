@@ -181,7 +181,16 @@ const SaveInvoiceData = () => {
     const itemNoDescription = [
       "advance-foods",
       "family-five",
-      "moda-food"
+      "moda-food",
+      "anmol-distributors",
+      "baraka-cold",
+      "indian-food-and-spices",
+      "ron-foods",
+      "vidyas",
+      "adelman-foods",
+      "aliments",
+      "baroody"
+
     ];
 
     const showPosState = useSelector(state => state.showPosState);
@@ -386,6 +395,7 @@ const SaveInvoiceData = () => {
       // setLoader(true);
       dispatch({type: "LOADER"});
       let hasErrorOccured = false;
+      console.log(singleItemData);
       const items = await Promise.all(
         singleItemData
           .map(async (row) => {
@@ -514,6 +524,8 @@ const SaveInvoiceData = () => {
               itemNo
             } = product;
 
+            console.log("product : ",product)
+            
             // SET ITEMNAME... 
             let codeOrSku = "";
             console.log(product.itemNo)
@@ -794,8 +806,8 @@ const SaveInvoiceData = () => {
     updateSku = singleItemData[0].posSku;
 
 
-    await getProducts();
-    await getPosProducts();
+    await getProducts();   // fetch product details from WooCommerce website  (wooComProducts)
+    await getPosProducts();  // fetch product details from POS API  (posProducts)
     console.log("pI_posProducts : ",posProducts);
     if(posProducts[0] != undefined ){
       await pushInventoryDetails2();
@@ -927,6 +939,7 @@ const SaveInvoiceData = () => {
     //   array.push(item.SavedInvoiceNo);
     // })
     console.log(res);
+    console.log("getIvoices_res.reverse() : ",res.reverse());
     setInvoiceOptions(res.reverse());
     
     // setApiLoader(false);
@@ -1098,6 +1111,7 @@ const SaveInvoiceData = () => {
     }
 
     const fetchSavedData = async(invoice = inv, no = num, date = day) => {
+      console.log("fetchSavedData_api_request ");
         const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
         console.log("fatchSavedData_data : ",data);
         if(data.length === 0) {
@@ -1720,8 +1734,9 @@ const SaveInvoiceData = () => {
         );
       });
    };
-
+let ocrData = [];
    const setProductsInTableNew = (index) => {
+     
     console.log(index);
     // setOpenInvoice(true);
     dispatch({type: "OPEN_INVOICE", data: true})
@@ -1737,11 +1752,15 @@ const SaveInvoiceData = () => {
     dispatch({type: "SET_NUM", data: no})
     // setLoader(true);
     dispatch({type: "LOADER"});
+
+    // getProductDetails from their collection
+    console.log("setProductsInTableNew_invoice : ",invoice);
     async function invoiceData() {
       const products = await tesseractService.GetProductDetails(
         invoice
       );
       //console.log(props.selectedInvoice);
+      console.log("setProductsInTableNew_products : ",products);
       return products;
     }
 
@@ -1870,7 +1889,8 @@ const SaveInvoiceData = () => {
     });
   }
 
-   const renderInvoiceTable = () => {   
+   const renderInvoiceTable = () => {  
+     console.log("renderInvoiceTable_invoiceOptions : ",invoiceOptions);
     const invoiceList = invoiceOptions.map((element, index) => {
       return (
         <tr key={index}>
@@ -2413,7 +2433,8 @@ const SaveInvoiceData = () => {
         console.log(priceIncreasedProducts.length);
         // setLoader(false);
         dispatch({type: "LOADER"});
-
+        console.log(tempTable);
+        console.log(mergeDuplicates(tempTable));
         setInventoryData(mergeDuplicates(tempTable));
         setPushToInventory(true);
     };
@@ -2694,6 +2715,7 @@ const SaveInvoiceData = () => {
                       onChange={(event, newValue) => {
                           // console.log("new value", newValue)
                           if (newValue) {
+                            console.log("onClick : ",newValue);
                           setInvoice(newValue);
                           }
                           // getInvoices(newValue);
