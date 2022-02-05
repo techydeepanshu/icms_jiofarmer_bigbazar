@@ -566,6 +566,13 @@ export const optionData={
     body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  // "anns-foods":{
+  //   regex:/^[A-Z]+ [A-Z0-9]+ .+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
+  //   body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  // },
+
   "anmol-distributors":{
     regex:/^[0-9.]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","description","unitPrice","extendedPrice"],
@@ -790,12 +797,12 @@ export const optionData={
   //   body:[3,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
-  // "concept-food-US":{
-  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
-  //   header:["description","qty","unitPrice","extendedPrice"],
-  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
-  // },
+  "concept-food-US":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
   // "good-luck-int":{
   //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
   //   header:["cases","description","unitPrice","extendedPrice"],
