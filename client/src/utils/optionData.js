@@ -6,7 +6,7 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=;'<>?,\*\+\-]/gi
   },
   "ny-zara-food":{
-    regex:/^[0-9]+ [A-Z0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    regex:/^[0-9]+ [A-Z0-9-]+ .+ [0-9\.]+ [0-9\.]+$/,
     header:["qty","itemNo","description","unitPrice","extendedPrice"],
     body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
@@ -470,9 +470,9 @@ export const optionData={
   //   notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   // },
   "radhey-food":{
-    regex:/^[0-9]+ .+ [0-9]+\.[0-9]\[0-9]+\.[0-9]+$/,
-    header:["qty","description","unitPrice","extendedPrice"],
-    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
   "vintage-food":{
@@ -518,7 +518,7 @@ export const optionData={
     body:[1,[0,/ [0-9]+ [0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;/'<>?,\*]/gi
   },
-  // "amtrade":{
+ // "amtrade":{
   //   regex:/^[0-9]+ [A-Z]+ [A-Z0-9]+ [A-Z ]+ .+ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
   //   header:["qty","ctn","extra","type","description","size","unitPrice","extendedPrice"],
   //   body:[1,1,1,2,[0,/ [A-Z0-9a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
@@ -670,9 +670,9 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
   "produce-n-more":{
-    regex:/^[0-9]+ [0-9]+ .+ [0-9\.]+ [A-Za-z]+ [0-9\.]+$/,
+    regex:/^[0-9]+ [0-9A-Z]+ .+ [0-9\.]+ [A-Za-z0-9]+ [0-9\.]+$/,
     header:["qty","itemNo","description","unitPrice","unit","extendedPrice"],
-    body:[1,1,[0,/ [0-9\.]+ [A-Za-z]+ [0-9\.]+$/],1,1,1],
+    body:[1,1,[0,/ [0-9\.]+ [A-Za-z0-9]+ [0-9\.]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
 

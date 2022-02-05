@@ -180,7 +180,17 @@ const SaveInvoiceData = () => {
 
     const itemNoDescription = [
       "advance-foods",
-      "family-five"
+      "family-five",
+      "moda-food",
+      "anmol-distributors",
+      "baraka-cold",
+      "indian-food-and-spices",
+      "ron-foods",
+      "vidyas",
+      "adelman-foods",
+      "aliments",
+      "baroody"
+
     ];
 
     const showPosState = useSelector(state => state.showPosState);
@@ -287,6 +297,7 @@ const SaveInvoiceData = () => {
         }
         itemName = res[0].ITEMNAME + " " + "-" + " " + codeOrSku;
 
+        
       // Do the API Call to update on syprum system.
       const update = await inventoryService.UpdatePOSProducts(
         JSON.stringify({
@@ -384,6 +395,7 @@ const SaveInvoiceData = () => {
       // setLoader(true);
       dispatch({type: "LOADER"});
       let hasErrorOccured = false;
+      console.log(singleItemData);
       const items = await Promise.all(
         singleItemData
           .map(async (row) => {
@@ -512,12 +524,14 @@ const SaveInvoiceData = () => {
               itemNo
             } = product;
 
+            console.log("product : ",product)
+            
             // SET ITEMNAME... 
             let codeOrSku = "";
             console.log(product.itemNo)
             console.log(ITEMNAME.indexOf("-"));
             let itemName = ITEMNAME;
-
+            console.log("pushToPos_ITEMNAME : ",ITEMNAME);
             if(ITEMNAME.indexOf("-") < 0){
               let itemNoPresent;
               for(let i = 0; i<itemNoDescription.length; i++){
@@ -690,20 +704,23 @@ const SaveInvoiceData = () => {
 
     // setApiLoader(true);
     dispatch({type: "API_LOADER"});
-    // console.log(index);	
+    console.log("pI_index : ",index);	
     
     // Setting State
     setShowPosIndex(-1);
     
     // tableData also a state
-    console.log(tableData);
+    console.log("pI_tableData : ",tableData);
     const product = [];
+    console.log("pI_emptyColumn : ",emptyColumn);
     const notFoundItems = emptyColumn.map((i) => tableData[i]);
+    console.log("pI_notFoundItems : ",notFoundItems);
     const tempTable = [];
     product.push(tableData[index]);
     console.log(product);
     product.isUpdated = "true";
     itemNo = product.itemNo;
+    console.log("pI_product : ",product);
     
     product.forEach((element, index) => {
       if (
@@ -716,7 +733,7 @@ const SaveInvoiceData = () => {
       }
     });
     // console.log("notFoundItems", notFoundItems);
-    console.log(tempTable);
+    console.log("pI_tempTable",tempTable);
 
     if (emptyColumn.length !== 0) {
       /** API to push  to not found list */
@@ -735,6 +752,7 @@ const SaveInvoiceData = () => {
               PosSKU: product.posSku,
               InvoiceName: invoice.slug,
             };
+            console.log("pI_data : ",data);
             await inventoryService.CreateNotFoundItems(data);
             return true;
           } catch (error) {
@@ -755,6 +773,7 @@ const SaveInvoiceData = () => {
     const priceIncreasedProducts = tempTable.filter(
       (product) => product.priceIncrease !== 0
     );
+    console.log("pI_priceIncreasedProducts : ",priceIncreasedProducts);
     // setLoader(true);
     dispatch({type: "LOADER"});
     const res = await Promise.all(
@@ -765,7 +784,7 @@ const SaveInvoiceData = () => {
             itemName: product.itemNo,
             value: { Price: product.unitPrice },
           };
-          console.log(data)
+          console.log("pI_data",data)
           await inventoryService.UpdateProductFields(data);
           
           
@@ -777,24 +796,26 @@ const SaveInvoiceData = () => {
     // setLoader(false);
     dispatch({type: "LOADER"});
     // console.log(tempTable);
+    console.log("pI_tempTable",tempTable);
     tempTable[0].isUpdated = "true";
+    console.log("pI_tempTable",tempTable);
     singleItemData = tempTable;
     // setPushToInventory(true);
-    console.log(singleItemData);
+    console.log("pI_singleItemData : ",singleItemData);
     
     updateSku = singleItemData[0].posSku;
 
 
-    await getProducts();
-    await getPosProducts();
-    console.log(posProducts);
+    await getProducts();   // fetch product details from WooCommerce website  (wooComProducts)
+    await getPosProducts();  // fetch product details from POS API  (posProducts)
+    console.log("pI_posProducts : ",posProducts);
     if(posProducts[0] != undefined ){
       await pushInventoryDetails2();
       toConsoleState();
       setIsUpdated("true");
       setUpdateIndex(index);
-      console.log(singleItemData);
-      console.log(singleItemData.itemNo);
+      console.log("pI_singleItemData : ",singleItemData);
+      console.log("pI_singleItemData.itemNo : ",singleItemData.itemNo);
       await inventoryService.UpdateInvoiceData(inv, num, day, singleItemData[0].itemNo); 
 
       //Update unit cost n price in db, after update POS.
@@ -813,7 +834,7 @@ const SaveInvoiceData = () => {
       
       //Log Generate.
       console.log("PRODUCTT");
-      console.log(singleItemData);
+      console.log("pI_singleItemData : ",singleItemData);
       const log = {
         InvoiceName: invoice.slug,
         InvoiceDate: day,
@@ -833,9 +854,9 @@ const SaveInvoiceData = () => {
         InvUnitsInCase: singleItemData[0].pieces,
         SKU: singleItemData[0].posSku
       }
-      console.log(log);
+      console.log("pI_log : ",log);
       const logUpdate = await inventoryService.posLogs(log);
-      console.log(logUpdate)
+      console.log("pI_logUpdate : ",logUpdate)
       setProductsInTable();
 
     } else {
@@ -910,7 +931,7 @@ const SaveInvoiceData = () => {
     dispatch({type: "API_LOADER"})
     // setOpenInvoice(false);
     dispatch({type: "OPEN_INVOICE", data: false})
-    console.log(invoice);
+    console.log("gI_invoice : ",invoice);
     const res = await inventoryService.getSavedInvoices(invoice);
     console.log(res);
     // let array = [];
@@ -918,6 +939,7 @@ const SaveInvoiceData = () => {
     //   array.push(item.SavedInvoiceNo);
     // })
     console.log(res);
+    console.log("getIvoices_res.reverse() : ",res.reverse());
     setInvoiceOptions(res.reverse());
     
     // setApiLoader(false);
@@ -1032,7 +1054,7 @@ const SaveInvoiceData = () => {
         invoice: inv,
         itemNo: item.itemNo,
       }
-
+      console.log("linkManually_data : ",data);
       const result = await inventoryService.linkManually(data);
       console.log(result);
 
@@ -1089,8 +1111,9 @@ const SaveInvoiceData = () => {
     }
 
     const fetchSavedData = async(invoice = inv, no = num, date = day) => {
+      console.log("fetchSavedData_api_request ");
         const data =  await tesseractService.GetSavedInvoiceData(invoice, no, date);
-        console.log(data);
+        console.log("fatchSavedData_data : ",data);
         if(data.length === 0) {
           alert("Invoice doesnt Exist!!");
         }else return data[0].InvoiceData;
@@ -1112,8 +1135,10 @@ const SaveInvoiceData = () => {
       }
 
       fetchSavedData().then((ocrData) => {
+        console.log("fetchSavedData_ocrData : ",ocrData);
         invoiceData()
           .then((products) => {
+            console.log("fetchSavedData_invoice_products : ",products);
             /**post processing the table data after returning from filter */
             function convertToUpperCase(obj) {
               let newObj = {};
@@ -1223,6 +1248,7 @@ const SaveInvoiceData = () => {
             dispatch({type: "LOADER"});
 
             setTableData(table.filter((data) => data !== null));
+            console.log("setProductsInTable_tableData : ",tableData);
             setItemNoDropdown(Object.keys(products));
             setProductDetails(products);
           })
@@ -1518,6 +1544,8 @@ const SaveInvoiceData = () => {
 
     const updateItem = (props, ocrCost) => {
       let data;
+      console.log("updateItem_showPosState : ",showPosState);
+      console.log("updateItem_notFounds : ",notFounds);
       //console.log(showPosState);
       if(notFounds === "true"){
         // console.log(props.selectedInvoice);
@@ -1561,7 +1589,7 @@ const SaveInvoiceData = () => {
         };
       }
   
-      console.log(data)
+      console.log("updateItem_data : ",data)
       inventoryService
       .UpdateProductFields(data)
       .then((res) => {
@@ -1657,6 +1685,7 @@ const SaveInvoiceData = () => {
         emptyColumnList.push(tempTableData.length - 1);
         setEmptyColumn(emptyColumnList);
         setTableData(tempTableData);
+        console.log("addRow_tableData : ",tableData);
     };
     const deleteRow = (index) => {
         let tempTableData = [...tableData];
@@ -1685,6 +1714,7 @@ const SaveInvoiceData = () => {
           }
         }
         setTableData(tempTableData);
+        console.log("deleteRow_tableData : ",tableData);
         setEmptyColumn(emptyColumnList);
     };
 
@@ -1704,8 +1734,9 @@ const SaveInvoiceData = () => {
         );
       });
    };
-
+let ocrData = [];
    const setProductsInTableNew = (index) => {
+     
     console.log(index);
     // setOpenInvoice(true);
     dispatch({type: "OPEN_INVOICE", data: true})
@@ -1721,17 +1752,23 @@ const SaveInvoiceData = () => {
     dispatch({type: "SET_NUM", data: no})
     // setLoader(true);
     dispatch({type: "LOADER"});
+
+    // getProductDetails from their collection
+    console.log("setProductsInTableNew_invoice : ",invoice);
     async function invoiceData() {
       const products = await tesseractService.GetProductDetails(
         invoice
       );
       //console.log(props.selectedInvoice);
+      console.log("setProductsInTableNew_products : ",products);
       return products;
     }
 
     fetchSavedData(invoice, no, date).then((ocrData) => {
+      console.log("fetchSavedData_ocrData : ",ocrData);
       invoiceData()
         .then((products) => {
+          console.log("fetchSavedData_products : ",products);
           /**post processing the table data after returning from filter */
           function convertToUpperCase(obj) {
             let newObj = {};
@@ -1840,6 +1877,7 @@ const SaveInvoiceData = () => {
           dispatch({type: "LOADER"});
 
           setTableData(table.filter((data) => data !== null));
+          console.log("fetchSavedData_tableData : ",tableData);
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
         })
@@ -1851,7 +1889,8 @@ const SaveInvoiceData = () => {
     });
   }
 
-   const renderInvoiceTable = () => {   
+   const renderInvoiceTable = () => {  
+     console.log("renderInvoiceTable_invoiceOptions : ",invoiceOptions);
     const invoiceList = invoiceOptions.map((element, index) => {
       return (
         <tr key={index}>
@@ -1913,10 +1952,10 @@ const SaveInvoiceData = () => {
 
     const renderTableData = () => {
         // hicksvilleDropdown(HicksData);
-    
+        console.log("renderTableData_tableData : ",tableData);
         if (tableData) {
           console.log(tableData);
-    
+          console.log("renderTableData_showPosState : ",showPosState);
           // console.log(showPosIndex);
           // console.log(tableData[0]);
           
@@ -1935,7 +1974,7 @@ const SaveInvoiceData = () => {
             }
             let isFree = element.qty != 0 && element.extendedPrice === "0.00";
             // console.log(element.isUpdated);
-            // console.log(element);
+            console.log("renderTableData_element : ",element);
             let margin = ((element.sellingPrice - element.cost)/ element.cost)*100;
             
     
@@ -2394,7 +2433,8 @@ const SaveInvoiceData = () => {
         console.log(priceIncreasedProducts.length);
         // setLoader(false);
         dispatch({type: "LOADER"});
-
+        console.log(tempTable);
+        console.log(mergeDuplicates(tempTable));
         setInventoryData(mergeDuplicates(tempTable));
         setPushToInventory(true);
     };
@@ -2471,6 +2511,7 @@ const SaveInvoiceData = () => {
           tempTableData[row]["barcode"] = value;
         }
         setTableData(tempTableData);
+        console.log("handleChange_tableData : ",tableData);
     };
 
     const mergeDuplicates = (a) => {
@@ -2674,6 +2715,7 @@ const SaveInvoiceData = () => {
                       onChange={(event, newValue) => {
                           // console.log("new value", newValue)
                           if (newValue) {
+                            console.log("onClick : ",newValue);
                           setInvoice(newValue);
                           }
                           // getInvoices(newValue);

@@ -24,6 +24,7 @@ import { lightBlue } from "@material-ui/core/colors";
 
 let emptyColumnList = [];
 const DisplayData = (props) => {
+  console.log("DisplayData_props : ",props);
   const api = new Api();
   const [tableData, setTableData] = useState([]);
   const [emptyColumn, setEmptyColumn] = useState([]);
@@ -704,6 +705,8 @@ const DisplayData = (props) => {
   };
 
   const renderTableData = () => {
+    console.log("renderTableData_HicksData : ",HicksData);
+    console.log("renderTableData_tableData : ",tableData);
     hicksvilleDropdown(HicksData);
     // console.log(stateUpdated);
 
@@ -1088,6 +1091,8 @@ const DisplayData = (props) => {
       })
     );
     setLoader(false);
+    console.log(tempTable);
+    console.log(mergeDuplicates(tempTable));
     setInventoryData(mergeDuplicates(tempTable));
     setPushToInventory(true);
     
@@ -1395,6 +1400,7 @@ const DisplayData = (props) => {
           return { ...row, sp, cp };
           });
           setLoader(false);
+          console.log("fetchOcrData_table",table);
           setTableData(table.filter((data) => data !== null));
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
@@ -1503,7 +1509,7 @@ const DisplayData = (props) => {
       
       
       
-    );
+    
     </div>
   );
 };

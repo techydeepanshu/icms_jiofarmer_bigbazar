@@ -54,6 +54,7 @@ app.post("/api/upload-image", validateLogin, (req, res) => {
 
 app.get("/api/product", validateLogin, (req, res) => {
   const invoice = getDBInvoiceName(req.query["invoiceName"]);
+  console.log("invoice : ",invoice);
   let options = {
     method: "GET",
     url: `http://34.202.27.217:3001/invoice/${invoice}`,
@@ -179,7 +180,7 @@ app.get("/api/invoice/fetchproductfromposlist", validateLogin, (req, res) => {
 //added by Parikshit.
 app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
   const invoice = req.query;
-  
+  console.log("invoice : ",invoice);
   console.log(invoice);
   let options = {
     method: "GET",
@@ -190,6 +191,7 @@ app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
   function callback(error, response, body) {
     const status = response.statusCode;
     // console.log(error, body);
+    // console.log("body : ",body);
     if (error === null) {
       res.status(status).send(body);
     } else {
@@ -574,7 +576,7 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   const { invoiceName, itemName, value } = data;
   console.log("Item name",itemName);
   console.log(data,"Mongo PUT Request Data"); 
-  console.log(getDBInvoiceName(invoiceName));
+  console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
     url: `http://34.202.27.217:3001/invoice/${getDBInvoiceName(
@@ -594,6 +596,60 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   }
   request(options, callback);
 });
+
+// added by Deeapanshu
+app.put("/api/handwritteninvoice/product/update", validateLogin, function (req, res) {
+  
+  const data = req.body;
+  console.log(data);
+  const { invoiceName, itemName, value } = data;
+  console.log("Item name",itemName);
+  console.log(data,"Mongo PUT Request Data"); 
+  console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
+  let options = {
+    method: "PUT",
+    url: `http://34.202.27.217:3001/handwritteninvoice/${getDBInvoiceName(
+      invoiceName
+    )}/${itemName}`,
+    body: value,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+
+// added by Deepanshu
+app.get("/api/invoice/gethandwrittenposlogs", validateLogin , function (req,res){
+  console.log("data : ",req.query);
+  const data = req.query;
+  // let {invoicename,itemNo,sku,updatedate} = req.query;
+  let options = {
+    method: "GET",
+    url: "http://34.202.27.217:3001/gethandwrittenposlog",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+})
+
+
 
 app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   const data = req.body;
@@ -733,13 +789,34 @@ app.post("/api/invoice/poslogs", validateLogin, function (req, res) {
   request(options, callback);
 });
 
+
 //added by Parikshit.
-app.post("/api/invoice/handwrittenlogs", validateLogin, function (req, res) {
+app.post("/api/invoice/handwrittenposlogs", validateLogin, function (req, res) {
   const data = req.body;
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://34.202.27.217:3001/handwrittenlogs",
+    url: "http://34.202.27.217:3001/handwrittenposlogs",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
+app.get("/api/invoice/gethandwrittenlogs", validateLogin, function (req, res) {
+  const data = req.query;
+  console.log("data : ",data);
+  let options = {
+    method: "GET",
+    url: "http://34.202.27.217:3001/gethandwrittenlogs",
     body: data,
     json: true,
   };

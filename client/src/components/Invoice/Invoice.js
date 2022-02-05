@@ -46,6 +46,7 @@ const Invoice = (props) => {
     }
   };
   const scanInvoice = () => {
+    console.log("scanInvoice_file : ",file);
     if (file.length > 0) {
       const postImage = async () => {
         setLoader(true);
@@ -65,10 +66,12 @@ const Invoice = (props) => {
             }
           })
         );
+        console.log("scanInvoice_filenames : ",filenames);
         setFilename(filenames);
       };
       postImage()
         .then((data) => {
+          console.log("postImage_data : ",data);
           setLoader(false);
           setRedirect(true);
           props.history.push(path);
