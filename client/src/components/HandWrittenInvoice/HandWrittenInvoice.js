@@ -1714,7 +1714,7 @@ const HandwrittenInvoice = () => {
         extendedPrice: (quantity * price).toFixed(2).toString(),
         unitPrice: price,
         isUpdated: "",
-        isUpdatedDate:"",
+        isUpdatedDate:todayDate,
         itemNoPresent: "",
         linkingCorrect: "",
         margin: "",

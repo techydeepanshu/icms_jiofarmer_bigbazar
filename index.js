@@ -608,7 +608,7 @@ app.put("/api/handwritteninvoice/product/update", validateLogin, function (req, 
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://34.202.27.217:3001/handwritteninvoice/${getDBInvoiceName(
+    url: `http://3.226.236.172:3001/handwritteninvoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -633,7 +633,7 @@ app.get("/api/invoice/gethandwrittenposlogs", validateLogin , function (req,res)
   // let {invoicename,itemNo,sku,updatedate} = req.query;
   let options = {
     method: "GET",
-    url: "http://34.202.27.217:3001/gethandwrittenposlog",
+    url: "http://3.226.236.172:3001/gethandwrittenposlog",
     body: data,
     json: true,
   };
@@ -816,7 +816,7 @@ app.get("/api/invoice/gethandwrittenlogs", validateLogin, function (req, res) {
   console.log("data : ",data);
   let options = {
     method: "GET",
-    url: "http://34.202.27.217:3001/gethandwrittenlogs",
+    url: "http://3.226.236.172:3001/gethandwrittenlogs",
     body: data,
     json: true,
   };
