@@ -32,6 +32,6 @@
     "package.json": "^2.0.1",
     "react-scripts": "^4.0.3",
     "request": "^2.88.2",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.1"
   }
 }
