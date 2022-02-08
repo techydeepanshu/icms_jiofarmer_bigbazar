@@ -189,7 +189,8 @@ const SaveInvoiceData = () => {
       "vidyas",
       "adelman-foods",
       "aliments",
-      "baroody"
+      "baroody",
+      "meenaxi-enterprise"
 
     ];
 
@@ -722,13 +723,17 @@ const SaveInvoiceData = () => {
     itemNo = product.itemNo;
     console.log("pI_product : ",product);
     
-    product.forEach((element, index) => {
+    product.forEach((element, i) => {
+      console.log(!emptyColumn.includes(index))
+      console.log(element.show)
+      console.log(element["isForReview"])
+      console.log(index)
       if (
         !emptyColumn.includes(index) &&
         element.show === true &&
         element["isForReview"] != true
       ) {
-        let rowData = { index: index + 1, ...element };
+        let rowData = { i: i + 1, ...element };
         tempTable.push(rowData);
       }
     });

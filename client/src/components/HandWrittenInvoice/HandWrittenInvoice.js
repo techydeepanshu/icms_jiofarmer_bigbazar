@@ -5,7 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import { Box, Grid } from "@material-ui/core";
 // import { dropdownOptions } from "../../utils/invoiceList";
 import { handwrittenInvoiceList } from "./HandWrittenInvoiceList";
-
+import Spinner from "../../UI/Spinner/Spinner";
+import  CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 import { InventoryService } from "../../services/InventoryService";
 import {
@@ -310,7 +311,7 @@ const HandwrittenInvoice = () => {
   async function getPosProducts() {
     console.log("IN POS PRODUCTS");
     // setLoader(true);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
     let hasErrorOccured = false;
     const items = await Promise.all(
       singleItemData.map(async (row) => {
@@ -373,7 +374,7 @@ const HandwrittenInvoice = () => {
       alert("Couldn't fetch some data from POS");
     }
     // setLoader(false);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
     console.log(items);
     posProducts = items;
     console.log(posProducts);
@@ -383,7 +384,7 @@ const HandwrittenInvoice = () => {
   //PUSH TO WOOCOM.
   const pushToWoocom = async (products) => {
     // setLoader(true);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
     console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
@@ -410,13 +411,13 @@ const HandwrittenInvoice = () => {
 
     console.log("pushToWoocom_result : ", responses);
     // setLoader(false);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
   };
 
   //PUSH TO POS.
   const pushToPOS = async (products) => {
     // setLoader(true);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
     console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
@@ -525,7 +526,7 @@ const HandwrittenInvoice = () => {
       })
     );
     // setLoader(false);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
   };
 
   const pushInventoryDetails2 = async () => {
@@ -626,7 +627,7 @@ const HandwrittenInvoice = () => {
 
   const pushSingleItemToInventory = async (index) => {
     // setApiLoader(true);
-    // dispatch({type: "API_LOADER"});
+    dispatch({type: "API_LOADER"});
     const product = [];
     console.log("posProduct : ", posProduct);
     const tempTable = [];
@@ -656,6 +657,7 @@ const HandwrittenInvoice = () => {
     //   }
     // });
     // singleItemData=tempTable;
+    // dispatch({type: "LOADER"});
     updateSku = singleItemData[0].posSku;
 
     await getProducts();
@@ -735,7 +737,7 @@ const HandwrittenInvoice = () => {
       setProductsInTableNew(selectedDropdown);
     }
     // setApiLoader(false);
-    // dispatch({type: "API_LOADER"});
+    dispatch({type: "API_LOADER"});
   };
   //*********************************************************************POS UPDATE ENDS******************************************* */
 
@@ -1689,6 +1691,7 @@ const HandwrittenInvoice = () => {
   };
 
   const updateItem = async (index) => {
+    // dispatch({type: "LOADER"});
     console.log("updateItem_selectedDropdown : ", selectedDropdown);
     console.log("updateItem_posProduct : ", posProduct);
     console.log("updateItem_tableData[index] : ", tableData[index]);
@@ -1714,7 +1717,7 @@ const HandwrittenInvoice = () => {
         extendedPrice: (quantity * price).toFixed(2).toString(),
         unitPrice: price,
         isUpdated: "",
-        isUpdatedDate:"",
+        isUpdatedDate:todayDate,
         itemNoPresent: "",
         linkingCorrect: "",
         margin: "",
@@ -1729,6 +1732,7 @@ const HandwrittenInvoice = () => {
 
     const result = await inventoryService.UpdateHandWrittenProductFields(data);
     console.log(result);
+    // window.location.reload()
     setProductsInTableNew(selectedDropdown);
     renderTableData();
   };
@@ -2078,7 +2082,7 @@ const HandwrittenInvoice = () => {
     // // setNum(no);
     // dispatch({type: "SET_NUM", data: no})
     // // setLoader(true);
-    // dispatch({type: "LOADER"});
+    dispatch({type: "LOADER"});
 
     const invoice = currentInvoice;
     // getProductDetails from their collection
@@ -2149,11 +2153,12 @@ const HandwrittenInvoice = () => {
         setTableData(table.filter((data) => data !== null));
         setTableDataCopy(table.filter((data) => data !== null));
         console.log("fetchSavedData_tableData : ", tableData);
+        dispatch({type: "LOADER"});
       })
       .catch((err) => {
         console.log("error on mapping ocrdata", err);
         // setLoader(false);
-        // dispatch({type: "LOADER"});
+        dispatch({type: "LOADER"});
       });
   };
 
@@ -2182,6 +2187,23 @@ const HandwrittenInvoice = () => {
       }
     });
   }, []);
+
+
+  console.log(apiLoader);
+  console.log(showPosState);
+  console.log(inv, num, day);
+  console.log(notFounds, unitsInCase, price);
+  if (loader) {
+    return <Spinner />;
+  }
+  if(apiLoader){
+    return (
+    <div style={{marginTop: "100px", marginLeft: "700px"}}>
+      <CircularProgress />
+    </div>
+    );       
+  }
+
 
   return (
     <div className="container-fluid">
