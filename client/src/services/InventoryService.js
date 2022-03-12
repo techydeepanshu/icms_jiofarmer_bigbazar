@@ -29,10 +29,25 @@ export class InventoryService {
     });
     return response.data;
   }
+  async GetPOSInventoryDetails(Barcode) {
+    const response = await Axios.get(appendURL + "/api/GetPOSInventory", {
+      params: { Barcode:Barcode},
+    });
+    return response.data;
+  }
   async UpdatePOSProducts(data) {
     console.log(data);
     const res = await Axios.post(
       appendURL + "/api/pos/Product/ManageItem",
+      data
+    );
+    return res.data;
+  }
+  
+  async UpdatePOSInventory(data) {
+    console.log(data);
+    const res = await Axios.post(
+      appendURL + "/api/updateinventory",
       data
     );
     return res.data;
@@ -213,6 +228,12 @@ export class InventoryService {
   async posLogs(data) {
     console.log(data);
     const res = await Axios.post(appendURL + "/api/invoice/poslogs", data)
+    return res.data;
+  }
+
+  async posInventoryLogs(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/invoice/posinventorylog", data)
     return res.data;
   }
 

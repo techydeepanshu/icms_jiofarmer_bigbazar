@@ -3,10 +3,15 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import { Box, Grid } from "@material-ui/core";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import UpdateHandwrittenInventory from "../Update/UpdateHandwrittenInventory";
 // import { dropdownOptions } from "../../utils/invoiceList";
 import { handwrittenInvoiceList } from "./HandWrittenInvoiceList";
 import Spinner from "../../UI/Spinner/Spinner";
-import  CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 import { InventoryService } from "../../services/InventoryService";
 import {
@@ -91,6 +96,7 @@ const HandwrittenInvoice = () => {
   const [unitsInCase, setUnitsInCase] = useState("");
   const [caseCost, setCaseCost] = useState();
 
+  const [unitPriceModify, setUnitPriceModify] = useState(false);
   const [newUnitCost, setNewUnitCost] = useState("");
   const [newUnitPrice, setNewUnitPrice] = useState("");
   const [prevNewUnitPrice, setPrevNewUnitPrice] = useState("");
@@ -134,6 +140,17 @@ const HandwrittenInvoice = () => {
     unitCost: "",
     unitPrice: "",
   });
+
+  const [incPrice, setIncPrice] = useState(false);
+  const [decPrice, setDecPrice] = useState(false);
+  const [productsPriceInc, setProductsPriceInc] = useState(
+    "products_price_increase"
+  );
+  const [productsPriceDec, setProductsPriceDec] = useState(
+    "products_price_decrease"
+  );
+  const [inventoryData, setInventoryData] = useState([]);
+  const [pushToInventory, setPushToInventory] = useState(false);
   const [tableDataCopy, setTableDataCopy] = useState([]);
   const [tableData, setTableData] = useState([
     // {
@@ -311,7 +328,7 @@ const HandwrittenInvoice = () => {
   async function getPosProducts() {
     console.log("IN POS PRODUCTS");
     // setLoader(true);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
     let hasErrorOccured = false;
     const items = await Promise.all(
       singleItemData.map(async (row) => {
@@ -334,7 +351,7 @@ const HandwrittenInvoice = () => {
               ...row,
               COST: row.cp,
               // PRICE: newUnitPrice === "" ? row.sp : newUnitPrice,
-              PRICE: newUnitPrice === "" ? row.sellingPrice : newUnitPrice,
+              PRICE: row.sellingPrice,
               SKU,
               UPC,
               ITEMNAME,
@@ -374,7 +391,7 @@ const HandwrittenInvoice = () => {
       alert("Couldn't fetch some data from POS");
     }
     // setLoader(false);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
     console.log(items);
     posProducts = items;
     console.log(posProducts);
@@ -384,7 +401,7 @@ const HandwrittenInvoice = () => {
   //PUSH TO WOOCOM.
   const pushToWoocom = async (products) => {
     // setLoader(true);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
     console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
@@ -411,13 +428,13 @@ const HandwrittenInvoice = () => {
 
     console.log("pushToWoocom_result : ", responses);
     // setLoader(false);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
   };
 
   //PUSH TO POS.
   const pushToPOS = async (products) => {
     // setLoader(true);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
     console.log(products);
     const responses = await Promise.all(
       products.map(async (product) => {
@@ -460,7 +477,7 @@ const HandwrittenInvoice = () => {
             // if (itemNoPresent) {
             //   codeOrSku = product.itemNo;
             // } else {
-              codeOrSku = "SKU" + " " + product.posSku;
+            codeOrSku = "SKU" + " " + product.posSku;
             // }
             itemName = ITEMNAME + " " + "-" + " " + codeOrSku;
           }
@@ -468,7 +485,7 @@ const HandwrittenInvoice = () => {
           const res = await inventoryService.UpdatePOSProducts(
             JSON.stringify({
               UPC,
-              ITEMNAME:itemName,
+              ITEMNAME,
               DESCRIPTION: "",
               PRICE,
               COST,
@@ -526,7 +543,7 @@ const HandwrittenInvoice = () => {
       })
     );
     // setLoader(false);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
   };
 
   const pushInventoryDetails2 = async () => {
@@ -627,7 +644,7 @@ const HandwrittenInvoice = () => {
 
   const pushSingleItemToInventory = async (index) => {
     // setApiLoader(true);
-    dispatch({type: "API_LOADER"});
+    dispatch({ type: "API_LOADER" });
     const product = [];
     console.log("posProduct : ", posProduct);
     const tempTable = [];
@@ -681,9 +698,9 @@ const HandwrittenInvoice = () => {
         itemName: singleItemData[0].itemNo.toLowerCase(),
         value: {
           cost: singleItemData[0].cp,
-          sellingPrice: newUnitPrice,
+          sellingPrice: singleItemData[0].sellingPrice,
           isUpdated: "true",
-          isUpdatedDate:todayDate
+          isUpdatedDate: todayDate,
         },
       };
       console.log(data1);
@@ -692,6 +709,7 @@ const HandwrittenInvoice = () => {
       //Log Generate.
       console.log("PRODUCTT");
       console.log(singleItemData);
+      console.log(tableDataCopy);
       const log = {
         InvoiceName: selectedDropdown.slug,
         InvoiceDate: "",
@@ -699,10 +717,10 @@ const HandwrittenInvoice = () => {
         InvoiceDescription: singleItemData[0].description,
         PosDescription: singleItemData[0].posName,
         OldUnitCost: singleItemData[0].cost,
-        OldUnitPrice: prevNewUnitPrice,
+        OldUnitPrice: tableDataCopy[index].sellingPrice,
         // OldMarkup: singleItemData[0].margin.toFixed(2).toString(),
         OldMarkup: (
-          ((prevNewUnitPrice - singleItemData[0].cost) /
+          ((tableDataCopy[index].sellingPrice - singleItemData[0].cost) /
             singleItemData[0].cost) *
           100
         )
@@ -737,35 +755,39 @@ const HandwrittenInvoice = () => {
       setProductsInTableNew(selectedDropdown);
     }
     // setApiLoader(false);
-    dispatch({type: "API_LOADER"});
+    dispatch({ type: "API_LOADER" });
   };
   //*********************************************************************POS UPDATE ENDS******************************************* */
 
-  async function gethandwrittenLogs(){
+  async function gethandwrittenLogs() {
     console.log("GET HANDWRITTEN LOG");
     console.log(singleItemData);
     const log = await Promise.all(
-      singleItemData.map(async (row)=>{
+      singleItemData.map(async (row) => {
         console.log(row.barcode);
         const data = {
-          itemNo:row.itemNo,
-          invoicename:selectedDropdown.slug,
-          sku:row.posSku,
-          updatedate:row.isUpdatedDate
-        }
-        try{
+          itemNo: row.itemNo,
+          invoicename: selectedDropdown.slug,
+          sku: row.posSku,
+          updatedate: row.isUpdatedDate,
+        };
+        try {
           const res = await inventoryService.gethandwrittenPosLogs(data);
           console.log(res);
-          const {PosUnitCost,PosUnitPrice,NewUnitCost,NewUnitPrice} = res[0];
+          const { PosUnitCost, PosUnitPrice, NewUnitCost, NewUnitPrice } =
+            res[0];
           return {
-            PosUnitCost,PosUnitPrice,NewUnitCost,NewUnitPrice
-          }
-        }catch(error){
+            PosUnitCost,
+            PosUnitPrice,
+            NewUnitCost,
+            NewUnitPrice,
+          };
+        } catch (error) {
           console.log(error);
           alert("Previou Price Not Find");
         }
       })
-    )
+    );
 
     gethandwrittenlog = log;
     console.log(gethandwrittenlog);
@@ -846,18 +868,22 @@ const HandwrittenInvoice = () => {
         })
         .filter((item) => item !== null);
 
-      let updatedWoocomProducts2 = [{
-        ...updatedWoocomProducts[0],
-        regular_price:gethandwrittenlog[0].PosUnitPrice
-      }];
+      let updatedWoocomProducts2 = [
+        {
+          ...updatedWoocomProducts[0],
+          regular_price: gethandwrittenlog[0].PosUnitPrice,
+        },
+      ];
       console.log(updatedWoocomProducts2);
       await pushToWoocom(updatedWoocomProducts2);
     }
-    let posProducts2 = [{
-      ...posProducts[0],
-      COST:gethandwrittenlog[0].PosUnitCost,
-      PRICE:gethandwrittenlog[0].PosUnitPrice
-    }]
+    let posProducts2 = [
+      {
+        ...posProducts[0],
+        COST: gethandwrittenlog[0].PosUnitCost,
+        PRICE: gethandwrittenlog[0].PosUnitPrice,
+      },
+    ];
     await pushToPOS(posProducts2);
 
     // setLoader(false);
@@ -1078,7 +1104,7 @@ const HandwrittenInvoice = () => {
         posName: posProduct.pos,
         posSku: posProduct.posSku,
         size: posProduct.size,
-        sellingPrice: posProduct.sellingPrice,
+        sellingPrice: item.cp,
         cost: posProduct.sellerCost,
         isUpdated: "false",
       },
@@ -1217,11 +1243,12 @@ const HandwrittenInvoice = () => {
         let isFree = element.qty != 0 && element.extendedPrice === "0.00";
         // console.log(element.isUpdated);
         console.log("renderTableData_element : ", element);
-        let margin =
-          ((element.sellingPrice - element.cost) / element.cost) * 100;
+        // let margin =
+        //   ((element.sellingPrice - element.cost) / element.cost) * 100;
 
         console.log("isEmpty : ", isEmpty);
         console.log("isFree : ", isFree);
+        console.log("sellingPrice : ", element.sellingPrice);
         const isUpdated = "true";
         const updateIndex = 1;
         const costInc = "true";
@@ -1234,7 +1261,6 @@ const HandwrittenInvoice = () => {
           console.log("addRow");
         };
 
-       
         const pushInventoryDetails = () => {
           console.log("pushInventoryDetails");
         };
@@ -1322,12 +1348,19 @@ const HandwrittenInvoice = () => {
                     : element.department}
                 </p>
                 {/*<p>Margin(%) - {margin.toFixed(2)}</p>*/}
-                <p>Margin(%) - {showPosIndex === index ? (((showPosState.sellingPrice - showPosState.sellerCost)/showPosState.sellerCost)*100).toFixed(2) : margin.toFixed(2)}</p>
+                <p>
+                  Margin(%) -{" "}
+                  {showPosIndex === index
+                    ? (
+                        ((showPosState.sellingPrice - element.cost) /
+                        element.cost) *
+                        100
+                      ).toFixed(2)
+                    : element.margin.toFixed(2)}
+                </p>
                 <p>
                   Unit Cost-{" "}
-                  {showPosIndex === index
-                    ? showPosState.sellerCost
-                    : element.cost}
+                  {element.cost}
                 </p>
                 <p>
                   Unit Price-{" "}
@@ -1569,9 +1602,11 @@ const HandwrittenInvoice = () => {
               <TextField
                 type="tel"
                 /*value={element.sp}*/
-                value={(showPosIndex === index
-                  ? showPosState.sellingPrice
-                  : element.sellingPrice)}
+                value={
+                  showPosIndex === index
+                    ? showPosState.sellingPrice
+                    : element.sellingPrice
+                }
                 variant="outlined"
                 onChange={(e) => {
                   handleChange(index, "sellingPrice", e.target.value);
@@ -1616,8 +1651,8 @@ const HandwrittenInvoice = () => {
                 color="btn btn-info"
                 type="submit"
                 onClick={() => {
-                  if(window.confirm("Do You Want to Update Data in POS")){
-                    pushSingleItemToInventory(index)
+                  if (window.confirm("Do You Want to Update Data in POS")) {
+                    pushSingleItemToInventory(index);
                   }
                 }}
                 style={{ width: 120 }}
@@ -1650,34 +1685,94 @@ const HandwrittenInvoice = () => {
       });
       return (
         <div style={{ marginTop: "35px" }}>
+          <div style={{ textAlign: "center" }}>
+            <FormControl component="fieldset">
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                disable="true"
+                  value={productsPriceInc}
+                  control={<Checkbox checked={incPrice} />}
+                  label="Select Price Increase Products"
+                  labelPlacement="end"
+                  onChange={async (e) => {
+                    console.log("first checkbox value : ", e.target.value);
+
+                    if (!incPrice) {
+                      autoMarginForPrice(e.target.value);
+                    } else {
+                      autoMarginForPrice("reverseIncPrice");
+                    }
+                  }}
+                />
+
+                <FormControlLabel
+                  value={productsPriceDec}
+                  control={<Checkbox checked={decPrice} />}
+                  label="Select Price Decrease Products"
+                  labelPlacement="end"
+                  onChange={(e) => {
+                    console.log("second checkbox value : ", e.target.value);
+
+                    if (!decPrice) {
+                      autoMarginForPrice(e.target.value);
+                    } else {
+                      autoMarginForPrice("reverseDecPrice");
+                    }
+                  }}
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
           <table className="table table-hover table-responsive-sm">
             <tbody>
               <tr>{renderTableHeader()}</tr>
               {rows}
-              <tr>
-                <td>
-                  <Button
-                    text="Add cell"
-                    color="btn btn-info"
-                    onClick={() => console.log("addRow")}
-                  />
-                </td>
-              </tr>
             </tbody>
           </table>
+          <div style={{ textAlign: "center" }}>
+            <FormControl component="fieldset">
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value={productsPriceInc}
+                  control={<Checkbox checked={incPrice} />}
+                  label="Select Price Increase Products"
+                  labelPlacement="end"
+                  onChange={async (e) => {
+                    console.log("first checkbox value : ", e.target.value);
+
+                    if (!incPrice) {
+                      autoMarginForPrice(e.target.value);
+                    } else {
+                      autoMarginForPrice("reverseIncPrice");
+                    }
+                  }}
+                />
+                <FormControlLabel
+                  value={productsPriceDec}
+                  control={<Checkbox checked={decPrice} />}
+                  label="Select Price Decrease Products"
+                  labelPlacement="end"
+                  onChange={(e) => {
+                    console.log("second checkbox value : ", e.target.value);
+
+                    if (!decPrice) {
+                      autoMarginForPrice(e.target.value);
+                    } else {
+                      autoMarginForPrice("reverseDecPrice");
+                    }
+                  }}
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
           <div className={styles.divRow}>
             <Button
               text="Update Inventory"
               color="btn btn-info"
               type="submit"
-              onClick={() => console.log("addRow")}
+              onClick={pushInventoryDetails}
             />
-            {/* <Button
-              text="Save Invoice Data"
-              color="btn btn-info"
-              type="submit"
-              onClick={toggleModal}
-            /> */}
+
             <Button
               text="Re upload"
               color="btn btn-info"
@@ -1705,7 +1800,7 @@ const HandwrittenInvoice = () => {
         posName: posProduct.pos,
         posSku: posProduct.posSku,
         size: posProduct.size,
-        cost: posProduct.sellerCost,
+        cost: (parseFloat(price)/parseInt(unitsInCase)).toFixed(2),
         sellingPrice: posProduct.sellingPrice,
         pieces: unitsInCase,
         sellingCost: newUnitCost,
@@ -1717,7 +1812,7 @@ const HandwrittenInvoice = () => {
         extendedPrice: (quantity * price).toFixed(2).toString(),
         unitPrice: price,
         isUpdated: "",
-        isUpdatedDate:todayDate,
+        isUpdatedDate: todayDate,
         itemNoPresent: "",
         linkingCorrect: "",
         margin: "",
@@ -1749,6 +1844,46 @@ const HandwrittenInvoice = () => {
     }
   };
 
+  const pushInventoryDetails = async () => {
+    let dataForUpdate = [];
+
+    console.log("tableDataCopy : ", tableDataCopy);
+
+    let filterdata = [];
+
+    // if (
+    //   productsPriceInc === "products_price_increase" &&
+    //   productsPriceDec === "products_price_decrease"
+    // ) {
+    //   filterdata = tableData.filter((product) => product.priceIncrease !== 0);
+    // } else if (productsPriceInc === "products_price_increase") {
+    //   filterdata = tableData.filter((product) => product.priceIncrease === 1);
+    // } else if (productsPriceDec === "products_price_decrease") {
+    //   filterdata = tableData.filter((product) => product.priceIncrease === -1);
+    // } else {
+    filterdata = tableData.filter(
+      (product, index) =>
+        product.sellingPrice !== tableDataCopy[index].sellingPrice
+    );
+    console.log("filterdata : ", filterdata);
+    // }
+
+    if (filterdata.length !== 0) {
+      setInventoryData(filterdata);
+      setPushToInventory(true);
+    
+      // setProductsInTableNew(selectedDropdown);
+    } else {
+      alert("Data not change");
+    }
+    console.log(dataForUpdate.length);
+    // setLoader(false);
+    // dispatch({type: "LOADER"});
+    // console.log(tempTable);
+    // console.log(mergeDuplicates(tempTable));
+    // setInventoryData(dataForUpdate);
+  };
+
   const handleChange = (index, key, val) => {
     console.log("handleChange_key : ", key);
     console.log("handleChange_val : ", val);
@@ -1763,9 +1898,17 @@ const HandwrittenInvoice = () => {
 
     if (key === "sellingPrice") {
       setNewUnitPrice(val);
+      setUnitPriceModify(true);
+      if(val === tableDataCopy[index].sellingPrice){
+        setUnitPriceModify(false);
+
+      }
       setPrevNewUnitPrice(tableDataCopy[index].sellingPrice);
       console.log("NewUnitPrice_value : ", val);
-      console.log("PrevNewUnitPrice_value : ", tableDataCopy[index].sellingPrice);
+      console.log(
+        "PrevNewUnitPrice_value : ",
+        tableDataCopy[index].sellingPrice
+      );
     }
 
     const tempTableData = {
@@ -1777,6 +1920,128 @@ const HandwrittenInvoice = () => {
     console.log("propertyName : ", propertyNames);
     console.log("handelChange_propertyNames[index] : ", propertyNames[index]);
     setTableData(propertyNames);
+  };
+
+  const autoMarginForPrice = async (value) => {
+    console.log("autoMarginForPrice");
+    console.log(tableData);
+    console.log(value);
+    let margin = "";
+    let sp = 0;
+    let sampleData = [];
+
+    tableData.map((product) => {
+      if (value === productsPriceInc) {
+        if (product.priceIncrease === 1) {
+          console.log(product.margin);
+          console.log("old_sellingPrice : ", product.sellingPrice);
+          margin = parseFloat(product.margin).toFixed(2)
+          console.log("margin : ",margin,typeof(margin))
+          console.log("cp : ",product.cp,typeof(product.cp))
+          sp = parseFloat(product.cp) + (parseFloat(product.cp) * parseFloat(margin)/100);
+          console.log(sp);
+          sampleData.push({
+            ...product,
+            sellingPrice: parseFloat(sp).toFixed(2),
+          });
+          console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
+          // product.sellingPrice = parseFloat(sp).toFixed(2);
+          // console.log("new_sellingPrice : ", product.sellingPrice);
+        } else {
+          sampleData.push({ ...product });
+        }
+
+        setIncPrice(() => {
+          if (incPrice) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+      } else if (value === productsPriceDec) {
+        if (product.priceIncrease === -1) {
+          console.log(product.margin);
+          console.log("old_sellingPrice : ", product.sellingPrice);
+          margin = parseFloat(product.margin).toFixed(2)
+          console.log("margin : ",margin,typeof(margin))
+          console.log("cp : ",product.cp,typeof(product.cp))
+          sp = parseFloat(product.cp) + (parseFloat(product.cp) * parseFloat(margin)/100);
+          console.log(sp);
+          sampleData.push({
+            ...product,
+            sellingPrice: parseFloat(sp).toFixed(2),
+          });
+          console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
+          // product.sellingPrice = parseFloat(sp).toFixed(2);
+          // console.log("new_sellingPrice : ", product.sellingPrice);
+        } else {
+          sampleData.push({ ...product });
+        }
+
+        setDecPrice(() => {
+          if (decPrice) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+      } else if (value === "reverseIncPrice") {
+        if (product.priceIncrease === 1) {
+          console.log(product.margin);
+          console.log("old_sellingPrice : ", product.sellingPrice);
+          sp = tableDataCopy.filter(
+            (element) => product.barcode === element.barcode
+          );
+          console.log(sp);
+          sampleData.push({ ...product, sellingPrice: sp[0].sellingPrice });
+          console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
+          // product.sellingPrice = parseFloat(sp).toFixed(2);
+          // console.log("new_sellingPrice : ", product.sellingPrice);
+        } else {
+          sampleData.push({ ...product });
+        }
+
+        setIncPrice(() => {
+          if (incPrice) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+      } else if (value === "reverseDecPrice") {
+        if (product.priceIncrease === -1) {
+          console.log(product.margin);
+          console.log("old_sellingPrice : ", product.sellingPrice);
+          sp = tableDataCopy.filter(
+            (element) => product.barcode === element.barcode
+          );
+          console.log(sp);
+          sampleData.push({ ...product, sellingPrice: sp[0].sellingPrice });
+          console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
+          // product.sellingPrice = parseFloat(sp).toFixed(2);
+          // console.log("new_sellingPrice : ", product.sellingPrice);
+        } else {
+          sampleData.push({ ...product });
+        }
+
+        setDecPrice(() => {
+          if (decPrice) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+      } else {
+        sampleData.push({ ...product });
+      }
+    });
+
+    console.log("new_sellingPrice : ", tableData[0].sellingPrice);
+
+    console.log(sampleData);
+    if (sampleData.length !== 0) {
+      setTableData(sampleData);
+    }
   };
 
   const addProduct = () => {
@@ -2082,7 +2347,7 @@ const HandwrittenInvoice = () => {
     // // setNum(no);
     // dispatch({type: "SET_NUM", data: no})
     // // setLoader(true);
-    dispatch({type: "LOADER"});
+    dispatch({ type: "LOADER" });
 
     const invoice = currentInvoice;
     // getProductDetails from their collection
@@ -2143,9 +2408,11 @@ const HandwrittenInvoice = () => {
               parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
             ).toFixed(0);
           }
+
+          // row.margin = ((row.sellingPrice - row.cost) / row.cost) * 100;
           row.margin =
             row.itemNo !== undefined
-              ? ((row.SellingPrice - row.cost) / row.cost) * 100
+              ? ((row.sellingPrice - row.cost) / row.cost) * 100
               : "";
           return { ...row, sp, cp };
         });
@@ -2153,12 +2420,12 @@ const HandwrittenInvoice = () => {
         setTableData(table.filter((data) => data !== null));
         setTableDataCopy(table.filter((data) => data !== null));
         console.log("fetchSavedData_tableData : ", tableData);
-        dispatch({type: "LOADER"});
+        dispatch({ type: "LOADER" });
       })
       .catch((err) => {
         console.log("error on mapping ocrdata", err);
         // setLoader(false);
-        dispatch({type: "LOADER"});
+        dispatch({ type: "LOADER" });
       });
   };
 
@@ -2188,7 +2455,6 @@ const HandwrittenInvoice = () => {
     });
   }, []);
 
-
   console.log(apiLoader);
   console.log(showPosState);
   console.log(inv, num, day);
@@ -2196,14 +2462,13 @@ const HandwrittenInvoice = () => {
   if (loader) {
     return <Spinner />;
   }
-  if(apiLoader){
+  if (apiLoader) {
     return (
-    <div style={{marginTop: "100px", marginLeft: "700px"}}>
-      <CircularProgress />
-    </div>
-    );       
+      <div style={{ marginTop: "100px", marginLeft: "700px" }}>
+        <CircularProgress />
+      </div>
+    );
   }
-
 
   return (
     <div className="container-fluid">
@@ -2389,7 +2654,27 @@ const HandwrittenInvoice = () => {
         selectedDropdown === undefined ? "" : selectedDropdown.value
       }`}</p>
 
-      <div>{renderTableData()}</div>
+      <div>
+        {
+          // renderTableData()
+          pushToInventory ? (
+            <UpdateHandwrittenInventory
+              newInventoryData={inventoryData}
+              header={header}
+              goBack={setPushToInventory}
+              invoice={selectedDropdown}
+              userEmail={userEmail}
+              tableDataCopy={tableDataCopy}
+              todayDate={todayDate}
+              incPrice={incPrice}
+              decPrice={decPrice}
+              unitPriceModify={unitPriceModify}
+            />
+          ) : selectedDropdown !== undefined ?(
+            renderTableData()
+          ) : ""
+        }
+      </div>
 
       <CModal show={showModal} onClose={() => toggleModal("showModal")}>
         <CModalHeader closeButton>{modalLabel}</CModalHeader>
@@ -2499,7 +2784,7 @@ const HandwrittenInvoice = () => {
                     disabled
                     type="text"
                     name="unitCost"
-                    value={posProduct.sellerCost}
+                    value={(parseFloat(price)/parseInt(unitsInCase)).toFixed(2)}
                     onChange={(event) =>
                       handleChange("SellerCost", event.target.value)
                     }

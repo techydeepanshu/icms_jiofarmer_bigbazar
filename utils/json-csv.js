@@ -1,5 +1,6 @@
 const request=require("request");
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+require("dotenv").config({ path:"../.env" });
 const csvWriter = createCsvWriter({
   path: 'Data.csv',
   header: [
@@ -24,10 +25,10 @@ const csvWriter = createCsvWriter({
 });
 let options = {
   method: "GET",
-  url:"https://dataservices.sypramsoftware.com/api/Item/GetItemList",
-  headers:{
-    Authorization:'Basic '+Buffer.from("lRRqlkYefuV=:lRRqlkYefuV6jJ==:qzOUsBmZFgMDlwGtrgYypxUz").toString('base64')
-  },
+  url: `${process.env.POS_API}/getdata/ProductInfo`,
+//   headers:{
+//     Authorization:'Basic '+Buffer.from("lRRqlkYefuV=:lRRqlkYefuV6jJ==:qzOUsBmZFgMDlwGtrgYypxUz").toString('base64')
+//   },
   json: true,
 };
 function callback(error, response, body) {
