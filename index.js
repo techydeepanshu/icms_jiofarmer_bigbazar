@@ -391,6 +391,32 @@ app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
   request(options, callback);
 });
 
+// added by deepanshu
+app.post("/api/invoice/updateinventoryindb", validateLogin, (req, res) => {
+  // console.log(req.body);
+  const data = {
+    item: req.body.item,
+    isInventoryUpdate:req.body.isInventoryUpdate,
+    invoice: getDBInvoiceName(req.body.invoice)
+  };
+  console.log(data);
+  let options = {
+    method: "POST",
+    url: `http://44.203.76.94:3001/updateinventoryindb/`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
 
 
 

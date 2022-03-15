@@ -5,11 +5,23 @@ export const optionData={
     body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=;'<>?,\*\+\-]/gi
   },
+  "farmers-choice":{
+    regex:/^[A-Z0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]/,
+    header:["itemNo","qty","description","","extendedPrice"],
+    body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=;'<>?,\*\+\-]/gi
+  },
   "ny-zara-food":{
     regex:/^[0-9]+ [A-Z0-9-]+ .+ [0-9\.]+ [0-9\.]+$/,
     header:["qty","itemNo","description","unitPrice","extendedPrice"],
     body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  },
+  "grace-kennedy":{
+    regex:/^[0-9]+ [A-Z-0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","itemNo","description","unitPrice","garbage1","garbage2","garbage3","extendedPrice"],
+    body:[1,1,[0,/ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
   "vibrant-enterprise":{
     regex:/^[0-9]+ [A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
@@ -48,7 +60,7 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
   },
   "shakti-group-usa":{
-    regex:/^[0-9].+ [A-Z0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    regex:/^[0-9].+ [A-Z-0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","lotNo","itemNo","description","unitPrice","extendedPrice"],
     body:[1,1,3,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
@@ -77,11 +89,17 @@ export const optionData={
     body:[1,3,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:();""'<>*?,\*]/gi
   },
-  "krishna-aahar":{
-    regex:/^.+ [0-9\.]+ [0-9\.]+$/,
+  "derle-farms":{
+    regex:/^[0-9]+ [a-zA-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
     header:["itemNo","description","unitPrice","extendedPrice"],
-    body:[3,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  },// use empty column
+  "wonderful-sales":{
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },// use empty column
   "jaan-distributors":{
     regex:/^.+ [0-9\.]+ [0-9\.]+$/,
@@ -317,18 +335,30 @@ export const optionData={
     body:[1,1,1,1,2,[0,/ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1],
     notAllowed:/[`~!@#\$%^&=:();/""'<>*?,\*]/gi
   },
+  "roshni-foods":{
+    regex:/^[A-Z0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [A-Z]+ [0-9/.]+ [A-Za-z]+ .+ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","qtyOrdered","qty","uom","packSize","description","brand","unit","unitPrice","extendedPrice"],
+    body:[1,1,1,1,2,[0,/ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:();/""'<>*?,\*]/gi
+  },// not working 
+  // "fyve-elements":{
+  //   regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
+  //   body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  // },
   "gaint-farm":{
     regex:/^.+ [0-9]+ [0-9]+$/,
     header:["description","unitPrice","extendedPrice"],
     body:[[0,/ [0-9]+ [0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\/\*\+\-]/gi
   },//use empty column
-  "farmers-choice-dairy":{
-    regex:/^.+ [0-9]+ [0-9\.]+$/,
-    header:["description","pack","extendedPrice"],
-    body:[[0,/ [0-9]+ [0-9\.]+$/],1,1],
-    notAllowed:/[`~!@#\$%^&=:;'<>?,\/\*\+\-]/gi
-  },
+  // "farmers-choice-dairy":{
+  //   regex:/^.+ [0-9]+ [0-9\.]+$/,
+  //   header:["description","pack","extendedPrice"],
+  //   body:[[0,/ [0-9]+ [0-9\.]+$/],1,1],
+  //   notAllowed:/[`~!@#\$%^&=:;'<>?,\/\*\+\-]/gi
+  // },
   "duty-free-produce":{
     regex:/^[0-9]+ .+ [0-9]+ [0-9]+$/,
     header:["sno","qty","description","unitPrice","extendedPrice"],
@@ -390,6 +420,19 @@ export const optionData={
     body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },//use empty column
+  "new-rotika":{
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },//use empty column
+
+  "mercantile-international":{
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },
   "katzam-foods":{
     regex:/^[0-9]{2}\/[0-9]{2}\/[0-9]{2} [0-9]+ [0-9]+ .+ [A-Z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["date","ticket","qty","description","origin","unitPrice","extendedPrice"],
@@ -566,12 +609,18 @@ export const optionData={
     body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
-  // "anns-foods":{
-  //   regex:/^[A-Z]+ [A-Z0-9]+ .+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-  //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
-  //   body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+  "anns-foods":{
+    regex:/^[A-Z]+ [A-Z0-9]+ .+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","qty","unitPrice","extendedPrice"],
+    body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
+  // "aneja-distributors":{
+  //   regex:/^[A-Z]+ [A-Z]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  //   header:["itemNo","description","unitPrice","extendedPrice"],
+  //   body:[2,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
   //   notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
-  // },
+  // },//not complete
 
   "anmol-distributors":{
     regex:/^[0-9.]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
@@ -689,12 +738,12 @@ export const optionData={
   //   body:[1,[0,/$/]],
   //   notAllowed:/[`~!@#\$%^&=:();""'<>*?,\*]/gi
   // },
-  // "katzman-produce":{
-  //   regex:/^[0-9\.]+ .+ [A-Z]+$/,
-  //   header:["qty","description","origin"],
-  //   body:[1,[0,/ [A-Z]+$/],1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
-  // },
+  "katzman-produce":{
+    regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'<>?,\*\-]/gi
+  },
   "soko-packaging":{
     regex:/^[0-9]+ [0-9A-Z]+ .+ [0-9\.]+ [0-9\.]+$/,
     header:["qty","itemNo","description","unitPrice","extendedPrice"],
@@ -779,12 +828,12 @@ export const optionData={
   //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
-  // "tropicana":{
-  //   regex:/^.+ [0-9]+ [0-9. /a-z]+$/,
-  //   header:["description","qty","unitPrice"],
-  //   body:[[0,/[0-9]+ [0-9. /a-z]+$/],1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
-  // },
+  "tropicana":{
+    regex:/^.+ [0-9]+ [0-9. /a-z]+$/,
+    header:["description","qty","unitPrice"],
+    body:[[0,/[0-9]+ [0-9. /a-z]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  },
   // "karison-food-Snacks":{
   //   regex:/^.+ [0-9\.]+ [0-9\.]+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
   //   header:["name","unitPrice","oz","case","unitPrice","extendedPrice"],
@@ -798,6 +847,24 @@ export const optionData={
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
   "concept-food-US":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
+  "vidya":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
+  "aadya-foods":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
+  "annam-foods":{
     regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
     header:["description","qty","unitPrice","extendedPrice"],
     body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
@@ -839,12 +906,12 @@ export const optionData={
   //   body:[1,6,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
-  // "triboro-wholesale":{
-  //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
-  //   header:["description","qty","unitPrice","extendedPrice"],
-  //   body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
-  // },
+  "triboro-wholesale":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
   // "kadakia-international-group":{
   //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
   //   header:["description","qty","unitPrice","extendedPrice"],
@@ -857,12 +924,24 @@ export const optionData={
   //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
   // },
+
+  
+
+
+  "apna-bazar":{
+    regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'/<>?,\*]/gi
+  },
+
   // "apna-bazar":{
   //   regex:/^[A-Z-A-Z]+ .+ [0-9]+ [0-9\.]+ [0-9\.T]+$/,
   //   header:["itemNo","description","qty","unitPrice","extendedPrice"],
   //   body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
   //   notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
-  // },//not complete
+  // },
+
   // "aroma-flavor":{
   //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
   //   header:["description","qty","unitPrice","extendedPrice"],
@@ -947,12 +1026,12 @@ export const optionData={
   //   body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
   //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
   // },
-  // "bhavani-fruit-vegetables":{
-  //   regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
-  //   header:["qty","description","unitPrice","extendedPrice"],
-  //   body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
-  //   notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
-  // },
+  "bhavani-fruit-vegetables":{
+    regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\%$^&=:;()'<>?,\*]/gi
+  },
   // "best-cakes-distribution":{
   //   regex:/^.+ [0-9]+ [0-9\.]+ [0-9\.]+$/,
   //   header:["description","qty","unitPrice","extendedPrice"],

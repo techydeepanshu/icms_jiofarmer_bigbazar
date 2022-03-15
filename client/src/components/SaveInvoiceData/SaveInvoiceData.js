@@ -40,8 +40,8 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import Cancel from "@material-ui/icons/Cancel";
@@ -433,7 +433,7 @@ const SaveInvoiceData = () => {
           const res = await inventoryService.GetPOSProductDetails(row.barcode);
           if (!Array.isArray(res)) {
             alert("API not working");
-            return {NotFound:true};
+            return { NotFound: true };
           }
           console.log("fetched pos data", res);
           const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
@@ -710,9 +710,11 @@ const SaveInvoiceData = () => {
       console.log(updatedWoocomProducts);
       // await pushToWoocom(updatedWoocomProducts);
     }
-    await pushToPOS(posProducts).then((data)=>{
-      window.alert("Inventory updated successfully");
-    }).catch((err)=>window.alert("POS API NOT WORKING"))
+    await pushToPOS(posProducts)
+      .then((data) => {
+        window.alert("Inventory updated successfully");
+      })
+      .catch((err) => window.alert("POS API NOT WORKING"));
 
     // setLoader(false);
     // dispatch({ type: "LOADER" });
@@ -731,345 +733,365 @@ const SaveInvoiceData = () => {
   }
 
   const pushSingleItemToInventory = async (index) => {
-
     let isEmpty =
-    tableData[index].qty === "" ||
-    tableData[index].itemNo === "" ||
-    !tableData[index].pieces ||
-    isNaN(tableData[index].unitPrice) ||
-    tableData[index].unitPrice === "" ||
-    isNaN(tableData[index].extendedPrice);
+      tableData[index].qty === "" ||
+      tableData[index].itemNo === "" ||
+      !tableData[index].pieces ||
+      isNaN(tableData[index].unitPrice) ||
+      tableData[index].unitPrice === "" ||
+      isNaN(tableData[index].extendedPrice) ||
+      tableData[index].isReviewed === "false" ||
+      tableData[index].isReviewed === "";
 
-    if(!isEmpty){
+    if (!isEmpty) {
+      // setApiLoader(true);
+      dispatch({ type: "API_LOADER" });
+      console.log("pI_index : ", index);
 
-    
-    // setApiLoader(true);
-    dispatch({ type: "API_LOADER" });
-    console.log("pI_index : ", index);
+      // Setting State
+      setShowPosIndex(-1);
 
-    // Setting State
-    setShowPosIndex(-1);
+      tableData[index].sellingPrice = tableData[index].sellingPriceChange;
 
-    tableData[index].sellingPrice = tableData[index].sellingPriceChange;
+      // tableData also a state
+      console.log("pI_tableData : ", tableData);
+      const product = [];
+      console.log("pI_emptyColumn : ", emptyColumn);
+      const notFoundItems = emptyColumn.map((i) => tableData[i]);
+      console.log("pI_notFoundItems : ", notFoundItems);
+      const tempTable = [];
+      product.push(tableData[index]);
+      console.log(product);
+      product.isUpdated = "true";
+      itemNo = product.itemNo;
+      console.log("pI_product : ", product);
 
-    // tableData also a state
-    console.log("pI_tableData : ", tableData);
-    const product = [];
-    console.log("pI_emptyColumn : ", emptyColumn);
-    const notFoundItems = emptyColumn.map((i) => tableData[i]);
-    console.log("pI_notFoundItems : ", notFoundItems);
-    const tempTable = [];
-    product.push(tableData[index]);
-    console.log(product);
-    product.isUpdated = "true";
-    itemNo = product.itemNo;
-    console.log("pI_product : ", product);
+      product.forEach((element, i) => {
+        console.log(!emptyColumn.includes(index));
+        console.log(element.show);
+        console.log(element["isForReview"]);
+        console.log(index);
+        if (
+          !emptyColumn.includes(index) &&
+          element.show === true &&
+          element["isForReview"] != true
+        ) {
+          let rowData = { i: i + 1, ...element };
+          tempTable.push(rowData);
+        }
+      });
+      // console.log("notFoundItems", notFoundItems);
+      console.log("pI_tempTable", tempTable);
 
-    product.forEach((element, i) => {
-      console.log(!emptyColumn.includes(index));
-      console.log(element.show);
-      console.log(element["isForReview"]);
-      console.log(index);
-      if (
-        !emptyColumn.includes(index) &&
-        element.show === true &&
-        element["isForReview"] != true
-      ) {
-        let rowData = { i: i + 1, ...element };
-        tempTable.push(rowData);
+      if (emptyColumn.length !== 0) {
+        /** API to push  to not found list */
+        // setLoader(true);
+        dispatch({ type: "LOADER" });
+        const responses = await Promise.all(
+          notFoundItems.map(async (product) => {
+            try {
+              const data = {
+                Item: product.itemNo,
+                Description: product.description,
+                Quantity: product.qty,
+                Price: product.unitPrice,
+                sku: product.sku,
+                Barcode: product.barcode,
+                PosSKU: product.posSku,
+                InvoiceName: invoice.slug,
+              };
+              console.log("pI_data : ", data);
+              await inventoryService.CreateNotFoundItems(data);
+              return true;
+            } catch (error) {
+              console.log(
+                "Couldn't create not found product",
+                product.description,
+                { error }
+              );
+              alert("Couldn't create product on website.");
+              return null;
+            }
+          })
+        );
+        // setLoader(false);
+        dispatch({ type: "LOADER" });
       }
-    });
-    // console.log("notFoundItems", notFoundItems);
-    console.log("pI_tempTable", tempTable);
 
-    if (emptyColumn.length !== 0) {
-      /** API to push  to not found list */
+      const priceIncreasedProducts = tempTable.filter(
+        (product) => product.priceIncrease !== 0
+      );
+      console.log("pI_priceIncreasedProducts : ", priceIncreasedProducts);
       // setLoader(true);
       dispatch({ type: "LOADER" });
-      const responses = await Promise.all(
-        notFoundItems.map(async (product) => {
+      const res = await Promise.all(
+        priceIncreasedProducts.map(async (product) => {
           try {
             const data = {
-              Item: product.itemNo,
-              Description: product.description,
-              Quantity: product.qty,
-              Price: product.unitPrice,
-              sku: product.sku,
-              Barcode: product.barcode,
-              PosSKU: product.posSku,
-              InvoiceName: invoice.slug,
+              invoiceName: invoice.slug,
+              itemName: product.itemNo,
+              value: { Price: product.unitPrice },
             };
-            console.log("pI_data : ", data);
-            await inventoryService.CreateNotFoundItems(data);
-            return true;
+            console.log("pI_data", data);
+            await inventoryService.UpdateProductFields(data);
           } catch (error) {
-            console.log(
-              "Couldn't create not found product",
-              product.description,
-              { error }
-            );
-            alert("Couldn't create product on website.");
-            return null;
+            console.log(`couldn't update price for product ${product.itemNo}`);
           }
         })
       );
       // setLoader(false);
       dispatch({ type: "LOADER" });
-    }
+      // console.log(tempTable);
+      console.log("pI_tempTable", tempTable);
+      tempTable[0].isUpdated = "true";
+      console.log("pI_tempTable", tempTable);
+      singleItemData = tempTable;
+      // setPushToInventory(true);
+      console.log("pI_singleItemData : ", singleItemData);
 
-    const priceIncreasedProducts = tempTable.filter(
-      (product) => product.priceIncrease !== 0
-    );
-    console.log("pI_priceIncreasedProducts : ", priceIncreasedProducts);
-    // setLoader(true);
-    dispatch({ type: "LOADER" });
-    const res = await Promise.all(
-      priceIncreasedProducts.map(async (product) => {
-        try {
-          const data = {
-            invoiceName: invoice.slug,
-            itemName: product.itemNo,
-            value: { Price: product.unitPrice },
+      updateSku = singleItemData[0].posSku;
+
+      // const availWoo = await getProducts(); // fetch product details from WooCommerce website  (wooComProducts)
+      const availPos = await getPosProducts(); // fetch product details from POS API  (posProducts)
+      // console.log("availWoo : ",availWoo)
+      console.log("availPos : ", availPos);
+
+      if (availPos[0].NotFound !== true) {
+        console.log("pI_posProducts : ", posProducts);
+        if (posProducts[0] !== undefined) {
+          await pushInventoryDetails2();
+          let res = await pushQtyToInventory(index);
+          toConsoleState();
+          setIsUpdated("true");
+          setUpdateIndex(index);
+          console.log("pI_singleItemData : ", singleItemData);
+          console.log("pI_singleItemData.itemNo : ", singleItemData.itemNo);
+          await inventoryService.UpdateInvoiceData(
+            inv,
+            num,
+            day,
+            singleItemData[0].itemNo
+          );
+
+          //Update unit cost n price in db, after update POS.
+          let data1 = {
+            cost: singleItemData[0].cp,
+            price: singleItemData[0].sellingPrice,
+            item: singleItemData[0].itemNo,
+            itemName: posProducts[0].ITEMNAME,
+            invoice: invoice.slug,
           };
-          console.log("pI_data", data);
-          await inventoryService.UpdateProductFields(data);
-        } catch (error) {
-          console.log(`couldn't update price for product ${product.itemNo}`);
+          await getPosProducts();
+          console.log("I am data from updatedb after Pos", data1);
+          console.log(
+            "I am posProducts.ITEMNAME from updatedb after Pos",
+            posProducts[0].ITEMNAME
+          );
+
+          await inventoryService.UpdateDBafterPosUpdate(data1);
+
+          //Log Generate.
+          console.log("PRODUCTT");
+          console.log("pI_singleItemData : ", singleItemData);
+          console.log(tableDataCopy);
+          const log = {
+            InvoiceName: invoice.slug,
+            InvoiceDate: day,
+            InvoiceNo: num,
+            ItemNo: singleItemData[0].itemNo,
+            InvoiceDescription: singleItemData[0].description,
+            PosDescription: singleItemData[0].posName,
+            PosUnitCost: singleItemData[0].cost,
+            PosUnitPrice: tableDataCopy[index].sellingPrice,
+            OldMarkup: (
+              ((tableDataCopy[index].sellingPrice - singleItemData[0].cost) /
+                singleItemData[0].cost) *
+              100
+            )
+              .toFixed(2)
+              .toString(),
+            InvUnitCost: singleItemData[0].cp,
+            // InvUnitPrice: singleItemData[0].sp,
+            InvUnitPrice: singleItemData[0].sellingPrice,
+            // NewMarkup: (
+            //   ((singleItemData[0].sp - singleItemData[0].cp) /
+            //     singleItemData[0].cp) *
+            //   100
+            // )
+            //   .toFixed(2)
+            //   .toString(),
+            NewMarkup: (
+              ((singleItemData[0].sellingPrice - singleItemData[0].cp) /
+                singleItemData[0].cp) *
+              100
+            )
+              .toFixed(2)
+              .toString(),
+            UpdateDate: todayDate,
+            Person: userEmail,
+            TimeStamp: new Date().toTimeString().split(" ")[0],
+            InvCaseCost: singleItemData[0].unitPrice,
+            InvUnitsInCase: singleItemData[0].pieces,
+            SKU: singleItemData[0].posSku,
+            Barcode: singleItemData[0].barcode,
+            SerialNoInInv: singleItemData[0].SerialNoInInv,
+          };
+          console.log("pI_log : ", log);
+          const logUpdate = await inventoryService.posLogs(log);
+          console.log("pI_logUpdate : ", logUpdate);
+
+          if (res !== false) {
+            const inventoryLog = {
+              Barcode: singleItemData[0].barcode,
+              InvoiceName: invoice.slug,
+              InvoiceDate: day,
+              InvoiceNo: num,
+              ItemNo: singleItemData[0].itemNo,
+              InvoiceDescription: singleItemData[0].description,
+              PosDescription: singleItemData[0].posName,
+              PosUnitCost: singleItemData[0].cost,
+              PosUnitPrice: singleItemData[0].sellingPrice,
+              UpdateDate: todayDate,
+              Person: userEmail,
+              TimeStamp: new Date().toTimeString().split(" ")[0],
+              SKU: singleItemData[0].posSku,
+              OldQty: posInventory[0].OLD_TOTALQTY.toString(),
+              NewQty: posInventory[0].TOTALQTY,
+              SerialNoInInv: singleItemData[0].SerialNoInInv,
+            };
+            console.log("inventoryLog : ", inventoryLog);
+            const inventoryLogUpdate = await inventoryService.posInventoryLogs(
+              inventoryLog
+            );
+            console.log("inventoryLogUpdate : ", inventoryLogUpdate);
+
+            let data1 = {
+              item: singleItemData[0].itemNo,
+              invoice: invoice.slug,
+              isInventoryUpdate: "true",
+            };
+
+            const updateinventoryindb =
+              await inventoryService.UpdateInventoryInDB(data1);
+            console.log("updateinventoryindb : ", updateinventoryindb);
+          } else {
+            alert("Inventory not updated!!");
+          }
+          setProductsInTable();
+        } else {
+          alert("POS not updated!!");
+          setProductsInTable();
         }
-      })
-    );
-    // setLoader(false);
-    dispatch({ type: "LOADER" });
-    // console.log(tempTable);
-    console.log("pI_tempTable", tempTable);
-    tempTable[0].isUpdated = "true";
-    console.log("pI_tempTable", tempTable);
-    singleItemData = tempTable;
-    // setPushToInventory(true);
-    console.log("pI_singleItemData : ", singleItemData);
-
-    updateSku = singleItemData[0].posSku;
-
-    // const availWoo = await getProducts(); // fetch product details from WooCommerce website  (wooComProducts)
-    const availPos = await getPosProducts(); // fetch product details from POS API  (posProducts)
-    // console.log("availWoo : ",availWoo)
-    console.log("availPos : ",availPos)
-
-    if(availPos[0].NotFound !== true ){
-
-    console.log("pI_posProducts : ", posProducts);
-    if (posProducts[0] !== undefined) {
-      await pushInventoryDetails2();
-      await pushQtyToInventory(index);
-      toConsoleState();
-      setIsUpdated("true");
-      setUpdateIndex(index);
-      console.log("pI_singleItemData : ", singleItemData);
-      console.log("pI_singleItemData.itemNo : ", singleItemData.itemNo);
-      await inventoryService.UpdateInvoiceData(
-        inv,
-        num,
-        day,
-        singleItemData[0].itemNo
-      );
-
-      //Update unit cost n price in db, after update POS.
-      let data1 = {
-        cost: singleItemData[0].cp,
-        price: singleItemData[0].sellingPrice,
-        item: singleItemData[0].itemNo,
-        itemName: posProducts[0].ITEMNAME,
-        invoice: invoice.slug,
-      };
-      await getPosProducts();
-      console.log("I am data from updatedb after Pos", data1);
-      console.log(
-        "I am posProducts.ITEMNAME from updatedb after Pos",
-        posProducts[0].ITEMNAME
-      );
-
-      await inventoryService.UpdateDBafterPosUpdate(data1);
-
-      //Log Generate.
-      console.log("PRODUCTT");
-      console.log("pI_singleItemData : ", singleItemData);
-      console.log(tableDataCopy);
-      const log = {
-        InvoiceName: invoice.slug,
-        InvoiceDate: day,
-        InvoiceNo: num,
-        ItemNo: singleItemData[0].itemNo,
-        InvoiceDescription: singleItemData[0].description,
-        PosDescription: singleItemData[0].posName,
-        PosUnitCost: singleItemData[0].cost,
-        PosUnitPrice: tableDataCopy[index].sellingPrice,
-        OldMarkup: (
-          ((tableDataCopy[index].sellingPrice - singleItemData[0].cost) /
-            singleItemData[0].cost) *
-          100
-        )
-          .toFixed(2)
-          .toString(),
-        InvUnitCost: singleItemData[0].cp,
-        // InvUnitPrice: singleItemData[0].sp,
-        InvUnitPrice: singleItemData[0].sellingPrice,
-        // NewMarkup: (
-        //   ((singleItemData[0].sp - singleItemData[0].cp) /
-        //     singleItemData[0].cp) *
-        //   100
-        // )
-        //   .toFixed(2)
-        //   .toString(),
-        NewMarkup: (
-          ((singleItemData[0].sellingPrice - singleItemData[0].cp) /
-            singleItemData[0].cp) *
-          100
-        )
-          .toFixed(2)
-          .toString(),
-        UpdateDate: todayDate,
-        Person: userEmail,
-        TimeStamp: new Date().toTimeString().split(" ")[0],
-        InvCaseCost: singleItemData[0].unitPrice,
-        InvUnitsInCase: singleItemData[0].pieces,
-        SKU: singleItemData[0].posSku,
-        Barcode: singleItemData[0].barcode,
-        SerialNoInInv: singleItemData[0].SerialNoInInv,
-      };
-      console.log("pI_log : ", log);
-      const logUpdate = await inventoryService.posLogs(log);
-      console.log("pI_logUpdate : ", logUpdate);
-      const inventoryLog = {
-        Barcode:singleItemData[0].barcode,
-        InvoiceName: invoice.slug,
-        InvoiceDate: day,
-        InvoiceNo: num,
-        ItemNo: singleItemData[0].itemNo,
-        InvoiceDescription: singleItemData[0].description,
-        PosDescription: singleItemData[0].posName,
-        PosUnitCost: singleItemData[0].cost,
-        PosUnitPrice: singleItemData[0].sellingPrice,
-        UpdateDate: todayDate,
-        Person: userEmail,
-        TimeStamp: new Date().toTimeString().split(" ")[0],
-        SKU: singleItemData[0].posSku,
-        OldQty:(posInventory[0].OLD_TOTALQTY).toString(),
-        NewQty:posInventory[0].TOTALQTY,
-        SerialNoInInv: singleItemData[0].SerialNoInInv,
+        // setApiLoader(false);
+        dispatch({ type: "API_LOADER" });
+      } else {
+        alert("Error Has Occurred");
+        dispatch({ type: "API_LOADER" });
+        // dispatch({ type: "LOADER" });
       }
-      console.log("inventoryLog : ", inventoryLog);
-      const inventoryLogUpdate = await inventoryService.posInventoryLogs(inventoryLog);
-      console.log("inventoryLogUpdate : ",inventoryLogUpdate);
-      setProductsInTable();
     } else {
-      alert("POS not updated!!");
-      setProductsInTable();
+      alert("Some Error Occurred With this Product");
     }
-    // setApiLoader(false);
-    dispatch({ type: "API_LOADER" });
-  }else{
-      alert("Error Has Occurred");
-      dispatch({ type: "API_LOADER" });
-      // dispatch({ type: "LOADER" });
-    }
-  }else{
-    alert("Some Error Occurred With this Product")
-  }
   };
 
-  const getInventory = async ()=>{
+  const getInventory = async () => {
     console.log("getInventory");
-    console.log("tableData : ",singleItemData);
-     // setLoader(true);
+    console.log("tableData : ", singleItemData);
+    // setLoader(true);
     //  dispatch({ type: "LOADER" });
-     let hasErrorOccured = false;
-     console.log(singleItemData);
-     let isEmpty="";
-     const items = await Promise.all(
+    let hasErrorOccured = false;
+    console.log(singleItemData);
+    let isEmpty = "";
+    const items = await Promise.all(
       singleItemData.map(async (row) => {
-         console.log(row.barcode);
-          isEmpty =
+        console.log(row.barcode);
+        console.log(row);
+        isEmpty =
           row.qty === "" ||
           row.itemNo === "" ||
           !row.pieces ||
           isNaN(row.unitPrice) ||
           row.unitPrice === "" ||
-          isNaN(row.extendedPrice);
-
-         if(!isEmpty){
-        
-         try {
-           const res = await inventoryService.GetPOSInventoryDetails(row.barcode);
-           if (!Array.isArray(res)) {
-             alert("API not working (GetInventory)");
-             return;
-           }else{
-
-           
-           console.log("fetched pos inventory data", res);
-           const { BARCODE, ITEMNAME, TOTALQTY } = res[0];
-           console.log(BARCODE);
-           console.log(updateBarcode);
-           if (BARCODE == updateBarcode) {
-            console.log(BARCODE);
-            console.log(updateBarcode);
-             return {
-               ...row,
-               COST: row.cp,
-               PRICE: row.sellingPrice,
-               BARCODE,
-               ITEMNAME,
-               OLD_TOTALQTY:TOTALQTY,
-               TOTALQTY:
-                 parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
-               itemNo: row.itemNo,
-               isNew: false,
-               BUYASCASE: 1,
-               CASEUNITS: row.pieces.toString(),
-               CASECOST: row.unitPrice.toString(),
-             };
-           } else {
-             alert("SKU mismatch!!");
-           }
+          isNaN(row.extendedPrice) ||
+          row.isReviewed === "false" ||
+          row.isReviewed === "";
+        // console.log("isEmpty : ",isEmpty)
+        if (!isEmpty) {
+          try {
+            const res = await inventoryService.GetPOSInventoryDetails(
+              row.barcode
+            );
+            if (!Array.isArray(res)) {
+              alert("API not working (GetInventory)");
+              return { NotFound: true };
+            } else {
+              console.log("fetched pos inventory data", res);
+              const { BARCODE, ITEMNAME, TOTALQTY } = res[0];
+              console.log(BARCODE);
+              console.log(updateBarcode);
+              if (BARCODE == updateBarcode) {
+                console.log(BARCODE);
+                console.log(updateBarcode);
+                return {
+                  ...row,
+                  COST: row.cp,
+                  PRICE: row.sellingPrice,
+                  BARCODE,
+                  ITEMNAME,
+                  OLD_TOTALQTY: TOTALQTY,
+                  TOTALQTY:
+                    parseInt(row.qty) * parseInt(row.pieces) +
+                    parseInt(TOTALQTY),
+                  itemNo: row.itemNo,
+                  isNew: false,
+                  BUYASCASE: 1,
+                  CASEUNITS: row.pieces.toString(),
+                  CASECOST: row.unitPrice.toString(),
+                  NotFound: false,
+                };
+              } else {
+                alert("SKU mismatch!!");
+              }
+            }
+          } catch (error) {
+            hasErrorOccured = true;
+            return {
+              ...row,
+              COST: row.cp,
+              PRICE: row.sp,
+              SKU: row.posSku,
+              BARCODE: row.barcode,
+              ITEMNAME: row.posName,
+              TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+              OLD_TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+              itemNo: row.itemNo,
+              isNew: true,
+              BUYASCASE: 1,
+              CASEUNITS: row.pieces.toString(),
+              CASECOST: row.unitPrice.toString(),
+              DEPNAME: "",
+              NotFound: true,
+            };
           }
-         } catch (error) {
-           hasErrorOccured = true;
-           return {
-             ...row,
-             COST: row.cp,
-             PRICE: row.sp,
-             SKU: row.posSku,
-             BARCODE: row.barcode,
-             ITEMNAME: row.posName,
-             TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
-             OLD_TOTALQTY:parseInt(row.qty) * parseInt(row.pieces),
-             itemNo: row.itemNo,
-             isNew: true,
-             BUYASCASE: 1,
-             CASEUNITS: row.pieces.toString(),
-             CASECOST: row.unitPrice.toString(),
-             DEPNAME: "",
-           };
-         }
-            
-        }else{
-          return null;
+        } else {
+          return { NotFound: true };
         }
-       })
-     );
+      })
+    );
     //  if (hasErrorOccured) {
     //   //  alert("Couldn't fetch some data from POS");
     //    alert("New Inventory Added to POS");
     //  }
-     // setLoader(false);
+    // setLoader(false);
     //  dispatch({ type: "LOADER" });
-     console.log(items);
-     posInventory = items;
-     console.log("posProducts array is: ", posInventory);
-     // setPosProducts(items.filter((ele) => ele !== null));
-  }
+    console.log(items);
+    posInventory = items;
+    console.log("posProducts array is: ", posInventory);
+    //  return items;
+    // setPosProducts(items.filter((ele) => ele !== null));
+  };
 
-  const pushQtyDetailsInInventory= async()=>{
+  const pushQtyDetailsInInventory = async () => {
     // dispatch({ type: "LOADER" });
     console.log("products values are: ", posInventory);
 
@@ -1092,38 +1114,35 @@ const SaveInvoiceData = () => {
 
           console.log("product : ", product);
 
-
-          const res = await inventoryService.UpdatePOSInventory(
-            {
-              BARCODE,
-              ITEMNAME:product.posName,
-              DESCRIPTION: "",
-              PRICE,
-              COST,
-              QTY: TOTALQTY,
-              SIZE: product.size,
-              PACK: "",
-              REPLACEQTY: 1,
-              DEPARTMENT: DEPNAME,
-              CATEGORY: "",
-              SUBCATEGORY: "",
-              ISFOODSTAMP: 1,
-              ISWEIGHTED: 0,
-              ISTAXABLE: 1,
-              VENDORNAME: invoice.slug,
-              VENDORCODE: itemNo,
-              VENDORCOST: "",
-              ISNEWITEM: isNew ? 1 : 0,
-              BUYASCASE,
-              CASEUNITS,
-              CASECOST,
-              COMPANYNAME: invoice.slug,
-              PRODUCTCODE: itemNo,
-              MODELNUM:
-                userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
-              VINTAGE: "ICMS",
-            }
-          );
+          const res = await inventoryService.UpdatePOSInventory({
+            BARCODE,
+            ITEMNAME: product.posName,
+            DESCRIPTION: "",
+            PRICE,
+            COST,
+            QTY: TOTALQTY,
+            SIZE: product.size,
+            PACK: "",
+            REPLACEQTY: 1,
+            DEPARTMENT: DEPNAME,
+            CATEGORY: "",
+            SUBCATEGORY: "",
+            ISFOODSTAMP: 1,
+            ISWEIGHTED: 0,
+            ISTAXABLE: 1,
+            VENDORNAME: invoice.slug,
+            VENDORCODE: itemNo,
+            VENDORCOST: "",
+            ISNEWITEM: isNew ? 1 : 0,
+            BUYASCASE,
+            CASEUNITS,
+            CASECOST,
+            COMPANYNAME: invoice.slug,
+            PRODUCTCODE: itemNo,
+            MODELNUM:
+              userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
+            VINTAGE: "ICMS",
+          });
           console.log("updated pos data", res);
           // const data = {
           //   BARCODE,
@@ -1133,7 +1152,6 @@ const SaveInvoiceData = () => {
           //   Price: PRICE,
           //   TotalQty: TOTALQTY,
           // };
- 
 
           console.log("res from POS", res);
           return res;
@@ -1146,45 +1164,64 @@ const SaveInvoiceData = () => {
     // setLoader(false);
     // dispatch({ type: "LOADER" });
     return responses;
-  }
+  };
 
-  const updateInventoryDetails = async (index) =>{
+  const updateInventoryDetails = async (index) => {
     dispatch({ type: "LOADER" });
     let res = await pushQtyToInventory(index);
-    if(res !== false){
-
+    if (res !== false) {
       let inventoryLog = {
-        Barcode:tableData[index].barcode,
+        Barcode: tableData[index].barcode,
         InvoiceName: invoice.slug,
         InvoiceDate: day,
         InvoiceNo: num,
-      ItemNo: tableData[index].itemNo,
-      InvoiceDescription: tableData[index].description,
-      PosDescription: tableData[index].posName,
-      PosUnitCost: tableData[index].cost,
-      PosUnitPrice: tableData[index].sellingPrice,
-      UpdateDate: todayDate,
-      Person: userEmail,
-      TimeStamp: new Date().toTimeString().split(" ")[0],
-      SKU: tableData[index].posSku,
-      OldQty:(posInventory[0].OLD_TOTALQTY).toString(),
-      NewQty:posInventory[0].TOTALQTY,
-      SerialNoInInv: tableData[index].SerialNoInInv,
+        ItemNo: tableData[index].itemNo,
+        InvoiceDescription: tableData[index].description,
+        PosDescription: tableData[index].posName,
+        PosUnitCost: tableData[index].cost,
+        PosUnitPrice: tableData[index].sellingPrice,
+        UpdateDate: todayDate,
+        Person: userEmail,
+        TimeStamp: new Date().toTimeString().split(" ")[0],
+        SKU: tableData[index].posSku,
+        OldQty: posInventory[0].OLD_TOTALQTY.toString(),
+        NewQty: posInventory[0].TOTALQTY,
+        SerialNoInInv: tableData[index].SerialNoInInv,
+      };
+      console.log("inventoryLog : ", inventoryLog);
+      const inventoryLogUpdate = await inventoryService.posInventoryLogs(
+        inventoryLog
+      );
+      console.log("inventoryLogUpdate : ", inventoryLogUpdate);
+
+      let data1 = {
+        item: tableData[index].itemNo,
+        invoice: invoice.slug,
+        isInventoryUpdate: "true",
+      };
+
+      const updateinventoryindb = await inventoryService.UpdateInventoryInDB(
+        data1
+      );
+      console.log("updateinventoryindb : ", updateinventoryindb);
+      dispatch({ type: "LOADER" });
+      const sampleData2 = {
+        ...tableData,
+        [index]: { ...tableData[index], ["isInventoryUpdate"]: "true" },
+      };
+      const propertyNames2 = Object.values(sampleData2);
+      // sampleData2[index].isInventoryUpdate = "true";
+      setTableData(propertyNames2);
+      renderTableData();
+      // setProductsInTable();
+    } else {
+      alert("Inventory not updated!!");
+      // setProductsInTable();
+      dispatch({ type: "LOADER" });
     }
-    console.log("inventoryLog : ", inventoryLog);
-    const inventoryLogUpdate = await inventoryService.posInventoryLogs(inventoryLog);
-    console.log("inventoryLogUpdate : ",inventoryLogUpdate);
-    // setProductsInTable();
-    dispatch({ type: "LOADER" });
-  }else{
-    alert("Inventory not updated!!");
-    // setProductsInTable();
-    dispatch({ type: "LOADER" });
-  }
+  };
 
-  }
-
-  const pushQtyToInventory = async (index)=>{
+  const pushQtyToInventory = async (index) => {
     console.log("pushQtyToInventory");
     // parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY)
     // dispatch({ type: "API_LOADER" });
@@ -1241,7 +1278,7 @@ const SaveInvoiceData = () => {
               InvoiceName: invoice.slug,
             };
             console.log("pI_data : ", data);
-            await inventoryService.CreateNotFoundItems(data);
+            // await inventoryService.CreateNotFoundItems(data);
             return true;
           } catch (error) {
             console.log(
@@ -1273,7 +1310,7 @@ const SaveInvoiceData = () => {
             value: { Price: product.unitPrice },
           };
           console.log("pI_data", data);
-          await inventoryService.UpdateProductFields(data);
+          // await inventoryService.UpdateProductFields(data);
         } catch (error) {
           console.log(`couldn't update price for product ${product.itemNo}`);
         }
@@ -1282,7 +1319,7 @@ const SaveInvoiceData = () => {
     // setLoader(false);
     // dispatch({ type: "LOADER" });
     // console.log(tempTable);
-    console.log("pI_tempTable", tempTable);
+    // console.log("pI_tempTable", tempTable);
     // tempTable[0].isUpdated = "true";
     console.log("pI_tempTable", tempTable);
     singleItemData = tempTable;
@@ -1291,51 +1328,53 @@ const SaveInvoiceData = () => {
 
     updateBarcode = singleItemData[0].barcode;
     await getInventory();
-    
-    if(posInventory[0] !== undefined && posInventory[0] !== null){
 
-      let response =  await pushQtyDetailsInInventory();
-      console.log("response : ",response[0])
-      if(response[0].length !== 0){
-        toast.success('Inventory Update Successfully', {
+    console.log("posInventory : ", posInventory);
+    if (posInventory[0].NotFound !== true) {
+      let response = await pushQtyDetailsInInventory();
+      console.log("response : ", response[0]);
+      if (response[0].length !== 0) {
+        toast.success("Inventory Update Successfully", {
           position: "bottom-right",
-          autoClose: 5000,
+          autoClose: 20000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
-        
+          theme: "dark",
+        });
+
         // alert("Inventory Update Successfully")
-      }else{
-        toast.success('Inventory Created', {
+      } else {
+        toast.success("Inventory Created", {
           position: "bottom-right",
-          autoClose: 5000,
+          autoClose: 20000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+          theme: "dark",
+        });
         // alert("Inventory Created")
       }
       return true;
-    }else{
+    } else {
       // alert("Some Error Occurred")
-      toast.error('Some Error Occurred', {
+      toast.error("Some Error Occurred", {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 20000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
-        return false;
+        theme: "dark",
+      });
+      return false;
     }
-
-  }
+  };
   //***************************INDIVIDUAL ITEM UPDATE FUNCTIONALITY ENDS*****************************************.
 
   const updateUnits = async (index) => {
@@ -1728,6 +1767,11 @@ const SaveInvoiceData = () => {
             row.sellingPriceChange =
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].SellingPrice
+                : "";
+
+            row.isInventoryUpdate =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].isInventoryUpdate
                 : "";
             return { ...row, sp, cp, SerialNoInInv };
           });
@@ -2383,6 +2427,11 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].SellingPrice
                 : "";
+
+            row.isInventoryUpdate =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].isInventoryUpdate
+                : "";
             return { ...row, sp, cp, SerialNoInInv };
           });
           // setLoader(false);
@@ -2576,7 +2625,12 @@ const SaveInvoiceData = () => {
                 </p>
                 <p>
                   Margin(%) -{" "}
-                  {showPosIndex === index ? (((showPosState.unitPrice - element.cp)/element.cp)*100).toFixed(2) :margin.toFixed(2)}
+                  {showPosIndex === index
+                    ? (
+                        ((showPosState.unitPrice - element.cp) / element.cp) *
+                        100
+                      ).toFixed(2)
+                    : margin.toFixed(2)}
                 </p>
                 <p>Unit Cost- {element.cost}</p>
                 <p>
@@ -2776,6 +2830,13 @@ const SaveInvoiceData = () => {
                 style={{ width: 100 }}
               />
               <button
+                disabled={
+                  isEmpty ||
+                  element.isReviewed === "false" ||
+                  element.isReviewed === ""
+                    ? true
+                    : false
+                }
                 onClick={() => {
                   updateUnits(index);
                 }}
@@ -2789,7 +2850,6 @@ const SaveInvoiceData = () => {
                   display: "inline-block",
                   fontSize: "10px",
                   margin: "4px 2px",
-                  cursor: "pointer",
                 }}
               >
                 Update Units
@@ -2827,7 +2887,9 @@ const SaveInvoiceData = () => {
                 value={
                   showPosIndex === index
                     ? showPosState.unitPrice
-                    : element.sellingPrice !== element.sellingPriceChange ? element.sellingPriceChange : element.sellingPrice
+                    : element.sellingPrice !== element.sellingPriceChange
+                    ? element.sellingPriceChange
+                    : element.sellingPrice
                 }
                 variant="outlined"
                 onChange={(e) => {
@@ -2836,7 +2898,7 @@ const SaveInvoiceData = () => {
                 style={{ width: 100 }}
               />
             </td>
-            <td>{(element.markup).toFixed(2).toString()}</td>
+            <td>{element.markup.toFixed(2).toString()}</td>
             {/* <td>
                   <Checkbox
                     checked={!element.show}
@@ -2875,17 +2937,19 @@ const SaveInvoiceData = () => {
                 onClick={() => pushSingleItemToInventory(index)}
                 style={{ width: 120 }}
               />
-              
             </td>
             <td>
-                <Button
+              <Button
                 text="Update Inventory"
                 color="btn btn-info"
                 type="submit"
                 onClick={() => updateInventoryDetails(index)}
-                style={{ width: 150 }}
+                style={
+                  element.isInventoryUpdate === "true"
+                    ? { width: 150, background: "green", color: "white" }
+                    : { width: 150 }
+                }
               />
-              
             </td>
             <td>
               <Button
@@ -2914,21 +2978,21 @@ const SaveInvoiceData = () => {
       });
       return (
         <div style={{ marginTop: "35px" }}>
-        <div className={styles.divRow}>
-        <Button
-          text="Update Inventory"
-          color="btn btn-info"
-          type="submit"
-          onClick={pushInventoryDetails}
-        />
-        
-        <Button
-          text="Re upload"
-          color="btn btn-info"
-          type="submit"
-          onClick={() => window.location.reload()}
-        />
-      </div>
+          <div className={styles.divRow}>
+            <Button
+              text="Update Inventory"
+              color="btn btn-info"
+              type="submit"
+              onClick={pushInventoryDetails}
+            />
+
+            <Button
+              text="Re upload"
+              color="btn btn-info"
+              type="submit"
+              onClick={() => window.location.reload()}
+            />
+          </div>
           <div style={{ textAlign: "center" }}>
             <FormControl component="fieldset">
               <FormGroup aria-label="position" row>
@@ -3081,7 +3145,6 @@ const SaveInvoiceData = () => {
 
   // }
 
-
   // const downloadPosLogs = async()=>{
   //   console.log("downloadPosLogs");
   //   // let date = todayDate;
@@ -3122,13 +3185,15 @@ const SaveInvoiceData = () => {
         isNaN(product.unitPrice) ||
         product.unitPrice === "" ||
         isNaN(product.extendedPrice) ||
-        product.linkingCorrect === "false" || product.margin === "Infinity" || product.margin === "0.00";
+        product.linkingCorrect === "false" ||
+        product.margin === "Infinity" ||
+        product.margin === "0.00";
       // console.log("isEmpty : ", isEmpty);
       // product.sellingPrice = product.sellingPriceChange
-      product.invError = product.cp >= 3 * product.cost ? "YES" : ""
+      product.invError = product.cp >= 3 * product.cost ? "YES" : "";
       return (
-        product.sellingPriceChange !== tableDataCopy[index].sellingPriceChange &&
-        isEmpty === false
+        product.sellingPriceChange !==
+          tableDataCopy[index].sellingPriceChange && isEmpty === false
       );
     });
     console.log("filterdata : ", filterdata);
@@ -3144,7 +3209,6 @@ const SaveInvoiceData = () => {
     }
   };
   const autoMarginForPrice = async (value) => {
-    
     console.log("autoMarginForPrice");
     console.log(tableData);
     console.log(value);
@@ -3167,12 +3231,16 @@ const SaveInvoiceData = () => {
           console.log("margin : ", margin, typeof margin);
           console.log("cp : ", product.cp, typeof product.cp);
           sp =
-            parseFloat(product.cp) + ((parseFloat(product.cp) * parseFloat(margin)) / 100);
+            parseFloat(product.cp) +
+            (parseFloat(product.cp) * parseFloat(margin)) / 100;
           console.log(sp);
           sampleData.push({
             ...product,
             sellingPriceChange: parseFloat(sp).toFixed(2),
-            markup: (((parseFloat(sp.toFixed(2)) - parseFloat(product.cp))/ parseFloat(product.cp)) * 100 )
+            markup:
+              ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
+                parseFloat(product.cp)) *
+              100,
           });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
@@ -3198,7 +3266,7 @@ const SaveInvoiceData = () => {
         if (product.priceIncrease === -1) {
           console.log(product.margin);
           console.log("old_sellingPrice : ", product.sellingPriceChange);
-          margin = product.margin
+          margin = product.margin;
           console.log("margin : ", margin, typeof margin);
           console.log("cp : ", product.cp, typeof product.cp);
           sp =
@@ -3208,7 +3276,10 @@ const SaveInvoiceData = () => {
           sampleData.push({
             ...product,
             sellingPriceChange: parseFloat(sp).toFixed(2),
-            markup: (((parseFloat(sp.toFixed(2)) - parseFloat(product.cp))/ parseFloat(product.cp)) * 100 )
+            markup:
+              ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
+                parseFloat(product.cp)) *
+              100,
           });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
@@ -3232,7 +3303,11 @@ const SaveInvoiceData = () => {
             (element) => product.barcode === element.barcode
           );
           console.log(sp);
-          sampleData.push({ ...product, sellingPriceChange: sp[0].sellingPrice,markup:sp[0].markup });
+          sampleData.push({
+            ...product,
+            sellingPriceChange: sp[0].sellingPrice,
+            markup: sp[0].markup,
+          });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
           // console.log("new_sellingPrice : ", product.sellingPrice);
@@ -3255,7 +3330,11 @@ const SaveInvoiceData = () => {
             (element) => product.barcode === element.barcode
           );
           console.log(sp);
-          sampleData.push({ ...product, sellingPriceChange: sp[0].sellingPrice,markup:sp[0].markup });
+          sampleData.push({
+            ...product,
+            sellingPriceChange: sp[0].sellingPrice,
+            markup: sp[0].markup,
+          });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
           // console.log("new_sellingPrice : ", product.sellingPrice);
@@ -3281,7 +3360,6 @@ const SaveInvoiceData = () => {
     if (sampleData.length !== 0) {
       setTableData(sampleData);
     }
-    
   };
 
   const handleChange = async (row, key, value) => {
@@ -3358,8 +3436,8 @@ const SaveInvoiceData = () => {
     // setTableData(tempTableData);
     // console.log("handleChange_tableData : ",tableData);
 
-    console.log(value)
-    console.log(typeof value)
+    console.log(value);
+    console.log(typeof value);
     if (key === "sellingPriceChange") {
       // setNewUnitPrice(val);
       setUnitPriceModify(true);
@@ -3373,7 +3451,14 @@ const SaveInvoiceData = () => {
 
     const tempTableData2 = {
       ...tableData,
-      [row]: { ...tableData[row], [key]: value,["markup"]: (((parseFloat(value) - parseFloat(tableDataCopy[row].cp))/ parseFloat(tableDataCopy[row].cp)) * 100 )},
+      [row]: {
+        ...tableData[row],
+        [key]: value,
+        ["markup"]:
+          ((parseFloat(value) - parseFloat(tableDataCopy[row].cp)) /
+            parseFloat(tableDataCopy[row].cp)) *
+          100,
+      },
     };
     const propertyNames = Object.values(tempTableData2);
 

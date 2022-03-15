@@ -9,10 +9,10 @@ const authString = true
   : "lRRqlkYefuV=:lRRqlkYefuV6jJ==:qzOUsBmZFgMDlwGtrgYypxUz";
 const consolere = require('console-remote-client').connect({server: 'https://console.re', channel: 'icms'});
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true }));
+app.use(bodyParser.json({limit:"50mb"}));
+app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true  ,parameterLimit:50000,limit:"50mb"}));
 mongoose
-  .connect("mongodb://verveuser:vervebot123@34.202.27.217/vervedb")
+  .connect("mongodb://verveuser:vervebot123@44.203.76.94/vervedb")
   .then((res) => console.log("success connecting to mongo"))
   .catch((err) => console.log(err));
 const Schema = mongoose.Schema;
@@ -117,6 +117,9 @@ const posLogItemSchema = new Schema({
   InvoiceName: String,
   InvoiceDate: String,
   ItemNo: String,
+  InvoiceNo:String,
+  Barcode:String,
+  SerialNoInInv:String,
   InvoiceDescription: String,
   PosDescription: String,
   PosUnitCost: String,
@@ -135,7 +138,27 @@ const posLogItemSchema = new Schema({
 })
 const posLogModel = mongoose.model("poslogs", posLogItemSchema);
 
+const posInventoryLogSchema = new Schema({
+  Barcode:String,
+  InvoiceName: String,
+  InvoiceDate: String,
+  InvoiceNo:String,
+  SerialNoInInv:String,
+  ItemNo: String,
+  InvoiceDescription: String,
+  PosDescription: String,
+  PosUnitCost: String,
+  PosUnitPrice: String,
+  UpdateDate: String,
+  Person: String,
+  TimeStamp: String,
+  HandWritten: {type: String, default: ""},
+  SKU: String,
+  OldQty:String,
+  NewQty:String
+})
 
+const posInventoryLogModel = mongoose.model("posInventoryLog",posInventoryLogSchema)
 // const handwrittenInvoiceSchema = new Schema({
 //   InvoiceName: String,
 //   ItemName: String,
@@ -486,7 +509,15 @@ app.post("/generateposlog", (req, res) => {
   });
 });
 
-
+// added by Deepanshu
+app.post("/generateposinventorylog",(req,res)=>{
+  let obj = req.body;
+  console.log(obj);
+  posInventoryLogModel.insertMany([obj],(err,o)=>{
+    if(err) res.json("Some error occurred");
+    else res.json("Product created successfully");
+  });
+})
 
 app.post("/scaninvoicedata", (req, res) => {
   let name = req.body.InvoiceName;
