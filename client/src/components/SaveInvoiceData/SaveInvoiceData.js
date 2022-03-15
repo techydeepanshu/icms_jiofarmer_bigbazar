@@ -2954,6 +2954,7 @@ const SaveInvoiceData = () => {
             </td>
             <td>
               <Button
+              disabled
                 text="Update POS"
                 color="btn btn-info"
                 type="submit"
