@@ -1025,6 +1025,8 @@ const SaveInvoiceData = () => {
               alert("API not working (GetInventory)");
               return { NotFound: true };
             } else {
+              if(res.length !== 0){
+             
               console.log("fetched pos inventory data", res);
               const { BARCODE, ITEMNAME, TOTALQTY } = res[0];
               console.log(BARCODE);
@@ -1052,6 +1054,26 @@ const SaveInvoiceData = () => {
               } else {
                 alert("SKU mismatch!!");
               }
+                 
+            }else{
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU: row.posSku,
+                BARCODE: row.barcode,
+                ITEMNAME: row.posName,
+                TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                OLD_TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                itemNo: row.itemNo,
+                isNew: true,
+                BUYASCASE: 1,
+                CASEUNITS: row.pieces.toString(),
+                CASECOST: row.unitPrice.toString(),
+                DEPNAME: "",
+                NotFound: false,
+              };
+            }
             }
           } catch (error) {
             hasErrorOccured = true;
@@ -2070,6 +2092,7 @@ const SaveInvoiceData = () => {
   };
 
   const updateItem = (props, ocrCost) => {
+    setShowPosIndex(-1);
     let data;
     console.log("ocrCost_cp : ", ocrCost);
     console.log("updateItem_showPosState : ", showPosState);
