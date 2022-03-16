@@ -432,7 +432,7 @@ const SaveInvoiceData = () => {
         try {
           const res = await inventoryService.GetPOSProductDetails(row.barcode);
           if (!Array.isArray(res)) {
-            alert("API not working");
+            // alert("API not working");
             return { NotFound: true };
           }
           console.log("fetched pos data", res);
@@ -851,16 +851,24 @@ const SaveInvoiceData = () => {
 
       updateSku = singleItemData[0].posSku;
 
+      let result = await inventoryService.getPosInventoryLogs({
+        Barcode: singleItemData[0].barcode,
+        ItemNo: singleItemData[0].itemNo,
+        InvoiceName: inv,
+        InvoiceNo: num,
+        InvoiceDate: day,
+      });
+      console.log("result : ", result);
       // const availWoo = await getProducts(); // fetch product details from WooCommerce website  (wooComProducts)
-      const availPos = await getPosProducts(); // fetch product details from POS API  (posProducts)
       // console.log("availWoo : ",availWoo)
+
+      const availPos = await getPosProducts(); // fetch product details from POS API  (posProducts)
       console.log("availPos : ", availPos);
 
       if (availPos[0].NotFound !== true) {
         console.log("pI_posProducts : ", posProducts);
         if (posProducts[0] !== undefined) {
           await pushInventoryDetails2();
-          let res = await pushQtyToInventory(index);
           toConsoleState();
           setIsUpdated("true");
           setUpdateIndex(index);
@@ -940,42 +948,45 @@ const SaveInvoiceData = () => {
           const logUpdate = await inventoryService.posLogs(log);
           console.log("pI_logUpdate : ", logUpdate);
 
-          if (res !== false) {
-            const inventoryLog = {
-              Barcode: singleItemData[0].barcode,
-              InvoiceName: invoice.slug,
-              InvoiceDate: day,
-              InvoiceNo: num,
-              ItemNo: singleItemData[0].itemNo,
-              InvoiceDescription: singleItemData[0].description,
-              PosDescription: singleItemData[0].posName,
-              PosUnitCost: singleItemData[0].cost,
-              PosUnitPrice: singleItemData[0].sellingPrice,
-              UpdateDate: todayDate,
-              Person: userEmail,
-              TimeStamp: new Date().toTimeString().split(" ")[0],
-              SKU: singleItemData[0].posSku,
-              OldQty: posInventory[0].OLD_TOTALQTY.toString(),
-              NewQty: posInventory[0].TOTALQTY,
-              SerialNoInInv: singleItemData[0].SerialNoInInv,
-            };
-            console.log("inventoryLog : ", inventoryLog);
-            const inventoryLogUpdate = await inventoryService.posInventoryLogs(
-              inventoryLog
-            );
-            console.log("inventoryLogUpdate : ", inventoryLogUpdate);
+          if (result === "") {
+            let res = await pushQtyToInventory(index);
 
-            let data1 = {
-              item: singleItemData[0].itemNo,
-              invoice: invoice.slug,
-              isInventoryUpdate: "true",
-            };
+            if (res !== false) {
+              const inventoryLog = {
+                Barcode: singleItemData[0].barcode,
+                InvoiceName: invoice.slug,
+                InvoiceDate: day,
+                InvoiceNo: num,
+                ItemNo: singleItemData[0].itemNo,
+                InvoiceDescription: singleItemData[0].description,
+                PosDescription: singleItemData[0].posName,
+                PosUnitCost: singleItemData[0].cost,
+                PosUnitPrice: singleItemData[0].sellingPrice,
+                UpdateDate: todayDate,
+                Person: userEmail,
+                TimeStamp: new Date().toTimeString().split(" ")[0],
+                SKU: singleItemData[0].posSku,
+                OldQty: posInventory[0].OLD_TOTALQTY.toString(),
+                NewQty: posInventory[0].TOTALQTY,
+                SerialNoInInv: singleItemData[0].SerialNoInInv,
+              };
+              console.log("inventoryLog : ", inventoryLog);
+              const inventoryLogUpdate =
+                await inventoryService.posInventoryLogs(inventoryLog);
+              console.log("inventoryLogUpdate : ", inventoryLogUpdate);
 
-            const updateinventoryindb =
-              await inventoryService.UpdateInventoryInDB(data1);
-            console.log("updateinventoryindb : ", updateinventoryindb);
-          } else {
-            alert("Inventory not updated!!");
+              const updateinventoryindb =
+                await inventoryService.UpdateInventoryInDB(
+                  inv,
+                  num,
+                  day,
+                  singleItemData[0].itemNo
+                );
+
+              console.log("updateinventoryindb : ", updateinventoryindb);
+            } else {
+              alert("Inventory not updated!!");
+            }
           }
           setProductsInTable();
         } else {
@@ -1025,55 +1036,53 @@ const SaveInvoiceData = () => {
               alert("API not working (GetInventory)");
               return { NotFound: true };
             } else {
-              if(res.length !== 0){
-             
-              console.log("fetched pos inventory data", res);
-              const { BARCODE, ITEMNAME, TOTALQTY } = res[0];
-              console.log(BARCODE);
-              console.log(updateBarcode);
-              if (BARCODE == updateBarcode) {
+              if (res.length !== 0) {
+                console.log("fetched pos inventory data", res);
+                const { BARCODE, ITEMNAME, TOTALQTY } = res[0];
                 console.log(BARCODE);
                 console.log(updateBarcode);
+                if (BARCODE == updateBarcode) {
+                  console.log(BARCODE);
+                  console.log(updateBarcode);
+                  return {
+                    ...row,
+                    COST: row.cp,
+                    PRICE: row.sellingPrice,
+                    BARCODE,
+                    ITEMNAME,
+                    OLD_TOTALQTY: TOTALQTY,
+                    TOTALQTY:
+                      parseInt(row.qty) * parseInt(row.pieces) +
+                      parseInt(TOTALQTY),
+                    itemNo: row.itemNo,
+                    isNew: false,
+                    BUYASCASE: 1,
+                    CASEUNITS: row.pieces.toString(),
+                    CASECOST: row.unitPrice.toString(),
+                    NotFound: false,
+                  };
+                } else {
+                  alert("SKU mismatch!!");
+                }
+              } else {
                 return {
                   ...row,
                   COST: row.cp,
-                  PRICE: row.sellingPrice,
-                  BARCODE,
-                  ITEMNAME,
-                  OLD_TOTALQTY: TOTALQTY,
-                  TOTALQTY:
-                    parseInt(row.qty) * parseInt(row.pieces) +
-                    parseInt(TOTALQTY),
+                  PRICE: row.sp,
+                  SKU: row.posSku,
+                  BARCODE: row.barcode,
+                  ITEMNAME: row.posName,
+                  TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                  OLD_TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
                   itemNo: row.itemNo,
-                  isNew: false,
+                  isNew: true,
                   BUYASCASE: 1,
                   CASEUNITS: row.pieces.toString(),
                   CASECOST: row.unitPrice.toString(),
+                  DEPNAME: "",
                   NotFound: false,
                 };
-              } else {
-                alert("SKU mismatch!!");
               }
-                 
-            }else{
-              return {
-                ...row,
-                COST: row.cp,
-                PRICE: row.sp,
-                SKU: row.posSku,
-                BARCODE: row.barcode,
-                ITEMNAME: row.posName,
-                TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
-                OLD_TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
-                itemNo: row.itemNo,
-                isNew: true,
-                BUYASCASE: 1,
-                CASEUNITS: row.pieces.toString(),
-                CASECOST: row.unitPrice.toString(),
-                DEPNAME: "",
-                NotFound: false,
-              };
-            }
             }
           } catch (error) {
             hasErrorOccured = true;
@@ -1216,14 +1225,11 @@ const SaveInvoiceData = () => {
       );
       console.log("inventoryLogUpdate : ", inventoryLogUpdate);
 
-      let data1 = {
-        item: tableData[index].itemNo,
-        invoice: invoice.slug,
-        isInventoryUpdate: "true",
-      };
-
       const updateinventoryindb = await inventoryService.UpdateInventoryInDB(
-        data1
+        inv,
+        num,
+        day,
+        tableData[index].itemNo
       );
       console.log("updateinventoryindb : ", updateinventoryindb);
       dispatch({ type: "LOADER" });
@@ -1791,10 +1797,10 @@ const SaveInvoiceData = () => {
                 ? products[row.itemNo].SellingPrice
                 : "";
 
-            row.isInventoryUpdate =
-              products[row.itemNo] !== undefined
-                ? products[row.itemNo].isInventoryUpdate
-                : "";
+            // row.isInventoryUpdate =
+            //   products[row.itemNo] !== undefined
+            //     ? products[row.itemNo].isInventoryUpdate
+            //     : "";
             return { ...row, sp, cp, SerialNoInInv };
           });
           // setLoader(false);
@@ -2451,10 +2457,10 @@ const SaveInvoiceData = () => {
                 ? products[row.itemNo].SellingPrice
                 : "";
 
-            row.isInventoryUpdate =
-              products[row.itemNo] !== undefined
-                ? products[row.itemNo].isInventoryUpdate
-                : "";
+            // row.isInventoryUpdate =
+            //   products[row.itemNo] !== undefined
+            //     ? products[row.itemNo].isInventoryUpdate
+            //     : "";
             return { ...row, sp, cp, SerialNoInInv };
           });
           // setLoader(false);
@@ -2954,7 +2960,7 @@ const SaveInvoiceData = () => {
             </td>
             <td>
               <Button
-              disabled
+                // disabled
                 text="Update POS"
                 color="btn btn-info"
                 type="submit"

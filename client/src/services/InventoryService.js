@@ -110,10 +110,13 @@ export class InventoryService {
     console.log(res);
   }
   
-  async UpdateInventoryInDB(data){
-    console.log(data);
-    const res = await Axios.post(appendURL + "/api/invoice/updateinventoryindb", data);
-    console.log(res);
+  async UpdateInventoryInDB(invoiceName, invoiceNo, date, itemNo){
+    console.log(invoiceName);
+    console.log(invoiceNo);
+    console.log(itemNo);
+    console.log(date);
+    const res = await Axios.post(appendURL + "/api/invoice/updateinventoryindb", {params:{ invoiceName: invoiceName, invoiceNo: invoiceNo,date: date, itemNo: itemNo}});
+    return res.data;
   }
 
   async saveDetails(data) {
@@ -240,6 +243,12 @@ export class InventoryService {
   async posInventoryLogs(data) {
     console.log(data);
     const res = await Axios.post(appendURL + "/api/invoice/posinventorylog", data)
+    return res.data;
+  }
+
+  async getPosInventoryLogs(data) {
+    console.log(data);
+    const res = await Axios.get(appendURL + "/api/invoice/getposinventorylog", {params:data})
     return res.data;
   }
 

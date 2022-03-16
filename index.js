@@ -393,17 +393,19 @@ app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
 
 // added by deepanshu
 app.post("/api/invoice/updateinventoryindb", validateLogin, (req, res) => {
-  // console.log(req.body);
-  const data = {
-    item: req.body.item,
-    isInventoryUpdate:req.body.isInventoryUpdate,
-    invoice: getDBInvoiceName(req.body.invoice)
-  };
-  console.log(data);
+  console.log(req.body.params.invoiceName);
+  const invoice = req.body.params.invoiceName;
+  const invoiceNo = req.body.params.invoiceNo;
+  const date = req.body.params.date;
+  const itemNo = req.body.params.itemNo;
+  console.log(invoice);
+  console.log(invoiceNo);
+  console.log(itemNo);
+  console.log(date);
   let options = {
     method: "POST",
     url: `http://44.203.76.94:3001/updateinventoryindb/`,
-    body: data,
+    body: {invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
   function callback(error, response, body) {
@@ -943,6 +945,29 @@ app.post("/api/invoice/posinventorylog", validateLogin, function (req, res) {
   request(options, callback);
 });
 
+app.get("/api/invoice/getposinventorylog", validateLogin, function (req, res) {
+  const data = req.query;
+  console.log(req.query)
+  console.log(req.body.params)
+  console.log(req.query)
+  console.log(data);
+  let options = {
+    method: "GET",
+    url: "http://44.203.76.94:3001/getposinventorylog",
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    // console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+});
 
 //added by Parikshit.
 app.post("/api/invoice/handwrittenposlogs", validateLogin, function (req, res) {
