@@ -5,7 +5,8 @@ const request = require("request");
 const spawn = require("child_process").spawnSync;
 require("dotenv").config({ path: __dirname + "/.env" });
 const dirName = __dirname;
-
+const createLinkingLogsXlsx = require("./createLinkingLogsXlsx");
+const createPosLogsXlsx = require("./createPosLogsXlsx");
 const app = express();
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
@@ -57,7 +58,7 @@ app.get("/api/product", validateLogin, (req, res) => {
   console.log("invoice : ",invoice);
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/invoice/${invoice}`,
+    url: `http://44.201.186.179:3001/invoice/${invoice}`,
     json: true,
   };
   function callback(error, response, body) {
@@ -85,7 +86,7 @@ app.get("/api/invoice/gethicksvilledata", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/gethicksvilledata/`,
+    url: `http://44.201.186.179:3001/gethicksvilledata/`,
     body: {string: input },
     json: true,
   };
@@ -113,7 +114,7 @@ app.get("/api/invoice/getsaveinvoicedata", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/getsaveinvoicedata/`,
+    url: `http://44.201.186.179:3001/getsaveinvoicedata/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date },
     json: true,
   };
@@ -138,7 +139,7 @@ app.get("/api/invoice/getitemhandwritten", validateLogin, (req, res) => {
   // console.log("1" + date + "1");
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/getitemhandwritten/`,
+    url: `http://44.201.186.179:3001/getitemhandwritten/`,
     body: data,
     json: true,
   };
@@ -161,7 +162,7 @@ app.get("/api/invoice/fetchproductfromposlist", validateLogin, (req, res) => {
   console.log(req.query);
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/fetchproductfromposlist/`,
+    url: `http://44.201.186.179:3001/fetchproductfromposlist/`,
     body: {data: data},
     json: true,
   };
@@ -184,7 +185,7 @@ app.get("/api/invoice/getsavedinvoices", validateLogin, (req, res) => {
   console.log(invoice);
   let options = {
     method: "GET",
-    url: `http://44.203.76.94:3001/getsavedinvoices/`,
+    url: `http://44.201.186.179:3001/getsavedinvoices/`,
     body: {invoice: invoice},
     json: true,
   };
@@ -214,7 +215,7 @@ app.post("/api/invoice/updateinvoicedata", validateLogin, (req, res) => {
   console.log(date);
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/updateinvoicedata/`,
+    url: `http://44.201.186.179:3001/updateinvoicedata/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
@@ -243,7 +244,7 @@ app.post("/api/invoice/reverseposupdate", validateLogin, (req, res) => {
   console.log(date);
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/reverseposupdate/`,
+    url: `http://44.201.186.179:3001/reverseposupdate/`,
     body: { invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
@@ -269,7 +270,7 @@ app.post("/api/invoice/reverseupdate", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/reverseupdate/`,
+    url: `http://44.201.186.179:3001/reverseupdate/`,
     body: data,
     json: true,
   };
@@ -295,7 +296,7 @@ app.post("/api/invoice/savedetails", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/savedetails/`,
+    url: `http://44.201.186.179:3001/savedetails/`,
     body: data,
     json: true,
   };
@@ -321,7 +322,7 @@ app.post("/api/invoice/linkingcorrect", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/linkingcorrect/`,
+    url: `http://44.201.186.179:3001/linkingcorrect/`,
     body: data,
     json: true,
   };
@@ -347,7 +348,7 @@ app.post("/api/invoice/linkmanually", validateLogin, (req, res) => {
 
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/linkmanually/`,
+    url: `http://44.201.186.179:3001/linkmanually/`,
     body: data,
     json: true,
   };
@@ -363,6 +364,9 @@ app.post("/api/invoice/linkmanually", validateLogin, (req, res) => {
   request(options, callback);
 });
 
+app.get("/api/invoice/getlinkinglogsxlsx", validateLogin, createLinkingLogsXlsx)
+app.get("/api/invoice/getposLogsxlsx", validateLogin, createPosLogsXlsx)
+
 app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
   // console.log(req.body);
   const data = {
@@ -375,7 +379,7 @@ app.post("/api/invoice/updatedbafterposupdate", validateLogin, (req, res) => {
   console.log(data);
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/updatedbafterposupdate/`,
+    url: `http://44.201.186.179:3001/updatedbafterposupdate`,
     body: data,
     json: true,
   };
@@ -404,7 +408,7 @@ app.post("/api/invoice/updateinventoryindb", validateLogin, (req, res) => {
   console.log(date);
   let options = {
     method: "POST",
-    url: `http://44.203.76.94:3001/updateinventoryindb/`,
+    url: `http://44.201.186.179:3001/updateinventoryindb/`,
     body: {invoice: invoice, invoiceNo: invoiceNo, date: date, itemNo: itemNo },
     json: true,
   };
@@ -586,7 +590,7 @@ app.get("/api/getPOSProduct", validateLogin, function (req, res) {
 app.get("/api/sync", validateLogin, function (req, res) {
   let options = {
     method: "GET",
-    url: "http://44.203.76.94:3001/pos/api/sync",
+    url: "http://44.201.186.179:3001/pos/api/sync",
     json: true,
   };
   //console.log("INDEXJS");
@@ -713,7 +717,7 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://44.203.76.94:3001/invoice/${getDBInvoiceName(
+    url: `http://44.201.186.179:3001/invoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -742,7 +746,7 @@ app.put("/api/handwritteninvoice/product/update", validateLogin, function (req, 
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://44.203.76.94:3001/handwritteninvoice/${getDBInvoiceName(
+    url: `http://44.201.186.179:3001/handwritteninvoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -767,7 +771,7 @@ app.get("/api/invoice/gethandwrittenposlogs", validateLogin , function (req,res)
   // let {invoicename,itemNo,sku,updatedate} = req.query;
   let options = {
     method: "GET",
-    url: "http://44.203.76.94:3001/gethandwrittenposlog",
+    url: "http://44.201.186.179:3001/gethandwrittenposlog",
     body: data,
     json: true,
   };
@@ -789,7 +793,7 @@ app.post("/api/invoice/notfound", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/notfound",
+    url: "http://44.201.186.179:3001/notfound",
     body: data,
     json: true,
   };
@@ -811,7 +815,7 @@ app.post("/api/invoice/scaninvoicedata", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/scaninvoicedata",
+    url: "http://44.201.186.179:3001/scaninvoicedata",
     body: data,
     json: true,
   };
@@ -863,7 +867,7 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
   console.log(logData);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/generatelog",
+    url: "http://44.201.186.179:3001/generatelog",
     body: logData,
     json: true,
   };
@@ -885,7 +889,7 @@ app.post("/api/invoice/linkmanuallylog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/generatelog",
+    url: "http://44.201.186.179:3001/generatelog",
     body: data,
     json: true,
   };
@@ -907,7 +911,7 @@ app.post("/api/invoice/poslogs", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/generateposlog",
+    url: "http://44.201.186.179:3001/generateposlog",
     body: data,
     json: true,
   };
@@ -929,7 +933,7 @@ app.post("/api/invoice/posinventorylog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/generateposinventorylog",
+    url: "http://44.201.186.179:3001/generateposinventorylog",
     body: data,
     json: true,
   };
@@ -953,7 +957,7 @@ app.get("/api/invoice/getposinventorylog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "GET",
-    url: "http://44.203.76.94:3001/getposinventorylog",
+    url: "http://44.201.186.179:3001/getposinventorylog",
     body: data,
     json: true,
   };
@@ -975,7 +979,7 @@ app.post("/api/invoice/handwrittenposlogs", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/handwrittenposlogs",
+    url: "http://44.201.186.179:3001/handwrittenposlogs",
     body: data,
     json: true,
   };
@@ -995,7 +999,7 @@ app.get("/api/invoice/gethandwrittenlogs", validateLogin, function (req, res) {
   console.log("data : ",data);
   let options = {
     method: "GET",
-    url: "http://44.203.76.94:3001/gethandwrittenlogs",
+    url: "http://44.201.186.179:3001/gethandwrittenlogs",
     body: data,
     json: true,
   };
@@ -1016,7 +1020,7 @@ app.post("/api/invoice/unidentifiedlog", validateLogin, function (req, res) {
   console.log(data);
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/generatelog",
+    url: "http://44.201.186.179:3001/generatelog",
     body: data,
     json: true,
   };
@@ -1042,7 +1046,7 @@ app.get("/api/invoice/pos", validateLogin, function (req, res) {
   // console.log(dates);
   let options = {
     method: "GET",
-    url: "http://44.203.76.94:3001/pos",
+    url: "http://44.201.186.179:3001/pos",
     json: true,
   };
   function callback(error, response, body) {
@@ -1061,7 +1065,7 @@ app.post("/api/invoice/pos/create", validateLogin, function (req, res) {
   const data = req.body;
   let options = {
     method: "POST",
-    url: "http://44.203.76.94:3001/pos",
+    url: "http://44.201.186.179:3001/pos",
     body: data,
     json: true,
   };
@@ -1082,7 +1086,7 @@ app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   // console.log("body data", data);
   let options = {
     method: "PUT",
-    url: `http://44.203.76.94:3001/pos/${data.UPC}/inv`,
+    url: `http://44.201.186.179:3001/pos/${data.UPC}/inv`,
     body: { count: data.count },
     json: true,
   };

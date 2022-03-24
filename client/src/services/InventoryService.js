@@ -201,6 +201,32 @@ export class InventoryService {
     return res;
   }
 
+  // added by Deepanshu
+  async getLinkingLogsXlsx(data) {
+    console.log(data);
+    const res = await Axios({
+      url: appendURL + "/api/invoice/getlinkinglogsxlsx",
+      headers: { "Contant-Type": "application/json" },
+      params: data,
+      method: "GET",
+      responseType: "blob",
+    });
+    return res;
+  }
+
+  // added by Deepanshu
+  async getPosLogsXlsx(data) {
+    console.log(data);
+    const res = await Axios({
+      url: appendURL + "/api/invoice/getposLogsxlsx",
+      headers: { "Contant-Type": "application/json" },
+      params: data,
+      method: "GET",
+      responseType: "blob",
+    });
+    return res;
+  }
+
   async reverseUpdate(data) {
     console.log(data);
 

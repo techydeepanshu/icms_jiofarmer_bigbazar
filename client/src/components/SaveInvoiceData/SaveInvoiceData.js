@@ -40,6 +40,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 
+import FileDownload from "js-file-download";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import firebase from "firebase/app";
@@ -108,6 +109,9 @@ const SaveInvoiceData = () => {
   );
   const [tableDataCopy, setTableDataCopy] = useState([]);
   const [unitPriceModify, setUnitPriceModify] = useState(false);
+  const [markupValue, setMarkupValue] = useState(undefined);
+  const [pendingLoader, setPendingLoader] = useState(false);
+
   //***********added by Deepanshu*********** */
 
   //Following for display data functionalities.
@@ -369,7 +373,7 @@ const SaveInvoiceData = () => {
       console.log("update api call", update[0].ITEMNAME);
       console.log("update api call", update[0].VENDORCODE);
       console.log("update api call", invoice.slug);
-      let data1 = {
+      let data2 = {
         cost: update[0].COST,
         price: update[0].PRICE,
         item: update[0].VENDORCODE,
@@ -379,7 +383,7 @@ const SaveInvoiceData = () => {
 
       // console.log("I am posProducts.ITEMNAME from updatedb after Pos",posProducts[0].ITEMNAME)
 
-      await inventoryService.UpdateDBafterPosUpdate(data1);
+      await inventoryService.UpdateDBafterPosUpdate(data2);
     }
 
     // const update = await inventoryService.UpdatePOSProducts(
@@ -851,14 +855,7 @@ const SaveInvoiceData = () => {
 
       updateSku = singleItemData[0].posSku;
 
-      let result = await inventoryService.getPosInventoryLogs({
-        Barcode: singleItemData[0].barcode,
-        ItemNo: singleItemData[0].itemNo,
-        InvoiceName: inv,
-        InvoiceNo: num,
-        InvoiceDate: day,
-      });
-      console.log("result : ", result);
+      
       // const availWoo = await getProducts(); // fetch product details from WooCommerce website  (wooComProducts)
       // console.log("availWoo : ",availWoo)
 
@@ -948,45 +945,30 @@ const SaveInvoiceData = () => {
           const logUpdate = await inventoryService.posLogs(log);
           console.log("pI_logUpdate : ", logUpdate);
 
+          // update inventory
+          let result = await inventoryService.getPosInventoryLogs({
+            Barcode: singleItemData[0].barcode,
+            ItemNo: singleItemData[0].itemNo,
+            InvoiceName: inv,
+            InvoiceNo: num,
+            InvoiceDate: day,
+          });
+          console.log("result : ", result);
           if (result === "") {
             let res = await pushQtyToInventory(index);
+            console.log(res);
 
-            if (res !== false) {
-              const inventoryLog = {
-                Barcode: singleItemData[0].barcode,
-                InvoiceName: invoice.slug,
-                InvoiceDate: day,
-                InvoiceNo: num,
-                ItemNo: singleItemData[0].itemNo,
-                InvoiceDescription: singleItemData[0].description,
-                PosDescription: singleItemData[0].posName,
-                PosUnitCost: singleItemData[0].cost,
-                PosUnitPrice: singleItemData[0].sellingPrice,
-                UpdateDate: todayDate,
-                Person: userEmail,
-                TimeStamp: new Date().toTimeString().split(" ")[0],
-                SKU: singleItemData[0].posSku,
-                OldQty: posInventory[0].OLD_TOTALQTY.toString(),
-                NewQty: posInventory[0].TOTALQTY,
-                SerialNoInInv: singleItemData[0].SerialNoInInv,
-              };
-              console.log("inventoryLog : ", inventoryLog);
-              const inventoryLogUpdate =
-                await inventoryService.posInventoryLogs(inventoryLog);
-              console.log("inventoryLogUpdate : ", inventoryLogUpdate);
-
-              const updateinventoryindb =
-                await inventoryService.UpdateInventoryInDB(
-                  inv,
-                  num,
-                  day,
-                  singleItemData[0].itemNo
-                );
-
-              console.log("updateinventoryindb : ", updateinventoryindb);
-            } else {
-              alert("Inventory not updated!!");
-            }
+          }else {
+            // alert("Inventory already updated!!");
+            toast.info("Inventory already updated!!", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
           }
           setProductsInTable();
         } else {
@@ -1122,130 +1104,168 @@ const SaveInvoiceData = () => {
     // setPosProducts(items.filter((ele) => ele !== null));
   };
 
-  const pushQtyDetailsInInventory = async () => {
+  const pushQtyDetailsInInventory = async (barcode) => {
     // dispatch({ type: "LOADER" });
     console.log("products values are: ", posInventory);
+    console.log("barcode : ", barcode);
+    let responses = "";
+    if (posInventory[0].BARCODE == barcode) {
+      responses = await Promise.all(
+        posInventory.map(async (product) => {
+          try {
+            const {
+              COST,
+              PRICE,
+              BARCODE,
+              TOTALQTY,
+              isNew,
+              ITEMNAME,
+              BUYASCASE,
+              CASEUNITS,
+              CASECOST,
+              DEPNAME,
+              itemNo,
+            } = product;
 
-    const responses = await Promise.all(
-      posInventory.map(async (product) => {
-        try {
-          const {
-            COST,
-            PRICE,
-            BARCODE,
-            TOTALQTY,
-            isNew,
-            ITEMNAME,
-            BUYASCASE,
-            CASEUNITS,
-            CASECOST,
-            DEPNAME,
-            itemNo,
-          } = product;
+            console.log("product : ", product);
 
-          console.log("product : ", product);
+            const res = await inventoryService.UpdatePOSInventory({
+              BARCODE,
+              ITEMNAME: product.posName,
+              DESCRIPTION: "",
+              PRICE,
+              COST,
+              QTY: TOTALQTY,
+              SIZE: product.size,
+              PACK: "",
+              REPLACEQTY: 1,
+              DEPARTMENT: DEPNAME,
+              CATEGORY: "",
+              SUBCATEGORY: "",
+              ISFOODSTAMP: 1,
+              ISWEIGHTED: 0,
+              ISTAXABLE: 1,
+              VENDORNAME: invoice.slug,
+              VENDORCODE: itemNo,
+              VENDORCOST: "",
+              ISNEWITEM: isNew ? 1 : 0,
+              BUYASCASE,
+              CASEUNITS,
+              CASECOST,
+              COMPANYNAME: invoice.slug,
+              PRODUCTCODE: itemNo,
+              MODELNUM:
+                userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
+              VINTAGE: "ICMS",
+            });
+            console.log("updated pos data", res);
 
-          const res = await inventoryService.UpdatePOSInventory({
-            BARCODE,
-            ITEMNAME: product.posName,
-            DESCRIPTION: "",
-            PRICE,
-            COST,
-            QTY: TOTALQTY,
-            SIZE: product.size,
-            PACK: "",
-            REPLACEQTY: 1,
-            DEPARTMENT: DEPNAME,
-            CATEGORY: "",
-            SUBCATEGORY: "",
-            ISFOODSTAMP: 1,
-            ISWEIGHTED: 0,
-            ISTAXABLE: 1,
-            VENDORNAME: invoice.slug,
-            VENDORCODE: itemNo,
-            VENDORCOST: "",
-            ISNEWITEM: isNew ? 1 : 0,
-            BUYASCASE,
-            CASEUNITS,
-            CASECOST,
-            COMPANYNAME: invoice.slug,
-            PRODUCTCODE: itemNo,
-            MODELNUM:
-              userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
-            VINTAGE: "ICMS",
-          });
-          console.log("updated pos data", res);
-          // const data = {
-          //   BARCODE,
-          //   SKU,
-          //   Cost: COST,
-          //   ItemName: ITEMNAME,
-          //   Price: PRICE,
-          //   TotalQty: TOTALQTY,
-          // };
+            // CREATE LOG AND UPDATE IN DB
+            let tempdata2 = tableData.filter(
+              (e) =>
+                e.barcode === product.BARCODE && e.itemNo === product.itemNo && e.description === product.description
+            );
+            if (tempdata2[0].barcode == product.BARCODE) {
+              const inventoryLog = {
+                Barcode: tempdata2[0].barcode,
+                InvoiceName: invoice.slug,
+                InvoiceDate: day,
+                InvoiceNo: num,
+                ItemNo: tempdata2[0].itemNo,
+                InvoiceDescription: tempdata2[0].description,
+                PosDescription: tempdata2[0].posName,
+                PosUnitCost: tempdata2[0].cost,
+                PosUnitPrice: tempdata2[0].sellingPrice,
+                UpdateDate: todayDate,
+                Person: userEmail,
+                TimeStamp: new Date().toTimeString().split(" ")[0],
+                SKU: tempdata2[0].posSku,
+                OldQty: product.OLD_TOTALQTY.toString(),
+                NewQty: product.TOTALQTY,
+                SerialNoInInv: tempdata2[0].SerialNoInInv,
+              };
+              console.log("inventoryLog : ", inventoryLog);
+              const inventoryLogUpdate =
+                await inventoryService.posInventoryLogs(inventoryLog);
+              console.log("inventoryLogUpdate : ", inventoryLogUpdate);
 
-          console.log("res from POS", res);
-          return res;
-        } catch (error) {
-          console.log(error);
-          return null;
-        }
-      })
-    );
+              const updateinventoryindb =
+                await inventoryService.UpdateInventoryInDB(
+                  inv,
+                  num,
+                  day,
+                  tempdata2[0].itemNo
+                );
+
+              console.log("updateinventoryindb : ", updateinventoryindb);
+            } else {
+              alert("posInventory Logs does not Created");
+            }
+            return res;
+          } catch (error) {
+            console.log("error : ", error);
+            toast.error("Some Error Occurred during inventory updation !!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+            return null;
+          }
+        })
+      );
+    } else {
+      alert("inventory not updated");
+      return null;
+    }
     // setLoader(false);
     // dispatch({ type: "LOADER" });
     return responses;
   };
 
   const updateInventoryDetails = async (index) => {
-    dispatch({ type: "LOADER" });
-    let res = await pushQtyToInventory(index);
-    if (res !== false) {
-      let inventoryLog = {
-        Barcode: tableData[index].barcode,
-        InvoiceName: invoice.slug,
-        InvoiceDate: day,
-        InvoiceNo: num,
-        ItemNo: tableData[index].itemNo,
-        InvoiceDescription: tableData[index].description,
-        PosDescription: tableData[index].posName,
-        PosUnitCost: tableData[index].cost,
-        PosUnitPrice: tableData[index].sellingPrice,
-        UpdateDate: todayDate,
-        Person: userEmail,
-        TimeStamp: new Date().toTimeString().split(" ")[0],
-        SKU: tableData[index].posSku,
-        OldQty: posInventory[0].OLD_TOTALQTY.toString(),
-        NewQty: posInventory[0].TOTALQTY,
-        SerialNoInInv: tableData[index].SerialNoInInv,
-      };
-      console.log("inventoryLog : ", inventoryLog);
-      const inventoryLogUpdate = await inventoryService.posInventoryLogs(
-        inventoryLog
-      );
-      console.log("inventoryLogUpdate : ", inventoryLogUpdate);
-
-      const updateinventoryindb = await inventoryService.UpdateInventoryInDB(
-        inv,
-        num,
-        day,
-        tableData[index].itemNo
-      );
-      console.log("updateinventoryindb : ", updateinventoryindb);
-      dispatch({ type: "LOADER" });
-      const sampleData2 = {
-        ...tableData,
-        [index]: { ...tableData[index], ["isInventoryUpdate"]: "true" },
-      };
-      const propertyNames2 = Object.values(sampleData2);
-      // sampleData2[index].isInventoryUpdate = "true";
-      setTableData(propertyNames2);
-      renderTableData();
-      // setProductsInTable();
+    // dispatch({ type: "LOADER" });
+    let result = await inventoryService.getPosInventoryLogs({
+      Barcode: tableData[index].barcode,
+      ItemNo: tableData[index].itemNo,
+      InvoiceName: inv,
+      InvoiceNo: num,
+      InvoiceDate: day,
+    });
+    console.log("result : ", result);
+    if (result === "") {
+      let res = await pushQtyToInventory(index);
+      if (res !== false) {
+        
+        // dispatch({ type: "LOADER" });
+        const sampleData2 = {
+          ...tableData,
+          [index]: { ...tableData[index], ["isInventoryUpdate"]: "true" },
+        };
+        const propertyNames2 = Object.values(sampleData2);
+        // sampleData2[index].isInventoryUpdate = "true";
+        setTableData(propertyNames2);
+        renderTableData();
+        // setProductsInTable();
+      } else {
+        alert("Inventory not updated!!");
+        // setProductsInTable();
+        // dispatch({ type: "LOADER" });
+      }
     } else {
-      alert("Inventory not updated!!");
-      // setProductsInTable();
-      dispatch({ type: "LOADER" });
+      // alert("Inventory already updated!!");
+      toast.info("Inventory already updated!!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -1359,35 +1379,49 @@ const SaveInvoiceData = () => {
 
     console.log("posInventory : ", posInventory);
     if (posInventory[0].NotFound !== true) {
-      let response = await pushQtyDetailsInInventory();
+      let response = await pushQtyDetailsInInventory(updateBarcode);
       console.log("response : ", response[0]);
-      if (response[0].length !== 0) {
-        toast.success("Inventory Update Successfully", {
-          position: "bottom-right",
-          autoClose: 20000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
+      if (response[0] !== null) {
+        response.map((element) => {
+          if (element.length !== 0) {
+            toast.success("Inventory Update Successfully", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
 
-        // alert("Inventory Update Successfully")
+            // alert("Inventory Update Successfully")
+          } else {
+            toast.success("Inventory Created", {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+            // alert("Inventory Created")
+          }
+        });
+        return true;
       } else {
-        toast.success("Inventory Created", {
-          position: "bottom-right",
-          autoClose: 20000,
+        toast.error("Does not Working Pos-inventory API", {
+          position: "top-center",
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
         });
-        // alert("Inventory Created")
+        return false;
       }
-      return true;
+      
     } else {
       // alert("Some Error Occurred")
       toast.error("Some Error Occurred", {
@@ -1635,7 +1669,7 @@ const SaveInvoiceData = () => {
       // setProductsInTableNew(inv, num, day);
     }
 
-    await getPosProductsLinkManually(index);
+    // await getPosProductsLinkManually(index);
   };
 
   const fetchSavedData = async (invoice = inv, no = num, date = day) => {
@@ -1754,10 +1788,12 @@ const SaveInvoiceData = () => {
                 : "";
             row.margin =
               products[row.itemNo] !== undefined
-                ? ((products[row.itemNo].SellingPrice -
-                    products[row.itemNo].SellerCost) /
-                    products[row.itemNo].SellerCost) *
-                  100
+                ? (
+                    ((products[row.itemNo].SellingPrice -
+                      products[row.itemNo].SellerCost) /
+                      products[row.itemNo].SellerCost) *
+                    100
+                  ).toFixed(2)
                 : "";
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
@@ -2414,10 +2450,12 @@ const SaveInvoiceData = () => {
                 : "";
             row.margin =
               products[row.itemNo] !== undefined
-                ? ((products[row.itemNo].SellingPrice -
-                    products[row.itemNo].SellerCost) /
-                    products[row.itemNo].SellerCost) *
-                  100
+                ? (
+                    ((products[row.itemNo].SellingPrice -
+                      products[row.itemNo].SellerCost) /
+                      products[row.itemNo].SellerCost) *
+                    100
+                  ).toFixed(2)
                 : "";
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
@@ -2927,7 +2965,19 @@ const SaveInvoiceData = () => {
                 style={{ width: 100 }}
               />
             </td>
-            <td>{element.markup.toFixed(2).toString()}</td>
+            <td>
+              <TextField
+                type="tel"
+                /*value={element.sp}*/
+                // placeholder="0"
+                value={element.markup}
+                variant="outlined"
+                onChange={(e) => {
+                  handleChange(index, "markup", e.target.value);
+                }}
+                style={{ width: 100 }}
+              />
+            </td>
             {/* <td>
                   <Checkbox
                     checked={!element.show}
@@ -3006,6 +3056,7 @@ const SaveInvoiceData = () => {
           </tr>
         );
       });
+
       return (
         <div style={{ marginTop: "35px" }}>
           <div className={styles.divRow}>
@@ -3015,7 +3066,18 @@ const SaveInvoiceData = () => {
               type="submit"
               onClick={pushInventoryDetails}
             />
-
+            <Button
+              text="Download LinkingLogs"
+              color="btn btn-info"
+              type="submit"
+              onClick={downloadLinkingLogs}
+            />
+            <Button
+              text="Download POS-Logs"
+              color="btn btn-info"
+              type="submit"
+              onClick={downloadPosLogs}
+            />
             <Button
               text="Re upload"
               color="btn btn-info"
@@ -3023,7 +3085,7 @@ const SaveInvoiceData = () => {
               onClick={() => window.location.reload()}
             />
           </div>
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center", margin: "20px 0" }}>
             <FormControl component="fieldset">
               <FormGroup aria-label="position" row>
                 <FormControlLabel
@@ -3060,6 +3122,50 @@ const SaveInvoiceData = () => {
                 />
               </FormGroup>
             </FormControl>
+            <TextField
+              type="tel"
+              value={markupValue}
+              placeholder="Eg: 30"
+              variant="outlined"
+              onChange={(e) => {
+                setMarkupValue(e.target.value);
+              }}
+              style={{ width: 100, margin: "-5px 0" }}
+            />
+            <Button
+              text="Apply Markup"
+              color="btn btn-info"
+              type="submit"
+              style={{ margin: "0 10px" }}
+              onClick={markupApplyOnProduct}
+            />
+            <Button
+              text="Reset"
+              color="btn btn-warning"
+              type="reset"
+              style={{ margin: "0 10px" }}
+              onClick={() => {
+                setIncPrice(false);
+                setDecPrice(false);
+                setMarkupValue("");
+                setUnitPriceModify(false);
+                setTableData(tableDataCopy);
+                renderTableData();
+              }}
+            />
+            <Button
+              text="Reload Data"
+              color="btn btn-danger"
+              type="reset"
+              style={{ margin: "0 10px" }}
+              onClick={() => {
+                setIncPrice(false);
+                setDecPrice(false);
+                setMarkupValue("");
+                setUnitPriceModify(false);
+                setProductsInTable();
+              }}
+            />
           </div>
           <table className="table table-hover table-responsive-sm">
             <tbody>
@@ -3076,6 +3182,32 @@ const SaveInvoiceData = () => {
               </tr>
             </tbody>
           </table>
+          <div className={styles.divRow}>
+            <Button
+              text="Update Inventory"
+              color="btn btn-info"
+              type="submit"
+              onClick={pushInventoryDetails}
+            />
+            <Button
+              text="Download LinkingLogs"
+              color="btn btn-info"
+              type="submit"
+              onClick={downloadLinkingLogs}
+            />
+            <Button
+              text="Download POS-Logs"
+              color="btn btn-info"
+              type="submit"
+              onClick={downloadPosLogs}
+            />
+            <Button
+              text="Re upload"
+              color="btn btn-info"
+              type="submit"
+              onClick={() => window.location.reload()}
+            />
+          </div>
           <div style={{ textAlign: "center" }}>
             <FormControl component="fieldset">
               <FormGroup aria-label="position" row>
@@ -3113,37 +3245,6 @@ const SaveInvoiceData = () => {
                 />
               </FormGroup>
             </FormControl>
-          </div>
-          <div className={styles.divRow}>
-            <Button
-              text="Update Inventory"
-              color="btn btn-info"
-              type="submit"
-              onClick={pushInventoryDetails}
-            />
-            <Button
-              text="Download LinkingLogs"
-              color="btn btn-info"
-              type="submit"
-            />
-            <Button
-              text="Download POS-Logs"
-              color="btn btn-info"
-              type="submit"
-            />
-
-            {/* <Button
-                  text="Save Invoice Data"
-                  color="btn btn-info"
-                  type="submit"
-                  onClick={toggleModal}
-                /> */}
-            <Button
-              text="Re upload"
-              color="btn btn-info"
-              type="submit"
-              onClick={() => window.location.reload()}
-            />
           </div>
         </div>
       );
@@ -3200,6 +3301,125 @@ const SaveInvoiceData = () => {
 
   // }
 
+  const markupApplyOnProduct = async () => {
+    // setPendingLoader(true)
+    let inputMarkup = markupValue;
+    console.log(tableData);
+    console.log("markupApplyOnProduct");
+    console.log(inputMarkup);
+    if (inputMarkup === undefined || inputMarkup === "") {
+      alert("Input Text is Empty !!");
+    } else {
+      let tempData = tableData;
+      let newData = tempData.map((product) => {
+        if (incPrice === true) {
+          if (product.priceIncrease === 1) {
+            return {
+              ...product,
+              markup: parseFloat(inputMarkup),
+              sellingPriceChange: (
+                parseFloat(product.cp) +
+                (parseFloat(product.cp) * inputMarkup) / 100
+              )
+                .toFixed(2)
+                .toString(),
+            };
+          } else {
+            return {
+              ...product,
+            };
+          }
+        }
+        if (decPrice === true) {
+          if (product.priceIncrease === -1) {
+            return {
+              ...product,
+              markup: parseFloat(inputMarkup),
+              sellingPriceChange: (
+                parseFloat(product.cp) +
+                (parseFloat(product.cp) * inputMarkup) / 100
+              )
+                .toFixed(2)
+                .toString(),
+            };
+          } else {
+            return {
+              ...product,
+            };
+          }
+        }
+        if (incPrice === false && decPrice === false) {
+          setUnitPriceModify(true);
+          return {
+            ...product,
+            markup: parseFloat(inputMarkup),
+            sellingPriceChange: (
+              parseFloat(product.cp) +
+              (parseFloat(product.cp) * inputMarkup) / 100
+            )
+              .toFixed(2)
+              .toString(),
+          };
+        }
+      });
+      console.log("newData : ", newData);
+      setTableData(newData);
+      renderTableData();
+      // setPendingLoader(false)
+    }
+  };
+
+  const downloadLinkingLogs = async () => {
+    console.log("downloadLinkingLogs");
+    // let date = todayDate;
+    console.log("date : ", todayDate);
+    console.log("invoice : ", inv);
+    let data = {
+      LinkingDate: todayDate,
+      InvoiceName: inv,
+      InvoiceNo: num,
+    };
+    // let data = {
+    //   LinkingDate: "2022-3-15",
+    //   InvoiceName: "chetak",
+    //   InvoiceNo:"952119"
+    // };
+    console.log(data);
+    const res = await inventoryService.getLinkingLogsXlsx(data);
+    console.log(res);
+    // if(res.status === "201"){
+
+    //   alert("Data Not Found");
+    // }else{
+    FileDownload(res.data, "linkinglogs.xlsx");
+    // }
+  };
+
+  const downloadPosLogs = async () => {
+    console.log("downloadPosLogs");
+    // let date = todayDate;
+    console.log("date : ", todayDate);
+    console.log("invoice : ", inv);
+    let data = {
+      UpdateDate: todayDate,
+      InvoiceName: inv,
+      InvoiceNo: num,
+    };
+    // let data = {
+    //   UpdateDate:"2022-3-2",
+    //   InvoiceName:"chetak",
+    //   InvoiceNo:"TEST"
+    // }
+    console.log(data);
+    const res = await inventoryService.getPosLogsXlsx(data);
+    console.log(res);
+    // if(res.status === "201"){
+
+    //   alert("Data Not Found");
+    // }else{
+    FileDownload(res.data, "Poslogs.xlsx");
+    // }
+  };
   const pushInventoryDetails = async () => {
     let dataForUpdate = [];
 
@@ -3217,7 +3437,9 @@ const SaveInvoiceData = () => {
         isNaN(product.extendedPrice) ||
         product.linkingCorrect === "false" ||
         product.margin === "Infinity" ||
-        product.margin === "0.00";
+        product.margin === "0.00" ||
+        product.isReviewed === "false" ||
+        product.isReviewed === "";
       // console.log("isEmpty : ", isEmpty);
       // product.sellingPrice = product.sellingPriceChange
       product.invError = product.cp >= 3 * product.cost ? "YES" : "";
@@ -3239,6 +3461,7 @@ const SaveInvoiceData = () => {
     }
   };
   const autoMarginForPrice = async (value) => {
+    setPendingLoader(true);
     console.log("autoMarginForPrice");
     console.log(tableData);
     console.log(value);
@@ -3267,10 +3490,13 @@ const SaveInvoiceData = () => {
           sampleData.push({
             ...product,
             sellingPriceChange: parseFloat(sp).toFixed(2),
-            markup:
-              ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
-                parseFloat(product.cp)) *
-              100,
+            markup: parseFloat(
+              (
+                ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
+                  parseFloat(product.cp)) *
+                100
+              ).toFixed(2)
+            ),
           });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
@@ -3306,10 +3532,13 @@ const SaveInvoiceData = () => {
           sampleData.push({
             ...product,
             sellingPriceChange: parseFloat(sp).toFixed(2),
-            markup:
-              ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
-                parseFloat(product.cp)) *
-              100,
+            markup: parseFloat(
+              (
+                ((parseFloat(sp.toFixed(2)) - parseFloat(product.cp)) /
+                  parseFloat(product.cp)) *
+                100
+              ).toFixed(2)
+            ),
           });
           console.log("new_sellingPrice : ", parseFloat(sp).toFixed(2));
           // product.sellingPrice = parseFloat(sp).toFixed(2);
@@ -3390,113 +3619,103 @@ const SaveInvoiceData = () => {
     if (sampleData.length !== 0) {
       setTableData(sampleData);
     }
+    setPendingLoader(false);
   };
 
   const handleChange = async (row, key, value) => {
-    // let tempTableData = [...tableData];
-    // tempTableData[row][key] = value;
-    // const { itemNo } = tempTableData[row];
-    // if (
-    //   tempTableData[row]["qty"] !== "" &&
-    //   tempTableData[row]["itemNo"] !== "" &&
-    //   tempTableData[row]["unitPrice"] !== ""
-    // ) {
-    //   const index = emptyColumnList.indexOf(row);
-    //   if (index > -1) {
-    //     emptyColumnList.splice(index, 1);
-    //   }
-    // } else {
-    //   emptyColumnList.push(row);
-    // }
-    // setEmptyColumn(emptyColumnList);
-    // if (key === "itemNo") {
-    //   tempTableData[row]["description"] = productDetails[value].Description;
-    //   tempTableData[row]["pieces"] = productDetails[value].Quantity;
-    //   tempTableData[row]["sku"] = productDetails[value].sku;
-    //   /**auto populate barcode & other pos fields*/
-    //   tempTableData[row]["barcode"] = productDetails[value].Barcode;
-    //   tempTableData[row]["posName"] = productDetails[value].POS;
-    //   tempTableData[row]["posSku"] = productDetails[value].PosSKU;
-    // }
-
-    // if (key === "unitPrice" || key === "sp" || key === "itemNo") {
-    //   let cp = parseFloat(tempTableData[row]["cp"]);
-    //   let sp = parseFloat(tempTableData[row]["sp"]);
-    //   let markup = ((sp - cp) / cp) * 100;
-    //   let cost =
-    //     parseFloat(tempTableData[row]["unitPrice"]) /
-    //     tempTableData[row]["pieces"];
-    //   // let sp = cp + (cp * markup) / 100;
-    //   // if (tempTableData[row]["pieces"]) {
-    //   //   sp = sp / tempTableData[row]["pieces"];
-    //   // }
-    //   tempTableData[row]["markup"] = isNaN(markup) ? 0 : markup.toFixed(2);
-    //   tempTableData[row]["cp"] = isNaN(cost) ? 0 : cost.toFixed(2);
-    // }
-
-    // if (key === "qty" || key === "unitPrice") {
-    //   const extendedPrice =
-    //     parseFloat(tempTableData[row]["qty"]) *
-    //     parseFloat(tempTableData[row]["unitPrice"]);
-    //   const cp = tempTableData[row]["unitPrice"] / tempTableData[row]["pieces"];
-    //   if (!isNaN(extendedPrice)) {
-    //     tempTableData[row]["extendedPrice"] = extendedPrice.toFixed(2);
-    //   }
-    //   if (!isNaN(cp)) {
-    //     tempTableData[row]["cp"] = cp.toFixed(2);
-    //   }
-    // }
-    // if (itemNo) {
-    //   if (+tempTableData[row]["unitPrice"] > +productDetails[itemNo].Price) {
-    //     tempTableData[row]["priceIncrease"] = 1;
-    //   } else if (
-    //     +tempTableData[row]["unitPrice"] < +productDetails[itemNo].Price
-    //   ) {
-    //     tempTableData[row]["priceIncrease"] = -1;
-    //   } else if (
-    //     +tempTableData[row]["unitPrice"] == +productDetails[itemNo].Price
-    //   ) {
-    //     tempTableData[row]["priceIncrease"] = 0;
-    //   }
-    // }
-
-    // if (key === "barcode") {
-    //   tempTableData[row]["barcode"] = value;
-    // }
-    // setTableData(tempTableData);
-    // console.log("handleChange_tableData : ",tableData);
-
+    console.log("handleChange  : ", value);
     console.log(value);
     console.log(typeof value);
+    let tempTableData2 = [];
     if (key === "sellingPriceChange") {
       // setNewUnitPrice(val);
       setUnitPriceModify(true);
       if (value === tableDataCopy[row].sellingPrice) {
         setUnitPriceModify(false);
+        tempTableData2 = {
+          ...tableData,
+          [row]: {
+            ...tableData[row],
+            [key]: value,
+            ["markup"]: parseFloat(
+              (
+                ((parseFloat(value) - parseFloat(tableDataCopy[row].cp)) /
+                  parseFloat(tableDataCopy[row].cp)) *
+                100
+              ).toFixed(2)
+            ),
+          },
+        };
+        const propertyNames = Object.values(tempTableData2);
+        setTableData(propertyNames);
+      } else {
+        tempTableData2 = {
+          ...tableData,
+          [row]: {
+            ...tableData[row],
+            [key]: value,
+            ["markup"]: parseFloat(
+              (
+                ((parseFloat(value) - parseFloat(tableDataCopy[row].cp)) /
+                  parseFloat(tableDataCopy[row].cp)) *
+                100
+              ).toFixed(2)
+            ),
+          },
+        };
+
+        const propertyNames = Object.values(tempTableData2);
+
+        console.log("propertyName : ", propertyNames);
+        // console.log("handelChange_propertyNames[row] : ", propertyNames[row]);
+        // console.log("handleChange_tableDataCopy : ", tableDataCopy);
+        console.log("handleChange_tableData : ", tableData);
+        setTableData(propertyNames);
       }
+
       // setPrevNewUnitPrice(tableDataCopy[row].sellingPrice);
       console.log("NewUnitPrice_value : ", value);
       console.log("PrevNewUnitPrice_value : ", tableDataCopy[row].sellingPrice);
     }
 
-    const tempTableData2 = {
-      ...tableData,
-      [row]: {
-        ...tableData[row],
-        [key]: value,
-        ["markup"]:
-          ((parseFloat(value) - parseFloat(tableDataCopy[row].cp)) /
-            parseFloat(tableDataCopy[row].cp)) *
-          100,
-      },
-    };
-    const propertyNames = Object.values(tempTableData2);
+    if (key === "markup") {
+      if (value === "" || value === "0") {
+        setUnitPriceModify(false);
+        tempTableData2 = {
+          ...tableData,
+          [row]: {
+            ...tableData[row],
+            [key]: value,
+            ["sellingPriceChange"]: tableDataCopy[row].sellingPrice,
+          },
+        };
+        const propertyNames = Object.values(tempTableData2);
+        setTableData(propertyNames);
+      } else {
+        setUnitPriceModify(true);
+        tempTableData2 = {
+          ...tableData,
+          [row]: {
+            ...tableData[row],
+            [key]: value,
+            ["sellingPriceChange"]: (
+              parseFloat(tableData[row].cp) +
+              (parseFloat(tableData[row].cp) * value) / 100
+            )
+              .toFixed(2)
+              .toString(),
+          },
+        };
 
-    console.log("propertyName : ", propertyNames);
-    console.log("handelChange_propertyNames[row] : ", propertyNames[row]);
-    console.log("handleChange_tableDataCopy : ", tableDataCopy);
-    console.log("handleChange_tableData : ", tableData);
-    setTableData(propertyNames);
+        const propertyNames = Object.values(tempTableData2);
+
+        console.log("propertyName : ", propertyNames);
+        // console.log("handelChange_propertyNames[row] : ", propertyNames[row]);
+        // console.log("handleChange_tableDataCopy : ", tableDataCopy);
+        console.log("handleChange_tableData : ", tableData);
+        setTableData(propertyNames);
+      }
+    }
   };
 
   const mergeDuplicates = (a) => {
@@ -3687,6 +3906,21 @@ const SaveInvoiceData = () => {
       <div style={{ marginTop: "100px", marginLeft: "700px" }}>
         <CircularProgress />
       </div>
+    );
+  }
+
+  if (pendingLoader) {
+    return (
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        closeOnClick={false}
+        pauseOnHover={true}
+        draggable={false}
+        progress={undefined}
+        theme="dark"
+      />
     );
   }
   return (
@@ -4006,7 +4240,16 @@ const SaveInvoiceData = () => {
           </CButton>
         </CModalFooter>
       </CModal>
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        closeOnClick={false}
+        pauseOnHover={true}
+        draggable={false}
+        progress={undefined}
+        theme="dark"
+      />
     </div>
   );
 };
