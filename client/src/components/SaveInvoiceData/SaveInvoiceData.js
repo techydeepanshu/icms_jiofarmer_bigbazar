@@ -855,7 +855,6 @@ const SaveInvoiceData = () => {
 
       updateSku = singleItemData[0].posSku;
 
-      
       // const availWoo = await getProducts(); // fetch product details from WooCommerce website  (wooComProducts)
       // console.log("availWoo : ",availWoo)
 
@@ -957,8 +956,7 @@ const SaveInvoiceData = () => {
           if (result === "") {
             let res = await pushQtyToInventory(index);
             console.log(res);
-
-          }else {
+          } else {
             // alert("Inventory already updated!!");
             toast.info("Inventory already updated!!", {
               position: "bottom-right",
@@ -1163,7 +1161,9 @@ const SaveInvoiceData = () => {
             // CREATE LOG AND UPDATE IN DB
             let tempdata2 = tableData.filter(
               (e) =>
-                e.barcode === product.BARCODE && e.itemNo === product.itemNo && e.description === product.description
+                e.barcode === product.BARCODE &&
+                e.itemNo === product.itemNo &&
+                e.description === product.description
             );
             if (tempdata2[0].barcode == product.BARCODE) {
               const inventoryLog = {
@@ -1227,7 +1227,7 @@ const SaveInvoiceData = () => {
   };
 
   const updateInventoryDetails = async (index) => {
-    // dispatch({ type: "LOADER" });
+    dispatch({ type: "LOADER" });
     let result = await inventoryService.getPosInventoryLogs({
       Barcode: tableData[index].barcode,
       ItemNo: tableData[index].itemNo,
@@ -1239,7 +1239,6 @@ const SaveInvoiceData = () => {
     if (result === "") {
       let res = await pushQtyToInventory(index);
       if (res !== false) {
-        
         // dispatch({ type: "LOADER" });
         const sampleData2 = {
           ...tableData,
@@ -1267,6 +1266,7 @@ const SaveInvoiceData = () => {
         progress: undefined,
       });
     }
+    dispatch({ type: "LOADER" });
   };
 
   const pushQtyToInventory = async (index) => {
@@ -1421,7 +1421,6 @@ const SaveInvoiceData = () => {
         });
         return false;
       }
-      
     } else {
       // alert("Some Error Occurred")
       toast.error("Some Error Occurred", {
@@ -2133,8 +2132,189 @@ const SaveInvoiceData = () => {
       });
   };
 
-  const updateItem = (props, ocrCost) => {
+  const updateAllItem = async (ocrCost,whereToFunctionCall,dataFromLinkFunc,productIndex) => {
+    console.log(ocrCost)
+    console.log(whereToFunctionCall)
+    console.log(dataFromLinkFunc)
+    console.log(productIndex)
+    
+    //  let tempShowPosState = {
+    //     posName:tableData[productIndex].posName,
+    //     size:tableData[productIndex].size,
+    //     department:tableData[productIndex].department,
+    //     sellingPrice:tableData[productIndex].sellingPrice,
+    //     barcode:tableData[productIndex].barcode,
+    //     posSku:tableData[productIndex].posSku,
+    //     item:tableData[productIndex].itemNo,
+    //   };
+
+     let tempShowPosState = dataFromLinkFunc;
+     let tempShowPosIndex = productIndex;
+     let tempUnitsInCase = tableData[productIndex].pieces;
+     let tempPrice = tableData[productIndex].unitPrice;
+     let tempUnitCost = tableData[productIndex].unitCost;
+     let tempUnitPriceValue = tableData[productIndex].unitPrice;
+     let tempNotFound = dataFromLinkFunc.notfound
+    
+    console.log(tempShowPosState)
+    console.log(tempShowPosIndex)
+    console.log(tempUnitsInCase)
+    console.log(tempPrice)
+    console.log(tempUnitCost)
+    console.log(tempUnitPriceValue)
+
+    let data;
+    console.log("ocrCost_cp : ", ocrCost);
+    console.log("updateItem_showPosState : ", tempShowPosState);
+    console.log("updateItem_notFounds : ", tempNotFound);
+    let cp = (parseFloat(tempUnitPriceValue) / parseInt(tempUnitsInCase)).toFixed(2);
+    console.log("cp : ", cp);
+    console.log("unitPriceValue : ", tempUnitPriceValue);
+    console.log("unitsInCase : ", tempUnitsInCase);
+    console.log(ocrCost === undefined ? cp : ocrCost);
+    //console.log(tempShowPosState);
+    if (tempNotFound === "true") {
+      // console.log(props.selectedInvoice);
+      console.log("notfoundstrue");
+      data = {
+        invoiceName: inv,
+        itemName: tempShowPosState.item,
+        value: {
+          POS: tempShowPosState.pos,
+          Barcode: tempShowPosState.barcode,
+          PosSKU: tempShowPosState.posSku,
+          isReviewed: "true",
+          Description: tempShowPosState.description,
+          Size: tempShowPosState.size,
+          Department: tempShowPosState.department,
+          SellerCost: ocrCost === undefined ? cp : ocrCost,
+          SellingPrice: tempShowPosState.unitPrice,
+          Quantity: tempUnitsInCase,
+          Price: tempPrice,
+          LinkingCorrect: "true",
+        },
+      };
+      
+    } else {
+      data = {
+        invoiceName: inv,
+        itemName: tempShowPosState.item,
+        value: {
+          POS: tempShowPosState.pos,
+          Barcode: tempShowPosState.barcode,
+          PosSKU: tempShowPosState.posSku,
+          isReviewed: "true",
+          Size: tempShowPosState.size,
+          Department: tempShowPosState.department,
+          SellerCost: ocrCost === undefined ? cp : ocrCost,
+          SellingPrice: tempShowPosState.unitPrice,
+          LinkingCorrect: "true",
+        },
+      };
+    }
+
+    console.log("updateItem_data : ", data);
+    await inventoryService
+      .UpdateProductFields(data)
+      .then((res) => {
+        if (!res) {
+          throw new Error("Product not created");
+        }
+        console.log(res);
+        // alert("Successfully updated fields");
+        toast.success("Successfully updated fields", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        // setStateUpdated(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        // alert("Some error occuured in creating product");
+        toast.success("Some error occuured in creating product", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .finally(async () => {
+        // setLoader(false);
+        // dispatch({type: "LOADER"});
+        //  setStateUpdated("true");
+        //  console.log(ocrCost);
+        //  console.log(unitCost);
+        if (ocrCost > tempUnitCost) {
+          setCostInc("true");
+          setCostDec("");
+        }
+        if (ocrCost < tempUnitCost) {
+          setCostDec("true");
+          setCostInc("");
+        }
+        if (tempNotFound === "true") {
+          // setNotFounds("false");
+          dispatch({ type: "NOT_FOUNDS", data: "false" });
+          // setUnitsInCase("");
+          dispatch({ type: "UNITS_IN_CASE", data: "" });
+          // setPrice("");
+          dispatch({ type: "PRICE", data: "" });
+        }
+        console.log(userEmail);
+        console.log(tableData[tempShowPosIndex]);
+        const description = tableData[tempShowPosIndex].description;
+
+        //Cost chnage and invoice error handling logic.
+        const costChange = tableData[tempShowPosIndex].cp - data.value.SellerCost;
+        console.log(costChange);
+        let a = "",
+          b = "",
+          c = "";
+        const invError =
+          tableData[tempShowPosIndex].cp >= 3 * tableData[tempShowPosIndex].cost
+            ? "YES"
+            : "";
+        a = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
+        b = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
+        c = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
+
+        console.log(costChange);
+        console.log(description);
+        console.log(todayDate);
+        console.log(day);
+        console.log(num);
+        const logState = data;
+        delete logState.value.isReviewed;
+        logState.Description = description;
+        logState.PersonName = userEmail;
+        logState.LinkingDate = todayDate;
+        logState.InvoiceDate = day;
+        logState.InvoiceNo = num;
+        logState.CostIncrease = a;
+        logState.CostDecrease = b;
+        logState.CostSame = c;
+        logState.InvoiceUnitCost = tableData[tempShowPosIndex].cp;
+        logState.InvError = invError;
+        console.log(logState);
+
+        const res = await inventoryService.generateLog(logState);
+        console.log(res);
+        // setProductsInTable();
+      });
+  };
+
+
+  const updateItem = async (props, ocrCost,whereToFunctionCall,dataFromLinkFunc,productIndex) => {
     setShowPosIndex(-1);
+ 
     let data;
     console.log("ocrCost_cp : ", ocrCost);
     console.log("updateItem_showPosState : ", showPosState);
@@ -2166,7 +2346,8 @@ const SaveInvoiceData = () => {
           LinkingCorrect: "true",
         },
       };
-      toggleModal("notfounds");
+     toggleModal("notfounds");
+  
     } else {
       data = {
         invoiceName: inv,
@@ -2186,7 +2367,7 @@ const SaveInvoiceData = () => {
     }
 
     console.log("updateItem_data : ", data);
-    inventoryService
+    await inventoryService
       .UpdateProductFields(data)
       .then((res) => {
         if (!res) {
@@ -2841,7 +3022,7 @@ const SaveInvoiceData = () => {
                   // console.log(newValue);
                   if (newValue) {
                     let newState = { ...showPosState };
-                    console.log(newValue);
+                    console.log("newValue : ",newValue);
                     // newState.item = newValue.name;
                     newState.item = element.itemNo;
                     newState.description = newValue.name;
@@ -2852,10 +3033,17 @@ const SaveInvoiceData = () => {
                     newState.department = newValue.department;
                     newState.unitCost = element.cp;
                     newState.unitPrice = newValue.price;
+                    isEmpty ? newState.notfound = "true": newState.notfound = "false";
+                    
                     // setShowPosState(newState);
                     dispatch({ type: "SET_POS_STATE", data: newState });
                     setShowPosIndex(index);
-                    setUnitCost(newValue.cost);
+                    setUnitCost(newValue.cp);
+                    console.log("Index : ", index);
+                    console.log("showPosIndex : ", showPosIndex);
+                    let newState2 = newState;
+                    handleChange(index, "linkingPos", newState2);
+
                     // setStateUpdated("");
                     if (isEmpty) {
                       // setNotFounds("true");
@@ -3023,7 +3211,13 @@ const SaveInvoiceData = () => {
                 text="Update Inventory"
                 color="btn btn-info"
                 type="submit"
-                onClick={() => updateInventoryDetails(index)}
+                onClick={() => {
+                  if(isEmpty || element.isReviewed === "false" ||
+                  element.isReviewed === ""){
+                    alert("Some Error Occurred With this Product")
+                  }else{
+                    updateInventoryDetails(index)}}
+                  }
                 style={
                   element.isInventoryUpdate === "true"
                     ? { width: 150, background: "green", color: "white" }
@@ -3065,6 +3259,12 @@ const SaveInvoiceData = () => {
               color="btn btn-info"
               type="submit"
               onClick={pushInventoryDetails}
+            />
+            <Button
+              text="Link All"
+              color="btn btn-info"
+              type="submit"
+              onClick={LinkAllProduct}
             />
             <Button
               text="Download LinkingLogs"
@@ -3190,6 +3390,12 @@ const SaveInvoiceData = () => {
               onClick={pushInventoryDetails}
             />
             <Button
+              text="Link All"
+              color="btn btn-info"
+              type="submit"
+              onClick={LinkAllProduct}
+            />
+            <Button
               text="Download LinkingLogs"
               color="btn btn-info"
               type="submit"
@@ -3311,8 +3517,10 @@ const SaveInvoiceData = () => {
       alert("Input Text is Empty !!");
     } else {
       let tempData = tableData;
-      let newData = tempData.map((product) => {
-        if (incPrice === true) {
+      let newData = [];
+
+      if (incPrice === true) {
+        newData = tempData.map((product) => {
           if (product.priceIncrease === 1) {
             return {
               ...product,
@@ -3329,8 +3537,14 @@ const SaveInvoiceData = () => {
               ...product,
             };
           }
-        }
-        if (decPrice === true) {
+        });
+
+        console.log("newData : ", newData);
+        tempData = newData;
+      }
+      // setTableData(newData);
+      if (decPrice === true) {
+        newData = tempData.map((product) => {
           if (product.priceIncrease === -1) {
             return {
               ...product,
@@ -3347,8 +3561,14 @@ const SaveInvoiceData = () => {
               ...product,
             };
           }
-        }
-        if (incPrice === false && decPrice === false) {
+        });
+
+        console.log("newData : ", newData);
+        tempData = newData;
+      }
+      // setTableData(newData);
+      if (incPrice === false && decPrice === false) {
+        newData = tempData.map((product) => {
           setUnitPriceModify(true);
           return {
             ...product,
@@ -3360,12 +3580,77 @@ const SaveInvoiceData = () => {
               .toFixed(2)
               .toString(),
           };
-        }
-      });
+        });
+      }
+
       console.log("newData : ", newData);
       setTableData(newData);
       renderTableData();
       // setPendingLoader(false)
+    }
+  };
+
+  const LinkAllProduct = async () => {
+    console.log("LinkAllProduct");
+
+    console.log("tableDataCopy : ", tableDataCopy);
+    console.log("tableData : ", tableData);
+
+    let filterdata = [];
+
+    filterdata = tableData.filter((product, index) => {
+      // let isEmpty =
+      //   product.qty === "" ||
+      //   product.itemNo === "" ||
+      //   !product.pieces ||
+      //   isNaN(product.unitPrice) ||
+      //   product.unitPrice === "" ||
+      //   isNaN(product.extendedPrice) ||
+      //   product.linkingCorrect === "false" ||
+      //   product.margin === "Infinity" ||
+      //   product.margin === "0.00" ||
+      //   product.isReviewed === "false" ||
+      //   product.isReviewed === "";
+      // console.log("isEmpty : ", isEmpty);
+      // product.sellingPrice = product.sellingPriceChange
+      // product.invError = product.cp >= 3 * product.cost ? "YES" : "";
+      return (
+        product.barcode !== tableDataCopy[index].barcode
+
+      );
+    });
+
+    if (filterdata.length !== 0) {
+      // dispatch({ type: "LOADER" });
+      let id = toast.loading("Please wait...")
+      await Promise.all(
+        filterdata.map(async(product)=>{
+          
+        await updateAllItem((
+          parseFloat(product.unitPrice) /
+          parseInt(product.pieces)
+        ).toFixed(2),"linkAllProduct",product.linkingPos,(product.SerialNoInInv - 1))
+
+        })
+      )
+      console.log("filterdata : ",filterdata)
+      // toast.loading("Please wait...", {
+      //   position: "top-center",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // });
+      
+      await setProductsInTable()
+      
+      
+      // dispatch({ type: "LOADER" });
+      toast.update(id, { render: "All is good", type: "success", isLoading: false ,autoClose: 5000});
+    } else {
+      alert("Data not change");
     }
   };
 
@@ -3625,8 +3910,13 @@ const SaveInvoiceData = () => {
   const handleChange = async (row, key, value) => {
     console.log("handleChange  : ", value);
     console.log(value);
+    console.log(row);
+    console.log(key);
     console.log(typeof value);
     let tempTableData2 = [];
+    let tempTableData3 = [...tableData];
+    tempTableData3[row][key] = value;
+    const { itemNo } = tempTableData3[row];
     if (key === "sellingPriceChange") {
       // setNewUnitPrice(val);
       setUnitPriceModify(true);
@@ -3716,6 +4006,133 @@ const SaveInvoiceData = () => {
         setTableData(propertyNames);
       }
     }
+
+    if (key === "linkingPos") {
+      tempTableData2 = {
+        ...tableData,
+        [row]: {
+          ...tableData[row],
+          ["posName"]: value.pos,
+          ["size"]: value.size,
+          ["department"]: value.department,
+          ["sellingPriceChange"]: value.unitPrice,
+          ["sellingPrice"]: value.unitPrice,
+          ["barcode"]: value.barcode,
+          ["posSku"]: value.posSku,
+          ["unitCost"]: value.unitCost,
+          ["itemNo"]: value.item,
+          
+        },
+      };
+      const propertyNames = Object.values(tempTableData2);
+      setTableData(propertyNames);
+
+      // tempTableData3[row]["posName"]= value.pos;
+      // tempTableData3[row]["size"]= value.size;
+      // tempTableData3[row]["department"]= value.department;
+      // tempTableData3[row]["sellingPriceChange"]= value.unitPrice;
+      // tempTableData3[row]["sellingPrice"]= value.unitPrice;
+      // tempTableData3[row]["barcode"]= value.barcode;
+      // tempTableData3[row]["posSku"]= value.posSku;
+      // tempTableData3[row]["unitCost2"]= value.unitCost2;
+      // setTableData(tempTableData3);
+    }
+    if (key === "unitPrice") {
+      tempTableData2 = {
+        ...tableData,
+        [row]: {
+          ...tableData[row],
+          [key]: parseFloat(value)
+        },
+      };
+      const propertyNames = Object.values(tempTableData2);
+      setTableData(propertyNames);
+    }
+    if (key === "pieces") {
+      tempTableData2 = {
+        ...tableData,
+        [row]: {
+          ...tableData[row],
+          [key]: parseFloat(value)
+        },
+      };
+      const propertyNames = Object.values(tempTableData2);
+      setTableData(propertyNames);
+    }
+
+
+
+    // if (
+    //   tempTableData3[row]["qty"] !== "" &&
+    //   tempTableData3[row]["itemNo"] !== "" &&
+    //   tempTableData3[row]["unitPrice"] !== ""
+    // ) {
+    //   const index = emptyColumnList.indexOf(row);
+    //   if (index > -1) {
+    //     emptyColumnList.splice(index, 1);
+    //   }
+    // } else {
+    //   emptyColumnList.push(row);
+    // }
+    // setEmptyColumn(emptyColumnList);
+    if (key === "itemNo") {
+      tempTableData3[row]["description"] = productDetails[value].Description;
+      tempTableData3[row]["pieces"] = productDetails[value].Quantity;
+      tempTableData3[row]["sku"] = productDetails[value].sku;
+      /**auto populate barcode & other pos fields*/
+      tempTableData3[row]["barcode"] = productDetails[value].Barcode;
+      tempTableData3[row]["posName"] = productDetails[value].POS;
+      tempTableData3[row]["posSku"] = productDetails[value].PosSKU;
+      setTableData(tempTableData3);
+    }
+    // if (key === "unitPrice" || key === "sp" || key === "itemNo") {
+    //   let cp = parseFloat(tempTableData3[row]["cp"]);
+    //   let sp = parseFloat(tempTableData3[row]["sp"]);
+    //   let markup = ((sp - cp) / cp) * 100;
+    //   let cost =
+    //     parseFloat(tempTableData3[row]["unitPrice"]) /
+    //     tempTableData3[row]["pieces"];
+    //   // let sp = cp + (cp * markup) / 100;
+    //   // if (tempTableData3[row]["pieces"]) {
+    //   //   sp = sp / tempTableData3[row]["pieces"];
+    //   // }
+    //   tempTableData3[row]["markup"] = isNaN(markup) ? 0 : markup.toFixed(2);
+    //   tempTableData3[row]["cp"] = isNaN(cost) ? 0 : cost.toFixed(2);
+    //   setTableData(tempTableData3);
+    // }
+
+    // if (key === "qty" || key === "unitPrice") {
+    //   const extendedPrice =
+    //     parseFloat(tempTableData3[row]["qty"]) *
+    //     parseFloat(tempTableData3[row]["unitPrice"]);
+    //   const cp = tempTableData3[row]["unitPrice"] / tempTableData3[row]["pieces"];
+    //   if (!isNaN(extendedPrice)) {
+    //     tempTableData3[row]["extendedPrice"] = extendedPrice.toFixed(2);
+    //   }
+    //   if (!isNaN(cp)) {
+    //     tempTableData3[row]["cp"] = cp.toFixed(2);
+    //   }
+    //   setTableData(tempTableData3);
+    // }
+    // if (itemNo) {
+    //   if (+tempTableData3[row]["unitPrice"] > +productDetails[itemNo].Price) {
+    //     tempTableData3[row]["priceIncrease"] = 1;
+    //   } else if (
+    //     +tempTableData3[row]["unitPrice"] < +productDetails[itemNo].Price
+    //   ) {
+    //     tempTableData3[row]["priceIncrease"] = -1;
+    //   } else if (
+    //     +tempTableData3[row]["unitPrice"] == +productDetails[itemNo].Price
+    //   ) {
+    //     tempTableData3[row]["priceIncrease"] = 0;
+    //   }
+    //   setTableData(tempTableData3);
+    // }
+
+    // if (key === "barcode") {
+    //   tempTableData3[row]["barcode"] = value;
+    //   setTableData(tempTableData3);
+    // }
   };
 
   const mergeDuplicates = (a) => {
