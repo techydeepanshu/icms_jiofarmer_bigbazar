@@ -866,7 +866,7 @@ app.post("/api/invoice/generatelog", validateLogin, function (req, res) {
 
   console.log(logData);
   let options = {
-    method: "POST",
+    method: "POST",  
     url: "http://44.201.186.179:3001/generatelog",
     body: logData,
     json: true,

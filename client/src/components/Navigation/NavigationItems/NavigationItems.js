@@ -11,6 +11,7 @@ const NavigationItems = (props) => {
         // console.log("User", user)
     }, [user])
     return (
+      <>
       <ul className={styles.NavigationItems}>
         <img className={styles.logo} src={CwIcon} alt="" />
         {props.isAuth ? (
@@ -25,6 +26,8 @@ const NavigationItems = (props) => {
           </>
         ) : null}
       </ul>
+      
+      </>
     );
 };
 

@@ -1831,7 +1831,14 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].SellingPrice
                 : "";
-
+            row.LinkByBarcode =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByBarcode
+                : "";
+            row.LinkByName =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByName
+                : "";
             // row.isInventoryUpdate =
             //   products[row.itemNo] !== undefined
             //     ? products[row.itemNo].isInventoryUpdate
@@ -2675,7 +2682,14 @@ const SaveInvoiceData = () => {
               products[row.itemNo] !== undefined
                 ? products[row.itemNo].SellingPrice
                 : "";
-
+            row.LinkByBarcode =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByBarcode
+                : "";
+            row.LinkByName =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByName
+                : "";
             // row.isInventoryUpdate =
             //   products[row.itemNo] !== undefined
             //     ? products[row.itemNo].isInventoryUpdate
@@ -2839,7 +2853,7 @@ const SaveInvoiceData = () => {
                 // onClick={() => addForReview(element, index)}
               >
                 <InfoOutlinedIcon
-                  style={element.isReviewed === "true" ? { fill: "red" } : null}
+                  style={element.LinkByBarcode === "true"?{ fill: "white",background:"#0a9812",borderRadius:"50px" }:element.isReviewed === "true" ? { fill: "red" } : null}
                 />
                 {/* <AddShoppingCartIcon
                       style={
