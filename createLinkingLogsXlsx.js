@@ -1,5 +1,6 @@
 const axios = require("axios");
 const ExcelJS = require("exceljs");
+require("dotenv").config({ path:"./.env" });
 const createLinkingLogsXlsx = async (req, res) => {
   console.log("body : ", req.query);
   const data = req.query;
@@ -7,7 +8,7 @@ const createLinkingLogsXlsx = async (req, res) => {
   // return req.LinkingDate
 
   const logsResult = await axios.get(
-    "http://44.201.186.179:3001/getlinkinglogs",
+    `http://${process.env.MONGO_IP}:3001/getlinkinglogs`,
     { headers: { "Contant-Type": "application/json" }, params: data }
   );
 

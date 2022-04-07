@@ -244,7 +244,7 @@ const SaveInvoiceData = () => {
   // });
 
   //***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
-
+  
   //Function to fetch wooCom Prpducts.
   async function getProducts() {
     console.log("IN WOOCOM PRODUCTS");

@@ -283,4 +283,10 @@ export class InventoryService {
     const res = await Axios.get(appendURL + "/api/invoice/getitemhandwritten", {params: data});
     return res.data;
   }
+
+  async syncProductsWithPos() {
+    // console.log(data);
+    const res = await Axios.get(appendURL + "/api/syncproductwithpos");
+    return res.data;
+  }
 }

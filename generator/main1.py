@@ -2,7 +2,8 @@ import nltk
 import re
 import pandas as pd
 from nltk.stem.porter import PorterStemmer
-dataset=pd.read_csv('../csv/Maharaja_Hicksville.csv',delimiter=',')
+dataset=pd.read_csv('./csv/Maharaja_Hicksville.csv',delimiter=',')
+# dataset=pd.read_csv('../csv/Maharaja_Hicksville.csv',delimiter=',')
 y=dataset.iloc[:,0:].values
 z=[]
 for i in range(0,len(y)):
@@ -22,4 +23,5 @@ for i in range(0,len(y)):
       x=x+"@@@"+str(y[i][j])
     z.append([s,x])
 csv= pd.DataFrame(z,columns=['val','name'])
-csv.to_csv('../csv/Hicksville.csv')
+csv.to_csv('./csv/Hicksville.csv')
+# csv.to_csv('../csv/Hicksville.csv')

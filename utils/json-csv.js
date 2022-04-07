@@ -2,7 +2,8 @@ const request=require("request");
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 require("dotenv").config({ path:"../.env" });
 const csvWriter = createCsvWriter({
-  path: 'Data.csv',
+  // path: 'Data.csv',
+  path: '../csv/Maharaja_Hicksville.csv',
   header: [
     {id:"UPC",title:"UPC"},
     {id:"SKU",title:"SKU"},

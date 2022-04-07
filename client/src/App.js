@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import Spinner from "./UI/Spinner/Spinner";
 import { checkAuthentication } from "./store/action/actionAuth";
 
+// import CircularProgress from "@material-ui/core/CircularProgress";
+
+
 const Auth = React.lazy(() => import("./containers/Auth/Auth"));
 const Logout = React.lazy(() => import("./containers/Auth/Logout/Logout"));
 const Invoice = React.lazy(() => import("./components/Invoice/Invoice"));
@@ -18,6 +21,7 @@ class App extends Component {
   componentDidMount() {
     this.props.checkAuthentication();
   }
+
   render() {
     let routes = (
       <Switch>
@@ -42,7 +46,10 @@ class App extends Component {
         </Switch>
       );
     }
+
+
     return (
+      <>
       <Suspense fallback = {<Spinner />}>
         <BrowserRouter>
             <div>
@@ -52,9 +59,13 @@ class App extends Component {
             </div>
         </BrowserRouter>  
       </Suspense>
+      
+      
+      </>
     )
   }
 }
+
 
 const mapStateToProps = state => {
     return {
