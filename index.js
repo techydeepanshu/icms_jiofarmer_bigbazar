@@ -719,7 +719,7 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://${process.env.MONGO_IP}:3001/invoice/${getDBInvoiceNam(
+    url: `http://${process.env.MONGO_IP}:3001/invoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,
@@ -748,7 +748,7 @@ app.put("/api/handwritteninvoice/product/update", validateLogin, function (req, 
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://${process.env.MONGO_IP}:3001/handwritteninvoice/${getDBInvoiceNam(
+    url: `http://${process.env.MONGO_IP}:3001/handwritteninvoice/${getDBInvoiceName(
       invoiceName
     )}/${itemName}`,
     body: value,

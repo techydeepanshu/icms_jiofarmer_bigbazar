@@ -35,52 +35,54 @@ class Toolbar extends Component {
           <nav className={styles.DesktopOnly}>
             <NavigationItems isAuth={this.props.isAuthenticated} />
           </nav>
-          <nav className={styles.sync}>
-            <Button
-              variant="contained"
-              color="default"
-              // className={classes.button}
-              startIcon={<SyncIcon />}
-              onClick={async () => {
-                try {
-                  db.collection("syncproducts")
-                    .doc("HfgC3uFpnEg1Kjw6oKRW")
-                    .set({ loader: true, error: false,workdone:false })
-                    .then(() => {
-                      console.log("Document successfully written!");
-                    });
-
-                  const result = await inventoryService.syncProductsWithPos();
-                  console.log("syncProductsWithPos : ", result);
-
-                  if (result.success === false) {
+          {this.props.isAuthenticated ? (
+            <nav className={styles.sync}>
+              <Button
+                variant="contained"
+                color="default"
+                // className={classes.button}
+                startIcon={<SyncIcon />}
+                onClick={async () => {
+                  try {
                     db.collection("syncproducts")
                       .doc("HfgC3uFpnEg1Kjw6oKRW")
-                      .set({ loader: false, error: true,workdone:false })
+                      .set({ loader: true, error: false, workdone: false })
                       .then(() => {
                         console.log("Document successfully written!");
                       });
-                  } else if (result.success === true) {
+
+                    const result = await inventoryService.syncProductsWithPos();
+                    console.log("syncProductsWithPos : ", result);
+
+                    if (result.success === false) {
+                      db.collection("syncproducts")
+                        .doc("HfgC3uFpnEg1Kjw6oKRW")
+                        .set({ loader: false, error: true, workdone: false })
+                        .then(() => {
+                          console.log("Document successfully written!");
+                        });
+                    } else if (result.success === true) {
+                      db.collection("syncproducts")
+                        .doc("HfgC3uFpnEg1Kjw6oKRW")
+                        .set({ loader: false, error: false, workdone: true })
+                        .then(() => {
+                          console.log("Document successfully written!");
+                        });
+                    }
+                  } catch (err) {
                     db.collection("syncproducts")
                       .doc("HfgC3uFpnEg1Kjw6oKRW")
-                      .set({ loader: false, error: false,workdone:true })
+                      .set({ loader: false, error: err, workdone: false })
                       .then(() => {
                         console.log("Document successfully written!");
                       });
                   }
-                } catch (err) {
-                  db.collection("syncproducts")
-                    .doc("HfgC3uFpnEg1Kjw6oKRW")
-                    .set({ loader: false, error: err,workdone:false })
-                    .then(() => {
-                      console.log("Document successfully written!");
-                    });
-                }
-              }}
-            >
-              Sync Products
-            </Button>
-          </nav>
+                }}
+              >
+                Sync Products
+              </Button>
+            </nav>
+          ) : null}
         </header>
       </>
     );

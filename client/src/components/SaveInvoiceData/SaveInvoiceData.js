@@ -99,6 +99,7 @@ const SaveInvoiceData = () => {
   const dispatch = useDispatch();
 
   //***********added by Deepanshu*********** */
+  const [indexProduct, setIndexProduct] = useState();
   const [incPrice, setIncPrice] = useState(false);
   const [decPrice, setDecPrice] = useState(false);
   const [productsPriceInc, setProductsPriceInc] = useState(
@@ -1440,12 +1441,13 @@ const SaveInvoiceData = () => {
 
   const updateUnits = async (index) => {
     const item = tableData[index];
-    console.log(item);
+    console.log("updateUnits : ",item);
     const data = {
       invoiceName: inv,
       itemName: item.itemNo,
       value: {
         Quantity: item.pieces,
+        SellerCost: item.cp
       },
     };
     inventoryService
@@ -2319,9 +2321,9 @@ const SaveInvoiceData = () => {
   };
 
 
-  const updateItem = async (props, ocrCost,whereToFunctionCall,dataFromLinkFunc,productIndex) => {
+  const updateItem = async (props, ocrCost,index=indexProduct) => {
     setShowPosIndex(-1);
- 
+    console.log("index : ",index)
     let data;
     console.log("ocrCost_cp : ", ocrCost);
     console.log("updateItem_showPosState : ", showPosState);
@@ -2415,40 +2417,67 @@ const SaveInvoiceData = () => {
         const description = tableData[showPosIndex].description;
 
         //Cost chnage and invoice error handling logic.
-        const costChange = tableData[showPosIndex].cp - data.value.SellerCost;
+        const costChange = data.value.SellerCost - data.value.SellerCost;
         console.log(costChange);
-        let a = "",
-          b = "",
-          c = "";
+        let costIncrease = "",
+          costDecrease = "",
+          constSame = "";
         const invError =
-          tableData[showPosIndex].cp >= 3 * tableData[showPosIndex].cost
-            ? "YES"
-            : "";
-        a = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
-        b = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
-        c = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
+        tableData[showPosIndex].cp == 0?"":tableData[showPosIndex].cp >= 3 * parseFloat(tableData[showPosIndex].cost)
+        ? "YES"
+        : "";
+        // const invError = "";
+        costIncrease = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
+        costDecrease = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
+        constSame = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
 
         console.log(costChange);
         console.log(description);
         console.log(todayDate);
         console.log(day);
         console.log(num);
-        const logState = data;
-        delete logState.value.isReviewed;
-        logState.Description = description;
-        logState.PersonName = userEmail;
-        logState.LinkingDate = todayDate;
-        logState.InvoiceDate = day;
-        logState.InvoiceNo = num;
-        logState.CostIncrease = a;
-        logState.CostDecrease = b;
-        logState.CostSame = c;
-        logState.InvoiceUnitCost = tableData[showPosIndex].cp;
-        logState.InvError = invError;
-        console.log(logState);
+        // const logState = data;
+        // delete logState.value.isReviewed;
+        // logState.Description = description;
+        // logState.PersonName = userEmail;
+        // logState.LinkingDate = todayDate;
+        // logState.InvoiceDate = day;
+        // logState.InvoiceNo = num;
+        // logState.CostIncrease = costIncrease;
+        // logState.CostDecrease = costDecrease;
+        // logState.CostSame = constSame;
+        // logState.InvoiceUnitCost = tableData[showPosIndex].cp;
+        // logState.InvError = invError;
+        // console.log(logState);
 
-        const res = await inventoryService.generateLog(logState);
-        console.log(res);
+        // const res = await inventoryService.generateLog(logState);
+        // console.log(res);
+
+
+        let log = {
+          InvoiceDescription: tableData[showPosIndex].description,
+          PosDescription: tableData[showPosIndex].posName,
+          SKU: tableData[showPosIndex].posSku,
+          Barcode: tableData[showPosIndex].barcode,
+          InvoiceName: inv,
+          ItemCode: tableData[showPosIndex].itemNo,
+          LinkingDate: todayDate,
+          PersonName: userEmail,
+          Size: tableData[showPosIndex].size,
+          PosUnitCost: tableData[showPosIndex].cost===""?data.value.SellerCost:tableData[showPosIndex].cost,
+          PosUnitPrice: tableData[showPosIndex].sellingPrice,
+          InvoiceNo: num,
+          InvoiceDate: day,
+          Department: tableData[showPosIndex].department,
+          InvUnitCost: data.value.SellerCost,
+          CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
+          CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
+          CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
+          InvError: invError,
+        };
+        console.log(log);
+        const logResult = await inventoryService.linkManuallyLog(log);
+        console.log(logResult);
         setProductsInTable();
       });
   };
@@ -2907,6 +2936,7 @@ const SaveInvoiceData = () => {
                     onClick={() => {
                       if (notFounds === "true") {
                         setUnitPriceValue(element.unitPrice);
+                        setIndexProduct(index)
                         toggleModal("notfounds");
                       } else {
                         updateItem(
@@ -2914,7 +2944,7 @@ const SaveInvoiceData = () => {
                           (
                             parseFloat(element.unitPrice) /
                             parseInt(element.pieces)
-                          ).toFixed(2)
+                          ).toFixed(2),index
                         );
                       }
                     }}
@@ -4067,7 +4097,9 @@ const SaveInvoiceData = () => {
         ...tableData,
         [row]: {
           ...tableData[row],
-          [key]: parseFloat(value)
+          [key]: parseInt(value),["cp"]:(parseFloat(tableData[row].unitPrice) / parseInt(value)).toFixed(
+            2
+          )
         },
       };
       const propertyNames = Object.values(tempTableData2);
