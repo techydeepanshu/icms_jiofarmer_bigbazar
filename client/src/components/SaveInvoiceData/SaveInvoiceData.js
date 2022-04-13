@@ -3701,6 +3701,7 @@ const SaveInvoiceData = () => {
   };
 
   const LinkAllProduct = async () => {
+    dispatch({ type: "API_LOADER" });
     console.log("LinkAllProduct");
 
     console.log("tableDataCopy : ", tableDataCopy);
@@ -3765,6 +3766,7 @@ const SaveInvoiceData = () => {
     } else {
       alert("Data not change");
     }
+    dispatch({ type: "API_LOADER" });
   };
 
   const downloadLinkingLogs = async () => {
