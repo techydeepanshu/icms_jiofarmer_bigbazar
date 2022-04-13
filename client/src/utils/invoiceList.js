@@ -15,6 +15,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "aahubarahs",
   }, 
+  {
+    value: "Jain-foods",
+    slug: "jain-foods",
+    jsonName: "Jainfoods.json",
+    emptyColumn: false,
+    databaseName: "Jainfoods",
+  }, 
   // {
   //   value: "Adelman foods",
   //   slug: "adelman-foods",
@@ -74,7 +81,7 @@ export const dropdownOptions = [
   //   value: "Aneja Distributors",
   //   slug: "aneja-distributors",
   //   jsonName: "aneja-distributors.json",
-  //   emptyColumn: false,
+  //   emptyColumn: true,
   //   databaseName: "anejadistributors",
   // },
 
@@ -815,6 +822,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "ontimes",
   }, 
+  {
+    value: "suncrop foods",
+    slug: "suncrop-foods",
+    jsonName: "suncrop-foods.json",
+    emptyColumn: false,
+    databaseName: "suncropfoods",
+  },
 
   //  added by sahil on 11 jan 2022.
   {
@@ -835,7 +849,7 @@ export const dropdownOptions = [
   //   value: "Fyve Elements",
   //   slug: "fyve-elements",
   //   jsonName: "fyve-elements.json",
-  //   emptyColumn: false,
+  //   emptyColumn: true,
   //   databaseName: "fyve-elements",
   // },
   // {
@@ -901,6 +915,13 @@ export const dropdownOptions = [
     jsonName: "radhey-foods.json",
     emptyColumn: false,
     databaseName: "radheyfoods",
+  } ,
+  {
+    value: "smile-onion",
+    slug: "smile-onion",
+    jsonName: "smile-onion.json",
+    emptyColumn: false,
+    databaseName: "smileonion",
   } ,
   // {
   //   value: "Raja foods",
@@ -1064,13 +1085,13 @@ export const dropdownOptions = [
   },
 
   // On 13 jan 2020 down to up ⬆︎ by sahil 
-  // {
-  //   value: "Surati",
-  //   slug: "surati",
-  //   jsonName: "surati.json",
-  //   emptyColumn: false,
-  //   databaseName: "suratis",
-  // }, 
+  {
+    value: "Surati",
+    slug: "surati",
+    jsonName: "surati.json",
+    emptyColumn: false,
+    databaseName: "suratis",
+  }, 
   // {
   //   value: "Symco distributor",
   //   slug: "symco-distributor",
@@ -1097,7 +1118,7 @@ export const dropdownOptions = [
   //   value: "Two brother wholesale",
   //   slug: "two-brother-wholesale",
   //   jsonName: "two-brother-wholesale.json",
-  //   emptyColumn: false,
+  //   emptyColumn: true,
   //   databaseName: "twobrotherwholesales",
   // },
   {

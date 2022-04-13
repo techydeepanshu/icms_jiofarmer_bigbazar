@@ -27,6 +27,7 @@ const csvWriter = createCsvWriter({
 });
 let options = {
   method: "GET",
+  // url: `${process.env.POS_API}/getdata/ProductInfo`,
   url: `${process.env.POS_API}/getdata/ProductInfo`,
 //   headers:{
 //     Authorization:'Basic '+Buffer.from("lRRqlkYefuV=:lRRqlkYefuV6jJ==:qzOUsBmZFgMDlwGtrgYypxUz").toString('base64')

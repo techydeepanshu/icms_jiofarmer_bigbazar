@@ -12,7 +12,10 @@ app.use(cors());
 app.use(bodyParser.json({limit:"50mb"}));
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true  ,parameterLimit:50000,limit:"50mb"}));
 mongoose
-  .connect("mongodb://verveuser:vervebot123@44.203.76.94/vervedb")
+  .connect("mongodb://verveuser:vervebot123@44.201.186.179/vervedb",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then((res) => console.log("success connecting to mongo"))
   .catch((err) => console.log(err));
 const Schema = mongoose.Schema;
@@ -56,6 +59,8 @@ const invoiceSchema = new Schema({
   SellerCost: String,
   Details: String,
   LinkingCorrect: String,
+  LinkByBarcode:String,
+  LinkByName:String
 });
 const notFoundSchema = new Schema({
   Item: String,
@@ -333,10 +338,11 @@ app.get("/getsavedinvoices/", (req, res) => {
 });
 
 app.get("/gethicksvilledata/", (req, res) => {
+  console.log("body : ",req.body)
   const  arr = req.body.string.split(" ");
- // console.log(arr);
+ console.log("arr :",arr);
   const regex = arr.join("|");
- // console.log(regex);
+ console.log(regex);
   const data = [];
 
   
@@ -347,6 +353,54 @@ app.get("/gethicksvilledata/", (req, res) => {
          //console.log(x);
           //res.json(x);
          data.push(x);
+         res.json(x);
+         }
+   });
+  
+ // console.log(data);
+  // res.json(data);
+ });
+
+app.delete("/removehicksvilledata/", (req, res) => {
+  console.log("body : ",req.body)
+//   const  arr = req.body.string.split(" ");
+//  console.log("arr :",arr);
+//   const regex = arr.join("|");
+//  console.log(regex);
+//   const data = [];
+
+  
+   hicksvilleData.remove({}, { _id: 0, __v: 0 }, (err, x) => {
+     if (err) res.json("Some error occured");
+     else{
+         //console.log(x);
+          //res.json(x);
+        //  data.push(x);
+        console.log("x : ",x)
+         res.json(x);
+         }
+   });
+  
+ // console.log(data);
+  // res.json(data);
+ });
+
+app.post("/insertnewhicksvilledata/", (req, res) => {
+  console.log("body : ",req.body)
+//   const  arr = req.body.string.split(" ");
+//  console.log("arr :",arr);
+//   const regex = arr.join("|");
+//  console.log(regex);
+//   const data = [];
+
+  
+   hicksvilleData.create(req.body, { _id: 0, __v: 0 }, (err, x) => {
+     if (err) res.json("Some error occured");
+     else{
+         //console.log(x);
+          //res.json(x);
+        //  data.push(x);
+        // console.log("x : ",x)
          res.json(x);
          }
    });
@@ -519,6 +573,20 @@ app.post("/generateposinventorylog",(req,res)=>{
   });
 })
 
+app.get("/getposinventorylog",(req,res)=>{
+  let obj = req.body;
+  // console.log(req.params);
+  console.log(req.query);
+  // console.log(obj);
+  posInventoryLogModel.findOne(obj,(err,o)=>{
+    if(err) res.json("Some error occurred");
+    else {
+      console.log("result : ",o);
+      res.json(o)
+    };
+  });
+})
+
 app.post("/scaninvoicedata", (req, res) => {
   let name = req.body.InvoiceName;
   let invoiceNo = req.body.SavedInvoiceNo;
@@ -561,6 +629,63 @@ app.post("/updatedbafterposupdate", (req, res) => {
     (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
   
   });
+
+  //added by deepanshu
+app.post("/updateinventoryindb", (req, res) => {
+   console.log(req.body)
+  let invoice = req.body.invoice;
+  let invoiceNo = req.body.invoiceNo;
+  let date = req.body.date;
+  let itemNo = req.body.itemNo
+  scanInvoiceData.updateOne({InvoiceName: invoice, SavedInvoiceNo: invoiceNo, SavedDate: date, "InvoiceData.itemNo": itemNo },
+                            {$set: {"InvoiceData.$.isInventoryUpdate": "true"} },
+                            { _id: 0, __v: 0 },
+                            (err, x) => { if (err) res.json("Some error occured"); else res.json(x);})
+  
+  });
+
+// added by deepanshu
+app.get("/getlinkinglogs",(req,res)=>{
+  console.log("req.query : ",req.query);
+  console.log("req.query : ",req.query.LinkingDate);
+  console.log("req.query : ",req.query.InvoiceName);
+  console.log("req.query : ",req.query.InvoiceNo);
+  let date = req.query.LinkingDate;
+  let invoice = req.query.InvoiceName;
+  let InvoiceNo = req.query.InvoiceNo;
+  logItemData.find({LinkingDate:date,InvoiceName:invoice,InvoiceNo:InvoiceNo},(err,x)=>{
+    if(err){
+      res.json("some error occured");
+    }else{
+      res.json(x);
+    }
+  })
+  // logItemData.find({})
+  // res.send();
+})
+
+
+// added by deepanshu
+app.get("/getposlogs",(req,res)=>{
+  console.log("req.query : ",req.query);
+  console.log("req.query : ",req.query.UpdateDate);
+  console.log("req.query : ",req.query.InvoiceName);
+  console.log("req.query : ",req.query.InvoiceNo);
+  let date = req.query.UpdateDate;
+  let invoice = req.query.InvoiceName;
+  let InvoiceNo = req.query.InvoiceNo;
+  posLogModel.find({UpdateDate:date,InvoiceName:invoice,InvoiceNo:InvoiceNo},(err,x)=>{
+    if(err){
+      console.log("error : ",error);
+      res.json("some error occured");
+    }else{
+      console.log("data : ",x)
+      res.json(x);
+    }
+  })
+  // logItemData.find({})
+  // res.send();
+})
 
 app.post("/reverseupdate", (req, res) => {
     console.log(req.body);

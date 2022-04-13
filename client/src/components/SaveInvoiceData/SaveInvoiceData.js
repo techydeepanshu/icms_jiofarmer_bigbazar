@@ -179,6 +179,9 @@ const SaveInvoiceData = () => {
   const [dropdownLoader, setDropdownLoader] = useState(false);
   const [fetchingOptions, setFetchingOptions] = useState(false);
   const [dropdownIndex, setDropwdownIndex] = useState(-1);
+  const [logsDate, setLogsDate] = useState("");
+  const [inventoryLogsDate, setInventoryLogsDate] = useState("");
+  const [invoiceDatePick, setInvoiceDatePick] = useState(false);
 
   const invoiceHeader = [
     "Sr.No.",
@@ -245,7 +248,7 @@ const SaveInvoiceData = () => {
   // });
 
   //***************  INDIVIDUAL ITEM UPDATE FUNCTIONALITY STARTS*******************************************.
-  
+
   //Function to fetch wooCom Prpducts.
   async function getProducts() {
     console.log("IN WOOCOM PRODUCTS");
@@ -1441,13 +1444,13 @@ const SaveInvoiceData = () => {
 
   const updateUnits = async (index) => {
     const item = tableData[index];
-    console.log("updateUnits : ",item);
+    console.log("updateUnits : ", item);
     const data = {
       invoiceName: inv,
       itemName: item.itemNo,
       value: {
         Quantity: item.pieces,
-        SellerCost: item.cp
+        SellerCost: item.cp,
       },
     };
     inventoryService
@@ -2000,6 +2003,7 @@ const SaveInvoiceData = () => {
         //console.log(obj);
         return obj;
       });
+      console.log("hicksville filter data : ", filter);
       setHicksvilleData(filter);
       setOptions(filter);
     }
@@ -2016,62 +2020,66 @@ const SaveInvoiceData = () => {
       const res = await inventoryService.getHicksvilleData(value.toUpperCase());
       const data = res;
       console.log(data);
-
-      let productsString = "";
-      for (let i = 0; i < data.length; i++) {
-        productsString = productsString + data[i].name + "$$$";
-      }
-      let result = productsString.split("$$$");
-
-      let newData = [];
-      for (let i = 0; i < result.length; i++) {
-        let s = result[i].split("@@@");
-        let obj = {
-          // sku: s[0] === "nan" ? null : s[0],
-          // upc: s[1] === "nan" ? null : s[1],
-          // altupc1: s[2] === "nan" ? null : s[2],
-          // altupc2: s[3] === "nan" ? null : s[3],
-          // name: s[4] === "nan" ? null : s[4],
-          // vintage: s[5] === "nan" ? null : s[5],
-          // totalQty: s[6] === "nan" ? null : s[6],
-          // cost: s[7] === "nan" ? null : s[7],
-          // pricea: s[8] === "nan" ? null : s[8],
-          // priceb: s[9] === "nan" ? null : s[9],
-          // pricec: s[10] === "nan" ? null : s[10],
-          // department: s[11] === "nan" ? null : s[11],
-          // salePrice: s[12] === "nan" ? null : s[12],
-          // size: s[13] === "nan" ? null : s[13],
-          // pack: s[14] === "nan" ? null : s[14],
-          // price: s[15] === "nan" ? null : s[15],
-          sku: s[1] === "nan" ? null : s[1],
-          upc: s[0] === "nan" ? null : s[0],
-          altupc1: s[14] === "nan" ? null : s[14],
-          altupc2: s[15] === "nan" ? null : s[15],
-          name: s[2] === "nan" ? null : s[2],
-          vintage: s[8] === "nan" ? null : s[8],
-          totalQty: s[13] === "nan" ? null : s[13],
-          cost: s[4] === "nan" ? null : s[4],
-          pricea: s[10] === "nan" ? null : s[10],
-          priceb: s[11] === "nan" ? null : s[11],
-          pricec: s[12] === "nan" ? null : s[12],
-          department: s[9] === "nan" ? null : s[9],
-          salePrice: s[5] === "nan" ? null : s[5],
-          size: s[6] === "nan" ? null : s[6],
-          pack: s[7] === "nan" ? null : s[7],
-          price: s[3] === "nan" ? null : s[3],
-        };
-        newData.push(obj);
-      }
-      const filter = newData.map((element) => {
-        let obj = { ...element };
-        if (element.itemNo != "undefined") {
-          obj.label = `${element.name}--${element.price}--${element.upc}--${element.size}--${element.cost}--${element.sku}`;
+      if (data.length !== 0) {
+        let productsString = "";
+        for (let i = 0; i < data.length; i++) {
+          productsString = productsString + data[i].name + "$$$";
         }
-        //console.log(obj);
-        return obj;
-      });
-      setHicksvilleData(filter);
-      setOptions(filter);
+        let result = productsString.split("$$$");
+
+        let newData = [];
+        for (let i = 0; i < result.length; i++) {
+          let s = result[i].split("@@@");
+          let obj = {
+            // sku: s[0] === "nan" ? null : s[0],
+            // upc: s[1] === "nan" ? null : s[1],
+            // altupc1: s[2] === "nan" ? null : s[2],
+            // altupc2: s[3] === "nan" ? null : s[3],
+            // name: s[4] === "nan" ? null : s[4],
+            // vintage: s[5] === "nan" ? null : s[5],
+            // totalQty: s[6] === "nan" ? null : s[6],
+            // cost: s[7] === "nan" ? null : s[7],
+            // pricea: s[8] === "nan" ? null : s[8],
+            // priceb: s[9] === "nan" ? null : s[9],
+            // pricec: s[10] === "nan" ? null : s[10],
+            // department: s[11] === "nan" ? null : s[11],
+            // salePrice: s[12] === "nan" ? null : s[12],
+            // size: s[13] === "nan" ? null : s[13],
+            // pack: s[14] === "nan" ? null : s[14],
+            // price: s[15] === "nan" ? null : s[15],
+            sku: s[1] === "nan" ? null : s[1],
+            upc: s[0] === "nan" ? null : s[0],
+            altupc1: s[14] === "nan" ? null : s[14],
+            altupc2: s[15] === "nan" ? null : s[15],
+            name: s[2] === "nan" ? null : s[2],
+            vintage: s[8] === "nan" ? null : s[8],
+            totalQty: s[13] === "nan" ? null : s[13],
+            cost: s[4] === "nan" ? null : s[4],
+            pricea: s[10] === "nan" ? null : s[10],
+            priceb: s[11] === "nan" ? null : s[11],
+            pricec: s[12] === "nan" ? null : s[12],
+            department: s[9] === "nan" ? null : s[9],
+            salePrice: s[5] === "nan" ? null : s[5],
+            size: s[6] === "nan" ? null : s[6],
+            pack: s[7] === "nan" ? null : s[7],
+            price: s[3] === "nan" ? null : s[3],
+          };
+          newData.push(obj);
+        }
+        const filter = newData.map((element) => {
+          let obj = { ...element };
+          if (element.itemNo != "undefined") {
+            obj.label = `${element.name}--${element.price}--${element.upc}--${element.size}--${element.cost}--${element.sku}`;
+          }
+          //console.log(obj);
+          return obj;
+        });
+        console.log("hicksville filter data2 : ", filter);
+        setHicksvilleData(filter);
+        setOptions(filter);
+      } else {
+        setOptions([{ label: "Product Not Found" }]);
+      }
     }
     setFetchingOptions(false);
   };
@@ -2141,12 +2149,17 @@ const SaveInvoiceData = () => {
       });
   };
 
-  const updateAllItem = async (ocrCost,whereToFunctionCall,dataFromLinkFunc,productIndex) => {
-    console.log(ocrCost)
-    console.log(whereToFunctionCall)
-    console.log(dataFromLinkFunc)
-    console.log(productIndex)
-    
+  const updateAllItem = async (
+    ocrCost,
+    whereToFunctionCall,
+    dataFromLinkFunc,
+    productIndex
+  ) => {
+    console.log(ocrCost);
+    console.log(whereToFunctionCall);
+    console.log(dataFromLinkFunc);
+    console.log(productIndex);
+
     //  let tempShowPosState = {
     //     posName:tableData[productIndex].posName,
     //     size:tableData[productIndex].size,
@@ -2157,26 +2170,28 @@ const SaveInvoiceData = () => {
     //     item:tableData[productIndex].itemNo,
     //   };
 
-     let tempShowPosState = dataFromLinkFunc;
-     let tempShowPosIndex = productIndex;
-     let tempUnitsInCase = tableData[productIndex].pieces;
-     let tempPrice = tableData[productIndex].unitPrice;
-     let tempUnitCost = tableData[productIndex].unitCost;
-     let tempUnitPriceValue = tableData[productIndex].unitPrice;
-     let tempNotFound = dataFromLinkFunc.notfound
-    
-    console.log(tempShowPosState)
-    console.log(tempShowPosIndex)
-    console.log(tempUnitsInCase)
-    console.log(tempPrice)
-    console.log(tempUnitCost)
-    console.log(tempUnitPriceValue)
+    let tempShowPosState = tableData[productIndex];
+    let tempShowPosIndex = productIndex;
+    let tempUnitsInCase = tableData[productIndex].pieces;
+    let tempPrice = tableData[productIndex].unitPrice;
+    let tempUnitCost = tableData[productIndex].unitCost;
+    let tempUnitPriceValue = tableData[productIndex].unitPrice;
+    let tempNotFound = dataFromLinkFunc;
+
+    console.log(tempShowPosState);
+    console.log(tempShowPosIndex);
+    console.log(tempUnitsInCase);
+    console.log(tempPrice);
+    console.log(tempUnitCost);
+    console.log(tempUnitPriceValue);
 
     let data;
     console.log("ocrCost_cp : ", ocrCost);
     console.log("updateItem_showPosState : ", tempShowPosState);
     console.log("updateItem_notFounds : ", tempNotFound);
-    let cp = (parseFloat(tempUnitPriceValue) / parseInt(tempUnitsInCase)).toFixed(2);
+    let cp = (
+      parseFloat(tempUnitPriceValue) / parseInt(tempUnitsInCase)
+    ).toFixed(2);
     console.log("cp : ", cp);
     console.log("unitPriceValue : ", tempUnitPriceValue);
     console.log("unitsInCase : ", tempUnitsInCase);
@@ -2187,9 +2202,9 @@ const SaveInvoiceData = () => {
       console.log("notfoundstrue");
       data = {
         invoiceName: inv,
-        itemName: tempShowPosState.item,
+        itemName: tempShowPosState.itemNo,
         value: {
-          POS: tempShowPosState.pos,
+          POS: tempShowPosState.posName,
           Barcode: tempShowPosState.barcode,
           PosSKU: tempShowPosState.posSku,
           isReviewed: "true",
@@ -2197,26 +2212,25 @@ const SaveInvoiceData = () => {
           Size: tempShowPosState.size,
           Department: tempShowPosState.department,
           SellerCost: ocrCost === undefined ? cp : ocrCost,
-          SellingPrice: tempShowPosState.unitPrice,
-          Quantity: tempUnitsInCase,
-          Price: tempPrice,
+          SellingPrice: tempShowPosState.sellingPriceChange,
+          Quantity: tempShowPosState.pieces,
+          Price: tempShowPosState.unitPrice,
           LinkingCorrect: "true",
         },
       };
-      
     } else {
       data = {
         invoiceName: inv,
-        itemName: tempShowPosState.item,
+        itemName: tempShowPosState.itemNo,
         value: {
-          POS: tempShowPosState.pos,
+          POS: tempShowPosState.posName,
           Barcode: tempShowPosState.barcode,
           PosSKU: tempShowPosState.posSku,
           isReviewed: "true",
           Size: tempShowPosState.size,
           Department: tempShowPosState.department,
           SellerCost: ocrCost === undefined ? cp : ocrCost,
-          SellingPrice: tempShowPosState.unitPrice,
+          SellingPrice: tempShowPosState.sellingPriceChange,
           LinkingCorrect: "true",
         },
       };
@@ -2281,49 +2295,80 @@ const SaveInvoiceData = () => {
         console.log(tableData[tempShowPosIndex]);
         const description = tableData[tempShowPosIndex].description;
 
-        //Cost chnage and invoice error handling logic.
-        const costChange = tableData[tempShowPosIndex].cp - data.value.SellerCost;
-        console.log(costChange);
-        let a = "",
-          b = "",
-          c = "";
-        const invError =
-          tableData[tempShowPosIndex].cp >= 3 * tableData[tempShowPosIndex].cost
-            ? "YES"
-            : "";
-        a = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
-        b = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
-        c = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
+       //Cost chnage and invoice error handling logic.
+       const costChange = data.value.SellerCost - data.value.SellerCost;
+       console.log(costChange);
+       let costIncrease = "",
+         costDecrease = "",
+         constSame = "";
+       const invError =
+         tableData[tempShowPosIndex].cp == 0
+           ? ""
+           : tableData[tempShowPosIndex].cp >=
+             3 * parseFloat(tableData[tempShowPosIndex].cost)
+           ? "YES"
+           : "";
+       // const invError = "";
+       costIncrease = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
+       costDecrease = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
+       constSame = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
 
-        console.log(costChange);
-        console.log(description);
-        console.log(todayDate);
-        console.log(day);
-        console.log(num);
-        const logState = data;
-        delete logState.value.isReviewed;
-        logState.Description = description;
-        logState.PersonName = userEmail;
-        logState.LinkingDate = todayDate;
-        logState.InvoiceDate = day;
-        logState.InvoiceNo = num;
-        logState.CostIncrease = a;
-        logState.CostDecrease = b;
-        logState.CostSame = c;
-        logState.InvoiceUnitCost = tableData[tempShowPosIndex].cp;
-        logState.InvError = invError;
-        console.log(logState);
+       console.log(costChange);
+       console.log(description);
+       console.log(todayDate);
+       console.log(day);
+       console.log(num);
+       // const logState = data;
+       // delete logState.value.isReviewed;
+       // logState.Description = description;
+       // logState.PersonName = userEmail;
+       // logState.LinkingDate = todayDate;
+       // logState.InvoiceDate = day;
+       // logState.InvoiceNo = num;
+       // logState.CostIncrease = costIncrease;
+       // logState.CostDecrease = costDecrease;
+       // logState.CostSame = constSame;
+       // logState.InvoiceUnitCost = tableData[tempShowPosIndex].cp;
+       // logState.InvError = invError;
+       // console.log(logState);
 
-        const res = await inventoryService.generateLog(logState);
-        console.log(res);
+       // const res = await inventoryService.generateLog(logState);
+       // console.log(res);
+
+       let log = {
+         InvoiceDescription: tableData[tempShowPosIndex].description,
+         PosDescription: tableData[tempShowPosIndex].posName,
+         SKU: tableData[tempShowPosIndex].posSku,
+         Barcode: tableData[tempShowPosIndex].barcode,
+         InvoiceName: inv,
+         ItemCode: tableData[tempShowPosIndex].itemNo,
+         LinkingDate: todayDate,
+         PersonName: userEmail,
+         Size: tableData[tempShowPosIndex].size,
+         PosUnitCost:
+           tableData[tempShowPosIndex].cost === ""
+             ? data.value.SellerCost
+             : tableData[tempShowPosIndex].cost,
+         PosUnitPrice: tableData[tempShowPosIndex].sellingPrice,
+         InvoiceNo: num,
+         InvoiceDate: day,
+         Department: tableData[tempShowPosIndex].department,
+         InvUnitCost: data.value.SellerCost,
+         CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
+         CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
+         CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
+         InvError: invError,
+       };
+       console.log(log);
+       const logResult = await inventoryService.linkManuallyLog(log);
+       console.log(logResult);
         // setProductsInTable();
       });
   };
 
-
-  const updateItem = async (props, ocrCost,index=indexProduct) => {
+  const updateItem = async (props, ocrCost, index = indexProduct) => {
     setShowPosIndex(-1);
-    console.log("index : ",index)
+    console.log("index : ", index);
     let data;
     console.log("ocrCost_cp : ", ocrCost);
     console.log("updateItem_showPosState : ", showPosState);
@@ -2355,8 +2400,7 @@ const SaveInvoiceData = () => {
           LinkingCorrect: "true",
         },
       };
-     toggleModal("notfounds");
-  
+      toggleModal("notfounds");
     } else {
       data = {
         invoiceName: inv,
@@ -2423,9 +2467,12 @@ const SaveInvoiceData = () => {
           costDecrease = "",
           constSame = "";
         const invError =
-        tableData[showPosIndex].cp == 0?"":tableData[showPosIndex].cp >= 3 * parseFloat(tableData[showPosIndex].cost)
-        ? "YES"
-        : "";
+          tableData[showPosIndex].cp == 0
+            ? ""
+            : tableData[showPosIndex].cp >=
+              3 * parseFloat(tableData[showPosIndex].cost)
+            ? "YES"
+            : "";
         // const invError = "";
         costIncrease = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
         costDecrease = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
@@ -2453,7 +2500,6 @@ const SaveInvoiceData = () => {
         // const res = await inventoryService.generateLog(logState);
         // console.log(res);
 
-
         let log = {
           InvoiceDescription: tableData[showPosIndex].description,
           PosDescription: tableData[showPosIndex].posName,
@@ -2464,7 +2510,10 @@ const SaveInvoiceData = () => {
           LinkingDate: todayDate,
           PersonName: userEmail,
           Size: tableData[showPosIndex].size,
-          PosUnitCost: tableData[showPosIndex].cost===""?data.value.SellerCost:tableData[showPosIndex].cost,
+          PosUnitCost:
+            tableData[showPosIndex].cost === ""
+              ? data.value.SellerCost
+              : tableData[showPosIndex].cost,
           PosUnitPrice: tableData[showPosIndex].sellingPrice,
           InvoiceNo: num,
           InvoiceDate: day,
@@ -2882,7 +2931,17 @@ const SaveInvoiceData = () => {
                 // onClick={() => addForReview(element, index)}
               >
                 <InfoOutlinedIcon
-                  style={element.LinkByBarcode === "true"?{ fill: "white",background:"#0a9812",borderRadius:"50px" }:element.isReviewed === "true" ? { fill: "red" } : null}
+                  style={
+                    element.LinkByBarcode === "true"
+                      ? {
+                          fill: "white",
+                          background: "#0a9812",
+                          borderRadius: "50px",
+                        }
+                      : element.isReviewed === "true"
+                      ? { fill: "red" }
+                      : null
+                  }
                 />
                 {/* <AddShoppingCartIcon
                       style={
@@ -2936,7 +2995,7 @@ const SaveInvoiceData = () => {
                     onClick={() => {
                       if (notFounds === "true") {
                         setUnitPriceValue(element.unitPrice);
-                        setIndexProduct(index)
+                        setIndexProduct(index);
                         toggleModal("notfounds");
                       } else {
                         updateItem(
@@ -2944,7 +3003,8 @@ const SaveInvoiceData = () => {
                           (
                             parseFloat(element.unitPrice) /
                             parseInt(element.pieces)
-                          ).toFixed(2),index
+                          ).toFixed(2),
+                          index
                         );
                       }
                     }}
@@ -3066,7 +3126,7 @@ const SaveInvoiceData = () => {
                   // console.log(newValue);
                   if (newValue) {
                     let newState = { ...showPosState };
-                    console.log("newValue : ",newValue);
+                    console.log("newValue : ", newValue);
                     // newState.item = newValue.name;
                     newState.item = element.itemNo;
                     newState.description = newValue.name;
@@ -3077,8 +3137,10 @@ const SaveInvoiceData = () => {
                     newState.department = newValue.department;
                     newState.unitCost = element.cp;
                     newState.unitPrice = newValue.price;
-                    isEmpty ? newState.notfound = "true": newState.notfound = "false";
-                    
+                    isEmpty
+                      ? (newState.notfound = "true")
+                      : (newState.notfound = "false");
+
                     // setShowPosState(newState);
                     dispatch({ type: "SET_POS_STATE", data: newState });
                     setShowPosIndex(index);
@@ -3256,12 +3318,16 @@ const SaveInvoiceData = () => {
                 color="btn btn-info"
                 type="submit"
                 onClick={() => {
-                  if(isEmpty || element.isReviewed === "false" ||
-                  element.isReviewed === ""){
-                    alert("Some Error Occurred With this Product")
-                  }else{
-                    updateInventoryDetails(index)}}
+                  if (
+                    isEmpty ||
+                    element.isReviewed === "false" ||
+                    element.isReviewed === ""
+                  ) {
+                    alert("Some Error Occurred With this Product");
+                  } else {
+                    updateInventoryDetails(index);
                   }
+                }}
                 style={
                   element.isInventoryUpdate === "true"
                     ? { width: 150, background: "green", color: "white" }
@@ -3314,7 +3380,7 @@ const SaveInvoiceData = () => {
               text="Download LinkingLogs"
               color="btn btn-info"
               type="submit"
-              onClick={downloadLinkingLogs}
+              onClick={() => setInvoiceDatePick((previous) => !previous)}
             />
             <Button
               text="Download POS-Logs"
@@ -3443,7 +3509,7 @@ const SaveInvoiceData = () => {
               text="Download LinkingLogs"
               color="btn btn-info"
               type="submit"
-              onClick={downloadLinkingLogs}
+              onClick={() => setInvoiceDatePick((previous) => !previous)}
             />
             <Button
               text="Download POS-Logs"
@@ -3658,26 +3724,25 @@ const SaveInvoiceData = () => {
       // console.log("isEmpty : ", isEmpty);
       // product.sellingPrice = product.sellingPriceChange
       // product.invError = product.cp >= 3 * product.cost ? "YES" : "";
-      return (
-        product.barcode !== tableDataCopy[index].barcode
-
-      );
+      return product.barcode !== tableDataCopy[index].barcode;
     });
 
     if (filterdata.length !== 0) {
       // dispatch({ type: "LOADER" });
-      let id = toast.loading("Please wait...")
+      // let id = toast.loading("Please wait...");
       await Promise.all(
-        filterdata.map(async(product)=>{
-          
-        await updateAllItem((
-          parseFloat(product.unitPrice) /
-          parseInt(product.pieces)
-        ).toFixed(2),"linkAllProduct",product.linkingPos,(product.SerialNoInInv - 1))
-
+        filterdata.map(async (product) => {
+          await updateAllItem(
+            (parseFloat(product.unitPrice) / parseInt(product.pieces)).toFixed(
+              2
+            ),
+            "linkAllProduct",
+            product.notfound,
+            product.SerialNoInInv - 1
+          );
         })
-      )
-      console.log("filterdata : ",filterdata)
+      );
+      console.log("filterdata : ", filterdata);
       // toast.loading("Please wait...", {
       //   position: "top-center",
       //   autoClose: 5000,
@@ -3687,12 +3752,16 @@ const SaveInvoiceData = () => {
       //   draggable: true,
       //   progress: undefined,
       // });
-      
-      await setProductsInTable()
-      
-      
+
+      setProductsInTable();
+
       // dispatch({ type: "LOADER" });
-      toast.update(id, { render: "All is good", type: "success", isLoading: false ,autoClose: 5000});
+      // toast.update(id, {
+      //   render: "All is good",
+      //   type: "success",
+      //   isLoading: false,
+      //   autoClose: 5000,
+      // });
     } else {
       alert("Data not change");
     }
@@ -3701,12 +3770,29 @@ const SaveInvoiceData = () => {
   const downloadLinkingLogs = async () => {
     console.log("downloadLinkingLogs");
     // let date = todayDate;
+    console.log("inventoryLogsDate : ", inventoryLogsDate);
+    console.log("logsDate : ", logsDate);
     console.log("date : ", todayDate);
     console.log("invoice : ", inv);
+    let arr1 = [];
+    arr1 = logsDate.split("-");
+    arr1[1]=arr1[1].replace(/^0/g, "")
+    arr1[2]=arr1[2].replace(/^0/,"")
+    let linkingdate = arr1.join("-");
+    console.log("logsDate2 : ", linkingdate);
+
+    let arr2 = [];
+    arr2 = inventoryLogsDate.split("-");
+    arr2[1]=arr2[1].replace(/^0/g, "")
+    arr2[2]=arr2[2].replace(/^0/,"")
+    let inventorylinkingdate = arr2.join("-");
+    console.log("logsDate2 : ", inventorylinkingdate);
+
     let data = {
-      LinkingDate: todayDate,
+      LinkingDate: linkingdate,
       InvoiceName: inv,
       InvoiceNo: num,
+      UpdateDate:inventorylinkingdate
     };
     // let data = {
     //   LinkingDate: "2022-3-15",
@@ -3722,6 +3808,7 @@ const SaveInvoiceData = () => {
     // }else{
     FileDownload(res.data, "linkinglogs.xlsx");
     // }
+    setInvoiceDatePick((previous) => !previous)
   };
 
   const downloadPosLogs = async () => {
@@ -3958,9 +4045,10 @@ const SaveInvoiceData = () => {
     console.log(key);
     console.log(typeof value);
     let tempTableData2 = [];
-    let tempTableData3 = [...tableData];
-    tempTableData3[row][key] = value;
-    const { itemNo } = tempTableData3[row];
+    // let tempTableData3 = [...tableData];
+    // tempTableData3[row][key] = value;
+    // const { itemNo } = tempTableData3[row];
+
     if (key === "sellingPriceChange") {
       // setNewUnitPrice(val);
       setUnitPriceModify(true);
@@ -4011,6 +4099,7 @@ const SaveInvoiceData = () => {
       console.log("NewUnitPrice_value : ", value);
       console.log("PrevNewUnitPrice_value : ", tableDataCopy[row].sellingPrice);
     }
+
 
     if (key === "markup") {
       if (value === "" || value === "0") {
@@ -4065,7 +4154,7 @@ const SaveInvoiceData = () => {
           ["posSku"]: value.posSku,
           ["unitCost"]: value.unitCost,
           ["itemNo"]: value.item,
-          
+          ["notfound"]:value.notfound
         },
       };
       const propertyNames = Object.values(tempTableData2);
@@ -4086,7 +4175,7 @@ const SaveInvoiceData = () => {
         ...tableData,
         [row]: {
           ...tableData[row],
-          [key]: parseFloat(value)
+          [key]: parseFloat(value),
         },
       };
       const propertyNames = Object.values(tempTableData2);
@@ -4097,16 +4186,17 @@ const SaveInvoiceData = () => {
         ...tableData,
         [row]: {
           ...tableData[row],
-          [key]: parseInt(value),["cp"]:(parseFloat(tableData[row].unitPrice) / parseInt(value)).toFixed(
-            2
-          )
+          [key]: parseInt(value),
+          ["cp"]: (
+            parseFloat(tableData[row].unitPrice) / parseInt(value)
+          ).toFixed(2),
         },
       };
       const propertyNames = Object.values(tempTableData2);
       setTableData(propertyNames);
     }
 
-
+    console.log("tableDataCopy : ", tableDataCopy);
 
     // if (
     //   tempTableData3[row]["qty"] !== "" &&
@@ -4121,16 +4211,16 @@ const SaveInvoiceData = () => {
     //   emptyColumnList.push(row);
     // }
     // setEmptyColumn(emptyColumnList);
-    if (key === "itemNo") {
-      tempTableData3[row]["description"] = productDetails[value].Description;
-      tempTableData3[row]["pieces"] = productDetails[value].Quantity;
-      tempTableData3[row]["sku"] = productDetails[value].sku;
-      /**auto populate barcode & other pos fields*/
-      tempTableData3[row]["barcode"] = productDetails[value].Barcode;
-      tempTableData3[row]["posName"] = productDetails[value].POS;
-      tempTableData3[row]["posSku"] = productDetails[value].PosSKU;
-      setTableData(tempTableData3);
-    }
+    // if (key === "itemNo") {
+    //   tempTableData3[row]["description"] = productDetails[value].Description;
+    //   tempTableData3[row]["pieces"] = productDetails[value].Quantity;
+    //   tempTableData3[row]["sku"] = productDetails[value].sku;
+    //   /**auto populate barcode & other pos fields*/
+    //   tempTableData3[row]["barcode"] = productDetails[value].Barcode;
+    //   tempTableData3[row]["posName"] = productDetails[value].POS;
+    //   tempTableData3[row]["posSku"] = productDetails[value].PosSKU;
+    //   setTableData(tempTableData3);
+    // }
     // if (key === "unitPrice" || key === "sp" || key === "itemNo") {
     //   let cp = parseFloat(tempTableData3[row]["cp"]);
     //   let sp = parseFloat(tempTableData3[row]["sp"]);
@@ -4699,6 +4789,52 @@ const SaveInvoiceData = () => {
             ADD
           </CButton>{" "}
           <CButton color="secondary" onClick={() => toggleModal("details")}>
+            Cancel
+          </CButton>
+        </CModalFooter>
+      </CModal>
+
+      <CModal
+        show={invoiceDatePick}
+        onClose={() => setInvoiceDatePick((previous) => !previous)}
+      >
+        <CModalHeader closeButton>Pick Logs Date</CModalHeader>
+        <CModalBody>
+          <CContainer fluid>
+            <CRow>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="date">LinkingLog Date</CLabel>
+                  <CInput
+                    type="date"
+                    name="date"
+                    value={logsDate}
+                    onChange={(event) => setLogsDate(event.target.value)}
+                  />
+                </CFormGroup>
+              </CCol>
+              <CCol sm="6">
+                <CFormGroup>
+                  <CLabel htmlFor="date">InventoryLog Date</CLabel>
+                  <CInput
+                    type="date"
+                    name="date"
+                    value={inventoryLogsDate}
+                    onChange={(event) => setInventoryLogsDate(event.target.value)}
+                  />
+                </CFormGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={downloadLinkingLogs}>
+            Download Logs
+          </CButton>{" "}
+          <CButton
+            color="secondary"
+            onClick={() => setInvoiceDatePick((previous) => !previous)}
+          >
             Cancel
           </CButton>
         </CModalFooter>

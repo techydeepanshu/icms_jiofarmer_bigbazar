@@ -5,6 +5,12 @@ export const optionData={
     body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=;'<>?,\*\+\-]/gi
   },
+  "jain-foods":{
+    regex:/^[A-Z0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["itemNo","qty","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=;'<>?,\*\+\-]/gi
+  },
   "farmers-choice":{
     regex:/^[A-Z0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]/,
     header:["itemNo","qty","description","","extendedPrice"],
@@ -83,6 +89,12 @@ export const optionData={
     body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  "suncrop-foods":{
+    regex:/^.+ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
   "pexco-inc":{
     regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","itemNo","description","unitPrice","extendedPrice"],
@@ -139,8 +151,8 @@ export const optionData={
   },
   "surati":{
     regex:/^[0-9\.]+ .+ [0-9\.]+ [A-Z]+ [0-9\. ]+$/,
-    header:["qty","description","unitPrice","unit","discount"],
-    body:[1,[0,/ [0-9\.]+ [A-Z]+ [0-9\. ]+$/],1,1,1],
+    header:["qty","description","unitPrice","unit","ExtendedPrice"],
+    body:[1,[0,/[0-9\.]+ [A-Z]+ [0-9\. ]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
   "shata-traders":{
@@ -518,6 +530,16 @@ export const optionData={
     body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },
+  "smile-onion":{
+    regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["qty","itemNo","description","unitPrice","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },
+
+
+// 
+
   "vintage-food":{
     regex:/^[0-9]+ [a-z]+ [0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","unit","itemNo","description","unitPrice","extendedPrice"],
@@ -615,12 +637,12 @@ export const optionData={
     body:[2,[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
-  // "aneja-distributors":{
-  //   regex:/^[A-Z]+ [A-Z]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-  //   header:["itemNo","description","unitPrice","extendedPrice"],
-  //   body:[2,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
-  // },//not complete
+  "aneja-distributors":{
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },//not complete
 
   "anmol-distributors":{
     regex:/^[0-9.]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,

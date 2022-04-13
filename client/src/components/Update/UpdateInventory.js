@@ -9,6 +9,8 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import InfoIcon from '@material-ui/icons/Info';
+import Switch from "@material-ui/core/Switch";
 import Button2 from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -45,6 +47,7 @@ const UpdateInventory = (props) => {
   let wooComProducts = [];
   let posInventory = undefined;
   let updateBarcode = "";
+  const [switchBtn, setSwitchBtn] = useState(true);
   const header = [
     "Serial No.",
     "Barcode",
@@ -57,7 +60,7 @@ const UpdateInventory = (props) => {
     "Extended Price",
     "Unit Cost ",
     "Unit Price",
-    "Mark up (%)",
+    "Mark up (%)"
   ];
 
   const renderTableHeader = () => {
@@ -81,6 +84,7 @@ const UpdateInventory = (props) => {
     console.log("unitPriceModify : ", unitPriceModify);
     console.log("incPrice : ", incPrice);
     console.log("decPrice : ", decPrice);
+    console.log("tabledata : ", tableData);
     let rows = tableData.map((element, index) => {
       // <tr key={index} style={element.priceIncrease === 1 ? {background:"#90EE90"} : element.priceIncrease === -1 ? {background:"#FFB31A"} : {background:"#b7b7b7"}}>
       return (
@@ -123,6 +127,7 @@ const UpdateInventory = (props) => {
               />
             </td>
             <td>{element.markup}</td>
+            
           </tr>
         </>
       );
@@ -130,22 +135,39 @@ const UpdateInventory = (props) => {
     return (
       <div style={{ marginTop: "70px" }}>
         <div style={{ textAlign: "center", margin: "20px 0" }}>
-          <CheckCircleIcon
-            style={{
-              color: "#deb88700",
-              background: "rgb(212, 212, 212)",
-              borderRadius: "100px",
-            }}
-          />{" "}
-          Product Not Found In POS{" "}
-          <CheckCircleIcon
-            style={{
-              color: "#deb88700",
-              background: "linear-gradient(264deg,#ff5151,#a6c1ee)",
-              borderRadius: "100px",
-            }}
-          />{" "}
-          Invoice Error{" "}
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div>
+              Update Only Inventory
+              <Switch
+                checked={switchBtn}
+                onChange={(event) => {
+                  console.log("click btn : ",switchBtn)
+                  setSwitchBtn((old)=>!old);
+                }}
+                color="primary"
+                name="checked"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            </div>
+            <div>
+              <CheckCircleIcon
+                style={{
+                  color: "#deb88700",
+                  background: "rgb(212, 212, 212)",
+                  borderRadius: "100px",
+                }}
+              />{" "}
+              Product Not Found In POS{" "}
+              <CheckCircleIcon
+                style={{
+                  color: "#deb88700",
+                  background: "linear-gradient(264deg,#ff5151,#a6c1ee)",
+                  borderRadius: "100px",
+                }}
+              />{" "}
+              Invoice Error{" "}
+            </div>
+          </div>
           <div style={{ margin: "10px 0" }}>
             <span>
               {incPrice === true ? (
@@ -202,9 +224,13 @@ const UpdateInventory = (props) => {
             text="Submit"
             color="btn btn-info"
             type="submit"
-            onClick={async()=>{
+            onClick={async () => {
               setSpinnerLoader(true);
-              await mainfunction()
+              {
+                switchBtn === true
+                  ? await updateOnlyInventory()
+                  : await mainfunction();
+              }
               setSpinnerLoader(false);
             }}
           />
@@ -235,6 +261,7 @@ const UpdateInventory = (props) => {
       );
     }
 
+  
     const tempTableData = {
       ...tableData,
       [index]: {
@@ -262,7 +289,9 @@ const UpdateInventory = (props) => {
     // setSpinnerLoader(true);
     // setLoader(true);
     // await getInventory();
-
+    let inventoryStatus = false;
+    let inventoryError = false;
+    let inventoryAlreadyUpdate = false;
     await getPosProducts();
     console.log(posProducts);
     console.log("pI_posProducts : ", posProducts);
@@ -278,14 +307,18 @@ const UpdateInventory = (props) => {
       console.log("day : ", day);
       // setSpinnerLoader(false);
       // setSpinnerLoader(true);
-      
+
       await Promise.all(
         posProducts.map(async (element, i) => {
-        
           console.log("pI_singleItemData : ", element);
           console.log("pI_singleItemData.itemNo : ", element.itemNo);
-          await inventoryService.UpdateInvoiceData(inv, num, day, element.itemNo);
-  
+          await inventoryService.UpdateInvoiceData(
+            inv,
+            num,
+            day,
+            element.itemNo
+          );
+
           //Update unit cost n price in db, after update POS.
           let data1 = {
             cost: element.cp,
@@ -300,9 +333,9 @@ const UpdateInventory = (props) => {
             "I am posProducts.ITEMNAME from updatedb after Pos",
             element.ITEMNAME
           );
-  
+
           await inventoryService.UpdateDBafterPosUpdate(data1);
-  
+
           console.log(
             tableDataCopy.filter((elem) => elem.itemNo === element.itemNo)
           );
@@ -346,9 +379,9 @@ const UpdateInventory = (props) => {
           console.log("pI_log : ", log);
           const logUpdate = await inventoryService.posLogs(log);
           console.log("pI_logUpdate : ", logUpdate);
-  
+
           // update inventory
-          
+
           let result = await inventoryService.getPosInventoryLogs({
             Barcode: element.barcode,
             ItemNo: element.itemNo,
@@ -358,26 +391,39 @@ const UpdateInventory = (props) => {
           });
           console.log("result : ", result);
           if (result === "") {
-            let res = await pushQtyToInventory(element.barcode,element.itemNo,element.description);
+            let res = await pushQtyToInventory(
+              element.barcode,
+              element.itemNo,
+              element.description
+            );
             console.log(res);
-            
+            if(res[0].inventoryUpdate===true && res[0].error === false){
+              console.log("test1")
+              inventoryStatus=true;
+            }
+            if(res[0].error === true){
+              console.log("test2")
+              inventoryError=true;
+            }
           } else {
             // alert("Inventory already updated!!");
-            toast.info("Inventory already updated!!", {
-              position: "bottom-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
+            // toast.info("Inventory already updated!!", {
+            //   position: "bottom-right",
+            //   autoClose: 5000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   progress: undefined,
+            // });
+            inventoryAlreadyUpdate=true
           }
+
           // setSpinnerLoader(false);
           // setProductsInTable();
         })
-      )
-     
+      );
+      
     } else {
       alert("POS not updated!!");
       // setProductsInTable();
@@ -385,9 +431,102 @@ const UpdateInventory = (props) => {
     // toast.update(id, { render: "All is good", type: "success", isLoading: false });
     // setSpinnerLoader(false);
     // setLoader(false);
+    if(inventoryAlreadyUpdate){
+      alert("Some Products Inventort Already Updated")
+    }
+    if(inventoryStatus){
+      alert("Inventory Created Or Updated Successfully")
+    }
+    if(inventoryError){
+      alert("Some Error Occurred")
+    }
   };
 
-  const pushInventoryDetails = async () => {
+  const updateOnlyInventory = async () => {
+    console.log("run updateOnlyInventory function")
+    let inventoryStatus = false;
+    let inventoryError = false;
+    let inventoryAlreadyUpdate = false;
+    try{
+
+      await getPosProducts();
+      console.log("posProducts : ",posProducts)
+      if(posProducts.length !== 0){
+
+      
+      await Promise.all(
+        posProducts.map(async (element, i) => {
+          if (switchBtn === true) {
+            let result = await inventoryService.getPosInventoryLogs({
+              Barcode: element.barcode,
+              ItemNo: element.itemNo,
+              InvoiceName: inv,
+              InvoiceNo: num,
+              InvoiceDate: day,
+            })
+
+            // setTableData(posProducts);
+            console.log("result : ", result);
+            if (result === "") {
+              let res = await pushQtyToInventory(
+                element.barcode,
+                element.itemNo,
+                element.description,
+                result
+                );
+                console.log("res :: ",res);
+                if(res[0].inventoryUpdate===true && res[0].error === false){
+                  console.log("test1")
+                  inventoryStatus=true;
+                }
+                if(res[0].error === true){
+                  console.log("test2")
+                  inventoryError=true;
+                }
+              } else {
+                // alert("Inventory already updated!!");
+                // toast.info("Inventory already updated!!", {
+                //   position: "bottom-right",
+                //   autoClose: 3000,
+                //   hideProgressBar: false,
+                //   closeOnClick: true,
+                //   pauseOnHover: true,
+                //   draggable: true,
+                //   progress: undefined,
+                //   theme:"dark"
+                // });
+                inventoryAlreadyUpdate=true
+              }
+            }
+            }))
+          }else{
+            alert("Could not Fetch Data")
+          }
+        }catch(err){
+          toast.error("Some Error Occurred", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme:"dark"
+          });
+        }
+        if(inventoryAlreadyUpdate){
+          alert("Some Products Inventort Already Updated")
+        }
+        if(inventoryStatus){
+          alert("Inventory Created Or Updated Successfully")
+        }
+        if(inventoryError){
+          alert("Some Error Occurred")
+        }
+        // renderTableData()
+        };
+        
+        const pushInventoryDetails = async () => {
     // setSpinnerLoader(true);
     console.log("pushInventoryDetails");
     // setLoader(true);
@@ -823,17 +962,17 @@ const UpdateInventory = (props) => {
       })
     );
     if (hasErrorOccured) {
-      // alert("Couldn't fetch some data from POS");
-      toast.error("Couldn't fetch some data from POS", {
-        position: "top-center",
-        autoClose: 10000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      alert("Couldn't fetch some data from POS");
+      // toast.error("Couldn't fetch some data from POS", {
+      //   position: "top-center",
+      //   autoClose: 10000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "dark",
+      // });
     }
     if (ApiCheck2 === "true") {
       // toast.error("API NOT WORKING", {
@@ -860,15 +999,19 @@ const UpdateInventory = (props) => {
       if (items[0] !== undefined) {
         setTableData(items.filter((ele) => ele !== null || ele !== undefined));
         renderTableData();
+        // renderTableData();
       }
       return posProducts;
     }
   }
 
-  const pushQtyToInventory = async (barcode,itemNo,description) => {
-    console.log("pushQtyToInventory", barcode);
-    await getInventory(barcode,itemNo,description);
-    console.log("posInventory : ", posInventory);
+  const pushQtyToInventory = async (barcode, itemNo, description,result) => {
+
+    let inventoryCreate = false;
+    let inventoryUpdate = false;
+      console.log("pushQtyToInventory", barcode);
+      await getInventory(barcode, itemNo, description);
+      console.log("posInventory : ", posInventory);
 
     // posInventory.map(async(element,index)=>{
 
@@ -876,64 +1019,76 @@ const UpdateInventory = (props) => {
       let response = await pushQtyDetailsInInventory(barcode);
       console.log("response : ", response);
       if (response[0] !== null) {
-        response.map((element) => {
+       let res4= response.map((element) => {
           if (element.length !== 0) {
-            toast.success("Inventory Update Successfully", {
-              position: "bottom-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-
+            // toast.success("Inventory Update Successfully", {
+            //   position: "bottom-right",
+            //   autoClose: 3000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   progress: undefined,
+            // });
+            // handleChange(element.index,"inventoryUpdate",true)
             // alert("Inventory Update Successfully")
+            // return{inventoryUpdate:true}
+            return{error:false,inventoryUpdate : true}
           } else {
-            toast.success("Inventory Created", {
-              position: "bottom-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
+            // toast.success("Inventory Created", {
+            //   position: "bottom-right",
+            //   autoClose: 3000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            //   progress: undefined,
+            // });
+            // return{inventoryCreate:true}
+            return{error:false,inventoryUpdate : true}
+            // handleChange(element.index,"inventoryCreate",true)
             // alert("Inventory Created")
           }
         });
-        return true;
+        
+        return res4;
       } else {
-        toast.error("Does not Working Pos-inventory API", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-        return false;
+        // toast.error("Does not Working Pos-inventory API", {
+        //   position: "top-center",
+        //   autoClose: 5000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        // });
+        return {error:true,message:"Does not Working Pos-inventory API"};
       }
     } else {
       // alert("Some Error Occurred")
-      toast.error("Some Error Occurred", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      return false;
+      // toast.error("Some Error Occurred", {
+      //   position: "bottom-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // });
+      return {error:true,message:"Some Error Occurred"};
     }
+   
   };
-
-  const getInventory = async (barcode,itemNo,description) => {
+  
+  const getInventory = async (barcode, itemNo, description) => {
     console.log("getInventory");
     console.log("tableData : ", posProducts);
-    let newPosProducts = posProducts.filter((e) => e.barcode === barcode  && e.itemNo === itemNo && e.description === description);
+    let newPosProducts = posProducts.filter(
+      (e) =>
+        e.barcode === barcode &&
+        e.itemNo === itemNo &&
+        e.description === description
+    );
     // setLoader(true);
     //  dispatch({ type: "LOADER" });
     let hasErrorOccured = false;
@@ -1065,114 +1220,113 @@ const UpdateInventory = (props) => {
     console.log("barcode : ", barcode);
     let responses = "";
     if (posInventory[0].BARCODE == barcode) {
- 
-        responses = await Promise.all(
-          posInventory.map(async (product) => {
-            try {
-              const {
-                COST,
-                PRICE,
-                BARCODE,
-                TOTALQTY,
-                isNew,
-                ITEMNAME,
-                BUYASCASE,
-                CASEUNITS,
-                CASECOST,
-                DEPNAME,
-                itemNo,
-              } = product;
+      responses = await Promise.all(
+        posInventory.map(async (product) => {
+          try {
+            const {
+              COST,
+              PRICE,
+              BARCODE,
+              TOTALQTY,
+              isNew,
+              ITEMNAME,
+              BUYASCASE,
+              CASEUNITS,
+              CASECOST,
+              DEPNAME,
+              itemNo,
+            } = product;
 
-              console.log("product : ", product);
+            console.log("product : ", product);
 
-              const res = await inventoryService.UpdatePOSInventory({
-                BARCODE,
-                ITEMNAME: product.posName,
-                DESCRIPTION: "",
-                PRICE,
-                COST,
-                QTY: TOTALQTY,
-                SIZE: product.size,
-                PACK: "",
-                REPLACEQTY: 1,
-                DEPARTMENT: DEPNAME,
-                CATEGORY: "",
-                SUBCATEGORY: "",
-                ISFOODSTAMP: 1,
-                ISWEIGHTED: 0,
-                ISTAXABLE: 1,
-                VENDORNAME: selectedDropdown.slug,
-                VENDORCODE: itemNo,
-                VENDORCOST: "",
-                ISNEWITEM: isNew ? 1 : 0,
-                BUYASCASE,
-                CASEUNITS,
-                CASECOST,
-                COMPANYNAME: selectedDropdown.slug,
-                PRODUCTCODE: itemNo,
-                MODELNUM:
-                  userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
-                VINTAGE: "ICMS",
-              });
-              console.log("updated pos data", res);
+            const res = await inventoryService.UpdatePOSInventory({
+              BARCODE,
+              ITEMNAME: product.posName,
+              DESCRIPTION: "",
+              PRICE,
+              COST,
+              QTY: TOTALQTY,
+              SIZE: product.size,
+              PACK: "",
+              REPLACEQTY: 1,
+              DEPARTMENT: DEPNAME,
+              CATEGORY: "",
+              SUBCATEGORY: "",
+              ISFOODSTAMP: 1,
+              ISWEIGHTED: 0,
+              ISTAXABLE: 1,
+              VENDORNAME: selectedDropdown.slug,
+              VENDORCODE: itemNo,
+              VENDORCOST: "",
+              ISNEWITEM: isNew ? 1 : 0,
+              BUYASCASE,
+              CASEUNITS,
+              CASECOST,
+              COMPANYNAME: selectedDropdown.slug,
+              PRODUCTCODE: itemNo,
+              MODELNUM:
+                userEmail.slice(0, 4) + " " + new Date().toLocaleDateString(),
+              VINTAGE: "ICMS",
+            });
+            console.log("updated pos data", res);
 
-              // CREATE LOG AND UPDATE IN DB
-              let tempdata2 = tableData.filter(
-                (e) => e.barcode === product.BARCODE && e.itemNo === product.itemNo
-              );
-              if (tempdata2[0].barcode == product.BARCODE) {
-                const inventoryLog = {
-                  Barcode: tempdata2[0].barcode,
-                  InvoiceName: selectedDropdown.slug,
-                  InvoiceDate: day,
-                  InvoiceNo: num,
-                  ItemNo: tempdata2[0].itemNo,
-                  InvoiceDescription: tempdata2[0].description,
-                  PosDescription: tempdata2[0].posName,
-                  PosUnitCost: tempdata2[0].cost,
-                  PosUnitPrice: tempdata2[0].sellingPrice,
-                  UpdateDate: todayDate,
-                  Person: userEmail,
-                  TimeStamp: new Date().toTimeString().split(" ")[0],
-                  SKU: tempdata2[0].posSku,
-                  OldQty: product.OLD_TOTALQTY.toString(),
-                  NewQty: product.TOTALQTY,
-                  SerialNoInInv: tempdata2[0].SerialNoInInv,
-                };
-                console.log("inventoryLog : ", inventoryLog);
-                const inventoryLogUpdate =
-                  await inventoryService.posInventoryLogs(inventoryLog);
-                console.log("inventoryLogUpdate : ", inventoryLogUpdate);
+            // CREATE LOG AND UPDATE IN DB
+            let tempdata2 = tableData.filter(
+              (e) =>
+                e.barcode === product.BARCODE && e.itemNo === product.itemNo
+            );
+            if (tempdata2[0].barcode == product.BARCODE) {
+              const inventoryLog = {
+                Barcode: tempdata2[0].barcode,
+                InvoiceName: selectedDropdown.slug,
+                InvoiceDate: day,
+                InvoiceNo: num,
+                ItemNo: tempdata2[0].itemNo,
+                InvoiceDescription: tempdata2[0].description,
+                PosDescription: tempdata2[0].posName,
+                PosUnitCost: tempdata2[0].cost,
+                PosUnitPrice: tempdata2[0].sellingPrice,
+                UpdateDate: todayDate,
+                Person: userEmail,
+                TimeStamp: new Date().toTimeString().split(" ")[0],
+                SKU: tempdata2[0].posSku,
+                OldQty: product.OLD_TOTALQTY.toString(),
+                NewQty: product.TOTALQTY,
+                SerialNoInInv: tempdata2[0].SerialNoInInv,
+              };
+              console.log("inventoryLog : ", inventoryLog);
+              const inventoryLogUpdate =
+                await inventoryService.posInventoryLogs(inventoryLog);
+              console.log("inventoryLogUpdate : ", inventoryLogUpdate);
 
-                const updateinventoryindb =
-                  await inventoryService.UpdateInventoryInDB(
-                    inv,
-                    num,
-                    day,
-                    tempdata2[0].itemNo
-                  );
+              const updateinventoryindb =
+                await inventoryService.UpdateInventoryInDB(
+                  inv,
+                  num,
+                  day,
+                  tempdata2[0].itemNo
+                );
 
-                console.log("updateinventoryindb : ", updateinventoryindb);
-              } else {
-                alert("posInventory Logs does not Created");
-              }
-              return res;
-            } catch (error) {
-              console.log("error : ",error);
-              toast.error("Some Error Occurred during inventory updation !!", {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-              });
-              return null;
+              console.log("updateinventoryindb : ", updateinventoryindb);
+            } else {
+              alert("posInventory Logs does not Created");
             }
-          })
-        );
-     
+            return res;
+          } catch (error) {
+            console.log("error : ", error);
+            toast.error("Some Error Occurred during inventory updation !!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+            return null;
+          }
+        })
+      );
     } else {
       alert("inventory not updated");
       return null;
@@ -1184,6 +1338,7 @@ const UpdateInventory = (props) => {
 
   useEffect(async () => {
     setLoader(true);
+    
     // const wooProduct = await getProducts();
     const posProduct = await getPosProducts();
     // console.log("wooProduct : ",wooProduct)
@@ -1192,6 +1347,7 @@ const UpdateInventory = (props) => {
       setModal(true);
       // props.goBack(!window.confirm("POS API NOT WORKING \n Do you want to Go Back ?"));
     }
+    renderTableData();
     setLoader(false);
   }, []);
 

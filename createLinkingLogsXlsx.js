@@ -2,7 +2,7 @@ const axios = require("axios");
 const ExcelJS = require("exceljs");
 require("dotenv").config({ path:"./.env" });
 const createLinkingLogsXlsx = async (req, res) => {
-  console.log("body : ", req.query);
+  // console.log("body : ", req.query);
   const data = req.query;
   console.log("body : ", data);
   // return req.LinkingDate
@@ -12,8 +12,18 @@ const createLinkingLogsXlsx = async (req, res) => {
     { headers: { "Contant-Type": "application/json" }, params: data }
   );
 
-  console.log("logsResult : ", logsResult.data);
+  const inventoryLogsResult = await axios.get(
+    `http://${process.env.MONGO_IP}:3001/getinventorylogs`,
+    { headers: { "Contant-Type": "application/json" }, params: data }
+  );
+
+  // console.log("logsResult : ", logsResult.data);
+  const inventoryLogs = inventoryLogsResult.data;
+  // console.log("inventorylogs : ",inventoryLogs)
   const linkinglogs = logsResult.data;
+  
+
+  
 linkinglogs.map((product)=>{
   product.newPosUnitCost = product.PosUnitCost;
   product.newPosUnitPrice = product.PosUnitPrice;
@@ -27,8 +37,14 @@ linkinglogs.map((product)=>{
     product.PriceDecrease = (product.PosUnitPrice < product.PosUnitCost) ? "YES" :"";
     product.PriceSame = (product.PosUnitPrice === product.PosUnitCost) ? "YES" :"";
   }
-
+  inventoryLogs.map((inventLog)=>{
+  if(product.Barcode === inventLog.Barcode && product.ItemCode === inventLog.ItemNo){
+      product.OldInventory = inventLog.OldQty;
+      product.NewInventory = inventLog.NewQty;
+  }
+  })
 })
+console.log("newArray : ",linkinglogs)
   if(linkinglogs.length !== 0){
     
   
@@ -54,6 +70,8 @@ linkinglogs.map((product)=>{
     { header: "PRICE DECREASE", key: "PriceDecrease", width: 12 },
     { header: "PRICE INCREASE", key: "PriceIncrease", width: 10 },
     { header: "PRICE SAME", key: "PriceSame", width: 10 },
+    { header: "Old Qty", key: "OldInventory", width: 10 },
+    { header: "New Qty", key: "NewInventory", width: 10 },
     { header: "POS DESCRIPTION", key: "PosDescription", width: 20 },
     { header: "INVOICE DESCRIPTION", key: "InvoiceDescription", width: 55 },
     { header: "DEPARTMENT", key: "Department", width: 15 },
@@ -62,6 +80,7 @@ linkinglogs.map((product)=>{
     { header: "REMARKS", key: "", width: 10 },
     { header: "ITEM CODE ERROR", key: "", width: 10 },
     { header: "S.NO", key: "s_no2", width: 10 },
+    
   ];
 
   let count = 1;
@@ -179,7 +198,7 @@ linkinglogs.map((product)=>{
 
 
   
-  let colNum = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  let colNum = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB"];
   for(let i = 0; i<colNum.length;i++){
     for(let j = 0; j<=count;j++){
 
