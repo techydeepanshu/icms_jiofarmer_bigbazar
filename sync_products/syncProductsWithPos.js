@@ -2,6 +2,7 @@
 const {execSync} = require("child_process");
 const csv=require('csvtojson')
 require("dotenv").config({ path:"../.env" });
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const axios = require("axios");
 const syncProductsWithPos = (req, res) =>{
 
@@ -61,6 +62,17 @@ const syncProductsWithPos = (req, res) =>{
       }
 
     })
+
+    const csvMaharajaHicksville = createCsvWriter({
+      path: './csv/Maharaja_Hicksville.csv',
+      header: []
+    })
+    csvMaharajaHicksville.writeRecords("").then(()=> console.log('Maharaja_Hicksville Empty Success'));
+    const csvHicksville = createCsvWriter({
+      path: './csv/Maharaja_Hicksville.csv',
+      header: []
+    })
+    csvHicksville.writeRecords("").then(()=> console.log('Hicksville Empty Success'));
   }catch(err){
     console.log("&&&& ",err)
     // res.error(err)

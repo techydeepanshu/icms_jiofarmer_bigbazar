@@ -37,6 +37,7 @@ const UpdateInventory = (props) => {
   // const [posProducts, setPosProducts] = useState([]);
   const [redirect, setRedirect] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [loaderText, setLoaderText] = useState("");
   const [pendingloader, setPendingLoader] = useState(false);
   const [spinnerLoader, setSpinnerLoader] = useState(false);
   // const [wooComProducts, setWooComProducts] = useState([]);
@@ -44,6 +45,7 @@ const UpdateInventory = (props) => {
   const inventoryService = new InventoryService();
   // const [posProducts,setPosProducts] = useState(undefined)
   let posProducts = [];
+  // let loaderText = "";
   let wooComProducts = [];
   let posInventory = undefined;
   let updateBarcode = "";
@@ -905,43 +907,92 @@ const UpdateInventory = (props) => {
     console.log("getPosProducts : ", tableData);
     let hasErrorOccured = false;
     let ApiCheck2 = "false";
+    let productHasAnError = "false";
     console.log("IN POS PRODUCTS");
     const items = await Promise.all(
       tableData.map(async (row) => {
         try {
+          
+          setLoaderText(row.barcode)
           console.log(row.barcode);
           const res = await inventoryService.GetPOSProductDetails(row.barcode);
 
-          console.log(row.barcode);
+          // console.log(row.barcode);
+          console.log(typeof(res));
           console.log(res);
-          if (!Array.isArray(res)) {
+          if (!Array.isArray(res) && res==="notResponse") {
             //   alert("API not working");
             ApiCheck2 = "true";
             // return ;
-          } else {
-            console.log("fetched pos data", res);
-            const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
-            return {
-              ...row,
-              COST: row.cp,
-              PRICE: row.sellingPriceChange,
-              SKU,
-              UPC,
-              ITEMNAME,
-              TOTALQTY:
-                parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
-              itemNo: row.itemNo,
-              isNew: false,
-              BUYASCASE: 1,
-              CASEUNITS: row.pieces.toString(),
-              CASECOST: row.unitPrice.toString(),
-              DEPNAME,
-              NotFound: false,
-            };
+          } else if(!Array.isArray(res) && res==="productHasAnError"){
+            productHasAnError = "true";
+            // return null
+          }else {
+            if(Array.isArray(res) && res.length !== 0){
+              console.log("ok")
+              console.log("fetched pos data", res);
+              const { SKU, UPC, ITEMNAME, TOTALQTY, DEPNAME } = res[0];
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sellingPriceChange,
+                SKU,
+                UPC,
+                ITEMNAME,
+                TOTALQTY:
+                  parseInt(row.qty) * parseInt(row.pieces) + parseInt(TOTALQTY),
+                itemNo: row.itemNo,
+                isNew: false,
+                BUYASCASE: 1,
+                CASEUNITS: row.pieces.toString(),
+                CASECOST: row.unitPrice.toString(),
+                DEPNAME,
+                NotFound: false,
+              };
+            }else{
+              if(res === "" && res.length === 0){
+                hasErrorOccured = true;
+                console.log("hasErrorOccured")
+              }
+              if(res.length === 0){
+                hasErrorOccured = true;
+                console.log("hasErrorOccured2")
+              }
+              if(typeof(res) === "string" && res.length > 0){
+
+                ApiCheck2 = "true";
+                console.log("ApiCheck2")
+              }
+              return {
+                ...row,
+                COST: row.cp,
+                PRICE: row.sp,
+                SKU: row.posSku,
+                UPC: row.barcode,
+                ITEMNAME: row.description,
+                TOTALQTY: parseInt(row.qty) * parseInt(row.pieces),
+                itemNo: row.itemNo,
+                isNew: true,
+                BUYASCASE: 1,
+                CASEUNITS: row.pieces.toString(),
+                CASECOST: row.unitPrice.toString(),
+                DEPNAME: "",
+                NotFound: false,
+              };
+            }
           }
         } catch (error) {
-          hasErrorOccured = true;
-          console.log("pos throw error : ", error);
+          console.log("catch ApiCheck2")
+          // hasErrorOccured = true;
+          ApiCheck2 = "true";
+          // if(res === "" & res.length === 0){
+          //   hasErrorOccured = true;
+          // }
+          // if(typeof(res) === "string" && res.length > 0){
+
+          //   ApiCheck2 = "true";
+          // }
+          // console.log("pos throw error : ", error);
           return {
             ...row,
             COST: row.cp,
@@ -974,6 +1025,7 @@ const UpdateInventory = (props) => {
       //   theme: "dark",
       // });
     }
+
     if (ApiCheck2 === "true") {
       // toast.error("API NOT WORKING", {
       //     position: "top-center",
@@ -986,10 +1038,12 @@ const UpdateInventory = (props) => {
       //     theme: "dark"
       //   })
       return null;
-    } else {
+    }else {
       // setLoader(false);
       // setPosProducts(items.filter((ele) => ele !== null));
-
+      if(productHasAnError === "true"){
+      alert("some product not updated !! Try Again")
+      }
       console.log(items);
 
       posProducts = items.filter((ele) =>
@@ -1190,10 +1244,10 @@ const UpdateInventory = (props) => {
         }
       })
     );
-    //  if (hasErrorOccured) {
-    //   //  alert("Couldn't fetch some data from POS");
-    //    alert("New Inventory Added to POS");
-    //  }
+     if (hasErrorOccured) {
+       alert("Couldn't fetch some inventory data from POS");
+      //  alert("New Inventory Added to POS");
+     }
     if (ApiCheck === false) {
       toast.error("API NOT WORKING (GetInventory)", {
         position: "top-center",
@@ -1359,7 +1413,7 @@ const UpdateInventory = (props) => {
       <div style={{ margin: "auto", width: "68vh", display: "flex" }}>
         <CircularProgress />{" "}
         <h1 style={{ margin: "0 23px", color: "#727272", fontSize: "2rem" }}>
-          Product Checking in POS ...
+          {loaderText} Checking in POS ...
         </h1>
       </div>
     );

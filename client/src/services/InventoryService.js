@@ -27,6 +27,7 @@ export class InventoryService {
     const response = await Axios.get(appendURL + "/api/getPOSProduct", {
       params: { upc, itemName },
     });
+    console.log("getposproductdetails : ",response.data);
     return response.data;
   }
   async GetPOSInventoryDetails(Barcode) {
