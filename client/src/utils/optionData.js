@@ -40,7 +40,14 @@ export const optionData={
     header:["qty","description","unitPrice","extendedPrice"],
     body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*\-]/gi
-  },// use empty column
+  },
+  "goya":{
+    regex:/^[A-Z0-9]+ [0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [.0-9]+ [0-9\]+ [0-9\.]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'<>?,\*\-]/gi
+  },
+  // use empty column
   "gurme-guru":{
     regex:/^.+ [0-9\.]+ [0-9\.]+$/,
     header:["description","unitPrice","extendedPrice"],
@@ -89,12 +96,25 @@ export const optionData={
     body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  "kcb-bakery":{
+    regex:/^.+ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["description","qty","unitPrice","extendedPrice"],
+    body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
   "suncrop-foods":{
     regex:/^.+ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["description","qty","unitPrice","extendedPrice"],
     body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+
+"nature-fresh":{
+  regex:/^.+ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+  header:["description","qty","unitPrice","extendedPrice"],
+  body:[[0,/ [0-9\.]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
+  notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+},
   "pexco-inc":{
     regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["qty","itemNo","description","unitPrice","extendedPrice"],
@@ -113,6 +133,12 @@ export const optionData={
     body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },// use empty column
+  "vibrant-foods":{
+    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["itemNo","garbage","garbage","description","unitPrice","extendedPrice"],
+    body:[1,1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },
   "jaan-distributors":{
     regex:/^.+ [0-9\.]+ [0-9\.]+$/,
     header:["qty","description","u/m","unitPrice","extendedPrice"],
@@ -125,6 +151,12 @@ export const optionData={
     body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
     notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
   },// use empty column
+  "kb-farms":{
+    regex:/^.+ [0-9\.]+ [0-9\.]+$/,
+    header:["qty","description","unitPrice","extendedPrice"],
+    body:[1,[0,/ [0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;()'<>?,\*]/gi
+  },
   "new-reliance-traders":{
     regex:/^[A-Z0-9-]+ .+ [0-9\.]+ [A-Z]+ [0-9\.]+$/,
     header:["itemNo","description","unitPrice","unit","extendedPrice"],
@@ -197,6 +229,12 @@ export const optionData={
     body:[1,[0,/ [0-9]+ [0-9\.]+ [0-9\.]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  "hasinberg":{
+    regex:/^[0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
+    header:["itemNo","description","unitPrice","extendedPrice"],
+    body:[1,[0,/[0-9\.]+ [0-9\.]+$/],1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
   "nirav-indian-groceries":{
     regex:/^.+ [0-9\.]+ [A-Z]+ [0-9\.]+ [0-9\.]+$/,
     header:["description","qty","measure","unitPrice","extendedPrice"],
@@ -257,6 +295,12 @@ export const optionData={
     body:[[0,/ [0-9]+ [0-9\.]+[0-9]+ [0-9\.]+[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  "jalaram":{
+    regex:/^[A-Za-z]+ .+ [0-9\.]+[0-9]+ [0-9\.]+[0-9]+$/,
+    header:["description","qty","garbage","unitPrice","extendedPrice"],
+    body:[[0,/[0-9]+ [A-Z]+ [0-9\.]+ [0-9\.]+$/],1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
   "american-pure-honey":{
     regex:/^[A-Z0-9]+ .+ [0-9\.]+ [0-9\.]+$/,
     header:["itemNo","description","unitPrice","extendedPrice"],
@@ -305,6 +349,13 @@ export const optionData={
     body:[[0,/ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1],
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
+  "jyene":{
+    regex:/^.+ [A-Za-z0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
+    header:["description","qty","garbage","unitPrice","extendedPrice"],
+    body:[[0,/ [0-9 a-z]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
+  },
+// "itemNo","qty","description","unitPrice","extendedPrice"
   "koryeo":{
     regex:/^[A-Z0-9]+ [0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
     header:["itemNo","qty","description","unitPrice","lb","extendedPrice"],
@@ -348,17 +399,17 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=:();/""'<>*?,\*]/gi
   },
   "roshni-foods":{
-    regex:/^[A-Z0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+ [A-Z]+ [0-9/.]+ [A-Za-z]+ .+ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-    header:["itemNo","qtyOrdered","qty","uom","packSize","description","brand","unit","unitPrice","extendedPrice"],
-    body:[1,1,1,1,2,[0,/ [A-Z]+ [0-9]+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1,1,1],
+    regex:/^[a-zA-Z0-9]+ [0-9]+ .+ [0-9]+\.[0-9]+ .+ [0-9]+\.[0-9]+$/,
+    header:["garbage","itemNo","description","unitPrice","qty","garbage","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ .+ [0-9]+\.[0-9]+$/],1,1,1,1],
     notAllowed:/[`~!@#\$%^&=:();/""'<>*?,\*]/gi
   },// not working 
-  // "fyve-elements":{
-  //   regex:/^[0-9]+ .+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-  //   header:["qty","itemNo","description","unitPrice","extendedPrice"],
-  //   body:[1,1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
-  //   notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
-  // },
+  "fyve-elements":{
+    regex:/^[a-zA-Z0-9]+ .+ [0-9]+\.[0-9]+ .+ [0-9]+\.[0-9]+$/,
+    header:["type","itemNo","description","unitPrice","qty","garbage","extendedPrice"],
+    body:[1,1,[0,/ [0-9]+\.[0-9]+ .+ [0-9]+\.[0-9]+$/],1,1,1,1],
+    notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
+  },
   "gaint-farm":{
     regex:/^.+ [0-9]+ [0-9]+$/,
     header:["description","unitPrice","extendedPrice"],
@@ -638,9 +689,9 @@ export const optionData={
     notAllowed:/[`~!@#\$%^&=:;""'<>*?,\*]/gi
   },
   "aneja-distributors":{
-    regex:/^.+ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/,
-    header:["itemNo","description","unitPrice","extendedPrice"],
-    body:[1,[0,/ [0-9]+\.[0-9]+ [0-9]+\.[0-9]+$/],1,1],
+    regex:/^.+ [A-Z0-9]+ .+ [0-9]+ [0-9.]+ [0-9-A-Z]+ [0-9.]+$/,
+    header:["garbage","description","qty","unitPrice","garbage","extendedPrice"],
+    body:[1,[0,/ [0-9]+ [0-9.]+ [0-9-A-Z]+ [0-9.]+$/],1,1,1,1],
     notAllowed:/[`~!@#\$%^&=:;'<>?,\*]/gi
   },//not complete
 

@@ -290,4 +290,21 @@ export class InventoryService {
     const res = await Axios.get(appendURL + "/api/syncproductwithpos");
     return res.data;
   }
+
+  async InsertAllProducts(data) {
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/allproducts",data);
+    return res.data;
+  }
+  async getProductByBarcode(barcode) {
+    console.log(barcode);
+    const res = await Axios.get(appendURL + "/api/getproductbybarcode",{params:barcode});
+    return res.data;
+  }
+
+  async generateUnitInCaseLog(data){
+    console.log(data);
+    const res = await Axios.post(appendURL + "/api/generateunitincaselog",data);
+    return res.data;
+  }
 }

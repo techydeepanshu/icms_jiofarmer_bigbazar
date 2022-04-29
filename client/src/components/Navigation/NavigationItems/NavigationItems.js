@@ -38,7 +38,7 @@ const NavigationItems = (props) => {
 
   const handleClose = (event, reason) => {
     db.collection("syncproducts")
-                    .doc("HfgC3uFpnEg1Kjw6oKRW")
+                    .doc("IBZundn6ANloUUUeVnSP")
                     .set({ loader: false, error: false,workdone:false })
                     .then(() => {
                       console.log("Document successfully written!");
@@ -46,7 +46,7 @@ const NavigationItems = (props) => {
   };
   const handleClosWorkdone = (event, reason) => {
     db.collection("syncproducts")
-                    .doc("HfgC3uFpnEg1Kjw6oKRW")
+                    .doc("IBZundn6ANloUUUeVnSP")
                     .set({ loader: false, error: false,workdone:false })
                     .then(() => {
                       console.log("Document successfully written!");
@@ -54,7 +54,7 @@ const NavigationItems = (props) => {
   };
 
   db.collection("syncproducts")
-    .doc("HfgC3uFpnEg1Kjw6oKRW")
+    .doc("IBZundn6ANloUUUeVnSP")
     .onSnapshot((snapshot) => {
       console.log("snapshot : ", snapshot);
       console.log("snapshot data: ", snapshot.data());

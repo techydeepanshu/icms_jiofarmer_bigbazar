@@ -713,15 +713,15 @@ app.put("/api/invoice/product/update", validateLogin, function (req, res) {
   
   const data = req.body;
   console.log(data);
-  const { invoiceName, itemName, value } = data;
-  console.log("Item name",itemName);
+  const { invoiceName, value } = data;
+  console.log("Item name",value.Item);
   console.log(data,"Mongo PUT Request Data"); 
   console.log("invoice dbname : ",getDBInvoiceName(invoiceName));
   let options = {
     method: "PUT",
-    url: `http://${process.env.MONGO_IP}:3001/invoice/${getDBInvoiceName(
+    url: `http://${process.env.MONGO_IP}:3001/invoiceitem/${getDBInvoiceName(
       invoiceName
-    )}/${itemName}`,
+    )}`,
     body: value,
     json: true,
   };
@@ -1103,6 +1103,71 @@ app.put("/api/invoice/pos/update", validateLogin, function (req, res) {
   }
   request(options, callback);
 });
+
+app.post("/api/allproducts",validateLogin,function(req,res){
+
+  console.log("body data : ",req.body)
+  let data = req.body
+  let options = {
+    method: "POST",
+    url: `http://${process.env.MONGO_IP}:3001/allproducts`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+})
+app.get("/api/getproductbybarcode",validateLogin,function(req,res){
+
+  console.log("body data : ",req.query["0"])
+  const barcode = req.query["0"];
+  let options = {
+    method: "GET",
+    url: `http://${process.env.MONGO_IP}:3001/getallproducts/${barcode}`,
+    // body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+})
+
+app.post("/api/generateunitincaselog",validateLogin,function(req,res){
+
+  console.log("body data : ",req.body)
+  let data = req.body
+  let options = {
+    method: "POST",
+    url: `http://${process.env.MONGO_IP}:3001/unitincaselog`,
+    body: data,
+    json: true,
+  };
+  function callback(error, response, body) {
+    const status = response.statusCode;
+    console.log(error, body);
+    if (error === null) {
+      res.status(status).send(body);
+    } else {
+      res.status(status).send(error);
+    }
+  }
+  request(options, callback);
+})
 
 if (process.env.NODE_ENV === "production") {
   //It will serve the files from main.js

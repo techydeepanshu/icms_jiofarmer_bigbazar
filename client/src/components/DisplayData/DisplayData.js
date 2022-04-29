@@ -15,13 +15,14 @@ import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { InventoryService } from "../../services/InventoryService";
 import Checkbox from "@material-ui/core/Checkbox";
- 
+
+import { useSelector } from "react-redux"; 
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { Api } from "../../services/Api";
 import HicksData from "./Hicksville.json";
 import { CContainer, CModalHeader, CCol, CFormGroup, CInput, CButton, CLabel, CModal, CModalBody, CModalFooter, CRow } from "@coreui/react";
 import { lightBlue } from "@material-ui/core/colors";
-
+import {  useDispatch } from "react-redux";
 let emptyColumnList = [];
 const DisplayData = (props) => {
   console.log("DisplayData_props : ",props);
@@ -35,7 +36,7 @@ const DisplayData = (props) => {
   const [loader, setLoader] = useState(true);
   const [reviewItems, setReviewItems] = useState([]);
   const tesseractService = new TesseractService();
-
+  const userEmail = useSelector((state) => state.userDetails.userEmail);
   const header = [
     "Serial No.",
     "Barcode",
@@ -80,6 +81,7 @@ const DisplayData = (props) => {
   const [price, setPrice] = useState("");
   const [redState, setRedState] = useState("false");
   const selectedInvoice = props.selectedInvoice;
+  const dispatch = useDispatch();
   let showModal1 = false; 
   let posProducts = []
   let wooComProducts = [];
@@ -116,6 +118,7 @@ const DisplayData = (props) => {
 
   // added by parikshit.
   const saveInvoiceData = async () => {
+    setLoader(true)
     toggleModal();
     // console.log(invDate);
     // console.log(invNo);
@@ -136,15 +139,68 @@ const DisplayData = (props) => {
     scanInvoiceData.SavedDate = date;
     scanInvoiceData.SavedInvoiceNo = invoiceNo;
     // console.log(scanInvoiceData);
-    const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData);
-    console.log(resScnInvDta);
-    if(resScnInvDta === "exist") {
-      alert("Invoice with same no. and date already exists, change either of the 2 values");
-      toggleModal();
-    }else {
+
+    console.log("usermail : ",userEmail);
+    const resScnInvDta =  await inventoryService.CreateScanInvoiceData(scanInvoiceData).then(async (res)=>{
+      console.log(res)
+      if(res !== "exist"){
+        console.log("ocrProducts : ",ocrProducts)
+        await Promise.all(
+        tableData.map(async(element,i)=>{
+          await inventoryService.InsertAllProducts({
+          SerialNoInInv:i+1,
+          barcode:element.barcode,
+          itemNo:element.itemNo,
+          invDescription:element.description,
+          invQty:element.qty,
+          unitInCase:element.pieces,
+          totalQty:element.qty*element.pieces,
+          invCaseCost:element.unitPrice,
+          invExtendedPrice:element.extendedPrice,
+          invSku:element.posSku,
+          invUnitCost:element.cp,
+          invUnitPrice:element.sellingPrice,
+          markup:element.markup,
+          posName:element.posName,
+          posSku:element.posSku,
+          posSize:element.size,
+          posDepartment:element.department,
+          posUnitCost:element.cost,
+          posUnitPrice:element.sellingPrice,
+          priceIncrease:element.priceIncrease,
+          show:element.show,
+          invProductUnit:"",
+          isUpdated:"false",
+          isReviewed:element.isReviewed,
+          oldInventory:"",
+          newInventory:element.qty*element.pieces,
+          isInventoryUpdated:"",
+          invoiceNo:invoiceNo,
+          invoiceName:props.selectedInvoice,
+          invoiceSavedDate:date,
+          lastUpdationDate:date,
+          linkByBarcode:element.LinkByBarcode,
+          linkByName:element.LinkByName,
+          person:userEmail
+        })
+        })
+      )
+
       alert("Invoice Saved Successfully");
 
-    }
+      }else{
+        alert("Invoice with same no. and date already exists, change either of the 2 values");
+        toggleModal();
+      }
+    });
+    console.log(resScnInvDta);
+    setLoader(false)
+    // if(resScnInvDta === "exist") {
+    //   alert("Invoice with same no. and date already exists, change either of the 2 values");
+    //   toggleModal();
+    // }else {
+    //   alert("Invoice Saved Successfully");
+    // }
   };
 
   const sendInvoiceData = async () => {
@@ -1237,7 +1293,17 @@ const DisplayData = (props) => {
   useEffect(() => {
     
 
-
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // setUserEmail(user.email);
+        dispatch({ type: "EMAIL", data: user.email });
+        console.log("This is the user: ", user);
+        console.log("This is the user: ", user.email);
+      } else {
+        // No user is signed in.
+        console.log("There is no logged in user");
+      }
+    });
     /**Fetch the data from the aws textract for the image */
     async function fetchOCRData() {
       // return chetak();
@@ -1276,6 +1342,7 @@ const DisplayData = (props) => {
       );
       let newData = [];
       ocrData.forEach((data) => (newData = [...newData, ...data]));
+      
       return newData;
     }
 
@@ -1313,7 +1380,7 @@ const DisplayData = (props) => {
           //console.log("OCERDATa", ocrData);
           //console.log(products);
           //console.log(scanInvoiceData);
-          let table = ocrData.map((row) => {
+          let table = ocrData.map((row,i) => {
             /**For invoices which dont have item no, set description as item no */
             if (row.itemNo === undefined) {
               row.itemNo = row.description.trim().toUpperCase();
@@ -1356,6 +1423,15 @@ const DisplayData = (props) => {
               products[row.itemNo] !== undefined ? products[row.itemNo].SellerCost : "";
             row.sellingPrice = 
               products[row.itemNo] !== undefined ? products[row.itemNo].SellingPrice : "";
+            row.SerialNoInInv = i+1;
+            row.LinkByBarcode =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByBarcode
+                : "";
+            row.LinkByName =
+              products[row.itemNo] !== undefined
+                ? products[row.itemNo].LinkByName
+                : "";
             //console.log("department-" + row.department + "  cost-" + row.cost + "  price" + row.sellingPrice);
             let sp = 0;
             let cp = 0;
@@ -1397,7 +1473,9 @@ const DisplayData = (props) => {
                 parseFloat(row.extendedPrice) / parseFloat(row.unitPrice)
               ).toFixed(0);
             }
-          return { ...row, sp, cp };
+
+            
+          return { ...row, sp, cp};
           });
           setLoader(false);
           console.log("fetchOcrData_table",table);

@@ -24,7 +24,7 @@ const Invoice = (props) => {
   const handleFileChange = async (files) => {
     files = Object.values(files);
 
-    if (files.length <= 9) {
+    if (files.length <= 100) {
       const inputFiles = [];
       const imagePreviewUrls = [];
       files.forEach((selectedFile) => {

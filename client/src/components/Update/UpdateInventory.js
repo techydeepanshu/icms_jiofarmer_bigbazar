@@ -344,6 +344,7 @@ const UpdateInventory = (props) => {
           let tableDataCopy2 = tableDataCopy.filter(
             (elem) => elem.itemNo === element.itemNo
           );
+          
           //Log Generate.
           console.log("PRODUCTT");
           console.log("pI_singleItemData : ", element);
@@ -381,6 +382,21 @@ const UpdateInventory = (props) => {
           console.log("pI_log : ", log);
           const logUpdate = await inventoryService.posLogs(log);
           console.log("pI_logUpdate : ", logUpdate);
+
+          console.log("element : ",element);
+          console.log("tableDataCopy2 : ",tableDataCopy2);
+          await inventoryService.InsertAllProducts({
+            SerialNoInInv:element.SerialNoInInv,
+            itemNo:element.itemNo,
+            invoiceNo:num,
+            invoiceSavedDate:day,
+            invoiceName:inv,
+            oldposUnitPrice:tableDataCopy2[0].sellingPrice,
+            posUnitPrice:element.sellingPriceChange,
+            isUpdated:"true",
+            lastUpdationDate:todayDate,
+            person:userEmail
+          })
 
           // update inventory
 
@@ -1362,6 +1378,19 @@ const UpdateInventory = (props) => {
                 );
 
               console.log("updateinventoryindb : ", updateinventoryindb);
+
+              await inventoryService.InsertAllProducts({
+                SerialNoInInv:tempdata2[0].SerialNoInInv,
+                itemNo:tempdata2[0].itemNo,
+                invoiceNo:num,
+                invoiceSavedDate:day,
+                invoiceName:inv,
+                isInventoryUpdated:"true",
+                lastUpdationDate:todayDate,
+                person:userEmail,
+                oldInventory:product.OLD_TOTALQTY.toString(),
+                newInventory:product.TOTALQTY,
+              })
             } else {
               alert("posInventory Logs does not Created");
             }

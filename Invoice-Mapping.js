@@ -674,7 +674,22 @@ const InvoiceMapping = [
     emptyColumn: false,
     databaseName: "vintages",
   },
+  
   // {value:'',slug:'',jsonName:'wave-ron-foods.json',emptyColumn:false,databaseName:'waveronfoods'}
+  {
+    value: "Aneja Distributors",
+    slug: "aneja-distributors",
+    jsonName: "aneja-distributors.json",
+    emptyColumn: true,
+    databaseName: "anejadistributors",
+  },
+  {
+    value: "Fyve Elements",
+    slug: "fyve-elements",
+    jsonName: "fyve-elements.json",
+    emptyColumn: true,
+    databaseName: "fyve-elements",
+  },
 ];
 
 module.exports = {

@@ -77,13 +77,13 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "annsfoods",
   },
-  // {
-  //   value: "Aneja Distributors",
-  //   slug: "aneja-distributors",
-  //   jsonName: "aneja-distributors.json",
-  //   emptyColumn: true,
-  //   databaseName: "anejadistributors",
-  // },
+  {
+    value: "Aneja Distributors",
+    slug: "aneja-distributors",
+    jsonName: "aneja-distributors.json",
+    emptyColumn: true,
+    databaseName: "anejadistributors",
+  },
 
   // {
   //   value: "Gurme Guru",
@@ -151,6 +151,13 @@ export const dropdownOptions = [
     jsonName: "baraka-cold.json",
     emptyColumn: false,
     databaseName: "barakacolds",
+  },
+  {
+    value: "kcb-bakery",
+    slug: "kcb-bakery",
+    jsonName: "kcb-bakery.json",
+    emptyColumn: false,
+    databaseName: "kcb-bakery",
   },
   // {
   //   value: "Barlett dairy",
@@ -243,6 +250,13 @@ export const dropdownOptions = [
     databaseName: "empirefoodimporters",
   },
   {
+    value: "jalaram",
+    slug: "jalaram",
+    jsonName: "jalaram.json",
+    emptyColumn: false,
+    databaseName: "jalaram",
+  },
+  {
     value: "Family five",
     slug: "family-five",
     jsonName: "family-five.json",
@@ -284,6 +298,13 @@ export const dropdownOptions = [
     jsonName: "goyal-grp.json",
     emptyColumn: false,
     databaseName: "goyalgrps",
+  },
+  {
+    value: "kb farms",
+    slug: "kb-farms",
+    jsonName: "kb-farms.json",
+    emptyColumn: false,
+    databaseName: "kb-farms",
   },
   // {
   //   value: "Grocer mill",
@@ -657,7 +678,15 @@ export const dropdownOptions = [
     jsonName: "wonderful sales.json",
     emptyColumn: false,
     databaseName: "wonderful sales",
-  },// working on this 
+  },
+  {
+    value: "vibrant-foods",
+    slug: "vibrant-foods",
+    jsonName: "vibrantfoods.json",
+    emptyColumn: false,
+    databaseName: "vibrantfoods",
+  },
+  // working on this 
   {
     value: "Krishna Food Corp",
     slug: "krishna-food-corp",
@@ -830,6 +859,14 @@ export const dropdownOptions = [
     databaseName: "suncropfoods",
   },
 
+  {
+    value: "nature fresh",
+    slug: "nature-fresh",
+    jsonName: "nature-fresh.json",
+    emptyColumn: false,
+    databaseName: "naturefresh",
+  },
+
   //  added by sahil on 11 jan 2022.
   {
     value: "Optima foods",
@@ -838,20 +875,34 @@ export const dropdownOptions = [
     emptyColumn: false,
     databaseName: "optimals",
   },
-  // {
-  //   value: "roshni foods",
-  //   slug: "roshni-foods",
-  //   jsonName: "roshni-foods.json",
+  {
+    value: "jyene",
+    slug: "jyene",
+    jsonName: "jyene.json",
+    emptyColumn: false,
+    databaseName: "jyene",
+  },
+  //{
+  //   value: "goya",
+  //   slug: "goya",
+  //   jsonName: "goya.json",
   //   emptyColumn: false,
-  //   databaseName: "roshni-foods",
+  //   databaseName: "goya",
   // },
-  // {
-  //   value: "Fyve Elements",
-  //   slug: "fyve-elements",
-  //   jsonName: "fyve-elements.json",
-  //   emptyColumn: true,
-  //   databaseName: "fyve-elements",
-  // },
+  {
+    value: "roshni foods",
+    slug: "roshni-foods",
+    jsonName: "roshni-foods.json",
+    emptyColumn: true,
+    databaseName: "roshni-foods",
+  },
+  {
+    value: "Fyve Elements",
+    slug: "fyve-elements",
+    jsonName: "fyve-elements.json",
+    emptyColumn: true,
+    databaseName: "fyve-elements",
+  },
   // {
   //   value: "Pams creations",
   //   slug: "pams-creations",
@@ -866,6 +917,14 @@ export const dropdownOptions = [
   //   emptyColumn: false,
   //   databaseName: "pexcos",
   // }, 
+
+  {
+    value: "hasinberg",
+    slug: "hasinberg",
+    jsonName: "hasinberg.json",
+    emptyColumn: false,
+    databaseName: "hasinberg",
+  },
   {
     value: "PGL trade",
     slug: "pgl-trade",

@@ -49,14 +49,28 @@ import Cancel from "@material-ui/icons/Cancel";
 // import CircularProgress from '@material/circular-progress';
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // import Loading from 'react-loader-spinner';
-
+import Button2 from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { useSelector } from "react-redux";
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 const useStyles = makeStyles({
   root: {
     width: "100%",
     // paddingTop: 50,
     // height: "125px"
+  },
+  table: {
+    minWidth: 650,
   },
   container: {
     maxHeight: "80vh",
@@ -182,7 +196,9 @@ const SaveInvoiceData = () => {
   const [logsDate, setLogsDate] = useState("");
   const [inventoryLogsDate, setInventoryLogsDate] = useState("");
   const [invoiceDatePick, setInvoiceDatePick] = useState(false);
-
+  const [scroll, setScroll] = React.useState('paper');
+  const descriptionElementRef = React.useRef(null);
+  const [open, setOpen] = React.useState({modal:false,index:""});
   const invoiceHeader = [
     "Sr.No.",
     "Invoice",
@@ -740,6 +756,65 @@ const SaveInvoiceData = () => {
     console.log(singleItemData);
   }
 
+  const createData = async ()=>{
+    dispatch({ type: "API_LOADER" });
+    let apiError = false;
+    console.log("createData :: ",tableData)
+    await Promise.all(
+      tableData.map(async(element)=>{
+        console.log("create Data : ",element);
+         await inventoryService.InsertAllProducts({
+          SerialNoInInv:element.SerialNoInInv,
+          barcode:element.barcode,
+          itemNo:element.itemNo,
+          invDescription:element.description,
+          invQty:element.qty,
+          invCaseCost:element.unitPrice,
+          invExtendedPrice:element.extendedPrice,
+          invSku:element.posSku,
+          invUnitCost:element.cp,
+          invUnitPrice:element.sellingPrice,
+          invoiceNo:num,
+          invoiceSavedDate:day,
+          invoiceName:inv,
+          isReviewed:element.isReviewed,
+          isUpdated:element.isUpdated,
+          linkingCorrect:element.linkingCorrect,
+          linkByBarcode:element.LinkByBarcode,
+          LinkByName:element.LinkByName,
+          lastUpdationDate:todayDate,
+          markup:element.markup,
+          newInventory:(element.isReviewed === "" || element.isReviewed==="false")? "" : element.pieces*element.qty,
+          person:userEmail,
+          posName:element.posName,
+          posDepartment:element.department,
+          posSize:element.size,
+          posSku:element.posSku,
+          posUnitCost:element.cost,
+          posUnitPrice:element.sellingPrice,
+          priceIncrease:element.priceIncrease,
+          unitInCase:element.pieces,
+          show:element.show
+        }).then((res)=>{
+          console.log("res data : ",res);
+          // alert("Data Successfully Created ");
+        }).catch((err)=>{
+          console.log("res error : ",err);
+          // alert("Data not Created !!");
+          apiError = true;
+        })
+      })
+    )
+
+    if(apiError!== true){
+      alert("Data Successfully Created ");
+    }else{
+      alert("Data not Created !!");
+    }
+
+    dispatch({ type: "API_LOADER" });
+  }
+
   const pushSingleItemToInventory = async (index) => {
     let isEmpty =
       tableData[index].qty === "" ||
@@ -837,8 +912,8 @@ const SaveInvoiceData = () => {
           try {
             const data = {
               invoiceName: invoice.slug,
-              itemName: product.itemNo,
-              value: { Price: product.unitPrice },
+              
+              value: { Price: product.unitPrice,Item: product.itemNo, },
             };
             console.log("pI_data", data);
             await inventoryService.UpdateProductFields(data);
@@ -948,6 +1023,19 @@ const SaveInvoiceData = () => {
           const logUpdate = await inventoryService.posLogs(log);
           console.log("pI_logUpdate : ", logUpdate);
 
+          await inventoryService.InsertAllProducts({
+            SerialNoInInv:singleItemData[0].SerialNoInInv,
+            itemNo:singleItemData[0].itemNo,
+            invoiceNo:num,
+            invoiceSavedDate:day,
+            invoiceName:inv,
+            oldposUnitPrice:tableDataCopy[index].sellingPrice,
+            posUnitPrice:singleItemData[0].sellingPrice,
+            isUpdated:"true",
+            lastUpdationDate:todayDate,
+            person:userEmail
+          })
+
           // update inventory
           let result = await inventoryService.getPosInventoryLogs({
             Barcode: singleItemData[0].barcode,
@@ -957,6 +1045,8 @@ const SaveInvoiceData = () => {
             InvoiceDate: day,
           });
           console.log("result : ", result);
+
+          
           if (result === "") {
             let res = await pushQtyToInventory(index);
             console.log(res);
@@ -1202,6 +1292,19 @@ const SaveInvoiceData = () => {
                 );
 
               console.log("updateinventoryindb : ", updateinventoryindb);
+
+              await inventoryService.InsertAllProducts({
+                SerialNoInInv:tempdata2[0].SerialNoInInv,
+                itemNo:tempdata2[0].itemNo,
+                invoiceNo:num,
+                invoiceSavedDate:day,
+                invoiceName:inv,
+                isInventoryUpdated:"true",
+                lastUpdationDate:todayDate,
+                person:userEmail,
+                oldInventory:product.OLD_TOTALQTY.toString(),
+                newInventory:product.TOTALQTY,
+              })
             } else {
               alert("posInventory Logs does not Created");
             }
@@ -1358,8 +1461,8 @@ const SaveInvoiceData = () => {
         try {
           const data = {
             invoiceName: invoice.slug,
-            itemName: product.itemNo,
-            value: { Price: product.unitPrice },
+           
+            value: { Price: product.unitPrice,Item: product.itemNo, },
           };
           console.log("pI_data", data);
           // await inventoryService.UpdateProductFields(data);
@@ -1447,19 +1550,41 @@ const SaveInvoiceData = () => {
     console.log("updateUnits : ", item);
     const data = {
       invoiceName: inv,
-      itemName: item.itemNo,
       value: {
+        Item: item.itemNo,
         Quantity: item.pieces,
         SellerCost: item.cp,
       },
     };
     inventoryService
       .UpdateProductFields(data)
-      .then((res) => {
+      .then(async(res) => {
         if (!res) {
           throw new Error("Product not updated");
         }
         console.log(res);
+        await inventoryService.generateUnitInCaseLog({
+          Barcode: item.barcode,
+          InvoiceDescription: item.description,
+          PosDescription: item.posName,
+          InvoiceName: inv,
+          ItemCode: item.itemNo,
+          PersonName: userEmail,
+          InvoiceNo: num,
+          InvoiceDate: day,
+          UpdateDate: todayDate,
+          OldUnitInCase: tableDataCopy[index].pieces,
+          NewUnitInCase: item.pieces
+        })
+        await inventoryService.InsertAllProducts({
+          SerialNoInInv:item.SerialNoInInv,
+          itemNo:item.itemNo,
+          invoiceNo:num,
+          invoiceSavedDate:day,
+          invoiceName:inv,
+          oldunitInCase:tableDataCopy[index].pieces,
+          unitInCase:item.pieces
+        })
         alert("Successfully updated fields");
         // setStateUpdated(true);
       })
@@ -1702,7 +1827,7 @@ const SaveInvoiceData = () => {
     fetchSavedData().then((ocrData) => {
       console.log("fetchSavedData_ocrData : ", ocrData);
       invoiceData()
-        .then((products) => {
+        .then(async(products) => {
           console.log("fetchSavedData_invoice_products : ", products);
           /**post processing the table data after returning from filter */
           function convertToUpperCase(obj) {
@@ -1851,13 +1976,39 @@ const SaveInvoiceData = () => {
             return { ...row, sp, cp, SerialNoInInv };
           });
           // setLoader(false);
-          dispatch({ type: "LOADER" });
+          
 
-          setTableData(table.filter((data) => data !== null));
-          setTableDataCopy(table.filter((data) => data !== null));
-          console.log("setProductsInTable_tableData : ", tableData);
+         
+
+          let tempdata = table.filter((data) => data !== null);
+          await Promise.all(
+          tempdata.map(async(elem)=>{
+            await inventoryService.getProductByBarcode(elem.barcode).then((data)=>{
+              console.log("getProductByBarcode data : ",data);
+              let dataTemp = data.filter((e)=>e.invoiceName!==inv);
+              console.log("getProductByBarcode datatemp : ",dataTemp);
+              console.log("invoiceNo data &&& : ",num);
+              console.log("invoiceName data &&& : ",inv);
+              if(dataTemp.length === 0 ){
+                elem.productFromOtherVendor = false;
+                elem.productFromOtherVendorData = [];
+              }else if(dataTemp.length >= 1){
+                  elem.productFromOtherVendor = true;
+                  elem.productFromOtherVendorData = dataTemp;
+              }
+            })
+            // elem.productFromOtherVendor = true;
+          }))
+
+          
+          setTableData(tempdata);
+          setTableDataCopy(tempdata);
+          // setTableData(table.filter((data) => data !== null));
+          // setTableDataCopy(table.filter((data) => data !== null));
+          console.log("fetchSavedData_tableData : ", tableData);
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
+          dispatch({ type: "LOADER" });
         })
         .catch((err) => {
           console.log("error on mapping ocrdata", err);
@@ -2105,8 +2256,8 @@ const SaveInvoiceData = () => {
     //console.log(showPosState);
     const data = {
       invoiceName: invoice.slug,
-      itemName: showPosState.item,
       value: {
+        Item: showPosState.item,
         POS: showPosState.pos,
         Barcode: showPosState.barcode,
         PosSKU: showPosState.posSku,
@@ -2202,8 +2353,8 @@ const SaveInvoiceData = () => {
       console.log("notfoundstrue");
       data = {
         invoiceName: inv,
-        itemName: tempShowPosState.itemNo,
         value: {
+          Item: tempShowPosState.itemNo,
           POS: tempShowPosState.posName,
           Barcode: tempShowPosState.barcode,
           PosSKU: tempShowPosState.posSku,
@@ -2221,8 +2372,8 @@ const SaveInvoiceData = () => {
     } else {
       data = {
         invoiceName: inv,
-        itemName: tempShowPosState.itemNo,
         value: {
+          Item: tempShowPosState.itemNo,
           POS: tempShowPosState.posName,
           Barcode: tempShowPosState.barcode,
           PosSKU: tempShowPosState.posSku,
@@ -2239,11 +2390,37 @@ const SaveInvoiceData = () => {
     console.log("updateItem_data : ", data);
     await inventoryService
       .UpdateProductFields(data)
-      .then((res) => {
+      .then(async(res) => {
         if (!res) {
           throw new Error("Product not created");
         }
         console.log(res);
+
+        await inventoryService.InsertAllProducts({
+          SerialNoInInv:tempShowPosState.SerialNoInInv,
+          itemNo:tempShowPosState.itemNo,
+          invoiceNo:num,
+          invoiceSavedDate:day,
+          invoiceName:inv,
+          barcode:data.value.Barcode,
+          linkingCorrect:data.value.LinkingCorrect,
+          unitInCase:tempNotFound === "true" ? data.value.Quantity : tempShowPosState.pieces,
+          posName:data.value.POS,
+          posSku:data.value.PosSKU,
+          posUnitCost:data.value.SellerCost,
+          posUnitPrice:data.value.SellingPrice,
+          invUnitCost:tempNotFound === "true" ?(tempShowPosState.unitPrice/data.value.Quantity).toFixed(2):data.value.cp,
+          invUnitPrice:data.value.SellingPrice,
+          posSize:data.value.Size,
+          posDepartment:data.value.Department,
+          isReviewed:data.value.isReviewed,
+          priceIncrease:tempShowPosState.priceIncrease,
+          linkByBarcode:tempShowPosState.LinkByBarcode,
+          LinkByName:tempShowPosState.LinkByName,
+          lastUpdationDate:todayDate,
+          person:userEmail,
+          newInventory:tempNotFound === "true" ? "" : tempShowPosState.pieces*tempShowPosState.qty,
+        })
         // alert("Successfully updated fields");
         toast.success("Successfully updated fields", {
           position: "bottom-right",
@@ -2384,8 +2561,8 @@ const SaveInvoiceData = () => {
       console.log("notfoundstrue");
       data = {
         invoiceName: inv,
-        itemName: showPosState.item,
         value: {
+          Item: showPosState.item,
           POS: showPosState.pos,
           Barcode: showPosState.barcode,
           PosSKU: showPosState.posSku,
@@ -2404,8 +2581,8 @@ const SaveInvoiceData = () => {
     } else {
       data = {
         invoiceName: inv,
-        itemName: showPosState.item,
         value: {
+          Item: showPosState.item,
           POS: showPosState.pos,
           Barcode: showPosState.barcode,
           PosSKU: showPosState.posSku,
@@ -2422,11 +2599,119 @@ const SaveInvoiceData = () => {
     console.log("updateItem_data : ", data);
     await inventoryService
       .UpdateProductFields(data)
-      .then((res) => {
+      .then(async(res) => {
         if (!res) {
           throw new Error("Product not created");
         }
         console.log(res);
+        await inventoryService.InsertAllProducts({
+          SerialNoInInv:tableData[index].SerialNoInInv,
+          itemNo:tableData[index].itemNo,
+          invoiceNo:num,
+          invoiceSavedDate:day,
+          invoiceName:inv,
+          barcode:data.value.Barcode,
+          linkingCorrect:data.value.LinkingCorrect,
+          unitInCase:notFounds === "true" ? data.value.Quantity : tableData[index].pieces,
+          posName:data.value.POS,
+          posSku:data.value.PosSKU,
+          posUnitCost:data.value.SellerCost,
+          posUnitPrice:data.value.SellingPrice,
+          invUnitCost:notFounds === "true" ?(tableData[index].unitPrice/data.value.Quantity).toFixed(2):data.value.cp,
+          invUnitPrice:data.value.SellingPrice,
+          posSize:data.value.Size,
+          posDepartment:data.value.Department,
+          isReviewed:data.value.isReviewed,
+          priceIncrease:tableData[index].priceIncrease,
+          linkByBarcode:tableData[index].LinkByBarcode,
+          LinkByName:tableData[index].LinkByName,
+          lastUpdationDate:todayDate,
+          person:userEmail,
+          newInventory:notFounds === "true" ? "" : tableData[index].pieces*tableData[index].qty,
+        })
+
+        
+          console.log("creating linking log")
+          // setLoader(false);
+          // dispatch({type: "LOADER"});
+          //  setStateUpdated("true");
+          //  console.log(ocrCost);
+          //  console.log(unitCost);
+          if (ocrCost > unitCost) {
+            setCostInc("true");
+            setCostDec("");
+          }
+          if (ocrCost < unitCost) {
+            setCostDec("true");
+            setCostInc("");
+          }
+          if (notFounds === "true") {
+            // setNotFounds("false");
+            dispatch({ type: "NOT_FOUNDS", data: "false" });
+            // setUnitsInCase("");
+            dispatch({ type: "UNITS_IN_CASE", data: "" });
+            // setPrice("");
+            dispatch({ type: "PRICE", data: "" });
+          }
+          console.log(userEmail);
+          console.log(tableData[showPosIndex]);
+          const description = tableData[showPosIndex].description;
+  
+          //Cost chnage and invoice error handling logic.
+          const costChange = data.value.SellerCost - data.value.SellerCost;
+          console.log(costChange);
+          let costIncrease = "",
+            costDecrease = "",
+            constSame = "";
+          const invError =
+            tableData[showPosIndex].cp == 0
+              ? ""
+              : tableData[showPosIndex].cp >=
+                3 * parseFloat(tableData[showPosIndex].cost)
+              ? "YES"
+              : "";
+          // const invError = "";
+          costIncrease = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
+          costDecrease = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
+          constSame = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
+  
+          console.log(costChange);
+          console.log(description);
+          console.log(todayDate);
+          console.log(day);
+          console.log(num);
+          
+  
+          let log = {
+            InvoiceDescription: tableData[showPosIndex].description,
+            PosDescription: tableData[showPosIndex].posName,
+            SKU: tableData[showPosIndex].posSku,
+            Barcode: tableData[showPosIndex].barcode,
+            InvoiceName: inv,
+            ItemCode: tableData[showPosIndex].itemNo,
+            LinkingDate: todayDate,
+            PersonName: userEmail,
+            Size: tableData[showPosIndex].size,
+            PosUnitCost:
+              tableData[showPosIndex].cost === ""
+                ? data.value.SellerCost
+                : tableData[showPosIndex].cost,
+            PosUnitPrice: tableData[showPosIndex].sellingPrice,
+            InvoiceNo: num,
+            InvoiceDate: day,
+            Department: tableData[showPosIndex].department,
+            InvUnitCost: data.value.SellerCost,
+            CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
+            CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
+            CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
+            InvError: invError,
+          };
+          console.log(log);
+          const logResult = await inventoryService.linkManuallyLog(log);
+          console.log(logResult);
+          
+          setProductsInTable();
+        
         alert("Successfully updated fields");
         // setStateUpdated(true);
       })
@@ -2434,101 +2719,7 @@ const SaveInvoiceData = () => {
         console.log(err);
         alert("Some error occuured in creating product");
       })
-      .finally(async () => {
-        // setLoader(false);
-        // dispatch({type: "LOADER"});
-        //  setStateUpdated("true");
-        //  console.log(ocrCost);
-        //  console.log(unitCost);
-        if (ocrCost > unitCost) {
-          setCostInc("true");
-          setCostDec("");
-        }
-        if (ocrCost < unitCost) {
-          setCostDec("true");
-          setCostInc("");
-        }
-        if (notFounds === "true") {
-          // setNotFounds("false");
-          dispatch({ type: "NOT_FOUNDS", data: "false" });
-          // setUnitsInCase("");
-          dispatch({ type: "UNITS_IN_CASE", data: "" });
-          // setPrice("");
-          dispatch({ type: "PRICE", data: "" });
-        }
-        console.log(userEmail);
-        console.log(tableData[showPosIndex]);
-        const description = tableData[showPosIndex].description;
-
-        //Cost chnage and invoice error handling logic.
-        const costChange = data.value.SellerCost - data.value.SellerCost;
-        console.log(costChange);
-        let costIncrease = "",
-          costDecrease = "",
-          constSame = "";
-        const invError =
-          tableData[showPosIndex].cp == 0
-            ? ""
-            : tableData[showPosIndex].cp >=
-              3 * parseFloat(tableData[showPosIndex].cost)
-            ? "YES"
-            : "";
-        // const invError = "";
-        costIncrease = invError == "YES" ? "" : costChange > 0 ? "YES" : "";
-        costDecrease = invError == "YES" ? "" : costChange < 0 ? "YES" : "";
-        constSame = invError == "YES" ? "" : costChange == 0 ? "YES" : "";
-
-        console.log(costChange);
-        console.log(description);
-        console.log(todayDate);
-        console.log(day);
-        console.log(num);
-        // const logState = data;
-        // delete logState.value.isReviewed;
-        // logState.Description = description;
-        // logState.PersonName = userEmail;
-        // logState.LinkingDate = todayDate;
-        // logState.InvoiceDate = day;
-        // logState.InvoiceNo = num;
-        // logState.CostIncrease = costIncrease;
-        // logState.CostDecrease = costDecrease;
-        // logState.CostSame = constSame;
-        // logState.InvoiceUnitCost = tableData[showPosIndex].cp;
-        // logState.InvError = invError;
-        // console.log(logState);
-
-        // const res = await inventoryService.generateLog(logState);
-        // console.log(res);
-
-        let log = {
-          InvoiceDescription: tableData[showPosIndex].description,
-          PosDescription: tableData[showPosIndex].posName,
-          SKU: tableData[showPosIndex].posSku,
-          Barcode: tableData[showPosIndex].barcode,
-          InvoiceName: inv,
-          ItemCode: tableData[showPosIndex].itemNo,
-          LinkingDate: todayDate,
-          PersonName: userEmail,
-          Size: tableData[showPosIndex].size,
-          PosUnitCost:
-            tableData[showPosIndex].cost === ""
-              ? data.value.SellerCost
-              : tableData[showPosIndex].cost,
-          PosUnitPrice: tableData[showPosIndex].sellingPrice,
-          InvoiceNo: num,
-          InvoiceDate: day,
-          Department: tableData[showPosIndex].department,
-          InvUnitCost: data.value.SellerCost,
-          CostIncrease: invError == "YES" ? "" : costChange > 0 ? "YES" : "",
-          CostDecrease: invError == "YES" ? "" : costChange < 0 ? "YES" : "",
-          CostSame: invError == "YES" ? "" : costChange == 0 ? "YES" : "",
-          InvError: invError,
-        };
-        console.log(log);
-        const logResult = await inventoryService.linkManuallyLog(log);
-        console.log(logResult);
-        setProductsInTable();
-      });
+     
   };
 
   const addRow = () => {
@@ -2627,7 +2818,7 @@ const SaveInvoiceData = () => {
     fetchSavedData(invoice, no, date).then((ocrData) => {
       console.log("fetchSavedData_ocrData : ", ocrData);
       invoiceData()
-        .then((products) => {
+        .then(async(products) => {
           console.log("fetchSavedData_products : ", products);
           /**post processing the table data after returning from filter */
           function convertToUpperCase(obj) {
@@ -2775,13 +2966,38 @@ const SaveInvoiceData = () => {
             return { ...row, sp, cp, SerialNoInInv };
           });
           // setLoader(false);
-          dispatch({ type: "LOADER" });
+         
 
-          setTableData(table.filter((data) => data !== null));
-          setTableDataCopy(table.filter((data) => data !== null));
+
+          let tempdata = table.filter((data) => data !== null);
+          await Promise.all(
+          tempdata.map(async(elem)=>{
+            await inventoryService.getProductByBarcode(elem.barcode).then((data)=>{
+              console.log("getProductByBarcode data : ",data);
+              let dataTemp = data.filter((e)=> e.invoiceName!==invoice);
+              console.log("getProductByBarcode dataTemp : ",dataTemp);
+              console.log("invoiceNo data &&& : ",no);
+              console.log("invoiceName data &&& : ",invoice);
+              if(dataTemp.length === 0){
+                elem.productFromOtherVendor = false;
+                elem.productFromOtherVendorData = [];
+              }else if(dataTemp.length >= 1){
+                  elem.productFromOtherVendor = true;
+                  elem.productFromOtherVendorData = dataTemp;
+              }
+            })
+            // elem.productFromOtherVendor = true;
+          }))
+
+          
+          setTableData(tempdata);
+          setTableDataCopy(tempdata);
+          // setTableData(table.filter((data) => data !== null));
+          // setTableDataCopy(table.filter((data) => data !== null));
           console.log("fetchSavedData_tableData : ", tableData);
           setItemNoDropdown(Object.keys(products));
           setProductDetails(products);
+          dispatch({ type: "LOADER" });
         })
         .catch((err) => {
           console.log("error on mapping ocrdata", err);
@@ -2855,7 +3071,7 @@ const SaveInvoiceData = () => {
 
   const renderTableData = () => {
     // hicksvilleDropdown(HicksData);
-    // console.log("renderTableData_tableData : ", tableData);
+    console.log("renderTableData_tableData : ", tableData);
     if (tableData) {
       console.log(tableData);
       // console.log("renderTableData_showPosState : ", showPosState);
@@ -3176,6 +3392,11 @@ const SaveInvoiceData = () => {
                   <TextField {...params} variant="outlined" />
                 )}
               />
+              {element.productFromOtherVendor?<p onClick={()=>{
+                setOpen((old)=>{
+                  return{modal:!old.modal,index:element.SerialNoInInv-1}
+                });
+              }} style={{fontSize:"0.9rem",fontWeight:"600",color:"#0000a5",cursor:"pointer"}}>Product Also Received From Other Vendors</p>:null}
             </td>
 
             <td>{element.description}</td>
@@ -3314,6 +3535,7 @@ const SaveInvoiceData = () => {
             </td>
             <td>
               <Button
+              
                 text="Update Inventory"
                 color="btn btn-info"
                 type="submit"
@@ -3394,6 +3616,12 @@ const SaveInvoiceData = () => {
               type="submit"
               onClick={() => window.location.reload()}
             />
+            <Button
+              text="Create Data"
+              color="btn btn-info"
+              type="submit"
+              onClick={() => createData()}
+          />
           </div>
           <div style={{ textAlign: "center", margin: "20px 0" }}>
             <FormControl component="fieldset">
@@ -3494,6 +3722,7 @@ const SaveInvoiceData = () => {
           </table>
           <div className={styles.divRow}>
             <Button
+            disabled="true"
               text="Update Inventory"
               color="btn btn-info"
               type="submit"
@@ -3567,55 +3796,55 @@ const SaveInvoiceData = () => {
     }
   };
 
-  // const downloadLinkingLogs = async()=>{
-  //   console.log("downloadLinkingLogs");
-  //   // let date = todayDate;
-  //   console.log("date : ",todayDate);
-  //   console.log("invoice : ",inv);
-  //   // let data = {
-  //   //   LinkingDate:todayDate,
-  //   //   InvoiceName:inv
-  //   // }
-  //   let data = {
-  //     LinkingDate:"2022-3-1",
-  //     InvoiceName:"chetak"
-  //   }
-  //   console.log(data);
-  //   const res = await inventoryService.getLinkingLogsXlsx(data)
-  //   console.log(res);
-  //   // if(res.status === "201"){
+  const renderTableDataInModal = (index) => {
 
-  //   //   alert("Data Not Found");
-  //   // }else{
-  //     FileDownload(res.data,"linkinglogs.xlsx");
-  //   // }
+    console.log("tabledata : ", index);
+    let datatemp = tableData[index].productFromOtherVendorData;
 
-  // }
-
-  // const downloadPosLogs = async()=>{
-  //   console.log("downloadPosLogs");
-  //   // let date = todayDate;
-  //   console.log("date : ",todayDate);
-  //   console.log("invoice : ",inv);
-  //   let data = {
-  //     UpdateDate:todayDate,
-  //     InvoiceName:inv
-  //   }
-  //   // let data = {
-  //   //   UpdateDate:"2022-3-2",
-  //   //   InvoiceName:"chetak"
-  //   // }
-  //   console.log(data);
-  //   const res = await inventoryService.getPosLogsXlsx(data)
-  //   console.log(res);
-  //   // if(res.status === "201"){
-
-  //   //   alert("Data Not Found");
-  //   // }else{
-  //     FileDownload(res.data,"Poslogs.xlsx");
-  //   // }
-
-  // }
+    function createData(invoiceName,invoiceNo,barcode, itemNo, qty, unitInCase,invUnitCost,invUnitPrice,posUnitCost,posUnitPrice) {
+      return { invoiceName,invoiceNo,barcode, itemNo, qty, unitInCase,invUnitCost,invUnitPrice,posUnitCost,posUnitPrice };
+    }
+    
+    let rows = datatemp.map((element, index) => {
+     return(createData(element.invoiceName,element.invoiceNo,element.barcode, element.itemNo, element.invQty, element.unitInCase,element.invUnitCost,element.invUnitPrice,element.posUnitCost,element.posUnitPrice))
+    });
+    return (
+      <TableContainer component={Paper}>
+      <Table className={classes.table} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Vendor</TableCell>
+            <TableCell>InvoiceNo</TableCell>
+            <TableCell>Barcode</TableCell>
+            <TableCell align="right">itemNo</TableCell>
+            <TableCell align="right">qty</TableCell>
+            <TableCell align="right">unitInCase</TableCell>
+            <TableCell align="right">invUnitCost</TableCell>
+            <TableCell align="right">invUnitPrice</TableCell>
+            <TableCell align="right">posUnitCost</TableCell>
+            <TableCell align="right">posUnitPrice</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow onClick={()=>console.log("clicked data : ",row)}>
+            <TableCell align="right">{row.invoiceName}</TableCell>
+            <TableCell align="right">{row.invoiceNo}</TableCell>
+              <TableCell component="th" scope="row">{row.barcode}</TableCell>
+              <TableCell align="right">{row.itemNo}</TableCell>
+              <TableCell align="right">{row.qty}</TableCell>
+              <TableCell align="right">{row.unitInCase}</TableCell>
+              <TableCell align="right">{row.invUnitCost}</TableCell>
+              <TableCell align="right">{row.invUnitPrice}</TableCell>
+              <TableCell align="right">{row.posUnitCost}</TableCell>
+              <TableCell align="right">{row.posUnitPrice}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    );
+  };
 
   const markupApplyOnProduct = async () => {
     // setPendingLoader(true)
@@ -3741,6 +3970,8 @@ const SaveInvoiceData = () => {
             product.notfound,
             product.SerialNoInInv - 1
           );
+
+          
         })
       );
       console.log("filterdata : ", filterdata);
@@ -4851,6 +5082,32 @@ const SaveInvoiceData = () => {
         progress={undefined}
         theme="dark"
       />
+
+
+      <Dialog
+        open={open.modal}
+        onClose={()=>setOpen((old)=>{
+          return{...old,['modal']:false}}
+          )}
+        scroll={scroll}
+        aria-labelledby="scroll-dialog-title"
+        aria-describedby="scroll-dialog-description"
+      >
+        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+        <DialogContent dividers={scroll === 'paper'}>
+          
+            {open.modal?renderTableDataInModal(open.index):""}
+          
+        </DialogContent>
+        <DialogActions>
+          <Button2 onClick={()=>setOpen((old)=>{
+            return{...old,['modal']:false}}
+            )} color="primary">
+            Close
+          </Button2>
+          
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

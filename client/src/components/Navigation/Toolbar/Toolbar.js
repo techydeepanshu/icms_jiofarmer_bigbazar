@@ -24,7 +24,7 @@ class Toolbar extends Component {
     //   const result = await inventoryService.syncProductsWithPos();
     //   console.log("syncProductsWithPos : ",result)
     // }
-    // db.collection("syncproducts").doc("HfgC3uFpnEg1Kjw6oKRW").onSnapshot((snapshot)=>{
+    // db.collection("syncproducts").doc("IBZundn6ANloUUUeVnSP").onSnapshot((snapshot)=>{
     //   console.log("snapshot : ",snapshot.data())
     // })
 
@@ -45,7 +45,7 @@ class Toolbar extends Component {
                 onClick={async () => {
                   try {
                     db.collection("syncproducts")
-                      .doc("HfgC3uFpnEg1Kjw6oKRW")
+                      .doc("IBZundn6ANloUUUeVnSP")
                       .set({ loader: true, error: false, workdone: false })
                       .then(() => {
                         console.log("Document successfully written!");
@@ -56,14 +56,14 @@ class Toolbar extends Component {
 
                     if (result.success === false) {
                       db.collection("syncproducts")
-                        .doc("HfgC3uFpnEg1Kjw6oKRW")
+                        .doc("IBZundn6ANloUUUeVnSP")
                         .set({ loader: false, error: true, workdone: false })
                         .then(() => {
                           console.log("Document successfully written!");
                         });
                     } else if (result.success === true) {
                       db.collection("syncproducts")
-                        .doc("HfgC3uFpnEg1Kjw6oKRW")
+                        .doc("IBZundn6ANloUUUeVnSP")
                         .set({ loader: false, error: false, workdone: true })
                         .then(() => {
                           console.log("Document successfully written!");
@@ -71,7 +71,7 @@ class Toolbar extends Component {
                     }
                   } catch (err) {
                     db.collection("syncproducts")
-                      .doc("HfgC3uFpnEg1Kjw6oKRW")
+                      .doc("IBZundn6ANloUUUeVnSP")
                       .set({ loader: false, error: err, workdone: false })
                       .then(() => {
                         console.log("Document successfully written!");
